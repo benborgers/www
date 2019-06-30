@@ -1,5 +1,5 @@
 import React from "react"
-import { css, Global } from "@emotion/core
+import { css, Global } from "@emotion/core"
 
 export default () => {
   const colors = require("../util/colors.js")
@@ -12,7 +12,7 @@ export default () => {
 
   return (
     <Global
-      style={css`
+      styles={css`
         :root {
           ${cssVars.join(";")}
         }
@@ -33,7 +33,7 @@ export default () => {
         }
 
         body {
-          background-color: var(--background-light);
+          background-color: var(--background);
         }
       `}
     />

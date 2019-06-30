@@ -4,5 +4,5 @@ module.exports = {
 
   "brand": "blue",
 
-  "background-light": "lightblue"
+  "background": "white"
 }
