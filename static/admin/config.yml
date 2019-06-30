@@ -14,6 +14,7 @@ collections:
       - { name: company, label: Company, widget: string }
       - { name: position, label: Position, widget: string }
       - { name: dates, label: Dates, widget: string }
+      - { name: index, label: Index, widget: number, min: 1 }
     editor: 
       preview: false
   - name: client-work
@@ -25,6 +26,7 @@ collections:
       - { name: client, label: Client, widget: string }
       - { name: description, label: Description, widget: markdown }
       - { name: link, label: Link, widget: string, required: false }
+      - { name: index, label: Index, widget: number, min: 1 }
     editor: 
       preview: false
   - name: projects
@@ -36,5 +38,6 @@ collections:
       - { name: name, label: Name, widget: string }
       - { name: description, label: Description, widget: markdown }
       - { name: link, label: Link, widget: string, required: false }
+      - { name: index, label: Index, widget: number, min: 1 }
     editor:
         preview: false
