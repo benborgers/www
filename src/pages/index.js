@@ -154,7 +154,7 @@ const A = styled.a(css`
   margin-right: .8rem;
   line-height: 1.5;
 
-  transition: background-color .5s;
+  transition: background-color .2s;
 
   :hover {
     background-color: var(--highlight);
