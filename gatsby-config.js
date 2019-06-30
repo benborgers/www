@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "Ben Borgers"
+    title: "Ben Borgers",
+    description: "Site description.",
+    emoji: "🧪",
+    siteUrl: "https://benborgers.com"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
