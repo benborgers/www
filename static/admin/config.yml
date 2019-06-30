@@ -1,0 +1,41 @@
+backend:
+  name: test-repo
+  branch: master
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: work
+    label: Work Experience
+    identifier_field: company
+    folder: work
+    create: true
+    fields:
+      - { name: company, label: Company, widget: string }
+      - { name: position, label: Position, widget: string }
+      - { name: dates, label: Dates, widget: string }
+    editor: 
+      preview: false
+  - name: client-work
+    label: Client Work
+    identifier_field: client
+    folder: client-work
+    create: true
+    fields: 
+      - { name: client, label: Client, widget: string }
+      - { name: description, label: Description, widget: markdown }
+      - { name: link, label: Link, widget: string, required: false }
+    editor: 
+      preview: false
+  - name: projects
+    label: Personal Projects
+    identifier_field: name
+    folder: projects
+    create: true
+    fields: 
+      - { name: name, label: Name, widget: string }
+      - { name: description, label: Description, widget: markdown }
+      - { name: link, label: Link, widget: string, required: false }
+    editor:
+        preview: false
