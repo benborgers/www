@@ -8,7 +8,7 @@ collections:
   - name: work
     label: Work Experience
     identifier_field: company
-    folder: work
+    folder: src/cms/work
     create: true
     fields:
       - { name: company, label: Company, widget: string }
@@ -19,7 +19,7 @@ collections:
   - name: client-work
     label: Client Work
     identifier_field: client
-    folder: client-work
+    folder: src/cms/client-work
     create: true
     fields: 
       - { name: client, label: Client, widget: string }
@@ -30,7 +30,7 @@ collections:
   - name: projects
     label: Personal Projects
     identifier_field: name
-    folder: projects
+    folder: src/cms/projects
     create: true
     fields: 
       - { name: name, label: Name, widget: string }
