@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Ben Borgers",
     description: "Site description.",
-    emoji: "🧪",
+    emoji: "🦕",
     siteUrl: "https://benborgers.com"
   },
   plugins: [
