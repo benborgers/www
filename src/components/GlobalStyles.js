@@ -34,6 +34,11 @@ export default () => {
 
         body {
           background-color: var(--background);
+          border-top: .5rem solid var(--brand);
+        }
+
+        ::selection {
+          background-color: var(--highlight);
         }
       `}
     />

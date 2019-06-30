@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
     "gatsby": "^2.10.4",
     "gatsby-image": "^2.2.3",
     "gatsby-plugin-emotion": "^4.1.0",

@@ -39,6 +39,10 @@ export default props => {
           margin: 0 auto;
           padding: 1.5rem;
           padding-top: 4rem;
+
+          @media (max-width: 43rem) {
+            padding-top: 1.5rem;
+          }
         `}
       >
         {props.children}

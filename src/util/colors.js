@@ -1,8 +1,11 @@
 module.exports = {
-  "text-black": "black",
-  "text-gray": "gray",
+  "text-black": "hsl(217, 70%, 15%)",
+  "text-gray": "hsl(217, 10%, 40%)",
 
-  "brand": "blue",
+  "brand": "hsl(217, 96%, 45%)",
+  "brand-light": "hsl(217, 100%, 80%)",
 
-  "background": "white"
+  "background": "hsl(218, 100%, 98%)",
+
+  "highlight": "hsl(218, 100%, 95%)"
 }
