@@ -33,18 +33,7 @@ export default props => {
 
       <GlobalStyles />
 
-      <div
-        css={css`
-          max-width: 40rem;
-          margin: 0 auto;
-          padding: 1.5rem;
-          padding-top: 4rem;
-
-          @media (max-width: 43rem) {
-            padding-top: 1.5rem;
-          }
-        `}
-      >
+      <div>
         {props.children}
       </div>
     </React.Fragment>
