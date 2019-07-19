@@ -1,10 +1,12 @@
 module.exports = {
   siteMetadata: {
-    emoji: "☁️"
+    emoji: "☁️",
+    siteUrl: "https://benborgers.com"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-emotion",
-    "gatsby-plugin-remove-trailing-slashes"
+    "gatsby-plugin-remove-trailing-slashes",
+    "gatsby-plugin-sitemap"
   ]
 }
