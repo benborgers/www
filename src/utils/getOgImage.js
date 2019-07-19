@@ -50,5 +50,5 @@ module.exports = (title, color) => {
     .trim()
   )
 
-  return `https://og-image.benborgers.now.sh?html=${clean(html)}&css=${clean(css)}`
+  return `https://og-image.benborgers.now.sh/${clean(html)}/${clean(css)}`
 }
