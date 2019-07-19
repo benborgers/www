@@ -50,7 +50,7 @@ export default props => {
           ${cssVars.join(";") + ";"}
 
           @media (max-width: 30rem) {
-            margin-top: 1.5rem;
+            margin-top: 0;
           }
         `}
       >
