@@ -29,7 +29,7 @@ export default props => {
     <>
       <Helmet>
         <title>{props.title || "Ben Borgers"}</title>
-        <link rel="shortcut icon" href={"https://emojicdn.elk.sh/" + query.emoji.siteMetadata.emoji} />
+        <link rel="shortcut icon" href={"https://emojicdn.elk.sh/" + (props.emoji || query.emoji.siteMetadata.emoji)} />
       </Helmet>
 
       <StyleReset />
