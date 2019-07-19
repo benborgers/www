@@ -30,7 +30,7 @@ export default props => {
 
   return (
     <>
-      <Helmet encodeSpecialCharacters={false}>
+      <Helmet>
         <link rel="shortcut icon" href={"https://emojicdn.elk.sh/" + (props.emoji || query.emoji.siteMetadata.emoji)} />
 
         <title>{title}</title>
