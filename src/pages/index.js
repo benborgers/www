@@ -9,7 +9,7 @@ export default () => {
   return (
     <Layout chip="" color="blue">
       <Text type="primary">
-        Hi! I'm Ben. I make websites and apps.
+        Hi! I'm Ben. I make apps and websites.
       </Text>
 
       <Text
