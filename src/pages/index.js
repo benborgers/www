@@ -7,7 +7,11 @@ import Link from "../components/Link"
 
 export default () => {
   return (
-    <Layout chip="" color="blue">
+    <Layout
+      description="Hi! I'm Ben. I make apps and websites."
+      chip=""
+      color="blue"
+    >
       <Text type="primary">
         Hi! I'm Ben. I make apps and websites.
       </Text>
