@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import Text from "../components/Text"
 
 export default () => {
-  const [pathname, setPathname] = useState("404")
+  const [pathname, setPathname] = useState("")
 
   useEffect(() => {
     setPathname(window.location.pathname.substr(1))
