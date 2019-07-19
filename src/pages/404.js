@@ -13,7 +13,7 @@ export default () => {
   return (
     <Layout
       title="404"
-      description="404: Not found."
+      description="This page could not be found."
       chip={pathname}
       color="blue"
     >
