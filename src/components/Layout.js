@@ -7,6 +7,7 @@ import StyleReset from "../components/StyleReset"
 import Chip from "../components/Chip"
 
 const colors = require("../utils/colors.js")
+const getOgImage = require("../utils/getOgImage.js")
 
 export default props => {
   const query = useStaticQuery(graphql`
@@ -25,11 +26,22 @@ export default props => {
     cssVars.push(`--${name}: ${colors[props.color][name]}`)
   }
 
+  const title = props.title || "Ben Borgers"
+
   return (
     <>
       <Helmet>
-        <title>{props.title || "Ben Borgers"}</title>
         <link rel="shortcut icon" href={"https://emojicdn.elk.sh/" + (props.emoji || query.emoji.siteMetadata.emoji)} />
+
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
+
+        <meta name="description" content={props.description} />
+        <meta property="og:description" content={props.description} />
+
+        <meta property="og:image" content={getOgImage(title, props.color)} />
+
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <StyleReset />
