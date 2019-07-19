@@ -9,7 +9,7 @@ const projects = require("../data/projects.json")
 
 export default () => {
   return (
-    <Layout chip="projects" color="blue">
+    <Layout title="Projects — Ben Borgers" chip="projects" color="blue">
       <div
         css={css`
           display: grid;
