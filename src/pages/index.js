@@ -1,53 +1,35 @@
 import React from "react"
-import { graphql } from "gatsby"
 import { css } from "@emotion/core"
-import styled from "@emotion/styled"
 
-import Layout from "../components/portfolio/layout"
+import Layout from "../components/Layout"
+import Text from "../components/Text"
+import Link from "../components/Link"
 
-export default ({ data }) => (
-  <Layout>
-    <div
-      css={css`
-        padding: 1.5rem;
-      `}>
-      <p>This site is currently under construction.</p>
-    </div>
-  </Layout>
-)
+export default () => {
+  return (
+    <Layout chip="" color="blue">
+      <Text type="primary">
+        Hi! I'm Ben. I make websites and apps.
+      </Text>
 
-export const query = graphql`
-  {
-    work: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/\\/work\\//"}}, sort: {fields: frontmatter___index, order: ASC}) {
-      nodes {
-        frontmatter {
-          company
-          position
-          dates
-          index
-        }
-      }
-    }
+      <Text
+        type="secondary"
+        style={css`
+          margin-bottom: 2rem;
+        `}
+      >
+        I'm on <Link to="https://twitter.com/benborgers">Twitter</Link>, <Link to="https://github.com/benborgers">GitHub</Link>, or you can <Link to="mailto:borgersbenjamin@gmail.com">email me</Link>.
+        There's also a list of my <Link to="/projects">projects</Link>.
+      </Text>
 
-    clientWork: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/\\/client-work\\//"}}, sort: {fields: frontmatter___index, order: ASC}) {
-      nodes {
-        frontmatter {
-          client
-          description
-          link
-          index
-        }
-      }
-    }
-
-    personalProjects: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/\\/projects\\//"}}, sort: {fields: frontmatter___index, order: ASC}) {
-      nodes {
-        frontmatter {
-          name
-          description
-          link
-        }
-      }
-    }
-  }
-`
+      <img
+        src="https://media.giphy.com/media/htinLom37opJDyuajR/giphy.gif"
+        alt="5 stars"
+        css={css`
+          border-radius: .3rem;
+          max-width: 100%;
+        `}
+      />
+    </Layout>
+  )
+}
