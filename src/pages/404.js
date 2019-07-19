@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { css } from "@emotion/core"
 
 import Layout from "../components/Layout"
 import Text from "../components/Text"
-import Link from "../components/Link"
-
-const projects = require("../data/projects.json")
 
 export default () => {
   const [pathname, setPathname] = useState("404")
