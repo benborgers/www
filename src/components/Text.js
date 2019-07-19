@@ -9,7 +9,7 @@ export default props => {
         color: ${props.type === "primary" ? "var(--500)" : props.type === "secondary" ? "var(--300)": ""};
         font-weight: ${props.type === "primary" ? "500" : props.type === "secondary" ? "400" : ""};
         margin-bottom: .5rem;
-        line-height: 1.4;
+        line-height: 1.5;
 
         ${props.style}
       `}
