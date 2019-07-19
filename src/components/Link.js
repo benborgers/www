@@ -10,7 +10,7 @@ export default props => {
     position: relative;
     cursor: pointer;
 
-    ::after {
+    ${props.noUnderline ? "" : `::after {
       content: "";
       position: absolute;
       left: -.1rem;
@@ -19,7 +19,7 @@ export default props => {
       height: .5rem;
       background-color: var(--100);
       z-index: -1;
-    }
+    }`}
   `
 
   if(props.to.startsWith("/")) {
