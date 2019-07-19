@@ -11,7 +11,12 @@ export default () => {
   }, [])
 
   return (
-    <Layout title="404" chip={pathname} color="blue">
+    <Layout
+      title="404"
+      description="404: Not found."
+      chip={pathname}
+      color="blue"
+    >
       <Text type="primary">
         Whoops! This page could not be found.
       </Text>
