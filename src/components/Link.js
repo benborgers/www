@@ -14,7 +14,7 @@ export default props => {
       content: "";
       position: absolute;
       left: -.1rem;
-      bottom: 0;
+      top: .9rem;
       width: calc(100% + .2rem);
       height: .5rem;
       background-color: var(--100);
