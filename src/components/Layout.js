@@ -42,6 +42,10 @@ export default props => {
           padding: 1.5rem;
           color: var(--500);
 
+          * {
+            -webkit-tap-highlight-color: var(--100);
+          }
+
           *::selection {
             color: var(--500);
             background-color: var(--100);

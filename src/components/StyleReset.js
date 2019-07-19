@@ -14,7 +14,6 @@ export default () => {
           background: transparent;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
-          -webkit-tap-highlight-color: transparent;
         }
       `}
     />
