@@ -35,6 +35,7 @@ module.exports = (title, color) => {
       font-family: Inter, sans-serif;
       font-size: 80px;
       font-weight: 600;
+      color: ${shades["500"]};
     }
   `
 
