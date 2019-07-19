@@ -5,7 +5,7 @@ import Link from "./Link"
 
 export default props => {
   return (
-    <Link to="/">
+    <Link to="/" noUnderline>
       <div
         css={css`
           background-color: var(--100);
