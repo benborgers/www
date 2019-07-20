@@ -1,5 +1,10 @@
 [
   {
+    "name": "Progress",
+    "link": "/progress",
+    "tagline": "Keeping track of how much of the school year we've made it through."
+  },
+  {
     "name": "bio.elk.sh",
     "link": "https://bio.elk.sh",
     "tagline": "A study guide for the AP Biology test."
