@@ -9,6 +9,7 @@ export default props => {
     text-decoration: none;
     position: relative;
     cursor: pointer;
+    display: inline-block;
 
     ${props.noUnderline ? "" : `::after {
       content: "";
