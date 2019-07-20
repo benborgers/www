@@ -7,6 +7,12 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-emotion",
     "gatsby-plugin-remove-trailing-slashes",
-    "gatsby-plugin-sitemap"
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-fathom",
+      options: {
+        siteId: "ZWCPJCUA"
+      }
+    }
   ]
 }
