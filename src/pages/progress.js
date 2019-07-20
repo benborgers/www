@@ -81,7 +81,7 @@ export default () => {
   const enterAnimation = keyframes`
     from {
       opacity: .3;
-      transform: translateY(.2rem);
+      transform: translateY(.15rem);
     }
 
     to {
