@@ -48,7 +48,7 @@ export default () => {
   const [canRender, setCanRender] = useState(false)
 
   useEffect(() => {
-    const rawNow = new Date("October 2, 2019")
+    const rawNow = new Date()
     const endTimeToday = new Date((new Date((new Date((new Date()).setHours(14)).setMinutes(25)))).setSeconds(0))
     const isAfterEndTime = rawNow > endTimeToday
     
