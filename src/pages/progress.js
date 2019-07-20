@@ -131,7 +131,7 @@ export default () => {
           {nextException ? 
           
           <Text type="secondary">
-            Our next {nextException.reason === 0 ? "day with no school" : nextException.reason === 1 ? "half day" : "irregular day"} is{" "}
+            Our next {nextException.reason === 0 ? "day off" : nextException.reason === 1 ? "half day" : "irregular day"} is{" "}
             {(new Date(nextException.year, nextException.month, nextException.day).toLocaleString("en-US", {
               timeZone: "America/New_York",
               weekday: "long",
