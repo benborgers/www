@@ -43,7 +43,8 @@ export default () => {
     return count
   }
 
-  const [percentLeft, setPercentLeft] = useState()
+  const [percent, setPercent] = useState()
+  const [daysLeft, setDaysLeft] = useState()
   const [nextException, setNextException] = useState()
   const [canRender, setCanRender] = useState(false)
 
@@ -62,12 +63,19 @@ export default () => {
 
     const daysPassed = getWeekdaysInclusive(bookends.first, nowAsDate)
     const totalDays = getWeekdaysInclusive(bookends.first, bookends.last)
+    setDaysLeft(totalDays - daysPassed)
+
+    console.groupCollapsed("📈 Stats")
+    console.log("Days passed: " + daysPassed)
+    console.log("Days left: " + (totalDays - daysPassed))
+    console.log("Total: " + totalDays)
+    console.groupEnd()
     
     const percent = Math.round(daysPassed/totalDays * 10000) / 100
     if(percent > 100) {
-      setPercentLeft(100)
+      setPercent(100)
     } else {
-      setPercentLeft(percent)
+      setPercent(percent)
     }
 
 
@@ -105,7 +113,7 @@ export default () => {
           `}
         >
           <Text type="primary">
-            We've made it through {percentLeft}
+            We've made it through {percent}
               <span
                 css={css`
                   font-size: inherit;
@@ -116,7 +124,8 @@ export default () => {
                 %
               </span>
             {" "}of the school year.
-            {percentLeft === 100 ? " Yay!" : ""}
+            {percent === 100 ? " Yay!" : ""}
+            {daysLeft < 30 && percent !== 100 ? ` ${daysLeft} day${daysLeft !== 1 ? "s" : ""} left.` : ""}
           </Text>
 
           {nextException ? 
