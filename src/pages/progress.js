@@ -101,7 +101,7 @@ export default () => {
   return (
     <Layout
       title="Progress"
-      description=""
+      description="Keeping track of how much of the LHS school year we've made it through."
       emoji="🎒"
       chip="progress"
       color="red"
