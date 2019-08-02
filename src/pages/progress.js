@@ -65,7 +65,7 @@ export default () => {
     const totalDays = getWeekdaysInclusive(bookends.first, bookends.last)
     setDaysLeft(totalDays - daysPassed)
 
-    console.groupCollapsed("📈 Stats")
+    console.groupCollapsed("Stats")
     console.log("Days passed: " + daysPassed)
     console.log("Days left: " + (totalDays - daysPassed))
     console.log("Total: " + totalDays)
