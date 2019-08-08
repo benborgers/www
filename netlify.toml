@@ -4,3 +4,9 @@
 
 [dev]
   command = "gatsby develop"
+
+[[redirects]]
+  from = "https://benborgers.netlify.com/*"
+  to = "https://benborgers.com/:splat"
+  status = 301
+  force = true
