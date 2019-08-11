@@ -9,7 +9,7 @@ module.exports = (title, color) => {
         <p>${title}</p>
       </div>
     </main>
-`
+  `
 
   const css = `
     @import url("https://rsms.me/inter/inter.css");
