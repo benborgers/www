@@ -11,7 +11,7 @@ export default props => {
     cursor: pointer;
     display: inline-block;
 
-    ${props.noUnderline && "text-decoration: none;"`}
+    ${props.noUnderline && "text-decoration: none;"}
   `
 
   if(props.to.startsWith("/")) {
