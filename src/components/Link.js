@@ -6,21 +6,12 @@ export default props => {
   const style = css`
     color: inherit;
     font-size: inherit;
-    text-decoration: none;
+    text-decoration: underline;
     position: relative;
     cursor: pointer;
     display: inline-block;
 
-    ${props.noUnderline ? "" : `::after {
-      content: "";
-      position: absolute;
-      left: -.1rem;
-      top: .9rem;
-      width: calc(100% + .2rem);
-      height: .5rem;
-      background-color: var(--100);
-      z-index: -1;
-    }`}
+    ${props.noUnderline && "text-decoration: none;"`}
   `
 
   if(props.to.startsWith("/")) {
