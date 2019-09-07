@@ -102,7 +102,7 @@ export default () => {
     <Layout
       title="Progress"
       description="Keeping track of how much of the LHS school year we've made it through."
-      emoji="🎒"
+      emoji="⏳"
       chip="progress"
       color="red"
     >
