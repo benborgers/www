@@ -1,1 +1,13 @@
-{}
+{
+  "project_list": [
+    {
+      "text": "After Lexington High School changed their schedule to a more confusing 6-day rotation, I made [Blocks](https://blocks.elk.sh), a progressive web app that more than 900 students and teachers regularly use to check their schedule. "
+    },
+    {
+      "text": "While procrastinating my homework, I made [Progress](/progress) to see how much of the year we had made it through. "
+    },
+    {
+      "text": "In the process of studying for the AP Biology test, I made a [study guide](https://bio.elk.sh) for quizzing yourself."
+    }
+  ]
+}
