@@ -22,9 +22,9 @@ collections:
               - label: Text
                 name: text
                 widget: markdown
-      - label: Client Work
-        name: client_work
-        file: src/cms/client_work.json
+      - label: Clients
+        name: clients
+        file: src/cms/clients.json
         fields:
           - label: projects
             name: projects
