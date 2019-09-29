@@ -32,8 +32,9 @@ export default () => {
           body {
             --text-primary: hsl(272, 20%, 95%);
             --text-secondary: hsl(272, 20%, 80%);
-            --text-tertiary: hsl(272, 40%, 70%);
             --text-highlight: hsl(253, 100%, 75%);
+
+            --highlight-light: hsl(253, 20%, 30%);
 
             --background: hsl(240, 19%, 11%);
           }
@@ -47,6 +48,7 @@ export default () => {
             padding: 0;
             border: none;
             background: transparent;
+            box-sizing: border-box;
             -webkit-appearance: none;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -60,106 +62,149 @@ export default () => {
             background-color: var(--text-highlight);
             color: var(--text-primary);
           }
+
+          ::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+          }
         `}
       />
 
       <div
         css={css`
           padding: 3rem;
-          max-width: 30rem;
+
+          display: grid;
+          grid-template-rows: auto auto;
+          grid-template-columns: minmax(0, 30rem) 1fr;
+          grid-column-gap: 5rem;
+          grid-template-areas:  "main social"
+                                "main .";
+
+          @media (max-width: 42rem) {
+            padding: 1.5rem;
+            padding-bottom: 3rem;
+
+            grid-template-areas:  "main main"
+                                  "social social";
+          }
         `}
       >
-        <H1>
-          Ben Borgers
-        </H1>
-
-        <p
+        <div
           css={css`
-            line-height: 1.5;
-            color: var(--text-secondary);
+            grid-area: main;
+          `}
+        >
+          <H1>
+            Ben Borgers
+          </H1>
 
-            a {
-              color: var(--text-highlight);
-              text-decoration: none;
+          <p
+            css={css`
+              line-height: 1.5;
+              color: var(--text-secondary);
+
+              a {
+                color: var(--text-highlight);
+                text-decoration: none;
+              }
+            `}
+          >
+            A 17 year old developer in Boston, Massachusetts. Currently in high school, and interned at <a href="https://www.ibm.com/security/data-security/guardium">IBM</a> last summer.
+          </p>
+
+          <Spacer height={4} />
+
+          <H1>
+            Projects
+          </H1>
+
+          {projects.projects.map(project => {
+            const text = snarkdown(project.text)
+
+            return (
+              <p
+                dangerouslySetInnerHTML={{__html: text }}
+                css={css`
+                  line-height: 1.5;
+                  color: var(--text-secondary);
+                  margin-bottom: 1.5rem;
+
+                  a {
+                    color: var(--text-highlight);
+                    text-decoration: none;
+                  }
+                `}
+                key={project.text}
+              />
+            )
+          })}
+          
+          <Spacer height={3} />
+
+          <H1>
+            Clients
+          </H1>
+
+          {clients.projects.map(project => {
+            const text = snarkdown(project.text)
+
+            return (
+              <p
+                dangerouslySetInnerHTML={{__html: text }}
+                css={css`
+                  line-height: 1.5;
+                  color: var(--text-secondary);
+                  margin-bottom: 1.5rem;
+
+                  a {
+                    color: var(--text-highlight);
+                    text-decoration: none;
+                  }
+                `}
+                key={project.text}
+              />
+            )
+          })}
+        </div>
+
+        <div
+          css={css`
+            grid-area: social;
+            justify-self: end;
+            border-right: 3px solid var(--highlight-light);
+            padding: .5rem 0;
+            padding-right: 2rem;
+
+            @media (max-width: 42rem) {
+              justify-self: start;
+              margin-top: 4rem;
+              border: none;
+              padding-top: 2rem;
+              border-top: 3px solid var(--highlight-light);
+              width: 100%;
             }
           `}
         >
-          A 17 year old developer in Boston, Massachusetts. Currently in high school, and interned at <a href="https://www.ibm.com/security/data-security/guardium">IBM</a> last summer.
-        </p>
+          <SocialLine
+            name="Email"
+            linkText="borgersbenjamin@gmail.com"
+            link="mailto:borgersbenjamin@gmail.com"
+          />
 
-        <Spacer height={4} />
+          <SocialLine
+            name="GitHub"
+            linkText="github.com/benborgers"
+            link="https://github.com/benborgers"
+          />
 
-        <SocialLine
-          name="Email"
-          linkText="borgersbenjamin@gmail.com"
-          link="mailto:borgersbenjamin@gmail.com"
-        />
-
-        <SocialLine
-          name="GitHub"
-          linkText="github.com/benborgers"
-          link="https://github.com/benborgers"
-        />
-
-        <SocialLine
-          name="Twitter"
-          linkText="twitter.com/benborgers"
-          link="https://twitter.com/benborgers"
-        />
-
-        <Spacer height={3} />
-
-        <H1>
-          Projects
-        </H1>
-
-        {projects.projects.map(project => {
-          const text = snarkdown(project.text)
-
-          return (
-            <p
-              dangerouslySetInnerHTML={{__html: text }}
-              css={css`
-                line-height: 1.5;
-                color: var(--text-secondary);
-                margin-bottom: 1.5rem;
-
-                a {
-                  color: var(--text-highlight);
-                  text-decoration: none;
-                }
-              `}
-              key={project.text}
-            />
-          )
-        })}
-        
-        <Spacer height={3} />
-
-        <H1>
-          Clients
-        </H1>
-
-        {clients.projects.map(project => {
-          const text = snarkdown(project.text)
-
-          return (
-            <p
-              dangerouslySetInnerHTML={{__html: text }}
-              css={css`
-                line-height: 1.5;
-                color: var(--text-secondary);
-                margin-bottom: 1.5rem;
-
-                a {
-                  color: var(--text-highlight);
-                  text-decoration: none;
-                }
-              `}
-              key={project.text}
-            />
-          )
-        })}
+          <SocialLine
+            name="Twitter"
+            linkText="twitter.com/benborgers"
+            link="https://twitter.com/benborgers"
+            last={true}
+          />
+        </div>
       </div>
     </>
   )
@@ -193,6 +238,10 @@ const SocialLine = props => {
       css={css`
         margin-bottom: 2rem;
         max-width: max-content;
+
+        ${props.last && `
+          margin-bottom: 0;
+        `}
       `}
     >
       <p
