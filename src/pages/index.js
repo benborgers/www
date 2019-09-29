@@ -13,6 +13,8 @@ export default () => {
   const title = "Ben Borgers"
   const description = "Hi! I'm Ben. I make apps and websites."
 
+  const snarkdownWithLinks = text => snarkdown(text).replace(/<a/g, `<a target="_blank" rel="noopener noreferrer"`)
+
   return (
     <>
       <Helmet>
@@ -112,7 +114,17 @@ export default () => {
               }
             `}
           >
-            A 17 year old developer in Boston, Massachusetts. Currently in high school, and interned at <a href="https://www.ibm.com/security/data-security/guardium">IBM</a> last summer.
+            A 17 year old developer in Boston, Massachusetts. Currently in high school, and interned at
+            {" "}
+            <a
+              href="https://www.ibm.com/security/data-security/guardium"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              IBM
+            </a>
+            {" "}
+            last summer.
           </p>
 
           <Spacer height={4} />
@@ -122,7 +134,7 @@ export default () => {
           </H1>
 
           {projects.projects.map(project => {
-            const text = snarkdown(project.text)
+            const text = snarkdownWithLinks(project.text)
 
             return (
               <p
@@ -149,7 +161,7 @@ export default () => {
           </H1>
 
           {clients.projects.map(project => {
-            const text = snarkdown(project.text)
+            const text = snarkdownWithLinks(project.text)
 
             return (
               <p
