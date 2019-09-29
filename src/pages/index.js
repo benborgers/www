@@ -289,6 +289,7 @@ const LeadingDash = () => {
         color: var(--text-primary);
         display: inline-block;
         margin-right: .5rem;
+        user-select: none;
       `}
     >
       -
