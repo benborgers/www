@@ -74,6 +74,11 @@ export default () => {
         css={css`
           padding: 3rem;
 
+          @media (max-width: 50rem) {
+            padding: 1.5rem;
+            padding-bottom: 3rem;
+          }
+
           display: grid;
           grid-template-rows: auto auto;
           grid-template-columns: minmax(0, 30rem) 1fr;
@@ -82,9 +87,6 @@ export default () => {
                                 "main .";
 
           @media (max-width: 42rem) {
-            padding: 1.5rem;
-            padding-bottom: 3rem;
-
             grid-template-areas:  "main main"
                                   "social social";
           }
