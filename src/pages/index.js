@@ -112,7 +112,7 @@ export default () => {
           Projects
         </H1>
 
-        {projects.project_list.map(project => {
+        {projects.projects.map(project => {
           const text = snarkdown(project.text)
 
           return (
