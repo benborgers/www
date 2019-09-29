@@ -8,6 +8,7 @@ import Spacer from "../components/Spacer"
 
 export default () => {
   const projects = require("../cms/projects.json")
+  const clients = require("../cms/clients.json")
 
   const title = "Ben Borgers"
   const description = "Hi! I'm Ben. I make apps and websites."
@@ -113,6 +114,33 @@ export default () => {
         </H1>
 
         {projects.projects.map(project => {
+          const text = snarkdown(project.text)
+
+          return (
+            <p
+              dangerouslySetInnerHTML={{__html: text }}
+              css={css`
+                line-height: 1.5;
+                color: var(--text-secondary);
+                margin-bottom: 1.5rem;
+
+                a {
+                  color: var(--text-highlight);
+                  text-decoration: none;
+                }
+              `}
+              key={project.text}
+            />
+          )
+        })}
+        
+        <Spacer height={3} />
+
+        <H1>
+          Clients
+        </H1>
+
+        {clients.projects.map(project => {
           const text = snarkdown(project.text)
 
           return (
