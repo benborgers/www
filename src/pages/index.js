@@ -128,6 +128,7 @@ export default () => {
                   text-decoration: none;
                 }
               `}
+              key={project.text}
             />
           )
         })}
