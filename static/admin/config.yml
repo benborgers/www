@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  # name: test-repo
+  branch: redesign
+media_folder: static/assets
+public_folder: assets
+site_url: https://benborgers.com
+collections:
+  - label: Pages
+    label_singular: page
+    name: pages
+    editor:
+      preview: false
+    files: 
+      - label: Projects
+        name: projects
+        file: src/cms/projects.json
+        fields:
+          - label: Project List
+            name: project_list
+            widget: list
+            fields:
+              - label: Text
+                name: text
+                widget: markdown

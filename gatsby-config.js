@@ -13,6 +13,7 @@ module.exports = {
       options: {
         siteId: "ZWCPJCUA"
       }
-    }
+    },
+    "gatsby-plugin-netlify-cms"
   ]
 }
