@@ -76,9 +76,14 @@ export default () => {
           css={css`
             line-height: 1.5;
             color: var(--text-secondary);
+
+            a {
+              color: var(--text-highlight);
+              text-decoration: none;
+            }
           `}
         >
-          A 16 year old developer in Boston, Massachusetts.
+          A 17 year old developer in Boston, Massachusetts. Currently in high school, and interned at <a href="https://www.ibm.com/security/data-security/guardium">IBM</a> last summer.
         </p>
 
         <Spacer height={4} />
