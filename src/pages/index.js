@@ -286,7 +286,6 @@ const LeadingDash = () => {
   return (
     <span
       css={css`
-        color: var(--text-primary);
         display: inline-block;
         margin-right: .5rem;
         user-select: none;
