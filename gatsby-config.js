@@ -1,6 +1,5 @@
 module.exports = {
   siteMetadata: {
-    emoji: "⛅",
     siteUrl: "https://benborgers.com"
   },
   plugins: [

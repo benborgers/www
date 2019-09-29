@@ -12,6 +12,7 @@
     "netlify-cms-app": "^2.9.7",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "snarkdown": "^1.2.2"
   }
 }

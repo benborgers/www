@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { Helmet } from "react-helmet"
 
@@ -10,16 +9,6 @@ const colors = require("../utils/colors.js")
 const getOgImage = require("../utils/getOgImage.js")
 
 export default props => {
-  const query = useStaticQuery(graphql`
-    {
-      emoji: site {
-        siteMetadata {
-          emoji
-        }
-      }
-    }
-  `)
-
   const cssVars = []
 
   for(const name in colors[props.color]) {
@@ -31,7 +20,7 @@ export default props => {
   return (
     <>
       <Helmet>
-        <link rel="shortcut icon" href={"https://emojicdn.elk.sh/" + (props.emoji || query.emoji.siteMetadata.emoji)} />
+        <link rel="shortcut icon" href={"https://emojicdn.elk.sh/" + props.emoji} />
 
         <title>{title}</title>
         <meta property="og:title" content={title} />
