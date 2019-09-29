@@ -11,7 +11,7 @@ export default () => {
   const clients = require("../cms/clients.json")
 
   const title = "Ben Borgers"
-  const description = "Hi! I'm Ben. I make apps and websites."
+  const description = "A 17 year old developer in Boston, Massachusetts who makes apps and websites. Currently in high school, but interned at IBM last summer."
 
   const snarkdownWithLinks = text => snarkdown(text).replace(/<a/g, `<a target="_blank" rel="noopener noreferrer"`)
 
@@ -114,7 +114,7 @@ export default () => {
               }
             `}
           >
-            A 17 year old developer in Boston, Massachusetts. Currently in high school, and interned at
+            A 17 year old developer in Boston, Massachusetts. Currently in high school, but interned at
             {" "}
             <a
               href="https://www.ibm.com/security/data-security/guardium"
