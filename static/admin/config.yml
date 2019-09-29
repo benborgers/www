@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  # name: test-repo
   branch: redesign
 media_folder: static/assets
 public_folder: assets
@@ -16,10 +15,21 @@ collections:
         name: projects
         file: src/cms/projects.json
         fields:
-          - label: Project List
-            name: project_list
+          - label: Projects
+            name: projects
             widget: list
             fields:
+              - label: Text
+                name: text
+                widget: markdown
+      - label: Client Work
+        name: client_work
+        file: src/cms/client_work.json
+        fields:
+          - label: projects
+            name: projects
+            widget: list
+            fields: 
               - label: Text
                 name: text
                 widget: markdown
