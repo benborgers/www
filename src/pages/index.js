@@ -36,7 +36,7 @@ export default () => {
             --text-secondary: hsl(272, 20%, 80%);
             --text-highlight: hsl(253, 100%, 75%);
 
-            --highlight-light: hsl(253, 20%, 30%);
+            --highlight-light: hsl(253, 20%, 20%);
 
             --background: hsl(240, 19%, 11%);
           }
