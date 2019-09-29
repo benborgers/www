@@ -75,7 +75,7 @@ export default () => {
           padding: 3rem;
 
           @media (max-width: 50rem) {
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             padding-bottom: 3rem;
           }
 
