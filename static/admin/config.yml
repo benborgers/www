@@ -43,7 +43,7 @@ collections:
       preview: false
     format: json
     slug: "{{id}}"
-    summary: "Invoice for {{client}}, created {{created}}. Paid: {{paid}}."
+    summary: "Invoice for {{client}}. Paid: {{paid}}."
     preview_path: "invoices/{{id}}"
     fields: 
       - label: ID
