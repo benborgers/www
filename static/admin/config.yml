@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  # branch: invoicing
+  branch: invoicing
 media_folder: static/assets
 public_folder: assets
 site_url: https://benborgers.com
