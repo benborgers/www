@@ -10,6 +10,10 @@
     {
       "description": "Maintenance and hosting - first year",
       "amount": 36
+    },
+    {
+      "description": "Another fee",
+      "amount": 5
     }
   ],
   "paid": false,
