@@ -33,3 +33,50 @@ collections:
               - label: Text
                 name: text
                 widget: markdown
+  - label: Invoices
+    label_singular: invoice
+    name: invoices
+    folder: src/cms/invoices
+    identifier_field: id
+    create: true
+    editor: 
+      preview: false
+    format: json
+    slug: "{{id}}"
+    summary: "Invoice for {{client}}. Paid: {{paid}}."
+    preview_path: "invoices/{{id}}"
+    fields: 
+      - label: ID
+        name: id
+        widget: string
+      - label: Created
+        name: created
+        widget: datetime
+        timeFormat: false
+      - label: Client
+        name: client
+        widget: string
+      - label: Line Items
+        label_singular: line item
+        name: line_items
+        widget: list
+        fields: 
+          - label: Description
+            name: description
+            widget: string
+          - label: Amount
+            name: amount
+            widget: number
+            min: 1
+      - label: Paid
+        name: paid
+        widget: select
+        options:
+          - label: No
+            value: false
+          - label: Yes
+            value: true
+        default: false
+      - label: Description
+        name: description
+        widget: markdown
