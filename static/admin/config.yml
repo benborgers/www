@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: invoicing
+  # branch: invoicing
 media_folder: static/assets
 public_folder: assets
 site_url: https://benborgers.com
@@ -49,6 +49,7 @@ collections:
       - label: ID
         name: id
         widget: string
+        hint: random.org/strings/?num=1&len=6&digits=on&loweralpha=on&unique=on&format=plain&rnd=new
       - label: Created
         name: created
         widget: datetime
