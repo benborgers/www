@@ -162,6 +162,7 @@ export default ({ pageContext }) => {
                 background-color: hsl(0, 0%, 5%);
                 color: white;
                 border-radius: 5px;
+                cursor: pointer;
               `}
             >
               Pay ${sum} →
