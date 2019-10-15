@@ -44,7 +44,7 @@ collections:
     format: json
     slug: "{{id}}"
     summary: "Invoice for {{client}}. Paid: {{paid}}."
-    preview_path: "invoices/{{id}}"
+    preview_path: "invoice/{{id}}"
     fields: 
       - label: ID
         name: id
