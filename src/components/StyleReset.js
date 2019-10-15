@@ -6,7 +6,7 @@ export default () => {
     <Global
       styles={css`
         * {
-          font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
           font-size: 1rem;
           margin: 0;
           padding: 0;

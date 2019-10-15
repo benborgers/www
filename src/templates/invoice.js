@@ -26,7 +26,7 @@ export default ({ pageContext }) => {
           }
 
           * {
-            font-family: system-ui, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
             font-size: 1rem;
             color: var(--text-secondary);
             font-weight: 400;
