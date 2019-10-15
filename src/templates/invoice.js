@@ -198,7 +198,6 @@ export default ({ pageContext }) => {
               <strong>
                 Ben Borgers
               </strong>
-              .
             </p>
           </div>
         </div>
