@@ -9,6 +9,8 @@ export default ({ pageContext }) => {
   let sum = 0 
   invoice.line_items.forEach(item => sum += item.amount)
 
+  const mailto = "mailto:borgersbenjamin@gmail.com"
+
   /* Stripe */
 
   const [stripe, setStripe] = useState()
@@ -92,7 +94,23 @@ export default ({ pageContext }) => {
       />
 
       {invoice.paid &&
-        <p>thx for paying</p>
+        <div
+          css={css`
+            padding: 1rem;
+          `}
+        >
+          <p
+            css={css`
+              margin-bottom: .5rem;
+            `}
+          >
+            This invoice has been paid. Thank you!
+          </p>
+
+          <p>
+            Please <a href={mailto}>contact me</a> with any questions.
+          </p>
+        </div>
       }
 
       {!invoice.paid &&
@@ -103,6 +121,15 @@ export default ({ pageContext }) => {
             grid-column-gap: 3rem;
             grid-template-areas: "left right";
             padding: 3rem;
+
+            @media (max-width: 50rem) {
+              grid-template-columns: 1fr;
+              grid-template-rows: auto auto;
+              grid-row-gap: 2rem;
+              grid-template-areas:  "left"
+                                    "right";
+              padding: 1.5rem;
+            }
           `}
         >
           <div
@@ -113,6 +140,10 @@ export default ({ pageContext }) => {
             <div
               css={css`
                 margin-bottom: 4rem;
+
+                @media (max-width: 50rem) {
+                  margin-bottom: 2rem;
+                }
               `}
             >
               <p
@@ -213,17 +244,38 @@ export default ({ pageContext }) => {
             >
               {loading ? "loading..." : `Pay ${sum} →`}
             </button>
+
+            <p
+              css={css`
+                font-style: italic;
+                margin-top: 2rem;
+                color: var(--text-tertiary);
+                font-weight: 500;
+
+                * {
+                  color: inherit;
+                  font-weight: inherit;
+                }
+              `}
+            >
+              Please feel free to <a href={mailto}>contact me</a> with any questions.
+            </p>
           </div>
 
           <div
             css={css`
               grid-area: right;
               justify-self: end;
+
+              @media (max-width: 50rem) {
+                justify-self: start;
+              }
             `}
           >
             <p
               css={css`
                 color: var(--text-tertiary);
+                line-height: 1.4;
 
                 strong {
                   font-weight: 600;
@@ -243,7 +295,7 @@ export default ({ pageContext }) => {
               </strong>
               {" by "}
               <strong>
-                Ben Borgers
+                Ben&nbsp;Borgers
               </strong>
             </p>
           </div>
