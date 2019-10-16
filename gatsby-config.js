@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        exclude: ["/invoice/*"]
+        exclude: ["/invoice/*", "/invoice-paid"]
       }
     },
     {
