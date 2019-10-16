@@ -33,7 +33,7 @@ collections:
                 name: text
                 widget: markdown
   - label: Invoices
-    label_singular: invoice
+    label_singular: Invoice
     name: invoices
     folder: src/cms/invoices
     identifier_field: id
@@ -79,4 +79,34 @@ collections:
         default: false
       - label: Description
         name: description
+        widget: markdown
+  - label: Reference
+    label_singular: Reference
+    name: reference
+    folder: src/cms/reference
+    create: true
+    editor:
+      preview: false
+    format: json
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: SEO Description
+        name: seo_description
+        widget: text
+      - label: Last Updated
+        name: last_updated
+        widget: datetime
+        timeFormat: false 
+      - label: Published
+        name: published
+        widget: select
+        options: 
+          - label: No
+            value: false
+          - label: Yes
+            value: true
+      - label: Body
+        name: body
         widget: markdown
