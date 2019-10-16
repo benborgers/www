@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { css, Global } from "@emotion/core"
 import { Helmet } from "react-helmet"
 import snarkdown from "snarkdown"
@@ -9,12 +9,57 @@ export default ({ pageContext }) => {
   let sum = 0 
   invoice.line_items.forEach(item => sum += item.amount)
 
+  /* Stripe */
+
+  const [stripe, setStripe] = useState()
+
+  useEffect(() => {
+    setTimeout(() => {
+      setStripe(window.Stripe("pk_live_HlSsuYKrOx1DlJAjsPcLGpm7"))
+    }, 2000)
+  }, [])
+
+  const endpoint = "https://invoicing.glitch.me"
+
+  useEffect(() => {
+    fetch(endpoint + "/ping")
+  }, [])
+
+  const [loading, setLoading] = useState(false) // whether Stripe Checkout is loading right now
+
+  const handlePay = () => {
+    if(!stripe) {
+      return alert("Not done loading yet, please wait a couple seconds and try again.")
+    }
+
+    setLoading(true)
+
+    fetch(endpoint + "/session", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        description: `Invoice for ${invoice.client} from Ben Borgers`,
+        amount: sum,
+        source_url: `https://benborgers.com/invoice/${invoice.id}`
+      })
+    })
+      .then(res => res.json())
+      .then(json => {
+        stripe.redirectToCheckout({
+          sessionId: json.id
+        })
+      })
+  }
+
   return (
     <>
       <Helmet>
         <title>Invoice for {invoice.client}</title>
         <link rel="shortcut icon" href="https://emojicdn.elk.sh/💵" />
         <meta name="robots" content="noindex" />
+        <script src="https://js.stripe.com/v3/"></script>
       </Helmet>
 
       <Global
@@ -164,8 +209,9 @@ export default ({ pageContext }) => {
                 border-radius: 5px;
                 cursor: pointer;
               `}
+              onClick={handlePay}
             >
-              Pay ${sum} →
+              {loading ? "loading..." : `Pay ${sum} →`}
             </button>
           </div>
 
