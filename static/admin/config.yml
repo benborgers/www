@@ -107,6 +107,7 @@ collections:
             value: false
           - label: Yes
             value: true
+        default: false
       - label: Body
         name: body
         widget: markdown
