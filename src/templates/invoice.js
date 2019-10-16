@@ -93,7 +93,7 @@ export default ({ pageContext }) => {
         `}
       />
 
-      {invoice.paid &&
+      {invoice.paid === "yes" &&
         <div
           css={css`
             padding: 1rem;
@@ -113,7 +113,7 @@ export default ({ pageContext }) => {
         </div>
       }
 
-      {!invoice.paid &&
+      {invoice.paid === "no" &&
         <div
           css={css`
             display: grid;

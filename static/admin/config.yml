@@ -73,9 +73,9 @@ collections:
         widget: select
         options:
           - label: No
-            value: false
+            value: "no"
           - label: Yes
-            value: true
+            value: "yes"
         default: false
       - label: Description
         name: description
@@ -104,9 +104,9 @@ collections:
         widget: select
         options: 
           - label: No
-            value: false
+            value: "no"
           - label: Yes
-            value: true
+            value: "yes"
         default: false
       - label: Body
         name: body
