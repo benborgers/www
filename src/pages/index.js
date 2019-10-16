@@ -1,7 +1,7 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { css, Global } from "@emotion/core"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 import snarkdown from "snarkdown"
 
 import Spacer from "../components/Spacer"

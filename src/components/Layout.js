@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 
 import StyleReset from "../components/StyleReset"
 import Chip from "../components/Chip"

@@ -3,7 +3,7 @@ module.exports = {
     siteUrl: "https://benborgers.com"
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
+    "@rhysforyou/gatsby-plugin-react-helmet-async",
     "gatsby-plugin-emotion",
     "gatsby-plugin-remove-trailing-slashes",
     {
