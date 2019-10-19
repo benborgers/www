@@ -108,7 +108,7 @@ export default ({ pageContext }) => {
           >
             Last updated:
             {" "}
-            <time itemprop="dateModified" datetime={post.last_updated}>
+            <time itemProp="dateModified" dateTime={post.last_updated}>
               {new Date(post.last_updated).toLocaleString("en-US", {
                 timeZone: "America/New_York",
                 month: "long",
