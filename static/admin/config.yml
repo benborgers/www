@@ -88,6 +88,7 @@ collections:
     editor:
       preview: false
     format: json
+    preview_path: "reference/{{slug}}"
     fields:
       - label: Title
         name: title
