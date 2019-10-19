@@ -10,6 +10,7 @@
     "gatsby-plugin-remove-trailing-slashes": "^2.1.9",
     "gatsby-plugin-sitemap": "^2.2.16",
     "netlify-cms-app": "^2.9.7",
+    "normalize.css": "^8.0.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-helmet-async": "^1.0.4",

@@ -43,7 +43,7 @@ export default () => {
 
           * {
             font-family: "Inconsolata", "Menlo", monospace;
-            font-size: 1rem;
+            font-size: 1rem !important;
             color: var(--text-primary);
             font-weight: 400;
             margin: 0;
