@@ -22,8 +22,8 @@ export default ({ pageContext }) => {
         <meta property="og:site_name" content="Ben Borgers" />
         <meta property="og:title" content={title} />
         <meta property="description" content={description} />
-        {/* <meta property="og:image" content="" /> */}
-        <meta property="og:url" content={"https://benborgers.com/reference/" + post.slug} />
+        <meta property="og:image" content={`https://benborgers.com/reference/${post.slug}.png`} />
+        <meta property="og:url" content={`https://benborgers.com/reference/${post.slug}`} />
 
         
         <link rel="shortcut icon" href="https://emojicdn.elk.sh/👨‍💻" />
@@ -59,7 +59,7 @@ export default ({ pageContext }) => {
           a {
             color: var(--text-black);
             text-decoration: underline;
-            transition: text-decoration-color .3s;
+            transition: text-decoration-color .2s;
           }
 
           a:hover {
@@ -118,7 +118,7 @@ export default ({ pageContext }) => {
             </time>
           </p>
 
-          <p
+          <div
             dangerouslySetInnerHTML={{ __html: parseMarkdown(post.body) }}
             css={css`
               color: var(--text-black);
