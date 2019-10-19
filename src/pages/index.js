@@ -27,6 +27,9 @@ export default () => {
         <link rel="icon" href="https://emojicdn.elk.sh/⛅" />
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap" />
+
+        {/* Google Search Console verification - do not remove */}
+        <meta name="google-site-verification" content="36SYJxqahg7QGGsxCBTHGhLfvekzoioL40Xo1jPgqUA" />
       </Helmet>
 
       <Global
