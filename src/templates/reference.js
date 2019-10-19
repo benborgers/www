@@ -21,7 +21,7 @@ export default ({ pageContext }) => {
 
         <meta property="og:site_name" content="Ben Borgers" />
         <meta property="og:title" content={title} />
-        <meta property="description" content={description} />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content={`https://benborgers.com/reference/${post.slug}.png`} />
         <meta property="og:url" content={`https://benborgers.com/reference/${post.slug}`} />
 
