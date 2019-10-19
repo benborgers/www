@@ -26,7 +26,7 @@ export default ({ pageContext }) => {
         <meta property="og:url" content={`https://benborgers.com/reference/${post.slug}`} />
 
         
-        <link rel="shortcut icon" href="https://emojicdn.elk.sh/👨‍💻" />
+        <link rel="icon" href="https://emojicdn.elk.sh/👨‍💻" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Helmet>
 

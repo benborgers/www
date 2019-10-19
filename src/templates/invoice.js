@@ -59,7 +59,7 @@ export default ({ pageContext }) => {
     <>
       <Helmet>
         <title>Invoice for {invoice.client}</title>
-        <link rel="shortcut icon" href="https://emojicdn.elk.sh/💵" />
+        <link rel="icon" href="https://emojicdn.elk.sh/💵" />
         <meta name="robots" content="noindex" />
         <script src="https://js.stripe.com/v3/"></script>
       </Helmet>

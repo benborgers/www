@@ -20,7 +20,7 @@ export default props => {
   return (
     <>
       <Helmet>
-        <link rel="shortcut icon" href={"https://emojicdn.elk.sh/" + props.emoji} />
+        <link rel="icon" href={"https://emojicdn.elk.sh/" + props.emoji} />
 
         <title>{title}</title>
         <meta property="og:title" content={title} />

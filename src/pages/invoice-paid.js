@@ -11,7 +11,7 @@ export default () => {
 
       <Helmet>
         <title>Invoice paid. Thank you!</title>
-        <link rel="shortcut icon" href="https://emojicdn.elk.sh/💵" />
+        <link rel="icon" href="https://emojicdn.elk.sh/💵" />
         <meta name="robots" content="noindex" />
       </Helmet>
 
