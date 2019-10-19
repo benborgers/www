@@ -84,6 +84,7 @@ exports.onPostBuild = () => {
 
         div {
           margin: 0 96px;
+          margin-right: 136px;
         }
 
         p {
