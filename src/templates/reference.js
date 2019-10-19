@@ -71,7 +71,7 @@ export default ({ pageContext }) => {
       <div
         css={css`
           display: grid;
-          grid-template-columns: minmax(24px, 1fr) minmax(0, 768px) minmax(24px, 3fr);
+          grid-template-columns: minmax(16px, 1fr) minmax(0, 768px) minmax(16px, 3fr);
         `}
       >
 
@@ -82,7 +82,7 @@ export default ({ pageContext }) => {
             padding-bottom: 96px;
 
             @media(max-width: 768px) {
-              padding-top: 32px;
+              padding-top: 24px;
             }
           `}
         >
