@@ -49,6 +49,7 @@ export default ({ pageContext }) => {
     })
       .then(res => res.json())
       .then(json => {
+        setLoading(false)
         stripe.redirectToCheckout({
           sessionId: json.id
         })
