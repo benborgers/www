@@ -6,7 +6,6 @@ import StyleReset from "../components/StyleReset"
 import Chip from "../components/Chip"
 
 const colors = require("../utils/colors.js")
-const getOgImage = require("../utils/getOgImage.js")
 
 export default props => {
   const cssVars = []
@@ -27,10 +26,6 @@ export default props => {
 
         <meta name="description" content={props.description} />
         <meta property="og:description" content={props.description} />
-
-        <meta property="og:image" content={getOgImage(title, props.color)} />
-
-        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <StyleReset />
