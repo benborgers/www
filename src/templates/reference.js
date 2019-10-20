@@ -25,6 +25,8 @@ export default ({ pageContext }) => {
         <meta property="og:image" content={`https://benborgers.com/reference/${post.slug}.png`} />
         <meta property="og:url" content={`https://benborgers.com/reference/${post.slug}`} />
 
+        <meta name="twitter:card" content="summary_large_image" />
+
         
         <link rel="icon" href="https://emojicdn.elk.sh/👨‍💻" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
