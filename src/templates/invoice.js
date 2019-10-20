@@ -129,6 +129,7 @@ export default ({ pageContext }) => {
               grid-template-areas:  "left"
                                     "right";
               padding: 1.5rem;
+              padding-bottom: 80px;
             }
           `}
         >
@@ -197,6 +198,7 @@ export default ({ pageContext }) => {
                   css={css`
                     display: grid;
                     grid-template-columns: 1fr auto;
+                    grid-column-gap: 16px;
                     padding-bottom: 1rem;
                     margin-bottom: 1rem;
                     border-bottom: 2px solid hsl(0, 0%, 90%);
