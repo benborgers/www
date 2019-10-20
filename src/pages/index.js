@@ -133,10 +133,10 @@ export default () => {
           <Spacer height={4} />
 
           <H1>
-            Projects
+            Clients
           </H1>
 
-          {projects.projects.map(project => {
+          {clients.projects.map(project => {
             const text = snarkdownWithLinks(project.text)
 
             return (
@@ -156,14 +156,14 @@ export default () => {
               />
             )
           })}
-          
+
           <Spacer height={3} />
 
           <H1>
-            Clients
+            Projects
           </H1>
 
-          {clients.projects.map(project => {
+          {projects.projects.map(project => {
             const text = snarkdownWithLinks(project.text)
 
             return (
