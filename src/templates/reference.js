@@ -143,6 +143,7 @@ export default ({ pageContext }) => {
 
               .code, blockquote {
                 margin: 32px 0;
+                overflow: scroll;
               }
 
               code, .code {
