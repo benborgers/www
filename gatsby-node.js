@@ -40,7 +40,7 @@ exports.createPages = async ({ actions }) => {
       publishedReferences.push(postPlus)
 
       createPage({
-        path: "/reference/" + slug,
+        path: "/reference/" + slug + "/",
         component: path.resolve("./src/templates/reference.js"),
         context: {
           post: postPlus
@@ -51,7 +51,7 @@ exports.createPages = async ({ actions }) => {
 
 
   createPage({
-    path: "/references",
+    path: "/references/",
     component: path.resolve("./src/templates/references.js"),
     context: {
       list: publishedReferences

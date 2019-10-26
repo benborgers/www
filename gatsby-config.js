@@ -5,7 +5,6 @@ module.exports = {
   plugins: [
     "@rhysforyou/gatsby-plugin-react-helmet-async",
     "gatsby-plugin-emotion",
-    "gatsby-plugin-remove-trailing-slashes",
     {
       resolve: "gatsby-plugin-sitemap",
       options: {

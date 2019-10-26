@@ -50,7 +50,7 @@ export default ({ pageContext }) => {
               `}
             >
               <Link
-                to={`/reference/${post.slug}`}
+                to={`/reference/${post.slug}/`}
                 css={css`
                   text-decoration: none;
                 `}
