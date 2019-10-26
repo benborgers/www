@@ -11,8 +11,6 @@ export default ({ pageContext }) => {
   const title = post.title
   const description = post.seo_description
 
-  const parseMarkdown = text => snarkdown(text).replace(/<a href=/g, `<a target="_blank" rel="noopener noreferrer" href=`)
-
   return (
     <>
       <Helmet>
@@ -122,7 +120,7 @@ export default ({ pageContext }) => {
           </p>
 
           <div
-            dangerouslySetInnerHTML={{ __html: parseMarkdown(post.body) }}
+            dangerouslySetInnerHTML={{ __html: snarkdown(post.body) }}
             css={css`
               color: var(--text-black);
               margin-top: 32px;
