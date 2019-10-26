@@ -55,6 +55,7 @@ export default ({ pageContext }) => {
               color: var(--text-black);
               margin-bottom: 16px;
               margin-top: 0;
+              line-height: 1.2;
             `}
           >
             {post.title}
