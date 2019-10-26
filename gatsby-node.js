@@ -48,6 +48,15 @@ exports.createPages = async ({ actions }) => {
       })
     }
   }
+
+
+  createPage({
+    path: "/references",
+    component: path.resolve("./src/templates/references.js"),
+    context: {
+      list: publishedReferences
+    }
+  })
 }
 
 exports.onPostBuild = () => {
