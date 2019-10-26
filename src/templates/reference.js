@@ -188,7 +188,7 @@ export default ({ pageContext }) => {
               }
             `}
           >
-            Written by <a href="https://twitter.com/benborgers" target="_blank" rel="noopener noreferrer">Ben Borgers</a>. If you notice something wrong or have a question, feel free to <a href="mailto:borgersbenjamin@gmail.com" target="_blank" rel="noopener noreferrer">email me</a>.
+            Written by <a href="https://twitter.com/benborgers">Ben Borgers</a>. If you notice something wrong or have a question, feel free to <a href="mailto:borgersbenjamin@gmail.com">email me</a>.
           </p>
         </div>
 

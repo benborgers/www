@@ -117,11 +117,7 @@ export default () => {
           >
             A 17 year old software developer in Boston, Massachusetts. Currently in high school, and interned at
             {" "}
-            <a
-              href="https://www.ibm.com/security/data-security/guardium"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.ibm.com/security/data-security/guardium">
               IBM
             </a>
             {" "}
