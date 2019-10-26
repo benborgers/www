@@ -37,6 +37,11 @@ export default () => {
             background-color: var(--accent);
           }
 
+          :focus {
+            outline: 2px dotted var(--accent);
+            outline-offset: 1px;
+          }
+
           a {
             color: inherit;
             text-decoration: underline;
