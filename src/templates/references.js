@@ -31,7 +31,7 @@ export default ({ pageContext }) => {
             font-size: 1.5rem;
             color: var(--text-black);
             font-weight: 600;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
           `}
         >
           All References
@@ -61,7 +61,7 @@ export default ({ pageContext }) => {
                   css={css`
                     border: 2px solid var(--text-background-light);
                     padding: 16px;
-                    margin-bottom: 24px;
+                    margin: 12px 0;
                     border-radius: 4px;
                     
                     display: grid;
@@ -88,6 +88,7 @@ export default ({ pageContext }) => {
                     css={css`
                       color: var(--text-gray);
                       margin: 0;
+                      line-height: 1.3;
                     `}
                   >
                     {post.title}
