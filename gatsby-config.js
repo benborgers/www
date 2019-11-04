@@ -17,6 +17,7 @@ module.exports = {
         siteId: "ZWCPJCUA"
       }
     },
-    "gatsby-plugin-netlify-cms"
+    "gatsby-plugin-netlify-cms",
+    "gatsby-plugin-netlify-cache"
   ]
 }
