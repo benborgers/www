@@ -6,10 +6,7 @@ module.exports = {
     "@rhysforyou/gatsby-plugin-react-helmet-async",
     "gatsby-plugin-emotion",
     {
-      resolve: "gatsby-plugin-sitemap",
-      options: {
-        exclude: ["/invoice/*", "/invoice-paid"]
-      }
+      resolve: "gatsby-plugin-sitemap"
     },
     {
       resolve: "gatsby-plugin-fathom",
