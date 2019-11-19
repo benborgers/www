@@ -10,7 +10,7 @@ export default ({ pageContext }) => {
 
   const title = post.title
   const description = post.seo_description
-  const ogImage = encodeURI(`https://og-image.glitch.me/image.png?text=${title}&color=hsl(200, 29%, 16%)&bg=linen`)
+  const ogImage = encodeURI(`https://og-image.glitch.me/image.png/{title}/hsl(200, 29%, 16%)/linen`)
 
   return (
     <>
@@ -22,7 +22,7 @@ export default ({ pageContext }) => {
         <meta property="og:site_name" content="Ben Borgers" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        {`<meta property="og:image" content=${ogImage} />`}
+        <meta property="og:image" content={ogImage} />
         <meta property="og:url" content={`https://benborgers.com/reference/${post.slug}`} />
 
         <meta name="twitter:card" content="summary_large_image" />
