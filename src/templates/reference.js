@@ -10,7 +10,7 @@ export default ({ pageContext }) => {
 
   const title = post.title
   const description = post.seo_description
-  const ogImage = encodeURI(`https://og-image.glitch.me/image.png/${title}/hsl(200, 29%, 16%)/linen`)
+  const ogImage = encodeURI(`https://og-image.glitch.me/${title}/hsl(200, 29%, 16%)/linen`)
 
   return (
     <>
