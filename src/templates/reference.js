@@ -14,7 +14,7 @@ export default ({ pageContext }) => {
 
   return (
     <>
-      <Helmet>
+      <Helmet encodeSpecialCharacters={false}>
         <title>{title}</title>
         <meta name="description" content={description} />
 
