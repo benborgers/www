@@ -5,6 +5,8 @@ import snarkdown from "snarkdown"
 
 import GlobalStyles from "../components/reference/GlobalStyles"
 
+Helmet.defaultProps.encodeSpecialCharacters = false
+
 export default ({ pageContext }) => {
   const { post } = pageContext
 
@@ -14,7 +16,7 @@ export default ({ pageContext }) => {
 
   return (
     <>
-      <Helmet encodeSpecialCharacters={false}>
+      <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
 
