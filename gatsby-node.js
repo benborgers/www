@@ -1,6 +1,5 @@
 const fs = require("fs")
 const path = require("path")
-const fetch = require("node-fetch")
 
 const publishedReferences = []
 
@@ -36,70 +35,5 @@ exports.createPages = async ({ actions }) => {
     context: {
       list: publishedReferences
     }
-  })
-}
-
-exports.onPostBuild = () => {
-  const postsToGet = publishedReferences.length
-  let postsGot = 0
-
-  const clean = text => encodeURIComponent(text)
-
-  return new Promise(resolve => {
-     /* Fetch share images for reference pages */
-
-    for(const post of publishedReferences) {
-      const html = clean(`
-        <main>
-          <div>
-            <p>${post.title}</p>
-          </div>
-        </main>
-      `)
-  
-      const css = clean(`
-        @import url("https://rsms.me/inter/inter.css");
-
-        * {
-          margin: 0;
-          padding: 0;
-        }
-
-        main {
-          height: 100vh;
-          display: grid;
-          place-items: center center;
-        }
-
-        div {
-          margin: 0 96px;
-          margin-right: 136px;
-        }
-
-        p {
-          font-family: "Inter", sans-serif;
-          color: hsl(200, 29%, 16%);
-          font-size: 40px;
-          font-weight: 600;
-          border-left: 8px solid hsl(53, 100%, 50%);
-          padding-left: 32px;
-        }
-      `)
-  
-      fetch(`https://og-image.glitch.me/?html=${html}&css=${css}`)
-        .then(res => {
-          const dest = fs.createWriteStream(`./public/reference/${post.slug}.png`)
-  
-          res.body.pipe(dest)
-
-          dest.on("finish", () => {
-            postsGot++
-            if(postsGot === postsToGet) {
-              resolve(true)
-            }
-          })
-        })
-    }
-
   })
 }
