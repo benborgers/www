@@ -1,12 +1,3 @@
 [build]
-  command = "gatsby build"
-  publish = "public"
-
-[dev]
-  command = "gatsby develop"
-
-[[redirects]]
-  from = "https://benborgers.netlify.com/*"
-  to = "https://benborgers.com/:splat"
-  status = 301
-  force = true
+  command = "npm run build"
+  publish = "dist"

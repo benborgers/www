@@ -1,0 +1,153 @@
+@import "./global.css";
+
+body {
+  background-color: var(--background);
+  padding-bottom: 64px;
+}
+
+::selection {
+  color: white;
+  background-color: hsl(190, 82%, 66%);
+}
+
+.constrain-width {
+  max-width: 844px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header {
+  border-bottom: 1px solid hsl(0, 0%, 20%);
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: hsla(0, 0%, 0%, .3);
+  backdrop-filter: blur(8px) saturate(200%);
+  z-index: 9;
+}
+
+header div {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+header div nav {
+  justify-self: end;
+}
+
+header h1 {
+  font-size: 18px;
+  color: var(--text-500);
+  font-weight: 600;
+  padding: 16px 0;
+}
+
+header nav a {
+  font-size: 18px;
+  margin-right: 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 14px;
+  padding-top: 16px;
+  display: inline-block;
+  border-bottom: 1px solid var(--background);
+  transition: border-color .2s, color .1s;
+}
+
+@media (hover: hover) {
+  header nav a:hover {
+    border-bottom-color: var(--text-100);
+    color: var(--text-500);
+  }
+}
+
+header nav a:last-of-type {
+  margin-right: 0;
+}
+
+header nav a.current {
+  color: var(--text-500);
+}
+
+.gradient-text {
+  mix-blend-mode: lighten;
+  background: var(--background);
+  position: relative;
+  color: white;
+  height: max-content;
+}
+
+.gradient-text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  background: linear-gradient(180deg, hsl(190, 82%, 66%), hsl(190, 60%, 40%));
+}
+
+main {
+  margin-top: 96px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-column-gap: 32px;
+  grid-row-gap: 64px;
+}
+
+.grid *, .hire-intro * {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.grid a, .hire-intro a {
+  text-decoration-color: var(--underline);
+  transition: color .2s;
+}
+
+@media (hover: hover) {
+  .grid a:hover, .hire-intro a:hover {
+    color: var(--text-500);
+  }
+}
+
+.grid ul {
+  list-style-type: none;
+}
+
+.grid li {
+  margin-bottom: 16px;
+}
+
+.hire-intro {
+  margin-bottom: 64px;
+}
+
+@media (max-width: 844px) {
+  main {
+    margin-top: 24px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    grid-row-gap: 16px;
+  }
+
+  .grid h2 {
+    margin-top: 16px;
+  }
+
+  .grid *, .hire-intro * {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}

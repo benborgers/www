@@ -1,0 +1,22 @@
+@import url("https://rsms.me/inter/inter.css");
+
+* {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-300);
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --text-500: hsl(0, 0%, 100%);
+  --text-300: hsl(0, 0%, 60%);
+
+  --underline: hsl(0, 0%, 30%);
+
+  --background: hsl(0, 0%, 0%);
+}
