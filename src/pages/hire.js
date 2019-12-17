@@ -9,7 +9,7 @@ import Spacer from "../components/Spacer"
 export default () => {
   return (
     <Shell
-      title="Hire me!"
+      title="Hire me! | Ben Borgers"
       description="I'd love to help you create a web site or web app that you can easily update and maintain."
     >
       <p

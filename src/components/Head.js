@@ -2,15 +2,14 @@ import React from "react"
 import { Helmet } from "react-helmet-async"
 
 export default ({ title, description, shareImage }) => {
-  const fullTitle = title ? `${title} | Ben Borgers` : "Ben Borgers"
-
   return (
     <Helmet>
-      <title>{fullTitle}</title>
+      <title>{title}</title>
       <meta name="description" content={description} />
 
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={fullTitle} />
+      <meta property="og:site_name" content="Ben Borgers" />
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={shareImage} />
 

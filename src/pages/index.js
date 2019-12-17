@@ -17,6 +17,7 @@ export default () => {
 
   return (
     <Shell
+      title="Ben Borgers"
       description="I'm a 17 year old software developer from Boston, MA. I'm currently in high school, and interned at IBM last summer."
     >
       <GridParent>
