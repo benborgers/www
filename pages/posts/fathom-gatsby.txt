@@ -1,0 +1,37 @@
+---
+title: How to add Fathom analytics to Gatsby
+description: Add Fathom analytics, version 1 or 2, to your Gatsby site and start tracking the number of visitors your site gets.
+---
+
+[Fathom](https://usefathom.com) offers simple and privacy-focused analytics that you can use for your Gatsby site. This method works with Fathom v1 or v2, since the tracking code on your website is the same for both versions. 
+
+If you want to start collecting analytics using Fathom on a Gatsby site, you can't just copy and paste the tracking script Gatsby provides into your pages. Since Gatsby navigates to new pages without refreshing the whole page, it won't track a visitor going to pages beyond the first time the site loads. 
+
+Luckily, there's a plugin that solves this problem. The plugin integrates with Gatsby and tracks additional page views every time the visitor navigates to a new page. \n\nFirst, create a new site in the Fathom dashboard. Ignore and close the window with the embed code, but copy the Tracking ID for this new site. 
+
+Install the NPM package via the command line: 
+
+```
+npm install gatsby-plugin-fathom
+```
+
+Then, add the plugin to your `gatsby-config.js`:
+
+```
+// gatsby-config.js
+module.exports = {
+  plugins: [
+      {
+        resolve: \"gatsby-plugin-fathom\",
+        options: {
+          // trackingUrl is only necessary if you're self-hosting Fathom, otherwise this defaults to the hosted version of Fathom
+          trackingUrl: \"your-fathom-instance.com\",
+          // the Tracking ID you copied earlier
+          siteId: \"ABCDEFGH\"
+        }
+      }
+    ]
+  }
+```
+
+That's it! You won't see Fathom tracking code in the development version of your Gatsby site (when you run `gatsby develop`), but the tracking code will get added to the production mode of your website (when you run `gatsby build`).

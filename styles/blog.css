@@ -1,0 +1,113 @@
+@import "./global.css";
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+
+:root {
+  --text-100: hsl(233, 12%, 10%);
+  --text-300: hsl(233, 8%, 30%);
+
+  --background: hsl(230, 23%, 95%);
+  --background-inky: hsl(233, 12%, 10%);
+
+  --width: 768px;
+}
+
+body {
+  padding-bottom: 128px;
+}
+
+::selection {
+  background-color: var(--background-inky);
+  color: white;
+}
+
+.constrain-width {
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: hsl(0, 0%, 100%, .8);
+  padding: 16px 0;
+  backdrop-filter: blur(24px);
+  box-shadow: 0px 4px 8px hsla(0, 0%, 0%, 0.05);
+}
+
+header h1 a {
+  text-decoration: none;
+  font: inherit;
+  color: inherit;
+}
+
+header h1 {
+  font-weight: 600;
+  color: var(--text-100);
+  letter-spacing: -0.3px;
+}
+
+.post {
+  padding-top: 96px;
+}
+
+.post h1 {
+  margin-bottom: 32px;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.2;
+  color: var(--text-100);
+}
+
+.post.not-found h1 {
+  margin-top: 0;
+}
+
+.markdown, .markdown * {
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.markdown strong {
+  font-weight: 700;
+}
+
+.markdown em {
+  font-style: italic;
+}
+
+.markdown br {
+  content: "";
+  display: block;
+  margin-top: 24px;
+}
+
+.markdown code, .markdown .code {
+  font-family: "Roboto Mono", monospace;
+  background-color: var(--background-inky);
+  color: white;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.markdown code {
+  padding: 2px 4px;
+  vertical-align: 5%;
+}
+
+.markdown .code {
+  padding: 16px;
+  overflow: scroll;
+}
+
+@media (max-width: 640px) {
+  .post {
+    padding-top: 32px;
+  }
+
+  .post h1 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+}

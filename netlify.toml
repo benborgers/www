@@ -1,5 +1,5 @@
 [build]
-  command = "parcel build pages/* pages/**/*"
+  command = "rm -rf dist && parcel build pages/* pages/**/*"
   publish = "dist"
 
 [dev]

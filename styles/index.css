@@ -1,7 +1,15 @@
 @import "./global.css";
 
+:root {
+  --text-500: hsl(0, 0%, 100%);
+  --text-300: hsl(0, 0%, 60%);
+
+  --underline: hsl(0, 0%, 30%);
+
+  --background: hsl(0, 0%, 0%);
+}
+
 body {
-  background-color: var(--background);
   padding-bottom: 64px;
 }
 

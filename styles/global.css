@@ -12,11 +12,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root {
-  --text-500: hsl(0, 0%, 100%);
-  --text-300: hsl(0, 0%, 60%);
+body {
+  background-color: var(--background);
+}
 
-  --underline: hsl(0, 0%, 30%);
-
-  --background: hsl(0, 0%, 0%);
+img {
+  max-width: 100%;
 }
