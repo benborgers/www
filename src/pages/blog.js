@@ -51,7 +51,7 @@ export default ({ data }) => {
         {posts.map(post => (
           <Link
             key={post.id}
-            to={`/blog/${post.id}`}
+            to={`/blog/${post.id}/`}
             css={css`
               text-decoration: none;
               display: block;
