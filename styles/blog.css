@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
 
 :root {
-  --text-100: hsl(233, 12%, 10%);
+  --text-500: hsl(233, 12%, 10%);
   --text-300: hsl(233, 8%, 30%);
 
   --background: hsl(230, 23%, 95%);
@@ -44,7 +44,7 @@ header h1 a {
 
 header h1 {
   font-weight: 600;
-  color: var(--text-100);
+  color: var(--text-500);
   letter-spacing: -0.3px;
 }
 
@@ -57,7 +57,7 @@ header h1 {
   font-weight: 800;
   font-size: 32px;
   line-height: 1.2;
-  color: var(--text-100);
+  color: var(--text-500);
 }
 
 .post.not-found h1 {
@@ -99,6 +99,11 @@ header h1 {
 .markdown .code {
   padding: 16px;
   overflow: scroll;
+}
+
+.markdown code::selection, .markdown .code::selection {
+  color: var(--text-500);
+  background-color: var(--background);
 }
 
 @media (max-width: 640px) {
