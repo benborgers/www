@@ -1,6 +1,5 @@
 import fs from "fs"
 import snarkdown from "snarkdown"
-import prism from "prismjs"
 
 import "./global.js"
 
