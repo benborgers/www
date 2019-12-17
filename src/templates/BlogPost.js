@@ -92,6 +92,10 @@ export default ({ pageContext, location, children }) => {
             font-size: 32px;
             line-height: 1.2;
             color: var(--light-text-500);
+
+            @media (max-width: 768px) {
+              font-size: 24px;
+            }
           `}
         >
           {frontmatter.title}
