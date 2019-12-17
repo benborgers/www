@@ -1,6 +1,5 @@
 node_modules
 .DS_Store
-dist
+public
 .cache
-# Local Netlify folder
 .netlify

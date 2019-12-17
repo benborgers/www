@@ -1,13 +1,22 @@
 {
   "name": "www",
   "dependencies": {
-    "autoprefixer": "^9.7.3",
+    "@emotion/core": "^10.0.22",
+    "@mdx-js/mdx": "^1.5.2",
+    "@mdx-js/react": "^1.5.2",
+    "@rhysforyou/gatsby-plugin-react-helmet-async": "^0.1.1",
+    "gatsby": "^2.18.12",
+    "gatsby-plugin-emotion": "^4.1.18",
+    "gatsby-plugin-fathom": "^1.1.0",
+    "gatsby-plugin-mdx": "^1.0.62",
+    "gatsby-plugin-netlify-cache": "^1.2.0",
+    "gatsby-plugin-sitemap": "^2.2.24",
+    "gatsby-source-filesystem": "^2.1.42",
     "node-fetch": "^2.6.0",
-    "postcss-modules": "^1.4.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet-async": "^1.0.4",
     "snarkdown": "^1.2.2"
   },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-txt": "^1.0.3"
-  }
+  "devDependencies": {}
 }
