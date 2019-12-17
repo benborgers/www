@@ -43,6 +43,11 @@ export default ({ data }) => {
           margin-top: 96px;
           margin-bottom: 128px;
 
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-column-gap: 48px;
+          grid-row-gap: 64px;
+
           @media(max-width: 768px) {
             margin-top: 48px;
           }
@@ -54,13 +59,6 @@ export default ({ data }) => {
             to={`/blog/${post.id}/`}
             css={css`
               text-decoration: none;
-              display: block;
-
-              margin-bottom: 48px;
-
-              :last-of-type {
-                margin-bottom: 0;
-              }
             `}
           >
             <article
@@ -68,7 +66,8 @@ export default ({ data }) => {
                 background-color: white;
                 box-shadow: 0px 2px 8px hsla(0, 0%, 0%, .1);
                 border-radius: 8px;
-                transition: box-shadow .2s;
+                transition: box-shadow .3s;
+                height: 100%;
 
                 :hover {
                   box-shadow: 0px 4px 16px hsla(0, 0%, 0%, .2);
@@ -92,15 +91,11 @@ export default ({ data }) => {
               >
                 <h1
                   css={css`
-                    font-size: 32px;
+                    font-size: 24px;
                     font-weight: 800;
                     line-height: 1.3;
                     color: var(--light-text-500);
                     overflow: scroll;
-
-                    @media (max-width: 768px) {
-                      font-size: 24px;
-                    }
                   `}
                 >
                   {post.title}
