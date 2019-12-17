@@ -11,7 +11,8 @@ module.exports = {
       options: {
         headers: {
           "/": [
-            "Basic-Auth: someuser:somepassword anotheruser:anotherpassword"
+            "Basic-Auth: someuser:somepassword anotheruser:anotherpassword",
+            "X-Test: borg"
           ]
         }
       }
