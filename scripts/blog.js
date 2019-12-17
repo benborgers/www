@@ -1,4 +1,3 @@
-import fs from "fs"
 import snarkdown from "snarkdown"
 
 import "./global.js"
@@ -15,14 +14,12 @@ const render = (title, description, body, found=true) => {
 
   if(found) {
     const metaImage = document.createElement("meta")
-    metaImage.property = "og:image"
+    metaImage.setAttribute("property", "og:image")
     metaImage.content = `https://benborgers.com/posts/${path}.png`
     $("head").appendChild(metaImage)
   }
 
   $(".root").innerHTML = body
-
-  prism.highlightAll()
 }
 
 const markdown = text => snarkdown(text).replace(/class="code/g, `class="code language-javascript`)
