@@ -37,7 +37,7 @@ export default () => {
               color: var(--light-text-500);
             `}
           >
-            Ben Borgers’ Blog
+            Ben Borgers
           </p>
         </Link>
       </div>
