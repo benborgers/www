@@ -90,7 +90,7 @@ export default ({ pageContext, location, children }) => {
             margin-bottom: 32px;
             font-weight: 800;
             font-size: 32px;
-            line-height: 1.2;
+            line-height: 1.3;
             color: var(--light-text-500);
 
             @media (max-width: 768px) {
