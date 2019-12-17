@@ -6,17 +6,7 @@ module.exports = {
     "@rhysforyou/gatsby-plugin-react-helmet-async",
     "gatsby-plugin-emotion",
     "gatsby-plugin-sitemap",
-    {
-      resolve: "gatsby-plugin-netlify",
-      options: {
-        headers: {
-          "/": [
-            "Basic-Auth: someuser:somepassword anotheruser:anotherpassword",
-            "X-Test: borg"
-          ]
-        }
-      }
-    },
+    "gatsby-plugin-netlify",
     "gatsby-plugin-netlify-cache",
     {
       resolve: "gatsby-plugin-mdx",
