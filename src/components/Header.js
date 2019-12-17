@@ -37,6 +37,10 @@ export default () => {
               path: "/"
             },
             {
+              name: "Blog",
+              path: "/blog"
+            },
+            {
               name: "Hire Me",
               path: "/hire"
             }

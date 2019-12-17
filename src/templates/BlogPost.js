@@ -1,11 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
 import { css, Global } from "@emotion/core"
 import { MDXProvider } from "@mdx-js/react"
 import { Helmet } from "react-helmet-async"
 
 import Head from "../components/Head"
 import GlobalStyles from "../components/GlobalStyles"
+import Header from "../components/blog/Header"
 
 export default ({ pageContext, location, children }) => {
   const frontmatter = pageContext.frontmatter
@@ -35,42 +35,7 @@ export default ({ pageContext, location, children }) => {
         `}
       />
 
-      <header
-        css={css`
-          position: sticky;
-          top: 0;
-          left: 0;
-          background-color: hsl(0, 0%, 100%, .8);
-          padding: 16px 0;
-          backdrop-filter: blur(24px);
-          box-shadow: 0px 4px 8px hsla(0, 0%, 0%, 0.05);
-        `}
-      >
-        <div
-          css={css`
-            max-width: 768px;
-            margin: 0 auto;
-            padding: 0 16px;
-          `}
-        >
-          <Link
-            to="/"
-            css={css`
-              text-decoration: none;
-            `}
-          > 
-            <p
-              css={css`
-                font-weight: 600;
-                color: var(--light-text-500);
-                letter-spacing: -0.3px;
-              `}
-            >
-              Ben Borgers's Blog
-            </p>
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       <main
         css={css`
