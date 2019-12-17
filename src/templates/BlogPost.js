@@ -97,7 +97,7 @@ export default ({ pageContext, location, children }) => {
           {frontmatter.title}
         </h1>
 
-        <div
+        <article
           css={css`            
             * {
               color: var(--light-text-300);
@@ -133,12 +133,35 @@ export default ({ pageContext, location, children }) => {
               color: var(--light-text-500);
               background-color: var(--light-background);
             }
+
+            a code {
+              text-decoration: underline;
+              text-decoration-color: var(--light-text-100);
+            }
+
+            blockquote {
+              background-color: var(--light-background-dimmer);
+              border-radius: 4px;
+              padding: 16px;
+            }
+
+            blockquote > *:last-child {
+              margin-bottom: 0;
+            }
+
+            h1 {
+              font-size: 24px;
+              font-weight: 700;
+              color: var(--light-text-500);
+              margin-top: 64px;
+              margin-bottom: 8px;
+            }
           `}
         >
           <MDXProvider>
             {children}
           </MDXProvider>
-        </div>
+        </article>
       </main>
     </>
   )

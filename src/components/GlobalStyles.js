@@ -22,9 +22,11 @@ export default ({ background="var(--dark-background)"}) => {
 
             --light-text-500: hsl(233, 12%, 10%);
             --light-text-300: hsl(233, 8%, 30%);
+            --light-text-100: hsl(233, 16%, 60%);
 
             --light-background: hsl(230, 23%, 95%);
             --light-background-inky: hsl(233, 12%, 10%);
+            --light-background-dimmer: hsl(230, 25%, 90%);
           }
 
           * {
