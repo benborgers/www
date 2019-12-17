@@ -38,11 +38,11 @@ export default () => {
             },
             {
               name: "Blog",
-              path: "/blog"
+              path: "/blog/"
             },
             {
               name: "Hire Me",
-              path: "/hire"
+              path: "/hire/"
             }
           ].map(item => (
             <Link
