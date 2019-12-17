@@ -6,6 +6,7 @@ module.exports = {
     "@rhysforyou/gatsby-plugin-react-helmet-async",
     "gatsby-plugin-emotion",
     "gatsby-plugin-sitemap",
+    "gatsby-plugin-netlify",
     "gatsby-plugin-netlify-cache",
     {
       resolve: "gatsby-plugin-mdx",
