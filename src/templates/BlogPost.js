@@ -7,10 +7,10 @@ import { Helmet } from "react-helmet-async"
 import Head from "../components/Head"
 import GlobalStyles from "../components/GlobalStyles"
 
-export default ({ pageContext, path, children }) => {
+export default ({ pageContext, location, children }) => {
   const frontmatter = pageContext.frontmatter
 
-  const postId = path.replace(/^\/blog\//g, "").replace(/(\/+)$/g, "")
+  const postId = location.pathname.replace(/^\/blog\//g, "").replace(/(\/+)$/g, "")
 
   return (
     <>
