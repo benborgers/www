@@ -7,8 +7,6 @@ const fs = require("fs")
 
 const fileId = "zOqzsKxoR7hgQJxpxqV7Di"
 
-// Get all frames
-
 fetch(`https://api.figma.com/v1/files/${fileId}`, {
   headers: {
     "X-FIGMA-TOKEN": process.env.FIGMA_TOKEN
