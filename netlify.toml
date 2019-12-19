@@ -1,0 +1,7 @@
+[[redirects]]
+  from = "/reference/how-to-add-fathom-analytics-to-gatsby/"
+  to = "/blog/fathom-gatsby"
+
+[[redirects]]
+  from = "/reference/how-to-add-normalize-css-to-gatsby/"
+  to = "/blog/normalize-gatsby"
