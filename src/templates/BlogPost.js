@@ -34,7 +34,13 @@ export default ({ pageContext, location, children }) => {
             "publisher": {
               "@type": "Organization",
               "name": "Ben Borgers",
-              "url": "https://benborgers.com"
+              "url": "https://benborgers.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://benborgers.com/assets/index.png",
+                "width": "1200",
+                "height": "630"
+              }
             },
             "url": "https://benborgers.com/blog/${postId}/",
             "datePublished": "${frontmatter.published}",
