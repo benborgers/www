@@ -31,6 +31,8 @@ export default ({ pageContext, location, children }) => {
             "@type": "BlogPosting",
             "headline": "${frontmatter.title}",
             "image": "${shareImage}",
+            "publisher": "Ben Borgers",
+            "url": "https://benborgers.com/blog/${postId}",
             "datePublished": "${frontmatter.published}",
             "dateCreated": "${frontmatter.published}",
             "dateModified": "${frontmatter.published}",
@@ -39,6 +41,10 @@ export default ({ pageContext, location, children }) => {
               "@type": "Person",
               "name": "Ben Borgers",
               "url": "https://patrickcoombe.com"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://benborgers.com/blog/"
             }
           }
         `}</script>
