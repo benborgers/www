@@ -40,7 +40,7 @@ export default ({ pageContext, location, children }) => {
             "author": {
               "@type": "Person",
               "name": "Ben Borgers",
-              "url": "https://patrickcoombe.com"
+              "url": "https://benborgers.com"
             },
             "mainEntityOfPage": {
               "@type": "WebPage",
