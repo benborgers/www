@@ -12,16 +12,36 @@ export default ({ pageContext, location, children }) => {
 
   const postId = location.pathname.replace(/^\/blog\//g, "").replace(/(\/+)$/g, "")
 
+  const shareImage = `https://benborgers.com/assets/${postId}.png`
+
   return (
     <>
       <Head
         title={frontmatter.title}
         description={frontmatter.description}
-        shareImage={`https://benborgers.com/assets/${postId}.png`}
+        shareImage={shareImage}
       />
 
       <Helmet>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" />
+
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org", 
+            "@type": "BlogPosting",
+            "headline": "${frontmatter.title}",
+            "image": "${shareImage}",
+            "datePublished": "${frontmatter.published}",
+            "dateCreated": "${frontmatter.published}",
+            "dateModified": "${frontmatter.published}",
+            "description": "${frontmatter.description}",
+            "author": {
+              "@type": "Person",
+              "name": "Ben Borgers",
+              "url": "https://patrickcoombe.com"
+            }
+          }
+        `}</script>
       </Helmet>
       
       <GlobalStyles background="var(--light-background)" />
