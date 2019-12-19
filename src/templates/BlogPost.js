@@ -125,6 +125,14 @@ export default ({ pageContext, location, children }) => {
               margin-top: 64px;
               margin-bottom: 8px;
             }
+
+            ul, ol {
+              margin-left: 32px;
+            }
+
+            ul li, ol li {
+              margin-bottom: 12px;
+            }
           `}
         >
           <MDXProvider>
