@@ -31,7 +31,11 @@ export default ({ pageContext, location, children }) => {
             "@type": "BlogPosting",
             "headline": "${frontmatter.title}",
             "image": "${shareImage}",
-            "publisher": "Ben Borgers",
+            "publisher": {
+              "@type": "Person",
+              "name": "Ben Borgers",
+              "url": "https://benborgers.com"
+            },
             "url": "https://benborgers.com/blog/${postId}",
             "datePublished": "${frontmatter.published}",
             "dateCreated": "${frontmatter.published}",
@@ -44,7 +48,7 @@ export default ({ pageContext, location, children }) => {
             },
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://benborgers.com/blog/"
+              "@id": "https://benborgers.com/blog"
             }
           }
         `}</script>
