@@ -53,7 +53,7 @@ export default ({ data }) => {
           }
         `}
       >
-        {posts.map(post => (
+        {posts.map((post, index) => (
           <Link
             key={post.id}
             to={`/blog/${post.id}/`}
@@ -81,6 +81,7 @@ export default ({ data }) => {
                   border-top-left-radius: 8px;
                   border-top-right-radius: 8px;
                 `}
+                loading={index > 3 ? "lazy" : "auto"} // lazy load images past 4 blog posts
               />
 
               <div
