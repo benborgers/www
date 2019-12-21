@@ -1,28 +1,19 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
+import relativeDate from "tiny-relative-date"
 
 export default () => {
   const query = useStaticQuery(graphql`
     query {
       site {
         buildTime
-        buildTimeRelative: buildTime(fromNow: true)
       }
     }
   `)
 
   const buildTime = new Date(query.site.buildTime)
-  const buildTimeDate = buildTime.toLocaleString("en-US", {
-    timeZone: "America/New_York",
-    month: "long",
-    day: "numeric"
-  })
-  const buildTimeTime = buildTime.toLocaleString("en-US", {
-    timeZone: "America/New_York",
-    hour: "numeric",
-    minute: "numeric"
-  })
+  const buildTimeRelative = relativeDate(buildTime)
 
   return (
     <div
@@ -52,11 +43,11 @@ export default () => {
           }
 
           strong {
-            font-weight: 600;
+            font-weight: 700;
           }
         `}
       >
-        This site (benborgers.com) was last built <strong>{query.site.buildTimeRelative}</strong>, on <strong>{buildTimeDate} at {buildTimeTime}</strong>.
+        This site (benborgers.com) was last built <strong>{buildTimeRelative}</strong>.
       </p>
     </div>
   )
