@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async"
 
 import Head from "../components/Head"
 import GlobalStyles from "../components/GlobalStyles"
-import Header from "../components/blog/Header"
+import Header from "../components/BlogHeader"
 
 export default ({ pageContext, location, children }) => {
   const frontmatter = pageContext.frontmatter
