@@ -169,6 +169,11 @@ export default ({ pageContext, location, children }) => {
             ul li, ol li {
               margin-bottom: 12px;
             }
+
+            hr {
+              margin: 48px 0;
+              border-top: 2px dashed var(--light-text-100);
+            }
           `}
         >
           <MDXProvider>
