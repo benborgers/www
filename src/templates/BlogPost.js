@@ -194,16 +194,19 @@ export default ({ pageContext, location, children }) => {
               padding: 16px;
               border-radius: 4px;
               margin-top: 64px;
+
+              display: grid;
+              grid-template-columns: max-content 1fr;
+              grid-column-gap: 12px;
+              align-items: center;
             `}
           >
             <img
               src="https://emojicdn.elk.sh/🍇"
               alt=""
               css={css`
-                display: inline-block;
-                margin-right: 8px;
+                display: block;
                 height: 16px;
-                vertical-align: -8%;
               `}
             />
 
@@ -213,8 +216,6 @@ export default ({ pageContext, location, children }) => {
                 text-decoration-color: var(--light-text-100);
                 color: var(--light-text-500);
                 font-weight: 500;
-                display: inline-block;
-                max-width: max-content;
               `}
             >
               Subscribe to my biweekly newsletter with articles and tips for Gatsby.
