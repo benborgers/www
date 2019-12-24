@@ -92,11 +92,11 @@ export default () => {
           </h1>
 
           <p>
-            I'm a big fan of <a href="https://gatsbyjs.org">Gatsby</a>, so every two weeks I write a quick roundup of articles and tips about Gatsby to help you stay up to date.
+            I'm a big fan of <a href="https://gatsbyjs.org">Gatsby</a>, so every two weeks I write a quick roundup of links and tips about Gatsby to help you stay up to date.
           </p>
 
           <p>
-            Sign up for the <strong>Gatsby Dispatch</strong>:
+            Subscribe to the <strong>Gatsby Dispatch</strong>:
           </p>
 
           <div
