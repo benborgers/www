@@ -15,9 +15,9 @@ export default ({ background="var(--dark-background)"}) => {
             --dark-text-500: hsl(0, 0%, 100%);
             --dark-text-300: hsl(0, 0%, 60%);
 
-            --dark-underline: hsl(0, 0%, 30%);
-
             --dark-background: hsl(0, 0%, 0%);
+
+            --dark-underline: hsl(0, 0%, 30%);
 
 
             --light-text-500: hsl(233, 12%, 10%);
@@ -27,6 +27,18 @@ export default ({ background="var(--dark-background)"}) => {
             --light-background: hsl(230, 23%, 95%);
             --light-background-inky: hsl(233, 12%, 10%);
             --light-background-dimmer: hsl(230, 25%, 90%);
+
+
+            --gatsby-text-500: hsl(276, 20%, 20%);
+            --gatsby-text-300: hsl(276, 10%, 45%);
+
+            --gatsby-background: hsl(276, 60%, 98%);
+
+            --gatsby-accent: hsl(276, 70%, 44%);
+            --gatsby-accent-light: hsl(276, 70%, 90%);
+            --gatsby-accent-light-darker: hsl(276, 70%, 88%);
+            --gatsby-underline: hsl(276, 40%, 70%);
+            --gatsby-box-shadow: 0px 4px 8px hsla(276, 70%, 30%, .1);
           }
 
           * {
@@ -36,6 +48,7 @@ export default ({ background="var(--dark-background)"}) => {
             color: var(--dark-text-300);
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             -webkit-appearance: none;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;

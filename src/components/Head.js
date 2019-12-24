@@ -1,7 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet-async"
 
-export default ({ title, description, shareImage }) => {
+export default ({ title, description, shareImage, favicon="🐙" }) => {
   return (
     <Helmet>
       <title>{title}</title>
@@ -15,7 +15,7 @@ export default ({ title, description, shareImage }) => {
 
       <meta property="twitter:card" content="summary_large_image" />
 
-      <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
+      <link rel="icon" href={`https://emojicdn.elk.sh/${favicon}`} />
     </Helmet>
   )
 }
