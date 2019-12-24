@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { css, Global } from "@emotion/core"
 import { MDXProvider } from "@mdx-js/react"
 import { Helmet } from "react-helmet-async"
@@ -180,6 +181,46 @@ export default ({ pageContext, location, children }) => {
             {children}
           </MDXProvider>
         </article>
+
+        <Link
+          to="/gatsby/"
+          css={css`
+            text-decoration: none;
+          `}
+        >
+          <div
+            css={css`
+              background-color: var(--light-background-dimmer);
+              padding: 16px;
+              border-radius: 4px;
+              margin-top: 64px;
+            `}
+          >
+            <img
+              src="https://emojicdn.elk.sh/🍇"
+              alt=""
+              css={css`
+                display: inline-block;
+                margin-right: 8px;
+                height: 16px;
+                vertical-align: -8%;
+              `}
+            />
+
+            <p
+              css={css`
+                text-decoration: underline;
+                text-decoration-color: var(--light-text-100);
+                color: var(--light-text-500);
+                font-weight: 500;
+                display: inline-block;
+                max-width: max-content;
+              `}
+            >
+              Subscribe to my biweekly newsletter with articles and tips for Gatsby.
+            </p>
+          </div>
+        </Link>
       </main>
     </>
   )
