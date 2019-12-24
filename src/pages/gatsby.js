@@ -7,11 +7,14 @@ import GlobalStyles from "../components/GlobalStyles"
 
 export default () => {
   const [email, setEmail] = useState("")
+  const [loading, setLoading] = useState(false)
   const [subscribed, setSubscribed] = useState(false)
 
   const onSubscribe = () => {
+    setLoading(true)
     addSubscriber("at94e", email)
       .then(result => {
+        setLoading(false)
         if(result.error) {
           alert(result.error.message)
         } else {
@@ -99,7 +102,7 @@ export default () => {
             Subscribe to the <strong>Gatsby Dispatch</strong>:
           </p>
 
-          <div
+          <form
             css={css`
               background-color: white;
               padding: 16px;
@@ -162,7 +165,9 @@ export default () => {
                   onChange={event => setEmail(event.target.value)}
                 />
 
-                <button
+                <input
+                  type="submit"
+                  value={loading ? "loading..." : "Subscribe"}
                   css={css`
                     background-color: var(--gatsby-accent-light);
                     color: var(--gatsby-accent);
@@ -180,12 +185,11 @@ export default () => {
                     }
                   `}
                   onClick={onSubscribe}
-                >
-                  Subscribe
-                </button>
+                  disabled={loading}
+                />
               </>
             )}
-          </div>
+          </form>
         </div>
       </div>
     </>
