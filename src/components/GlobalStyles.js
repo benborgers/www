@@ -50,6 +50,7 @@ export default ({ background="var(--dark-background)"}) => {
             padding: 0;
             box-sizing: border-box;
             -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
           }
