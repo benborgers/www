@@ -1,3 +1,6 @@
+[dev]
+  command = "gatsby develop"
+
 [[redirects]]
   from = "/reference/how-to-add-fathom-analytics-to-gatsby/"
   to = "/blog/fathom-gatsby"
