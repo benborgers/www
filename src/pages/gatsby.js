@@ -10,7 +10,8 @@ export default () => {
   const [loading, setLoading] = useState(false)
   const [subscribed, setSubscribed] = useState(false)
 
-  const onSubscribe = () => {
+  const onSubscribe = event => {
+    event.preventDefault()
     setLoading(true)
     addSubscriber("at94e", email)
       .then(result => {
@@ -124,6 +125,7 @@ export default () => {
                 grid-row-gap: 16px;
               }
             `}
+            onSubmit={onSubscribe}
           >
             {subscribed ? (
               <p
@@ -188,7 +190,6 @@ export default () => {
                       background-color: var(--gatsby-accent-light-darker);
                     }
                   `}
-                  onClick={onSubscribe}
                   disabled={loading}
                 />
               </>
