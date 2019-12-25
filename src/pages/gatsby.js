@@ -160,6 +160,10 @@ export default () => {
                     :focus {
                       outline: none;
                     }
+
+                    @media (max-width: 512px) {
+                      text-align: center;
+                    }
                   `}
                   value={email}
                   onChange={event => setEmail(event.target.value)}
