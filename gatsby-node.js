@@ -16,6 +16,15 @@ exports.onCreatePage = ({ page }) => new Promise(resolve => {
   
     const title = frontmatter.title
     const description = frontmatter.description
+
+    const possibleTags = ["gatsby", "react"]
+    const tags = []
+
+    for(const tag of possibleTags) {
+      if(title.toLowerCase().includes(tag)) {
+        tags.push(tag)
+      }
+    }
     
     const id = page.path.match(/\/blog\/(?<id>.*)\//).groups.id
     
@@ -24,6 +33,7 @@ exports.onCreatePage = ({ page }) => new Promise(resolve => {
     const bodyMarkdown = `---
     title: ${title}
     description: ${description}
+    ${tags.length > 0 ? `tags: ${tags.join(", ")}` : ""}
     cover_image: https://benborgers.com/assets/${id}.png
     published: true
     canonical_url: https://benborgers.com/blog/${id}/
