@@ -216,6 +216,7 @@ export default ({ pageContext, location, children }) => {
                 text-decoration-color: var(--light-text-100);
                 color: var(--light-text-500);
                 font-weight: 500;
+                line-height: 1.4;
               `}
             >
               Subscribe to my biweekly newsletter with articles and tips for Gatsby.
