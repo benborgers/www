@@ -8,7 +8,7 @@ Sometimes you've got a development server running on a localhost port in the bac
 
 For example, if the port is `localhost:8000`, run: 
 
-```
+```shell
 sudo lsof -i :8000
 ```
 
@@ -16,6 +16,6 @@ You should see the processes running on that port. Take note of the `PID` for th
 
 Then, run: 
 
-```
+```shell
 kill -9 <PID>
 ```
