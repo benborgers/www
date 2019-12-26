@@ -26,7 +26,7 @@ exports.onCreatePage = ({ page }) => new Promise(resolve => {
       }
     }
 
-    const frontmatterTags = frontmatter.tags || []
+    const frontmatterTags = frontmatter.tags ? frontmatter.tags.split(",") : []
 
     const allTags = [ ...tags, ...frontmatterTags ]
     
