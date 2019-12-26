@@ -103,6 +103,21 @@ export default ({ pageContext, location, children }) => {
           {frontmatter.title}
         </h1>
 
+        <time
+          itemProp="datePublished"
+          dateTime={frontmatter.published}
+          css={css`
+            display: none;
+          `}
+        >
+          {new Date(frontmatter.published).toLocaleString("en-US", {
+            timeZone: "Etc/UTC",
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+          })}
+        </time>
+
         <article
           css={css`            
             * {
