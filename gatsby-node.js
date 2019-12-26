@@ -34,7 +34,7 @@ exports.onCreatePage = ({ page }) => new Promise(resolve => {
     
     const body = fs.readFileSync(`./src/pages/blog/${id}.mdx`, "utf8").split("---")[2]
     const preBody = "\n*This article was originally posted on [my personal blog](https://benborgers.com/blog).*\n\n"
-    const gatsbyCta = "\n---\n🍇 [If you're a fan of Gatsby like I am, subscribe to my biweekly newsletter with articles and tips for Gatsby.](https://benborgers.com/gatsby/)"
+    const gatsbyCta = "\n\n---\n🍇 [If you're a fan of Gatsby like I am, subscribe to my biweekly newsletter with articles and tips for Gatsby.](https://benborgers.com/gatsby/)"
     const bodyMarkdown = `---
 title: ${title}
 description: ${description}
