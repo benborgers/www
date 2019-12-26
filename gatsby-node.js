@@ -25,6 +25,10 @@ exports.onCreatePage = ({ page }) => new Promise(resolve => {
         tags.push(tag)
       }
     }
+
+    const frontmatterTags = frontmatter.tags || []
+
+    const allTags = [ ...tags, ...frontmatterTags ]
     
     const id = page.path.match(/\/blog\/(?<id>.*)\//).groups.id
     
@@ -33,7 +37,7 @@ exports.onCreatePage = ({ page }) => new Promise(resolve => {
     const bodyMarkdown = `---
     title: ${title}
     description: ${description}
-    ${tags.length > 0 ? `tags: ${tags.join(", ")}` : ""}
+    ${allTags.length > 0 ? `tags: ${allTags.join(", ")}` : ""}
     cover_image: https://benborgers.com/assets/${id}.png
     published: true
     canonical_url: https://benborgers.com/blog/${id}/
