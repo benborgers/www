@@ -11,7 +11,7 @@ exports.onCreatePage = ({ page }) => new Promise(resolve => {
   const doNotCrosspost = ["emojicdn",
                           "gatsby-last-built"]
 
-  if(page.path.startsWith("/blog/") && page.context.frontmatter) {
+  if(process.env.NODE_ENV === "production" && page.path.startsWith("/blog/") && page.context.frontmatter) {
     const frontmatter = page.context.frontmatter
   
     const title = frontmatter.title
