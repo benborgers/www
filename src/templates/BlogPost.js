@@ -24,7 +24,7 @@ export default ({ pageContext, location, children }) => {
       />
 
       <Helmet>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i&display=swap" />
 
         <script type="application/ld+json">{`
           {
