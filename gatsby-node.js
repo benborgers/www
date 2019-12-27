@@ -7,6 +7,20 @@ const createDir = dirName => {
   }
 }
 
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions
+
+  if(node.internal.type === "Mdx") {
+    const shouldPublish = new Date(node.frontmatter.published) < new Date()
+
+    createNodeField({
+      node,
+      name: "publish",
+      value: shouldPublish
+    })
+  }
+}
+
 exports.onCreatePage = ({ page, actions: { deletePage } }) => new Promise(resolve => {
   const doNotCrosspost = ["emojicdn",
                           "gatsby-last-built"]
