@@ -7,7 +7,7 @@ const createDir = dirName => {
   }
 }
 
-exports.onCreatePage = ({ page }) => new Promise(resolve => {
+exports.onCreatePage = ({ page, actions: { deletePage } }) => new Promise(resolve => {
   const doNotCrosspost = ["emojicdn",
                           "gatsby-last-built"]
 
@@ -43,6 +43,20 @@ cover_image: https://benborgers.com/assets/${id}.png
 published: true
 canonical_url: https://benborgers.com/blog/${id}/
 ---\n` + preBody + body + (allTags.includes("gatsby") ? gatsbyCta : "")
+
+
+    /* Immediately delete pages if they are to be published in the future */
+
+    const publishDate = new Date(page.context.frontmatter.published)
+
+    if(publishDate > new Date()) {
+      deletePage(page)
+      console.log(`Not publishing ${id}, since it's not ${publishDate.toLocaleString("en-US", { month: "long", day: "numeric", year: "numeric" })} yet`)
+      return resolve()
+    }
+    
+
+    /* Crosspost to DEV */
 
     if(doNotCrosspost.includes(id)) {
       console.log(`DEV: skipping ${id}`)

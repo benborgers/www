@@ -53,58 +53,66 @@ export default ({ data }) => {
           }
         `}
       >
-        {posts.map((post, index) => (
-          <Link
-            key={post.id}
-            to={`/blog/${post.id}/`}
-            css={css`
-              text-decoration: none;
-            `}
-          >
-            <article
-              css={css`
-                background-color: white;
-                box-shadow: 0px 2px 8px hsla(0, 0%, 0%, .1);
-                border-radius: 8px;
-                transition: box-shadow .3s;
-                height: 100%;
+        {posts.map((post, index) => {
+          const publishDate = new Date(post.published)
+          
+          if(publishDate > new Date()) {
+            return null
+          }
 
-                :hover {
-                  box-shadow: 0px 4px 16px hsla(0, 0%, 0%, .2);
-                }
+          return (
+            <Link
+              key={post.id}
+              to={`/blog/${post.id}/`}
+              css={css`
+                text-decoration: none;
               `}
             >
-              <img
-                src={`/assets/${post.id}.png`}
-                alt=""
+              <article
                 css={css`
-                  border-top-left-radius: 8px;
-                  border-top-right-radius: 8px;
-                `}
-                loading={index > 3 ? "lazy" : "auto"} // lazy load images past 4 blog posts
-              />
+                  background-color: white;
+                  box-shadow: 0px 2px 8px hsla(0, 0%, 0%, .1);
+                  border-radius: 8px;
+                  transition: box-shadow .3s;
+                  height: 100%;
 
-              <div
-                css={css`
-                  padding: 24px;
-                  padding-bottom: 32px;
+                  :hover {
+                    box-shadow: 0px 4px 16px hsla(0, 0%, 0%, .2);
+                  }
                 `}
               >
-                <h1
+                <img
+                  src={`/assets/${post.id}.png`}
+                  alt=""
                   css={css`
-                    font-size: 24px;
-                    font-weight: 800;
-                    line-height: 1.3;
-                    color: var(--light-text-500);
-                    overflow: scroll;
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                  `}
+                  loading={index > 3 ? "lazy" : "auto"} // lazy load images past 4 blog posts
+                />
+
+                <div
+                  css={css`
+                    padding: 24px;
+                    padding-bottom: 32px;
                   `}
                 >
-                  {post.title}
-                </h1>
-              </div>
-            </article>
-          </Link>
-        ))}
+                  <h1
+                    css={css`
+                      font-size: 24px;
+                      font-weight: 800;
+                      line-height: 1.3;
+                      color: var(--light-text-500);
+                      overflow: scroll;
+                    `}
+                  >
+                    {post.title}
+                  </h1>
+                </div>
+              </article>
+            </Link>
+          )
+        })}
       </main>
     </>
   )
@@ -117,6 +125,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            published
           }
           fileAbsolutePath
         }
