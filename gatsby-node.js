@@ -67,6 +67,10 @@ canonical_url: https://benborgers.com/blog/${id}/
       deletePage(page)
       console.log(`Not publishing ${id}, since it's not ${publishDate.toLocaleString("en-US", { month: "long", day: "numeric", year: "numeric" })} yet`)
       return resolve()
+    } else if(!page.context.frontmatter.published) {
+      deletePage(page)
+      console.log(`Not publishing ${id}, since it has no published date`)
+      return resolve()
     }
     
 
