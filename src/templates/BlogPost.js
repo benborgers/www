@@ -190,6 +190,10 @@ export default ({ pageContext, location, children }) => {
               margin: 48px 0;
               border-top: 2px dashed var(--light-text-100);
             }
+
+            strong {
+              font-weight: 700;
+            }
           `}
         >
           <MDXProvider>
