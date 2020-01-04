@@ -11,7 +11,7 @@ exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
 
   if(node.internal.type === "Mdx") {
-    const shouldPublish = new Date(node.frontmatter.published) < new Date()
+    const shouldPublish = node.frontmatter.published ? new Date(node.frontmatter.published) < new Date() : false
 
     createNodeField({
       node,
