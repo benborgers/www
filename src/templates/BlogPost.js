@@ -15,6 +15,8 @@ export default ({ pageContext, location, children }) => {
 
   const shareImage = `https://benborgers.com/assets/${postId}.png`
 
+  const clean = text => text.replace(/"/g, `\\"`)
+
   return (
     <>
       <Head
@@ -30,7 +32,7 @@ export default ({ pageContext, location, children }) => {
           {
             "@context": "https://schema.org", 
             "@type": "BlogPosting",
-            "headline": "${frontmatter.title}",
+            "headline": "${clean(frontmatter.title)}",
             "image": "${shareImage}",
             "publisher": {
               "@type": "Organization",
@@ -47,7 +49,7 @@ export default ({ pageContext, location, children }) => {
             "datePublished": "${frontmatter.published}",
             "dateCreated": "${frontmatter.published}",
             "dateModified": "${frontmatter.published}",
-            "description": "${frontmatter.description}",
+            "description": "${clean(frontmatter.description)}",
             "author": {
               "@type": "Person",
               "name": "Ben Borgers",
