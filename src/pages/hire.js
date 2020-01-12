@@ -10,7 +10,7 @@ export default () => {
   return (
     <Shell
       title="Hire me! | Ben Borgers"
-      description="I'd love to help you create a web site or web app that you can easily update and maintain."
+      description="I'd love to help you create a website or web app that you can easily update and maintain."
     >
       <p
         css={css`
@@ -37,7 +37,7 @@ export default () => {
           }
         `}
       >
-        I'd love to help you create a web site or web app that you can easily update and maintain. If you'd like to talk, <a href="mailto:borgersbenjamin@gmail.com">send me an email</a>.
+        I'd love to help you create a website or web app that you can easily update and maintain. If you'd like to talk, <a href="mailto:borgersbenjamin@gmail.com">send me an email</a>.
       </p>
 
       <Spacer height={64} />
