@@ -33,6 +33,9 @@ export default () => {
               <a href="https://blocks.elk.sh">Blocks</a>, a progressive web app for Lexington High School's rotating schedule used by {blocksUsers} students and teachers.
             </li>
             <li>
+              <a href="https://github.com/benborgers/figure">Figure</a>, an open-source project for using your Figma design assets on your website.
+            </li>
+            <li>
               <a href="https://progress.elk.sh">Progress</a>, calculating what percentage of the school year we've made it through.
             </li>
             <li>
