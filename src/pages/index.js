@@ -5,7 +5,7 @@ import GridParent from "../components/GridParent"
 import GridChild from "../components/GridChild"
 
 export default () => {
-  const [blocksUsers, setBlocksUsers] = useState(830)
+  const [blocksUsers, setBlocksUsers] = useState(900)
 
   useEffect(() => {
     fetch("https://hurricane-eggnog.glitch.me/stats")
