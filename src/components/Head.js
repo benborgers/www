@@ -16,6 +16,9 @@ export default ({ title, description, shareImage, favicon="🐙" }) => {
       <meta property="twitter:card" content="summary_large_image" />
 
       <link rel="icon" href={`https://emojicdn.elk.sh/${favicon}`} />
+
+      {/* enables google search console - do not remove */}
+      <meta name="google-site-verification" content="36SYJxqahg7QGGsxCBTHGhLfvekzoioL40Xo1jPgqUA" />
     </Helmet>
   )
 }
