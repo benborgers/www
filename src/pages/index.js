@@ -8,7 +8,7 @@ export default () => {
   const [blocksUsers, setBlocksUsers] = useState(900)
 
   useEffect(() => {
-    fetch("https://hurricane-eggnog.glitch.me/stats")
+    fetch("https://blocks-api.glitch.me/stats")
       .then(res => res.json())
       .then(json => {
         setBlocksUsers(json.users)
