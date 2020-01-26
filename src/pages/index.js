@@ -18,12 +18,12 @@ export default () => {
   return (
     <Shell
       title="Ben Borgers"
-      description="I'm a 17 year old software developer from Boston, MA. I'm currently in high school, and interned at IBM last summer."
+      description="I'm a 17 year old developer from Boston, MA. I'm currently in high school, and interned at IBM last summer."
     >
       <GridParent>
         <GridChild heading="Ben Borgers">
           <p>
-            Hi! I'm a 17 year old software developer from Boston, MA. I'm currently in high school, and interned at <a href="https://www.ibm.com/security/data-security/guardium">IBM</a> last summer.
+            Hi! I'm a 17 year old developer from Boston, MA. I'm currently in high school, and interned at <a href="https://www.ibm.com/security/data-security/guardium">IBM</a> last summer.
           </p>
         </GridChild>
 
