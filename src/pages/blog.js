@@ -4,7 +4,7 @@ import { css, Global } from "@emotion/core"
 
 import Head from "../components/Head"
 import GlobalStyles from "../components/GlobalStyles"
-import Header from "../components/BlogHeader"
+import Header from "../components/Header"
 
 export default ({ data }) => {
   const posts = data.allMdx.edges.map(edge => {
@@ -33,7 +33,7 @@ export default ({ data }) => {
         `}
       />
 
-      <Header />
+      <Header showName={true} light={true} lessWide={true} />
 
       <main
         css={css`
