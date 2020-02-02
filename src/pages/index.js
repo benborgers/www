@@ -30,7 +30,7 @@ export default () => {
         <GridChild heading="Projects">
           <ul>
             <li>
-              <a href="https://blocks.elk.sh">Blocks</a>, a progressive web app for Lexington High School's rotating schedule used by {blocksUsers} students and teachers.
+              <a href="https://blocks.elk.sh">Blocks</a>, a progressive web app for Lexington High School's rotating schedule used by {blocksUsers} (and counting) students and teachers.
             </li>
             <li>
               <a href="https://github.com/benborgers/figure">Figure</a>, an open-source project for using your Figma design assets on your website.
