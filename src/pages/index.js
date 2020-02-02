@@ -44,7 +44,7 @@ export default () => {
           </ul>
         </GridChild>
 
-        <GridChild heading="Contact">
+        <GridChild heading="Other places">
           <p>
             <a href="mailto:borgersbenjamin@gmail.com">Email</a>, <a href="https://twitter.com/benborgers">Twitter</a>, and <a href="https://github.com/benborgers">GitHub</a>.
           </p>
