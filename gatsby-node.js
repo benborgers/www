@@ -32,7 +32,7 @@ exports.createPages = ({ actions: { createPage } }) => new Promise(resolve => {
         path: "/blog",
         component: blogPostIndex,
         context: {
-          posts
+          posts: posts.reverse()
         }
       })
 
