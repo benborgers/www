@@ -39,20 +39,22 @@ exports.createPages = ({ actions: { createPage } }) => new Promise(resolve => {
       let i = 0
 
       posts.forEach(post => {
+        const slug = post.fields.Slug.trim()
+
         fetch(`https://potion.benborgers.now.sh/api/html?id=${post.id}`)
           .then(res => res.text())
           .then(html => {
             feed.addItem({
               title: post.fields.Title,
-              id: post.fields.Slug,
-              link: `https://benborgers.com/blog/${post.fields.Slug}/`,
+              id: slug,
+              link: `https://benborgers.com/blog/${slug}/`,
               description: post.fields.Description,
               content: html,
               date: new Date(post.fields.Date.start_date)
             })
 
             createPage({
-              path: `/blog/${post.fields.Slug}/`,
+              path: `/blog/${slug}/`,
               component: blogPostTemplate,
               context: {
                 post,
