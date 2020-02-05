@@ -148,7 +148,7 @@ export default ({ pageContext: { post, html } }) => {
               color: white;
             }
 
-            code::selection {
+            pre code::selection {
               color: var(--light-text-500);
               background-color: var(--light-background);
             }
