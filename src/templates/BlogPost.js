@@ -175,6 +175,11 @@ export default ({ pageContext: { post, html } }) => {
               margin-bottom: 8px;
             }
 
+            h1 *, h2 *, h3 * {
+              font: inherit;
+              color: inherit;
+            }
+
             ul, ol {
               margin-left: 32px;
             }
