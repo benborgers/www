@@ -30,7 +30,7 @@ export default () => {
       <Head
         title="Gatsby Dispatch"
         description="A biweekly newsletter with links and tips for Gatsby.js"
-        shareImage="https://benborgers.com/assets/gatsby-dispatch.png"
+        shareImage="https://figure.netlify.com/gatsby-dispatch-share-image"
         favicon="🍇"
       />
 

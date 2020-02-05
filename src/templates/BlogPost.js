@@ -1,28 +1,24 @@
 import React from "react"
-import { Link } from "gatsby"
 import { css, Global } from "@emotion/core"
-import { MDXProvider } from "@mdx-js/react"
 import { Helmet } from "react-helmet-async"
 
 import Head from "../components/Head"
 import GlobalStyles from "../components/GlobalStyles"
 import Header from "../components/Header"
 
-export default ({ pageContext, location, children }) => {
-  const frontmatter = pageContext.frontmatter
-
-  const postId = location.pathname.replace(/^\/blog\//g, "").replace(/(\/+)$/g, "")
-
-  const shareImage = `https://benborgers.com/assets/${postId}.png`
+export default ({ pageContext: { post, html } }) => {
 
   const clean = text => text.replace(/"/g, `\\"`)
+
+  const title = post.fields.Title
+  const description = post.fields.Description
+  const published = new Date(post.fields.Date.start_date)
 
   return (
     <>
       <Head
-        title={frontmatter.title}
-        description={frontmatter.description}
-        shareImage={shareImage}
+        title={title}
+        description={description}
       />
 
       <Helmet>
@@ -32,24 +28,23 @@ export default ({ pageContext, location, children }) => {
           {
             "@context": "https://schema.org", 
             "@type": "BlogPosting",
-            "headline": "${clean(frontmatter.title)}",
-            "image": "${shareImage}",
+            "headline": "${clean(title)}",
             "publisher": {
               "@type": "Organization",
               "name": "Ben Borgers",
               "url": "https://benborgers.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://benborgers.com/assets/index.png",
+                "url": "https://figure.netlify.com/www-share-image",
                 "width": "1200",
                 "height": "630"
               }
             },
-            "url": "https://benborgers.com/blog/${postId}/",
-            "datePublished": "${frontmatter.published}",
-            "dateCreated": "${frontmatter.published}",
-            "dateModified": "${frontmatter.published}",
-            "description": "${clean(frontmatter.description)}",
+            "url": "https://benborgers.com/blog/${post.fields.Slug}/",
+            "datePublished": "${published}",
+            "dateCreated": "${published}",
+            "dateModified": "${published}",
+            "description": "${clean(description)}",
             "author": {
               "@type": "Person",
               "name": "Ben Borgers",
@@ -102,17 +97,17 @@ export default ({ pageContext, location, children }) => {
             }
           `}
         >
-          {frontmatter.title}
+          {title}
         </h1>
 
         <time
           itemProp="datePublished"
-          dateTime={frontmatter.published}
+          dateTime={published}
           css={css`
             display: none;
           `}
         >
-          {new Date(frontmatter.published).toLocaleString("en-US", {
+          {new Date(published).toLocaleString("en-US", {
             timeZone: "Etc/UTC",
             month: "long",
             day: "numeric",
@@ -197,53 +192,8 @@ export default ({ pageContext, location, children }) => {
               font-weight: 700;
             }
           `}
-        >
-          <MDXProvider>
-            {children}
-          </MDXProvider>
-        </article>
-
-        <Link
-          to="/gatsby/"
-          css={css`
-            text-decoration: none;
-          `}
-        >
-          <div
-            css={css`
-              background-color: var(--light-background-dimmer);
-              padding: 16px;
-              border-radius: 4px;
-              margin-top: 64px;
-
-              display: grid;
-              grid-template-columns: max-content 1fr;
-              grid-column-gap: 12px;
-              align-items: center;
-            `}
-          >
-            <img
-              src="https://emojicdn.elk.sh/🍇"
-              alt=""
-              css={css`
-                display: block;
-                height: 16px;
-              `}
-            />
-
-            <p
-              css={css`
-                text-decoration: underline;
-                text-decoration-color: var(--light-text-100);
-                color: var(--light-text-500);
-                font-weight: 500;
-                line-height: 1.4;
-              `}
-            >
-              Subscribe to my biweekly newsletter with articles and tips for Gatsby.
-            </p>
-          </div>
-        </Link>
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </main>
     </>
   )

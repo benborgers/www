@@ -1,25 +1,18 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import { css, Global } from "@emotion/core"
 
 import Head from "../components/Head"
 import GlobalStyles from "../components/GlobalStyles"
 import Header from "../components/Header"
 
-export default ({ data }) => {
-  const posts = data.allMdx.edges.map(edge => {
-    return {
-      ...edge.node.frontmatter,
-      id: edge.node.fileAbsolutePath.split("/").reverse()[0].replace(/.mdx/, "")
-    }
-  })
-
+export default ({ pageContext: { posts } }) => {
   return (
     <>
       <Head
         title="Ben Borgers’ Blog"
         description="Articles and notes on React, Gatsby, Node, and more."
-        shareImage="https://benborgers.com/assets/blog.png"
+        shareImage="https://figure.netlify.com/blog-share-image"
       />
 
       <GlobalStyles background="var(--light-background)" />
@@ -53,10 +46,10 @@ export default ({ data }) => {
           }
         `}
       >
-        {posts.map((post, index) => (
+        {posts.map((post) => (
           <Link
-            key={post.id}
-            to={`/blog/${post.id}/`}
+            key={post.fields.Slug}
+            to={`/blog/${post.fields.Slug}/`}
             css={css`
               text-decoration: none;
             `}
@@ -74,16 +67,6 @@ export default ({ data }) => {
                 }
               `}
             >
-              <img
-                src={`/assets/${post.id}.png`}
-                alt=""
-                css={css`
-                  border-top-left-radius: 8px;
-                  border-top-right-radius: 8px;
-                `}
-                loading={index > 3 ? "lazy" : "auto"} // lazy load images past 4 blog posts
-              />
-
               <div
                 css={css`
                   padding: 24px;
@@ -97,10 +80,21 @@ export default ({ data }) => {
                     line-height: 1.3;
                     color: var(--light-text-500);
                     overflow: scroll;
+                    margin-bottom: 16px;
                   `}
                 >
-                  {post.title}
+                  {post.fields.Title}
                 </h1>
+
+                <p
+                  css={css`
+                    font-size: 16px;
+                    line-height: 1.5;
+                    color: var(--light-text-300);
+                  `}
+                >
+                  {post.fields.Description}
+                </p>
               </div>
             </article>
           </Link>
@@ -109,18 +103,3 @@ export default ({ data }) => {
     </>
   )
 }
-
-export const pageQuery = graphql`
-  query {
-    allMdx(sort: {fields: frontmatter___published, order: DESC}, filter: {fields: {publish: {eq: true}}}) {
-      edges {
-        node {
-          frontmatter {
-            title
-          }
-          fileAbsolutePath
-        }
-      }
-    }
-  }
-`

@@ -11,7 +11,7 @@ export default ({ title, description, children }) => {
       <Head
         title={title}
         description={description}
-        shareImage="https://benborgers.com/assets/index.png"
+        shareImage="https://figure.netlify.com/www-share-image"
       />
 
       <GlobalStyles />
