@@ -127,10 +127,10 @@ export default ({ pageContext: { post, html } }) => {
 
             code {
               font-family: "Roboto Mono", monospace;    
-              color: white;
               border-radius: 4px;
               font-size: 15px;
-              background-color: var(--light-background-inky);
+              background-color: var(--light-background-dimmer);
+              color: var(--light-text-500);
               padding: 2px 4px;
             }
 
@@ -145,6 +145,7 @@ export default ({ pageContext: { post, html } }) => {
             pre code {
               background-color: transparent;
               padding: 0;
+              color: white;
             }
 
             code::selection {
