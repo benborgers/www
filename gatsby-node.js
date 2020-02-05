@@ -25,7 +25,9 @@ exports.createPages = ({ actions: { createPage } }) => new Promise(resolve => {
 
   fetch("https://potion.benborgers.now.sh/api/table?id=3e22bbb109ab40138b3899cd4b31614e")
     .then(res => res.json())
-    .then(posts => {
+    .then(rawPosts => {
+      const posts = rawPosts.filter(post => post.fields.Published === true)
+
       createPage({
         path: "/blog",
         component: blogPostIndex,
@@ -37,11 +39,6 @@ exports.createPages = ({ actions: { createPage } }) => new Promise(resolve => {
       let i = 0
 
       posts.forEach(post => {
-        if(!post.fields.Published) {
-          return console.log(`Not publishing ${post.fields.Title}`)
-        }
-
-
         fetch(`https://potion.benborgers.now.sh/api/html?id=${post.id}`)
           .then(res => res.text())
           .then(html => {
