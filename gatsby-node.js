@@ -23,7 +23,7 @@ exports.createPages = ({ actions: { createPage } }) => new Promise(resolve => {
   const blogPostIndex = path.resolve("src/templates/BlogIndex.js")
   const blogPostTemplate = path.resolve("src/templates/BlogPost.js")
 
-  fetch("https://potion.benborgers.now.sh/api/table?id=3e22bbb109ab40138b3899cd4b31614e")
+  fetch("https://potion-api.now.sh/api/table?id=3e22bbb109ab40138b3899cd4b31614e")
     .then(res => res.json())
     .then(rawPosts => {
       const posts = rawPosts.filter(post => post.fields.Published === true)
@@ -41,7 +41,7 @@ exports.createPages = ({ actions: { createPage } }) => new Promise(resolve => {
       posts.forEach(post => {
         const slug = post.fields.Slug.trim()
 
-        fetch(`https://potion.benborgers.now.sh/api/html?id=${post.id}`)
+        fetch(`https://potion-api.now.sh/api/html?id=${post.id}`)
           .then(res => res.text())
           .then(html => {
             feed.addItem({
