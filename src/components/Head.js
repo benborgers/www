@@ -12,12 +12,8 @@ export default ({ title, description, shareImage, favicon="🐙" }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
 
-      {shareImage && (
-        <>
-          <meta property="og:image" content={shareImage} />
-          <meta property="twitter:card" content="summary_large_image" />
-        </>
-      )}
+      {shareImage && <meta property="og:image" content={shareImage} />}
+      {shareImage && <meta property="twitter:card" content="summary_large_image" />}
 
       <link rel="icon" href={`https://emojicdn.elk.sh/${favicon}`} />
 
