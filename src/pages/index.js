@@ -8,7 +8,7 @@ export default () => {
   const [blocksUsers, setBlocksUsers] = useState(900)
 
   useEffect(() => {
-    fetch("https://blocks-api.glitch.me/stats")
+    fetch("https://blocks-proxy.now.sh/stats")
       .then(res => res.json())
       .then(json => {
         setBlocksUsers(json.users)
