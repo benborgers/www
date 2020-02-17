@@ -1,5 +1,6 @@
-[dev]
-  command = "gatsby develop"
+[build]
+  publish = "public"
+  command = "npm run build"
 
 [[redirects]]
   from = "/reference/how-to-add-fathom-analytics-to-gatsby/"

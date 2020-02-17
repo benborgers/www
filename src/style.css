@@ -1,0 +1,93 @@
+@import url("https://rsms.me/inter/inter.css");
+
+:root {
+  --text-500: hsl(0, 0%, 10%);
+  --text-300: hsl(218, 20%, 30%);
+  --text-100: hsl(218, 20%, 60%);
+
+  --underline: hsl(218, 20%, 70%);
+  --underline-hover: hsl(218, 20%, 40%);
+
+  --background: hsl(0, 0%, 100%);
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-300);
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  outline: none;
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background);
+}
+
+p {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+  transition: text-decoration-color .2s;
+}
+
+a:hover {
+  text-decoration-color: var(--underline-hover);
+}
+
+.page-simple {
+  padding: 64px;
+  padding-bottom: 64px;
+}
+
+.page-simple .title {
+  font-weight: 700;
+  color: var(--text-500);
+}
+
+.page-simple .title.more-space {
+  margin-bottom: 16px;
+}
+
+.page-simple .back {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-100);
+  font-size: 14px;
+  margin-bottom: 32px;
+  display: block;
+  max-width: max-content;
+}
+
+.block {
+  margin-bottom: 24px;
+}
+
+.block .primary {
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .page-simple {
+    padding: 32px;
+    padding-bottom: 48px;
+  }
+}
+
+@media (max-width: 500px) {
+  .page-simple {
+    padding: 16px;
+    padding-top: 24px;
+    padding-bottom: 32px;
+  }
+}
