@@ -51,8 +51,10 @@ a {
   transition: text-decoration-color .2s;
 }
 
-a:hover {
-  text-decoration-color: var(--underline-hover);
+@media (hover: hover) {
+  a:hover {
+    text-decoration-color: var(--underline-hover);
+  }
 }
 
 .page-center {
