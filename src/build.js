@@ -37,7 +37,7 @@ const main = async () => {
   const projects = await table(constants.pageId.projects)
   const projectsHtml = await components.layout({
     title: "Projects - Ben Borgers",
-    description: "I'm a 17 year old coder from Boston, MA. This is a list of my personal projects, things I've built over the last couple years. ",
+    description: "I'm a 17 year old coder from Boston, MA. This is a list of my personal projects, things I've built over the last couple years.",
     ogImage: "https://figure.netlify.com/www-share-image",
     body: `
       <div class="page-simple">
