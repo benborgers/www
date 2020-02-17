@@ -60,10 +60,6 @@ export default ({ showName=false, light=false, lessWide=false}) => {
             {
               name: "Blog",
               path: "/blog/"
-            },
-            {
-              name: "Hire Me",
-              path: "/hire/"
             }
           ].map(item => (
             <Link
