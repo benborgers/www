@@ -10,6 +10,9 @@
 
   --selection: hsl(218, 20%, 90%);
 
+  --bar-faint: hsl(218, 30%, 97%);
+  --bar-heavy: hsl(218, 30%, 90%);
+
   --background: hsl(0, 0%, 100%);
 }
 
@@ -67,8 +70,18 @@ a:hover {
   color: var(--text-500);
 }
 
-.page-simple .title.more-space {
-  margin-bottom: 16px;
+.page-simple .title.centered {
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+.page-simple .title.centered::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, var(--bar-faint), var(--bar-heavy), var(--bar-faint));
+  display: block;
+  margin-top: 24px;
 }
 
 .page-simple .back {

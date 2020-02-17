@@ -42,7 +42,7 @@ const main = async () => {
         <a href="/" class="back">← benborgers.com</a>
 
         <div class="page-center">
-          <p class="title more-space">Projects</p>
+          <p class="title centered">Projects</p>
 
           ${projects.map(project => `
             <div class="block">
