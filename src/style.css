@@ -1,14 +1,15 @@
 @import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700&display=swap");
 
 :root {
   --text-500: hsl(0, 0%, 10%);
   --text-300: hsl(218, 20%, 30%);
   --text-100: hsl(218, 20%, 60%);
 
-  --underline: hsl(218, 20%, 70%);
+  --underline: hsl(218, 20%, 80%);
   --underline-hover: hsl(218, 20%, 40%);
 
-  --selection: hsl(218, 20%, 90%);
+  --selection: hsl(218, 20%, 93%);
 
   --bar-faint: hsl(218, 30%, 97%);
   --bar-heavy: hsl(218, 30%, 90%);
@@ -35,7 +36,6 @@ body {
 }
 
 ::selection {
-  color: var(--text-500);
   background-color: var(--selection);
 }
 
@@ -60,6 +60,10 @@ a:hover {
   margin: 0 auto;
 }
 
+.page-center.wider {
+  max-width: 640px;
+}
+
 .page-simple {
   padding: 48px;
   padding-bottom: 64px;
@@ -70,12 +74,12 @@ a:hover {
   color: var(--text-500);
 }
 
-.page-simple .title.centered {
+.page-simple .title.center {
   padding-bottom: 24px;
   text-align: center;
 }
 
-.page-simple .title.centered::after {
+.page-simple .title.center::after {
   content: "";
   height: 1px;
   width: 100%;
@@ -102,6 +106,57 @@ a:hover {
   font-weight: 500;
 }
 
+.blog-content > * {
+  margin-bottom: 24px;
+}
+
+.blog-content ol, .blog-content ul {
+  margin-left: 24px;
+}
+
+.blog-content li {
+  margin-bottom: 12px;
+}
+
+.blog-content * {
+  line-height: 1.6;
+}
+
+.blog-content code {
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.blog-content code, .blog-content code * {
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+}
+
+.blog-content code:not(.hljs) {
+  background-color: #f8f8f8;
+  padding: 2px 4px;
+}
+
+.blog-content hr {
+  border: 1px solid var(--bar-heavy);
+  margin: 32px 0;
+}
+
+.blog-content h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin-top: 32px;
+  color: var(--text-500);
+  letter-spacing: -0.7px;
+}
+
+.blog-content blockquote {
+  padding: 4px 0;
+  padding-left: 24px;
+  border-left: 2px solid var(--bar-heavy);
+}
+
 @media (max-width: 800px) {
   .page-simple {
     padding: 32px;
@@ -113,6 +168,6 @@ a:hover {
   .page-simple {
     padding: 16px;
     padding-top: 24px;
-    padding-bottom: 32px;
+    padding-bottom: 48px;
   }
 }

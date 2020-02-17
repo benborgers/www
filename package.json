@@ -1,7 +1,7 @@
 {
   "name": "www",
   "scripts": {
-    "build": "rm -rf public && mkdir public && node src/build"
+    "build": "rm -rf public && mkdir public public/blog public/static && cp src/static/* public/static && node src/build"
   },
   "dependencies": {
     "autoprefixer": "^9.7.4",
