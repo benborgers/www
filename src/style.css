@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700&display=swap");
 
 :root {
-  --text-500: hsl(218, 0%, 10%);
+  --text-500: hsl(218, 20%, 10%);
   --text-300: hsl(218, 20%, 30%);
   --text-100: hsl(218, 20%, 60%);
 
