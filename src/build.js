@@ -45,7 +45,7 @@ const main = async () => {
           <p class="title more-space">Projects</p>
 
           ${projects.map(project => `
-            <div class="block ${project.fields.Highlight ? "highlight" : ""}">
+            <div class="block">
               <a class="primary" href=${!project.fields.Link.startsWith("http") ? "https://" : ""}${project.fields.Link}>${project.fields.Name}</a>
               <p class="secondary">${project.fields.Description}</p>
             </div>
