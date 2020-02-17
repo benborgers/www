@@ -4,6 +4,19 @@ const fetch = require("node-fetch")
 const { Feed } = require("feed")
 
 exports.createPages = ({ actions: { createPage } }) => new Promise(resolve => {
+  fetch("https://potion-api.now.sh/api/html?id=4d529b5031244b57a2dc0dbea5b096f0")
+    .then(res => res.text())
+    .then(text => {
+      createPage({
+        path: "/",
+        component: path.resolve("src/templates/Index.js"),
+        context: {
+          projects: text
+        }
+      })
+    })
+
+
   const feed = new Feed({
     title: "Ben Borgers’ Blog",
     description: "Articles and notes on React, Gatsby, Node, and more.",
