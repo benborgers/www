@@ -66,7 +66,7 @@ a:hover {
 
 .page-simple {
   padding: 48px;
-  padding-bottom: 64px;
+  padding-bottom: 64px !important;
 }
 
 .page-simple .title {
@@ -161,7 +161,6 @@ a:hover {
 @media (max-width: 800px) {
   .page-simple {
     padding: 32px;
-    padding-bottom: 48px;
   }
 }
 
@@ -169,6 +168,5 @@ a:hover {
   .page-simple {
     padding: 16px;
     padding-top: 24px;
-    padding-bottom: 48px;
   }
 }
