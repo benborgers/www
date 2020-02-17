@@ -8,6 +8,8 @@
   --underline: hsl(218, 20%, 70%);
   --underline-hover: hsl(218, 20%, 40%);
 
+  --selection: hsl(218, 20%, 90%);
+
   --background: hsl(0, 0%, 100%);
 }
 
@@ -27,6 +29,11 @@
 
 body {
   background-color: var(--background);
+}
+
+::selection {
+  color: var(--text-500);
+  background-color: var(--selection);
 }
 
 p {
