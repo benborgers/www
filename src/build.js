@@ -40,14 +40,17 @@ const main = async () => {
     body: `
       <div class="page-simple">
         <a href="/" class="back">← benborgers.com</a>
-        <p class="title more-space">Projects</p>
 
-        ${projects.map(project => `
-          <div class="block ${project.fields.Highlight ? "highlight" : ""}">
-            <a class="primary" href=${!project.fields.Link.startsWith("http") ? "https://" : ""}${project.fields.Link}>${project.fields.Name}</a>
-            <p class="secondary">${project.fields.Description}</p>
-          </div>
-        `).join("")}
+        <div class="page-center">
+          <p class="title more-space">Projects</p>
+
+          ${projects.map(project => `
+            <div class="block ${project.fields.Highlight ? "highlight" : ""}">
+              <a class="primary" href=${!project.fields.Link.startsWith("http") ? "https://" : ""}${project.fields.Link}>${project.fields.Name}</a>
+              <p class="secondary">${project.fields.Description}</p>
+            </div>
+          `).join("")}
+        </div>
       </div>
     `
   })

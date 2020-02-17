@@ -45,8 +45,13 @@ a:hover {
   text-decoration-color: var(--underline-hover);
 }
 
+.page-center {
+  max-width: 512px;
+  margin: 0 auto;
+}
+
 .page-simple {
-  padding: 64px;
+  padding: 48px;
   padding-bottom: 64px;
 }
 
