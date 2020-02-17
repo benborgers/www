@@ -21,7 +21,7 @@ const main = async () => {
   const homeContents = await html(constants.pageId.home)
   const homeHtml = await components.layout({
     title: "Ben Borgers",
-    description: "",
+    description: "I'm a 17 year old coder from Boston, MA. I interned at IBM during the summer in 2019 and am returning for the summer of 2020. I work on a lot of personal projects, and sometimes write on my blog.",
     ogImage: "https://figure.netlify.com/www-share-image",
     body: `
       <div class="page-simple">
@@ -37,7 +37,7 @@ const main = async () => {
   const projects = await table(constants.pageId.projects)
   const projectsHtml = await components.layout({
     title: "Projects - Ben Borgers",
-    description: "",
+    description: "I'm a 17 year old coder from Boston, MA. This is a list of my personal projects, things I've built over the last couple years. ",
     ogImage: "https://figure.netlify.com/www-share-image",
     body: `
       <div class="page-simple">
@@ -65,7 +65,8 @@ const main = async () => {
 
   const blogIndexHtml = await components.layout({
     title: "Blog - Ben Borgers",
-    description: "",
+    description: "I'm a 17 year old coder from Boston, MA. These are my blog posts on JavaScript and Node.js, React, Gatsby, and more.",
+    ogImage: "https://figure.netlify.com/blog-share-image",
     body: `
       <div class="page-simple">
         <a href="/" class="back">← benborgers.com</a>
