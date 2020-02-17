@@ -17,7 +17,7 @@ const css = () => new Promise(async resolve => {
   resolve(cssCache)
 })
 
-const funComment = "Yes, I did build my own static site generator just for this site."
+const funComment = "yes, i did build my own static site generator just for this site"
 
 const masterLayout = ({ title, description, ogImage, body }) => new Promise(async resolve => {
   const cleanCss = await css()
