@@ -1,5 +1,6 @@
 const fs = require("fs")
 const htmlMinifier = require("html-minifier").minify
+const { SitemapStream, streamToPromise } = require("sitemap")
 
 const { table, html } = require("./notion")
 const constants = require("./constants")
@@ -16,6 +17,31 @@ const writeFile = (path, contents) => {
 const main = async () => {
 
   const dev = !process.env.NETLIFY
+
+  /* Set up sitemap */
+  const sitemap = new SitemapStream({ hostname: "https://benborgers.com" })
+
+  streamToPromise(sitemap)
+    .then(file => writeFile("sitemap.xml", file.toString()))
+
+  sitemap.write({
+    url: "/",
+    changefreq: "weekly",
+    priority: 0.4
+  })
+
+  sitemap.write({
+    url: "/projects",
+    changefreq: "weekly",
+    priority: 0.6
+  })
+
+  sitemap.write({
+    url: "/blog",
+    changefreq: "daily",
+    priority: 0.9
+  })
+  
 
   /* Home page */
   const homeContents = await html(constants.pageId.home)
@@ -85,12 +111,20 @@ const main = async () => {
   })
   writeFile("blog.html", blogIndexHtml)
 
+  let postsProcessed = 0
+
   publishedPosts.forEach(async post => {
     const postHtml = await html(post.id)
 
     const clean = text => text.replace(/"/g, "&quot;")
     const title = clean(post.fields.Title)
     const description = clean(post.fields.Description)
+
+    sitemap.write({
+      url: `/blog/${post.fields.Slug}`,
+      changefreq: "weekly",
+      priority: 0.7
+    })
 
     const fullHtml = await components.layout({
       title: title,
@@ -116,6 +150,13 @@ const main = async () => {
       `
     })
     writeFile(`blog/${post.fields.Slug}.html`, fullHtml)
+
+
+    postsProcessed++
+
+    if(postsProcessed === publishedPosts.length) {
+      sitemap.end()
+    }
   })
 
 }
