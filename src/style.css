@@ -57,6 +57,10 @@ a {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 .page-center {
   max-width: 512px;
   margin: 0 auto;
