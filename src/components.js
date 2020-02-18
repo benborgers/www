@@ -19,7 +19,7 @@ const css = () => new Promise(async resolve => {
 
 const funComment = "yes, i did build my own static site generator just for this site"
 
-const masterLayout = ({ title, description, ogImage, body }) => new Promise(async resolve => {
+exports.layout = ({ title, description, ogImage, body }) => new Promise(async resolve => {
   const cleanCss = await css()
 
   resolve(`
@@ -50,7 +50,3 @@ const masterLayout = ({ title, description, ogImage, body }) => new Promise(asyn
     </body>
   `)
 })
-
-exports.layout = async ({ title, description, ogImage, body }) => {
-  return await masterLayout({ title, description, ogImage, body })
-}
