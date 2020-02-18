@@ -8,7 +8,7 @@
     "cssnano": "^4.1.10",
     "html-minifier": "^4.0.0",
     "node-fetch": "^2.6.0",
-    "postcss": "^7.0.26",
+    "postcss": "^7.0.27",
     "sitemap": "^5.1.0"
   }
 }
