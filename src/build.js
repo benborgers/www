@@ -41,7 +41,7 @@ const main = async () => {
     ogImage: "https://figure.netlify.com/www-share-image",
     body: `
       <div class="page-simple">
-        <a href="/" class="back">← benborgers.com</a>
+        <a href="/" class="back">&larr; benborgers.com</a>
 
         <div class="page-center">
           <p class="title center">Projects</p>
@@ -69,7 +69,7 @@ const main = async () => {
     ogImage: "https://figure.netlify.com/blog-share-image",
     body: `
       <div class="page-simple">
-        <a href="/" class="back">← benborgers.com</a>
+        <a href="/" class="back">&larr; benborgers.com</a>
 
         <div class="page-center">
           <p class="title center">Blog</p>
@@ -97,7 +97,7 @@ const main = async () => {
       description: description,
       body: `
         <div class="page-simple">
-          <a href="/blog" class="back">← benborgers.com/blog</a>
+          <a href="/blog" class="back">&larr; benborgers.com/blog</a>
 
           <div class="page-center wider">
             <p class="title center">${title}</p>
