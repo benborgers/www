@@ -1,4 +1,5 @@
 module.exports = {
+  isDev: process.env.NOW_REGION === "dev1",
   buildDir: "public",
   pageId: {
     home: "64e69444755249ae9bd9a1c4d8357277",

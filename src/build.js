@@ -10,13 +10,12 @@ const writeFile = (path, contents) => {
   const minifiedHtml = htmlMinifier(contents, {
     collapseWhitespace: true,
     html5: true,
+    minifyJS: true
   })
   fs.writeFile(`${constants.buildDir}/${path}`, minifiedHtml, () => {})
 }
 
 const main = async () => {
-
-  const dev = !process.env.NETLIFY
 
   /* Set up sitemap */
   const sitemap = new SitemapStream({ hostname: "https://benborgers.com" })
@@ -142,11 +141,11 @@ const main = async () => {
           </div>
         </div>
 
-        <script src="${dev ? `../static/highlight.js` : `/static/highlight.js`}"></script>
+        <script src="/static/highlight.js"></script>
         <script>
           hljs.initHighlightingOnLoad()
         </script>
-        <link rel="stylesheet" href="${dev ? `../static/highlight.css` : `/static/highlight.css`}">
+        <link rel="stylesheet" href="/static/highlight.css">
       `
     })
     writeFile(`blog/${post.fields.Slug}.html`, fullHtml)
