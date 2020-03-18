@@ -73,7 +73,7 @@ export default ({ raw, longform=false }) => {
         /* Styling for code */
 
         div :global(code), div :global(code *) {
-          font-family: "SFMono-Regular", "Menlo", "Consolas", "Lucida Console", "Monaco", monospace;
+          font-family: "Roboto Mono", monospace;
         }
 
         div :global(pre), div :global(code), div :global(.token) {
