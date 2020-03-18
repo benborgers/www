@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import Page from "../../components/Page"
 import List from "../../components/List"
 
@@ -10,9 +12,11 @@ export default ({ posts }) => {
       >
         <List
           items={posts.map(post => (
-            <a href={`/blog/${post.fields.Slug}`} className="no-underline">
-              <p className="title">{post.fields.Title}</p>
-            </a>
+            <Link href={`/blog/${post.fields.Slug}`}>
+              <a className="no-underline">
+                <p className="title">{post.fields.Title}</p>
+              </a>
+            </Link>
           ))}
           noPadding
         />
