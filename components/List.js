@@ -20,10 +20,6 @@ export default ({ items, noPadding }) => {
           padding: ${noPadding ? "0" : "24px"};
         }
 
-        li:hover {
-          background-color: var(--background-secondary);
-        }
-
         .first {
           padding-top: ${noPadding ? "0" : "32px"};
         }
@@ -32,9 +28,15 @@ export default ({ items, noPadding }) => {
           padding-bottom: ${noPadding ? "0" : "32px"};
         }
 
-        li :global(a:hover) {
-          opacity: 1;
-        }
+        @media (hover: hover) {
+          li:hover {
+            background-color: var(--background-secondary);
+          }
+
+          li :global(a:hover) {
+            opacity: 1;
+          }
+        }        
       `}</style>
     </>
   )

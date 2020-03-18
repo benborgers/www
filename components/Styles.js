@@ -49,8 +49,10 @@ export default () => {
         transition: opacity 0.2s;
       }
 
-      a:hover {
-        opacity: 0.7;
+      @media (hover: hover) {
+        a:hover {
+          opacity: 0.7;
+        }
       }
 
       a.no-underline {
