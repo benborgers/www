@@ -44,6 +44,34 @@ export default ({ raw, longform=false }) => {
           margin-bottom: 8px;
         }
 
+        div :global(hr) {
+          border: 1px solid var(--background-tertiary);
+          margin: 64px 0;
+        }
+
+        div :global(strong) {
+          font-weight: 700;
+          color: var(--text-primary);
+        }
+
+        div :global(.callout) {
+          display: grid;
+          grid-template-columns: 16px 1fr;
+          grid-column-gap: 24px;
+          align-items: center;
+
+          background-color: var(--background-secondary);
+          padding: 16px 24px;
+        }
+
+        div :global(.callout *) {
+          font-size: 18px;
+          margin: 0;
+        }
+
+
+        /* Styling for code */
+
         div :global(code), div :global(code *) {
           font-family: "Roboto Mono", monospace;
         }
@@ -85,11 +113,6 @@ export default ({ raw, longform=false }) => {
         div :global(a code) {
           text-decoration: underline;
           text-decoration-color: var(--text-secondary);
-        }
-
-        div :global(hr) {
-          border: 1px solid var(--background-tertiary);
-          margin: 64px 0;
         }
       `}</style>
     </>
