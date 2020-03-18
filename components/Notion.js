@@ -26,6 +26,7 @@ export default ({ raw, longform=false }) => {
 
         div :global(img) {
           width: 100%;
+          display: block;
         }
 
         div :global(blockquote) {
