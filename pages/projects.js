@@ -6,7 +6,7 @@ export default ({ projects }) => {
   return (
     <>
       <Page
-        title="Projects"
+        title="Projects - Ben Borgers"
         description="Projects made by Ben Borgers, a 17 year old programmer from Boston, MA."
       >
         <List

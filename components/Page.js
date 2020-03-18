@@ -5,17 +5,15 @@ import Styles from "./Styles"
 import Nav from "./Nav"
 
 export default ({ header=true, heading, title, description, children }) => {
-  const fullTitle = title ? title + " - Ben Borgers" : "Ben Borgers"
-  
   return (
     <>
       <Head>
-        <title>{fullTitle}</title>
+        <title>{title}</title>
         <meta name="description" content={description} />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Ben Borgers" />
-        <meta property="og:title" content={fullTitle} />
+        <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="https://figure.netlify.com/www-share-image" />
 

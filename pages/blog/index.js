@@ -7,7 +7,7 @@ export default ({ posts }) => {
   return (
     <>
       <Page
-        title="Blog"
+        title="Blog - Ben Borgers"
         description="Ben Borgers' blog, with articeles on JavaScript, React, React Native, CSS, and more."
       >
         <List

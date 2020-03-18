@@ -6,6 +6,7 @@ export default () => {
   return (
     <>
       <Page
+        title="Ben Borgers"
         header={false}
         heading="Ben Borgers"
         description="I'm a 17 year old programmer from Boston, MA. Summer intern at IBM for 2019 and 2020. This site holds a list of my projects and my blog."
