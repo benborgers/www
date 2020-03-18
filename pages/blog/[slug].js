@@ -7,8 +7,7 @@ export default ({ post, html }) => {
   return (
     <>
       <Head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" />
-        <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.3.0/themes/prism-xonokai.css" />
+        <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.3.0/themes/prism-duotone-sea.css" />
       </Head>
 
       <Page

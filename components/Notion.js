@@ -60,8 +60,9 @@ export default ({ raw, longform=false }) => {
           grid-column-gap: 24px;
           align-items: center;
 
-          background-color: var(--background-secondary);
-          padding: 16px 24px;
+          border: 3px solid var(--background-secondary);
+          padding: 24px;
+          border-radius: 4px;
         }
 
         div :global(.callout *) {
@@ -73,7 +74,7 @@ export default ({ raw, longform=false }) => {
         /* Styling for code */
 
         div :global(code), div :global(code *) {
-          font-family: "Roboto Mono", monospace;
+          font-family: "SFMono-Regular", "Menlo", "Consolas", "Lucida Console", "Monaco", monospace;
         }
 
         div :global(pre), div :global(code), div :global(.token) {
@@ -81,7 +82,7 @@ export default ({ raw, longform=false }) => {
         }
 
         div :global(pre) {
-          background-color: var(--background-secondary);
+          border: 3px solid var(--background-secondary);
           padding: 24px;
           border-radius: 4px;
           overflow: scroll;
@@ -92,7 +93,7 @@ export default ({ raw, longform=false }) => {
         }
 
         div :global(code) {
-          background-color: var(--background-tertiary);
+          background-color: var(--background-secondary);
           color: var(--text-primary);
           padding: 3px 4px;
           border-radius: 4px;
