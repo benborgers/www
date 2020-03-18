@@ -12,7 +12,7 @@ export default ({ posts }) => {
       >
         <List
           items={posts.map(post => (
-            <Link href={`/blog/${post.fields.Slug}`}>
+            <Link href="/blog/[slug]" as={`/blog/${post.fields.Slug}`}>
               <a className="no-underline">
                 <p className="title">{post.fields.Title}</p>
               </a>
