@@ -37,8 +37,7 @@ export default ({ social }) => {
         a {
           color: var(--text-secondary);
           text-decoration: none;
-          font-size: 18px;
-          font-weight: 600;
+          font-size: 20px;
           display: block;
         }
 

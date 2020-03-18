@@ -83,6 +83,7 @@ export default ({ header=true, heading, title, description, children }) => {
 
         header :global(nav a) {
           color: var(--text-tertiary);
+          font-size: 18px;
         }
 
         main {
