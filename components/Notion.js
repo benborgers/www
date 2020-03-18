@@ -51,7 +51,6 @@ export default ({ raw, longform=false }) => {
 
         div :global(strong) {
           font-weight: 700;
-          color: var(--text-primary);
         }
 
         div :global(.callout) {
@@ -90,11 +89,11 @@ export default ({ raw, longform=false }) => {
 
         div :global(pre code), div :global(pre code *) {
           font-size: 15px;
+          font-weight: 400;
         }
 
         div :global(code) {
           background-color: var(--background-secondary);
-          color: var(--text-primary);
           padding: 3px 4px;
           border-radius: 4px;
           vertical-align: 2%;
@@ -102,6 +101,7 @@ export default ({ raw, longform=false }) => {
 
         div :global(code), div :global(code *) {
           font-size: 16px;
+          font-weight: 700;
         }
 
         div :global(pre code) {
