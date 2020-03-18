@@ -1,14 +1,17 @@
 {
   "name": "www",
+  "repository": "https://github.com/benborgers/www",
+  "author": "Ben Borgers <borgersbenjamin@gmail.com>",
   "scripts": {
-    "build": "rm -rf public && mkdir public public/blog public/static && cp src/static/* public/static && node src/build"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "autoprefixer": "^9.7.4",
-    "cssnano": "^4.1.10",
-    "html-minifier": "^4.0.0",
+    "fathom-client": "^2.0.2",
+    "next": "^9.3.1",
     "node-fetch": "^2.6.0",
-    "postcss": "^7.0.27",
-    "sitemap": "^5.1.0"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   }
 }
