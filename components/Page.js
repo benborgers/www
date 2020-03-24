@@ -15,7 +15,7 @@ export default ({ header=true, heading, title, description, children }) => {
         <meta property="og:site_name" content="Ben Borgers" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="https://figure.netlify.com/www-share-image" />
+        <meta property="og:image" content={`https://borg-image.now.sh/www?title=${encodeURIComponent(title.replace(" - Ben Borgers", ""))}`} />
 
         <meta property="twitter:card" content="summary_large_image" />
 
