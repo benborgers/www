@@ -70,6 +70,10 @@ export default ({ raw, longform=false }) => {
           margin: 0;
         }
 
+        div :global(.callout code), div :global(.callout code *) {
+          font-size: 16px;
+        }
+
 
         /* Styling for code */
 
