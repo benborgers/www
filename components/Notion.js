@@ -56,7 +56,7 @@ export default ({ raw, longform=false }) => {
 
         div :global(.callout) {
           display: grid;
-          grid-template-columns: 16px 1fr;
+          grid-template-columns: 20px 1fr;
           grid-column-gap: 24px;
           align-items: center;
 
