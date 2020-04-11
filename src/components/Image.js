@@ -1,0 +1,39 @@
+import React from "react"
+import { css } from "@emotion/core"
+
+import useImage from "../hooks/useImage"
+
+export default ({ children }) => {
+  const image = useImage()
+
+  return (
+    <div
+      css={css`
+        border-radius: 8px;
+        overflow: hidden;
+
+        display: grid;
+        > * {
+          grid-row: 1;
+          grid-column: 1;
+          align-self: end;
+        }
+        
+        background-image: url("https://source.unsplash.com/${image}");
+        background-size: cover;
+        background-position: center;
+      `}
+    >
+      <div
+        css={css`
+          padding: 24px;
+          background-color: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(4px);
+          margin-top: 256px;
+        `}
+      >
+        {children}
+      </div>
+    </div>
+  )
+}
