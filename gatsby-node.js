@@ -47,7 +47,3 @@ exports.createPages = async ({ actions: { createPage }}) => {
     })
   }
 }
-
-exports.onPostBuild = () => {
-  fs.copyFileSync("./images.json", "./public/images.json")
-}
