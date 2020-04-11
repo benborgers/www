@@ -13,7 +13,7 @@ export default ({ raw }) => {
         pre {
           background-color: var(--background-tinted);
           border-radius: 8px;
-          padding: 16px;
+          padding: 24px;
           font-size: 16px;
           overflow: scroll;
         }
