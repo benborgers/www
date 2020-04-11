@@ -12,7 +12,7 @@ export default ({ pageContext: { projects }}) => {
     <>
       <Head
         title="Ben Borgers"
-        description=""
+        description="I'm a 17 year old programmer from Boston, MA. I make things mostly in JavaScript, Node.js, React, and React Native. Summer intern at IBM for 2019 and 2020."
       />
 
       <GlobalStyles />
