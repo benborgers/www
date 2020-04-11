@@ -1,11 +1,9 @@
 import React from "react"
 import { css } from "@emotion/core"
 
-import useImage from "../hooks/useImage"
+import config from "../../config"
 
 export default ({ children }) => {
-  const image = useImage()
-
   return (
     <div
       css={css`
@@ -18,7 +16,7 @@ export default ({ children }) => {
           align-self: end;
         }
         
-        background-image: url("https://source.unsplash.com/${image}");
+        background-image: url("https://source.unsplash.com/${config.image}");
         background-size: cover;
         background-position: center;
       `}
@@ -27,7 +25,7 @@ export default ({ children }) => {
         css={css`
           padding: 24px;
           background-color: hsla(0, 0%, 100%, 0.8);
-          backdrop-filter: blur(4px);
+          backdrop-filter: blur(6px);
           margin-top: 256px;
           border-bottom-left-radius: 8px;
           border-bottom-right-radius: 8px;

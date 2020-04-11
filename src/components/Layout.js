@@ -12,7 +12,7 @@ export default ({ children }) => {
         padding-bottom: 96px;
 
         @media (max-width: 500px) {
-          padding-top: 16px;
+          padding-top: 24px;
         }
       `}
     >

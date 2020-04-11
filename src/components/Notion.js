@@ -61,7 +61,7 @@ export default ({ raw }) => {
         }
 
         h1 {
-          font-size: 28px;
+          font-size: 24px;
           font-weight: 700;
           color: var(--text-500);
           margin-top: 48px;
