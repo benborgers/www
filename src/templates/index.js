@@ -97,7 +97,7 @@ export default ({ pageContext: { projects }}) => {
           <div>
             {projects.map((project, i) => (
               <a
-                href={project.fields.Link}
+                href={(!project.fields.Link.startsWith("http") ? "https://" : "") + project.fields.Link}
                 target="_blank"
                 rel="noopener noreferrer"
                 key={project.fields.Name}
