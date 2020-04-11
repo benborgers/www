@@ -19,8 +19,8 @@ export default ({ pageContext }) => {
       <GlobalStyles />
 
       <Helmet>
-        <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.4.0/themes/prism-ghcolors.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" />
+        {pageContext.html.includes("<pre") && <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.4.0/themes/prism-ghcolors.css" />}
+        {pageContext.html.includes("<code") && <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" />}
       </Helmet>
 
       <Layout>
