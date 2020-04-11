@@ -8,16 +8,12 @@ export default ({ raw }) => {
       css={css`
         margin: 0;
         line-height: 1.5;
-        font-size: 20px;
-        
-        @media (max-width: 500px) {
-          font-size: 18px;
-        }
+        font-size: 18px;
 
         pre {
           background-color: var(--background-tinted);
           border-radius: 8px;
-          padding: 24px;
+          padding: 16px;
           font-size: 16px;
           overflow: scroll;
         }
@@ -29,7 +25,7 @@ export default ({ raw }) => {
         p code, li code {
           background-color: var(--background-tinted);
           padding: 0 4px;
-          font-size: 18px;
+          font-size: 17px;
           border-radius: 4px;
           font-weight: 500;
           display: inline-block;
@@ -50,10 +46,9 @@ export default ({ raw }) => {
         blockquote {
           margin: 0;
           padding-left: 16px;
-          border-left: 2px solid var(--underline);
+          border-left: 2px solid var(--border);
           margin: 24px 0;
-          font-size: 18px;
-          font-weight: 500;
+          font-weight: 600;
         }
 
         li {
@@ -70,7 +65,7 @@ export default ({ raw }) => {
         .callout {
           display: grid;
           grid-template-columns: 20px 1fr;
-          grid-column-gap: 20px;
+          grid-column-gap: 16px;
           padding: 24px;
           background-color: var(--background-tinted);
           border-radius: 8px;
@@ -81,7 +76,7 @@ export default ({ raw }) => {
         .callout img {
           display: block;
           margin: 0;
-          margin-top: 2px;
+          margin-top: 3px;
         }
 
         .callout p {
@@ -101,8 +96,8 @@ export default ({ raw }) => {
         }
 
         hr {
-          border: none;
-          border-top: 2px solid var(--underline);
+          border: 1px solid var(--border);
+          border-radius: 99px;
           margin: 48px 0;
         }
       `}

@@ -16,15 +16,15 @@ export default () => {
           :root {
             --text-500: hsl(216, 100%, 5%);
             --text-300: hsl(216, 20%, 30%);
+            --text-accent: hsl(216, 100%, 60%);
 
             --monospace: "Roboto Mono", monospace;
 
             --background: white;
-            --background-tinted: hsl(216, 100%, 98%);
+            --background-tinted: hsl(216, 20%, 96%);
             --background-selection: hsl(216, 100%, 60%);
 
             --border: hsl(216, 20%, 90%);
-            --underline: hsla(216, 30%, 50%, 0.4);
           }
 
           * {
@@ -44,12 +44,8 @@ export default () => {
           }
 
           a {
-            text-decoration-color: var(--underline);
-            transition: opacity 0.2s;
-          }
-
-          a:hover {
-            opacity: 0.7;
+            text-decoration: none;
+            color: var(--text-accent);
           }
         `}
       />

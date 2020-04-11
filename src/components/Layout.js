@@ -1,9 +1,12 @@
 import React from "react"
 import { css } from "@emotion/core"
 
-export default ({ children }) => {
+import Header from "../components/Header"
+
+export default ({ className, children }) => {
   return (
     <div
+      className={className}
       css={css`
         max-width: 768px;
         margin: 0 auto;
@@ -16,6 +19,8 @@ export default ({ children }) => {
         }
       `}
     >
+      <Header />
+
       {children}
     </div>
   )

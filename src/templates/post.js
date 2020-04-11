@@ -6,6 +6,7 @@ import Head from "../components/Head"
 import GlobalStyles from "../components/GlobalStyles"
 import Layout from "../components/Layout"
 import Notion from "../components/Notion"
+import Footer from "../components/Footer"
 
 export default ({ pageContext }) => {
   return (
@@ -23,47 +24,24 @@ export default ({ pageContext }) => {
       </Helmet>
 
       <Layout>
-        <div
+        <h1
           css={css`
-            margin-bottom: 64px;
-
-            @media (max-width: 500px) {
-              margin-bottom: 24px;
-            }
+            margin: 0;
+            color: var(--text-500);
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 1.3;
+            text-align: center;
+            margin-top: 48px;
+            margin-bottom: 24px;
           `}
         >
-          <h1
-            css={css`
-              margin: 0;
-              color: var(--text-500);
-              font-weight: 900;
-              font-size: 28px;
-              line-height: 1.3;
-            `}
-          >
-            {pageContext.fields.Title}
-          </h1>
-        </div>
+          {pageContext.fields.Title}
+        </h1>
 
         <Notion raw={pageContext.html.replace(/\t/g, "&nbsp;&nbsp;")} />
 
-        <footer
-          css={css`
-            margin-top: 64px;
-            padding-top: 24px;
-            border-top: 2px solid var(--underline);
-          `}
-        >
-          <p
-            css={css`
-              font-weight: 500;
-              line-height: 1.4;
-              margin: 0;
-            `}
-          >
-            Written by <a href="https://twitter.com/benborgers">Ben Borgers</a>. If you spot a mistake or have a question, don't hesitate to <a href="mailto:borgersbenjamin@gmail.com">email me</a>!
-          </p>
-        </footer>
+        <Footer />
       </Layout>
     </>
   )
