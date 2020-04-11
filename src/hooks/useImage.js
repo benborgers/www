@@ -1,12 +1,22 @@
+import { useState, useEffect } from "react"
+
 import images from "../../images"
 
 export default () => {
-  const now = new Date()
-  const month = now.getMonth() + 1
-  const day = now.getDate()
-  const code = month + "-" + day
+  const getImage = () => {
+    const now = new Date()
+    const month = now.getMonth() + 1
+    const day = now.getDate()
+    const code = month + "-" + day
+  
+    const keys = Object.keys(images)
+  
+    return images[code] || images[keys[keys.length -1]]
+  }
 
-  const keys = Object.keys(images)
+  useEffect(() => setImage(getImage()), [])
 
-  return images[code] || images[keys[keys.length -1]]
+  const [image, setImage] = useState(getImage())
+
+  return image
 }
