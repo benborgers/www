@@ -10,7 +10,6 @@ export default ({ children }) => {
     <div
       css={css`
         border-radius: 8px;
-        overflow: hidden;
 
         display: grid;
         > * {
@@ -30,6 +29,8 @@ export default ({ children }) => {
           background-color: hsla(0, 0%, 100%, 0.8);
           backdrop-filter: blur(4px);
           margin-top: 256px;
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
         `}
       >
         {children}
