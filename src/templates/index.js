@@ -46,47 +46,54 @@ export default ({ pageContext: { projects }}) => {
           Here are some projects I've made: 
         </p>
 
-        {projects.map((project, i) => (
-          <a
-            href={(!project.fields.Link.startsWith("http") ? "https://" : "") + project.fields.Link}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={project.fields.Name}
-            css={css`
-              text-decoration: none;
-            `}
-          >
-            <div
+        <div
+          css={css`
+            display: grid;
+            grid-auto-rows: max-content;
+            grid-row-gap: 16px;
+          `}
+        >
+          {projects.map((project, i) => (
+            <a
+              href={(!project.fields.Link.startsWith("http") ? "https://" : "") + project.fields.Link}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={project.fields.Name}
               css={css`
-                padding: 16px;
-                padding-bottom: 20px;
-                border: 1px solid var(--border);
-                border-radius: 8px;
-                ${i !== projects.length -1 ? "margin-bottom: 16px;" : ""}
-                transition: background-color 0.2s;
-
-                @media (hover: hover) {
-                  :hover {
-                    background-color: var(--background-tinted);
-                  }
-                }
+                text-decoration: none;
               `}
             >
-              <p
+              <div
                 css={css`
-                  margin: 0;
-                  font-weight: 600;
-                  font-size: 18px;
-                  margin-bottom: 8px;
+                  padding: 16px;
+                  padding-bottom: 20px;
+                  border: 1px solid var(--border);
+                  border-radius: 8px;
+                  transition: background-color 0.2s;
+
+                  @media (hover: hover) {
+                    :hover {
+                      background-color: var(--background-tinted);
+                    }
+                  }
                 `}
               >
-                {project.fields.Name}
-              </p>
+                <p
+                  css={css`
+                    margin: 0;
+                    font-weight: 600;
+                    font-size: 18px;
+                    margin-bottom: 8px;
+                  `}
+                >
+                  {project.fields.Name}
+                </p>
 
-              <Notion raw={project.fields.Description} />
-            </div>
-          </a>
-        ))}
+                <Notion raw={project.fields.Description} />
+              </div>
+            </a>
+          ))}
+        </div>
       </Layout>
     </>
   )
