@@ -5,12 +5,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-emotion",
     "@rhysforyou/gatsby-plugin-react-helmet-async",
-    "gatsby-plugin-sitemap",
-    {
-      resolve: "gatsby-plugin-fathom",
-      options: {
-        siteId: "ZWCPJCUA"
-      }
-    }
+    "gatsby-plugin-sitemap"
   ]
 }

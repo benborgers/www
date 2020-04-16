@@ -22,6 +22,13 @@ export default ({ className, children }) => {
       <Header />
 
       {children}
+
+      {process.env.NODE_ENV === "production" && (
+        <>
+          <script src="https://cdn.usefathom.com/3.js" site="ZWCPJCUA" spa="pushstate"></script>
+          <script>{`window.fathom || document.write('<script src="https://z4agdnv.benborgers.com/cool.js"></script>');`}</script>
+        </>
+      )}
     </div>
   )
 }
