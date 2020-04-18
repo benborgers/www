@@ -100,6 +100,12 @@ export default ({ raw }) => {
           border-radius: 99px;
           margin: 48px 0;
         }
+
+        iframe {
+          height: 320px;
+          width: 100%;
+          border: none;
+        }
       `}
     />
   )

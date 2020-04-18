@@ -30,6 +30,7 @@ export default () => {
           * {
             font-family: "Inter", sans-serif;
             color: var(--text-300);
+            -webkit-appearance: none;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
           }
