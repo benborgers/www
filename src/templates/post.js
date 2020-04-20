@@ -12,7 +12,7 @@ export default ({ pageContext }) => {
   return (
     <>
       <Head
-        title={pageContext.fields.Title + " - Ben Borgers"}
+        title={pageContext.fields.Title}
         description={pageContext.fields.Description}
       />
 
