@@ -18,7 +18,6 @@ export default () => {
         to="/"
         css={css`
           margin: 0;
-          color: var(--text-500);
           font-size: 18px;
           font-weight: 600;
           display: block;
