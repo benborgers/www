@@ -118,11 +118,10 @@ export default ({ slug }) => {
                     "content-type": "application/json"
                   },
                   body: JSON.stringify({
-                    from: "ben@elk.sh",
+                    from: `visitor ${id}`,
                     subject: "Blog Feedback",
                     body: [
-                      `id: ${id}`,
-                      `slug: ${slug}`,
+                      `blog post: ${slug}`,
                       "",
                       value
                     ].join("\n")
