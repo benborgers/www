@@ -38,7 +38,7 @@ exports.createPages = async ({ actions: { createPage }}) => {
 
   for(const post of posts) {
     createPage({
-      path: `/blog/${post.fields.Slug}/`,
+      path: `/blog/${post.fields.Slug}`,
       component: path.resolve("./src/templates/post.js"),
       context: {
         ...post,

@@ -1,4 +1,5 @@
 {
+  "trailingSlash": false,
   "redirects": [
     { "source": "/reference/how-to-add-fathom-analytics-to-gatsby", "destination": "/blog/fathom-gatsby/" },
     { "source": "/reference/how-to-add-normalize-css-to-gatsby", "destination": "/blog/normalize-gatsby/" }
