@@ -19,12 +19,6 @@ export default ({ slug }) => {
     <div
       css={css`
         margin-top: 32px;
-        max-width: max-content;
-
-        @media (max-width: 500px) {
-          margin-left: auto;
-          margin-right: auto;
-        }
       `}
     >
       <div
@@ -33,6 +27,13 @@ export default ({ slug }) => {
           grid-template-columns: repeat(3, max-content);
           grid-column-gap: 8px;
           align-items: center;
+
+          max-width: max-content;
+
+          @media (max-width: 500px) {
+            margin-left: auto;
+            margin-right: auto;
+          }
 
           p, button {
             margin: 0;
@@ -105,8 +106,11 @@ export default ({ slug }) => {
               margin: 0;
               margin-top: 16px;
               margin-bottom: 8px;
-              line-height: 1.3;
-              font-weight: 500;
+              line-height: 1.4;
+
+              @media (max-width: 500px) {
+                text-align: center;
+              }
             `}
           >
             I'm sorry about that. What could have been better?
