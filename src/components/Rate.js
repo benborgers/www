@@ -19,6 +19,12 @@ export default ({ slug }) => {
     <div
       css={css`
         margin-top: 32px;
+        max-width: max-content;
+
+        @media (max-width: 500px) {
+          margin-left: auto;
+          margin-right: auto;
+        }
       `}
     >
       <div
@@ -33,7 +39,10 @@ export default ({ slug }) => {
             line-height: 1.3;
             font-weight: 600;
             font-size: 18px;
-            color: var(--text-500);
+
+            @media (max-width: 500px) {
+              font-weight: 500;
+            }
           }
 
           button {
