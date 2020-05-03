@@ -15,6 +15,7 @@ export default () => {
       <a
         href="https://underline.email"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <div
           css={css`
@@ -23,10 +24,11 @@ export default () => {
             border-radius: 8px;
 
             p, p * {
-              line-height: 1.6;
+              line-height: 1.6 !important;
               color: white;
               margin: 0;
               text-align: center;
+              font-size: 16px !important;
             }
 
             .underline {
