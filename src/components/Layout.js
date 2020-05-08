@@ -28,14 +28,7 @@ export default ({ className, children }) => {
       {children}
 
       {process.env.NODE_ENV === "production" && (
-        <>
-          <script src="https://cdn.usefathom.com/3.js" site="ZWCPJCUA" spa="pushstate"></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `window.fathom || document.write('<script src="https://z4agdnv.benborgers.com/cool.js"><\\/script>');`
-            }}
-          />
-        </>
+        <script src="https://z4agdnv.benborgers.com/script.js" spa="auto" site="ZWCPJCUA" defer></script>
       )}
     </div>
   )
