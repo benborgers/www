@@ -4,6 +4,10 @@ const fetch = require("node-fetch")
 
 const notion = async (pageId, type) => {
   const res = await fetch(`https://potion-api.now.sh/api/${type}?id=${pageId}`)
+
+  if(res.ok) {
+    throw new Error(`The Potion API response was not 200 (type: ${type}, pageId: ${pageId})`)
+  }
   
   if(type === "html") {
     return await res.text()
