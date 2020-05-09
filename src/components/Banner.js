@@ -38,9 +38,9 @@ export default () => {
           `}
         >
           <p>
-            I'm building a super simple email list app. <br />Sign up during beta and get 2,000 free emails per month, for life.
+            I'm building an app for sending email newsletters simply.
             {" "}
-            <span className="underline">Check it out.</span>
+            <span className="underline">Check it out!</span>
           </p>
         </div>
       </a>
