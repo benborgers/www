@@ -6,7 +6,6 @@ import Head from "../components/Head"
 import GlobalStyles from "../components/GlobalStyles"
 import Layout from "../components/Layout"
 import Notion from "../components/Notion"
-import Rate from "../components/Rate"
 import Footer from "../components/Footer"
 
 export default ({ pageContext }) => {
@@ -41,8 +40,6 @@ export default ({ pageContext }) => {
         </h1>
 
         <Notion raw={pageContext.html.replace(/\t/g, "&nbsp;&nbsp;")} />
-
-        <Rate slug={pageContext.fields.Slug} />
 
         <Footer />
       </Layout>
