@@ -16,6 +16,9 @@ export default () => {
         href="https://underline.email"
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => {
+          window.fathom.trackGoal("T0QLJTVN", 0)
+        }}
       >
         <div
           css={css`
@@ -38,9 +41,9 @@ export default () => {
           `}
         >
           <p>
-            I'm building an app for sending email newsletters simply.
+            I'm building an app for sending email newsletters.
             {" "}
-            <span className="underline">Check it out!</span>
+            <span className="underline">It's free for now - check it out!</span>
           </p>
         </div>
       </a>
