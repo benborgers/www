@@ -4,7 +4,6 @@ import React from "react"
 import { css } from "@emotion/core"
 
 import Header from "../components/Header"
-import Banner from "../components/Banner"
 
 export default ({ className, children }) => {
   return (
@@ -22,7 +21,6 @@ export default ({ className, children }) => {
         }
       `}
     >
-      <Banner />
       <Header />
 
       {children}
