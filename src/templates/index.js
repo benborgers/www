@@ -7,11 +7,15 @@ import Layout from "../components/Layout"
 import Notion from "../components/Notion"
 
 export default ({ pageContext: { projects }}) => {
+  const msSinceBirth = new Date().getTime() - 1032840300000
+  const yearsSinceBirth = msSinceBirth / (1000 * 60 * 60 * 24 * 365.25)
+  const age = Math.floor(yearsSinceBirth)
+
   return (
     <>
       <Head
         title="Ben Borgers"
-        description="I'm a 17 year old programmer from Boston, MA. I make things with JavaScript, Node.js, React, and React Native. Summer intern at IBM for 2019 and 2020."
+        description={`I'm a ${age} year old programmer from Boston, MA. I make things with JavaScript, Node.js, React, and React Native. Summer intern at IBM for 2019 and 2020.`}
       />
 
       <GlobalStyles />
@@ -28,7 +32,7 @@ export default ({ pageContext: { projects }}) => {
           Hey! I'm Ben Borgers.
         </p>
         <p>
-          I'm a 17 year old programmer from Boston, MA. I make things with JavaScript, Node.js, React, and React Native.
+          I'm a {age} year old programmer from Boston, MA. I make things with JavaScript, Node.js, React, and React Native.
         </p>
         <p>
           I'm a summer intern at <a href="https://www.ibm.com/security/data-security/guardium">IBM</a> for 2019 and 2020.
