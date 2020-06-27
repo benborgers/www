@@ -30,7 +30,7 @@ export default () => {
           font-weight: 500;
         `}
       >
-        Written by <a href="https://twitter.com/benborgers">Ben Borgers</a>. If you spot a mistake or have a question, don't hesitate to <a href="mailto:borgersbenjamin@gmail.com">email</a> me!
+        Written by <a href="https://twitter.com/benborgers">Ben Borgers</a>. If you spot a mistake or have a question, <a href="mailto:benborgers@hey.com">send me an email</a>!
       </p>
     </footer>
   )
