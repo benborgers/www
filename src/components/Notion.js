@@ -56,10 +56,19 @@ export default ({ raw }) => {
         }
 
         h1 {
-          font-size: 24px;
+          font-size: 28px;
           font-weight: 700;
           color: var(--text-500);
           margin-top: 48px;
+          line-height: 1.3;
+        }
+
+        h2 {
+          font-size: 20px;
+          margin-top: 32px;
+          color: var(--text-500);
+          font-weight: 700;
+          line-height: 1.4;
         }
 
         .callout {
