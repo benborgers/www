@@ -41,7 +41,7 @@ export default () => {
           `}
         >
           <p>
-            Thinking of starting an email newsletter?
+            I’m building an app for sending email newsletters. <span class="underline">Check it out!</span>
           </p>
         </div>
       </a>
