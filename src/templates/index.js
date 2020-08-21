@@ -38,7 +38,7 @@ export default ({ pageContext: { projects }}) => {
           I'm a summer intern at <a href="https://www.ibm.com/security/data-security/guardium">IBM</a> for 2019 and 2020.
         </p>
         <p>
-          I'm on <a href="https://twitter.com/benborgers">twitter</a> and <a href="https://github.com/benborgers">github</a>. If you want to get in touch, I love getting <a href="mailto:benborgers@hey.com">emails</a>.
+          I'm on <a href="https://twitter.com/benborgers">twitter</a> and <a href="https://github.com/benborgers">github</a>. If you want to get in touch, I love getting emails: <a href="mailto:benborgers@hey.com">benborgers@hey.com</a>.
         </p>
 
         <p
