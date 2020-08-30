@@ -35,7 +35,7 @@ export default ({ pageContext: { projects }}) => {
           I'm a {age} year old programmer from Boston, MA. I make things with JavaScript, Node.js, React, React Native, and Laravel.
         </p>
         <p>
-          I'm a summer intern at <a href="https://www.ibm.com/security/data-security/guardium">IBM</a> for 2019 and 2020.
+          Summer intern at <a href="https://www.ibm.com/security/data-security/guardium">IBM</a> for 2019 and 2020.
         </p>
         <p>
           I'm on <a href="https://twitter.com/benborgers">twitter</a> and <a href="https://github.com/benborgers">github</a>. If you want to get in touch, I love getting emails: <a href="mailto:benborgers@hey.com">benborgers@hey.com</a>.
