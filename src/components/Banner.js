@@ -41,7 +41,7 @@ export default () => {
           `}
         >
           <p>
-            I’m building an app for sending email newsletters. <span class="underline">Check it out!</span>
+            I’m building an app for sending email newsletters. <span className="underline">Check it out!</span>
           </p>
         </div>
       </a>
