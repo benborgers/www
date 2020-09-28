@@ -1,10 +1,33 @@
 import React from 'react'
+import { css } from '../gatsby-theme-stitches/stitches.config'
+import { Helmet } from 'react-helmet'
 
-const Layout = ({ children }) => {
+import 'normalize.css'
+
+css.global({
+    body: { 
+        fontFamily: '$sans',
+        margin: 0,
+        padding: 0,
+        outline: 'none',
+        appearance: 'none',
+        '-webkit-font-smoothing': 'antialiased',
+        '-moz-osx-font-smoothing': 'grayscale'
+    }
+})
+
+const Layout = ({ title, children }) => {
     return (
-        <div>
-            {children}
-        </div>
+        <>
+            <Helmet>
+                <title>{title ? title + ' - Ben Borgers' : 'Ben Borgers'}</title>
+                <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
+            </Helmet>
+            
+            <div>
+                {children}
+            </div>
+        </>
     )
 }
 

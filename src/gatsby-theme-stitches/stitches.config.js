@@ -1,8 +1,10 @@
 import { createStyled } from '@stitches/react'
 
 export const { styled, css } = createStyled({
-    prefix: '',
-    tokens: {},
-    breakpoints: {},
-    utils: {}
+    tokens: {
+        fonts: {
+            $sans: 'system-ui, sans-serif',
+            $serif: 'Georgia, serif'
+        }
+    }
 })
