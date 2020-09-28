@@ -15,7 +15,7 @@ export default ({ pageContext: { projects }}) => {
     <>
       <Head
         title="Ben Borgers"
-        description={`I'm a ${age} year old programmer from Boston, MA. I make things with Laravel, JavaScript, Node.js, React, React Native, and Laravel. Summer intern at IBM for 2019 and 2020.`}
+        description={`I'm an ${age} year old programmer from Boston, MA. I make things with Laravel, JavaScript, Node.js, React, React Native, and Laravel. Summer intern at IBM for 2019 and 2020.`}
       />
 
       <GlobalStyles />
@@ -32,7 +32,7 @@ export default ({ pageContext: { projects }}) => {
           Hey! I'm Ben Borgers.
         </p>
         <p>
-          I'm a {age} year old programmer from Boston, MA. I make things with JavaScript, Node.js, React, React Native, and Laravel.
+          I'm an {age} year old programmer from Boston, MA. I make things with JavaScript, Node.js, React, React Native, and Laravel.
         </p>
         <p>
           Summer intern at <a href="https://www.ibm.com/security/data-security/guardium">IBM</a> for 2019 and 2020.
