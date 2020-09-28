@@ -7,12 +7,14 @@ import 'normalize.css'
 css.global({
     body: { 
         fontFamily: '$sans',
-        margin: 0,
-        padding: 0,
         outline: 'none',
         appearance: 'none',
         '-webkit-font-smoothing': 'antialiased',
         '-moz-osx-font-smoothing': 'grayscale'
+    },
+    '*': {
+        margin: 0,
+        padding: 0
     }
 })
 
