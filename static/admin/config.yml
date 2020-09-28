@@ -1,6 +1,5 @@
 backend:
-    name: github
-    repo: benborgers/www
+    name: git-gateway
     branch: main
 media_folder: public/assets
 public_folder: assets
