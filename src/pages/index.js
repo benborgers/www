@@ -6,7 +6,8 @@ import Layout from '../components/Layout'
 const Test = styled('div', {
     backgroundColor: 'gainsboro',
     fontFamily: 'system-ui',
-    padding: 8
+    padding: 8,
+    userSelect: 'none'
 })
 
 const index = () => {
