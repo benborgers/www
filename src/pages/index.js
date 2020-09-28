@@ -21,7 +21,7 @@ const index = () => {
                         <li key={bullet.text}>
                             <>
                                 <p
-                                    className="text-gray-800"
+                                    className="prose text-gray-800"
                                     dangerouslySetInnerHTML={{ __html: snarkdown(bullet.text) }}
                                 />
                                 <span className="text-gray-500">{bullet.when}</span>
