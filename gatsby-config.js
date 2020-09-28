@@ -4,7 +4,7 @@ module.exports = {
     },
     plugins: [
         'gatsby-plugin-sitemap',
-        'gatsby-theme-stitches',
-        'gatsby-plugin-react-helmet'
+        'gatsby-plugin-react-helmet',
+        'gatsby-plugin-postcss'
     ]
 }

@@ -1,24 +1,10 @@
 import React from 'react'
-import { css } from '../gatsby-theme-stitches/stitches.config'
 import { Helmet } from 'react-helmet'
+import { Link } from 'gatsby'
 
-import 'normalize.css'
+import '../style.css'
 
-css.global({
-    body: { 
-        fontFamily: '$sans',
-        outline: 'none',
-        appearance: 'none',
-        '-webkit-font-smoothing': 'antialiased',
-        '-moz-osx-font-smoothing': 'grayscale'
-    },
-    '*': {
-        margin: 0,
-        padding: 0
-    }
-})
-
-const Layout = ({ title, children }) => {
+const Layout = ({ title, children, homepage = false }) => {
     return (
         <>
             <Helmet>
@@ -26,8 +12,18 @@ const Layout = ({ title, children }) => {
                 <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
             </Helmet>
             
-            <div>
-                {children}
+            <div className="font-sans antialiased text-gray-700 max-w-2xl mx-auto p-4 pb-16 md:pt-24">
+                <Link to="/">
+                    <div className="flex items-center space-x-3 mb-8">
+                        {/* Pinging dot */}
+                        <div className="grid">
+                            <span className="row-start-1 col-start-1 w-3 h-3 bg-teal-500 rounded-full opacity-50 animate-ping"></span>
+                            <span className="row-start-1 col-start-1 w-3 h-3 bg-teal-500 rounded-full"></span>
+                        </div>
+                        
+                        <p className={`font-serif font-bold text-gray-900 ${homepage ? 'opacity-0 pointer-events-none' : ''}`}>Ben Borgers</p>
+                    </div>
+                </Link>
             </div>
         </>
     )
