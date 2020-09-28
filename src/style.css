@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.prose.prose-mini br {
+    margin-top: 8px !important;
+}

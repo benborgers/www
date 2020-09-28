@@ -5,8 +5,22 @@ module.exports = {
     },
     purge: ['./src/**/*.js'],
     theme: {
-        extend: {}
+        typography: (theme) => ({
+            default: {
+                css: {
+                    a: {
+                        color: theme('colors.teal.700')
+                    },
+                    br: {
+                        display: 'block',
+                        content: `''`,
+                        marginTop: `${theme('spacing.4')} !important`
+                    }
+                }
+            }
+        })
     },
-    variants: {},
-    plugins: []
+    plugins: [
+        require('@tailwindcss/typography')
+    ]
 }
