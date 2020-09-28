@@ -5,9 +5,11 @@
   "license": "MIT",
   "dependencies": {
     "gatsby": "^2.24.66",
+    "gatsby-plugin-netlify-cms": "^4.3.15",
     "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-react-helmet": "^3.3.12",
     "gatsby-plugin-sitemap": "^2.4.14",
+    "netlify-cms-app": "^2.12.25",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

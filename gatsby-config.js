@@ -5,6 +5,7 @@ module.exports = {
     plugins: [
         'gatsby-plugin-sitemap',
         'gatsby-plugin-react-helmet',
-        'gatsby-plugin-postcss'
+        'gatsby-plugin-postcss',
+        'gatsby-plugin-netlify-cms'
     ]
 }

@@ -1,0 +1,31 @@
+backend:
+    name: github
+    repo: benborgers/www
+    branch: main
+media_folder: public/assets
+public_folder: assets
+collections:
+  - label: Pages
+    name: pages
+    editor: { preview: false }
+    sortable_fields: []
+    files:
+      - label: Home
+        name: home
+        file: src/cms/home.json
+        fields:
+          - label: Bio
+            name: bio
+            widget: markdown
+          - label: Bullets
+            label_singular: bullet
+            name: bullets
+            widget: list
+            fields:
+              - label: Text
+                name: text
+                widget: markdown
+                minimal: true
+              - label: When
+                name: when
+                widget: string
