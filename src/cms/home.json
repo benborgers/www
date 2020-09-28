@@ -1,3 +1,9 @@
 {
-  "bio": "Test"
+  "bio": "Hi! I’m Ben Borgers. \n\nI’m a high school senior in Boston, MA. I make things with JavaScript, Node.js, React, React Native, and Laravel.\n\nI’m on [twitter](https://twitter.com/benborgers) and [github](https://github.com/benborgers). If you wanna get in touch, I love getting emails: [benborgers@hey.com](mailto:benborgers@hey.com)",
+  "bullets": [
+    {
+      "text": "Building [Bagel Institute](https://bagel.institute), tools for more interactive college teaching",
+      "when": "fall 2020 - now"
+    }
+  ]
 }
