@@ -29,4 +29,4 @@ export default () => {
 }
 ```
 
-You'll need to do this on every page that you want to use normalize.css on. You can make this less tedious by adding it to the template that multiple pages use (more information can be found [in Gatsby's documentation](https://www.gatsbyjs.org/blog/2019-05-02-how-to-build-a-blog-with-wordpress-and-gatsby-part-3/#creating-a-page-template)), or by adding it to a shared component that all pages import and use.
+You'll need to do this on every page that you want to use normalize.css on. You can make this less tedious by adding it to the template that multiple pages use (more information can be found [in Gatsby's documentation](https://www.gatsbyjs.org/blog/2019-05-02-how-to-build-a-blog-with-wordpress-and-gatsby-part-3/#creating-a-page-template)), or by adding it to a shared component that all pages import and use. 
