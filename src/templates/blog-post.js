@@ -14,7 +14,7 @@ const BlogPost = ({ pageContext }) => {
             <div className="mt-8 mb-4 space-y-1">
                 <h1 className="font-serif font-bold text-2xl text-gray-900 leading-snug">{pageContext.title}</h1>
                 <div>
-                    <time itemProp="dateModified" className="text-gray-500 font-semibold">{new Date(pageContext.date).toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+                    <time itemProp="dateModified" className="text-gray-500 font-semibold">{new Date(pageContext.date).toLocaleString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}</time>
                 </div>
             </div>
             
