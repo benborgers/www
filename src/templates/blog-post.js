@@ -3,8 +3,6 @@ import React from 'react'
 import Layout from '../components/Layout'
 import markdown from '../helpers/markdown'
 
-import 'prism-themes/themes/prism-dracula.css'
-
 const BlogPost = ({ pageContext }) => {
     return (
         <Layout
