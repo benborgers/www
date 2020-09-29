@@ -26,7 +26,7 @@ const Layout = ({ title, description, children, homepage = false }) => {
                 <meta name="google-site-verification" content="36SYJxqahg7QGGsxCBTHGhLfvekzoioL40Xo1jPgqUA" />
             </Helmet>
             
-            <div className="font-sans antialiased text-gray-700 max-w-2xl mx-auto p-4 pt-6 pb-24 md:pt-24">
+            <div className="font-sans antialiased text-gray-700 max-w-2xl mx-auto p-4 pt-6 pb-32 md:pt-24">
                 <Link to="/">
                     <div className="flex items-center space-x-3 mb-4">
                         {/* Pinging dot */}
