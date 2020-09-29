@@ -12,7 +12,7 @@ const Layout = ({ title, children, homepage = false }) => {
                 <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
             </Helmet>
             
-            <div className="font-sans antialiased text-gray-700 max-w-2xl mx-auto p-4 pt-6 pb-16 md:pt-24">
+            <div className="font-sans antialiased text-gray-700 max-w-2xl mx-auto p-4 pt-6 pb-24 md:pt-24">
                 <Link to="/">
                     <div className="flex items-center space-x-3 mb-4">
                         {/* Pinging dot */}
