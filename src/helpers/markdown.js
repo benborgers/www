@@ -15,7 +15,7 @@ const markdown = text => {
         const lang = args[1]
         const code = args[2]
         try {
-            return prism.highlight(code, prism.languages[lang], lang).replace(/&amp;/g, '&')
+            return `<code class="language-${lang}">${prism.highlight(code, prism.languages[lang], lang).replace(/&amp;/g, '&')}</code>`
         } catch {
             return `<code class="language-${lang}">${code}</code>`
         }
