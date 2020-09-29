@@ -3,6 +3,8 @@ import React from 'react'
 import Layout from '../components/Layout'
 import markdown from '../helpers/markdown'
 
+import 'prism-themes/themes/prism-dracula.css'
+
 const BlogPost = ({ pageContext }) => {
     return (
         <Layout
@@ -23,7 +25,7 @@ const BlogPost = ({ pageContext }) => {
             
             <div className="mt-16 p-4 bg-gray-100 rounded shadow-inner">
                 <p className="text-gray-900 text-center">
-                    Feel free to email me with questions or replies! <a href="mailto:benborgers@hey.com" class="text-teal-700 underline">benborgers@hey.com</a>
+                    Feel free to email me with questions or replies! <a href="mailto:benborgers@hey.com" className="text-teal-700 underline">benborgers@hey.com</a>
                 </p>
             </div>
         </Layout>

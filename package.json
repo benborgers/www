@@ -12,6 +12,8 @@
     "gatsby-plugin-sitemap": "^2.4.14",
     "netlify-cms-app": "^2.12.25",
     "normalize.css": "^8.0.1",
+    "prism-themes": "^1.4.0",
+    "prismjs": "^1.21.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
