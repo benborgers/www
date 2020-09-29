@@ -5,6 +5,7 @@ media_folder: public/assets
 public_folder: assets
 collections:
   - label: Pages
+    label_singular: page
     name: pages
     editor: { preview: false }
     sortable_fields: []
@@ -28,3 +29,32 @@ collections:
               - label: When
                 name: when
                 widget: string
+  - label: Blog
+    label_singular: blog post
+    name: blog
+    create: true
+    editor: { preview: false }
+    sortable_fields: ['date']
+    folder: 'src/cms/blog'
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Slug
+        name: slug
+        widget: string
+      - label: Description
+        name: description
+        widget: text
+      - label: Date
+        name: date
+        widget: datetime
+        time_format: false
+        picker_utc: true
+      - label: Published
+        name: published
+        widget: boolean
+        default: false
+      - label: Body
+        name: body
+        widget: markdown
