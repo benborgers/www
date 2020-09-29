@@ -33,9 +33,11 @@ collections:
     label_singular: blog post
     name: blog
     create: true
+    slug: '{{fields.slug}}'
     editor: { preview: false }
     sortable_fields: ['date']
     folder: 'src/cms/blog'
+    format: json
     fields:
       - label: Title
         name: title
