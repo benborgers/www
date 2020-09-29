@@ -2,7 +2,7 @@
   "bio": "I’m a high school senior in Boston, MA. I make things with JavaScript, Node.js, React, React Native, and Laravel.\n\nI’m on [twitter](https://twitter.com/benborgers) and [github](https://github.com/benborgers). If you wanna get in touch, I love getting emails: [benborgers@hey.com](mailto:benborgers@hey.com)\n\nHere’s a **skimmable bullet point timeline** about me:",
   "bullets": [
     {
-      "text": "Built a version 2 of [Blocks](https://blocks.elk.sh), an app for my school’s schedule used by 1,700+ students and teachers",
+      "text": "Built version 2 of [Blocks](https://blocks.elk.sh), an app for my school’s schedule used by 1,700+ students and teachers",
       "when": "2020-2021 school year"
     },
     {
@@ -10,8 +10,16 @@
       "when": "fall 2020 - now"
     },
     {
-      "text": "Software development summer internship at IBM",
-      "when": "Summer 2020"
+      "text": "Return software development summer internship at IBM",
+      "when": "summer 2020"
+    },
+    {
+      "text": "Freelance: built a website and class registration system for [Diyi](https://diyiboston.com), an online school based out of Boston",
+      "when": "summer 2020"
+    },
+    {
+      "text": "Freelance: worked on [rep.ly](https://rep.ly), a public Q&A platform by the agency [Dip](https://dip.org)",
+      "when": "summer 2020"
     },
     {
       "text": "Building [Underline](https://underline.email), a dead-simple and affordable way to send newsletter",
@@ -22,7 +30,7 @@
       "text": "Built [Coronavirus by County], a mini site that shows the number of COVID cases in your county using data from The New York Times"
     },
     {
-      "text": "Built an [app for Sophrosyne](https://sophrosyne.now.sh), a mental health-related club at my high school",
+      "text": "Freelance: built an [app for Sophrosyne](https://sophrosyne.now.sh), a mental health-related club at my high school",
       "when": "spring 2020"
     },
     {
@@ -34,7 +42,11 @@
       "when": "spring 2020"
     },
     {
-      "text": "Built [EMOJICDN](https://emojicdn.elk.sh), a simple API for getting an image from an emoji",
+      "text": "Software development summer internship at IBM",
+      "when": "summer 2019"
+    },
+    {
+      "text": "Built [EMOJICDN](https://emojicdn.elk.sh), a simple API for getting an image from any emoji",
       "when": "spring 2019"
     },
     {
