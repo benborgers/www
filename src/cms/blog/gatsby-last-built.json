@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2019-12-21T00:00:00.000Z",
+  "title": "How to get the last time a Gatsby site was built",
+  "slug": "gatsby-last-built",
+  "description": "You can get the time that your Gatsby site was last built using Gatsby's GraphQL queries. This can be useful in showing visitors how recently the site was built, and how fresh the content is.",
+  "body": "If your Gatsby site pulls in data at build time, it can be helpful to show visitors when the site was last built.\n\nThis component relies on a GraphQL query to fetch the build time, and then formats it using a lightweight package called [tiny-relative-date](https://npm.im/tiny-relative-date).\n\nHere is an abbreviated component using it (without styling):\n\n```jsx\nimport React from \"react\"\nimport { useStaticQuery, graphql } from \"gatsby\"\nimport relativeDate from \"tiny-relative-date\"\n\nexport default () => {\n  const query = useStaticQuery(graphql`\n    query {\n      site {\n        buildTime\n      }\n    }\n  `)\n\n  const buildTime = new Date(query.site.buildTime)\n  const buildTimeRelative = relativeDate(buildTime)\n\n  return (\n    <p>This site (benborgers.com) was last built {buildTimeRelative}.</p>\n  )\n}\n```"
+}
