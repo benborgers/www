@@ -4,12 +4,26 @@ import { Link } from 'gatsby'
 
 import '../style.css'
 
-const Layout = ({ title, children, homepage = false }) => {
+const Layout = ({ title, description, children, homepage = false }) => {
+    const fullTitle = title ? title + ' - Ben Borgers' : 'Ben Borgers'
+
     return (
         <>
             <Helmet>
-                <title>{title ? title + ' - Ben Borgers' : 'Ben Borgers'}</title>
+                <title>{fullTitle}</title>
+                <meta name="description" content={description} />
                 <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Ben Borgers" />
+                <meta property="og:title" content={fullTitle} />
+                <meta property="og:description" content={description} />
+                <meta property="og:image" content="https://source.unsplash.com/P36KI_ws3vs/1200x630" />
+
+                <meta property="twitter:card" content="summary_large_image" />
+
+                {/* for Google Search Console */}
+                <meta name="google-site-verification" content="36SYJxqahg7QGGsxCBTHGhLfvekzoioL40Xo1jPgqUA" />
             </Helmet>
             
             <div className="font-sans antialiased text-gray-700 max-w-2xl mx-auto p-4 pt-6 pb-24 md:pt-24">
