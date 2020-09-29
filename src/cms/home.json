@@ -2,8 +2,48 @@
   "bio": "I’m a high school senior in Boston, MA. I make things with JavaScript, Node.js, React, React Native, and Laravel.\n\nI’m on [twitter](https://twitter.com/benborgers) and [github](https://github.com/benborgers). If you wanna get in touch, I love getting emails: [benborgers@hey.com](mailto:benborgers@hey.com)\n\nHere’s a **skimmable bullet point timeline** about me:",
   "bullets": [
     {
+      "text": "Built a version 2 of [Blocks](https://blocks.elk.sh), an app for my school’s schedule used by 1,700+ students and teachers",
+      "when": "2020-2021 school year"
+    },
+    {
       "text": "Building [Bagel Institute](https://bagel.institute), tools for more interactive college teaching",
       "when": "fall 2020 - now"
+    },
+    {
+      "text": "Software development summer internship at IBM",
+      "when": "Summer 2020"
+    },
+    {
+      "text": "Building [Underline](https://underline.email), a dead-simple and affordable way to send newsletter",
+      "when": "spring 2020 - now"
+    },
+    {
+      "when": "spring 2020",
+      "text": "Built [Coronavirus by County], a mini site that shows the number of COVID cases in your county using data from The New York Times"
+    },
+    {
+      "text": "Built an [app for Sophrosyne](https://sophrosyne.now.sh), a mental health-related club at my high school",
+      "when": "spring 2020"
+    },
+    {
+      "text": "Built [Potion](https://github.com/benborgers/potion), an open-source reverse-engineered API for Notion",
+      "when": "spring 2020"
+    },
+    {
+      "text": "Built [Pausebot](https://apps.apple.com/us/app/pausebot/id1504920727), an iOS app that helps you pause videos on TikTok for the pause trend",
+      "when": "spring 2020"
+    },
+    {
+      "text": "Built [EMOJICDN](https://emojicdn.elk.sh), a simple API for getting an image from an emoji",
+      "when": "spring 2019"
+    },
+    {
+      "text": "Wrote a collection of [unit summaries](https://chem.elk.sh) for AP Chemistry",
+      "when": "2019 - 2020 school year"
+    },
+    {
+      "text": "Wrote a [study guide of questions](https://bio.elk.sh) for preparing for the AP Biology test",
+      "when": "2018 - 2019 school year"
     }
   ]
 }
