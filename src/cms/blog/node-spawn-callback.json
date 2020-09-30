@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-07-01T00:00:00.000Z",
+  "title": "How to get callback when Node.js spawn execution is done",
+  "slug": "node-spawn-callback",
+  "description": "You might want to know when a terminal command that you started using Node.js is finished executing. You can use the \"close\" event to figure that out, and even wrap it into a nice async/await function. ",
+  "body": "The built-in `child_process` Node.js package has a `spawn` method that allows you to run a terminal command. \n\nThere's no built-in way of running a function when the command has finished executing, but `spawn` *does* give us access to a \"done\" event when the command finishes executing. \n\n```jsx\nconst { spawn } = require('child_process')\n\nconst command = spawn('git clone https://github.com/benborgers/potion', {\n  shell: true\n})\n\ncommand.on('close', () => {\n  // Code to run when the command finishes\n})\n```\n\nYou could even wrap this into a nice, reusable function: \n\n```jsx\nconst { spawn } = require('child_process')\n\n// Reusable function: \nconst executeCommand = textToExecute => new Promise(resolve => {\n  const command = spawn(textToExecute, { shell: true })\n  command.on('close', () => resolve())\n})\n\n// Usage: \nconst main = async () => {\n  await executeCommand('git clone https://github.com/benborgers/potion')\n\n  // Do something here that will only happen after the command has finished. \n}\nmain()\n```"
+}
