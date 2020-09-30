@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-03-18T00:00:00.000Z",
+  "title": "How to use an emoji as a favicon",
+  "slug": "emoji-favicon",
+  "description": "You can't directly use an emoji as a favicon, but you can use an image of the emoji. EMOJICDN is an easy way to get an image of the emoji to use as your favicon. ",
+  "body": "You can't directly use an emoji as a favicon, a favicon needs to be an image. \n\nHowever, you can get an image of the emoji using [EMOJICDN](https://emojicdn.elk.sh): \n\n```html\n<link rel=\"icon\" href=\"https://emojicdn.elk.sh/🍉\" />\n```\n\nJust replace the `🍉` emoji with any emoji you'd like."
+}
