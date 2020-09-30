@@ -36,6 +36,10 @@ collections:
     slug: '{{fields.slug}}'
     editor: { preview: false }
     sortable_fields: ['date']
+    view_filters:
+      - label: Unpublished
+        field: published
+        pattern: false
     folder: 'src/cms/blog'
     format: json
     fields:
@@ -53,6 +57,7 @@ collections:
         widget: datetime
         time_format: false
         picker_utc: true
+        required: false
       - label: Published
         name: published
         widget: boolean
@@ -60,3 +65,4 @@ collections:
       - label: Body
         name: body
         widget: markdown
+        required: false
