@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-05-03T00:00:00.000Z",
+  "title": "How to open up the email composer with Expo",
+  "slug": "expo-mailto",
+  "description": "Use the \"expo-mail-composer\" module to create a button that opens up a pre-composed or pre-filled email in your Expo app. ",
+  "body": "_Note: this won't work properly when testing on iOS Simulators since you can't sign into a mail account on the simulator._\n\nInstall the `expo-mail-composer` package to your Expo project:\n\n```bash\nexpo install expo-mail-composer\n```\n\nNow, you can import and use the module. For example: \n\n```javascript\nimport * as MailComposer from \"expo-mail-composer\"\n\n// Opens prefilled email\nMailComposer.composeAsync({\n  recipients: [], // array of email addresses\n  subject: \"\",\n  body: \"\"\n})\n```"
+}
