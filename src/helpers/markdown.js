@@ -1,16 +1,16 @@
 /* Parses markdown to HTML */
-import marked from 'marked'
-import prism from 'prismjs'
+const marked = require('marked')
+const prism = require('prismjs')
 
-import 'prismjs/components/prism-markup-templating'
-import 'prismjs/components/prism-css'
-import 'prismjs/components/prism-php'
-import 'prismjs/components/prism-json'
-import 'prismjs/components/prism-javascript'
-import 'prismjs/components/prism-jsx'
-import 'prismjs/components/prism-bash'
-import 'prismjs/components/prism-yaml'
-import 'prismjs/components/prism-toml'
+require('prismjs/components/prism-markup-templating')
+require('prismjs/components/prism-css')
+require('prismjs/components/prism-php')
+require('prismjs/components/prism-json')
+require('prismjs/components/prism-javascript')
+require('prismjs/components/prism-jsx')
+require('prismjs/components/prism-bash')
+require('prismjs/components/prism-yaml')
+require('prismjs/components/prism-toml')
 
 marked.setOptions({
     highlight: (code, lang) => {
@@ -24,4 +24,4 @@ marked.setOptions({
 
 const markdown = text => marked.parse(text)
 
-export default markdown
+module.exports = markdown

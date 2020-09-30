@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Layout from '../components/Layout'
-import markdown from '../helpers/markdown'
 
 import '../prism.css'
 
@@ -20,7 +19,7 @@ const BlogPost = ({ pageContext }) => {
             
             <div
                 className="prose"
-                dangerouslySetInnerHTML={{ __html: markdown(pageContext.body) }}
+                dangerouslySetInnerHTML={{ __html: pageContext.bodyHtml }}
             />
             
             <div className="mt-16 p-4 bg-gray-100 rounded shadow-inner">

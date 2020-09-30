@@ -1,6 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 
+const markdown = require('./src/helpers/markdown')
+
 exports.createPages = ({ actions: { createPage } }) => {
     const blogPostTemplate = path.resolve('src/templates/blog-post.js')
     
@@ -12,7 +14,10 @@ exports.createPages = ({ actions: { createPage } }) => {
             createPage({
                 path: `/blog/${json.slug}/`,
                 component: blogPostTemplate,
-                context: json
+                context: {
+                    ...json,
+                    bodyHtml: markdown(json.body)
+                }
             })
         }
     })
