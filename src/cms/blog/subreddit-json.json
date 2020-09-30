@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-04-23T00:00:00.000Z",
+  "title": "How to get subreddit posts as JSON",
+  "slug": "subreddit-json",
+  "description": "You can get data from any subreddit or Reddit user in JSON format, using Reddit's free and dead-simple API. Just add \".json\" to the end of a Reddit URL. ",
+  "body": "You can get data from any subreddit or Reddit user in JSON format, using Reddit's free and dead-simple API. \n\nJust add `.json` to the end of a Reddit URL: \n\n- [reddit.com/r/worldnews.json](https://reddit.com/r/worldnews.json)\n- [reddit.com/user/spez.json](https://www.reddit.com/user/spez.json)"
+}
