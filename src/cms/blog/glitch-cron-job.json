@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-05-03T00:00:00.000Z",
+  "title": "How to set up a cron job for your Glitch project",
+  "slug": "glitch-cron-job",
+  "description": "A cron job allows you to run some code on a schedule. You can have that code in a Glitch project, and then use an external service to trigger the Glitch project's code to execute. ",
+  "body": "A cron job allows you to run some code on a schedule (every day at 9am, every hour at 10 minutes past the hour, etc). \n\nWith Glitch, you can do that by writing the code in your Glitch project, and then triggering the code to run externally. \n\nFirst, set up an [Express](https://expressjs.com) route that contains the code you want to run: \n\n```javascript\napp.get(\"/cron\", (req, res) => {\n  // the code you want to run\n\n  res.sendStatus(200) // sends an \"OK\" response\n})\n```\n\nThis means that when you go to `https://project-name.glitch.me/cron` in your browser, the code will execute. \n\nNow, instead of opening that page manually, we'll use an external service to make an HTTP request to the `/cron` endpoint and run that code. \n\nGo to [cron-job.org](http://cron-job.org) and sign up (it's free). Then, [view your cron jobs](https://cron-job.org/en/members/jobs/) and click the \"Create\" button. \n\nGive the job a name that describes it, and put the `https://project-name.glitch.me/cron` URL as the one where a request should be made. \n\nConfigure the schedule options so it runs at the frequency you'd like, and click \"Create cronjob\" at the bottom of the page. \n\nDone! Now, cron-job.org will make an HTTP request to that URL at the frequency you told them to, triggering the code in the `/cron` route to run automatically."
+}
