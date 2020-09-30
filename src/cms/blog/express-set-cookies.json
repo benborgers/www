@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-03-18T00:00:00.000Z",
+  "title": "How to set and delete cookies with Express",
+  "slug": "express-set-cookies",
+  "description": "Setting cookies and deleting them is easy in Express. You can just use the res.cookie() and res.clearCookie() functions to set cookies and define when they expire, set them as http-only, mark them as secure, and more. ",
+  "body": "## Setting cookies\n\n```jsx\nres.cookie(\"token\", MY_TOKEN, { maxAge: MILLISECONDS_FROM_NOW_TO_EXPIRE })\n```\n\nThere's more options (other than `maxAge`) described in the [Express documentation](https://expressjs.com/en/api.html#res.cookie). \n\n## Deleting cookies\n\n```jsx\nres.clearCookie(\"token\")\n```"
+}
