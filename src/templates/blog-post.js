@@ -1,16 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import Layout from '../components/Layout'
 import markdown from '../helpers/markdown'
 
-import hljs from 'highlight.js'
-import 'highlight.js/styles/dracula.css'
+import 'prism-themes/themes/prism-dracula.css'
 
-const BlogPost = ({ pageContext }) => {
-    useEffect(() => {
-        hljs.initHighlighting()
-    }, [])
-    
+const BlogPost = ({ pageContext }) => {    
     return (
         <Layout
             title={pageContext.title}

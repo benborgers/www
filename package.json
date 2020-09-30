@@ -10,13 +10,14 @@
     "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-react-helmet": "^3.3.12",
     "gatsby-plugin-sitemap": "^2.4.14",
-    "highlight.js": "^10.2.0",
+    "marked": "^1.2.0",
     "netlify-cms-app": "^2.12.25",
     "normalize.css": "^8.0.1",
+    "prism-themes": "^1.4.0",
+    "prismjs": "^1.21.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "snarkdown": "^2.0.0",
     "tailwindcss": "^1.8.10"
   }
 }
