@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-04-02T00:00:00.000Z",
+  "title": "How to read and change URL hash with JavaScript",
+  "slug": "js-hash",
+  "description": "You can easily read the current hash (the part of the URL after #), change it, and add an event listener to run some code every time the hash changes. ",
+  "body": "You can read the current URL hash (the part of the URL after `#`) like this: \n\n```jsx\nconst hash = location.hash\nconsole.log(hash)\n```\n\nAnd change it like this: \n\n```jsx\nlocation.hash = \"foo\"\n```\n\nYou can detect whenever the hash changes like this: \n\n```jsx\nwindow.addEventListener(\"hashchange\", event => {\n  console.log(\"hash changed\", event)\n})\n```"
+}
