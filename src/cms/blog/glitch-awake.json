@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-03-18T00:00:00.000Z",
+  "title": "How to keep your Glitch project from sleeping",
+  "slug": "glitch-awake",
+  "description": "Glitch projects go to sleep after 5 minutes of inactivity, but you can keep them awake using a free cron job service. The service makes a request to your Glitch project every couple minutes, which will keep the project alive and fast. ",
+  "body": "[Glitch](https://glitch.com) projects sleep after 5 minutes if they're not used. \n\nThen, the next time you access the project, you'll see a loading screen for a few seconds: \n\n![](/assets/glitch-asleep.png)\n\nIf you have a Glitch project that you don't want going to sleep, use [cron-job.org](https://cron-job.org). \n\nA **cron job** is a task that happens at a certain interval. In this case, we're going to make a request to your Glitch project every 5 minutes so that it doesn't fall asleep. \n\n1. Create a [cron-job.org](https://cron-job.org) account for free, and then [create a new cron job](https://cron-job.org/en/members/jobs/add/). \n2. Fill out the title, URL (your Glitch project link), and schedule it for every 5 minutes. \n3. Create the cron job. \n\n![](/assets/glitch-cron-job.png)\n\nDone! cron-job.org will make a request to your Glitch project's URL every 5 minutes, keeping the project awake for free."
+}
