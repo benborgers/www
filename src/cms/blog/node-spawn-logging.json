@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-07-01T00:00:00.000Z",
+  "title": "Logging the output of Node.js shell exec",
+  "slug": "node-spawn-logging",
+  "description": "If you're executing a shell command with Node.js's \"spawn\" command, you can stream the output to the console for debugging or to see its progress. ",
+  "body": "The nice thing about the built-in `child_process` package's `spawn` command for executing shell commands with Node.js, is that you can easily get access to the output of that command. \n\nThis way, you can see what the terminal command is doing: \n\n```jsx\nconst { spawn } = require('child_process')\n\nconst command = spawn('git clone https://github.com/benborgers/potion', {\n  shell: true\n})\n\ncommand.stdout.on('data', data =>   console.log(data.toString())\ncommand.stderr.on('data', data => console.error(data.toString())\n```\n\nNow, the output of your `spawn` shell command will be streamed to the console in real time."
+}
