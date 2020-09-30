@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-08-03T00:00:00.000Z",
+  "title": "How to solve \"Class 'Tests\\Feature\\Livewire' not found\"",
+  "slug": "livewire-test-class-not-found",
+  "description": "You're probably writing a test for a Livewire component. However, the docs don't mention that you need to import a package first. ",
+  "body": "This probably means that you're writing a Laravel test for a Livewire component. \n\nFor some reason, [the docs](https://laravel-livewire.com/docs/testing) don't mention that you need to import a package at the top of your test file first: \n\n```php\nuse Livewire\\Livewire;\n```\n\nNow, you can use all the `Livewire::test` goodness."
+}
