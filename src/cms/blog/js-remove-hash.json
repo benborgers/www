@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-04-02T00:00:00.000Z",
+  "title": "How to remove hash from URL with JavaScript",
+  "slug": "js-remove-hash",
+  "description": "If you set location.hash to an empty string, there's still a # in the URL. You can use history.replaceState() to get rid of the \"hash\" symbol left over in the URL. ",
+  "body": "You usually clear the URL hash like this: \n\n```jsx\nlocation.hash = \"\"\n```\n\nHowever, that leaves a `#` at the end of the URL. You can remove the `#` by adding a line of code: \n\n```jsx\nlocation.hash = \"\"\nhistory.replaceState(\"\", \"\", location.pathname)\n```\n\nThe second line overwrites the URL with the current URL, minus the `#`."
+}
