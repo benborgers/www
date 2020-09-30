@@ -52,6 +52,7 @@ collections:
       - label: Description
         name: description
         widget: text
+        required: false
       - label: Date
         name: date
         widget: datetime
