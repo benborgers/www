@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-05-08T00:00:00.000Z",
+  "title": "How to remove duplicates in an array in JavaScript",
+  "slug": "js-array-remove-duplicates",
+  "description": "Here's a quick one-liner for removing duplicate items from an array in javascript or Node.js, leaving an array of unique items. ",
+  "body": "Let's say you have this array:\n\n```javascript\nconst myArray = [\"red\", \"blue\", \"green\", \"blue\", \"blue\", \"orange\", \"green\"]\n```\n\nBut you only want each item to appear once. \n\nHere's how you turn that array into an array where each item only appears once. \n\n```javascript\nconst uniqueArray = [...new Set(myArray)]\n```"
+}
