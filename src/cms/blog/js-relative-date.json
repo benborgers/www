@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-04-29T00:00:00.000Z",
+  "title": "How to format relative date with Node.js",
+  "slug": "js-relative-date",
+  "description": "A relative date is something like \"23 minutes ago\", \"1 day ago\", or \"3 months ago\". You can create these relative dates in Node.js using the \"tiny-relative-date\" package on npm. ",
+  "body": "A relative date is something like \"23 minutes ago\", \"1 day ago\", or \"3 months ago\". \n\nMy favorite Node.js package for formatting a normal `Date` object into a nice string is `[tiny-relative-date](https://www.npmjs.com/package/tiny-relative-date)`. \n\nFirst, install the package: \n\n```bash\nnpm install tiny-relative-date\n```\n\nThen, you can use it like this: \n\n```javascript\nconst relativeDate = require(\"tiny-relative-date\") // import the package\n\nconst date = new Date() // any javascript date object\n\nconsole.log(relativeDate(date)) // this returns the relative date\n```\n\nDone! Now you've got relative dates in Node.js."
+}
