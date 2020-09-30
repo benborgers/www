@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-04-19T00:00:00.000Z",
+  "title": "How to create a sitemap for a Gatsby site",
+  "slug": "gatsby-sitemap",
+  "description": "Adding a sitemap in Gatsby is as easy as installing a pre-made Gatsby plugin for it. ",
+  "body": "Install the Gatsby plugin: \n\n```bash\nnpm install gatsby-plugin-sitemap\n```\n\nThen, add the root URL of your site (before the part that starts with `/`) to your `gatsby-config.js`, and activate the plugin: \n\n```javascript\n// gatsby-config.js\n\nmodule.exports = {\n  siteMetadata: {\n    siteUrl: \"https://benborgers.com\"\n  },\n  plugins: [\n    \"gatsby-plugin-sitemap\"\n  ]\n}\n```\n\nDone! Your sitemap will be created at `/sitemap.xml` in production builds of your Gatsby website, and will also be properly linked in the `<head>` of each page."
+}
