@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-03-25T00:00:00.000Z",
+  "slug": "swr-refresh",
+  "title": "How to refresh data with SWR",
+  "description": "Let's say you have a piece of data you're fetching with ZEIT's SWR package, and you want to refresh that data in the background. You can use that function's \"mutate\" function to request new data, without affecting what's currently being shown. You can also use the \"isValidating\" boolean to display to the user whether the data has been updated. ",
+  "body": "Let's say you have a piece of data you're fetching with ZEIT's [SWR package](https://github.com/zeit/swr): \n\n```jsx\nconst { data } = useSWR(\"/posts\")\n```\n\nIf you want to refresh this data, you can do this by making use of other values returned by `useSWR`. \n\n```jsx\nconst { data, mutate, isValidating } = useSWR(\"/posts\")\n// isValidating will be explained later\n```\n\nYou can change the cached `data` for `/posts` by calling `mutate(newData)`. \n\nHowever, if you just run `mutate()`, it will refresh the data for `/posts` in the background. `mutate` knows to request the `/posts` endpoint again, since that's where the `mutate` function came from. \n\n## Bonus: isValidating\n\nYou can use `isValidating` to show to the user whether the data has been updated yet. \n\nThis value is `true` while SWR is refetching the data, and `false` once the data has been successfully returned. \n\nYou can use `isValidating` to conditionally show a message that says something like *Updating...* while new data is being fetched."
+}
