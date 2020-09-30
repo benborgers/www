@@ -35,7 +35,7 @@ collections:
     create: true
     slug: '{{fields.slug}}'
     editor: { preview: false }
-    sortable_fields: ['date']
+    sortable_fields: []
     view_filters:
       - label: Unpublished
         field: published
