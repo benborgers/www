@@ -14,7 +14,7 @@ const index = () => {
             <div className="mb-8">
                 <h1 className="font-serif font-bold text-gray-900 mb-4">Hi! I’m Ben Borgers.</h1>
                 <div
-                    className="prose prose-mini"
+                    className="prose"
                     dangerouslySetInnerHTML={{ __html: markdown(home.bio) }}
                 />
             </div>
@@ -24,7 +24,7 @@ const index = () => {
                     {home.bullets.map(bullet => (
                         <li key={bullet.text}>
                             <>
-                                <p
+                                <div
                                     className="prose text-gray-800"
                                     dangerouslySetInnerHTML={{ __html: markdown(bullet.text) }}
                                 />

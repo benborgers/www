@@ -10,11 +10,6 @@ module.exports = {
                 css: {
                     a: {
                         color: theme('colors.teal.700')
-                    },
-                    br: {
-                        display: 'block',
-                        content: `''`,
-                        marginTop: `${theme('spacing.4')} !important`
                     }
                 }
             }
