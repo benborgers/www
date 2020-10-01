@@ -1,6 +1,8 @@
 {
-  "published": false,
+  "published": true,
   "date": "2020-09-30T02:19:56.592Z",
   "title": "How to go back one page and refresh with javascript",
-  "slug": "js-back-and-refresh"
+  "slug": "js-back-and-refresh",
+  "body": "Let's say you want to have a link that sends the user back one page, but also refreshes the page so that last page's content isn't stale. \n\nHere's a way you can do it: \n\n```javascript\n// On button press, or something else: \ndocument.referrer ? window.location = document.referrer : history.back()\n```\n\nThis looks to see if we have a `referrer`, which is the last page that the user came from before this page. If there is, we navigate to that page. \n\nIf there isn't, we fall back to using `history.back()` as an alternative, which sends the user back _without_ refreshing. ",
+  "description": "You can use the document's referrer to send a user back one page and refresh the page. You might want to refresh the page so that there isn't stale content on that page. "
 }
