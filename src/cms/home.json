@@ -2,7 +2,7 @@
   "bio": "I’m a high school senior in Boston, MA. I make things with JavaScript, Node.js, React, React Native, and most recently Laravel.\n\nI’m on [twitter](https://twitter.com/benborgers) and [github](https://github.com/benborgers). If you wanna get in touch, I love getting emails: [benborgers@hey.com](mailto:benborgers@hey.com)\n\nHere’s a **skimmable bullet point timeline** about me:",
   "bullets": [
     {
-      "text": "Built version 2 of [Blocks](https://blocks.elk.sh), an app for my school’s schedule used by 1,800+ students and teachers",
+      "text": "Built version 2 of [Blocks](https://blocks.elk.sh), an app for my school’s schedule used by 1,900+ students and teachers",
       "when": "2020-2021 school year"
     },
     {
