@@ -19,7 +19,8 @@ marked.setOptions({
         } else {
             return code
         }
-    }
+    },
+    smartypants: true
 })
 
 const markdown = text => marked.parse(text)
