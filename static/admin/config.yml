@@ -1,6 +1,7 @@
 backend:
     name: git-gateway
     branch: main
+site_url: https://benborgers.com
 media_folder: static/assets
 public_folder: /assets
 collections:
@@ -34,6 +35,7 @@ collections:
     name: blog
     create: true
     slug: '{{fields.slug}}'
+    preview_path: /blog/{{slug}}/
     editor: { preview: false }
     sortable_fields: []
     view_filters:
