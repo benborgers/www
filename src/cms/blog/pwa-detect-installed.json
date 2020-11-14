@@ -1,6 +1,6 @@
 {
   "published": true,
-  "date": "2020-09-30T02:18:11.634Z",
+  "date": "2020-11-14T14:31:41.269Z",
   "title": "How to detect if your PWA is installed",
   "slug": "pwa-detect-installed",
   "body": "You might want to show a different UI in your progressive web app depending on whether the app's \"downloaded\" (added to the user's home screen) vs. when it's not. \n\nYou have to detect this in two different ways: one for iOS, and one for Android. Here's how to do it in javascript: \n\n```javascript\nfunction isInstalled() {\n  // For iOS\n  if(window.navigator.standalone) return true\n  \n  // For Android\n  if(window.matchMedia('(display-mode: standalone)').matches) return true\n  \n  // If neither is true, it's not installed\n  return false\n}\n```\n\nYou can now call this function `isInstalled()` in your app's javascript to see whether the user has added the app to their home screen yet. ",
