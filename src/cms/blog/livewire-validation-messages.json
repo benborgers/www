@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-11-15T12:59:23.231Z",
+  "title": "How to customize validation messages in Livewire",
+  "slug": "livewire-validation-messages",
+  "description": "When using Livewire's $rules property, you can also use the $messages property to write custom validation messages. ",
+  "body": "Livewire allows you to write validation in a `protected $rules` property that is used whenever you call `$this->validate()` or `$this->validateOnly('propertyName'). \n\nIf you want to show a different error message for one of the validation rules, you can use the `protected $messages` property to do it. \n\nFor example, say I have this Livewire Blade view, with a simple input and the possibility of showing an error message for that input's value: \n\n```html\n<div>\n  <input wire:model=\"text\" />\n\n  @error('text')\n    <p>{{ $message }}</p>\n  @enderror\n</div>\n```\n\nI could leverage the `$messages` property like this to override the default validation error for the text minimum length rule: \n\n```php\n<?php\n\nuse Livewire\\Component;\n\nclass LivewireComponent extends Component\n{\n    public $text = '';\n\n    protected $rules = [\n        'text' => 'required|min:3'\n    ];\n\n    protected $messages = [\n        'text.min' => 'Keep typing...'\n    ];\n\n    public function updated($property)\n    {\n        // Every time a property changes (only `text` for now), validate it\n        $this->validateOnly($property);\n    }\n  \n    public function render()\n    {\n        return view('livewire-component');\n    }\n}\n```"
+}
