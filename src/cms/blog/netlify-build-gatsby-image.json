@@ -1,8 +1,0 @@
-{
-  "published": false,
-  "date": "",
-  "title": "How to speed up gatsby-image on Netlify",
-  "slug": "netlify-build-gatsby-image",
-  "description": "If optimizing images through gatsby-image is really slowing down your builds, you can use a Netlify plugin to fix that. The plugin caches the optimized images generated during the build, so that Gatsby doesn't have to optimize them again. ",
-  "body": ""
-}
