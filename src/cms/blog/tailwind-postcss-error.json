@@ -1,0 +1,8 @@
+{
+  "published": true,
+  "date": "2020-11-19T15:17:39.039Z",
+  "title": "How to fix \"PostCSS plugin tailwindcss requires PostCSS 8\"",
+  "slug": "tailwind-postcss-error",
+  "description": "When upgrading to Tailwind 2.0, I got the error that \"PostCSS plugin tailwindcss requires PostCSS 8\". I was able to fix it using the Tailwind PostCSS 7 compatibility build. ",
+  "body": "I just upgraded to Tailwind 2.0 from Tailwind 1.0, and got the error \"PostCSS plugin tailwindcss requires PostCSS 8\" when I tried to rebuild my CSS bundle. \n\nI was using Laravel Mix to compile the assets, but this solution should work for any situation where you get this error. \n\nSince PostCSS 8 is new, many tools still use PostCSS 7. Tailwind maintains a `compat` channel that works with PostCSS 7, which is completely identical to the flagship PostCSS 8 version. \n\nTo install it, first uninstall the default modules you might've installed: \n\n```bash\nnpm uninstall tailwindcss postcss autoprefixer\n```\n\nThen, install specific versions of these modules: \n\n```bash\nnpm install tailwindcss@compat postcss@^7 autoprefixer@^9\n```\n\nYou'll notice that you're installing the `compat` version of Tailwind. \n\nAnd just like that, your Tailwind CSS build should work again!\n"
+}
