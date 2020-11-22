@@ -1,0 +1,7 @@
+{
+  "published": false,
+  "date": "2020-11-22T15:28:55.705Z",
+  "title": "How to serve static files with Node.js",
+  "slug": "node-serve-static-files",
+  "body": "https://github.com/benborgers/ben-city/blob/main/index.js\n\nUse `serve-handler`"
+}
