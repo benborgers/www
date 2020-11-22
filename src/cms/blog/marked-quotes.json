@@ -1,0 +1,7 @@
+{
+  "published": false,
+  "date": "2020-11-22T15:26:19.560Z",
+  "title": "How to get curly quotes with Marked.js",
+  "slug": "marked-quotes",
+  "body": "```javascript\nmarked.setOptions({ smartypants: true })\n```\n"
+}
