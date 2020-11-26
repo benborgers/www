@@ -1,8 +1,8 @@
 {
-  "published": false,
-  "date": "2020-11-22T15:29:24.197Z",
+  "published": true,
+  "date": "2020-11-26T17:45:32.487Z",
   "title": "How to remove gray box when tapping a link on iOS with CSS",
-  "description": "(mention CSS here)",
+  "description": "When you tap a link in iOS Safari, a gray highlight box appears around it. This can be jarring and might not fit with the rest of your website, so you can use CSS to remove it. ",
   "slug": "webkit-tap-highlight-color",
-  "body": "https://github.com/benborgers/blocks-v2/commit/69f4a8c1b432ab635732c570f56d36a3b8121bb7"
+  "body": "When you tap a link in iOS Safari, a gray highlight box appears around it. This can be jarring and might not fit with the rest of your website, so you can use CSS to remove it.\n\nHere's how you remove it: \n\n```css\n* {\n  -webkit-tap-highlight-color: transparent;\n}\n```\n\nHowever, this might cause the user not to realize that they tapped something. I like to fix this by using javascript to fading out tapped items to 50% opacity. That way, the user realizes that the button's been tapped and that we're loading the next page. "
 }
