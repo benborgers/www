@@ -1,7 +1,8 @@
 {
-  "published": false,
-  "date": "2020-11-22T15:27:53.871Z",
+  "published": true,
+  "date": "2020-11-27T13:37:28.236Z",
   "title": "How to minify HTML with Node.js",
   "slug": "node-minify-html",
-  "body": "https://github.com/benborgers/ben-city/blob/main/index.js"
+  "body": "It's common practice to \"minify\" HTML, removing its extra spaces and unnecessary properties so that it's faster to load. \n\nYou can use the `html-minifier` npm package to minify HTML. \n\nFirst, install the package: \n\n```bash\nnpm install html-minifier\n```\n\nNow, you can use the package like this: \n\n```javascript\nconst { minify } = require('html-minifier')\n\nconst originalHtml = /* html string */;\n\nconst minifiedHtml = minify(originalHtml, {\n  collapseWhitespace: true,\n  removeComments: true,\n  collapseBooleanAttributes: true,\n  useShortDoctype: true,\n  removeEmptyAttributes: true,\n  removeOptionalTags: true,\n  minifyJS: true\n})\n```\n\nThere are lots of options for how to minify the HTML, and I've shown the ones that I usually turn on. You can see all the possible options in the [documentation](https://github.com/kangax/html-minifier).",
+  "description": "Use the html-minifier npm package to remove extra spaces and unnecessary properties in HTML. This post shows the option that I turn on for minification. "
 }
