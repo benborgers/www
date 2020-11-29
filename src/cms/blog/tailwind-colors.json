@@ -1,7 +1,8 @@
 {
-  "published": false,
-  "date": "2020-11-22T15:30:50.041Z",
+  "published": true,
+  "date": "2020-11-29T15:57:20.465Z",
   "slug": "tailwind-colors",
   "title": "How to customize the Tailwind CSS 2.0 color palette",
-  "body": "Include copy-pastable config to recreate default config. \n\nhttps://tailwindcss.com/docs/customizing-colors"
+  "body": "Tailwind 2.0 comes with less colors by default, but has a wider range of color palettes that you can activate if you need them. \n\nWe'll do this by \"extending\" the Tailwind configuration, instead of overwriting the default colors. \n\nCreate or edit a file at the root of your project called `tailwind.config.js`. In it, you need to have this: \n\n```javascript\nconst color = require('tailwindcss/colors')\n\nmodule.exports = {\n  theme: {\n    extend: {\n      colors: {\n        // Colors you want to add go here\n        rose: colors.rose,\n        cyan: colors.cyan\n      }\n    }\n  }\n}\n```\n\nIn this example, we've added rose and cyan to the Tailwind color palette. This means you can now use them as text colors, background colors, gradients, or anywhere else in Tailwind that uses colors. \n\nNow, next time you build your CSS file, those colors will be included in all the color-related utility classes. \n\nYou can see the full list of colors that you can use in [Tailwind's documentation](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). ",
+  "description": "Tailwind 2.0 comes with less colors by default, but has a wider range of color palettes that you can activate if you need them. You can activate them in your tailwind.config.js file, by extending the default configuration. "
 }
