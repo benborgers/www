@@ -1,7 +1,8 @@
 {
-  "published": false,
-  "date": "2020-11-22T15:26:19.560Z",
+  "published": true,
+  "date": "2020-11-30T18:48:58.746Z",
   "title": "How to get curly quotes with Marked.js",
   "slug": "marked-quotes",
-  "body": "```javascript\nmarked.setOptions({ smartypants: true })\n```\n"
+  "body": "Marked.js is a library for parsing Markdown into HTML. \n\nI personally think that curly or \"smart\" quotes look better in writing, like this: \n\n```text\n\"straight quotes\"\n“curly quotes”\n```\n\nTo turn straight quotes into curly quotes when parsing with Marked.js, use the `setOptions` function to turn \"smartypants\" rendering on: \n\n```javascript\nmarked.setOptions({ smartypants: true })\n\nmarked.parse(/* markdown content */)\n```\n\nNow, running `marked.parse` will produce HTML with intelligently replaced curly quotes. ",
+  "description": "You can replace straight quotes with curly or \"smart\" quotes using Marked.js when parsing Markdown into HTML. "
 }
