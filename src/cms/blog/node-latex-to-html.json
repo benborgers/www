@@ -1,7 +1,8 @@
 {
-  "published": false,
-  "date": "2020-11-22T15:28:13.556Z",
+  "published": true,
+  "date": "2020-12-05T15:39:03.251Z",
   "title": "How to render LaTeX to HTML with Node.js",
   "slug": "node-latex-to-html",
-  "body": "https://github.com/benborgers/ben-city/blob/main/index.js"
+  "body": "To render LaTeX as HTML, we're going to be using the `KaTeX` [npm package](https://www.npmjs.com/package/katex). First, install it: \n\n```bash\nnpm install katex\n```\n\nNow, to render a string of LaTeX into HTML, we can use that package: \n\n```javascript\nconst katex = require('katex')\n\nconst latexString = /* LaTeX here */\n\nconst html = katex.renderToString(latexString)\n```\n\nNow, `html` will be a rendering of the LaTeX in HTML. To make it show properly, you'll need to include KaTeX's special CSS file, which styles the outputted HTML with the correct fonts and positioning. Drop this CSS file into the `<head>` of your HTML file along with the rendered LaTeX: \n\n```html\n<link rel=\"stylesheet\" href=\"https://unpkg.com/katex@0.12.0/dist/katex.min.css\" />\n```\n\nNow, opening the HTML file with the rendered LaTeX-as-HTML string and that linked CSS file will show the LaTeX beautifully rendered on the page. ",
+  "description": "An example of using the \"katex\" library to pre-render LaTeX into HTML using Node.js. "
 }
