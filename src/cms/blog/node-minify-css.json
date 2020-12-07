@@ -1,7 +1,8 @@
 {
-  "published": false,
-  "date": "2020-11-22T15:27:32.819Z",
+  "published": true,
+  "date": "2020-12-07T15:09:14.692Z",
   "title": "How to minify CSS with Node.js",
   "slug": "node-minify-css",
-  "body": "https://github.com/benborgers/ben-city/blob/main/index.js"
+  "body": "We'll be using PostCSS to easily minify a string of CSS in a Node.js script. \n\nFirst, install the necessary packages: \n\n```bash\nnpm install postcss cssnano autoprefixer\n```\n\n`postcss` is what we're using the do the minifying, and `cssnano` and `autoprefixer` are *plugins* for PostCSS that tell PostCSS how to manipulate the CSS. `cssnano` comes with a bunch of built-in techniques for making CSS smaller, and `autoprefixer` adds those `-webkit` or `-moz` prefixes where necessary to make your CSS compatible with all browsers. \n\nNow that you've installed the npm packages, here's how you use them: \n\n```javascript\nconst postcss = require('postcss')\nconst cssnano = require('cssnano')\nconst autoprefixer = require('autoprefixer')\n\n// Wrapped in a function so we can use async/await\nconst process = async () => {\n  // This CSS might be imported from a file, or anywhere else\n  const css = `\n    * {\n      font-family: system-ui;\n    }\n  `\n\n  // We pass in an array of the plugins we want to use: `cssnano` and `autoprefixer`\n  const output = await postcss([cssnano, autoprefixer])\n    .process(css)\n  \n  // The `css` property of `output` is the minified CSS as a string\n  const minifiedCss = output.css\n}\n```",
+  "description": "You can use PostCSS in a Node.js script, along with plugins like cssnano and autoprefixer, to minify a string of CSS from a file. "
 }
