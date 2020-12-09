@@ -4,5 +4,5 @@
   "title": "Easiest way to add days to a PHP DateTime",
   "slug": "php-datetime-add-days",
   "description": "Given a PHP DateTime instance, you can add 1 or more days to it using the simple \"modify\" method. ",
-  "body": "If you have a PHP `DateTime` instance and want to add a certain number of days to it, you can use the `modify` method. Here's an example: \n\n```php\n$date = new DateTime('NOW')->modify('+1 day');\n```\n\nNow, `$date` is a `DateTime` 1 day in the future from now. You can substitute any number of days into the `modify` method, or make it a variable like this: \n\n```php\n$date = new DateTime('NOW')->modify(\"+{$daysToAdd} days\");\n\n```"
+  "body": "If you have a PHP `DateTime` instance and want to add a certain number of days to it, you can use the `modify` method. Here's an example: \n\n```php\n$date = new DateTime('NOW')->modify('+1 day');\n```\n\nNow, `$date` is a `DateTime` 1 day in the future from now. \n\nYou can substitute any number of days into the `modify` method, or make it a variable like this: \n\n```php\n$date = new DateTime('NOW')->modify(\"+{$daysToAdd} days\");\n```"
 }
