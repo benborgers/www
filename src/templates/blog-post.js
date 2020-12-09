@@ -24,7 +24,7 @@ const BlogPost = ({ pageContext }) => {
             
             <div className="mt-16 p-4 bg-gray-100 rounded shadow-inner">
                 <p className="text-gray-900 text-center">
-                    Feel free to email me with questions or replies! <a href="mailto:benborgers@hey.com" className="text-teal-700 underline">benborgers@hey.com</a>
+                    I love getting questions or replies! <a href="mailto:benborgers@hey.com" className="text-teal-700 underline">benborgers@hey.com</a>
                 </p>
             </div>
         </Layout>
