@@ -9,6 +9,8 @@ eleventyComputed:
     title: Posts tagged “{{ tag }}”
 ---
 
+<h1>Posts tagged “{{ tag }}”</h1>
+
 <ul>
     {% for post in collections[tag] | reverse %}
         <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
