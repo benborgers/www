@@ -6,13 +6,11 @@ pagination:
   alias: tag
 permalink: /tags/{{ tag }}/
 eleventyComputed:
-    title: posts tagged “{{ tag }}”
+    title: Posts tagged “{{ tag }}”
 ---
 
 <ul>
-    {% for post in collections[ tag ] | reverse %}
-        {% if not post.url.match('/tags') and not post.url.match('/.netlify') %}
-            <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
-        {% endif %}
+    {% for post in collections[tag] %}
+        <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
     {% endfor %}
 </ul>
