@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-02-19T00:00:00.000Z",
-  "title": "How to avoid running out of disk space with a database on Glitch",
-  "slug": "glitch-disk-space",
-  "description": "While saving data to the filesystem in a Glitch project, I kept running out of disk space because Glitch was saving every change as a git commit. I solved the issue by running a couple git commands automatically on my server to clean up old commits. ",
-  "body": "Since originally writing this blog post, I've since found that the best way to solve a problem like this is to add the database file(s) to your `.gitignore` file. \n\nThis tells git not to keep a record of changes to your database, which avoids clogging up your disk space with local git history."
-}

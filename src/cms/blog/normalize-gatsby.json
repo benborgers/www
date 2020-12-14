@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2019-10-15T00:00:00.000Z",
-  "title": "How to add normalize.css to Gatsby",
-  "slug": "normalize-gatsby",
-  "description": "Normalize.css is a set of CSS rules used to make all browsers render your styles consistently. You can import it easily into your Gatsby site when using JSX and React.",
-  "body": "[Normalize.css](https://necolas.github.io/normalize.css/) is a set of CSS rules used to make all browsers render things consistently. Since all browsers come with their own \"base\" styles that can vary slightly, it's useful for making sure that your CSS styles look the same in every browser and smoothes over any inconsistencies between browsers.\n\nTo add it to your Gatsby site, first install the `normalize.css` npm package using the command line:\n\n```bash\nnpm install normalize.css\n```\n\nThen, import the stylesheet to any Gatsby page you want to use it on:\n\n```jsx\nimport React from \"react\"\n\nimport \"normalize.css\"\n\nexport default () => {\n  return (\n    <div>the page is here</div>\n  )\n}\n```\n\nYou'll need to do this on every page that you want to use normalize.css on. You can make this less tedious by adding it to the template that multiple pages use (more information can be found [in Gatsby's documentation](https://www.gatsbyjs.org/blog/2019-05-02-how-to-build-a-blog-with-wordpress-and-gatsby-part-3/#creating-a-page-template)), or by adding it to a shared component that all pages import and use."
-}

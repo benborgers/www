@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-02-21T00:00:00.000Z",
-  "title": "How to right-align an element in React Native",
-  "slug": "react-native-right-align",
-  "description": "You can right-align elements in React Native using two simple flexbox properties. The whole element gets moved to the right side of the screen, maintaining its original width. ",
-  "body": "Right aligning a component can be hard in React Native, especially when you don't want to just use `text-align: right`. \n\nLuckily, you can use flexbox to right-align an element by setting two properties on a wrapping `View`. \n\n```jsx\nexport default () => {\n  return (\n    <View\n      style={{\n        flexDirection: \"row\",\n        justifyContent: \"flex-end\"\n      }}\n    >\n      <Button\n        title=\"Click me\"\n        onPress={() => console.log(\"clicked\")}\n      />\n    </View>\n  )\n}\n```"
-}

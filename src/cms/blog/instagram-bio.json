@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-05-03T00:00:00.000Z",
-  "title": "How to update your Instagram bio with Node.js",
-  "slug": "instagram-bio",
-  "description": "You can use the unofficial Instagram API using the npm package \"instagram-private-api\" to change your Instagram bio using code. ",
-  "body": "Instagram's API is for businesses only, but the unofficial npm package [`instagram-private-api`](https://npm.im/instagram-private-api) will allow you to access Instagram's API. \n\nFirst, install the package in your Node.js project: \n\n```bash\nnpm install instagram-private-api\n```\n\nThen, you can use this code to update your bio: \n\n```javascript\nconst { IgApiClient } = require(\"instagram-private-api\")\nconst ig = new IgApiClient()\n\nconst USERNAME = \"bborgers\"\nconst PASSWORD = \"hackme\"\n\nig.state.generateDevice(USERNAME)\n\nconst main = async () => {\n  await ig.simulate.preLoginFlow()\n  await ig.account.login(USERNAME, PASSWORD)\n\n  // log out of Instagram when done\n  process.nextTick(async () => await ig.simulate.postLoginFlow())\n\n  // fill in whatever you want your new Instagram bio to be\n  await ig.account.setBiography(`It is currently ${new Date().toLocaleString()}`)\n}\n\nmain()\n// code is written in main() so that I can use async/await\n```\n\nThat's how easy it is to update your Instagram bio using Node.js and some programming!\n\nCheck out [`instagram-private-api`'s GitHub repo](https://github.com/dilame/instagram-private-api) — there's a ton of cool stuff to play with."
-}

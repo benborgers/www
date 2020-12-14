@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        {% if title %}
+            {{ title | safe }} -
+        {% endif %}
+        Ben Borgers
+    </title>
+    <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
+</head>
+<body>
+    <main>
+        {% if title %}
+            <div>
+                <h1>{{ title | safe }}</h1>
+                {% if date %}
+                    <p>
+                        Updated {{ date.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }}
+                    </p>
+                {% endif %}
+            </div>
+        {% endif %}
+        <div>
+            {{ content | safe }}
+        </div>
+    </main>
+</body>
+</html>

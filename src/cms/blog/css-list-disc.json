@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-11-23T17:37:26.876Z",
-  "title": "How to make indented bullet points discs in CSS",
-  "slug": "css-list-disc",
-  "body": "By default, indented bullet points become dots and squares instead of solid bullets. \n\nI wanted all the bullet points to stay as solid discs, because I think that it looks better: \n\n![](/assets/bullet-point-discs.png)\n\nFirst, here's the HTML for indented bullet points: \n\n```html\n<ul>\n  <li>one</li>\n  \n  <ul>\n    <li>one a</li>\n  </ul>\n  \n  <li>two</li>\n</ul>\n```\n\nThen, you can use this CSS to style every bullet point as a solid circle (a \"disc\"): \n\n```css\nli {\n  list-style-type: disc;\n}\n```\n\nDone! Now, ever bullet point will be the same solid disc, even if it's indented. ",
-  "description": "By default, indented bullet points become dots and squares instead of solid bullets. I wanted all the bullet points to stay as solid circles, which can be accomplished using the list-style-type property in CSS. "
-}

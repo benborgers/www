@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-04-23T00:00:00.000Z",
-  "title": "How to get screen width in Expo",
-  "slug": "expo-screen-width",
-  "description": "The window's width can be retrieved using the Dimensions package. ",
-  "body": "The screen width can be retrieved using the `Dimensions` package: \n\n```javascript\nimport Dimensions from \"react-native\"\n\nDimensions.get(\"window\").width\n```"
-}

@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-04-29T00:00:00.000Z",
-  "title": "How to allow CORS on Netlify Functions",
-  "slug": "netlify-functions-cors",
-  "description": "CORS blocks cross-origin (or cross-domain) requests from working properly. You can get around them by defining an access-control-allow-origin header from your Netlify function using the \"callback\" function. ",
-  "body": "CORS is a browser feature that blocks HTTP requests from one domain to another, unless the destination has the proper headers set up. \n\nIf you run into CORS errors with Netlify functions, you can fix them by returning a header called `access-control-allow-origin` with value `*`. This allows any (signified by `*`) origin (domain name) to make an HTTP request to the function.\n\nYou can return the header using the Netlify Functions `callback` function: \n\n```javascript\ncallback(null, {\n  statusCode: 200,\n  body: \"Hello, world!\"\n  headers: {\n    \"access-control-allow-origin\": \"*\"\n  }\n})\n```"
-}

@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-04-02T00:00:00.000Z",
-  "title": "How to add global CSS to Gatsby with Emotion",
-  "slug": "emotion-global",
-  "description": "You can add global CSS using the Emotion framework in React by using the Global component provided by Emotion. ",
-  "body": "By default, CSS you add with [Emotion](https://emotion.sh) is scoped to the component where it was added. \n\nTo add global CSS, use the `Global` component provided by Emotion: \n\n```jsx\nimport React from \"react\"\nimport { css, Global } from \"@emotion/core\"\n\nexport default () => {\n  return (\n    <Global\n      styles={css`\n        * {\n          font-family: Helvetica, sans-serif;\n        }\n      `}\n    />\n  )\n}\n```\n\nThe CSS written in the `styles` prop of `Global` will be injected globally into your Gatsby site."
-}

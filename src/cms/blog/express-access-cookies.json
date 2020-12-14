@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-03-18T00:00:00.000Z",
-  "title": "How to access cookies with Express",
-  "slug": "express-access-cookies",
-  "description": "If you'd like to easily access the cookies from a request in Express, you can use the cookie-parser middleware. It creates an object at req.cookies that contains the contents of the user's cookies. ",
-  "body": "The best way to access cookies with an Express server is using the `cookie-parser` middleware package. \n\nInstall it: \n\n```bash\nnpm install cookie-parser\n```\n\nAnd then add it to your server: \n\n```jsx\nconst express = require(\"express\")\nconst app = express()\n\nconst cookieParser = require(\"cookie-parser\")\napp.use(cookieParser())\n\n// the rest of your Express server...\n```\n\nYou can then access the cookies of any request: \n\n```jsx\napp.get(\"/\", (req, res) => {\n  const cookies = req.cookies\n  const token = req.cookies.token\n\n  // ...etc\n})\n```"
-}

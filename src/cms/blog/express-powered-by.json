@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-03-24T00:00:00.000Z",
-  "title": "How to disable the \"x-powered-by\" header in Express",
-  "slug": "express-powered-by",
-  "description": "Express generates a header to your responses that says \"x-powered-by: Express\". To remove it, add app.disable(\"x-powered-by\") to tell Express not to add the header. ",
-  "body": "[Express](https://expressjs.com) generates a header to your responses that says `x-powered-by: Express`. \n\nIf you want to clean up your headers, just add: \n\n```jsx\napp.disable(\"x-powered-by\")\n```\n\nat the top of your javascript file. "
-}

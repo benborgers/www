@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-03-18T00:00:00.000Z",
-  "title": "How to deploy to multiple regions with Vercel",
-  "slug": "zeit-regions",
-  "description": "You can use your vercel.json configuration to deploy a Vercel (formerly ZEIT Now) project to a specific region, in order to put your code in the region that is closer to your users. This will make your loading times faster. ",
-  "body": "When deploying projects with [Vercel](https://vercel.com) (formerly ZEIT), you want to deploy the serverless functions as close to your users as possible. \n\nThis results in slower loading times, since the server is physically closer to your users. \n\nIn your `vercel.json` file, you can configure the region where the project is deployed: \n\n```json\n{\n  \"regions\": [\"iad1\"]\n}\n```\n\nThe region identifier (`iad1` in the example above) comes from [the list of regions](https://zeit.co/docs/v2/network/regions-and-providers#routing). Any region marked as an **origin** will work. \n\nTo see where these locations are, use [their map](https://vercel.com/smart-cdn). \n\n_According to support as of March 8, 2020, you can only use one region in the array._"
-}

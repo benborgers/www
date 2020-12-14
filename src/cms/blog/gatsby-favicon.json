@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-05-06T00:00:00.000Z",
-  "title": "How to add a favicon with Gatsby",
-  "slug": "gatsby-favicon",
-  "description": "Use the react-helmet package to add a favicon to your Gatsby site. ",
-  "body": "To add a favicon to your Gatsby site, you need to be able to add code to the `<head>` of your page. \n\nFor that, you can use [`react-helmet`](https://github.com/nfl/react-helmet) (developed by the National Football League, by the way). \n\nTo use `react-helmet` in Gatsby, install the package and a Gatsby plugin to make it work: \n\n```bash\nnpm install react-helmet gatsby-plugin-react-helmet\n```\n\nThen, add `gatsby-plugin-react-helmet` to your `gatsby-config.js` file:\n\n```javascript\n// in gatsby-config.js file:\n\nmodule.exports = {\n  plugins: [\n    \"gatsby-plugin-react-helmet\",\n    // other plugins, if you have them\n  ]\n}\n```\n\nNow, on your Gatsby page (for example `src/pages/index.js`), use `react-helmet` to add the meta tag for a shortcut icon. \n\n```jsx\nimport React from \"react\"\nimport { Helmet } from \"react-helmet\"\n\nexport default () => {\n  return (\n    <React.Fragment>\n      <Helmet>\n        <meta name=\"icon\" href=\"/link/to/favicon.png\" />\n      <Helmet>\n\n      <div>\n        Hello, world!\n      </div>\n    </React.Fragment>\n  )\n}\n```"
-}

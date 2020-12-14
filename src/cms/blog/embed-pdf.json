@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-04-29T00:00:00.000Z",
-  "title": "How to embed a PDF in HTML",
-  "slug": "embed-pdf",
-  "description": "The best solution I could find to embed a PDF into HTML was using the Google Docs PDF viewer. I then added an extra div on top of it, to hide the \"open in\" button in the top right that opens up Google Drive. ",
-  "body": "As of now, there's no good way to embed a PDF right into HTML. \n\nTrust me, I looked. \n\nEverything you think would work (`iframe`, `object`, everything) has issues — it doesn't work in certain browsers, it doesn't work on mobile, on and on. \n\nA workaround I settled on was using an `iframe` containing Google's PDF viewer: \n\n```html\n<iframe\n  src=\"https://docs.google.com/viewer?embedded=true&url=URL_TO_PDF\"\n/>\n```\n\nPretty good! The only pesky problem was the \"open in\" arrow at the top right corner, which opens up Google Drive. \n\nI didn't want that, so I positioned a `div` with the same background color as my website on top of it. Not a great solution, but it worked: \n\n```html\n<div class=\"wrapper\">\n  <iframe src=\"...\" />\n  <div class=\"overlay\" />\n</div>\n\n<style>\n  .wrapper {\n    position: relative;\n  }\n\n  .overlay {\n    background-color: var(--site-background-color);\n    height: 44px;\n    width: 52px;\n    position: absolute;\n    top: 12px;\n    right: 0;\n  }\n</style>\n```\n\nNow, `.overlay` is sitting on top of the `iframe`, covering the top right area where the button is."
-}

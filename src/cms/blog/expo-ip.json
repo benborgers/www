@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-04-26T00:00:00.000Z",
-  "title": "How to get the device's IP address with Expo",
-  "slug": "expo-ip",
-  "description": "You can easily use the expo-network package to get the user's IP address in an Expo React Native app. ",
-  "body": "First, install the `expo-network` package: \n\n```bash\nexpo install expo-network\n```\n\nThen, import the package in the file you'd like to use it: \n\n```javascript\nimport * as Network from \"expo-network\"\n```\n\nNow, you can use the `Network` object to get the IP address: \n\n```javascript\nconst ip = await Network.getIpAddressAsync()\n```"
-}

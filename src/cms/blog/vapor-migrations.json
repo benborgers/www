@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-07-01T00:00:00.000Z",
-  "title": "How to run migrations automatically on Laravel Vapor",
-  "slug": "vapor-migrations",
-  "description": "You can't run \"php artisan migrate\" in production, but you can add the command to your vapor.yml file's deploy hooks so that it runs every time you deploy. ",
-  "body": "You can't run database migrations manually when a Laravel app is in production. Instead, define a deploy hook in `vapor.yml`: \n\n```yaml\n# Not a full vapor.yml configuration\n\nenvironments:\n  production:\n    deploy: \n      - 'php artisan migrate --force'\n```\n\nThe `--force` flag confirms that you're okay with running destructive migrations, such as deleting a column. \n\nVapor will run this command before the deployment is finalized, making any necessary changes to the production database."
-}

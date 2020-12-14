@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-04-26T00:00:00.000Z",
-  "title": "How to get the current app version in Expo",
-  "slug": "expo-version",
-  "description": "If you want to show or retrieve an Expo React Native app's current version number, you can get the app manifest (which includes the version number) using the expo-constants package. ",
-  "body": "You often want to show the version number of your app to the user. \n\nIn an Expo (React Native) app, you can do this using the `expo-constants` package, provided by Expo. \n\nFirst, install the package: \n\n```bash\nexpo install expo-constants\n```\n\nThen, add the package to the file where you want to get the version number: \n\n```javascript\nimport Constants from \"expo-constants\"\n```\n\nNow, you can access `Constants.manifest`, which is the current \"manifest\" (`app.json` file) of your app. The version number is available like this: \n\n```javascript\nconst version = Constants.manifest.version\n```"
-}
