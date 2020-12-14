@@ -3,3 +3,7 @@
     to = "https://benborgers.com/:splat"
     status = 301
     force = true
+
+[[redirects]]
+    from = "/blog/*"
+    to = "/posts/:splat"
