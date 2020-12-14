@@ -11,7 +11,7 @@ eleventyComputed:
 
 <ul>
     {% for post in collections[ tag ] | reverse %}
-        {% if not post.url.startsWith('/tags') %}
+        {% if not post.url.match('/tags') and not post.url.match('/.netlify') %}
             <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
         {% endif %}
     {% endfor %}
