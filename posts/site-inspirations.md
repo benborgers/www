@@ -1,5 +1,5 @@
 ---
-title: Inspirations for This Site
+title: Inspirations for this site
 date: 2020-11-15
 ---
 
