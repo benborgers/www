@@ -13,9 +13,11 @@ layout: layouts/base
     {{ content | safe }}
 </div>
 
-<div>
-    tags:
-    {% for tag in tags %}
-        <a href="/tags/{{ tag }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
-    {% endfor %}
-</div>
+{% if tags %}
+    <div>
+        tags:
+        {% for tag in tags %}
+            <a href="/tags/{{ tag }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
