@@ -13,19 +13,7 @@
 </head>
 <body>
     <main>
-        {% if title %}
-            <div>
-                <h1>{{ title | safe }}</h1>
-                {% if date %}
-                    <p>
-                        Updated {{ date.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }}
-                    </p>
-                {% endif %}
-            </div>
-        {% endif %}
-        <div>
-            {{ content | safe }}
-        </div>
+        {{ content | safe }}
     </main>
 </body>
 </html>

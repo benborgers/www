@@ -1,0 +1,16 @@
+---
+layout: layouts/base
+title: Archive
+---
+
+<h1>Archive</h1>
+
+{% for post in collections.all | reverse %}
+    {% if post.url.startsWith('/post') %}
+        <a href="{{ post.url | url }}">
+            <div>
+                <p>{{ post.data.title }}</p>
+            </div>
+        </a>
+    {% endif %}
+{% endfor %}

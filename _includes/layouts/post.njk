@@ -1,5 +1,14 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base
 ---
 
-{{ content | safe }}
+<div>
+    <h1>{{ title | safe }}</h1>
+    <p>
+        Updated {{ date.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }}
+    </p>
+</div>
+
+<div>
+    {{ content | safe }}
+</div>
