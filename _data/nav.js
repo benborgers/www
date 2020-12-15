@@ -5,6 +5,6 @@ module.exports = [
     },
     {
         name: 'Archive',
-        url: '/archive'
+        url: '/archive/'
     }
 ]
