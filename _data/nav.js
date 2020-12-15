@@ -1,7 +1,7 @@
 module.exports = [
     {
-        name: 'Black Mirror',
-        url: '/tags/black-mirror/'
+        name: 'Programming',
+        url: '/tags/programming/'
     },
     {
         name: 'Archive',
