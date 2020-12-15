@@ -2,6 +2,7 @@ module.exports = {
     plugins: {
         tailwindcss: {},
         autoprefixer: {},
-        cssnano: {}
+        cssnano: {},
+        'postcss-100vh-fix': {}
     }
 }
