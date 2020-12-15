@@ -28,7 +28,10 @@
 
         <nav class="flex space-x-3">
             {% for item in nav %}
-                <a href="{{ item.url }}" class="inline-block duration-150 font-medium {% if page.url === item.url %} text-gray-800 {% else %} text-gray-400 hover:text-gray-700 {% endif %}">{{ item.name }}</a>
+                <a
+                    href="{{ item.url }}"
+                    class="inline-block duration-150 font-medium transition-colors {% if page.url === item.url %} text-gray-700 {% else %} text-gray-400 hover:text-gray-700 {% endif %}"
+                >{{ item.name }}</a>
             {% endfor %}
         </nav>
     </header>
