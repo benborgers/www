@@ -18,6 +18,7 @@
     "postcss": "^8.2.1",
     "postcss-100vh-fix": "^1.0.2",
     "postcss-cli": "^8.3.1",
+    "smartquotes": "^2.3.2",
     "tailwindcss": "^2.0.2"
   }
 }

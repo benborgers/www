@@ -1,7 +1,13 @@
+const smartquotes = require('smartquotes')
+
 module.exports = eleventyConfig => {
     eleventyConfig.addFilter('dump', value => {
         console.log(value)
         return 'dumped'
+    })
+
+    eleventyConfig.addFilter('smartQuotes', value => {
+        return smartquotes(value)
     })
 
     const markdownIt = require('markdown-it')

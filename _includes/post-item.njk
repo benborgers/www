@@ -1,6 +1,6 @@
 <a href="{{ post.url | url}}" class="block">
     <section class="bg-gray-100 border border-gray-200 p-4 rounded-lg hover:bg-gray-200 transition-colros duration-150">
-        <p class="text-lg font-medium">{{ post.data.title }}</p>
+        <p class="text-lg font-medium leading-snug">{{ post.data.title }}</p>
         <p class="text-gray-400">{{ post.date.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) }}</p>
     </section>
 </a>
