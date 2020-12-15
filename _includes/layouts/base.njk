@@ -17,7 +17,12 @@
     style="grid-template-rows: max-content 1fr max-content"
 >
     <header class="mb-24 flex items-center justify-between">
-        <a href="/" class="inline-block font-semibold text-blue-600">Ben Borgers</a>
+        <div class="relative">
+            <div class="w-5 h-5 bg-gradient-to-tr from-red-300 to-blue-400 rounded-full"></div>
+            <div class="py-1 px-2 rounded-lg bg-white border border-gray-200 absolute left-2 top-2 shadow-lg hover:shadow transition-shadow duration-100">
+                <a href="/" class="inline-block font-semibold text-gray-700">Ben&nbsp;Borgers</a>
+            </div>
+        </div>
 
         <nav class="flex space-x-3">
             {% for item in nav %}
@@ -36,7 +41,7 @@
             <span class="hidden sm:inline-block">I love getting questions or replies!</span>
             <a href="mailto:benborgers@hey.com" class="underline duration-150 hover:text-gray-600">benborgers@hey.com</a>
         </p>
-        <a class="inline-block bg-gray-200 text-gray-600 text-sm font-semibold px-2 rounded" href="/posts/version">
+        <a class="inline-block bg-gray-200 text-gray-600 text-sm font-semibold px-2 rounded-lg" href="/posts/version">
             v1.0
         </a>
     </footer>
