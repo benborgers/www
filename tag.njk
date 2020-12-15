@@ -9,10 +9,14 @@ eleventyComputed:
     title: Posts tagged “{{ tag }}”
 ---
 
-<h1>Posts tagged “{{ tag }}”</h1>
+{% set heading = tag %}
+{% set eyebrow = 'tags' %}
+{% include 'heading.njk' %}
 
-<ul>
+<div class="space-y-4">
     {% for post in collections[tag] | reverse %}
-        <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+        {% if post.url.startsWith('/post') %}
+            {% include 'post-item.njk' %}
+        {% endif %}
     {% endfor %}
-</ul>
+</div>

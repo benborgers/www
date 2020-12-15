@@ -1,6 +1,7 @@
 ---
 title: How to disable the "x-powered-by" header in Express
 date: 2020-03-24
+tags: programming
 ---
 
 [Express](https://expressjs.com) generates a header to your responses that says `x-powered-by: Express`.
