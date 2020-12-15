@@ -12,9 +12,21 @@
     <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
     <link rel="stylesheet" href="/style.css" />
 </head>
-<body class="font-sans antialiased p-4 pb-16 text-gray-700 bg-white">
-    <main>
-        {{ content | safe }}
-    </main>
+<body class="font-sans antialiased p-4 sm:p-6 pb-16 sm:pb-24 text-gray-700 bg-white">
+    <div class="max-w-screen-md mx-auto">
+        <header class="mb-24 flex items-center justify-between">
+            <a href="/" class="inline-block font-semibold text-blue-600">Ben Borgers</a>
+
+            <div class="flex space-x-3">
+                {% for item in nav %}
+                    <a href="{{ item.url }}" class="inline-block text-gray-500 duration-150">{{ item.name }}</a>
+                {% endfor %}
+            </div>
+        </header>
+
+        <main class="max-w-screen-sm mx-auto">
+            {{ content | safe }}
+        </main>
+    </div>
 </body>
 </html>
