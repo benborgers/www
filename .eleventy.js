@@ -10,6 +10,8 @@ module.exports = eleventyConfig => {
         return smartquotes(value)
     })
 
+    eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
+
     const markdownIt = require('markdown-it')
     const markdownItOptions = {
         html: true,
