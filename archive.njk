@@ -3,14 +3,12 @@ layout: layouts/base
 title: Archive
 ---
 
-<h1>Archive</h1>
+<h1 class="text-3xl sm:text-4xl font-bold text-gray-900 font-serif mb-6">Archive</h1>
 
-{% for post in collections.all | reverse %}
-    {% if post.url.startsWith('/post') %}
-        <a href="{{ post.url | url }}">
-            <div>
-                <p>{{ post.data.title }}</p>
-            </div>
-        </a>
-    {% endif %}
-{% endfor %}
+<div class="space-y-4">
+    {% for post in collections.all | reverse %}
+        {% if post.url.startsWith('/post') %}
+            {% include 'post-item.njk' %}
+        {% endif %}
+    {% endfor %}
+</div>
