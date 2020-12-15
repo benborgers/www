@@ -14,12 +14,12 @@ layout: layouts/base
 </div>
 
 {% if tags %}
-    <footer class="mt-12">
+    <div class="mt-6">
         <p class="text-gray-400">
             <span>tags:</span>
             {% for tag in tags %}
                 <a href="/tags/{{ tag }}" class="underline">{{ tag }}</a>{% if not loop.last %},{% endif %}
             {% endfor %}
         </p>
-    </footer>
+    </div>
 {% endif %}
