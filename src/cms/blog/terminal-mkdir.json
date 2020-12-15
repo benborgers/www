@@ -1,0 +1,7 @@
+{
+  "published": false,
+  "date": "2020-12-15T15:03:50.807Z",
+  "title": "Terminal create directory if it doesn't exist",
+  "slug": "terminal-mkdir",
+  "body": "`mkdir -p dir/here`"
+}
