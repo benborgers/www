@@ -1,14 +1,13 @@
 ---
 layout: layouts/base
-title: Archive
+title: All Posts
 ---
 
-{% set heading = 'Archive' %}
 {% include 'heading.njk' %}
 
 <div class="space-y-4">
     {% for post in collections.all | reverse %}
-        {% if post.url.startsWith('/post') %}
+        {% if post.url.startsWith('/posts') and post.url !== '/posts/' %}
             {% include 'post-item.njk' %}
         {% endif %}
     {% endfor %}

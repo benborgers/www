@@ -4,7 +4,7 @@ module.exports = [
         url: '/tags/programming/'
     },
     {
-        name: 'Archive',
-        url: '/archive/'
+        name: 'All Posts',
+        url: '/posts/'
     }
 ]
