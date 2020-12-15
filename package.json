@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "mkdir -p _site && postcss style.css > _site/style.css && eleventy --serve --quiet",
-    "build": "eleventy && NODE_ENV=production postcss style.css > _site/style.css"
+    "build": "rm -rf _site && eleventy && NODE_ENV=production postcss style.css > _site/style.css"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
