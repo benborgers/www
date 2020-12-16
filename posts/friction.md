@@ -16,7 +16,7 @@ draft: false
 	- Ranges from 0 (when there's no applied force) to _fsmax_, the maximum force before the object starts to slip. 
 - When pulling something at a constant velocity, its net force is 0, so its **kinetic friction** is equal to the pulling force. 
 	- Kinetic frictional force is smaller than static frictional force. 
-- Graph of an object being dragged across a table: ![](/media/friction-graph.png)
+- Graph of an object being dragged across a table: ![](/assets/friction-graph.png)
 - The force of friction depends on the normal force and the materials. 
 	- When the object pushes down on the surface harder, there's more normal force. This increases the frictional force. 
 	- The material of the surface that the object is being dragged across also affects its maximum static friction force (before it moves) and kinetic friction force (after it starts moving). 
