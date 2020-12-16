@@ -4,7 +4,7 @@ date: 2020-12-15
 tags: applying-to-college
 ---
 
-*I wrote and submitted these essays, but ended up not needing them because I got accepted early decision to [Tufts](/posts/tufts-essays).*
+*I wrote and submitted these essays, but ended up not needing them because I got accepted Early Decision to [Tufts](/posts/tufts-essays).*
 
 # What about being a student at Boston University most excites you?
 <!-- 250 words -->
