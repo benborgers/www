@@ -1,5 +1,5 @@
 ---
-title: Fifteen Million Merits
+title: "Black Mirror: Fifteen Million Merits"
 slug: black-mirror-s01e02
 date: ""
 tags:
