@@ -9,13 +9,15 @@
         <script src="https://unpkg.com/netlify-cms@latest/dist/netlify-cms.js"></script>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <script>
-            if(
-                localStorage['netlify-cms-user'] &&
-                !localStorage.blockFathomTracking &&
-                window.fathom
-            ) {
-                window.fathom.blockTrackingForMe()
-            }
+            setTimeout(() => {
+                if(
+                    localStorage['netlify-cms-user'] &&
+                    !localStorage.blockFathomTracking &&
+                    window.fathom
+                ) {
+                    window.fathom.blockTrackingForMe()
+                }
+            }, 1000)
         </script>
     </body>
 </html>
