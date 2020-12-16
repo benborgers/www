@@ -13,10 +13,13 @@ eleventyComputed:
 {% set eyebrow = 'tags' %}
 {% include 'heading.njk' %}
 
-<div class="space-y-4">
-    {% for post in collections[tag] | reverse %}
-        {% if post.url.startsWith('/post') %}
-            {% include 'post-item.njk' %}
-        {% endif %}
-    {% endfor %}
-</div>
+{% if tag !== 'all' %}
+{# 'all' tag creates issues #}
+    <div class="space-y-4">
+        {% for post in collections[tag] | reverse %}
+            {% if post.url.startsWith('/post') %}
+                {% include 'post-item.njk' %}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

@@ -14,6 +14,12 @@ module.exports = eleventyConfig => {
 
     eleventyConfig.addPassthroughCopy({ '_assets': 'assets' })
 
+    eleventyConfig.addCollection('posts', collection => {
+        return collection
+            .getFilteredByGlob('posts/*.md')
+            .filter(p => !p.data.draft)
+    })
+
     const markdownIt = require('markdown-it')
     const markdownItOptions = {
         html: true,

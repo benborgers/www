@@ -6,9 +6,7 @@ title: All Posts
 {% include 'heading.njk' %}
 
 <div class="space-y-4">
-    {% for post in collections.all | reverse %}
-        {% if post.url.startsWith('/posts') and post.url !== '/posts/' %}
-            {% include 'post-item.njk' %}
-        {% endif %}
+    {% for post in collections.posts | reverse %}
+        {% include 'post-item.njk' %}
     {% endfor %}
 </div>
