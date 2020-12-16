@@ -1,7 +1,9 @@
 ---
 title: How to get the last time a Gatsby site was built
 date: 2019-12-21
-tags: programming
+tags:
+    - programming
+    - gatsby
 ---
 If your Gatsby site pulls in data at build time, it can be helpful to show visitors when the site was last built.
 

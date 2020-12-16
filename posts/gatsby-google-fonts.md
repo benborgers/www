@@ -1,15 +1,17 @@
 ---
 title: How to use Google Fonts with Gatsby
 date: 2020-03-29
-tags: programming
+tags:
+    - programming
+    - gatsby
 ---
-First, install `react-helmet-async` and `@rhysforyou/gatsby-plugin-react-helmet-async`. These allow you to add things to the `<head>` of your pages. 
+First, install `react-helmet-async` and `@rhysforyou/gatsby-plugin-react-helmet-async`. These allow you to add things to the `<head>` of your pages.
 
 ```bash
 npm install react-helmet-async @rhysforyou/gatsby-plugin-react-helmet-async
 ```
 
-Then, add the `@rhysforyou/gatsby-plugin-react-helmet-async` plugin to your [`gatsby-config.js`](https://www.gatsbyjs.org/docs/gatsby-config/) file: 
+Then, add the `@rhysforyou/gatsby-plugin-react-helmet-async` plugin to your [`gatsby-config.js`](https://www.gatsbyjs.org/docs/gatsby-config/) file:
 
 ```jsx
 // gatsby-config.js
@@ -21,9 +23,9 @@ module.exports = {
 }
 ```
 
-You may need to restart the Gatsby development server (run `gatsby develop` again) in order to see the changes to your `gatsby-config.js` file. 
+You may need to restart the Gatsby development server (run `gatsby develop` again) in order to see the changes to your `gatsby-config.js` file.
 
-Now, select a couple [Google Fonts](https://fonts.google.com), click **Embed**, and copy the **<link>** option. 
+Now, select a couple [Google Fonts](https://fonts.google.com), click **Embed**, and copy the **<link>** option.
 
 ![](/assets/google-fonts-embed.png)
 
@@ -51,6 +53,6 @@ export default () => {
 }
 ```
 
-Notice the added `/` at the end of the `<link ... />` above. You'll need to make this change to the code you copy and paste from Google Fonts. 
+Notice the added `/` at the end of the `<link ... />` above. You'll need to make this change to the code you copy and paste from Google Fonts.
 
 This is because React requires tags that don't have a closing tag (such as `link`) to be self-closing, with an added `/` (for example `<img />`, not `<img>`).

@@ -1,11 +1,13 @@
 ---
 title: How to add global CSS to Gatsby with Emotion
 date: 2020-04-02
-tags: programming
+tags:
+    - programming
+    - gatsby
 ---
-By default, CSS you add with [Emotion](https://emotion.sh) is scoped to the component where it was added. 
+By default, CSS you add with [Emotion](https://emotion.sh) is scoped to the component where it was added.
 
-To add global CSS, use the `Global` component provided by Emotion: 
+To add global CSS, use the `Global` component provided by Emotion:
 
 ```jsx
 import React from "react"

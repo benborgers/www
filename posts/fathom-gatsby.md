@@ -1,11 +1,13 @@
 ---
 title: How to add Fathom analytics to Gatsby
 date: 2019-10-21
-tags: programming
+tags:
+    - programming
+    - fathom
 ---
-[Fathom](https://usefathom.com/ref/TUIPJE) offers simple and privacy-focused analytics that you can use for your Gatsby site. 
+[Fathom](https://usefathom.com/ref/TUIPJE) offers simple and privacy-focused analytics that you can use for your Gatsby site.
 
-Using the new hosted Fathom script, you can just drop this snippet into the `<head>` of every Gatsby page you want to track. (You can use a package like [react-helmet](https://npm.im/react-helmet) with [gatsby-plugin-react-helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/) to insert things into the HTML head). 
+Using the new hosted Fathom script, you can just drop this snippet into the `<head>` of every Gatsby page you want to track. (You can use a package like [react-helmet](https://npm.im/react-helmet) with [gatsby-plugin-react-helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/) to insert things into the HTML head).
 
 ```html
 <script src="https://cdn.usefathom.com/script.js" spa="auto" site="ABCDEF" defer></script>

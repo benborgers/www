@@ -1,11 +1,13 @@
 ---
 title: How to get callback when Node.js spawn execution is done
 date: 2020-07-01
-tags: programming
+tags:
+    - programming
+    - javascript
 ---
-The built-in `child_process` Node.js package has a `spawn` method that allows you to run a terminal command. 
+The built-in `child_process` Node.js package has a `spawn` method that allows you to run a terminal command.
 
-There's no built-in way of running a function when the command has finished executing, but `spawn` *does* give us access to a "done" event when the command finishes executing. 
+There's no built-in way of running a function when the command has finished executing, but `spawn` *does* give us access to a "done" event when the command finishes executing.
 
 ```jsx
 const { spawn } = require('child_process')
@@ -19,22 +21,22 @@ command.on('close', () => {
 })
 ```
 
-You could even wrap this into a nice, reusable function: 
+You could even wrap this into a nice, reusable function:
 
 ```jsx
 const { spawn } = require('child_process')
 
-// Reusable function: 
+// Reusable function:
 const executeCommand = textToExecute => new Promise(resolve => {
   const command = spawn(textToExecute, { shell: true })
   command.on('close', () => resolve())
 })
 
-// Usage: 
+// Usage:
 const main = async () => {
   await executeCommand('git clone https://github.com/benborgers/potion')
 
-  // Do something here that will only happen after the command has finished. 
+  // Do something here that will only happen after the command has finished.
 }
 main()
 ```

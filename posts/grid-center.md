@@ -1,9 +1,11 @@
 ---
 title: Center vertically and horizontally on the page with CSS Grid
 date: 2020-10-01
-tags: programming
+tags:
+    - programming
+    - css
 ---
-Here's how you can center this div on a page: 
+Here's how you can center this div on a page:
 
 ```html
 <body>
@@ -19,7 +21,7 @@ body {
 }
 ```
 
-These 3 lines of CSS: 
+These 3 lines of CSS:
 - Make the body as tall as the device's screen, so centering something actually looks centered
 - Indicate that you want to use CSS grid
 - Place the grid's one "item" (the div) in the center vertically and the center horizontally

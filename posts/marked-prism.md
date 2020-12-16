@@ -1,13 +1,16 @@
 ---
 title: How to use Marked and Prism.js together
 date: 2020-10-01
-tags: programming
+tags:
+    - programming
+    - marked
+    - prism
 ---
 For this blog, I wanted to parse the blog posts (written in markdown) and also add syntax highlighting to the code blocks so they can have nice readable colors.
 
-I'm using [Marked](https://github.com/markedjs/marked) to parse markdown into HTML, and [Prism](https://github.com/PrismJS/prism) to parse code blocks within that markdown.  
+I'm using [Marked](https://github.com/markedjs/marked) to parse markdown into HTML, and [Prism](https://github.com/PrismJS/prism) to parse code blocks within that markdown.
 
-I wrote this `parseMarkdown()` function to turn raw markdown into HTML with syntax-highlighted code blocks: 
+I wrote this `parseMarkdown()` function to turn raw markdown into HTML with syntax-highlighted code blocks:
 
 ```javascript
 const marked = require('marked')
@@ -38,11 +41,11 @@ function parseMarkdown(text) {
 }
 ```
 
-First, we import the `marked` and `prismjs` packages. 
+First, we import the `marked` and `prismjs` packages.
 
-Then, we import different Prism "components" that allow it to parse different languages. The full list of components you can import is [here](https://github.com/PrismJS/prism/tree/master/components). 
+Then, we import different Prism "components" that allow it to parse different languages. The full list of components you can import is [here](https://github.com/PrismJS/prism/tree/master/components).
 
-Then, we tell Marked that we want to handle code highlighting differently. If the code block has a language indicated, like this: 
+Then, we tell Marked that we want to handle code highlighting differently. If the code block has a language indicated, like this:
 
 ````markdown
 ```javascript
@@ -52,4 +55,4 @@ Then, we tell Marked that we want to handle code highlighting differently. If th
 
 ...**and** Prism is able to parse it (tested by seeing whether it's in `prism.languages` - Prism will be able to parse languages that we imported components for), we use `prism.highlight()` to syntax-highlight the code. Otherwise, we just return the code itself.
 
-Now, if you look at the outputted HTML from the `parseMarkdown()` function, the code blocks are invisibly split up with classes that allow you to use [any Prism CSS theme](https://github.com/PrismJS/prism-themes) to style them.  
+Now, if you look at the outputted HTML from the `parseMarkdown()` function, the code blocks are invisibly split up with classes that allow you to use [any Prism CSS theme](https://github.com/PrismJS/prism-themes) to style them.

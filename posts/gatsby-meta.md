@@ -1,7 +1,9 @@
 ---
 title: What meta tags you need for a Gatsby site
 date: 2020-01-01
-tags: programming
+tags:
+    - programming
+    - gatsby
 ---
 In almost every Gatsby site I make, I create a `<Head />` component with all the meta tags I'll need. I reuse that component on every page, passing in different titles and descriptions.
 

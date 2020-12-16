@@ -37,7 +37,7 @@ fetch("https://spreadsheets.google.com/feeds/list/1wQ1TGqnCTmaqqDak1rTRxPMSGSGLM
       for(const key in row) {
         if(key.startsWith("gsx$")) {
 
-          /* The actual row names from your spreadsheet 
+          /* The actual row names from your spreadsheet
            * are formatted like "gsx$title".
            * Therefore, we need to find keys in this object
            * that start with "gsx$", and then strip that
@@ -45,7 +45,7 @@ fetch("https://spreadsheets.google.com/feeds/list/1wQ1TGqnCTmaqqDak1rTRxPMSGSGLM
            */
 
           formattedRow[key.replace("gsx$", "")] = row[key].$t
-          
+
         }
       }
 

@@ -1,7 +1,9 @@
 ---
 title: How to fix "componentWillMount has been renamed"
 date: 2019-12-12
-tags: programming
+tags:
+    - programming
+    - react
 ---
 I was using the [react-helmet](https://npm.im/react-helmet) package, and noticed an error in my console saying:
 
@@ -11,11 +13,11 @@ Turns out, in React 17 (the next version of React), the `componentWillMount` m
 
 ## Solution
 
-There's a virtually identical package called [react-helmet-async](https://npm.im/react-helmet-async), which doesn't have this error and will continue working through React 17. 
+There's a virtually identical package called [react-helmet-async](https://npm.im/react-helmet-async), which doesn't have this error and will continue working through React 17.
 
 Installing and replacing `react-helmet` with `react-helmet-async` everywhere in my code got rid of the warning for me.
 
-To install, run: 
+To install, run:
 
 ```bash
 npm install react-helmet-async

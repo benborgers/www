@@ -1,7 +1,9 @@
 ---
 title: How to kill a localhost process on macOS
 date: 2019-12-12
-tags: programming
+tags:
+    - programming
+    - terminal
 ---
 Sometimes you've got a development server running on a localhost port in the background that you can't seem to stop.
 

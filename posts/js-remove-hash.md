@@ -1,15 +1,17 @@
 ---
 title: How to remove hash from URL with JavaScript
 date: 2020-04-02
-tags: programming
+tags:
+    - programming
+    - javascript
 ---
-You usually clear the URL hash like this: 
+You usually clear the URL hash like this:
 
 ```javascript
 location.hash = ""
 ```
 
-However, that leaves a `#` at the end of the URL. You can remove the `#` by adding a line of code: 
+However, that leaves a `#` at the end of the URL. You can remove the `#` by adding a line of code:
 
 ```javascript
 location.hash = ""

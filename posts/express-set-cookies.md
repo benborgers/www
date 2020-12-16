@@ -1,7 +1,9 @@
 ---
 title: How to set and delete cookies with Express
 date: 2020-03-18
-tags: programming
+tags:
+    - programming
+    - express
 ---
 ## Setting cookies
 
@@ -9,7 +11,7 @@ tags: programming
 res.cookie("token", MY_TOKEN, { maxAge: MILLISECONDS_FROM_NOW_TO_EXPIRE })
 ```
 
-There's more options (other than `maxAge`) described in the [Express documentation](https://expressjs.com/en/api.html#res.cookie). 
+There's more options (other than `maxAge`) described in the [Express documentation](https://expressjs.com/en/api.html#res.cookie).
 
 ## Deleting cookies
 

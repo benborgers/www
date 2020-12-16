@@ -1,19 +1,21 @@
 ---
 title: How to minify HTML with Node.js
 date: 2020-11-27
-tags: programming
+tags:
+    - programming
+    - javascript
 ---
-It's common practice to "minify" HTML, removing its extra spaces and unnecessary properties so that it's faster to load. 
+It's common practice to "minify" HTML, removing its extra spaces and unnecessary properties so that it's faster to load.
 
-You can use the `html-minifier` npm package to minify HTML. 
+You can use the `html-minifier` npm package to minify HTML.
 
-First, install the package: 
+First, install the package:
 
 ```bash
 npm install html-minifier
 ```
 
-Now, you can use the package like this: 
+Now, you can use the package like this:
 
 ```javascript
 const { minify } = require('html-minifier')

@@ -1,7 +1,10 @@
 ---
 title: How to add normalize.css to Gatsby
 date: 2019-10-15
-tags: programming
+tags:
+    - programming
+    - gatsby
+    - css
 ---
 [Normalize.css](https://necolas.github.io/normalize.css/) is a set of CSS rules used to make all browsers render things consistently. Since all browsers come with their own "base" styles that can vary slightly, it's useful for making sure that your CSS styles look the same in every browser and smoothes over any inconsistencies between browsers.
 

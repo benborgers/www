@@ -1,15 +1,17 @@
 ---
 title: How to create a sitemap for a Gatsby site
 date: 2020-04-19
-tags: programming
+tags:
+    - programming
+    - gatsby
 ---
-Install the Gatsby plugin: 
+Install the Gatsby plugin:
 
 ```bash
 npm install gatsby-plugin-sitemap
 ```
 
-Then, add the root URL of your site (before the part that starts with `/`) to your `gatsby-config.js`, and activate the plugin: 
+Then, add the root URL of your site (before the part that starts with `/`) to your `gatsby-config.js`, and activate the plugin:
 
 ```javascript
 // gatsby-config.js

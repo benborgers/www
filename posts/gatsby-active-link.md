@@ -1,11 +1,13 @@
 ---
 title: How to style the currently active link in Gatsby
 date: 2020-02-06
-tags: programming
+tags:
+    - programming
+    - gatsby
 ---
-In Gatsby, you using the `<Link>` component to create links to other pages on your Gatsby site. 
+In Gatsby, you using the `<Link>` component to create links to other pages on your Gatsby site.
 
-It's fairly common to highlight the currently active page in a site navigation bar, to show a visitor where in the navigation they are. Gatsby's `<Link>` component provides a built-in way to style a link that points to the page the visitor is currently looking at. 
+It's fairly common to highlight the currently active page in a site navigation bar, to show a visitor where in the navigation they are. Gatsby's `<Link>` component provides a built-in way to style a link that points to the page the visitor is currently looking at.
 
 ## Add CSS to the currently active class
 

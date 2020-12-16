@@ -1,7 +1,9 @@
 ---
 title: How and why to use navigator.sendBeacon
 date: 2019-12-26
-tags: programming
+tags:
+    - programming
+    - javascript
 ---
 The `navigator.sendBeacon()` method makes POST requests without waiting for a response.
 

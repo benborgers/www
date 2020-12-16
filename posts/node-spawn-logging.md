@@ -1,11 +1,13 @@
 ---
 title: Logging the output of Node.js shell exec
 date: 2020-07-01
-tags: programming
+tags:
+    - programming
+    - javascript
 ---
-The nice thing about the built-in `child_process` package's `spawn` command for executing shell commands with Node.js, is that you can easily get access to the output of that command. 
+The nice thing about the built-in `child_process` package's `spawn` command for executing shell commands with Node.js, is that you can easily get access to the output of that command.
 
-This way, you can see what the terminal command is doing: 
+This way, you can see what the terminal command is doing:
 
 ```jsx
 const { spawn } = require('child_process')

@@ -1,7 +1,10 @@
 ---
 title: How to set up netlify.toml for Gatsby
 date: 2019-12-18
-tags: programming
+tags:
+    - programming
+    - gatsby
+    - netlify
 ---
 Netlify's configuration file, [netlify.toml](https://docs.netlify.com/configure-builds/file-based-configuration/), allows you to define various settings for how your site will be deployed on Netlify.
 
