@@ -1,4 +1,5 @@
 const smartquotes = require('smartquotes')
+const katex = require('katex')
 
 module.exports = eleventyConfig => {
     eleventyConfig.addFilter('dump', value => {
@@ -8,6 +9,16 @@ module.exports = eleventyConfig => {
 
     eleventyConfig.addFilter('smartQuotes', value => {
         return smartquotes(value)
+    })
+
+    eleventyConfig.addFilter('extendMarkdown', value => {
+        return value.replace(/\$\$(.+?)\$\$/g, (_, equation) => {
+            const cleanEquation = equation
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+
+            return katex.renderToString(cleanEquation, { throwOnError: false })
+        })
     })
 
     eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
