@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* KATEX */
+
+/* Fix Tailwind making fraction line very light */
+.katex .frac-line {
+    @apply border-gray-700;
+}
+
 /* DRACULA THEME */
 
 .token.comment {
