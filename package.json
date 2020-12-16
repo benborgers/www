@@ -1,8 +1,7 @@
 {
   "name": "www",
   "repository": "https://github.com/benborgers/www",
-  "author": "benborgers <benborgers@hey.com>",
-  "license": "MIT",
+  "author": "Ben Borgers <benborgers@hey.com>",
   "scripts": {
     "dev": "rm -rf _site && mkdir _site && postcss style.css > _site/style.css && eleventy --serve --quiet",
     "build": "rm -rf _site && eleventy && NODE_ENV=production postcss style.css > _site/style.css"

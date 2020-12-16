@@ -18,7 +18,12 @@ module.exports = eleventyConfig => {
     eleventyConfig.addCollection('posts', collection => {
         return collection
             .getFilteredByGlob('posts/*.md')
-            .filter(p => !p.data.draft)
+    })
+
+    eleventyConfig.addCollection('nonProgrammingPosts', collection => {
+        return collection
+            .getFilteredByGlob('posts/*.md')
+            .filter(p => !(p.data.tags || []).includes('programming'))
     })
 
     const markdownIt = require('markdown-it')
