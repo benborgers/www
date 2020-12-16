@@ -1,15 +1,21 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
     purge: [
         '_site/**/*.html'
     ],
     darkMode: false,
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+
+            }
+        }
     },
     variants: {
-        extend: {},
+        extend: {}
     },
     plugins: [
         require('@tailwindcss/typography')
-    ],
+    ]
 }
