@@ -47,4 +47,6 @@ collections:
         name: body
         widget: markdown
         modes: [raw]
+        buttons: []
+        editor_components: []
         required: false
