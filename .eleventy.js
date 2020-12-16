@@ -12,6 +12,8 @@ module.exports = eleventyConfig => {
 
     eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
 
+    eleventyConfig.addPassthroughCopy({ '_assets': 'assets' })
+
     const markdownIt = require('markdown-it')
     const markdownItOptions = {
         html: true,
