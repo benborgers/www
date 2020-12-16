@@ -1,15 +1,16 @@
 ---
 title: How to embed a PDF in HTML
 date: 2020-04-29
-tags: programming
+tags:
+    - programming
 ---
-As of now, there's no good way to embed a PDF right into HTML. 
+As of now, there's no good way to embed a PDF right into HTML.
 
-Trust me, I looked. 
+Trust me, I looked.
 
-Everything you think would work (`iframe`, `object`, everything) has issues — it doesn't work in certain browsers, it doesn't work on mobile, on and on. 
+Everything you think would work (`iframe`, `object`, everything) has issues — it doesn't work in certain browsers, it doesn't work on mobile, on and on.
 
-A workaround I settled on was using an `iframe` containing Google's PDF viewer: 
+A workaround I settled on was using an `iframe` containing Google's PDF viewer:
 
 ```html
 <iframe
@@ -17,9 +18,9 @@ A workaround I settled on was using an `iframe` containing Google's PDF viewer:
 />
 ```
 
-Pretty good! The only pesky problem was the "open in" arrow at the top right corner, which opens up Google Drive. 
+Pretty good! The only pesky problem was the "open in" arrow at the top right corner, which opens up Google Drive.
 
-I didn't want that, so I positioned a `div` with the same background color as my website on top of it. Not a great solution, but it worked: 
+I didn't want that, so I positioned a `div` with the same background color as my website on top of it. Not a great solution, but it worked:
 
 ```html
 <div class="wrapper">

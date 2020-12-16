@@ -1,7 +1,8 @@
 ---
 title: How to use JSON-LD to improve SEO on a developer blog
 date: 2020-01-06
-tags: programming
+tags:
+    - programming
 ---
 I want the title, description, and publish date to be really clear when Google looks at my blog posts. After some searching, I decided to add metadata to my articles in the JSON-LD format.
 
@@ -12,7 +13,7 @@ I did a bunch of fiddling with Google's [structured data testing tool](https://s
 ```html
 <script type="application/ld+json">
   {
-    "@context": "https://schema.org", 
+    "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "How to use JSON-LD to improve SEO on a developer blog",
     "image": "https://benborgers.com/assets/json-ld.png",

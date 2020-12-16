@@ -1,5 +1,6 @@
 ---
 title: How to add Fathom analytics to Netlify
-tags: programming
+tags:
+    - programming
 draft: true
 ---

@@ -1,7 +1,8 @@
 ---
 title: Tufts College Essays
 date: 2020-12-15
-tags: applying-to-college
+tags:
+    - applying-to-college
 ---
 
 _Update: I was accepted into the Tufts Class of 2025 for Early Decision!_

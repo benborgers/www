@@ -1,5 +1,6 @@
 ---
 title: How to create Gatsby pages with Netlify CMS content
-tags: programming
+tags:
+    - programming
 draft: true
 ---

@@ -1,17 +1,18 @@
 ---
 title: How to update your Instagram bio with Node.js
 date: 2020-05-03
-tags: programming
+tags:
+    - programming
 ---
-Instagram's API is for businesses only, but the unofficial npm package [`instagram-private-api`](https://npm.im/instagram-private-api) will allow you to access Instagram's API. 
+Instagram's API is for businesses only, but the unofficial npm package [`instagram-private-api`](https://npm.im/instagram-private-api) will allow you to access Instagram's API.
 
-First, install the package in your Node.js project: 
+First, install the package in your Node.js project:
 
 ```bash
 npm install instagram-private-api
 ```
 
-Then, you can use this code to update your bio: 
+Then, you can use this code to update your bio:
 
 ```javascript
 const { IgApiClient } = require("instagram-private-api")

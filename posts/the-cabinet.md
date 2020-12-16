@@ -1,7 +1,8 @@
 ---
 title: The Cabinet Photoshoot
 date: 2020-11-06
-tags: photos
+tags:
+    - photos
 ---
 
 *My friends and I all ran for Class Council positions in senior year. We won every position.*

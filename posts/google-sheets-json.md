@@ -1,7 +1,8 @@
 ---
 title: How to get a Google Sheet as JSON
 date: 2020-01-09
-tags: programming
+tags:
+    - programming
 ---
 Google Sheets can be a great place to store content for a website, since it's structured and easy to update (especially for non-coders).
 

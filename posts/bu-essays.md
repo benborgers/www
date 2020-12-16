@@ -1,7 +1,8 @@
 ---
 title: BU College Essays
 date: 2020-12-15
-tags: applying-to-college
+tags:
+    - applying-to-college
 ---
 
 *I wrote and submitted these essays, but ended up not needing them because I got accepted Early Decision to [Tufts](/posts/tufts-essays).*

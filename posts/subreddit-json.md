@@ -1,7 +1,8 @@
 ---
 title: How to get subreddit posts as JSON
 date: 2020-04-23
-tags: programming
+tags:
+    - programming
 ---
 You can get data from any subreddit or Reddit user in JSON format, using Reddit's free and dead-simple API.
 
