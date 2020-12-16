@@ -1,10 +1,11 @@
 ---
-title: The National Anthem
+title: "Black Mirror: The National Anthem"
+slug: black-mirror-s01e01
 date: 2020-12-08
 tags:
-    - black-mirror
+  - black-mirror
+draft: false
 ---
-
 # Plot
 
 British prime minister Michael Callow is woken up by a phone call to inform him that that Princess Susannah has been kidnapped.
