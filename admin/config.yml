@@ -1,0 +1,42 @@
+backend:
+  name: git-gateway
+  branch: library
+
+site_url: https://library--benborgers.netlify.app
+
+media_folder: _assets
+static_folder: /assets
+
+collections:
+  - name: posts
+    label: Posts
+    label_singular: Post
+    create: true
+    preview_path: /posts/{{slug}}/
+    editor: { preview: false }
+    sortable_fields: []
+    view_filters:
+      - label: Drafts
+        field: draft
+        pattern: true
+    folder: posts
+    format: frontmatter
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: datetime
+        time_format: false
+        picker_utc: true
+        required: false
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: true
+      - label: Body
+        name: body
+        widget: markdown
+        modes: [raw]
+        required: false
