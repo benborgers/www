@@ -7,7 +7,15 @@ module.exports = {
     darkMode: false,
     theme: {
         extend: {
-
+            typography: theme => ({
+                DEFAULT: {
+                    css: {
+                        a: {
+                            color: theme('colors.blue.600')
+                        }
+                    }
+                }
+            })
         }
     },
     variants: {
