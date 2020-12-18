@@ -6,7 +6,7 @@ tags:
   - applying-to-college
 draft: false
 ---
-*This was my Common App essay that was sent for every college application.*
+*This was my Common App essay that was sent as part of every college application.*
 
 In eighth grade, two friends and I found ourselves as Lords ruling over a new religion, *Penguinism*. Well, “found ourselves” might not be the right way to describe it — we had invented the religion ourselves, and saw it only fitting to put ourselves at the top. 
 
