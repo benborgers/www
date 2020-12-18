@@ -4,6 +4,7 @@ slug: terminal-mkdir
 date: 2020-12-17T00:00:00.000Z
 tags:
   - programming
+  - terminal
 draft: false
 ---
 If you want to create a directory using bash (in the terminal), but you don't know whether it'll already exist so you only want to create it if the directory doesn't exist yet:
