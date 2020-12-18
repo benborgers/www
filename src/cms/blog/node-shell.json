@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-07-01T00:00:00.000Z",
-  "title": "How to execute a shell script with Node.js",
-  "slug": "node-shell",
-  "description": "To run a bash script (like you would in the terminal) automatically using Node.js you can use the built-in \"child_process\" package. ",
-  "body": "You can execute a shell script with Node.js without even installing any packages. \n\n```jsx\nconst { spawn } = require('child_process')\n\nspawn('git clone https://github.com/benborgers/potion && cd potion', {\n  shell: true\n}) \n```\n\nThe `shell: true` option allows you to execute any command, like you would on the command line. \n\nFor more options, like specifying which directory to execute the command in, check out the [official Node.js documentation](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options)."
-}

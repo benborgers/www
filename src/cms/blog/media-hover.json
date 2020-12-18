@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-03-18T00:00:00.000Z",
-  "title": "How to disable CSS hover styles on phones",
-  "slug": "media-hover",
-  "description": "You can disable CSS styles for hovering on touchscreen devices that don't support hovering using a media query. This way, the janky hover styles won't show up when they shouldn't. ",
-  "body": "CSS styles for hovering (like `a:hover`) can be janky and annoying on touch screen devices that don't support hovering. \n\nYou can easily fix this by wrapping your hover styles with a CSS media query that detects whether the current device has a cursor that can hover. \n\n```css\n@media (hover: hover) {\n  a:hover {\n    /* hover styles */\n  }\n}\n```\n\nNow, the styles inside that `@media` block will only be applied if the device supports hover. \n\nThe opposite of this is also possible - applying styles only to devices that do not support hovering. \n\n```css\n@media (hover: none) {\n  /* styles for touchscreen devices */\n}\n```"
-}

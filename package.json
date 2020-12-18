@@ -1,21 +1,26 @@
 {
   "name": "www",
   "repository": "https://github.com/benborgers/www",
-  "author": "benborgers <benborgers@hey.com>",
-  "license": "MIT",
+  "author": "Ben Borgers <benborgers@hey.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "rm -rf _site && mkdir _site && postcss style.css > _site/style.css && eleventy --serve --quiet",
+    "build": "rm -rf _site && eleventy && NODE_ENV=production postcss style.css > _site/style.css"
+  },
   "dependencies": {
-    "@tailwindcss/typography": "^0.2.0",
-    "gatsby": "^2.24.66",
-    "gatsby-plugin-netlify-cms": "^4.3.15",
-    "gatsby-plugin-postcss": "^2.3.13",
-    "gatsby-plugin-react-helmet": "^3.3.12",
-    "gatsby-plugin-sitemap": "^2.4.14",
-    "marked": "^1.2.0",
-    "netlify-cms-app": "^2.14.1",
-    "prismjs": "^1.21.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0",
-    "tailwindcss": "^1.8.10"
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
+    "@tailwindcss/typography": "^0.3.1",
+    "autoprefixer": "^10.1.0",
+    "cssnano": "^4.1.10",
+    "install": "^0.13.0",
+    "katex": "^0.12.0",
+    "markdown-it": "^12.0.3",
+    "npm": "^6.14.9",
+    "postcss": "^8.2.1",
+    "postcss-100vh-fix": "^1.0.2",
+    "postcss-cli": "^8.3.1",
+    "smartquotes": "^2.3.2",
+    "tailwindcss": "^2.0.2"
   }
 }

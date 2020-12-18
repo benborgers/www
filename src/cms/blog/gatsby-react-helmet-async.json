@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-04-23T00:00:00.000Z",
-  "title": "How to use react-helmet-async with Gatsby",
-  "slug": "gatsby-react-helmet-async",
-  "description": "You can use react-helmet-async in Gatsby using the Gatsby plugin @rhysforyou/gatsby-plugin-react-helmet-async. ",
-  "body": "When you replace `react-helmet` with `react-helmet-async`, you can use the Gatsby plugin [@rhysforyou/gatsby-plugin-react-helmet-async](https://www.gatsbyjs.org/packages/@rhysforyou/gatsby-plugin-react-helmet-async/) to make it work with Gatsby. \n\nJust install the plugin: \n\n```bash\nnpm install @rhysforyou/gatsby-plugin-react-helmet-async\n```\n\nAnd include the plugin in `gatsby-config.js`: \n\n```jsx\nmodule.exports = {\n  plugins: [\n    \"@rhysforyou/gatsby-plugin-react-helmet-async\"\n  ]\n}\n```\n\nNow, you can use `react-helmet-async` in your Gatsby site: \n\n```jsx\nimport React from \"react\"\nimport { Helmet } from \"react-helmet-async\"\n\nexport default () => {\n  return (\n    <Helmet>\n      <title>Candlemaker Corner</title>\n    </Helmet>\n  )\n}\n```"
-}

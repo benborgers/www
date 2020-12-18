@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-12-13T01:36:23.623Z",
-  "title": "How to disable Laravel Mix notifications",
-  "slug": "laravel-mix-notifications",
-  "body": "Laravel Mix sends a desktop notification every time it re-compiles your assets, which can be pretty annoying. \n\nTo turn that off, add this line to your `webpack.mix.js` file: \n\n```javascript\nmix.disableNotifications()\n```\n\nDone! No more notifications from Laravel Mix. ",
-  "description": "Laravel Mix sends a desktop notification every time it re-compiles your assets, which can be pretty annoying. You can turn it off using Mix's javascript API. "
-}

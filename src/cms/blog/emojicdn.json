@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2019-12-21T00:00:00.000Z",
-  "slug": "emojicdn",
-  "title": "An API to get the image for any emoji",
-  "description": "I built an API called EMOJICDN that lets you pass in any emoji and get a PNG for Apple's artwork of that emoji. I often use it as the source of an <img> element or as a quick and easy favicon.",
-  "body": "I built an API called [EMOJICDN](https://emojicdn.elk.sh) that lets you pass in any emoji and get a PNG for Apple's artwork of that emoji.\n\nFor example: [emojicdn.elk.sh/🤩](http://emojicdn.elk.sh/🤩)\n\nIt uses the Apple versions of the emojis because I think those are the most recognizable and good-looking.\n\n## Uses\n\nYou can also use that link as the source of an img html element.\n\nI also often use it as a quick and easy favicon:\n\n```html\n<link rel=\"icon\" href=\"https://emojicdn.elk.sh/🤩\" />\n```\n\n---\n\nThe source code for the API is [open source](https://github.com/benborgers/emojicdn), and there's more details at [emojicdn.elk.sh](http://emojicdn.elk.sh/)."
-}

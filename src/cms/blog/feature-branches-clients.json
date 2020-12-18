@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-02-17T00:00:00.000Z",
-  "title": "How to use Git feature branches in Netlify for clients",
-  "slug": "feature-branches-clients",
-  "description": "Git feature branches are a really great way to safely build changes in client projects that the client might end up wanting reversed. With Netlify's branch deploys, you can even deploy the branch and send them a separate URL to try out the change. If they like it, you can merge the change into master. If they don't, you can just delete the branch and save yourself the pain of having to undo the changes. ",
-  "body": "I recently wrote a guide on [how to use feature branches in Git](/blog/feature-branches). \n\nI also wanted to add that I use this technique a lot for client websites, if the client has requested a hefty change to their website that I'm not sure they'll actually like. \n\nI create a branch for the change, code the change, and then push it to the repository on GitHub. From there, I can use [Netlify](https://netlify.com) to [deploy all branches of my repository](https://docs.netlify.com/site-deploys/overview/#branch-deploy-controls), and send the client a link with that specific branch deployed. \n\nThey can try the change live, and if they like it, I merge the feature branch into `master` (as described in my [other post](/blog/feature-branches)). \n\nIf they don't like it, I can just delete the branch instead of spending hours undoing my work."
-}

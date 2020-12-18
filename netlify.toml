@@ -1,5 +1,13 @@
+[build]
+    command = "yarn build"
+    publish = "_site/"
+
 [[redirects]]
     from = "https://benborgers.netlify.app/*"
     to = "https://benborgers.com/:splat"
     status = 301
     force = true
+
+[[redirects]]
+    from = "/blog/*"
+    to = "/posts/:splat"

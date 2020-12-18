@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-02-21T00:00:00.000Z",
-  "title": "How to set Text to max-width: max-content in React Native",
-  "slug": "react-native-width",
-  "description": "If you want to make an element in React Native only as wide as the text inside, there's a quick flexbox property you can use to achieve this. ",
-  "body": "In regular CSS you can give an element the property `max-width: max-content`, which makes the element (at most) as wide as the text inside of it. \n\nThere's no direct equivalent in React Native, but instead you can use flexbox to emulate this behavior to make a `Text` element only as wide as the text inside. \n\n```jsx\nexport default () => {\n  return (\n    <View\n      style={{\n        alignSelf: \"flex-start\"\n      }}\n    >\n      <Text>Hello, world!</Text>\n    </View>\n  )\n}\n```"
-}

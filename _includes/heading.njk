@@ -1,0 +1,8 @@
+{# vars: heading (defaults to title), eyebrow (optional) #}
+{% if eyebrow %}
+    <p class="uppercase text-gray-400 font-bold text-sm">{{ eyebrow }}</p>
+{% endif %}
+{% if not heading %}
+    {% set heading = title %}
+{% endif %}
+<h1 class="text-3xl sm:text-4xl font-bold text-gray-900 font-serif mb-8">{{ heading }}</h1>

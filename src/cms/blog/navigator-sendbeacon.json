@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2019-12-26T00:00:00.000Z",
-  "title": "How and why to use navigator.sendBeacon",
-  "slug": "navigator-sendbeacon",
-  "description": "The navigator.sendBeacon() method makes POST requests without waiting for a response, and is more efficient than fetch or XMLHttpRequest. This might be helpful if you need to log analytics when a page is closed, or if you want to log errors quickly and efficiently.",
-  "body": "The `navigator.sendBeacon()` method makes POST requests without waiting for a response.\n\nIt's often used for analytics and diagnostics, since it can be called right when a user closes a page and the request will still fire off.\n\nWhen you call the method like this:\n\n```jsx\nnavigator.sendBeacon(\"/api-url\", JSON.stringify(payload))\n```\n\nThe data is queued and sent when the browser has an opportunity to do so, without getting in the way of other actions. Therefore, it can be more efficient and reliable than the `fetch` API, which may block execution of other code and be a heavier load on the CPU.\n\nFor example, you might use `navigator.sendBeacon()` to log analytics [right as the page is closed](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event). Or, you might use it to efficiently log errors to a server when you detect them in your app, since you don't really care about the response to that request.\n\nThere's more detailed documentation about this interesting API on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)."
-}

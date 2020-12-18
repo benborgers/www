@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-04-18T00:00:00.000Z",
-  "title": "How to copy text with JavaScript",
-  "slug": "js-copy-text",
-  "description": "You can copy text to the clipboard using JavaScript without asking for any permissions. You just need to fill the text into a hidden <input> element, select that text, and then use the document.execCommand(\"copy\") method to copy what's selected. ",
-  "body": "You can only copy text for the user if it's in an `input` or `textarea`. \n\n```html\n<input class=\"copy-to-clipboard\" />\n```\n\nIf you don't want to have a visible `input` element on the page, you can add this CSS to the input so that it still exists (in the top left corner) but isn't visible or clickable: \n\n```css\ninput.copy-to-clipboard {\n  opacity: 0;\n  pointer-events: none; /* to ignore clicks */\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n```\n\nNow that you've got the `input` element, you can use JavaScript to fill the value of the input and copy that text to the clipboard: \n\n```jsx\nconst copyText = (text) => {\n  const input = document.querySelector(\"input.copy-to-clipboard\")\n  input.value = text\n  input.select()\n  input.setSelectionRange(0, 9999) // selects characters 0 through 9,999 in the input\n  document.execCommand(\"copy\")\n  document.activeElement.blur() // deselects the input\n}\n```"
-}

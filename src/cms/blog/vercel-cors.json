@@ -1,8 +1,0 @@
-{
-  "published": true,
-  "date": "2020-04-29T00:00:00.000Z",
-  "title": "How to allows CORS on Vercel functions",
-  "slug": "vercel-cors",
-  "description": "I recently ran into CORS issues with an API hosted on Vercel (formerly ZEIT), when making cross-origin requests. I fixed the issue by adding headers to my now.json or vercel.json file. ",
-  "body": "CORS is a browser feature that blocks HTTP requests from one domain to another, unless the destination has the proper headers set up. \n\nI recently ran into these problems when making an HTTP request from my website to [Potion](https://github.com/benborgers/potion), an API I build for [Notion](https://notion.so) notes. \n\nI fixed it by adding headers to my [Vercel](https://vercel.com) deployment that allowed HTTP requests from any domain. \n\nHere's my `now.json` (or `vercel.json`) file: \n\n```json\n{\n  \"headers\": [\n    {\n      \"source\": \"/(.*)\",\n      \"headers\": [\n        {\n          \"key\": \"access-control-allow-origin\",\n          \"value\": \"*\"\n        }\n      ]\n    }\n  ]\n}\n```"
-}

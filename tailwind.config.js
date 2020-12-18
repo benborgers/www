@@ -1,19 +1,25 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
-    future: {
-        removeDeprecatedGapUtilities: true,
-        purgeLayersByDefault: true
-    },
-    purge: ['./src/**/*.js'],
+    purge: [
+        '_site/**/*.html'
+    ],
+    darkMode: false,
     theme: {
-        typography: (theme) => ({
-            default: {
-                css: {
-                    a: {
-                        color: theme('colors.teal.700')
+        extend: {
+            typography: theme => ({
+                DEFAULT: {
+                    css: {
+                        a: {
+                            color: theme('colors.blue.600')
+                        }
                     }
                 }
-            }
-        })
+            })
+        }
+    },
+    variants: {
+        extend: {}
     },
     plugins: [
         require('@tailwindcss/typography')

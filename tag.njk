@@ -1,0 +1,22 @@
+---
+layout: layouts/base
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
+eleventyComputed:
+    title: Posts tagged “{{ tag }}”
+---
+
+{% set heading = tag %}
+{% set eyebrow = 'tags' %}
+{% include 'heading.njk' %}
+
+<div class="space-y-4">
+    {% for post in collections[tag] | reverse %}
+        {% if post.url.startsWith('/post') %}
+            {% include 'post-item.njk' %}
+        {% endif %}
+    {% endfor %}
+</div>
