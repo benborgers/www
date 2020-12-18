@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-site_url: https://library--benborgers.netlify.app
+site_url: https://benborgers.com
 
 media_folder: _assets
 static_folder: /assets
