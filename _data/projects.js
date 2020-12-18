@@ -22,7 +22,7 @@ module.exports = {
         },
         {
             name: 'EMOJICDN',
-            description: 'A simple API for getting images of emojis that serves over two million requests per month.',
+            description: 'An API for getting images of emojis that serves two million requests each month.',
             link: 'emojicdn.elk.sh'
         },
         {
@@ -39,21 +39,21 @@ module.exports = {
     'Work': [
         {
             name: 'Diyi',
-            description: 'A payment and student management platform for Diyi Boston, a school providing online courses and college help.',
+            description: 'A payment and student management system for Diyi Boston, a school providing online courses and college help.',
             link: 'diyiboston.com'
         },
         {
             name: 'IBM Security',
-            description: 'Programming summer internship at IBM Mass Lab in the summers of 2019 and 2020.'
+            description: 'Programming summer internship at IBM Mass Lab in the summers of 2019 and 2020. Worked on a new security offering for enterprise.'
         },
         {
             name: 'Rep.ly',
-            description: 'Implemented new features on a public Q&A platform by the agency Dip.',
+            description: 'Implemented new features on this public Q&A platform by Dip.',
             link: 'rep.ly'
         },
         {
             name: 'Sophrosyne',
-            description: 'Build an app for Sophrosyne, a mental health-related club at my high school.',
+            description: 'Built an app for Sophrosyne, a mental health-related club at my high school.',
             link: 'sophrosyne.now.sh'
         }
     ]
