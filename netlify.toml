@@ -5,7 +5,11 @@
 [[redirects]]
     from = "https://benborgers.netlify.app/*"
     to = "https://benborgers.com/:splat"
-    status = 301
+    force = true
+
+[[redirects]]
+    from = "https://ben.city/*"
+    to = "https://benborgers.com/:splat"
     force = true
 
 [[redirects]]
