@@ -31,7 +31,7 @@ module.exports = eleventyConfig => {
             .getFilteredByGlob('posts/*.md')
     })
 
-    eleventyConfig.addCollection('nonProgrammingPosts', collection => {
+    eleventyConfig.addCollection('non-programming', collection => {
         return collection
             .getFilteredByGlob('posts/*.md')
             .filter(p => !(p.data.tags || []).includes('programming'))

@@ -5,6 +5,6 @@ module.exports = [
     },
     {
         name: 'Non-programming',
-        url: '/non-programming/'
+        url: '/tags/non-programming/'
     }
 ]
