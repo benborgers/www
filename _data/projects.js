@@ -44,7 +44,7 @@ module.exports = {
         },
         {
             name: 'IBM Security',
-            description: 'Programming summer internship at IBM Mass Lab in the summers of 2019 and 2020. Worked on a new security offering for enterprise.'
+            description: 'Software engineering summer internship at IBM Mass Lab in the summers of 2019 and 2020. Worked on a new security offering for enterprise.'
         },
         {
             name: 'Rep.ly',
