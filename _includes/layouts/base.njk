@@ -43,12 +43,12 @@
         {{ content | safe }}
     </main>
 
-    <footer class="border-t border-gray-200 mt-16 pt-4">
+    <footer class="border-t border-gray-200 mt-16 pt-4 flex items-center justify-between">
         <p class="text-gray-400">
-            <span>👋</span>
-            <span class="hidden sm:inline-block">If I can help or you wanna chat:</span>
+            If I can help or you wanna chat:
             <a href="mailto:{{ email }}" class="underline duration-150 hover:text-gray-600">{{ email }}</a>
         </p>
+        <p>👋</p>
     </footer>
 </body>
 </html>
