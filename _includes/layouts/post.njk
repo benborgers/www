@@ -4,6 +4,12 @@ eleventyComputed:
     title: '{{ title | smartQuotes }}'
 ---
 
+{% if draft %}
+    <p class="absolute top-0 left-0 bg-blue-100 text-blue-600 pl-3 pr-4 py-1 font-semibold rounded-br-lg">
+        Draft
+    </p>
+{% endif %}
+
 <div class="text-center space-y-1 mb-12">
     <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl">{{ title }}</h1>
     {% if date %}
