@@ -15,4 +15,4 @@ mkdir -p my/directory/here
 
 You can use this with a top-level directory (the first example), or with a deeply nested directory (the second example). 
 
-The `-p` flag creates all directories necessary along the way (`my`, `directory`, and `here`) **if** they don't exist yet. 
+The `-p` flag creates all directories necessary along the way (for example `my`, `directory`, and `here`) **if** they don't exist yet. 
