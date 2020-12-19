@@ -4,7 +4,7 @@ slug: black-mirror-s01e02
 date: 2020-12-18T18:37:15.993Z
 tags:
   - black-mirror
-draft: true
+draft: false
 ---
 # Plot
 
