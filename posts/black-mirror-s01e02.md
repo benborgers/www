@@ -25,3 +25,23 @@ One of the judges declares the speech the greatest act in *Hot Shot* history and
 Later, Bing is shown livestreaming his show. He performs holding the shard to his neck, but rants both about grievances with the system and advertisements *for* the system. 
 
 After ending his weekly stream, we see that his living quarters are now quite large, and the episode ends with him looking out from his room onto a beautiful forest view. 
+
+
+# Parallels to our world
+
+This episode shows a dramatized, but recognizable, version of the world. People live surrounded by screens, which show them advertisements from the moment they wake up. They go to work at a repetitive and unfulfilling job in front of a screen, allowing them to earn merits that they use to buy food and entertainment on other screens. It all feels a bit too familiar. 
+
+The people peddling seem to be the middle class, while the yellow-suited attendants seem to be the lower class, who are treated with contempt by the middle class. The upper class is comprised of attractive and talented people, such as the singer Selma. However, throughout the entire episode, Selma is the only star we see who came out of *Hot Shot*. It seems that the dream of ultimately escaping the rat race is unrealistic, but only serves as motivation for people to continue working. Even though Abi was the "best performance all season" on *Hot Shot*, there's no spot for her to become a star singer. The dream of moving up isn't quite real. 
+
+
+# Hypocrisy
+
+Bing goes on *Hot Shot* and delivers an empassioned speech about how none of this is real, and how they're all too numb to feel real emotion anymore. Earlier in the episode as well, he seems willing to forgo merits in favor of "something real" (Abi's singing talents). 
+
+However, once Bing is given a way to move up in the world, he completely abandons his morals. We see him stream from a set designed to look like a "common" room, while he lives in a much bigger apartment. His apartment has a wooden penguin, which is much like the origami one that Abi folded for him, except without the *realness*. 
+
+Bing has traded what he once knew to be true, his morals, in order to sell out and join the system. Everyone hates the system until they're on top of it. 
+
+Even Bing's glass shard, a symbol of resistance against the system, is eventually sold as a digital accessory for your Doppel (or digital avatar). The real glass shard is safely kept inside a box between streams, because it represents Bing's ticket to a better life. 
+
+At the end of the episode, Bing looks out onto a beautiful green forest from what could be a window or a giant screen. Bing might have upgraded his small apartment for a bigger apartment, but he's still living within the system and surrounded by screens. 
