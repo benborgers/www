@@ -1,5 +1,5 @@
 ---
-title: How to enable tab key in textarea
+title: How to enable the tab key in a textarea
 slug: textarea-tab
 date: 2020-12-21T00:46:31.678Z
 tags:

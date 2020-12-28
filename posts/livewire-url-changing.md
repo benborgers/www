@@ -1,5 +1,5 @@
 ---
-title: How to fix Livewire changing current URL
+title: How to get current URL in Livewire component
 slug: livewire-url-changing
 date: 2020-12-22T03:49:56.366Z
 tags:
