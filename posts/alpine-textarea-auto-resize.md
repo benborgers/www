@@ -1,10 +1,39 @@
 ---
 title: How to make textarea auto-resize with Alpine.js
 slug: alpine-textarea-auto-resize
-date: 2020-12-22T01:02:06.065Z
+date: 2020-12-30T21:47:10.762Z
 tags:
   - programming
   - alpine
-draft: true
+draft: false
 ---
-https://github.com/benborgers/brain/commit/2a84c7ed03dc1014207ad8d919194e44b391cbb4
+You know those fancy textareas that make themselves bigger or smaller depending on how much you type? That's actually really easy to do with [Alpine](https://github.com/alpinejs/alpine). 
+
+Resizing a textarea to be the height of its text turns out to be quite straightforward: first, set the textarea's height to almost nothing, then set the textarea's height to the height of the content that's not visible. 
+
+```javascript
+$el.style.height = '5px'
+$el.style.height = $el.scrollHeight + 'px' // e.g. 152 + 'px' = '152px'
+```
+
+We start by setting this as a function on our Alpine component, so we can reuse this function: 
+
+```html
+<textarea
+  x-data="{ resize: () => { $el.style.height = '5px'; $el.style.height = $el.scrollHeight + 'px' } }"
+></textarea>
+```
+
+Now, we simply tell Alpine to run this resizing function when the textarea first loads, and whenever someone types in the text box: 
+
+```html
+<textarea
+  x-data="{ resize: () => { $el.style.height = '5px'; $el.style.height = $el.scrollHeight + 'px' } }"
+  x-init="resize()"
+  @input="resize()"
+></textarea>
+```
+
+And that's it! The textarea will now resize to be the height of the text you type in it. 
+
+And finally, [here's a CodeSandbox](https://codesandbox.io/s/alpine-textarea-auto-resize-ivo9l?file=/index.html) demonstrating the solution. 
