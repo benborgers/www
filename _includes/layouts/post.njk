@@ -2,6 +2,7 @@
 layout: layouts/base
 eleventyComputed:
     title: '{{ title | smartQuotes }}'
+    noindex: '{{ draft }}'
 ---
 
 {% if draft %}
