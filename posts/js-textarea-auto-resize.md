@@ -15,7 +15,7 @@ First, all you need is a plain HTML text box:
 <textarea></textarea>
 ```
 
-Next, in the javascript, we're going to write a function that makes the textarea the correct height. It first makes the text box very short, and then makes it as tall as the content that is not visible. 
+Next, in the javascript, we're going to write a function that makes the textarea the correct height based on how much text is in it. It first makes the text box very short, and then makes it as tall as the content that is _not visible_. 
 
 ```javascript
 const textarea = document.querySelector('textarea')
@@ -26,9 +26,9 @@ const resize = () => {
 }
 ```
 
-Now, all we have to do is run this function once the page loads **and** every time someone types into the text box: 
+Now, all we have to do is run this function once the page loads, and run it again every time someone types into the text box: 
 
-```
+```javascript
 resize() // run once immediately
 
 textarea.addEventListener('input', resize)
