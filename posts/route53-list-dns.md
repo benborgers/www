@@ -5,6 +5,7 @@ date: 2020-12-30T17:45:16.432Z
 tags:
   - programming
   - aws
+  - javascript
 draft: false
 ---
 Recently, I had a project where I wanted to programmatically get all the DNS records for my domain. The DNS was being handled on AWS Route53. 
