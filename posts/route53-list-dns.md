@@ -7,4 +7,4 @@ tags:
   - aws
 draft: true
 ---
-https://github.com/benborgers/elk/blob/main/_data/projects.js
+https://github.com/benborgers/elk/blob/8d98b060aeba5c0d8ed2a3900f7816f1648f2155/_data/projects.js
