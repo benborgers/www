@@ -11,26 +11,29 @@ eleventyComputed:
     </p>
 {% endif %}
 
-<div class="text-center space-y-1 mb-12">
+<div class="space-y-3 mb-12">
     <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl">{{ title }}</h1>
-    {% if date %}
-        <p class="text-gray-400">
-            Updated {{ date.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }}
-        </p>
-    {% endif %}
+
+    <div class="space-y-1 sm:space-y-0 sm:flex sm:space-x-3 items-center">
+        {% if date %}
+            <p class="text-gray-400">
+                {{ date.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }}
+            </p>
+        {% endif %}
+
+        {% if tags %}
+            <div>
+                {% for tag in tags %}
+                    {# A lot of posts have the programming tag, so it's kinda useless #}
+                    {% if tag !== 'programming' %}
+                        <a href="/tags/{{ tag }}" class="inline-block bg-gray-100 text-gray-500 rounded-full py-1 px-3 text-sm font-medium leading-none hover:text-gray-700 transition-colors duration-100">{{ tag }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 </div>
 
 <div class="prose max-w-screen-sm">
     {{ content | extendMarkdown | safe }}
 </div>
-
-{% if tags %}
-    <div class="mt-6">
-        <p class="text-gray-400">
-            <span>tags:</span>
-            {% for tag in tags %}
-                <a href="/tags/{{ tag }}" class="underline">{{ tag }}</a>{% if not loop.last %},{% endif %}
-            {% endfor %}
-        </p>
-    </div>
-{% endif %}
