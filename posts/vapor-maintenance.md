@@ -5,7 +5,7 @@ date: 2020-12-30T18:34:10.701Z
 tags:
   - programming
   - laravel-vapor
-draft: true
+draft: false
 ---
 If you want to take a Laravel Vapor app down temporarily, you run this command from within the app: 
 
