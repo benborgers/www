@@ -17,13 +17,13 @@ One equation is $​$e = mc^2$$.
 
 I found some ways to do this online that involved extending the markdown renderer, but I honestly really didn't understand them. Finally, I just pulled together my own solution using Eleventy's [filters](https://www.11ty.dev/docs/filters/) to modify content.
 
-First, go to the layout for your blog posts, and pipe the page's contents through an `latex` filter that we'll create in a moment:
+First, go to the layout for your blog posts, and pipe the page's contents through a `latex` filter that we'll create in a moment:
 
 ```html
-{# before #}
+{# before: #}
 {​{ content | safe }}
 
-{# after #}
+{# after: #}
 {​{ content | latex | safe }}
 ```
 
@@ -39,7 +39,7 @@ and import it in your `.eleventy.js` file:
 const katex = require('katex')
 ```
 
-Now, we can write the `latex` filter:
+Now, we can write the `latex` filter in your `.eleventy.js` file:
 
 ```javascript
 eleventyConfig.addFilter('latex', content => {
@@ -53,15 +53,15 @@ eleventyConfig.addFilter('latex', content => {
 })
 ```
 
-What this does is it registers a new Eleventy filter called `latex`, which will affect our `content` HTML (from earlier).
+What this does is it registers a new Eleventy filter called `latex`, which will affect the `content` of our page.
 
 We take the content of the page and use a regex to replace every occurrence of `$$something$​$`. We're using `\$` to escape the dollar sign, because `$` has a special meaning in regex but we want the actual dollar sign character (not its special meaning).
 
-When rendering markdown to HTML, Eleventy likes to change characters like `>` to `&gt;`, etc. This stops them from rendering as actual HTML. However, here we want to turn these characters _back_ into what they were before, since we might've used the `>` or `<` characters in our equations.
+When rendering markdown to HTML, Eleventy likes to change characters like `>` to `&gt;`, etc. This stops those characters from rendering as actual HTML. However, here we want to turn these characters _back_ into what they were before, since we might've used the `>` or `<` characters in our equations.
 
 We use KaTeX's `renderToString` method to render this equation so it looks like an actual equation, and replace the `$​$something$$` with that rendered KaTeX HTML.
 
-Finally, add this CSS file to your layout's `<head>`. It loads the necessary fonts and CSS to render the equation we just created with `renderToString`.
+Finally, add this CSS file to your layout's `<head>`. It loads the necessary fonts and CSS to display the equations.
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/katex@latest/dist/katex.min.css" />
