@@ -16,7 +16,7 @@ $el.style.height = '5px'
 $el.style.height = $el.scrollHeight + 'px' // e.g. 152 + 'px' = '152px'
 ```
 
-_With Alpine, $el is a magic variable for the element with the `x-data`._
+_With Alpine, `$el` is a magic variable for the element with the `x-data`._
 
 We start by setting this as a function on our Alpine component, so we can reuse this function: 
 
