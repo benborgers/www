@@ -1,9 +1,37 @@
 ---
 title: How to make auto-resizing textarea with javascript
 slug: js-textarea-auto-resize
-date: 2020-12-22T01:02:43.399Z
+date: 2020-12-30T23:15:20.213Z
 tags:
   - programming
-draft: true
+  - javascript
+draft: false
 ---
-https://github.com/benborgers/brain/commit/2a84c7ed03dc1014207ad8d919194e44b391cbb4
+Here's how to make one of those fancy textareas that gets shorter and taller depending on how much text is in it, using pure javascript. 
+
+First, all you need is a plain HTML text box: 
+
+```html
+<textarea></textarea>
+```
+
+Next, in the javascript, we're going to write a function that makes the textarea the correct height. It first makes the text box very short, and then makes it as tall as the content that is not visible. 
+
+```javascript
+const textarea = document.querySelector('textarea')
+
+const resize = () => {
+  textarea.style.height = '5px'
+  textarea.style.height = textarea.scrollHeight + 'px' // e.g. 152 + 'px' = '152px'
+}
+```
+
+Now, all we have to do is run this function once the page loads **and** every time someone types into the text box: 
+
+```
+resize() // run once immediately
+
+textarea.addEventListener('input', resize)
+```
+
+And that's it! The text box will now change height to accommodate how much text you type into it. [Here's a CodeSandbox](https://codesandbox.io/s/js-textarea-auto-resize-yz0k8?file=/index.html) demonstrating the solution.  
