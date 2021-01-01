@@ -9,14 +9,14 @@ draft: false
 ---
 In Laravel, you can get the current URL by running `url()->current()`. However, Livewire kind of breaks this — after subsequent Livewire requests, the "current URL" will be equal to the internal Livewire URL, not the actual page's URL. 
 
-An easy fix for this is to grab the current URL when the component first loads, in the `mount` method. Here's a piece of the Livewire component: 
+An easy fix for this is to save the current URL when the component first loads, in the `mount` method. Here's a piece of the Livewire component: 
 
 ```php
 public $currentUrl;
 
 public function mount()
 {
-  $this->currentUrl = url()->current();
+    $this->currentUrl = url()->current();
 }
 ```
 
