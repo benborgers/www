@@ -1,9 +1,11 @@
 ---
 title: How to use Notion as your blog's CMS
+slug: notion-blog
 date: 2020-02-17
 tags:
-    - programming
-    - notion
+  - programming
+  - notion
+draft: false
 ---
 This blog gets its content from [Notion](https://www.notion.so/product). I write the posts in a table in Notion, and whenever this site is rebuilt on [Vercel](https://vercel.com), the site pulls in all the posts and formats them into HTML.
 
@@ -11,7 +13,7 @@ To build this blog, I first reverse-engineered Notion's private API. Notion is w
 
 This turned into an open-source project called [Potion](https://github.com/benborgers/potion), which includes hosted API endpoints that you can use.
 
-## Setting up Notion
+# Setting up Notion
 
 My blog posts are written in a full-page table in Notion:
 
@@ -21,7 +23,7 @@ Because of Notion's structure for tables, each row in this table is also its own
 
 I also have a few other fields (columns) in the table, which include the URL of the blog post, when it was published, and whether it should be made public. I can use these to transfer each blog post (each row) onto my website.
 
-## Using the API
+# Using the API
 
 Now for the fun part: pulling in the blog posts from Notion.
 
@@ -35,7 +37,7 @@ Essentially, when my site is being built, I use [`node-fetch`](https://npm.im/no
 
 Then, for each published post, it takes the `id` of that row in the table and makes another request to `/html` using that page's ID. This endpoint returns fully-baked HTML of the document's contents. I now just have to insert that HTML into a template for each blog post, along with the title from the earlier `/table` call, and I can generate all the blog post pages (like the one you're looking at right now).
 
-## Other blog posts
+# Other blog posts
 
 I've written some other blog posts on using the Potion API for Notion:
 
