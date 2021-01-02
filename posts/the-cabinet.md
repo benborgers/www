@@ -1,11 +1,13 @@
 ---
 title: The Cabinet Photoshoot
+slug: the-cabinet
 date: 2020-11-06
 tags:
-    - photos
+  - photos
+draft: false
 ---
 
-*My friends and I all ran for Class Council positions in senior year. We won every position.*
+*My friends and I all ran for Class Council positions in senior year. We won every seat.*
 
 ![](/assets/the-cabinet-DSC00288.jpg)
 ![](/assets/the-cabinet-DSC00292.jpg)
