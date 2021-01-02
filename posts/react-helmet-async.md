@@ -1,9 +1,11 @@
 ---
 title: How to fix "componentWillMount has been renamed"
+slug: react-helmet-async
 date: 2019-12-12
 tags:
-    - programming
-    - react
+  - programming
+  - react
+draft: false
 ---
 I was using the [react-helmet](https://npm.im/react-helmet) package, and noticed an error in my console saying:
 
@@ -11,7 +13,7 @@ I was using the [react-helmet](https://npm.im/react-helmet) package, and notic
 
 Turns out, in React 17 (the next version of React), the `componentWillMount` method will no longer work. `react-helmet` relies on this method, and therefore there's a warning when you try to use `componentWillMount` in React 16.9+.
 
-## Solution
+# Solution
 
 There's a virtually identical package called [react-helmet-async](https://npm.im/react-helmet-async), which doesn't have this error and will continue working through React 17.
 
@@ -31,6 +33,6 @@ import { Helmet } from "react-helmet-async"
 // ... etc
 ```
 
-## Solving it in Gatsby
+# Solving it in Gatsby
 
 If your site is built with [Gatsby](https://gatsbyjs.org/), you're probably currently using [gatsby-plugin-react-helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/). You'll need to replace this plugin with [@rhysforyou/gatsby-plugin-react-helmet-async](https://www.gatsbyjs.org/packages/@rhysforyou/gatsby-plugin-react-helmet-async).
