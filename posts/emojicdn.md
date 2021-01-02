@@ -1,9 +1,11 @@
 ---
 title: An API to get the image for any emoji
+slug: emojicdn
 date: 2019-12-21
 tags:
-    - programming
-    - emojicdn
+  - programming
+  - emojicdn
+draft: false
 ---
 I built an API called [EMOJICDN](https://emojicdn.elk.sh) that lets you pass in any emoji and get a PNG for Apple's artwork of that emoji.
 
@@ -11,7 +13,7 @@ For example: [emojicdn.elk.sh/🤩](http://emojicdn.elk.sh/🤩)
 
 It uses the Apple versions of the emojis because I think those are the most recognizable and good-looking.
 
-## Uses
+# Uses
 
 You can also use that link as the source of an img html element.
 
