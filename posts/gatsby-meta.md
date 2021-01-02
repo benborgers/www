@@ -1,9 +1,11 @@
 ---
 title: What meta tags you need for a Gatsby site
+slug: gatsby-meta
 date: 2020-01-01
 tags:
-    - programming
-    - gatsby
+  - programming
+  - gatsby
+draft: false
 ---
 In almost every Gatsby site I make, I create a `<Head />` component with all the meta tags I'll need. I reuse that component on every page, passing in different titles and descriptions.
 
@@ -33,7 +35,7 @@ export default ({ title, description, shareImage }) => {
 }
 ```
 
-## A couple notes
+# A couple notes
 
 - There's some repeats (`title` and `og:title`, `description` and `og:description`), but since this is a reusable component it isn't really more work to include both.
 - The `og:image` is quite important to me, because a nice share image makes the link stand out when it's shared on Twitter or elsewhere.
