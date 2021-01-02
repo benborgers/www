@@ -1,9 +1,11 @@
 ---
 title: How to fix CORS errors on Glitch
+slug: glitch-cors
 date: 2020-03-23
 tags:
-    - programming
-    - glitch
+  - programming
+  - glitch
+draft: false
 ---
 CORS is a security measure that stops a web page on one domain from fetching resources from another domain.
 
@@ -11,7 +13,7 @@ However, sometimes you do want to do this: for example, your website (on one dom
 
 Fixing this issue falls into two categories: you control the server you're fetching from (for example, you're fetching a resource from your own Glitch project), or you don't control the server you're fetching from (it's someone else's website). Here's how to fix both:
 
-## Scenario 1: You control the server
+# Scenario 1: You control the server
 
 If you're trying to fetch a resource from your own server (like your own Glitch project), but you're getting blocked by CORS errors, you need to tell your server to allow fetching from other domains.
 
@@ -37,7 +39,7 @@ app.listen(3000) // tells Express which port to listen on
 
 This should open your server up to requests from other domains, fixing the CORS issue.
 
-## Scenario 2: You don't control the server
+# Scenario 2: You don't control the server
 
 If you're fetching resources from some other server that you don't control, you can't install and run code on that server like in Scenario 1.
 
