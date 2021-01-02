@@ -81,7 +81,7 @@ module.exports = eleventyConfig => {
     eleventyConfig.setLibrary('md', md)
 
 
-    if(process.env.NODE_ENV === 'production' || true) {
+    if(process.env.NODE_ENV === 'production') {
         fetch('https://google.com/ping?sitemap=https://benborgers.com/sitemap.xml')
             .then(res => res.text())
             .then(text => {
