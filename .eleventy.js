@@ -53,5 +53,13 @@ module.exports = eleventyConfig => {
     md.renderer.rules.heading_open = headingOverride
     md.renderer.rules.heading_close = headingOverride
 
+    md.renderer.rules.image = (tokens, id) => {
+        const token = tokens[id]
+        const src = token.attrs.find(array => array[0] === 'src')[1]
+        return `<a href="${src}" target="_blank" style="cursor: zoom-in">
+            <img src="https://images.weserv.nl/?url=https://benborgers.com${src}&w=900&we" />
+        </a>`
+    }
+
     eleventyConfig.setLibrary('md', md)
 }
