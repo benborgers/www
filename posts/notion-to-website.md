@@ -1,9 +1,11 @@
 ---
 title: How to turn a Notion doc into a website
+slug: notion-to-website
 date: 2020-04-18
 tags:
-    - programming
-    - notion
+  - programming
+  - notion
+draft: false
 ---
 I wrote my own reverse-engineered API for Notion, called Potion. The code is open source on [GitHub](https://github.com/benborgers/potion).
 
@@ -11,7 +13,7 @@ Today, we're going to use that API to turn a Notion document into a website.
 
 There's two ways of doing it: using a **static website** (no server), or using a **Node.js server**. We'll also discuss the pros and cons of each.
 
-## Getting the ID of your Notion doc
+# Getting the ID of your Notion doc
 
 For both of these methods, you'll need the ID of your Notion doc.
 
@@ -25,7 +27,7 @@ Then, click the **Copy page link** button and paste it somewhere. The long rando
 
 We'll use this ID in our code later.
 
-## Method 1: Static website
+# Method 1: Static website
 
 The benefits of this approach are that you can host the website very cheaply (for example, on [Netlify](https://netlify.com)) since it's just static files. However, the webpage is empty before the javascript executes, and crawlers (like Google) need to run the javascript in order to "see" the contents.
 
@@ -64,7 +66,7 @@ fetch("https://potion-api.now.sh/html?id=" + notionDocId)
 
 That's it! Now you have a website powered by your Notion doc. Here's the full code if you'd like to check it out: [Live demo](https://notion-to-website-static.glitch.me) and [source code](https://glitch.com/edit/#!/notion-to-website-static).
 
-## Method 2: Node.js server
+# Method 2: Node.js server
 
 The benefits of this approach are that the HTML sent by the server fully includes the Notion document's content, so it's easy for web crawlers (like Google) to read and understand. It doesn't require any client-side javascript to run. However, you need to run a full Node.js server to host it, so this solution can't be hosted on a static file host.
 
