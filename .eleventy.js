@@ -1,5 +1,6 @@
 const smartquotes = require('smartquotes')
 const katex = require('katex')
+const fetch = require('node-fetch')
 
 module.exports = eleventyConfig => {
     eleventyConfig.addFilter('dump', value => {
@@ -78,4 +79,14 @@ module.exports = eleventyConfig => {
     }
 
     eleventyConfig.setLibrary('md', md)
+
+
+    if(process.env.NODE_ENV === 'production' || true) {
+        fetch('https://google.com/ping?sitemap=https://benborgers.com/sitemap.xml')
+            .then(res => res.text())
+            .then(text => {
+                console.log('📢 Pinging Google with updated sitemap.')
+                console.log(text)
+            })
+    }
 }
