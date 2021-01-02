@@ -25,7 +25,7 @@ module.exports = eleventyConfig => {
         const description = value.split('content-for-description')[1]
             .replace(/<h[1-6]>.*?<\/h[1-6]>/g, '')
             .replace(/<span class="katex-mathml">(.*?)<\/span>/g, '')
-            .replace(/<.*?>/g, ' ')
+            .replace(/<.*?>/g, '')
             .replace(/<!--(.*?)-->/g, '')
             .replace(/<!--|-->/g, '')
             .replace(/\n/g, ' ')
