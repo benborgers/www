@@ -9,6 +9,9 @@
         {% endif %}
         Ben Borgers
     </title>
+    {% if content.includes('content-for-description') %}
+        <meta name="description" content="{{ content | description | safe }}" />
+    {% endif %}
     <link rel="stylesheet" href="/style.css" />
     <link rel="icon" href="https://emojicdn.elk.sh/🐢" />
     {% if content.includes('katex-html') %}

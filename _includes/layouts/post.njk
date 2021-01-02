@@ -16,9 +16,9 @@ eleventyComputed:
 
     <div class="space-y-1 sm:space-y-0 sm:flex sm:space-x-3 items-center">
         {% if date %}
-            <p class="text-gray-400">
+            <time class="text-gray-400">
                 {{ date.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }}
-            </p>
+            </time>
         {% endif %}
 
         {% if tags %}
@@ -34,6 +34,8 @@ eleventyComputed:
     </div>
 </div>
 
+<!-- content-for-description -->
 <div class="prose max-w-screen-sm">
     {{ content | extendMarkdown | safe }}
 </div>
+<!-- content-for-description -->

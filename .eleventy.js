@@ -21,6 +21,22 @@ module.exports = eleventyConfig => {
         })
     })
 
+    eleventyConfig.addFilter('description', value => {
+        const description = value.split('content-for-description')[1]
+            .replace(/<h[1-6]>.*?<\/h[1-6]>/g, '')
+            .replace(/<span class="katex-mathml">(.*?)<\/span>/g, '')
+            .replace(/<.*?>/g, ' ')
+            .replace(/<!--(.*?)-->/g, '')
+            .replace(/<!--|-->/g, '')
+            .replace(/\n/g, ' ')
+            .replace(/ +/g, ' ')
+            .trim()
+
+        const length = 250
+
+        return description.substr(0, length) + (description.length > length ? '...' : '')
+    })
+
     eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
 
     eleventyConfig.addPassthroughCopy({ '_assets': 'assets' })
