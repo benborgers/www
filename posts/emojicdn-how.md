@@ -12,6 +12,6 @@ It's called [emojicdn](https://emojicdn.elk.sh), and all you have to do is go to
 
 [emojicdn.elk.sh/🐢](https://emojicdn.elk.sh/🐢)
 
-By default, the API returns the Apple artwork for the emoji. However, you can pass in a `?style=` parameter to get another platform's artwork. A full list of supported styles is [here](https://github.com/benborgers/emojicdn#emoji-style). 
+By default, the API returns the Apple artwork for the emoji. However, you can pass in a `?style=` parameter to get another platform's artwork. A full list of supported styles is [documented here](https://github.com/benborgers/emojicdn#emoji-style). 
 
 [emojicdn.elk.sh/🐢?style=messenger](https://emojicdn.elk.sh/🐢?style=messenger]
