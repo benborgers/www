@@ -1,15 +1,17 @@
 ---
 title: API to read a Notion table
+slug: notion-table
 date: 2020-04-19
 tags:
-    - programming
-    - notion
+  - programming
+  - notion
+draft: false
 ---
 I wrote my own reverse-engineered API for Notion, called Potion. The code is open source on [GitHub](https://github.com/benborgers/potion).
 
 Today, we're going to use that API to read a table in Notion.
 
-## Getting the table ID
+# Getting the table ID
 
 To use the API, we need the ID of the table in Notion that we want to read.
 
@@ -25,7 +27,7 @@ Then, click the **Copy page link** button and paste the link somewhere. The long
 
 You'll need to give this ID to the API in order to tell it which table to read from.
 
-## Using the Potion API
+# Using the Potion API
 
 Now, we'll use [Potion](https://potion-api.now.sh) to read the table.
 
