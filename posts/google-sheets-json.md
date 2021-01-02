@@ -1,8 +1,10 @@
 ---
 title: How to get a Google Sheet as JSON
+slug: google-sheets-json
 date: 2020-01-09
 tags:
-    - programming
+  - programming
+draft: false
 ---
 Google Sheets can be a great place to store content for a website, since it's structured and easy to update (especially for non-coders).
 
@@ -18,7 +20,7 @@ https://spreadsheets.google.com/feeds/list/spreadsheet_key/1/public/values?alt=j
 
 That's it! If you go to that URL in your browser (substituting your spreadsheet key in the URL), you'll see JSON that contains the contents of your spreadsheet.
 
-## Optional step: formatting the data
+# Optional step: formatting the data
 
 I always reformat the data from this API before I use it, since I think the way it's returned by default isn't very usable.
 
@@ -85,7 +87,7 @@ The above code will produce a `data` array that looks like this:
 
 Of course, it's up to you how you parse and use the spreadsheet data for your app.
 
-## Bonus: reading the other sheets in your spreadsheet
+# Bonus: reading the other sheets in your spreadsheet
 
 In Google Sheets, you can add multiple "sheets", which are like multiple pages. If you'd like to read the contents of the second sheet of your spreadsheet, replace the `1` in the URL with `2` (or whatever number sheet you'd like to read):
 
