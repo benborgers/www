@@ -31,6 +31,9 @@ module.exports = eleventyConfig => {
             .replace(/<!--|-->/g, '')
             .replace(/\n/g, ' ')
             .replace(/ +/g, ' ')
+            .replace(/>/g, '&gt;')
+            .replace(/</g, '&lt;')
+            .replace(/"/g, `'`)
             .trim()
 
         const length = 250
