@@ -1,10 +1,12 @@
 ---
 title: How to refresh data with SWR
+slug: swr-refresh
 date: 2020-03-25
 tags:
-    - programming
-    - react
-    - swr
+  - programming
+  - react
+  - swr
+draft: false
 ---
 Let's say you have a piece of data you're fetching with Vercel's [SWR package](https://github.com/vercel/swr):
 
@@ -23,7 +25,7 @@ You can change the cached `data` for `/posts` by calling `mutate(newData)`.
 
 However, if you just run `mutate()`, it will refresh the data for `/posts` in the background. `mutate` knows to request the `/posts` endpoint again, since that's where the `mutate` function came from.
 
-## Bonus: isValidating
+# Bonus: isValidating
 
 You can use `isValidating` to show to the user whether the data has been updated yet.
 
