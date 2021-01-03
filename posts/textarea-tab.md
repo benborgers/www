@@ -1,5 +1,5 @@
 ---
-title: How to enable the tab key in a textarea
+title: How to add tab to indent to a textarea
 slug: textarea-tab
 date: 2021-01-03T16:11:14.545Z
 tags:
