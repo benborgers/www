@@ -16,4 +16,4 @@ You're probably writing a Laravel test for a Livewire component.
 use Livewire\Livewire;
 ```
 
-Now, you can use `Livewire::test` because it's been imported at the top of the file. 
+Now, you can use `Livewire::test` because it's been imported into the test. 
