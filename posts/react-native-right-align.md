@@ -4,6 +4,7 @@ date: 2020-02-21
 tags:
     - programming
     - react-native
+templateEngineOverride: md
 ---
 Right aligning a component can be hard in React Native, especially when you don't want to just use `text-align: right`.
 

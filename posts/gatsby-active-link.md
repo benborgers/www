@@ -6,6 +6,7 @@ tags:
   - programming
   - gatsby
 draft: false
+templateEngineOverride: md
 ---
 In Gatsby, you using the `<Link>` component to create links to other pages on your Gatsby site.
 

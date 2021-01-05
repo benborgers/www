@@ -6,10 +6,11 @@ tags:
   - programming
   - react-native
 draft: false
+templateEngineOverride: md
 ---
 In regular CSS you can give an element the property `max-width: max-content`, which makes the element (at most) as wide as the text inside of it.
 
-There's no direct equivalent in React Native, but instead you can use flexbox to emulate this behavior to make a `Text` element only as wide as the text inside. 
+There's no direct equivalent in React Native, but instead you can use flexbox to emulate this behavior to make a `Text` element only as wide as the text inside.
 
 ```jsx
 export default () => {

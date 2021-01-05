@@ -5,6 +5,7 @@ tags:
     - programming
     - laravel
     - livewire
+templateEngineOverride: md
 ---
 Livewire allows you to write validation in a protected `$rules` property that is used whenever you call `$this->validate()` or `$this->validateOnly('propertyName')`.
 
