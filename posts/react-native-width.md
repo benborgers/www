@@ -1,9 +1,11 @@
 ---
-title: How to set Text to max-width&colon; max-content in React Native
+title: "How to set Text to max-width: max-content in React Native"
+slug: react-native-width
 date: 2020-02-21
 tags:
-    - programming
-    - react-native
+  - programming
+  - react-native
+draft: false
 ---
 In regular CSS you can give an element the property `max-width: max-content`, which makes the element (at most) as wide as the text inside of it.
 
