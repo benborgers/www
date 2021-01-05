@@ -43,6 +43,9 @@ collections:
         name: draft
         widget: boolean
         default: false
+      - name: templateEngineOverride
+        widget: hidden
+        default: md
       - label: Body
         name: body
         widget: markdown
