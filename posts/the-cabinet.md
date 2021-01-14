@@ -6,8 +6,6 @@ tags:
   - photos
 draft: false
 ---
-*My friends and I all ran for Class Council positions in senior year. We won every seat.*
-
 ![](/assets/the-cabinet-DSC00288.jpg)
 ![](/assets/the-cabinet-DSC00292.jpg)
 ![](/assets/the-cabinet-DSC00300.jpg)
