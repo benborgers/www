@@ -1,4 +1,14 @@
 {
     "normalize-gatsby": 16,
-    "fathom-gatsby": 17
+    "fathom-gatsby": 17,
+    "kill-localhost": 18,
+    "react-helmet-async": 19,
+    "netlify-toml-gatsby": 20,
+    "emojicdn": 21,
+    "gatsby-last-built": 22,
+    "navigator-sendbeacon": 23,
+    "gatsby-meta": 24,
+    "json-ld": 25,
+    "google-sheets-json": 26,
+    "gatsby-active-link": 27
 }

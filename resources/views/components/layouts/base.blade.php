@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ $title ? $title . ' - ' : '' }}Ben Borgers</title>
+        <title>{!! $title ? $title . ' - ' : '' !!}Ben Borgers</title>
         <link rel="icon" href="https://emojicdn.elk.sh/🐢" />
 
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
