@@ -1,5 +1,5 @@
 ---
-title: How to remotely refresh a Livewire component
+title: How to refresh a Livewire component from another component
 slug: livewire-refresh-other-component
 date: 2021-01-22T00:00:00.000Z
 tags:
