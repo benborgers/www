@@ -46,4 +46,17 @@ class BlogController extends Controller
             'post' => $post
         ]);
     }
+
+    public function sync()
+    {
+        dispatch(function () {
+            $posts = fill_posts_cache();
+
+            foreach($posts as $post) {
+                fill_post_cache($post['number']);
+            }
+        });
+
+        return redirect()->route('home');
+    }
 }
