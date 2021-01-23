@@ -14,7 +14,7 @@
 
             @unless(request()->route()->getName() === 'posts.index')
                 <div>
-                    <a href="{{ route('posts.index') }}" class="text-gray-400 font-medium transition-colors hover:text-gray-600 duration-100 flex items-center space-x-2">
+                    <a href="{{ route('posts.index') }}" class="text-gray-400 font-medium transition-colors hover:text-gray-600 duration-100 flex items-center space-x-1.5">
                         <x-heroicon-o-newspaper class="h-4" />
                         <span>All posts</span>
                     </a>
