@@ -1,14 +1,26 @@
 ---
 title: How to refresh a different component in Livewire
 slug: livewire-refresh-other-component
-date: 2020-12-20T19:04:12.815Z
+date: 2021-01-22T00:00:00.000Z
 tags:
   - programming
   - livewire
-draft: true
+draft: false
 ---
+Sometimes you want to refresh one Livewire component in response to changes in a separate Livewire component. 
+
+For example, some data you've edited and saved in the first component needs to be shown in the second component. 
+
+For this, you can use Livewire's events system. First, define the listeners on the Livewire component you want to refresh remotely, so that sending an event called `refreshComponent` will call Livewire's magic `$refresh` method. 
+
 ```php
-protected $listeners = ['refresh' => '$refresh'];
+protected $listeners = ['refreshComponent' => '$refresh'];
 ```
 
-https://github.com/livewire/livewire/discussions/1023#discussioncomment-20022
+Now, in the other component, we just have to send an event called `refreshComponent` to this component. 
+
+```php
+$this->emitTo('component-to-refresh', 'refreshComponent')
+```
+
+This event will be sent to the component called `component-to-refresh`, and `component-to-refresh` will reload. 
