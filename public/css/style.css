@@ -594,8 +594,8 @@ video {
 }
 
 .prose a {
-  color: #111827;
-  text-decoration: underline;
+  color: #2563eb;
+  text-decoration: none;
   font-weight: 500;
 }
 
@@ -757,8 +757,8 @@ video {
 }
 
 .prose pre {
-  color: #e5e7eb;
-  background-color: #1f2937;
+  color: #374151;
+  background-color: #f3f4f6;
   overflow-x: auto;
   font-size: 0.875em;
   line-height: 1.7142857;
@@ -32486,6 +32486,15 @@ video {
           animation: bounce 1s infinite;
 }
 
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -32535,8 +32544,8 @@ video {
   }
 
   .sm\:prose a {
-    color: #111827;
-    text-decoration: underline;
+    color: #2563eb;
+    text-decoration: none;
     font-weight: 500;
   }
 
@@ -32698,8 +32707,8 @@ video {
   }
 
   .sm\:prose pre {
-    color: #e5e7eb;
-    background-color: #1f2937;
+    color: #374151;
+    background-color: #f3f4f6;
     overflow-x: auto;
     font-size: 0.875em;
     line-height: 1.7142857;
@@ -64398,8 +64407,8 @@ video {
   }
 
   .md\:prose a {
-    color: #111827;
-    text-decoration: underline;
+    color: #2563eb;
+    text-decoration: none;
     font-weight: 500;
   }
 
@@ -64561,8 +64570,8 @@ video {
   }
 
   .md\:prose pre {
-    color: #e5e7eb;
-    background-color: #1f2937;
+    color: #374151;
+    background-color: #f3f4f6;
     overflow-x: auto;
     font-size: 0.875em;
     line-height: 1.7142857;
@@ -96261,8 +96270,8 @@ video {
   }
 
   .lg\:prose a {
-    color: #111827;
-    text-decoration: underline;
+    color: #2563eb;
+    text-decoration: none;
     font-weight: 500;
   }
 
@@ -96424,8 +96433,8 @@ video {
   }
 
   .lg\:prose pre {
-    color: #e5e7eb;
-    background-color: #1f2937;
+    color: #374151;
+    background-color: #f3f4f6;
     overflow-x: auto;
     font-size: 0.875em;
     line-height: 1.7142857;
@@ -128124,8 +128133,8 @@ video {
   }
 
   .xl\:prose a {
-    color: #111827;
-    text-decoration: underline;
+    color: #2563eb;
+    text-decoration: none;
     font-weight: 500;
   }
 
@@ -128287,8 +128296,8 @@ video {
   }
 
   .xl\:prose pre {
-    color: #e5e7eb;
-    background-color: #1f2937;
+    color: #374151;
+    background-color: #f3f4f6;
     overflow-x: auto;
     font-size: 0.875em;
     line-height: 1.7142857;
@@ -159987,8 +159996,8 @@ video {
   }
 
   .\32xl\:prose a {
-    color: #111827;
-    text-decoration: underline;
+    color: #2563eb;
+    text-decoration: none;
     font-weight: 500;
   }
 
@@ -160150,8 +160159,8 @@ video {
   }
 
   .\32xl\:prose pre {
-    color: #e5e7eb;
-    background-color: #1f2937;
+    color: #374151;
+    background-color: #f3f4f6;
     overflow-x: auto;
     font-size: 0.875em;
     line-height: 1.7142857;
