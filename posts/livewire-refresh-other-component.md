@@ -23,4 +23,4 @@ Now, in the other component, we just have to send an event called `refreshCompon
 $this->emitTo('component-to-refresh', 'refreshComponent')
 ```
 
-This event will be sent to the component called `component-to-refresh`, and `component-to-refresh` will reload. 
+This event will be sent to the component called `component-to-refresh`, and `component-to-refresh` will reload its contents. 
