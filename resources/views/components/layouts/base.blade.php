@@ -8,6 +8,8 @@
         <link rel="icon" href="https://emojicdn.elk.sh/🐢" />
 
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+        @stack('head')
     </head>
     <body class="font-sans text-gray-700 antialiased bg-white">
         {{ $slot }}

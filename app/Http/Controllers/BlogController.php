@@ -30,4 +30,13 @@ class BlogController extends Controller
             'posts' => $posts
         ]);
     }
+
+    public function showPost($number)
+    {
+        $post = get_post($number);
+
+        return view('posts.show', [
+            'post' => $post
+        ]);
+    }
 }
