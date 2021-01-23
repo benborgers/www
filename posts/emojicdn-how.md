@@ -3,6 +3,7 @@ title: How to programmatically get an image for any emoji
 slug: emojicdn-how
 date: 2021-01-01T00:00:00.000Z
 tags:
+  - programming
   - emojicdn
 draft: false
 ---
