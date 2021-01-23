@@ -1,5 +1,5 @@
 ---
-title: How to play a sound effect with javascript
+title: How to play an audio file with javascript
 slug: js-play-sound
 date: 2021-01-23T21:25:15.281Z
 tags:
