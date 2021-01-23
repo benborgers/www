@@ -25,4 +25,4 @@ Putting it all together, here's an example of a big gradient text headline:
 </h1>
 ```
 
-You can play with this example live on [Tailwind Play](https://play.tailwindcss.com/T8EUKtz8B0). 
+You can see and edit this example live on [Tailwind Play](https://play.tailwindcss.com/T8EUKtz8B0). 
