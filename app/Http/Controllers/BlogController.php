@@ -33,6 +33,13 @@ class BlogController extends Controller
 
     public function showPost($number)
     {
+        if(! intval($number)) {
+            $slugs = data_file('post-slugs');
+            if(array_key_exists($number, (array) $slugs)) {
+                return redirect()->route('posts.show', $slugs->{$number});
+            }
+        }
+
         $post = get_post($number);
 
         return view('posts.show', [

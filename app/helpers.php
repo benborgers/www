@@ -40,7 +40,7 @@ function fill_post_cache($number)
     $forWebsite = collect($data['labels'] ?? [])
         ->map(fn ($label) => $label['name'])
         ->contains('www');
-    if(! $forWebsite) return abort(403);
+    if(! $forWebsite) return abort(404);
 
     Cache::forever('post-' . $number, $data);
 
