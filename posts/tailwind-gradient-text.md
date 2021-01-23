@@ -11,7 +11,7 @@ Tailwind now includes all the necessary utilities for easily making gradient tex
 
 You'll just need to combine these classes: 
 
-- `bg-gradient-to-{direction}` sets the background to a gradient, [you can use different classes from the docs to make the gradient go in different directions](https://tailwindcss.com/docs/background-image)
+- `bg-gradient-to-{direction}` sets the background to a gradient, you can use different classes from [the Tailwind docs](https://tailwindcss.com/docs/background-image) to make the gradient go in different directions
 - `from-{color}` sets the color that the gradient is starting at, this accepts any usual Tailwind color (e.g. `from-pink-400`)
 - `to-{color}` sets the color that the gradient ends at, same as above
 - `text-transparent` makes the text transparent so you can see the gradient behind it
