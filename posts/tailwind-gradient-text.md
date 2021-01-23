@@ -1,7 +1,7 @@
 ---
 title: How to make gradient text with Tailwind CSS
 slug: tailwind-gradient-text
-date: 2020-12-18T02:18:15.775Z
+date: 2021-01-22T00:00:00.000Z
 tags:
   - programming
   - tailwind
