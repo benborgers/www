@@ -8,7 +8,7 @@
             {{ $post['title'] }}
         </x-title>
         <time class="block text-gray-400">
-            {{ format_date($post['updated_at']) }}
+            Updated {{ format_date($post['updated_at']) }}
         </time>
     </div>
 
