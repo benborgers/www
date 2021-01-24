@@ -9,6 +9,10 @@
 
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+        @if(env('APP_ENV') === 'production')
+            <script src="https://anteater.benborgers.com/script.js" data-site="ZWCPJCUA" defer></script>
+        @endif
+
         @stack('head')
     </head>
     <body class="font-sans text-gray-700 antialiased bg-white">
