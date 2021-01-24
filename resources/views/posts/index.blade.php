@@ -1,5 +1,7 @@
 <x-layouts.blog title="Posts">
-    <h1 class="text-3xl sm:text-4xl font-black text-gray-800 mb-8">All posts</h1>
+    <div class="mb-12">
+        <x-title>All posts</x-title>
+    </div>
 
     <div class="space-y-4">
         @foreach ($posts as $post)
