@@ -4,9 +4,9 @@
 
 <x-layouts.blog title="{{ $post['title'] }}">
     <div class="space-y-1 mb-12">
-        <h1 class="text-3xl sm:text-4xl font-black text-gray-800 sm:leading-tight">
+        <x-title>
             {{ $post['title'] }}
-        </h1>
+        </x-title>
         <time class="block text-gray-400">
             {{ format_date($post['updated_at']) }}
         </time>
