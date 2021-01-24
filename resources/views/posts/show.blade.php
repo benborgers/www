@@ -4,7 +4,7 @@
 
 <x-layouts.blog title="{{ $post['title'] }}">
     <div class="space-y-1 mb-12">
-        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 sm:leading-tight">
+        <h1 class="text-3xl sm:text-4xl font-black text-gray-800 sm:leading-tight">
             {{ $post['title'] }}
         </h1>
         <time class="block text-gray-400">
