@@ -12,7 +12,7 @@
         },
         {
             "name": "Underline",
-            "description": "A dead-simple and affordable way to run an email newsletter.",
+            "description": "A dead-simple and affordable way to run an email newsletter (signups closed).",
             "link": "underline.email"
         },
         {
@@ -53,7 +53,7 @@
         },
         {
             "name": "Sophrosyne",
-            "description": "Built an app for Sophrosyne, a mental health-related club at my high school.",
+            "description": "Built an app for Sophrosyne, a mental health awareness club at my high school.",
             "link": "sophrosyne.now.sh"
         }
     ]
