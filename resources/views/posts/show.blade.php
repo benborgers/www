@@ -12,7 +12,7 @@
         </time>
     </div>
 
-    <div class="prose">
+    <div class="prose sm:prose-lg">
         {!! $post['body_html'] !!}
     </div>
 </x-layouts.blog>
