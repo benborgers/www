@@ -34,7 +34,7 @@ class BlogController extends Controller
     public function showPost($number)
     {
         if(! intval($number)) {
-            $slugs = data_file('post-slugs');
+            $slugs = data_file('redirects');
             if(array_key_exists($number, (array) $slugs)) {
                 return redirect()->route('posts.show', $slugs->{$number});
             }
