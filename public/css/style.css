@@ -742,14 +742,20 @@ video {
   color: #111827;
   font-weight: 600;
   font-size: 0.875em;
+  background-color: #f3f4f6;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  border-radius: 0.5rem;
 }
 
 .prose code::before {
-  content: "`";
+  content: ;
 }
 
 .prose code::after {
-  content: "`";
+  content: ;
 }
 
 .prose a code {
@@ -32692,14 +32698,20 @@ pre {
     color: #111827;
     font-weight: 600;
     font-size: 0.875em;
+    background-color: #f3f4f6;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    border-radius: 0.5rem;
   }
 
   .sm\:prose code::before {
-    content: "`";
+    content: ;
   }
 
   .sm\:prose code::after {
-    content: "`";
+    content: ;
   }
 
   .sm\:prose a code {
@@ -64555,14 +64567,20 @@ pre {
     color: #111827;
     font-weight: 600;
     font-size: 0.875em;
+    background-color: #f3f4f6;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    border-radius: 0.5rem;
   }
 
   .md\:prose code::before {
-    content: "`";
+    content: ;
   }
 
   .md\:prose code::after {
-    content: "`";
+    content: ;
   }
 
   .md\:prose a code {
@@ -96418,14 +96436,20 @@ pre {
     color: #111827;
     font-weight: 600;
     font-size: 0.875em;
+    background-color: #f3f4f6;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    border-radius: 0.5rem;
   }
 
   .lg\:prose code::before {
-    content: "`";
+    content: ;
   }
 
   .lg\:prose code::after {
-    content: "`";
+    content: ;
   }
 
   .lg\:prose a code {
@@ -128281,14 +128305,20 @@ pre {
     color: #111827;
     font-weight: 600;
     font-size: 0.875em;
+    background-color: #f3f4f6;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    border-radius: 0.5rem;
   }
 
   .xl\:prose code::before {
-    content: "`";
+    content: ;
   }
 
   .xl\:prose code::after {
-    content: "`";
+    content: ;
   }
 
   .xl\:prose a code {
@@ -160144,14 +160174,20 @@ pre {
     color: #111827;
     font-weight: 600;
     font-size: 0.875em;
+    background-color: #f3f4f6;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    border-radius: 0.5rem;
   }
 
   .\32xl\:prose code::before {
-    content: "`";
+    content: ;
   }
 
   .\32xl\:prose code::after {
-    content: "`";
+    content: ;
   }
 
   .\32xl\:prose a code {
