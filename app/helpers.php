@@ -13,14 +13,21 @@ function data_file($path)
 
 function fill_posts_cache()
 {
-    $request = Http::withToken(env('GITHUB_TOKEN'))
-        ->get('https://api.github.com/repos/benborgers/HQ/issues?labels=www');
+    $posts = [];
 
-    $data = $request->json();
+    for($i = 1; $i < 100; $i++) {
+        $request = Http::withToken(env('GITHUB_TOKEN'))
+            ->get('https://api.github.com/repos/benborgers/HQ/issues?labels=www&per_page=100&page=' . $i);
 
-    Cache::forever('posts', $data);
+        $json = $request->json();
+        $posts = array_merge($posts, $json);
 
-    return $data;
+        if(count($json) === 0) break;
+    }
+
+    Cache::forever('posts', $posts);
+
+    return $posts;
 }
 
 function get_posts()
