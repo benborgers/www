@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{!! $title ? $title . ' - ' : '' !!}Ben Borgers</title>
-        <link rel="icon" href="https://emojicdn.elk.sh/🐢" />
+        <link rel="icon" href="{{ asset('images/favicon.png') }}" />
 
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
