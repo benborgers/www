@@ -16,14 +16,6 @@ class BlogController extends Controller
     public function postsIndex()
     {
         $posts = collect(get_posts())
-            ->map(function ($post) {
-                $post['labels'] = collect($post['labels'])
-                    ->map(fn ($label) => $label['name'])
-                    ->toArray();
-
-                return $post;
-            })
-            ->filter(fn ($post) => ! in_array('www-unlisted', $post['labels']))
             ->sortByDesc('updated_at');
 
         return view('posts.index', [
