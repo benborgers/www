@@ -25,14 +25,32 @@ function fill_posts_cache()
         if(count($json) === 0) break;
     }
 
-    Cache::forever('posts', $posts);
+    $chunks = collect($posts)
+        ->chunk(50)
+        ->map(function ($chunk, $i) {
+            Cache::forever('posts-' . $i, $chunk);
+        });
 
     return $posts;
 }
 
 function get_posts()
 {
-    if($cached = Cache::get('posts')) return $cached;
+    if($firstChunk = Cache::get('posts-0')) {
+        $posts = $firstChunk;
+
+        for($i = 1; $i < 10; $i ++) {
+            $chunk = Cache::get('posts-' . $i);
+            if($chunk) {
+                $posts = $posts->merge($chunk);
+            } else {
+                break;
+            }
+        }
+
+        return $posts->toArray();
+    }
+
     return fill_posts_cache();
 }
 
