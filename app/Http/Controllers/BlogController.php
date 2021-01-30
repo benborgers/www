@@ -15,8 +15,11 @@ class BlogController extends Controller
 
     public function postsIndex()
     {
-        $posts = collect(get_posts())
-            ->sortByDesc('updated_at');
+        $posts = get_posts(request('page', 1));
+
+        if(intval(request('page')) === 1 || $posts->isEmpty()) {
+            return redirect()->route('posts.index');
+        }
 
         return view('posts.index', [
             'posts' => $posts

@@ -26,32 +26,33 @@ function fill_posts_cache()
     }
 
     $chunks = collect($posts)
-        ->chunk(50)
+        ->sortByDesc('updated_at')
+        ->chunk(25)
         ->map(function ($chunk, $i) {
-            Cache::forever('posts-' . $i, $chunk);
+            Cache::forever('posts-' . $i + 1, $chunk);
         });
 
     return $posts;
 }
 
-function get_posts()
+function get_posts($page = null)
 {
-    if($firstChunk = Cache::get('posts-0')) {
-        $posts = $firstChunk;
-
-        for($i = 1; $i < 10; $i ++) {
-            $chunk = Cache::get('posts-' . $i);
-            if($chunk) {
-                $posts = $posts->merge($chunk);
-            } else {
-                break;
-            }
-        }
-
-        return $posts->toArray();
+    if(isset($page)) {
+        return Cache::get('posts-' . $page) ?? collect([]);
     }
 
-    return fill_posts_cache();
+    $posts = collect([]);
+
+    for($i = 1; $i < 10; $i ++) {
+        $chunk = Cache::get('posts-' . $i);
+        if($chunk) {
+            $posts = $posts->merge($chunk);
+        } else {
+            break;
+        }
+    }
+
+    return $posts;
 }
 
 function fill_post_cache($number)
@@ -65,17 +66,15 @@ function fill_post_cache($number)
     $forWebsite = collect($data['labels'] ?? [])
         ->map(fn ($label) => $label['name'])
         ->contains('www');
-    if(! $forWebsite) return abort(404);
 
-    Cache::forever('post-' . $number, $data);
-
-    return $data;
+    if($forWebsite) {
+        Cache::forever('post-' . $number, $data);
+    }
 }
 
 function get_post($number)
 {
-    if($cached = Cache::get('post-' . $number)) return $cached;
-    return fill_post_cache($number);
+    return Cache::get('post-' . $number) ?? abort(404);
 }
 
 function format_date($date, $format = 'F d, Y')

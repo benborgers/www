@@ -1,6 +1,11 @@
 <x-layouts.blog title="Posts">
     <div class="mb-12">
-        <x-title>All posts</x-title>
+        <x-title>
+            All posts
+            @if(request('page'))
+                <span class="text-gray-300">(pg. {{ request('page') }})</span>
+            @endif
+        </x-title>
     </div>
 
     <div class="space-y-4">
@@ -12,5 +17,34 @@
                 </section>
             </a>
         @endforeach
+
+    </div>
+
+    <div class="mt-8 flex justify-between">
+        <div>
+            @if(Cache::has('posts-' . request('page', 1) -1))
+                <a
+                    href="{{ route('posts.index', ['page' => request('page', 1) -1]) }}"
+                    class="border border-gray-200 px-3 py-1 rounded-lg flex items-center space-x-2 text-gray-500 duration-150 hover:bg-gray-100"
+                    style="transition-property: background-color"
+                >
+                    <x-heroicon-s-arrow-left class="h-3" />
+                    <span>Previous</span>
+                </a>
+            @endif
+        </div>
+
+        <div>
+            @if(Cache::has('posts-' . request('page', 1) +1))
+                <a
+                    href="{{ route('posts.index', ['page' => request('page', 1) +1]) }}"
+                    class="border border-gray-200 px-3 py-1 rounded-lg flex items-center space-x-2 text-gray-500 duration-150 hover:bg-gray-100"
+                    style="transition-property: background-color"
+                >
+                    <span>Next</span>
+                    <x-heroicon-s-arrow-right class="h-3" />
+                </a>
+            @endif
+        </div>
     </div>
 </x-layouts.blog>
