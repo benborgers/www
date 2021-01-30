@@ -39,7 +39,7 @@ function get_posts()
 function fill_post_cache($number)
 {
     $request = Http::withToken(env('GITHUB_TOKEN'))
-        ->withHeaders(['accept' => 'application/vnd.github.VERSION.html+json'])
+        ->withHeaders(['accept' => 'application/vnd.github.VERSION.full+json'])
         ->get('https://api.github.com/repos/benborgers/HQ/issues/' . $number);
 
     $data = $request->json();

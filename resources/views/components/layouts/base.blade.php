@@ -4,8 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{!! $title ? $title . ' - ' : '' !!}Ben Borgers</title>
+        <title>{{ $title ? $title . ' - ' : '' }}Ben Borgers</title>
         <link rel="icon" href="{{ asset('images/favicon.png') }}" />
+
+        @isset($description)
+            <meta name="description" content="{{ Str::of($description)->replaceMatches('/\n/', '  ')->replaceMatches('/\s{2,}/', ' ') }}" />
+        @endisset
 
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 

@@ -1,6 +1,6 @@
-@props(['title' => null])
+@props(['title' => null, 'description' => null])
 
-<x-layouts.base :title="$title">
+<x-layouts.base :title="$title" :description="$description">
     <div class="max-w-prose mx-auto p-4 pb-24 sm:px-0 sm:pt-6">
         <header class="mb-16 sm:mb-24 flex items-center justify-between">
             <div>

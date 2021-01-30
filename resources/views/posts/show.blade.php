@@ -2,7 +2,8 @@
     <link rel="stylesheet" href="https://unpkg.com/github-syntax-light@0.5.0/lib/github-light.css" />
 @endpush
 
-<x-layouts.blog title="{{ $post['title'] }}">
+<x-layouts.blog :title="$post['title']" :description="$post['body_text']">
+    @ray($post)
     <div class="space-y-1 mb-12">
         <x-title>
             {{ $post['title'] }}
