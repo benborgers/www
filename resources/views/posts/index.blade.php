@@ -1,10 +1,10 @@
+@php($page = request('page', 1))
+
 <x-layouts.blog title="Posts">
     <div class="mb-12">
         <x-title>
             All posts
-            @if(request('page'))
-                <span class="text-gray-300">(pg. {{ request('page') }})</span>
-            @endif
+            <span class="text-gray-300">(pg. {{ $page }})</span>
         </x-title>
     </div>
 
@@ -22,9 +22,9 @@
 
     <div class="mt-8 flex justify-between">
         <div>
-            @if(Cache::has('posts-' . request('page', 1) -1))
+            @if(Cache::has('posts-' . $page -1))
                 <a
-                    href="{{ route('posts.index', ['page' => request('page', 1) -1]) }}"
+                    href="{{ route('posts.index', ['page' => $page -1]) }}"
                     class="border border-gray-200 px-3 py-1 rounded-lg flex items-center space-x-2 text-gray-500 duration-150 hover:bg-gray-100"
                     style="transition-property: background-color"
                 >
@@ -35,9 +35,9 @@
         </div>
 
         <div>
-            @if(Cache::has('posts-' . request('page', 1) +1))
+            @if(Cache::has('posts-' . $page +1))
                 <a
-                    href="{{ route('posts.index', ['page' => request('page', 1) +1]) }}"
+                    href="{{ route('posts.index', ['page' => $page +1]) }}"
                     class="border border-gray-200 px-3 py-1 rounded-lg flex items-center space-x-2 text-gray-500 duration-150 hover:bg-gray-100"
                     style="transition-property: background-color"
                 >
