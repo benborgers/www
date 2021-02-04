@@ -1,4 +1,4 @@
-<x-layouts.blog>
+<x-layouts.blog description="Hi! I’m Ben Borgers. I’m a high school senior in Boston, and interned at IBM last summer. Next fall, I’m headed to Tufts University to study computer science.">
     <div class="mb-12 bg-gradient-to-tr from-red-300 to-blue-400 rounded-xl text-white font-semibold p-3 sm:p-4 space-y-4">
         <p>
             Hi! I’m Ben Borgers. I’m a high school senior in Boston, and interned at IBM last summer.
