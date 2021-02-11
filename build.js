@@ -79,7 +79,7 @@ const base = ({ title, description, classes = '', body }) => `
             body: `
                 <div>
                     <h1>${data.title}</h1>
-                    <time>Updated ${data.date.toLocaleString('en-US', { month: 'long', year: 'numeric', day: 'numeric' })}</time>
+                    <p>Updated <time>${data.date.toLocaleString('en-US', { month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
                 </div>
 
                 <div>
