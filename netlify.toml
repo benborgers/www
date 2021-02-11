@@ -1,3 +1,7 @@
 [[redirects]]
     from = "/blog/*"
     to = "/posts/:splat"
+
+[[redirects]]
+    from = "https://benborgers.netlify.app/*"
+    to = "https://benborgers.com/:splat"
