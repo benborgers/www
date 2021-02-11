@@ -43,7 +43,7 @@ const writeFile = (path, contents) => {
     })
     fs.writeFileSync(`./public/${path}`, minifiedHtml)
     console.log(`> Wrote ${path}`)
-    sitemap.push(path)
+    sitemap.push(path.replace(/\.html$/, ''))
 }
 
 fse.copySync('./assets', './public/assets')
