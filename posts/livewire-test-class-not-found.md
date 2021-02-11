@@ -1,5 +1,5 @@
 ---
-title: "How to solve "Class 'Tests\Feature\Livewire' not found""
+title: How to solve "Class 'Tests\Feature\Livewire' not found"
 date: 2021-01-24
 ---
 You're probably writing a Laravel test for a Livewire component.

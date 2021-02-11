@@ -1,5 +1,5 @@
 ---
-title: "How to fix "componentWillMount has been renamed""
+title: "How to fix \"componentWillMount has been renamed\""
 date: 2021-01-23
 ---
 I was using the [react-helmet](https://npm.im/react-helmet) package, and noticed an error in my console saying:

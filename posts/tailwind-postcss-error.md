@@ -1,5 +1,5 @@
 ---
-title: "How to fix "PostCSS plugin tailwindcss requires PostCSS 8""
+title: "How to fix \"PostCSS plugin tailwindcss requires PostCSS 8\""
 date: 2021-01-24
 ---
 I just upgraded to Tailwind 2.0 from Tailwind 1.0, and got the error "PostCSS plugin tailwindcss requires PostCSS 8" when I tried to rebuild my CSS bundle.

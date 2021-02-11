@@ -1,5 +1,5 @@
 ---
-title: "How to fix Expo "the app name you entered is already being used""
+title: "How to fix Expo \"the app name you entered is already being used\""
 date: 2021-01-24
 ---
 So you run `expo upload:ios` and get this error:
