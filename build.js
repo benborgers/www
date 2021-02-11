@@ -59,7 +59,7 @@ const base = ({ title, description, classes = '', body }) => `
         <meta name="description" content="${escape(removeMarkdown(description.replace(/\n/g, ' ').replace(/\s{2,}/g, ' ')))}" />` : ''}
 
         <link rel="stylesheet" href="/style.css">
-        <link rel="stylesheet" href="http://rsms.me/inter/inter.css" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         ${body.includes('language-') ? `
         <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.5.0/themes/prism-dracula.css" />
         ` : ''}
