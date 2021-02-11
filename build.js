@@ -57,7 +57,9 @@ const base = ({ title, description, classes = '', body }) => `
         ` : ''}
 
         <link rel="stylesheet" href="/style.css">
+        ${body.includes('language-') ? `
         <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.5.0/themes/prism-dracula.css" />
+        ` : ''}
     </head>
     <body class="font-sans text-gray-700 antialiased bg-white ${classes}">
         ${body}
