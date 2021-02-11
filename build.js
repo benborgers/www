@@ -41,6 +41,7 @@ const writeFile = (path, contents) => {
         minifyJS: true
     })
     fs.writeFileSync(`./public/${path}`, minifiedHtml)
+    console.log(`> Wrote ${path}`)
 }
 
 const base = ({ title, description, classes = '', body }) => `
