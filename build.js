@@ -92,11 +92,11 @@ const base = ({ title, description, classes = '', body }) => `
                     </div>
 
                     <div class="mb-8">
-                        <h1 class="text-3xl sm:text-4xl font-black text-gray-900 mb-1">${data.title}</h1>
+                        <h1 class="text-3xl font-black text-gray-900 mb-1">${data.title}</h1>
                         <p class="text-gray-400">Updated <time>${data.date.toLocaleString('en-US', { month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
                     </div>
 
-                    <div class="prose sm:prose-lg">
+                    <div class="prose">
                         ${marked(content)}
                     </div>
                 </div>
