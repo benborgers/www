@@ -24,6 +24,8 @@ marked.setOptions({
     highlight: (code, lang) => prism.languages[lang] ? prism.highlight(code, prism.languages[lang]) : code
 })
 
+const sitemap = []
+
 const writeFile = (path, contents) => {
     let folders = path.split('/')
     folders.pop()
@@ -41,6 +43,7 @@ const writeFile = (path, contents) => {
     })
     fs.writeFileSync(`./public/${path}`, minifiedHtml)
     console.log(`> Wrote ${path}`)
+    sitemap.push(path)
 }
 
 fse.copySync('./assets', './public/assets')
@@ -103,4 +106,15 @@ const base = ({ title, description, classes = '', body }) => `
             `
         }))
     })
+
+    // Generate sitemap
+    fs.writeFileSync('./public/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            ${sitemap.map(link => `
+                <url>
+                    <loc>https://benborgers.com/${link}</loc>
+                </url>
+            `).join('')}
+        </urlset>
+    `)
 })()
