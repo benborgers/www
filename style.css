@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fix Tailwind making fraction line very light */
+.katex .frac-line {
+    @apply border-gray-700;
+}

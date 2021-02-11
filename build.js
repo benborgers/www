@@ -6,6 +6,7 @@ const escape = require('escape-html')
 const marked = require('marked')
 const { minify } = require('html-minifier')
 const removeMarkdown = require('remove-markdown')
+const katex = require('katex')
 
 const prism = require('prismjs')
 require('prismjs/components/prism-markup-templating')
@@ -77,6 +78,9 @@ const base = ({ title, description, classes = '', body }) => `
         ${body.includes('language-') ? `
         <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.5.0/themes/prism-dracula.css" />
         ` : ''}
+        ${body.includes('katex-html') ? `
+        <link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css" />
+        ` : ''}
     </head>
     <body class="font-sans text-gray-700 antialiased bg-white ${classes}">
         ${body}
@@ -133,16 +137,21 @@ const base = ({ title, description, classes = '', body }) => `
     })
 
     const parseGardenMarkdown = text => {
-        text = text.replace(connectionsRegex, (_, inside) => {
-            let path = inside
-            let title
-            if(path.includes(',')) {
-                [path, title] = inside.split(',').map(x => x.trim())
-            }
+        text = text
+            .replace(connectionsRegex, (_, inside) => {
+                let path = inside
+                let title
+                if(path.includes(',')) {
+                    [path, title] = inside.split(',').map(x => x.trim())
+                }
 
-            const span = (end = false) => `<span class="text-gray-400">${end ? ']]' : '[['}</span>`
-            return `${span()}<a href="${linkFromPath(path)}">${title || pageTitle(`./garden/${path}.md`)}</a>${span(true)}`
-        })
+                const span = (end = false) => `<span class="text-gray-400">${end ? ']]' : '[['}</span>`
+                return `${span()}<a href="${linkFromPath(path)}">${title || pageTitle(`./garden/${path}.md`)}</a>${span(true)}`
+            })
+            .replace(/\$\$(.+?)\$\$/g, (_, equation) => {
+                return katex.renderToString(equation)
+            })
+
         return marked(text)
     }
 
@@ -161,7 +170,7 @@ const base = ({ title, description, classes = '', body }) => `
                     </div>
 
                     ${data.title ? `
-                        <div class="mb-4">
+                        <div class="mb-8">
                             <h1 class="font-sans font-extrabold text-3xl text-gray-900">${data.title}</h1>
                         </div>
                     ` : ''}
