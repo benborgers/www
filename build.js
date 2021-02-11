@@ -8,6 +8,7 @@ const removeMarkdown = require('remove-markdown')
 
 const prism = require('prismjs')
 require('prismjs/components/prism-markup-templating')
+require('prismjs/components/prism-markdown')
 require('prismjs/components/prism-css')
 require('prismjs/components/prism-php')
 require('prismjs/components/prism-json')
