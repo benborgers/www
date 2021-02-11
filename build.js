@@ -1,4 +1,5 @@
 const fs = require('fs')
+const fse = require('fs-extra')
 const readdirp = require('readdirp')
 const frontmatter = require('@github-docs/frontmatter')
 const escape = require('escape-html')
@@ -42,6 +43,8 @@ const writeFile = (path, contents) => {
     console.log(`> Wrote ${path}`)
 }
 
+fse.copySync('./assets', './public/assets')
+
 const base = ({ title, description, classes = '', body }) => `
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +53,7 @@ const base = ({ title, description, classes = '', body }) => `
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <title>${title ? title + ' - ' : ''}Ben Borgers</title>
-        <link rel="icon" href="https://emojicdn.elk.sh/🐢" />
+        <link rel="icon" href="/assets/favicon.png" />
 
         ${description ? `
         <meta name="description" content="${escape(removeMarkdown(description.replace(/\n/g, ' ').replace(/\s{2,}/g, ' ')))}" />` : ''}
