@@ -2,6 +2,9 @@ module.exports = {
   purge: ['./public/**/*.html'],
   darkMode: false,
   theme: {
+    fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif']
+    },
     extend: {
         typography: theme => ({
             DEFAULT: {

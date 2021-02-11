@@ -56,6 +56,7 @@ const base = ({ title, description, classes = '', body }) => `
         <meta name="description" content="${escape(removeMarkdown(description.replace(/\n/g, ' ').replace(/\s{2,}/g, ' ')))}" />` : ''}
 
         <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="http://rsms.me/inter/inter.css" />
         ${body.includes('language-') ? `
         <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.5.0/themes/prism-dracula.css" />
         ` : ''}
@@ -75,13 +76,26 @@ const base = ({ title, description, classes = '', body }) => `
             title: data.title,
             description: content,
             body: `
-                <div>
-                    <h1>${data.title}</h1>
-                    <p>Updated <time>${data.date.toLocaleString('en-US', { month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
-                </div>
+                <div class="p-4 sm:px-0 sm:pt-6 pb-24 max-w-prose mx-auto">
+                    <div class="flex mb-24">
+                        <div>
+                            <div class="w-5 h-5 bg-gradient-to-tr from-red-300 to-blue-400 rounded-full"></div>
+                            <a href="/">
+                                <div class="py-1 px-2 rounded-lg bg-white border border-gray-200 shadow-lg -mt-3 ml-2">
+                                    <p class="font-semibold text-gray-700">Ben&nbsp;Borgers</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
-                <div class="prose sm:prose-lg">
-                    ${marked(content)}
+                    <div class="mb-8">
+                        <h1 class="text-3xl sm:text-4xl font-black text-gray-900 mb-1">${data.title}</h1>
+                        <p class="text-gray-400">Updated <time>${data.date.toLocaleString('en-US', { month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
+                    </div>
+
+                    <div class="prose sm:prose-lg">
+                        ${marked(content)}
+                    </div>
                 </div>
             `
         }))
