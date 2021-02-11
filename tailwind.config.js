@@ -1,11 +1,16 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: ['./public/**/*.html'],
   darkMode: false,
   theme: {
-    fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif']
-    },
     extend: {
+        fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+        },
+        colors: {
+            orange: colors.orange
+        },
         typography: theme => ({
             DEFAULT: {
                 css: {

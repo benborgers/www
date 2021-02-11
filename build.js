@@ -46,6 +46,17 @@ const writeFile = (path, contents) => {
     sitemap.push(path.replace(/\.html$/, ''))
 }
 
+const linkFromPath = path => {
+    const clean = path.replace(/index$/, '')
+    return (clean.startsWith('/') ? '' : '/') + clean.replace(/\/$/, '')
+}
+
+const pageTitle = path => {
+    if(path.endsWith('garden/index.md')) return 'Home'
+    const file = fs.readFileSync(path, 'utf-8')
+    return frontmatter(file).data.title
+}
+
 fse.copySync('./assets', './public/assets')
 
 const base = ({ title, description, classes = '', body }) => `
@@ -82,7 +93,7 @@ const base = ({ title, description, classes = '', body }) => `
             title: data.title,
             description: content,
             body: `
-                <div class="p-4 sm:px-0 sm:pt-6 pb-24 max-w-prose mx-auto">
+                <div class="p-4 sm:pt-6 pb-24 max-w-prose mx-auto">
                     <div class="flex mb-24">
                         <div>
                             <div class="w-5 h-5 bg-gradient-to-tr from-red-300 to-blue-400 rounded-full"></div>
@@ -95,13 +106,79 @@ const base = ({ title, description, classes = '', body }) => `
                     </div>
 
                     <div class="mb-8">
-                        <h1 class="text-3xl font-black text-gray-900 mb-1">${data.title}</h1>
+                        <h1 class="text-3xl font-black text-gray-900 mb-2 leading-snug">${data.title}</h1>
                         <p class="text-gray-400">Updated <time>${data.date.toLocaleString('en-US', { month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
                     </div>
 
                     <div class="prose">
                         ${marked(content)}
                     </div>
+                </div>
+            `
+        }))
+    })
+
+    const garden = await readdirp.promise('./garden')
+    const connectionsRegex = /\[\[(.*?)\]\]/g
+
+    const gardenConnections = {}
+    garden.forEach(file => {
+        const markdown = fs.readFileSync(`./garden/${file.path}`, 'utf-8')
+        const linkedFrom = file.path.replace(/\.md$/, '')
+        const linkedPages = (markdown.match(connectionsRegex) || []).map(x => x.replace(/\[|\]/g, '').split(',')[0])
+        linkedPages.forEach(page => {
+            if(!gardenConnections[page]) gardenConnections[page] = []
+            gardenConnections[page].push(linkedFrom)
+        })
+    })
+
+    const parseGardenMarkdown = text => {
+        text = text.replace(connectionsRegex, (_, inside) => {
+            let path = inside
+            let title
+            if(path.includes(',')) {
+                [path, title] = inside.split(',').map(x => x.trim())
+            }
+
+            const span = (end = false) => `<span class="text-gray-400">${end ? ']]' : '[['}</span>`
+            return `${span()}<a href="${linkFromPath(path)}">${title || pageTitle(`./garden/${path}.md`)}</a>${span(true)}`
+        })
+        return marked(text)
+    }
+
+    garden.forEach(file => {
+        const markdown = fs.readFileSync(`./garden/${file.path}`, 'utf-8')
+        const { data, content } = frontmatter(markdown)
+        const connections = gardenConnections[file.path.replace(/\.md$/, '')]
+        writeFile(file.path.replace(/md$/, 'html'), base({
+            title: data.title,
+            description: content,
+            classes: 'bg-orange-50 font-serif',
+            body: `
+                <div class="p-4 sm:pt-24 pb-24 max-w-prose mx-auto">
+                    <div>
+                        <a href="/" class="inline-block font-sans text-blue-700 font-semibold mb-8">Ben Borgers</a>
+                    </div>
+
+                    ${data.title ? `
+                        <div class="mb-4">
+                            <h1 class="font-sans font-extrabold text-3xl text-gray-900">${data.title}</h1>
+                        </div>
+                    ` : ''}
+
+                    <div class="prose">
+                        ${parseGardenMarkdown(content)}
+                    </div>
+
+                    ${connections ? `
+                        <div class="mt-20">
+                            <p class="text-gray-500">
+                                This page is referenced in:
+                                ${connections.map(path => `<a class="underline" href="${linkFromPath(path)}">${pageTitle(`./garden/${path}.md`)}</a>`).join(', ')}
+                            </p>
+                        </div>
+                    ` : ''}
+
                 </div>
             `
         }))
