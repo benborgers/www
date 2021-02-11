@@ -4,6 +4,7 @@ const frontmatter = require('@github-docs/frontmatter')
 const escape = require('escape-html')
 const marked = require('marked')
 const { minify } = require('html-minifier')
+const removeMarkdown = require('remove-markdown')
 
 const prism = require('prismjs')
 require('prismjs/components/prism-markup-templating')
@@ -53,8 +54,7 @@ const base = ({ title, description, classes = '', body }) => `
         <link rel="icon" href="https://emojicdn.elk.sh/🐢" />
 
         ${description ? `
-        <meta name="description" content="${escape(description.replace(/\n/g, ' ').replace(/\s{2,}/g, ' '))}" />
-        ` : ''}
+        <meta name="description" content="${escape(removeMarkdown(description.replace(/\n/g, ' ').replace(/\s{2,}/g, ' ')))}" />` : ''}
 
         <link rel="stylesheet" href="/style.css">
         ${body.includes('language-') ? `
