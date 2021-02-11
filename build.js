@@ -23,9 +23,6 @@ marked.setOptions({
     highlight: (code, lang) => prism.languages[lang] ? prism.highlight(code, prism.languages[lang]) : code
 })
 
-if(fs.existsSync('./public')) fs.rmdirSync('./public', { recursive: true })
-fs.mkdirSync('./public')
-
 const writeFile = (path, contents) => {
     let folders = path.split('/')
     folders.pop()
@@ -83,7 +80,7 @@ const base = ({ title, description, classes = '', body }) => `
                     <p>Updated <time>${data.date.toLocaleString('en-US', { month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
                 </div>
 
-                <div>
+                <div class="prose sm:prose-lg">
                     ${marked(content)}
                 </div>
             `

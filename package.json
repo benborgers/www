@@ -1,16 +1,19 @@
 {
    "scripts": {
       "build": "node build.js",
-      "serve": "node serve.js"
+      "serve": "node serve.js",
+      "css": "postcss style.css > public/style.css"
    },
    "dependencies": {
       "@github-docs/frontmatter": "^1.3.1",
       "@tailwindcss/typography": "^0.4.0",
       "autoprefixer": "^10.2.4",
+      "cssnano": "^4.1.10",
       "escape-html": "^1.0.3",
       "html-minifier": "^4.0.0",
       "marked": "^2.0.0",
       "postcss": "^8.2.6",
+      "postcss-cli": "^8.3.1",
       "prismjs": "^1.23.0",
       "readdirp": "^3.5.0",
       "remove-markdown": "^0.3.0",
