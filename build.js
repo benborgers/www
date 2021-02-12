@@ -165,7 +165,7 @@ const base = ({ title, description, classes = '', body }) => `
             body: `
                 <div class="p-4 sm:pt-24 pb-24 max-w-prose mx-auto">
                     <div>
-                        <a href="/" class="inline-block font-sans text-blue-700 font-semibold mb-8">Ben Borgers</a>
+                        <a href="/" class="inline-block font-sans text-blue-800 font-semibold mb-8">Ben Borgers</a>
                     </div>
 
                     ${data.title ? `
