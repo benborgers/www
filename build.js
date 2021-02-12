@@ -44,7 +44,7 @@ const writeFile = (path, contents) => {
     })
     fs.writeFileSync(`./public/${path}`, minifiedHtml)
     console.log(`> Wrote ${path}`)
-    sitemap.push(path.replace(/\.html$/, ''))
+    sitemap.push(linkFromPath(path.replace(/\.html$/, '')))
 }
 
 const linkFromPath = path => {
@@ -198,7 +198,7 @@ const base = ({ title, description, classes = '', body }) => `
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${sitemap.map(link => `
                 <url>
-                    <loc>https://benborgers.com/${link}</loc>
+                    <loc>https://benborgers.com${link}</loc>
                 </url>
             `).join('')}
         </urlset>
