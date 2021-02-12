@@ -143,9 +143,10 @@ const base = ({ title, description, classes = '', body }) => `
                 if(path.includes(',')) {
                     [path, title] = inside.split(',').map(x => x.trim())
                 }
+                const titleFromFrontmatter = pageTitle(`./garden/${path}.md`)
 
                 const span = (end = false) => `<span class="text-gray-400">${end ? ']]' : '[['}</span>`
-                return `${span()}<a href="${linkFromPath(path)}">${title || pageTitle(`./garden/${path}.md`)}</a>${span(true)}`
+                return `${span()}<a href="${linkFromPath(path)}">${title || titleFromFrontmatter}</a>${span(true)}`
             })
             .replace(/\$\$(.+?)\$\$/g, (_, equation) => {
                 return katex.renderToString(equation)
