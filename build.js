@@ -97,7 +97,7 @@ const base = ({ title, description, classes = '', body }) => `
             description: content,
             body: `
                 <div class="p-4 sm:pt-6 pb-24 max-w-prose mx-auto">
-                    <div class="flex mb-24">
+                    <div class="flex mb-8 sm:mb-24">
                         <div>
                             <div class="w-5 h-5 bg-gradient-to-tr from-red-300 to-blue-400 rounded-full"></div>
                             <a href="/">
