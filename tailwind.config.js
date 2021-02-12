@@ -29,6 +29,17 @@ module.exports = {
                     'code::before': { content: '' },
                     'code::after': { content: '' }
                 }
+            },
+            garden: {
+                css: {
+                    a: {
+                        color: theme('colors.blue.700'),
+                        textDecoration: 'none'
+                    },
+                    'ul > li::before': {
+                        backgroundColor: theme('colors.orange.200')
+                    }
+                }
             }
         })
     }

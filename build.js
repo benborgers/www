@@ -174,7 +174,7 @@ const base = ({ title, description, classes = '', body }) => `
                         </div>
                     ` : ''}
 
-                    <div class="prose">
+                    <div class="prose prose-garden">
                         ${parseGardenMarkdown(content)}
                     </div>
 
