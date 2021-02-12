@@ -12,7 +12,7 @@ module.exports = {
             orange: colors.orange
         },
         typography: theme => ({
-            DEFAULT: {
+            posts: {
                 css: {
                     a: {
                         color: theme('colors.blue.600'),
@@ -24,10 +24,10 @@ module.exports = {
                         paddingRight: theme('spacing.1'),
                         paddingTop: theme('spacing["0.5"]'),
                         paddingBottom: theme('spacing["0.5"]'),
-                        borderRadius: theme('borderRadius.lg')
+                        borderRadius: theme('borderRadius.md')
                     },
-                    'code::before': { content: '' },
-                    'code::after': { content: '' }
+                    'code::before': { content: 'none' },
+                    'code::after': { content: 'none' }
                 }
             },
             garden: {
@@ -38,7 +38,9 @@ module.exports = {
                     },
                     'ul > li::before': {
                         backgroundColor: theme('colors.orange.200')
-                    }
+                    },
+                    h2: { fontFamily: theme('fontFamily.sans').join(',') },
+                    h3: { fontFamily: theme('fontFamily.sans').join(',') }
                 }
             }
         })

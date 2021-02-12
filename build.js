@@ -113,7 +113,7 @@ const base = ({ title, description, classes = '', body }) => `
                         <p class="text-gray-400">Updated <time>${data.date.toLocaleString('en-US', { month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
                     </div>
 
-                    <div class="prose">
+                    <div class="prose prose-posts">
                         ${marked(content)}
                     </div>
                 </div>
