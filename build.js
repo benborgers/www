@@ -111,7 +111,7 @@ const base = ({ title, description, classes = '', body }) => `
 
                     <div class="mb-8">
                         <h1 class="text-3xl font-black text-gray-800 mb-2 leading-snug">${data.title}</h1>
-                        <p class="text-gray-400">Updated <time>${data.date.toLocaleString('en-US', { month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
+                        <p class="text-gray-400">Updated <time>${data.date.toLocaleString('en-US', { timeZone: 'UTC', month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
                     </div>
 
                     <div class="prose prose-posts">
