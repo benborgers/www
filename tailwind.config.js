@@ -1,50 +1,50 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./public/**/*.html'],
-  darkMode: false,
-  theme: {
-    extend: {
-        fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif']
-        },
-        colors: {
-            orange: colors.orange
-        },
-        typography: theme => ({
-            posts: {
-                css: {
-                    a: {
-                        color: theme('colors.blue.600'),
-                        textDecoration: 'none'
-                    },
-                    code: {
-                        backgroundColor: theme('colors.gray.100'),
-                        paddingLeft: theme('spacing.1'),
-                        paddingRight: theme('spacing.1'),
-                        paddingTop: theme('spacing["0.5"]'),
-                        paddingBottom: theme('spacing["0.5"]'),
-                        borderRadius: theme('borderRadius.md')
-                    },
-                    'code::before': { content: 'none' },
-                    'code::after': { content: 'none' }
-                }
+    purge: ['./public/**/*.html'],
+    darkMode: false,
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Inter', 'system-ui', 'sans-serif']
             },
-            garden: {
-                css: {
-                    a: {
-                        color: theme('colors.blue.700'),
-                        textDecoration: 'none'
-                    },
-                    'ul > li::before': {
-                        backgroundColor: theme('colors.orange.200')
-                    },
-                    h2: { fontFamily: theme('fontFamily.sans').join(',') },
-                    h3: { fontFamily: theme('fontFamily.sans').join(',') }
+            colors: {
+                orange: colors.orange
+            },
+            typography: theme => ({
+                posts: {
+                    css: {
+                        a: {
+                            color: theme('colors.blue.600'),
+                            textDecoration: 'none'
+                        },
+                        code: {
+                            backgroundColor: theme('colors.gray.100'),
+                            paddingLeft: theme('spacing.1'),
+                            paddingRight: theme('spacing.1'),
+                            paddingTop: theme('spacing["0.5"]'),
+                            paddingBottom: theme('spacing["0.5"]'),
+                            borderRadius: theme('borderRadius.md')
+                        },
+                        'code::before': { content: 'none' },
+                        'code::after': { content: 'none' }
+                    }
+                },
+                garden: {
+                    css: {
+                        a: {
+                            color: theme('colors.blue.700'),
+                            textDecoration: 'none'
+                        },
+                        'ul > li::before': {
+                            backgroundColor: theme('colors.orange.200')
+                        },
+                        h2: { fontFamily: theme('fontFamily.sans').join(',') },
+                        h3: { fontFamily: theme('fontFamily.sans').join(',') }
+                    }
                 }
-            }
-        })
-    }
-  },
-  plugins: [ require('@tailwindcss/typography') ]
+            })
+        }
+    },
+    plugins: [ require('@tailwindcss/typography') ]
 }
