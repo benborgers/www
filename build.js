@@ -39,7 +39,6 @@ const writeFile = (path, contents) => {
         collapseBooleanAttributes: true,
         useShortDoctype: true,
         removeEmptyAttributes: true,
-        removeOptionalTags: true,
         minifyJS: true
     })
     fs.writeFileSync(`./public/${path}`, minifiedHtml)
