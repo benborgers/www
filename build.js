@@ -19,6 +19,7 @@ require('prismjs/components/prism-jsx')
 require('prismjs/components/prism-bash')
 require('prismjs/components/prism-yaml')
 require('prismjs/components/prism-toml')
+require('prismjs/components/prism-java')
 
 marked.setOptions({
     smartypants: true,
