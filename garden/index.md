@@ -12,7 +12,7 @@ I really like doing personal programming projects:
 - [Potion](https://github.com/benborgers/potion), an open-source reverse-engineered API for the Notion note taking app.
 - [EMOJICDN](https://emojicdn.elk.sh), an API for getting images of emojis that serves two million requests per month.
 
-Some past client and professional work:
+Some past work:
 
 - [Diyi](https://diyiboston.com), a payment and student management system for an online school in Boston.
 - A software engineering internship at IBM Security in the summers of 2019 and 2020, working on a new security offering for enterprise.
