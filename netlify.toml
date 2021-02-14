@@ -36,6 +36,14 @@
     to = "/posts/react-native-right-align"
 
 [[redirects]]
+    from = "/posts/33"
+    to = "/posts/react-native-width"
+
+[[redirects]]
+    from = "/posts/43"
+    to = "/posts/swr-refresh"
+
+[[redirects]]
     from = "/posts/50"
     to = "/posts/notion-to-website"
 
@@ -46,10 +54,6 @@
 [[redirects]]
     from = "/posts/77"
     to = "/posts/express-password-protect"
-
-[[redirects]]
-    from = "/posts/43"
-    to = "/posts/swr-refresh"
 
 [[redirects]]
     from = "/posts/86"
