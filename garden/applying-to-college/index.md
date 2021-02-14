@@ -4,6 +4,8 @@ title: Applying to College
 
 It's fall 2020, and I'm applying to college as a high school senior.
 
+To cut to the chase: I was accepted to Tufts University for Early Decision! That means I retracted my application to Boston University below, and didn't apply anywhere else.
+
 ## Tufts
 _Applied October 18, 2020_
 

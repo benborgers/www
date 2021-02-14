@@ -123,7 +123,7 @@ const base = ({ title, description, classes = '', body }) => `
     })
 
     const garden = await readdirp.promise('./garden')
-    const connectionsRegex = /\[\[(.*?)\]\]/g
+    const connectionsRegex = /\[\[(.+?)\]\]/g
 
     const gardenConnections = {}
     garden.forEach(file => {
@@ -151,6 +151,9 @@ const base = ({ title, description, classes = '', body }) => `
             })
             .replace(/\$\$(.+?)\$\$/g, (_, equation) => {
                 return katex.renderToString(equation)
+            })
+            .replace(/==(.+?)==/g, (_, text) => {
+                return `<mark class="bg-yellow-200 text-gray-700">${text}</mark>`
             })
 
         return marked(text)
