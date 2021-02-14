@@ -6,7 +6,7 @@ On this website, I want to keep a bit of a digital garden — from [[applying-to
 
 I really like doing personal programming projects:
 
-- [Blocks](https://blocks.elk.sh), an app for my high school's schedule used by 2,000 students and teachers.
+- [[blocks/index]], an app for my high school's schedule used by 2,000 students and teachers.
 - [Bagel Institute](https://bagel.institute), tools for more interactive college teaching.
 - [Underline](https://underline.email), a dead-simple and affordable way to run an email newsletter (signups closed).
 - [Potion](https://github.com/benborgers/potion), an open-source reverse-engineered API for the Notion note taking app.
