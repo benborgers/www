@@ -6,11 +6,12 @@ Netlify's configuration file, [netlify.toml](https://docs.netlify.com/configure-
 
 A basic `netlify.toml` file (placed at the root directory of your project) for a Gatsby site looks like this:
 
+<!-- There is a zero-width space after each [, because otherwise Prism gives "build" and "dev" the class of `table`, which Tailwind gives display: table and it puts that word on its own line. -->
 ```toml
-[build]
+[​build]
     command = "gatsby build"
     publish = "public"
-[dev]
+[​dev]
     command = "gatsby develop"
 ```
 
