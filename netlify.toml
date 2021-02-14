@@ -44,7 +44,7 @@
     to = "/posts/instagram-bio"
 
 [[redirects]]
-    from = "/posts/70"
+    from = "/posts/77"
     to = "/posts/express-password-protect"
 
 [[redirects]]
