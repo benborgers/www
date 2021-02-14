@@ -117,6 +117,13 @@ const base = ({ title, description, classes = '', body }) => `
                     <div class="prose prose-posts">
                         ${marked(content)}
                     </div>
+
+                    <div class="pt-4 mt-16 border-t-2 border-gray-200">
+                        <p class="text-gray-500">
+                            Questions, or spotted a mistake in this post? I’m super glad to help, just send me an email:
+                            <a href="mailto:benborgers@hey.com" class="underline">benborgers@hey.com</a>
+                        </p>
+                    </div>
                 </div>
             `
         }))
