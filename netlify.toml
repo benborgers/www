@@ -6,3 +6,59 @@
     from = "https://benborgers.netlify.app/*"
     to = "https://benborgers.com/:splat"
     force = true
+
+[[redirects]]
+    from = "/posts/19"
+    to = "/posts/react-helmet-async"
+
+[[redirects]]
+    from = "/posts/20"
+    to = "/posts/netlify-toml-gatsby"
+
+[[redirects]]
+    from = "/posts/23"
+    to = "/posts/navigator-sendbeacon"
+
+[[redirects]]
+    from = "/posts/26"
+    to = "/posts/google-sheets-json"
+
+[[redirects]]
+    from = "/posts/27"
+    to = "/posts/gatsby-active-link"
+
+[[redirects]]
+    from = "/posts/30"
+    to = "/posts/notion-blog"
+
+[[redirects]]
+    from = "/posts/32"
+    to = "/posts/react-native-right-align"
+
+[[redirects]]
+    from = "/posts/50"
+    to = "/posts/notion-to-website"
+
+[[redirects]]
+    from = "/posts/65"
+    to = "/posts/instagram-bio"
+
+[[redirects]]
+    from = "/posts/70"
+    to = "/posts/express-password-protect"
+
+[[redirects]]
+    from = "/posts/43"
+    to = "/posts/swr-refresh"
+
+[[redirects]]
+    from = "/posts/86"
+    to = "/posts/tailwind-postcss-error"
+
+[[redirects]]
+    from = "/posts/104"
+    to = "/posts/alpine-textarea-auto-resize"
+
+[[redirects]]
+    from = "/posts/106"
+    to = "/posts/eleventy-katex"
