@@ -116,5 +116,9 @@
     to = "/posts/eleventy-tailwind"
 
 [[redirects]]
+    from = "/posts/108"
+    to = "/posts/livewire-url-changing"
+
+[[redirects]]
     from = "/posts/136"
     to = "/posts/laravel-plaintext-emails"
