@@ -8,6 +8,10 @@
     force = true
 
 [[redirects]]
+    from = "/posts"
+    to = "/"
+
+[[redirects]]
     from = "/posts/19"
     to = "/posts/react-helmet-async"
 
