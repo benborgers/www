@@ -12,6 +12,14 @@
     to = "/"
 
 [[redirects]]
+    from = "/posts/16"
+    to = "/posts/normalize-gatsby"
+
+[[redirects]]
+    from = "/posts/18"
+    to = "/posts/kill-localhost"
+
+[[redirects]]
     from = "/posts/19"
     to = "/posts/react-helmet-async"
 
@@ -44,16 +52,40 @@
     to = "/posts/react-native-width"
 
 [[redirects]]
+    from = "/posts/37"
+    to = "/posts/glitch-awake"
+
+[[redirects]]
     from = "/posts/43"
     to = "/posts/swr-refresh"
+
+[[redirects]]
+    from = "/posts/44"
+    to = "/posts/gatsby-google-fonts"
 
 [[redirects]]
     from = "/posts/50"
     to = "/posts/notion-to-website"
 
 [[redirects]]
+    from = "/posts/52"
+    to = "/posts/notion-table"
+
+[[redirects]]
+    from = "/posts/61"
+    to = "/posts/netlify-functions-cors"
+
+[[redirects]]
+    from = "/posts/62"
+    to = "/posts/vercel-cors"
+
+[[redirects]]
     from = "/posts/65"
     to = "/posts/instagram-bio"
+
+[[redirects]]
+    from = "/posts/74"
+    to = "/posts/vapor-migrations"
 
 [[redirects]]
     from = "/posts/77"
@@ -64,9 +96,25 @@
     to = "/posts/tailwind-postcss-error"
 
 [[redirects]]
+    from = "/posts/87"
+    to = "/posts/vscode-spellcheck"
+
+[[redirects]]
+    from = "/posts/91"
+    to = "/posts/tailwind-colors"
+
+[[redirects]]
     from = "/posts/104"
     to = "/posts/alpine-textarea-auto-resize"
 
 [[redirects]]
     from = "/posts/106"
     to = "/posts/eleventy-katex"
+
+[[redirects]]
+    from = "/posts/101"
+    to = "/posts/eleventy-tailwind"
+
+[[redirects]]
+    from = "/posts/136"
+    to = "/posts/laravel-plaintext-emails"
