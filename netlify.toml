@@ -104,16 +104,20 @@
     to = "/posts/tailwind-colors"
 
 [[redirects]]
+    from = "/posts/93"
+    to = "/posts/node-serve-static-files"
+
+[[redirects]]
+    from = "/posts/101"
+    to = "/posts/eleventy-tailwind"
+
+[[redirects]]
     from = "/posts/104"
     to = "/posts/alpine-textarea-auto-resize"
 
 [[redirects]]
     from = "/posts/106"
     to = "/posts/eleventy-katex"
-
-[[redirects]]
-    from = "/posts/101"
-    to = "/posts/eleventy-tailwind"
 
 [[redirects]]
     from = "/posts/108"
