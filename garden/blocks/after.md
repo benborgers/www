@@ -14,7 +14,7 @@ Still, I'm under no false belief that they couldn't do without it. It'd be a wee
 
 Blocks really can't run on its own. Right now it pulls from an underlying Google Calendar, but this calendar isn't always 100% accurate and sometimes I need to make adjustments as soon as calls or emails from the district come in.
 
-In addition, I'm able to use the Google Calendar only because we don't eat lunch at school this year. Usually, different students eat lunch at different times, and this shifts their schedule around in a way that doesn't map one-to-one with a non-personalized Google Calendar.
+In addition, I'm only able to use the Google Calendar because we don't eat lunch at school this year. Usually, different students eat lunch at different times, and this shifts their schedule around in a way that doesn't map one-to-one with a non-personalized Google Calendar.
 
 This means that I would have to continue to keep up while I'm at college, which isn't something I really want to do. I don't want to have to constantly tweak small things when a snow day happens or a half day schedule is changed, for a school that I no longer attend.
 
@@ -22,7 +22,7 @@ I also think that Blocks is made much better for the fact that I go to the schoo
 
 ## Give it to the school
 
-I don't think the school has the technical expertise in [Laravel](https://laravel.com), the programming framework I used to write the app, to make changes to it.
+I don't think anyone at the school has the technical expertise in [Laravel](https://laravel.com), the programming framework I used to write the app, to make changes to it.
 
 ## Give it to a younger student
 
@@ -30,8 +30,8 @@ I think one of the factors in Blocks' success is that I maintain it with a mixtu
 
 I also run fun events in it — temporarily giving the ability to send kind anonymous messages to anyone, or a giveaway for food from Chick-fil-A.
 
-This sounds conceited, but I just don't know any underclassman who has that mixture of technical ability and whom I trust to continue the fun culture. There might be someone out there who's perfect, but I don't know how to find them and trust them to "continue the legacy".
+This sounds conceited, but I just don't know any underclassmen who have that mixture of technical ability and whom I trust to continue the fun culture. There might be someone out there who's perfect, but I don't know how to find them and trust them to "continue the legacy".
 
 ## Kill it off
 
-Unfortunately, this seems like the only viable option to me. A heartfelt goodbye letter in the app at the end of the 2020-2021 school year, and that's the end of that.
+Unfortunately, this seems like the only viable option to me. I might just end it with a heartfelt goodbye letter in the app at the end of the 2020-2021 school year.
