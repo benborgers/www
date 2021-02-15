@@ -5,7 +5,6 @@ const frontmatter = require('@github-docs/frontmatter')
 const escape = require('escape-html')
 const marked = require('marked')
 const { minify } = require('html-minifier')
-const removeMarkdown = require('remove-markdown')
 const katex = require('katex')
 
 const prism = require('prismjs')
@@ -58,6 +57,8 @@ const pageTitle = path => {
     return frontmatter(file).data.title
 }
 
+const connectionsRegex = /\[\[(.+?)\]\]/g
+
 fse.copySync('./assets', './public/assets')
 
 const base = ({ title, description, classes = '', body }) => `
@@ -71,7 +72,13 @@ const base = ({ title, description, classes = '', body }) => `
         <link rel="icon" href="/assets/favicon.png" />
 
         ${description ? `
-        <meta name="description" content="${escape(removeMarkdown(description.replace(/\n/g, ' ').replace(/\s{2,}/g, ' ')))}" />` : ''}
+        <meta name="description" content="${escape(
+            description
+                .replace(/<.+?>/g, '')
+                .replace(connectionsRegex, '$1')
+                .replace(/\n/g, ' ')
+                .replace(/\s{2,}/g, ' ')
+        )}" />` : ''}
 
         <link rel="stylesheet" href="/style.css">
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
@@ -95,7 +102,7 @@ const base = ({ title, description, classes = '', body }) => `
         const { data, content } = frontmatter(markdown)
         writeFile(`posts/${post.path.replace(/\md$/, 'html')}`, base({
             title: data.title,
-            description: content,
+            description: marked(content),
             body: `
                 <div class="p-4 sm:pt-6 pb-24 max-w-prose mx-auto">
                     <div class="flex mb-12 sm:mb-24">
@@ -130,7 +137,6 @@ const base = ({ title, description, classes = '', body }) => `
     })
 
     const garden = await readdirp.promise('./garden')
-    const connectionsRegex = /\[\[(.+?)\]\]/g
 
     const gardenConnections = {}
     garden.forEach(file => {
@@ -172,7 +178,7 @@ const base = ({ title, description, classes = '', body }) => `
         const connections = gardenConnections[file.path.replace(/\.md$/, '')]
         writeFile(file.path.replace(/md$/, 'html'), base({
             title: data.title,
-            description: content,
+            description: parseGardenMarkdown(content),
             classes: 'bg-orange-50 font-serif',
             body: `
                 <div class="p-4 sm:pt-24 pb-24 max-w-prose mx-auto">
