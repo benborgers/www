@@ -126,3 +126,7 @@
 [[redirects]]
     from = "/posts/136"
     to = "/posts/laravel-plaintext-emails"
+
+[[redirects]]
+    from = "/reference/how-to-add-normalize-css-to-gatsby"
+    to = "/posts/normalize-gatsby"
