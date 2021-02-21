@@ -2,7 +2,7 @@
 title: "BU College Essays"
 date: 2021-01-24
 ---
-*I wrote and submitted these essays, but ended up withdrawing my application because I got accepted Early Decision to [Tufts](/posts/tufts-essays).*
+*I wrote and submitted these essays, but ended up withdrawing my application because I got accepted Early Decision to [[applying-to-college/tufts, Tufts]].*
 
 ## What about being a student at Boston University most excites you?
 <!-- 250 words -->
