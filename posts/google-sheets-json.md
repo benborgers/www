@@ -7,7 +7,7 @@ Google Sheets can be a great place to store content for a website, since it's st
 There's a very useful but obscure way of getting an API for reading a Google Sheet, that doesn't require authentication or complicated permissions. Plus, it updates immediately when the spreadsheet is edited, without delay!
 
 1. To start, open the Google Sheet and go to **File → Publish to the web**. Publish the entire document, so that it can be accessed without logging in.
-2. Copy and paste the *spreadsheet key*, which is the long random string in the URL of the spreadsheet. Make sure to copy the entire random part of the URL between two slashes.
+2. Copy and paste the *spreadsheet key*, which is the long random string in the URL of the spreadsheet. Make sure to copy the entire part of the URL between two slashes, and use the URL in the address bar (not the one shown in the publish modal).
 3. Then, use the URL endpoint below to get the spreadsheet's contents, replacing `spreadsheet_key` with your spreadsheet key from the last step:
 
 ```
