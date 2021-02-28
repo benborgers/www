@@ -1,4 +1,4 @@
-<img src="/assets/me.jpg" alt="" class="h-24 w-24 rounded-full" style="margin-top: 0 !important">
+<img src="/assets/me.jpg" alt="" class="h-24 w-24 rounded-full">
 
 Hi! I'm Ben Borgers. I'm a [[grade-12/index, high school senior]] in Boston, and interned at IBM last summer. Next fall, I'm headed to [[applying-to-college/tufts, Tufts University]] to study computer science.
 
