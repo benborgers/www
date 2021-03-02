@@ -10,7 +10,7 @@ I really like doing personal programming projects:
 
 - [[blocks/index]], an app for my high school's schedule used by 2,000 students and teachers.
 - [Bagel Institute](https://bagel.institute), tools for more interactive college teaching.
-- ~[Underline](https://underline.email), a dead-simple and affordable way to run an email newsletter~ Underline was succeeded by [Cornflakes](https://cornflakes.app)
+- ~[Underline](https://underline.email), a dead-simple and affordable way to run an email newsletter~ Underline was succeeded by [Cornflakes](https://cornflakes.app).
 - [Potion](https://github.com/benborgers/potion), an open-source reverse-engineered API for the Notion note taking app.
 - [EMOJICDN](https://emojicdn.elk.sh), an API for getting images of emojis that serves two million requests per month.
 
