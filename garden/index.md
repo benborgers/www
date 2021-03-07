@@ -8,9 +8,10 @@ On this website, I want to keep a bit of a digital garden. ==Any link surrounded
 
 I really like doing personal programming projects:
 
+- [Cornflakes](https://cornflakes.app), a simple and privacy-focused email newsletter tool.
 - [[blocks/index]], an app for my high school's schedule used by 2,000 students and teachers.
 - [Bagel Institute](https://bagel.institute), tools for more interactive college teaching.
-- ~[Underline](https://underline.email), a dead-simple and affordable way to run an email newsletter~ Underline was succeeded by [Cornflakes](https://cornflakes.app).
+- ~[Underline](https://underline.email), a dead-simple and affordable way to run an email newsletter~.
 - [Potion](https://github.com/benborgers/potion), an open-source reverse-engineered API for the Notion note taking app.
 - [EMOJICDN](https://emojicdn.elk.sh), an API for getting images of emojis that serves two million requests per month.
 
