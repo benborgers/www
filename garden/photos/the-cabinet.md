@@ -1,6 +1,6 @@
 ---
 title: "The Cabinet Photoshoot"
-date: 2021-01-24
+date: 2020-11-06
 ---
 _My friends and I all won class council positions. A promotional photoshoot was very necessary._
 

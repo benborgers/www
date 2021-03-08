@@ -1,6 +1,6 @@
 ---
 title: "BU College Essays"
-date: 2021-01-24
+date: 2020-12-15
 ---
 *I wrote and submitted these essays, but ended up withdrawing my application because I got accepted Early Decision to [[applying-to-college/tufts, Tufts]].*
 

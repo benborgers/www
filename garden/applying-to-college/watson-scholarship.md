@@ -1,6 +1,6 @@
 ---
 title: "Watson Scholarship Essays"
-date: 2021-01-24
+date: 2020-11-28
 ---
 **Some believe that a person of character demonstrates the following six qualities: trustworthiness, respect, responsibility, fairness, caring and citizenship. Pick one of these qualities, describe the value of this quality, and, most importantly, explain how you have exemplified it at some point during your high school career.**
 <!-- max 500 words -->

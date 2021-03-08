@@ -4,6 +4,8 @@ title: Applying to College
 
 To cut to the chase: I was accepted to Tufts University for Early Decision! That means I retracted my application to Boston University below, and didn't apply anywhere else.
 
+Also, here's my [[applying-to-college/common-app]].
+
 ## Tufts
 _Applied October 18, 2020_
 

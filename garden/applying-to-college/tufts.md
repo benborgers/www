@@ -1,6 +1,6 @@
 ---
 title: "Tufts College Essays"
-date: 2021-01-24
+date: 2020-12-15
 ---
 _Update: I was accepted into the Tufts Class of 2025 for Early Decision!_
 
