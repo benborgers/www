@@ -1,5 +1,6 @@
 ---
 title: Proof that limit as x → 0 of sin(x)/x = 1
+date: 2020-11-07
 ---
 
 ![](/assets/sinx-x-diagram.jpg)

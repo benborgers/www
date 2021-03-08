@@ -1,5 +1,6 @@
 ---
 title: Fundamental Theorem of Calculus
+date: 2021-02-12
 ---
 
 The Fundamental Theorem of Calculus lets you calculate an integral. It says that $$\int_a^b f(x)dx = F(b) - F(a)$$ where $$F$$ is the antiderivative of $$f$$.

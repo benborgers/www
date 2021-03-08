@@ -1,5 +1,6 @@
 ---
 title: Election Night Recap
+date: 2020-11-04
 ---
 
 ## What did you use to follow the election returns? (TV station, website, etc)
