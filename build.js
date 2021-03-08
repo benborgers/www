@@ -74,10 +74,12 @@ const base = ({ title, description, classes = '', body }) => `
         ${description ? `
         <meta name="description" content="${escape(
             description
+                .replace(/<script>.+?<\/script>/gs, '')
                 .replace(/<.+?>/g, '')
                 .replace(connectionsRegex, '$1')
                 .replace(/\n/g, ' ')
                 .replace(/\s{2,}/g, ' ')
+                .trim()
         )}" />` : ''}
 
         <link rel="stylesheet" href="/style.css">
