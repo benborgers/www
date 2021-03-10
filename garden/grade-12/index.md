@@ -7,6 +7,7 @@ The final year of high school, including [[applying-to-college/index]].
 ## Dystopias
 
 - [[grade-12/dystopias/parable-of-the-sower/index]]
+- [[grade-12/dystopias/brave-new-world/index]]
 
 ## Gov
 

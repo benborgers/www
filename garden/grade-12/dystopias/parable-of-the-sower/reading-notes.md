@@ -1,6 +1,6 @@
 ---
 title: Parable of the Sower Reading Notes
-date: 2020-01-09
+date: 2021-01-09
 ---
 
 ## Pages 1 - 27

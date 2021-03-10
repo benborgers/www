@@ -1,6 +1,6 @@
 ---
 title: "Essay: What People See in Parable"
-date: 2020-01-20
+date: 2021-01-20
 ---
 
 This fall, almost three decades after its original release, _Parable of the Sower_ found itself on the New York Times Best Seller list. After months of anxiety and disappointing leadership, people turned to the bleak but strangely hopeful novel to find solace. _Parable of the Sower_ struck a chord with readers in 2020 because Lauren shows us what hopeful, strong, and forward-looking leadership can look like in the face of enormous change.
