@@ -10,4 +10,4 @@ console.log('http://localhost:3000')
 
 setInterval(() => {
     spawn('npm run build', { shell: true })
-}, 2000)
+}, 1000)
