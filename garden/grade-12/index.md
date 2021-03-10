@@ -4,6 +4,10 @@ title: Grade 12
 
 The final year of high school, including [[applying-to-college/index]].
 
+## Dystopias
+
+- [[grade-12/dystopias/parable-of-the-sower/index]]
+
 ## Gov
 
 - [[grade-12/gov/election-night-recap]]
