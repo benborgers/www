@@ -9,7 +9,7 @@ We'll do this by "extending" the Tailwind configuration, instead of overwriting 
 Create or edit a file at the root of your project called `tailwind.config.js`. In it, you need to have this:
 
 ```javascript
-const color = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   theme: {
