@@ -8,6 +8,6 @@ http.createServer((req, res) => serveHandler(req, res, {
 
 console.log('http://localhost:3000')
 
-setInterval(() => {
-    spawn('npm run build', { shell: true })
-}, 1000)
+// setInterval(() => {
+//     spawn('npm run build', { shell: true })
+// }, 1000)

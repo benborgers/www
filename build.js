@@ -43,11 +43,6 @@ const writeFile = (path, contents) => {
     console.log(`> Wrote ${path}`)
 }
 
-const linkFromPath = path => {
-    const clean = path.replace(/index$/, '')
-    return (clean.startsWith('/') ? '' : '/') + clean.replace(/\/$/, '')
-}
-
 // Disabled because there are no assets right now.
 // fse.copySync('./assets', './public/assets')
 
@@ -89,45 +84,30 @@ const base = ({ title, description, classes = '', body }) => `
 </html>
 `;
 
-const notionSlugs = [] // For de-duplication
-const notionDocToPage = async ({ id, slug = id }) => {
-    notionSlugs.push(slug)
+const notionData = {}
+const loadNotionData = async id => {
     const html = await (await fetch(`https://friede.gg/api/notion/html/${id}?downgrade_headings=true`)).text()
-    const processedHtml = html.replace(/data-page-id="/g, 'href="/')
     const metadata = await (await fetch(`https://friede.gg/api/notion/metadata/${id}`)).json()
+    const linksTo = []
 
     if(html.includes('Untitled')) {
         throw new Error(`Page linked on ${metadata.title} (${id}) is not public.`)
     }
 
-    writeFile(`${slug}.html`, base({
-        title: slug === 'index' ? null : metadata.title,
-        description: processedHtml,
-        classes: 'bg-orange-50 font-serif',
-        body: `
-            <div class="p-4 sm:pt-24 pb-24 max-w-prose mx-auto" data-slug="${slug}">
-                <div>
-                    <a href="/" class="inline-block font-sans text-blue-800 font-semibold mb-8">Ben Borgers</a>
-                </div>
-                ${slug !== 'index' ? `
-                    <div class="mb-8 space-y-1.5">
-                        <h1 class="font-sans font-extrabold text-3xl text-gray-900">${metadata.title}</h1>
-                        <p class="font-sans text-gray-500 text-sm font-medium italic">Updated <time>${new Date(metadata.updated_at).toLocaleString('en-US', { timeZone: 'UTC', month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
-                    </div>
-                ` : ''}
-                <div class="prose prose-garden">
-                    ${processedHtml}
-                </div>
-            </div>
-        `
-    }))
-
     const links = (html.match(/data-page-id="(.+?)"/g) || []).map(str => str.replace(/^data-page-id="|"$/g, ''))
-    links.forEach(async link => {
-        if(! notionSlugs.includes(link)) {
-            await notionDocToPage({ id: link })
+
+    for(const link of links) {
+        linksTo.push(link)
+        if(! notionData[link]) {
+            await loadNotionData(link)
         }
-    })
+    }
+
+    notionData[id] = {
+        html,
+        metadata,
+        linksTo
+    }
 }
 
 (async () => {
@@ -171,5 +151,55 @@ const notionDocToPage = async ({ id, slug = id }) => {
         }))
     })
 
-    await notionDocToPage({ id: 'a81d0c09-5d6f-4310-baf6-2fc2938b89d2', slug: 'index' })
+    const rootNotionId = 'a81d0c09-5d6f-4310-baf6-2fc2938b89d2'
+    await loadNotionData(rootNotionId)
+
+    for(const id in notionData) {
+        const page = notionData[id]
+
+        const processedHtml = page.html.replace(/data-page-id="/g, 'href="/')
+
+        const slug = id === rootNotionId ? 'index' : id
+
+        const backlinks = []
+        for(const scanId in notionData) {
+            if(notionData[scanId].linksTo.includes(id)) {
+                backlinks.push({
+                    id: scanId,
+                    title: notionData[scanId].metadata.title
+                })
+            }
+        }
+
+        writeFile(`${slug}.html`, base({
+            title: slug === 'index' ? null : page.metadata.title,
+            description: processedHtml,
+            classes: 'bg-orange-50 font-serif',
+            body: `
+                <div class="p-4 sm:pt-24 pb-24 max-w-prose mx-auto" data-slug="${slug}">
+                    <div>
+                        <a href="/" class="inline-block font-sans text-blue-800 font-semibold mb-8">Ben Borgers</a>
+                    </div>
+                    ${slug !== 'index' ? `
+                        <div class="mb-8 space-y-1.5">
+                            <h1 class="font-sans font-extrabold text-3xl text-gray-900">${page.metadata.title}</h1>
+                            <p class="font-sans text-gray-500 text-sm font-medium italic">Updated <time>${new Date(page.metadata.updated_at).toLocaleString('en-US', { timeZone: 'America/New_York', month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
+                        </div>
+                    ` : ''}
+                    <div class="prose prose-garden">
+                        ${processedHtml}
+                    </div>
+
+                    ${backlinks.length > 0 ? `
+                        <div class="mt-20">
+                            <p class="text-gray-500">
+                                This page is referenced in:
+                                ${backlinks.map(backlink => `<a class="underline" href="/${backlink.id === rootNotionId ? '' : backlink.id}">${backlink.title}</a>`).join(', ')}
+                            </p>
+                        </div>
+                    ` : ''}
+                </div>
+            `
+        }))
+    }
 })()
