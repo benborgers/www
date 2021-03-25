@@ -48,7 +48,8 @@ const linkFromPath = path => {
     return (clean.startsWith('/') ? '' : '/') + clean.replace(/\/$/, '')
 }
 
-fse.copySync('./assets', './public/assets')
+// Disabled because there are no assets right now.
+// fse.copySync('./assets', './public/assets')
 
 const base = ({ title, description, classes = '', body }) => `
 <!DOCTYPE html>
