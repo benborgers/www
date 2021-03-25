@@ -5,9 +5,6 @@ module.exports = {
     darkMode: false,
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif']
-            },
             colors: {
                 orange: colors.orange
             },

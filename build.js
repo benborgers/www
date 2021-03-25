@@ -5,7 +5,7 @@ const frontmatter = require('@github-docs/frontmatter')
 const escape = require('escape-html')
 const marked = require('marked')
 const { minify } = require('html-minifier')
-const katex = require('katex')
+const fetch = require('node-fetch')
 
 const prism = require('prismjs')
 require('prismjs/components/prism-markup-templating')
@@ -25,8 +25,6 @@ marked.setOptions({
     highlight: (code, lang) => prism.languages[lang] ? prism.highlight(code, prism.languages[lang]) : code
 })
 
-const sitemap = []
-
 const writeFile = (path, contents) => {
     let folders = path.split('/')
     folders.pop()
@@ -43,21 +41,12 @@ const writeFile = (path, contents) => {
     })
     fs.writeFileSync(`./public/${path}`, minifiedHtml)
     console.log(`> Wrote ${path}`)
-    sitemap.push(linkFromPath(path.replace(/\.html$/, '')))
 }
 
 const linkFromPath = path => {
     const clean = path.replace(/index$/, '')
     return (clean.startsWith('/') ? '' : '/') + clean.replace(/\/$/, '')
 }
-
-const pageTitle = path => {
-    if(path.endsWith('garden/index.md')) return 'Home'
-    const file = fs.readFileSync(path, 'utf-8')
-    return frontmatter(file).data.title
-}
-
-const connectionsRegex = /\[\[(.+?)\]\]/g
 
 fse.copySync('./assets', './public/assets')
 
@@ -69,26 +58,28 @@ const base = ({ title, description, classes = '', body }) => `
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <title>${title ? title + ' - ' : ''}Ben Borgers</title>
-        <link rel="icon" href="/assets/favicon.png" />
+        <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
 
         ${description ? `
         <meta name="description" content="${escape(
             description
-                .replace(/<script>.+?<\/script>/gs, '')
                 .replace(/<.+?>/g, '')
-                .replace(connectionsRegex, '$1')
                 .replace(/\n/g, ' ')
                 .replace(/\s{2,}/g, ' ')
                 .trim()
         )}" />` : ''}
 
         <link rel="stylesheet" href="/style.css">
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-        ${body.includes('language-') ? `
-        <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.5.0/themes/prism-dracula.css" />
+        ${body.includes('language-') && !body.includes('data-slug') ? `
+            <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.5.0/themes/prism-dracula.css" />
+        ` : ''}
+        ${body.includes('language-') && body.includes('data-slug') ? `
+            <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/styles/dracula.min.css" />
+            <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/highlight.min.js"></script>
+            <script>hljs.highlightAll()</script>
         ` : ''}
         ${body.includes('katex-html') ? `
-        <link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css" />
+            <link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css" />
         ` : ''}
     </head>
     <body class="font-sans text-gray-700 antialiased bg-white ${classes}">
@@ -96,6 +87,47 @@ const base = ({ title, description, classes = '', body }) => `
     </body>
 </html>
 `;
+
+const notionSlugs = [] // For de-duplication
+const notionDocToPage = async ({ id, slug = id }) => {
+    notionSlugs.push(slug)
+    const html = await (await fetch(`https://friede.gg/api/notion/html/${id}?downgrade_headings=true`)).text()
+    const processedHtml = html.replace(/data-page-id="/g, 'href="/')
+    const metadata = await (await fetch(`https://friede.gg/api/notion/metadata/${id}`)).json()
+
+    if(html.includes('Untitled')) {
+        throw new Error(`Page linked on ${metadata.title} (${id}) is not public.`)
+    }
+
+    writeFile(`${slug}.html`, base({
+        title: slug === 'index' ? null : metadata.title,
+        description: processedHtml,
+        classes: 'bg-orange-50 font-serif',
+        body: `
+            <div class="p-4 sm:pt-24 pb-24 max-w-prose mx-auto" data-slug="${slug}">
+                <div>
+                    <a href="/" class="inline-block font-sans text-blue-800 font-semibold mb-8">Ben Borgers</a>
+                </div>
+                ${slug !== 'index' ? `
+                    <div class="mb-8 space-y-1.5">
+                        <h1 class="font-sans font-extrabold text-3xl text-gray-900">${metadata.title}</h1>
+                        <p class="font-sans text-gray-500 text-sm font-medium italic">Updated <time>${new Date(metadata.updated_at).toLocaleString('en-US', { timeZone: 'UTC', month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
+                    </div>
+                ` : ''}
+                <div class="prose prose-garden">
+                    ${processedHtml}
+                </div>
+            </div>
+        `
+    }))
+
+    const links = (html.match(/data-page-id="(.+?)"/g) || []).map(str => str.replace(/^data-page-id="|"$/g, ''))
+    links.forEach(async link => {
+        if(! notionSlugs.includes(link)) {
+            await notionDocToPage({ id: link })
+        }
+    })
+}
 
 (async () => {
     const posts = await readdirp.promise('./posts')
@@ -138,91 +170,5 @@ const base = ({ title, description, classes = '', body }) => `
         }))
     })
 
-    const garden = await readdirp.promise('./garden')
-
-    const gardenConnections = {}
-    garden.forEach(file => {
-        const markdown = fs.readFileSync(`./garden/${file.path}`, 'utf-8')
-        const linkedFrom = file.path.replace(/\.md$/, '')
-        const linkedPages = (markdown.match(connectionsRegex) || []).map(x => x.replace(/\[|\]/g, '').split(',')[0])
-        linkedPages.forEach(page => {
-            if(!gardenConnections[page]) gardenConnections[page] = []
-            gardenConnections[page].push(linkedFrom)
-        })
-    })
-
-    const parseGardenMarkdown = text => {
-        text = text
-            .replace(connectionsRegex, (_, inside) => {
-                let path = inside
-                let title
-                if(path.includes(',')) {
-                    [path, title] = inside.split(',').map(x => x.trim())
-                }
-                const titleFromFrontmatter = pageTitle(`./garden/${path}.md`)
-
-                const span = (end = false) => `<span class="text-gray-400">${end ? ']]' : '[['}</span>`
-                return `${span()}<a href="${linkFromPath(path)}">${title || titleFromFrontmatter}</a>${span(true)}`
-            })
-            .replace(/\$\$(.+?)\$\$/g, (_, equation) => {
-                return katex.renderToString(equation)
-            })
-            .replace(/==(.+?)==/g, (_, text) => {
-                return `<mark class="bg-yellow-200 text-gray-700">${text}</mark>`
-            })
-
-        return marked(text)
-    }
-
-    garden.forEach(file => {
-        const markdown = fs.readFileSync(`./garden/${file.path}`, 'utf-8')
-        const { data, content } = frontmatter(markdown)
-        const connections = gardenConnections[file.path.replace(/\.md$/, '')]
-        writeFile(file.path.replace(/md$/, 'html'), base({
-            title: data.title,
-            description: parseGardenMarkdown(content),
-            classes: 'bg-orange-50 font-serif',
-            body: `
-                <div class="p-4 sm:pt-24 pb-24 max-w-prose mx-auto">
-                    <div>
-                        <a href="/" class="inline-block font-sans text-blue-800 font-semibold mb-8">Ben Borgers</a>
-                    </div>
-
-                    ${data.title ? `
-                        <div class="mb-8 space-y-1.5">
-                            <h1 class="font-sans font-extrabold text-3xl text-gray-900">${data.title}</h1>
-                            ${data.date ?
-                                `<p class="font-sans text-gray-500 text-sm font-medium italic">Updated <time>${data.date.toLocaleString('en-US', { timeZone: 'UTC', month: 'long', year: 'numeric', day: 'numeric' })}</time></p>`
-                            : ''}
-                        </div>
-                    ` : ''}
-
-                    <div class="prose prose-garden">
-                        ${parseGardenMarkdown(content)}
-                    </div>
-
-                    ${connections ? `
-                        <div class="mt-20">
-                            <p class="text-gray-500">
-                                This page is referenced in:
-                                ${connections.map(path => `<a class="underline" href="${linkFromPath(path)}">${pageTitle(`./garden/${path}.md`)}</a>`).join(', ')}
-                            </p>
-                        </div>
-                    ` : ''}
-
-                </div>
-            `
-        }))
-    })
-
-    // Generate sitemap
-    fs.writeFileSync('./public/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-            ${sitemap.map(link => `
-                <url>
-                    <loc>https://benborgers.com${link}</loc>
-                </url>
-            `).join('')}
-        </urlset>
-    `)
+    await notionDocToPage({ id: 'a81d0c09-5d6f-4310-baf6-2fc2938b89d2', slug: 'index' })
 })()

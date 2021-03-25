@@ -6,3 +6,8 @@
 .katex .frac-line {
     @apply border-gray-700;
 }
+
+/* Profile picture on home page */
+[data-slug="index"] img {
+    @apply h-24 rounded-full;
+}
