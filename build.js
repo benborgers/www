@@ -92,7 +92,7 @@ const loadNotionData = async id => {
     const metadata = await (await fetch(`https://friede.gg/api/notion/metadata/${id}`)).json()
     const linksTo = []
 
-    if(html.includes('Untitled')) {
+    if(html.includes('Untitled</a>')) {
         console.warn(`Page linked on ${metadata.title} (${id}) is not public.`)
         process.exit(1)
     }
