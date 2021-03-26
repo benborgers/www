@@ -93,7 +93,8 @@ const loadNotionData = async id => {
     const linksTo = []
 
     if(html.includes('Untitled')) {
-        throw new Error(`Page linked on ${metadata.title} (${id}) is not public.`)
+        console.warn(`Page linked on ${metadata.title} (${id}) is not public.`)
+        process.exit(1)
     }
 
     const links = (html.match(/data-page-id="(.+?)"/g) || []).map(str => str.replace(/^data-page-id="|"$/g, ''))
