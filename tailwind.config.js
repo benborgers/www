@@ -43,7 +43,10 @@ module.exports = {
                             borderColor: theme('colors.orange.200')
                         },
                         h2: { fontFamily: theme('fontFamily.sans').join(',') },
-                        h3: { fontFamily: theme('fontFamily.sans').join(',') }
+                        h3: { fontFamily: theme('fontFamily.sans').join(',') },
+                        img: {
+                            borderRadius: theme('borderRadius.md')
+                        }
                     }
                 }
             })

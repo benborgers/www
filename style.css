@@ -11,3 +11,17 @@
 [data-slug="index"] img {
     @apply h-24 rounded-full;
 }
+
+.callout {
+    grid-template-columns: 20px 1fr;
+    grid-column-gap: 12px;
+    @apply grid bg-white border-2 border-orange-200 rounded-md p-4;
+}
+
+.callout > img {
+    @apply m-0 mt-1;
+}
+
+.callout > p {
+    @apply m-0;
+}
