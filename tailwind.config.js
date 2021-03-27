@@ -8,6 +8,9 @@ module.exports = {
             colors: {
                 orange: colors.orange
             },
+            fontFamily: {
+                serif: ['Georgia', 'serif']
+            },
             typography: theme => ({
                 posts: {
                     css: {
