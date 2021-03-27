@@ -180,8 +180,8 @@ const loadNotionData = async id => {
             classes: 'bg-orange-50 font-serif',
             body: `
                 <div class="p-4 sm:pt-24 pb-24 max-w-prose mx-auto" data-slug="${slug}">
-                    <div>
-                        <a href="/" class="inline-block font-sans text-blue-800 font-semibold mb-8">Ben Borgers</a>
+                    <div class="mb-8">
+                        <a href="/" class="font-serif italic text-blue-700 font-bold">Ben Borgers</a>
                     </div>
                     ${slug !== 'index' ? `
                         <div class="mb-8 space-y-1.5">
