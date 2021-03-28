@@ -42,6 +42,9 @@ module.exports = {
                         hr: {
                             borderColor: theme('colors.orange.200')
                         },
+                        blockquote: {
+                            borderLeftColor: theme('colors.orange.200')
+                        },
                         h2: { fontFamily: theme('fontFamily.sans').join(',') },
                         h3: { fontFamily: theme('fontFamily.sans').join(',') },
                         img: {
