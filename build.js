@@ -6,6 +6,7 @@ const escape = require('escape-html')
 const marked = require('marked')
 const { minify } = require('html-minifier')
 const fetch = require('node-fetch')
+const crypto = require('crypto')
 
 const prism = require('prismjs')
 require('prismjs/components/prism-markup-templating')
@@ -88,14 +89,36 @@ const base = ({ title, description, classes = '', body }) => `
 
 const notionData = {}
 const loadNotionData = async id => {
-    const html = await (await fetch(`https://friede.gg/api/notion/html/${id}?downgrade_headings=true`)).text()
+    let html = await (await fetch(`https://friede.gg/api/notion/html/${id}?downgrade_headings=true`)).text()
     const metadata = await (await fetch(`https://friede.gg/api/notion/metadata/${id}`)).json()
     const linksTo = []
+
+    console.log(`> Fetched from Notion: ${metadata.title}`)
 
     if(html.includes('Untitled</a>')) {
         console.warn(`Page linked on ${metadata.title} (${id}) is not public.`)
         process.exit(1)
     }
+
+    // Download images locally to make them faster.
+    // You could just delete this to speed up builds and everything would keep working,
+    // since all the image src's would fall back to Notion's hosting.
+    fs.mkdirSync('./public/img', { recursive: true })
+    html = html.replace(/<img src="(.+?)"/g, (original, url) => {
+        if(url.startsWith('https://www.notion.so/image')) {
+            const extension = url.split('?')[0].split('.').pop()
+            const hash = crypto.createHash('sha1').update(url).digest('hex')
+            const path = `/img/${hash}.${extension}`
+            fetch(url)
+                .then(res =>
+                    res.body.pipe(fs.createWriteStream(`./public${path}`))
+                )
+            console.log(`> img: downloaded ${path} (${metadata.title})`)
+            return `<img src="${path}"`
+        }
+        console.log(`> img: skipped downloading ${url} (${metadata.title})`)
+        return original
+    })
 
     const links = (html.match(/data-page-id="(.+?)"/g) || []).map(str => str.replace(/^data-page-id="|"$/g, ''))
 
