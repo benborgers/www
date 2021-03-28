@@ -122,6 +122,8 @@ const loadNotionData = async id => {
 
     const links = (html.match(/data-page-id="(.+?)"/g) || []).map(str => str.replace(/^data-page-id="|"$/g, ''))
 
+    html = html.replace(/data-page-id="/g, 'href="/')
+
     for(const link of links) {
         linksTo.push(link)
         if(! notionData[link]) {
@@ -183,8 +185,6 @@ const loadNotionData = async id => {
     for(const id in notionData) {
         const page = notionData[id]
 
-        const processedHtml = page.html.replace(/data-page-id="/g, 'href="/')
-
         const slug = id === rootNotionId ? 'index' : id
 
         const backlinks = []
@@ -199,7 +199,7 @@ const loadNotionData = async id => {
 
         writeFile(`${slug}.html`, base({
             title: slug === 'index' ? null : page.metadata.title,
-            description: processedHtml,
+            description: page.html,
             classes: 'bg-orange-50 font-serif',
             body: `
                 <div class="p-4 sm:pt-24 pb-24 max-w-prose mx-auto" data-slug="${slug}">
@@ -213,7 +213,7 @@ const loadNotionData = async id => {
                         </div>
                     ` : ''}
                     <div class="prose prose-garden">
-                        ${processedHtml}
+                        ${page.html}
                     </div>
 
                     ${backlinks.length > 0 ? `
