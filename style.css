@@ -15,7 +15,7 @@
 .callout {
     grid-template-columns: 20px 1fr;
     grid-column-gap: 12px;
-    @apply grid bg-white border-2 border-orange-200 rounded-md p-4;
+    @apply grid bg-orange-100 border-2 border-orange-200 rounded-md p-4;
 }
 
 .callout > img {
