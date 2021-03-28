@@ -60,7 +60,7 @@ const base = ({ title, description, classes = '', body }) => `
         <meta name="description" content="${escape(
             description
                 .replace(/<h[1-6].*?>.*?<\/h[1-6]>/g, '') // Remove headings
-                .replace(/<\/p>/g, ' ') // Add space between paragraphs
+                .replace(/<\/(p|li)>/g, ' ') // Add space between paragraphs
                 .replace(/<.+?>/g, '')
                 .replace(/\n/g, ' ')
                 .replace(/\s{2,}/g, ' ')
