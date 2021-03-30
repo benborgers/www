@@ -69,13 +69,8 @@ const base = ({ title, description, classes = '', body }) => `
         )}" />` : ''}
 
         <link rel="stylesheet" href="/style.css">
-        ${body.includes('language-') && !body.includes('data-slug') ? `
-            <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.5.0/themes/prism-dracula.css" />
-        ` : ''}
-        ${body.includes('language-') && body.includes('data-slug') ? `
-            <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/styles/dracula.min.css" />
-            <script src="https://unpkg.com/@highlightjs/cdn-assets@10.6.0/highlight.min.js"></script>
-            <script>hljs.highlightAll()</script>
+        ${body.includes('language-') ? `
+            <link rel="stylesheet" href="https://unpkg.com/prism-themes@latest/themes/prism-dracula.css" />
         ` : ''}
         ${body.includes('katex-html') ? `
             <link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css" />
