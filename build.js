@@ -221,7 +221,7 @@ const loadNotionData = async id => {
                         <div class="mt-20">
                             <p class="text-gray-500">
                                 This page is referenced in:
-                                ${backlinks.map(backlink => `<a class="underline" href="/${backlink.id === rootNotionId ? '' : backlink.id}">${backlink.title}</a>`).join(', ')}
+                                ${backlinks.reverse().map(backlink => `<a class="underline" href="/${backlink.id === rootNotionId ? '' : backlink.id}">${backlink.title}</a>`).join(', ')}
                             </p>
                         </div>
                     ` : ''}
