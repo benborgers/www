@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
     purge: ['./public/**/*.html'],
@@ -6,16 +7,18 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                orange: colors.orange
+                orange: colors.orange,
+                rose: colors.rose
             },
             fontFamily: {
-                serif: ['Georgia', 'serif']
+                serif: ['Georgia', 'serif'],
+                dm: ['"DM Sans"', ...defaultTheme.fontFamily.sans]
             },
             typography: theme => ({
                 posts: {
                     css: {
                         a: {
-                            color: theme('colors.blue.600'),
+                            color: theme('colors.rose.600'),
                             textDecoration: 'none'
                         },
                         code: {
@@ -33,20 +36,9 @@ module.exports = {
                 garden: {
                     css: {
                         a: {
-                            color: theme('colors.blue.700'),
+                            color: theme('colors.rose.600'),
                             textDecoration: 'none'
                         },
-                        'ul > li::before': {
-                            backgroundColor: theme('colors.orange.200')
-                        },
-                        hr: {
-                            borderColor: theme('colors.orange.200')
-                        },
-                        blockquote: {
-                            borderLeftColor: theme('colors.orange.200')
-                        },
-                        h2: { fontFamily: theme('fontFamily.sans').join(',') },
-                        h3: { fontFamily: theme('fontFamily.sans').join(',') },
                         img: {
                             borderRadius: theme('borderRadius.md')
                         }

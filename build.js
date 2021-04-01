@@ -69,9 +69,15 @@ const base = ({ title, description, classes = '', body }) => `
         )}" />` : ''}
 
         <link rel="stylesheet" href="/style.css">
+
+        ${classes.includes('font-dm') ? `
+            <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        ` : ''}
+
         ${body.includes('language-') ? `
             <link rel="stylesheet" href="https://unpkg.com/prism-themes@latest/themes/prism-dracula.css" />
         ` : ''}
+
         ${body.includes('katex-html') ? `
             <link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css" />
         ` : ''}
@@ -195,25 +201,25 @@ const loadNotionData = async id => {
         writeFile(`${slug}.html`, base({
             title: slug === 'index' ? null : page.metadata.title,
             description: page.html,
-            classes: 'bg-orange-50 font-serif',
+            classes: 'font-dm bg-gray-50',
             body: `
-                <div class="p-4 sm:pt-24 pb-24 max-w-prose mx-auto" data-slug="${slug}">
+                <div class="p-4 md:pt-24 pb-24 max-w-prose mx-auto" data-slug="${slug}">
                     <div class="mb-8">
-                        <a href="/" class="font-serif italic text-blue-700 font-bold">Ben Borgers</a>
+                        <a href="/" class="font-serif text-gray-500 hover:text-gray-700 duration-150 transition-colors italic font-bold">Ben Borgers</a>
                     </div>
                     ${slug !== 'index' ? `
                         <div class="mb-8 space-y-1.5">
-                            <h1 class="font-sans font-extrabold text-3xl text-gray-900">${page.metadata.title}</h1>
-                            <p class="font-sans text-gray-500 text-sm font-medium italic">Updated <time>${new Date(page.metadata.updated_at).toLocaleString('en-US', { timeZone: 'America/New_York', month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
+                            <h1 class="font-bold text-3xl md:text-4xl text-gray-900">${page.metadata.title}</h1>
+                            <p class="text-gray-500 text-sm font-medium italic">Updated <time>${new Date(page.metadata.updated_at).toLocaleString('en-US', { timeZone: 'America/New_York', month: 'long', year: 'numeric', day: 'numeric' })}</time></p>
                         </div>
                     ` : ''}
-                    <div class="prose prose-garden">
+                    <div class="prose prose-garden md:prose-lg">
                         ${page.html}
                     </div>
 
                     ${backlinks.length > 0 ? `
                         <div class="mt-20">
-                            <p class="text-gray-500 font-sans">
+                            <p class="text-gray-500">
                                 This page is referenced in:
                                 ${backlinks.map(backlink => `<a class="underline" href="/${backlink.id === rootNotionId ? '' : backlink.id}">${backlink.title}</a>`).join(', ')}
                             </p>
