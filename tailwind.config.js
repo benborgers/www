@@ -36,8 +36,7 @@ module.exports = {
                 garden: {
                     css: {
                         a: {
-                            color: theme('colors.rose.600'),
-                            textDecoration: 'none'
+                            color: theme('colors.rose.600')
                         },
                         img: {
                             borderRadius: theme('borderRadius.md')
