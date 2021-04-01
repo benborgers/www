@@ -18,12 +18,13 @@
     @apply grid rounded-md p-4;
 }
 
-.callout > img {
-    @apply mx-0 md:mx-0 mb-0 md:mb-0 mt-1;
+.callout > img,
+.callout > p {
+    margin: 0 !important;
 }
 
-.callout > p {
-    @apply m-0 md:m-0;
+.callout > img {
+    margin-top: 0.25rem !important;
 }
 
 .color-gray, .color-gray * { color: rgb(155,154,151) }
