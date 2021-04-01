@@ -18,7 +18,7 @@ module.exports = {
                 posts: {
                     css: {
                         a: {
-                            color: theme('colors.rose.600'),
+                            color: theme('colors.blue.600'),
                             textDecoration: 'none'
                         },
                         code: {
