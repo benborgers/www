@@ -97,7 +97,12 @@ const loadNotionData = async id => {
     console.log(`> Fetched from Notion: ${metadata.title}`)
 
     if(html.includes('Untitled</a>')) {
-        console.warn(`Page linked on ${metadata.title} (${id}) is not public.`)
+        console.warn(`Page linked on ${metadata.title} is not public.`)
+        process.exit(1)
+    }
+
+    if(html.toLowerCase().includes('bad gateway')) {
+        console.warn(`Bad Gateway detected on ${metadata.title}.`)
         process.exit(1)
     }
 
