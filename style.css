@@ -27,6 +27,14 @@
     margin-top: 0.25rem !important;
 }
 
+details {
+    @apply bg-gray-200 rounded-md p-4;
+}
+
+summary {
+    @apply outline-none cursor-pointer;
+}
+
 .color-gray, .color-gray * { @apply text-gray-400 }
 .color-brown, .color-brown * { color: rgb(100,71,58) }
 .color-orange, .color-orange * { color: rgb(217,115,13) }
