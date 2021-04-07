@@ -16,6 +16,7 @@ export default function HeadComponent({ title, description = '' }) {
                         .replace(/<.+?>/g, '')
                         .replace(/\n/g, ' ')
                         .replace(/\s{2,}/g, ' ')
+                        .substr(0, 250)
                         .trim()
                 }
             />
