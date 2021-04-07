@@ -1,37 +1,37 @@
-* {
-  scroll-behavior: smooth;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',
-    Helvetica, Arial, 'Lucida Grande', sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
+    @apply text-gray-700 antialiased bg-white;
 }
 
-a {
-  text-decoration: none;
-  color: #108db8;
-  font-weight: bold;
+/* Fix Tailwind making fraction line very light */
+.katex .frac-line {
+    @apply border-gray-700;
 }
 
-img {
-  max-width: 100%;
+.index img {
+    @apply h-24 rounded-full;
 }
 
-nav {
-  width: 100%;
-  background: #108db8;
+.callout > img,
+.callout > p {
+    margin: 0 !important;
 }
 
-nav a {
-  color: white;
-  padding: 1rem;
-  display: inline-block;
+.callout > img {
+    margin-top: 0.25rem !important;
 }
 
-.content {
-  padding: 1rem;
+details {
+    @apply bg-gray-200 rounded-md p-4;
+}
+
+summary {
+    @apply outline-none cursor-pointer;
+}
+
+.block-equation {
+    @apply overflow-y-scroll;
 }
