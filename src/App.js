@@ -1,20 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Root, Routes } from 'react-static'
 
-import { Router } from 'components/Router'
+import { Router, useLocation } from 'components/Router'
 
 import '../dist.css'
 
 function App() {
-  return (
-    <Root>
-      <React.Suspense fallback={<em>Loading...</em>}>
-        <Router>
-          <Routes path="*" />
-        </Router>
-      </React.Suspense>
-    </Root>
-  )
+    return (
+        <Root>
+            <React.Suspense fallback={<em>Loading...</em>}>
+                <ScrollToTop />
+                <Router>
+                    <Routes path="*" />
+                </Router>
+            </React.Suspense>
+        </Root>
+    )
+}
+
+function ScrollToTop() {
+    const { pathname } = useLocation()
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
+
+    return null
 }
 
 export default App
