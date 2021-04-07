@@ -20,6 +20,10 @@ export default function HeadComponent({ title, description = '' }) {
                         .trim()
                 }
             />
+
+            {process.env.NODE_ENV === 'production' &&
+                <script src="https://anteater.benborgers.com/script.js" data-spa="auto" data-site="ZWCPJCUA" defer></script>
+            }
         </Head>
     )
 }
