@@ -15,6 +15,12 @@ body {
     @apply h-24 rounded-full;
 }
 
+.callout {
+    grid-template-columns: 20px 1fr;
+    grid-column-gap: 12px;
+    @apply grid rounded-md p-4;
+}
+
 .callout > img,
 .callout > p {
     margin: 0 !important;
