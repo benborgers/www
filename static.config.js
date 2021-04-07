@@ -1,5 +1,14 @@
 import path from 'path'
+import fs from 'fs'
+import frontmatter from '@github-docs/frontmatter'
+import marked from 'marked'
+import prism from 'prismjs'
 import { NotionDoc } from '@benborgers/notion-api'
+
+marked.setOptions({
+    smartypants: true,
+    highlight: (code, lang) => prism.languages[lang] ? prism.highlight(code, prism.languages[lang]) : code
+})
 
 const notionData = {}
 const loadNotionData = async id => {
@@ -39,10 +48,28 @@ const loadNotionData = async id => {
 
 export default {
     getRoutes: async () => {
+        const routes = []
+
+        /* Legacy blog posts */
+
+        const files = fs.readdirSync('./posts')
+        for(const filename of files) {
+            const fileContents = fs.readFileSync(`./posts/${filename}`, 'utf8')
+            const { data, content } = frontmatter(fileContents)
+
+            const html = marked(content)
+
+            routes.push({
+                path: `posts/${filename.replace(/\.md$/, '')}`,
+                template: 'src/containers/Post',
+                getData: () => ({ frontmatter: data, html })
+            })
+        }
+
+
+        /* Notion */
         const rootNotionId = 'a81d0c09-5d6f-4310-baf6-2fc2938b89d2'
         await loadNotionData(rootNotionId)
-
-        const routes = []
 
         for(const id in notionData) {
             const page = notionData[id]
