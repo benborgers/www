@@ -42,7 +42,7 @@ summary {
     @apply overflow-y-scroll;
 }
 
-.color-gray, .color-gray * { color: rgb(155,154,151) }
+.color-gray, .color-gray * { @apply text-gray-400; }
 .color-brown, .color-brown * { color: rgb(100,71,58) }
 .color-orange, .color-orange * { color: rgb(217,115,13) }
 .color-yellow, .color-yellow * { color: rgb(223,171,1) }
@@ -52,7 +52,7 @@ summary {
 .color-pink, .color-pink * { color: rgb(173,26,114) }
 .color-red, .color-red * { color: rgb(224,62,62) }
 
-.background-gray { background-color: rgb(235, 236, 237) }
+.background-gray { @apply bg-gray-100; }
 .background-brown { background-color: rgb(233,229,227) }
 .background-orange { background-color: rgb(250,235,221) }
 .background-yellow { background-color: rgb(251,243,219) }
