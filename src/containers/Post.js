@@ -1,12 +1,18 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
 import { Link } from '../components/Router'
+import Head from '../components/Head'
 
 export default function Post() {
     const { frontmatter: { title, date }, html } = useRouteData()
 
     return (
         <>
+            <Head
+                title={title}
+                description={html}
+            />
+
             {html.includes('<pre><code') && <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.6.0/themes/prism-dracula.css" />}
 
             <div>
