@@ -47,6 +47,7 @@ const loadNotionData = async id => {
 }
 
 export default {
+    siteRoot: 'https://benborgers.com',
     getRoutes: async () => {
         const routes = []
 
