@@ -18,7 +18,7 @@ body {
 .callout {
     grid-template-columns: 20px 1fr;
     grid-column-gap: 12px;
-    @apply grid rounded-md p-4;
+    @apply grid rounded-md p-4 bg-gray-100;
 }
 
 .callout > img,
@@ -31,7 +31,7 @@ body {
 }
 
 details {
-    @apply bg-gray-200 rounded-md p-4;
+    @apply bg-gray-100 rounded-md p-4;
 }
 
 summary {
