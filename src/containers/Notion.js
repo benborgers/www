@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link } from '../components/Router'
 import { useRouteData } from 'react-static'
 import ReactHtmlParser from 'react-html-parser'
+
+import { Link } from '../components/Router'
+import Head from '../components/Head'
 
 export default function NotionPage() {
     const { html, title, updatedAt, backlinks } = useRouteData()
@@ -11,6 +13,8 @@ export default function NotionPage() {
 
     return (
         <>
+            <Head title={isIndex ? null : title} />
+
             {html.includes('katex-html') && <link rel="stylesheet" href="https://unpkg.com/katex@0.13.2/dist/katex.min.css" />}
             {html.includes('<pre><code') && <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.6.0/themes/prism-dracula.css" />}
 
