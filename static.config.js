@@ -11,7 +11,7 @@ const loadNotionData = async id => {
 
     const linksTo = []
 
-    console.log(`> Fetched from Notion: ${title}`)
+    console.log(`Fetched from Notion: ${title}`)
 
     if(html.includes('Untitled</a>')) {
         console.warn(`Page linked on ${title} is not public.`)
