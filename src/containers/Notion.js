@@ -13,7 +13,10 @@ export default function NotionPage() {
 
     return (
         <>
-            <Head title={isIndex ? null : title} />
+            <Head
+                title={isIndex ? null : title}
+                description={html}
+            />
 
             {html.includes('katex-html') && <link rel="stylesheet" href="https://unpkg.com/katex@0.13.2/dist/katex.min.css" />}
             {html.includes('<pre><code') && <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.6.0/themes/prism-dracula.css" />}
