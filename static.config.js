@@ -14,6 +14,7 @@ const notionData = {}
 const loadNotionData = async id => {
     const doc = new NotionDoc(id)
     doc.downgradeHeadings = true
+    doc.imageWidth = 2000
     let html = await doc.html()
     const title = await doc.title()
     const updatedAt = await doc.updatedAt()
