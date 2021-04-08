@@ -3,8 +3,6 @@ import fs from 'fs'
 import frontmatter from '@github-docs/frontmatter'
 import marked from 'marked'
 import prism from 'prismjs'
-import fetch from 'node-fetch'
-import crypto from 'crypto'
 import { NotionDoc } from '@benborgers/notion-api'
 
 marked.setOptions({
@@ -28,34 +26,6 @@ const loadNotionData = async id => {
         console.warn(`Page linked on ${title} is not public.`)
         process.exit(1)
     }
-
-    // Download images to make them more performant and reduce reliance on Notion.
-    const imagesToDownload = []
-    html = html.replace(/<img src="(.+?)"/g, (original, url) => {
-        if(url.startsWith('https://www.notion.so/image')) {
-            const extension = url.split('?')[0].split('.').pop()
-            const hash = crypto.createHash('sha1').update(url).digest('hex')
-            const path = `/notion-img/${hash}.${extension}`
-            imagesToDownload.push({ notion: url, local: path })
-            console.log(`img: will download ${path} (${title})`)
-            return `<img src="${path}"`
-        }
-        console.log(`img: will not download ${url} (${title})`)
-        return original
-    })
-    fs.mkdirSync('public/notion-img', { recursive: true })
-    for(const { notion, local } of imagesToDownload) {
-        await new Promise(async resolve => {
-            const res = await fetch(notion)
-            const dest = fs.createWriteStream(`public${local}`)
-            res.body.pipe(dest)
-            dest.on('finish', () => {
-                console.log(`img: downloaded ${local} (${title})`)
-                resolve()
-            })
-        })
-    }
-
 
     const links = (html.match(/data-page-id="(.+?)"/g) || []).map(str => str.replace(/^data-page-id="|"$/g, ''))
 
