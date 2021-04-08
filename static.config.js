@@ -38,7 +38,7 @@ const loadNotionData = async id => {
             const path = `/notion-img/${hash}.${extension}`
             imagesToDownload.push({ notion: url, local: path })
             console.log(`img: will download ${path} (${title})`)
-            return path
+            return `<img src="${path}"`
         }
         console.log(`img: will not download ${url} (${title})`)
         return original
