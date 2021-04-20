@@ -2,6 +2,7 @@ import React from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import Link from 'next/link'
 import Head from '../components/Head'
+import NextHead from 'next/head'
 
 const rootNotionId = 'a81d0c09-5d6f-4310-baf6-2fc2938b89d2'
 
@@ -15,7 +16,11 @@ export default function NotionPage({ html, title, updatedAt, backlinks }) {
                 description={html}
             />
 
-            {html.includes('katex-html') && <link rel="stylesheet" href="https://unpkg.com/katex@0.13.2/dist/katex.min.css" />}
+            {html.includes('katex-html') && (
+                <NextHead>
+                    <link rel="stylesheet" href="https://unpkg.com/katex@0.13.2/dist/katex.min.css" />
+                </NextHead>
+            )}
 
             <div className={`${isIndex ? 'index' : ''} p-4 pt-6 md:pt-24 pb-24 max-w-prose mx-auto`}>
                 <div className="mb-8">
