@@ -76,6 +76,9 @@ import notion from '../data/notion'
 export function props(context) {
     const id = context.params?.id || rootNotionId
 
+    console.log('context', context)
+    console.log('env', process.env)
+
     return {
         props: notion[id]
     }
