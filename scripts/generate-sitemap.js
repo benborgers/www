@@ -20,5 +20,9 @@ const fs = require('fs');
         </urlset>
     `
 
+    if(! fs.existsSync('public')) {
+        fs.mkdirSync('public')
+    }
+
     fs.writeFileSync('public/sitemap.xml', sitemap)
 })()
