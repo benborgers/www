@@ -11,6 +11,7 @@ module.exports = {
     webpack: (config, { isServer }) => {
         if(isServer) {
             require('./scripts/generate-sitemap')
+            require('./scripts/load-notion-data')
         }
 
         return config
