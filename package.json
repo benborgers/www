@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/load-notion-data && next build && node scripts/generate-sitemap",
+    "prebuild": "node scripts/load-notion-data",
+    "build": "next build",
+    "postbuild": "node scripts/generate-sitemap",
     "start": "next start"
   },
   "dependencies": {
