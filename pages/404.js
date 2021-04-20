@@ -5,7 +5,6 @@ import Head from '../components/Head'
 
 export default function NotFound() {
     const router = useRouter()
-    console.log(router)
 
     useEffect(() => {
         fetch('https://friede.gg/api/sheets/append', {
