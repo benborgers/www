@@ -3,8 +3,9 @@ import ReactHtmlParser from 'react-html-parser'
 import Link from 'next/link'
 import Head from '../components/Head'
 
+const rootNotionId = 'a81d0c09-5d6f-4310-baf6-2fc2938b89d2'
+
 export default function NotionPage({ html, title, updatedAt, backlinks }) {
-    const rootNotionId = 'a81d0c09-5d6f-4310-baf6-2fc2938b89d2'
     const isIndex = title === 'Home'
 
     return (
@@ -38,7 +39,7 @@ export default function NotionPage({ html, title, updatedAt, backlinks }) {
                             const href = node?.attribs?.href
                             if(node.type === 'tag' && node.name === 'a' && href.startsWith('/')) {
                                 const text = node.children[0].data
-                                return <Link href={href || '/'}><a>{text}</a></Link>
+                                return <Link href={href || '/'} key={text + href}><a>{text}</a></Link>
                             }
                         }
                     })}
@@ -68,7 +69,7 @@ export default function NotionPage({ html, title, updatedAt, backlinks }) {
 import notion from '../data/notion'
 
 export function props(context) {
-    const id = context.params.id
+    const id = context.params?.id || rootNotionId
 
     return {
         props: notion[id]
