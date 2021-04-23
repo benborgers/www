@@ -73,21 +73,30 @@ export default function NotionPage({ html, title, updatedAt, backlinks }) {
 
 import notion from '../data/notion'
 
-export function props(context) {
-    const id = context.params?.id || rootNotionId
+export function getStaticProps(context) {
+    const id = context.params?.id?.[0] || rootNotionId
 
     return {
         props: notion[id]
     }
 }
 
-export function paths() {
+export function getStaticPaths() {
     const ids = Object.keys(notion)
+    const paths = []
+
+    paths.push({
+        params: { id: [] }
+    })
+
+    for(const id of ids) {
+        paths.push({
+            params: { id: [id] }
+        })
+    }
 
     return {
-        paths: ids.map(id => ({
-            params: { id }
-        })),
+        paths,
         fallback: false
     }
 }
