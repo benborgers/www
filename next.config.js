@@ -19,8 +19,5 @@ module.exports = {
         }
 
         return output
-    },
-    future: {
-        webpack5: true
     }
 }
