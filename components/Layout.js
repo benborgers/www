@@ -1,13 +1,36 @@
+import Wrapper from './Wrapper'
+import Link from 'next/link'
+
 export default function Layout({ MDXComponent, frontmatter }) {
     return (
-        <div className="p-4 pb-32 sm:px-6 sm:pt-24 max-w-prose mx-auto">
-            <div className="mb-12">
-                <h1 className="text-gray-800 font-black text-3xl">{frontmatter.title}</h1>
-            </div>
+        <>
+            <Wrapper>
+                <div className="pt-4 sm:pt-6 max-w-prose mx-auto">
+                    <div className="mb-12 sm:mb-24">
+                        <Link href="/">
+                            <a className="flex justify-start">
+                                <div className="flex items-center space-x-2 bg-rose-50 px-3 py-0.25 rounded-full">
+                                    <img src="https://emojicdn.elk.sh/👋" alt="" className="h-4" />
+                                    <span className="text-rose-600 font-medium">Ben Borgers</span>
+                                </div>
+                            </a>
+                        </Link>
+                    </div>
 
-            <div className="prose prose-rose">
-                <MDXComponent />
-            </div>
-        </div>
+                    <div className="mb-12 space-y-2">
+                        <h1 className="text-gray-800 font-black text-3xl">{frontmatter.title}</h1>
+                        {frontmatter.date &&
+                            <p className="text-gray-400">
+                                Updated {new Date(frontmatter.date).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
+                            </p>
+                        }
+                    </div>
+
+                    <div className="prose prose-rose">
+                        <MDXComponent />
+                    </div>
+                </div>
+            </Wrapper>
+        </>
     )
 }
