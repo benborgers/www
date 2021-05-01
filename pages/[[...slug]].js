@@ -6,7 +6,6 @@ import Pre from '../components/Pre'
 import ReactDOM from 'react-dom'
 
 export default function CatchAll({ code, frontmatter }) {
-    console.log(code)
     const Component = useMemo(() => getMDXComponent(code, { ReactDOM }), [code])
 
     const FullComponent = () => (
