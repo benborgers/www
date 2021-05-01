@@ -32,7 +32,7 @@ export default function Layout({ MDXComponent, frontmatter }) {
                         </div>
                     )}
 
-                    <div className="prose prose-rose">
+                    <div className={frontmatter.noProse === true ? '' : 'prose prose-rose'}>
                         <MDXComponent />
                     </div>
                 </div>

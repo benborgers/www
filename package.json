@@ -9,6 +9,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.1.1",
+    "@heroicons/react": "^1.0.1",
     "mdx-bundler": "^3.4.1",
     "next": "^10.2.0",
     "prism-react-renderer": "^1.2.0",

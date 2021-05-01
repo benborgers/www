@@ -3,8 +3,11 @@ import { getMDXComponent } from 'mdx-bundler/client'
 import Layout from '../components/Layout'
 import Pre from '../components/Pre'
 
+import ReactDOM from 'react-dom'
+
 export default function CatchAll({ code, frontmatter }) {
-    const Component = useMemo(() => getMDXComponent(code), [code])
+    console.log(code)
+    const Component = useMemo(() => getMDXComponent(code, { ReactDOM }), [code])
 
     const FullComponent = () => (
         <Component
