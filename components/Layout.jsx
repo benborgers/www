@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import Link from 'next/link'
 import Wrapper from './Wrapper'
 import Head from './Head'

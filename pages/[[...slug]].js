@@ -2,16 +2,19 @@ import { useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import Layout from '../components/Layout'
 import Pre from '../components/Pre'
+import A from '../components/A'
 
 import ReactDOM from 'react-dom'
+import Link from 'next/link'
 
 export default function CatchAll({ code, frontmatter }) {
-    const Component = useMemo(() => getMDXComponent(code, { ReactDOM }), [code])
+    const Component = useMemo(() => getMDXComponent(code, { ReactDOM, nextLink: Link }), [code])
 
     const FullComponent = () => (
         <Component
             components={{
-                pre: Pre
+                pre: Pre,
+                a: A
             }}
         />
     )
@@ -26,7 +29,9 @@ export async function getStaticProps(context) {
     const filePath = `mdx/${context.params.slug || 'index'}.mdx`
     const mdxSource = fs.readFileSync(filePath, 'utf-8')
 
-    const { code, frontmatter } = await bundleMDX(mdxSource)
+    const { code, frontmatter } = await bundleMDX(mdxSource, {
+        globals: { 'next/link': 'nextLink' }
+    })
 
     for(const key in frontmatter) {
         if(frontmatter[key] instanceof Date) {
