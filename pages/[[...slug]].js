@@ -1,14 +1,20 @@
 import { useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
+import Layout from '../components/Layout'
+import Pre from '../components/Pre'
 
 export default function CatchAll({ code, frontmatter }) {
-    const MDXComponent = useMemo(() => getMDXComponent(code), [code])
+    const Component = useMemo(() => getMDXComponent(code), [code])
 
-    return (
-        <div>
-            <MDXComponent />
-        </div>
+    const FullComponent = () => (
+        <Component
+            components={{
+                pre: Pre
+            }}
+        />
     )
+
+    return <Layout MDXComponent={FullComponent} frontmatter={frontmatter} />
 }
 
 import fs from 'fs'
