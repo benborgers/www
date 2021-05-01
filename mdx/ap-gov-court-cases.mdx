@@ -1,0 +1,145 @@
+---
+title: AP Gov Court Cases
+date: 2021-04-23
+---
+
+export function Case({ name, bullets }) {
+    return (
+        <details className="bg-blue-50 border border-blue-500 p-4 rounded-lg mb-4">
+            <summary className="italic font-bold text-blue-600 cursor-pointer focus:outline-none" style={{ marginTop: '0 !important' }}>
+                {name}
+            </summary>
+            <ul style={{ marginBottom: '0 !important' }}>
+                {bullets.map(bullet => (
+                    <li key={bullet}>{bullet}</li>
+                ))}
+            </ul>
+        </details>
+    )
+}
+
+## Federalism
+
+<Case
+    name="McCulloch v. Maryland"
+    bullets={[
+        'Does Congress have the Constitutional authority to create a federal bank?',
+        'Congress does have the power to charter the bank, under the "necessary and proper" clause of the Constitution.',
+        'Maryland has no power to tax the bank, since that would give it the ability to kill the bank.'
+    ]}
+/>
+
+<Case
+    name="United States v. Lopez"
+    bullets={[
+        'Congress cannot use the commerce clause (the power to regulate interstate commerce) to make possession of a gun in a school zone a federal crime.',
+        `Carrying a gun into school isn't an economic activity, so it isn't covered under Congress' power to regulate interstate commerce.`,
+        `Not a lot of cases have limited Congress' power under the commerce clause.`
+    ]}
+/>
+
+*McCulloch v. Maryland* gives Congress more power, *U.S. v. Lopez* gives it less.
+
+## Balancing Order and Liberty
+
+<Case
+    name="Engel v. Vitale"
+    bullets={[
+        `State officials (including teachers) may not compose prayers and require that they be recited in school (even if they are non-denominational and students can opt-out).`,
+        `Violates establishment clause.`
+    ]}
+/>
+
+<Case
+    name="Wisconsin v. Yoder"
+    bullets={[`Supreme Court ruled that Amish families had the right to not send their children to school (as Wisconsin required) because they have the right to free expression of religion.`]}
+/>
+
+<Case
+    name="Tinker v. Des Moines Independent Community School District"
+    bullets={[
+        'Students protested the Vietnam War by wearing black armbands at school.',
+        `Supreme Court held that the armbands represented expression that was protected under the first amendment.`,
+        `Students retain their free expression rights as long as they don't materially and substantially interfere with the school's operations.`
+    ]}
+/>
+
+<Case
+    name="New York Times Co. v. United States"
+    bullets={[
+        `Can the government stop a newspaper from publishing the Pentagon Papers, arguing that it hurts national security?`,
+        `Supreme Court rules no, the government cannot silence journalism. This would be undemocratic.`
+    ]}
+/>
+
+<Case
+    name="Schenck v. United States"
+    bullets={[
+        `Schenck made pamphlets encouraging people to dodge the World War I draft.`,
+        `Speech can only be banned if it's intending to and likely to cause imminent unlawful action.`
+    ]}
+/>
+
+<Case
+    name="Citizens United v. Federal Election Commission"
+    bullets={[
+        `Strikes down some provisions of campaign finance law.`,
+        `Money is speech, and the speech of corporations cannot be silenced.`
+    ]}
+/>
+
+## Incorporating Liberties into the States
+
+The Bill of Rights only applies to Congress. Applying it to the states is called *incorporation*.
+
+<Case
+    name="Gideon v. Wainwright"
+    bullets={[
+        `States are required to provide legal counsel to defendants charged with felony.`,
+        `Incorporated the Sixth Amendment.`
+    ]}
+/>
+
+<Case
+    name="Roe v. Wade"
+    bullets={[`Banning abortion in Texas goes against the right to privacy in the Constitution.`]}
+/>
+
+<Case
+    name="McDonald v. Chicago"
+    bullets={[`The second amendment applies to states too (not just the federal government) - Chicago cannot ban gun possession in the home.`]}
+/>
+
+## Equality
+
+<Case
+    name="Brown v. Board of Education"
+    bullets={[
+        `Separate but equal is inherently unequal.`,
+        `Separating students violates the Fourteenth Amendment.`
+    ]}
+/>
+
+## Equality of Representation
+
+<Case
+    name="Baker v. Carr"
+    bullets={[
+        `The Supreme Court can force Tennessee to re-draw its districts more fairly.`,
+        `Caused a "reapportionment revolution" where people had to re-draw districts.`
+    ]}
+/>
+
+<Case
+    name="Shaw v. Reno"
+    bullets={[
+        `Funny-shaped districts cause the impression of manipulation, so they're not allowed.`
+    ]}
+/>
+
+## Checks and Balances
+
+<Case
+    name="Marbury v. Madison"
+    bullets={[`Establishes judicial review, which gives the Supreme Court the ability to declare a legislative or executive act in violation of the Constitution.`]}
+/>

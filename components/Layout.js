@@ -23,10 +23,10 @@ export default function Layout({ MDXComponent, frontmatter }) {
 
                     {frontmatter.title && (
                         <div className="mb-12 space-y-2">
-                            <h1 className="text-gray-800 font-black text-3xl">{frontmatter.title}</h1>
+                            <h1 className="text-gray-900 font-black text-3xl">{frontmatter.title}</h1>
                             {frontmatter.date && (
                                 <p className="text-gray-400">
-                                    Updated {new Date(frontmatter.date).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                    Updated {new Date(frontmatter.date).toLocaleString('en-US', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' })}
                                 </p>
                             )}
                         </div>
