@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/generate-sitemap",
     "start": "next start"
   },
   "dependencies": {
     "mdx-bundler": "^3.4.1",
     "next": "^10.2.0",
     "prism-react-renderer": "^1.2.0",
+    "prismjs": "^1.23.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

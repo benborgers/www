@@ -4,10 +4,6 @@ import Wrapper from './Wrapper'
 import Head from './Head'
 
 export default function Layout({ MDXComponent, frontmatter }) {
-    useEffect(() => {
-        if(! frontmatter.description) alert('Missing description in frontmatter')
-    }, [])
-
     return (
         <>
             <Head title={frontmatter.title} description={frontmatter.description} />
