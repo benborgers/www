@@ -12,9 +12,13 @@ export function Case({ name, bullets }) {
         <Disclosure as="div" className="bg-blue-50 border border-blue-500 p-4 rounded-lg">
             {({ open }) => (
                 <>
-                    <Disclosure.Button className="flex items-center space-x-2 text-blue-600 cursor-pointer focus:outline-none" style={{ marginTop: '0 !important' }}>
-                        <ChevronRightIcon className={`${open ? 'transform rotate-90' : ''} transition-all h-5`} />
-                        <span className="italic font-bold">{name}</span>
+                    <Disclosure.Button className="cursor-pointer focus:outline-none" style={{ marginTop: '0 !important' }}>
+                        <div className="flex items-center space-x-2 text-blue-600 text-left">
+                            <div>
+                                <ChevronRightIcon className={`${open ? 'transform rotate-90' : ''} transition-all h-5 w-5`} />
+                            </div>
+                            <span className="italic font-bold">{name}</span>
+                        </div>
                     </Disclosure.Button>
                     <Disclosure.Panel>
                         <ul style={{ marginBottom: '0 !important' }} className="list-disc ml-8 mt-3 space-y-1 text-gray-700">
