@@ -6,9 +6,10 @@ import A from '../components/A'
 
 import ReactDOM from 'react-dom'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function CatchAll({ code, frontmatter }) {
-    const Component = useMemo(() => getMDXComponent(code, { ReactDOM, nextLink: Link }), [code])
+    const Component = useMemo(() => getMDXComponent(code, { ReactDOM, nextLink: Link, nextImage: Image }), [code])
 
     const FullComponent = () => (
         <Component
@@ -30,7 +31,10 @@ export async function getStaticProps(context) {
     const mdxSource = fs.readFileSync(filePath, 'utf-8')
 
     const { code, frontmatter } = await bundleMDX(mdxSource, {
-        globals: { 'next/link': 'nextLink' }
+        globals: {
+            'next/link': 'nextLink',
+            'next/image': 'nextImage'
+        }
     })
 
     for(const key in frontmatter) {

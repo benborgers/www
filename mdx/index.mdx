@@ -1,4 +1,12 @@
+import Image from 'next/image'
 import mdxData from '../data/mdx'
+
+<Image
+    src="/images/me.jpg"
+    width={112}
+    height={112}
+    className="rounded-full"
+/>
 
 Hi! I’m Ben Borgers. I’m a high school senior in Boston, and interned at IBM last summer. Next fall, I’m headed to Tufts University to study computer science.
 
@@ -6,7 +14,7 @@ I’m on [twitter](https://twitter.com/benborgers) and [github](https://githu
 
 <div className="bg-gray-50 border border-gray-200 rounded-lg px-4">
     {/* TODO: what is a digital garden? */}
-    <p>This website is a digital garden. It’s got {mdxData.length} posts, on a variety of different topics. You can [search through them](/search), or go down one of these entry points:</p>
+    <p>This website is a digital garden. It’s got {mdxData.length} posts, on a variety of different topics. You can [search through them](/search), or use one of these entry points:</p>
     {/* TODO: curation */}
 </div>
 
