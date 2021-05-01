@@ -1,7 +1,7 @@
 // Loads up all the MDX posts on this website.
 // For totaling and search.
 const fs = require('fs')
-const { bundleMDX } = require('mdx-bundler')
+const grayMatter = require('gray-matter')
 const cleanForSearch = require('../utils/cleanForSearch')
 
 module.exports = async () => {
@@ -11,12 +11,12 @@ module.exports = async () => {
 
     for(const filename of filenames) {
         const contents = fs.readFileSync(`./mdx/${filename}`, 'utf-8')
-        const { frontmatter } = await bundleMDX(contents)
+        const matter = grayMatter(contents)
         if(! ['index.mdx', 'search.mdx'].includes(filename)) {
             posts.push({
                 slug: filename.replace(/\.mdx$/, ''),
-                title: frontmatter.title,
-                searchContents: cleanForSearch(contents)
+                title: matter.data.title,
+                searchContents: cleanForSearch(matter.data.title + matter.content)
             })
         }
     }
