@@ -1,0 +1,10 @@
+---
+title: "How to fix mdx-bundler “Unexpected <” error"
+date: 2021-05-01
+---
+
+I was trying to import a component from another file into an MDX file that I was bundling using `mdx-bundler`, but it kept giving me this error message:
+
+> Unexpected “&gt;”
+
+I eventually tracked down that `esbuild` (which is used internally my `mdx-bundler`) expects React components to have the `.jsx` file extension, not `.js`. Changing the component's filename to end with `.jsx` solved the problem.

@@ -24,7 +24,9 @@ module.exports = {
                             borderRadius: theme('borderRadius.md')
                         },
                         'code::before': { content: 'none' },
-                        'code::after': { content: 'none' }
+                        'code::after': { content: 'none' },
+                        'blockquote p:first-of-type::before': { content: 'none' },
+                        'blockquote p:first-of-type::after': { content: 'none' }
                     }
                 }
             })
