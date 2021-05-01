@@ -13,12 +13,8 @@ module.exports = {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans]
             },
             typography: theme => ({
-                posts: {
+                DEFAULT: {
                     css: {
-                        a: {
-                            color: theme('colors.blue.600'),
-                            textDecoration: 'none'
-                        },
                         code: {
                             backgroundColor: theme('colors.gray.100'),
                             paddingLeft: theme('spacing.1'),
@@ -30,22 +26,12 @@ module.exports = {
                         'code::before': { content: 'none' },
                         'code::after': { content: 'none' }
                     }
-                },
-                garden: {
-                    css: {
-                        a: {
-                            color: theme('colors.rose.600')
-                        },
-                        img: {
-                            borderRadius: theme('borderRadius.md')
-                        }
-                    }
                 }
             })
-        },
+        }
     },
     variants: {
         extend: {},
     },
-    plugins: [ require('@tailwindcss/typography') ],
+    plugins: [ require('@tailwindcss/typography') ]
 }
