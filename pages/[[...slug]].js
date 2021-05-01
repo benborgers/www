@@ -21,7 +21,7 @@ import fs from 'fs'
 import { bundleMDX } from 'mdx-bundler'
 
 export async function getStaticProps(context) {
-    const filePath = `mdx/${context.params.slug}.mdx`
+    const filePath = `mdx/${context.params.slug || 'index'}.mdx`
     const mdxSource = fs.readFileSync(filePath, 'utf-8')
 
     const { code, frontmatter } = await bundleMDX(mdxSource)
@@ -42,7 +42,11 @@ export async function getStaticProps(context) {
 }
 
 export function getStaticPaths() {
-    const paths = fs.readdirSync('mdx').map(filename => '/' + filename.replace(/\.mdx$/, ''))
+    const paths = fs.readdirSync('mdx').map(filename => {
+        let slug = filename.replace(/\.mdx$/, '')
+        if(slug === 'index') slug = ''
+        return `/${slug}`
+    })
     return {
         paths,
         fallback: false

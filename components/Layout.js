@@ -21,14 +21,16 @@ export default function Layout({ MDXComponent, frontmatter }) {
                         </Link>
                     </div>
 
-                    <div className="mb-12 space-y-2">
-                        <h1 className="text-gray-800 font-black text-3xl">{frontmatter.title}</h1>
-                        {frontmatter.date &&
-                            <p className="text-gray-400">
-                                Updated {new Date(frontmatter.date).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
-                            </p>
-                        }
-                    </div>
+                    {frontmatter.title && (
+                        <div className="mb-12 space-y-2">
+                            <h1 className="text-gray-800 font-black text-3xl">{frontmatter.title}</h1>
+                            {frontmatter.date && (
+                                <p className="text-gray-400">
+                                    Updated {new Date(frontmatter.date).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                </p>
+                            )}
+                        </div>
+                    )}
 
                     <div className="prose prose-rose">
                         <MDXComponent />
