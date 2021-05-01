@@ -1,0 +1,20 @@
+---
+title: Fundamental Theorem of Calculus
+date: 2021-03-24
+---
+
+import Equation from '../components/Equation'
+
+The Fundamental Theorem of Calculus lets you calculate an integral. It says that <Equation inline string="\int_a^b f(x)dx = F(b) - F(a)" /> where <Equation inline string="F" /> is the antiderivative of <Equation inline string="f" />.
+
+Looking at the area under a curve, increasing the domain horizontally by a small sliver increases the entire area by: (the value of the function at that point; the height) * (the width of that sliver).
+
+*This also makes sense, because once the size of the sliver is small enough, you're essentially just adding a tiny slice of height <Equation inline string="v(T)" />.*
+
+Since the rate of change of the area under the graph is equal to the value of the function, we can find the function for the area under the curve by finding the antiderivative of the original function itself — the antiderivative of <Equation inline string="v(T)" />.
+
+**The function for the area under a function is the antiderivative of the function.**
+
+To "calibrate" the antiderivative, we know that the value of the integral should be <Equation inline string="0" /> when <Equation inline string="T = 0" /> (since <Equation inline string="\int_0^0 = 0" />). Therefore, we take the antiderivative at <Equation inline string="b" /> and subtract the value of the antiderivative at <Equation inline string="a" />. When <Equation inline string="a = b" />, these will cancel out correctly. This gives us:
+
+<Equation string="F(b) - F(a)" />
