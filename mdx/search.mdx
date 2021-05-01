@@ -17,8 +17,11 @@ export function Search() {
                 mdxData.sort(() => Math.random() - 0.5)
             )
         } else {
+            const words = text.trim().split(' ').map(word => cleanForSearch(word))
             setPosts(
-                mdxData.filter(post => post.searchContents.includes(cleanForSearch(text)))
+                mdxData.filter(post => {
+                    return words.every(word => post.searchContents.includes(word))
+                })
             )
         }
     }, [text])
