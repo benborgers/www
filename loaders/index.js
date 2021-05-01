@@ -14,6 +14,7 @@ const fs = require('fs');
             }
 
             fs.writeFileSync(`./data/${id}.json`, JSON.stringify(value, null, 2))
+            console.log(`wrote loader ${id}`)
         }
     }
 })()
