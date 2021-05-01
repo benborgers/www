@@ -1,0 +1,25 @@
+---
+title: How to programmatically cancel a Netlify build
+date: 2021-04-20
+---
+
+import Image from 'next/image'
+
+Sometimes you've got a build script for a Netlify site, and want to cancel the build and deploy if a certain condition is true a version of the website with an error doesn't get published.
+
+To cancel the build in a Node.js script, just run:
+
+```jsx
+process.exit(1)
+```
+
+This causes the build to fail, and will show a message like this in your Netlify build logs:
+
+<Image src="/images/netlify-build-cancelled.png" width={1244} height={442} />
+
+If you want to add additional information on why the build failed, log a message before calling `process.exit`:
+
+```jsx
+console.warn('This is what went wrong.')
+process.exit(1)
+```
