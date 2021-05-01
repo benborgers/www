@@ -1,9 +1,17 @@
-import Wrapper from './Wrapper'
+import { useEffect } from 'react'
 import Link from 'next/link'
+import Wrapper from './Wrapper'
+import Head from './Head'
 
 export default function Layout({ MDXComponent, frontmatter }) {
+    useEffect(() => {
+        if(! frontmatter.description) alert('Missing description in frontmatter')
+    }, [])
+
     return (
         <>
+            <Head title={frontmatter.title} description={frontmatter.description} />
+
             <Wrapper>
                 <div className="pt-4 sm:pt-6 max-w-prose mx-auto">
                     <div className="mb-12 sm:mb-24">
