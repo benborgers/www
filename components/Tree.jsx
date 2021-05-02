@@ -10,7 +10,7 @@ function Layer({ files, top = false }) {
                     <div key={slug}>
                         <Link href={`/${slug}`}>
                             <a>
-                                <div className="text-gray-600 underline hover:text-rose-600 transition-colors font-normal">
+                                <div className="text-gray-600 underline hover:text-rose-600 transition-colors font-normal inline-block">
                                     {mdxData.find(post => post.slug === slug).title}
                                 </div>
                             </a>
