@@ -6,6 +6,12 @@ import mdxData from '../data/mdx'
     width={112}
     height={112}
     className="rounded-full"
+    onClick={() => {
+        window.clickCount = window.clickCount ? window.clickCount + 1 : 1
+        if(window.clickCount === 10) {
+            window.fathom.blockTrackingForMe()
+        }
+    }}
 />
 
 Hi! I’m Ben Borgers. I’m a high school senior in Boston, and interned at IBM last summer. Next fall, I’m headed to Tufts University to study computer science.
