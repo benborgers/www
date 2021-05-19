@@ -2,6 +2,11 @@
 title: "How to use Notion as your blog's CMS"
 date: 2021-01-24
 ---
+
+import NotionDeprecated from '../components/NotionDeprecated'
+
+<NotionDeprecated />
+
 This blog gets its content from [Notion](https://www.notion.so/product). I write the posts in a table in Notion, and whenever this site is rebuilt on [Vercel](https://vercel.com), the site pulls in all the posts and formats them into HTML.
 
 To build this blog, I first reverse-engineered Notion's private API. Notion is working on a public API, but for the time being I decided to build my own API by watching Chrome's dev tools while loading a Notion doc.
