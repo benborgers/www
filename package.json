@@ -1,6 +1,6 @@
 {
-  "name": "@astrojs/starter-kit",
-  "version": "0.0.1",
+  "name": "www",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "astro dev",
