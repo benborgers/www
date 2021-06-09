@@ -1,11 +1,10 @@
 ---
 export let content
+
+import Head from '../components/Head'
 ---
 
-<head>
-    <title>{content.title} — Ben Borgers</title>
-    <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
-</head>
+<Head title={content.title} />
 
 <h1>{content.title}</h1>
 <slot />
