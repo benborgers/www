@@ -6,5 +6,35 @@ import Head from '../components/Head'
 
 <Head title={content.title} />
 
-<h1>{content.title}</h1>
-<slot />
+<div class="wrapper px-4 pt-12 pb-24 gap-8">
+    <div class="justify-self-end">
+        <p class="mt-1">
+            <a href="/" class="font-medium text-gray-500 hover:text-blue-600 transition-colors duration-200">
+                Ben Borgers
+            </a>
+        </p>
+    </div>
+
+    <div class="max-w-prose">
+        <h1 class="font-black text-3xl text-gray-900">{content.title}</h1>
+        <div class="prose mt-8">
+            <slot />
+        </div>
+
+        <div class="mt-16">
+            <p class="space-x-4">
+                <span>{new Date(content.date).toLocaleString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                <a href="https://twitter.com/benborgers" class="underline hover:text-blue-600 transition-colors duration-200">@benborgers</a>
+            </p>
+        </div>
+    </div>
+
+    <div />
+</div>
+
+<style>
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+    }
+</style>
