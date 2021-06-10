@@ -1,0 +1,23 @@
+---
+import Head from '../components/Head'
+---
+
+<Head title="Not Found" />
+
+<div class="p-4 sm:p-6">
+    <h1 class="text-gray-900 font-black text-2xl">whoops! page not found</h1>
+    <p class="mt-2">
+        <a href="/" class="underline">go back to benborgers.com</a>
+    </p>
+</div>
+
+<script>
+    // Redirect to blog post if it exists.
+    const possibleRedirect = '/posts/' + location.pathname.substr(1)
+    fetch(possibleRedirect)
+        .then(res => {
+            if(res.ok) {
+                window.location = possibleRedirect
+            }
+        })
+</script>
