@@ -1,27 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Astro</title>
+---
+import Head from '../components/Head'
+import WeatherEmoji from '../components/WeatherEmoji.jsx'
+---
 
-    <style>
-        header {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            max-width: min(100%, 68ch);
-        }
-    </style>
-</head>
-<body>
-    <main>
-        <header>
-            <div>
-                <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
-                <h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
-            </div>
-        </header>
-    </main>
-</body>
-</html>
+<Head />
+
+<div class="p-6">
+    <p class="text-4xl text-gray-900">
+        I’m Ben Borgers, a developer from <WeatherEmoji:load className="inline-block w-9 h-auto mb-3" /> Boston, MA.
+    </p>
+</div>
