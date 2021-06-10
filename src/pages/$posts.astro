@@ -1,0 +1,38 @@
+---
+import Head from '../components/Head'
+import PostsPage from '../components/PostsPage'
+
+export let collection
+
+export async function createCollection() {
+    return {
+        async data() {
+            const posts = Astro.fetchContent('./posts/*.md')
+            posts.sort((a, b) => new Date(b.date) - new Date(a.date))
+            return posts
+        },
+        pageSize: 9999
+    }
+}
+---
+
+<Head title="Posts" />
+
+<PostsPage>
+    <div class="border-b-2 border-gray-200 pb-2">
+        <p>
+            This is an index of the blog posts that I’ve written. These are mostly meant to be found when googling for a specific issue, but having a single index of them all can also be useful.
+        </p>
+    </div>
+
+    <div class="mt-8 space-y-2">
+        {collection.data.map(post => (
+            <a href={post.url} class="block group">
+                <div class="flex justify-between space-x-4">
+                    <p class="group-hover:underline font-medium text-gray-900">{post.title}</p>
+                    <p class="text-gray-500">{new Date(post.date).toLocaleString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                </div>
+            </a>
+        ))}
+    </div>
+</PostsPage>
