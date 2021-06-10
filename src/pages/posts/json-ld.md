@@ -27,7 +27,7 @@ I did a bunch of fiddling with Google's [structured data testing tool](https://s
         "height": "630"
       }
     },
-    "url": "https://benborgers.com/blog/json-ld/",
+    "url": "https://benborgers.com/posts/json-ld/",
     "datePublished": "2020-01-06T00:00:00.000Z",
     "dateCreated": "2020-01-06T00:00:00.000Z",
     "dateModified": "2020-01-06T00:00:00.000Z",
@@ -39,7 +39,7 @@ I did a bunch of fiddling with Google's [structured data testing tool](https://s
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://benborgers.com/blog/"
+      "@id": "https://benborgers.com/posts/"
     }
   }
 </script>
