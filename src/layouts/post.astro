@@ -18,7 +18,7 @@ import Head from '../components/Head'
         </p>
     </div>
 
-    <div class="max-w-prose">
+    <div>
         <h1 class="font-black text-3xl text-gray-900">{content.title}</h1>
         <div class="prose mt-8">
             <slot />
@@ -39,6 +39,6 @@ import Head from '../components/Head'
 <style>
     .wrapper {
         display: grid;
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-columns: 1fr minmax(0, 65ch) 1fr;
     }
 </style>
