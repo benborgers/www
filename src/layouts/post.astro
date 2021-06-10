@@ -24,7 +24,8 @@ import Head from '../components/Head'
             <slot />
         </div>
 
-        <div class="mt-16">
+        <div class="mt-16 text-gray-500">
+            <p>--</p>
             <p class="space-x-4">
                 <span>{new Date(content.date).toLocaleString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}</span>
                 <a href="https://twitter.com/benborgers" class="underline hover:text-blue-600 transition-colors duration-200">@benborgers</a>
