@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to play an audio file with JavaScript"
 date: 2021-01-30
 ---

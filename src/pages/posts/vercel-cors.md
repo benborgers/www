@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to allows CORS on Vercel"
 date: 2021-01-26
 ---

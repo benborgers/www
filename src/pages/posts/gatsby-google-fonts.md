@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to use Google Fonts with Gatsby"
 date: 2021-01-27
 ---

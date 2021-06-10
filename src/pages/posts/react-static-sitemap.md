@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: How to get absolute URLs in a React Static sitemap
 date: 2021-04-07
 ---

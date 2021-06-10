@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to read and change URL hash with JavaScript"
 date: 2021-01-24
 ---

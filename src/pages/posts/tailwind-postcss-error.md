@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to fix \"PostCSS plugin tailwindcss requires PostCSS 8\""
 date: 2021-01-24
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to use an emoji as a favicon"
 date: 2021-01-24
 ---

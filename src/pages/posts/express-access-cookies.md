@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to access cookies with Express"
 date: 2021-01-24
 ---

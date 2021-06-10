@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to add Fathom Analytics to Gatsby"
 date: 2021-01-23
 ---

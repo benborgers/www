@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to set Text to max-width: max-content in React Native"
 date: 2021-01-24
 ---

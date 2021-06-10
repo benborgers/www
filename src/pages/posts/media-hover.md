@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to disable CSS hover styles on phones"
 date: 2021-01-24
 ---

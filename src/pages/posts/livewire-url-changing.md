@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to get current URL in Livewire component"
 date: 2021-01-24
 ---

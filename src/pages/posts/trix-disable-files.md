@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "Disabling file uploads with the Trix editor"
 date: 2021-01-24
 ---

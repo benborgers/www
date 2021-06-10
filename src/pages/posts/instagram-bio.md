@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to update your Instagram bio with Node.js"
 date: 2021-01-24
 ---

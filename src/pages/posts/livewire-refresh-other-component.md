@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to refresh one Livewire component from another component"
 date: 2021-01-24
 ---

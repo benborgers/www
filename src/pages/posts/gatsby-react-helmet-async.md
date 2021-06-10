@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to use react-helmet-async with Gatsby"
 date: 2021-01-24
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to create a sitemap for a Gatsby site"
 date: 2021-01-24
 ---

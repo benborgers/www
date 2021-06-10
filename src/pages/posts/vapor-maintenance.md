@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to customize the Laravel Vapor maintenance view"
 date: 2021-01-24
 ---

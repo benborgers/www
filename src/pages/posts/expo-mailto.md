@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to open up the email composer with Expo"
 date: 2021-01-24
 ---

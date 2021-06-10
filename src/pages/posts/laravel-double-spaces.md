@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to remove double spaces in a string in Laravel"
 date: 2021-01-30
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "An API to get the image for any emoji"
 date: 2021-01-23
 ---

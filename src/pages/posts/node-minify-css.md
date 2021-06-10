@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to minify CSS with Node.js"
 date: 2021-01-24
 ---

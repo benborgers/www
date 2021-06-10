@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to run migrations automatically on Laravel Vapor"
 date: 2021-01-24
 ---

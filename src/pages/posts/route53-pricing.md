@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How much do domains cost from AWS Route 53?"
 date: 2021-01-24
 ---

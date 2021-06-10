@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to password protect a route with Express"
 date: 2021-01-24
 ---

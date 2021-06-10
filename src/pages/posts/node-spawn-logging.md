@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "Logging the output of Node.js shell exec"
 date: 2021-01-24
 ---

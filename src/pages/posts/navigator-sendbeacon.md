@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How and why to use navigator.sendBeacon"
 date: 2021-01-23
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to manually generate Laravel password resets"
 date: 2021-01-24
 ---

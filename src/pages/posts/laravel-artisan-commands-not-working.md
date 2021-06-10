@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "Artisan commands not working in fresh Laravel installation"
 date: 2021-01-24
 ---

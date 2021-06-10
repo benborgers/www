@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to allow CORS on Netlify Functions"
 date: 2021-01-24
 ---

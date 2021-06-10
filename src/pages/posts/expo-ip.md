@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to get the device's IP address with Expo"
 date: 2021-01-24
 ---

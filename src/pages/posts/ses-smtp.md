@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: How to send email through Amazon SES with SMTP
 date: 2021-04-24
 ---

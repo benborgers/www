@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to make indented bullet points discs in CSS"
 date: 2021-01-24
 ---

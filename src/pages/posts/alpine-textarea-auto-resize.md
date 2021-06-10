@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to make textarea auto-resize with Alpine.js"
 date: 2021-01-24
 ---

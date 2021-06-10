@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to log or record 404 errors in Laravel"
 date: 2021-01-26
 ---

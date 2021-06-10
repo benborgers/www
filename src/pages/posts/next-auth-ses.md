@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: How to send NextAuth.js emails with Amazon SES
 date: 2021-04-23
 ---

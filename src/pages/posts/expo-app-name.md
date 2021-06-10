@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to fix Expo \"the app name you entered is already being used\""
 date: 2021-01-24
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: How to customize Tailwind Typography plugin
 date: 2021-04-09
 ---

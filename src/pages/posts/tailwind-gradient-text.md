@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to make gradient text with Tailwind CSS"
 date: 2021-01-24
 ---

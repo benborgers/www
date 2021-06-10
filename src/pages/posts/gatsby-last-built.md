@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to get the last time a Gatsby site was built"
 date: 2021-01-23
 ---

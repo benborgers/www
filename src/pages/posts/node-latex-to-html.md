@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to render LaTeX to HTML with Node.js"
 date: 2021-01-24
 ---

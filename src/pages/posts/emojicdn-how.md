@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to programmatically get an image for any emoji"
 date: 2021-01-24
 ---

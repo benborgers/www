@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to use Git feature branches in Netlify for clients"
 date: 2021-01-24
 ---

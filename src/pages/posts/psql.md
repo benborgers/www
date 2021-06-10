@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: How to install "psql" command for PostgreSQL on macOS
 date: 2021-04-23
 ---

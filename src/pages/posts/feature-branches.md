@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to use feature branches in Git and GitHub"
 date: 2021-01-24
 ---

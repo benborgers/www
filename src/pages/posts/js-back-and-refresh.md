@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to go back one page and refresh with JavaScript"
 date: 2021-01-30
 ---

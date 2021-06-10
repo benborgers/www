@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to fix \"componentWillMount has been renamed\""
 date: 2021-01-23
 ---

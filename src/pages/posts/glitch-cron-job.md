@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to set up a cron job for your Glitch project"
 date: 2021-01-24
 ---

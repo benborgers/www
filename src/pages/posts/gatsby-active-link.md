@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to style the currently active link in Gatsby"
 date: 2021-01-23
 ---

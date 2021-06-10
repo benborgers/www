@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "Center vertically and horizontally on the page with CSS Grid"
 date: 2021-01-24
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to copy text with JavaScript"
 date: 2021-01-24
 ---

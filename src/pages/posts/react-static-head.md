@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: How to add things to the HTML head with React Static
 date: 2021-04-07
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to remove gray box when tapping a link on iOS with CSS"
 date: 2021-01-24
 ---

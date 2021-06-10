@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to right-align an element in React Native"
 date: 2021-01-24
 ---

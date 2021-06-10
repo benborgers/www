@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to execute a shell script with Node.js"
 date: 2021-01-24
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to get a Google Sheet as JSON"
 date: 2021-01-23
 ---

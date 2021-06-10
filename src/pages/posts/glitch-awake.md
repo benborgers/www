@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to keep your Glitch project from sleeping"
 date: 2021-01-30
 ---

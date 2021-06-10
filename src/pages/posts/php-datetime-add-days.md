@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "Easiest way to add days to a PHP DateTime"
 date: 2021-01-24
 ---

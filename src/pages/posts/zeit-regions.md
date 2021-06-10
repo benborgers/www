@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to deploy to multiple regions with Vercel"
 date: 2021-01-26
 ---

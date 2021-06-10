@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to customize the Tailwind CSS 2.0 color palette"
 date: 2021-01-24
 ---

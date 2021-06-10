@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to get subreddit posts as JSON"
 date: 2021-01-24
 ---

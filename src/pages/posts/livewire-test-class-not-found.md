@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: How to solve "Class 'Tests\Feature\Livewire' not found"
 date: 2021-01-24
 ---

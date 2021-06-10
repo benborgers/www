@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to get the current app version in Expo"
 date: 2021-01-24
 ---

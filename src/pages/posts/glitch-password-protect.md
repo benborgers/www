@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to password protect your Glitch site"
 date: 2021-01-24
 ---

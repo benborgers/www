@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to remove duplicates in an array in JavaScript"
 date: 2021-01-24
 ---

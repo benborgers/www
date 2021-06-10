@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to refresh data with SWR"
 date: 2021-01-24
 ---

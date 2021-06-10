@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "Terminal create directory if it doesn't exist"
 date: 2021-01-24
 ---

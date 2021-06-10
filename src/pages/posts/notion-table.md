@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "Reading a Notion table with an API"
 date: 2021-01-24
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to use JSON-LD to improve SEO on a developer blog"
 date: 2021-01-23
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "What meta tags you need for a Gatsby site"
 date: 2021-01-23
 ---

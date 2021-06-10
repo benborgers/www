@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to get callback when Node.js spawn execution is done"
 date: 2021-01-24
 ---

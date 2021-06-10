@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to customize validation messages in Livewire"
 date: 2021-01-24
 ---

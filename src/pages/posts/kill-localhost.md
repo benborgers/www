@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to kill a localhost process on macOS"
 date: 2021-01-23
 ---

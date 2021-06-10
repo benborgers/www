@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to use Marked and Prism.js together"
 date: 2021-01-24
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: How to sha1 hash with Node.js
 date: 2021-03-28
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to avoid running out of disk space with a database on Glitch"
 date: 2021-01-24
 ---

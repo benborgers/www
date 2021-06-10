@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/post.astro
 title: "How to list DNS records using the Route53 Node.js API"
 date: 2021-01-24
 ---
