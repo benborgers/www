@@ -3,6 +3,7 @@
     "trailingSlash": false,
     "github": { "silent": true },
     "redirects": [
-        { "source": "/blog/(.*)", "destination": "/posts/$1" }
+        { "source": "/blog/(.*)", "destination": "/posts/$1" },
+        { "source": "/((?!posts\/).+)", "destination": "/posts/$1" }
     ]
 }
