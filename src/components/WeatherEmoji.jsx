@@ -4,9 +4,9 @@ export default function WeatherEmoji({ className }) {
     const [emoji, setEmoji] = useState()
 
     const emojis = {
-        '☁️': [],
         '🌤': ['mostly sunny'],
         '⛅': ['partly sunny', 'partly cloudy'],
+        '☁️': ['cloud'],
         '🌧️': ['rain'],
         '🌨️': [],
         '⛈️': ['thunderstorms'],
