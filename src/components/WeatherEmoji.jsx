@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 export default function WeatherEmoji({ className }) {
     const [emoji, setEmoji] = useState()
+    const [phrase, setPhrase] = useState()
 
     const emojis = {
         '🌤': ['mostly sunny'],
@@ -22,6 +23,7 @@ export default function WeatherEmoji({ className }) {
             .then(res => res.json())
             .then(json => {
                 const phrase = json.properties.periods[0].shortForecast.toLowerCase()
+                setPhrase(phrase)
                 let foundEmoji = false
                 for(const emoji in emojis) {
                     if(foundEmoji) return
@@ -39,7 +41,7 @@ export default function WeatherEmoji({ className }) {
 
     return (
         emoji
-        ? <img src={`https://emojicdn.elk.sh/${emoji}`} className={className} />
+        ? <img src={`https://emojicdn.elk.sh/${emoji}`} className={className} title={`Currently: ${phrase}`} />
         : <span className={className} />
     )
 }
