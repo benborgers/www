@@ -16,6 +16,8 @@ export default function WeatherEmoji({ className }) {
     }
 
     useEffect(() => {
+        // As Mr. Mixer said, you should always use weather.gov
+        // because your tax dollars are paying for it.
         fetch('https://api.weather.gov/gridpoints/BOX/64,79/forecast')
             .then(res => res.json())
             .then(json => {
