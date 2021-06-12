@@ -177,7 +177,7 @@ When this form is submitted, we have two pieces of data we need to worry about:
 To persist the files in S3, we use the `Storage` facade in our controller:
 
 ```php
-use Illuminate\Support\Facades\Storage;
+use Illuminate\\Support\\Facades\\Storage;
 
 $files = json_decode(request('trix_files'));
 
@@ -193,7 +193,7 @@ Lastly, we need to deal with the fact that the Trix HTML (submitted to the contr
 To fix this, we can find and replace using a regex:
 
 ```php
-$body = preg_replace('/tmp\//', '', request('body'));
+$body = preg_replace('/tmp\\//', '', request('body'));
 ```
 
 Now, the images in the HTML output point to the non-temporary copy of the attachment in S3.
