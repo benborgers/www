@@ -1,0 +1,27 @@
+---
+export let emoji
+export let background
+export let title
+export let subtitle
+export let link
+---
+
+<a
+    class="grid space-x-6 items-start group"
+    style="grid-template-columns: max-content 1fr"
+    href={link}
+    target="_blank"
+>
+    <div class={`${background} rounded-lg w-14 h-14 flex items-center justify-center`}>
+        <img src={`https://emojicdn.elk.sh/${emoji}`} class="w-8" />
+    </div>
+    <div>
+        <p class="font-medium text-gray-800 text-lg flex items-center space-x-1">
+            <span>{title}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform -rotate-45 text-gray-400 opacity-0 group-hover:opacity-100 tarnsition-opacity duration-200" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+        </p>
+        <p class="text-gray-500">{subtitle}</p>
+    </div>
+</a>
