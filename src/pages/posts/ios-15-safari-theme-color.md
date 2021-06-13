@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/post.astro
 title: How to change iOS 15 Safari status bar color
-date: 2021-06-13
+date: 2021-06-14
 ---
 
 On the iOS 15 update of Safari, there's a colored top bar in the background at the top of the screen.
