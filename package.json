@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "start": "astro dev",
-        "build": "astro build"
+        "build": "NODE_ENV=production astro build"
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.4.1",
