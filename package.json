@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "astro dev",
-    "build": "timeout 30s npm run start && astro build"
+    "build": "timeout 10s npm run start 2>/dev/null && astro build"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
