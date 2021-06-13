@@ -1,11 +1,11 @@
 {
   "scripts": {
     "start": "astro dev",
-    "build": "timeout 10s npm run start 2>/dev/null || astro build"
+    "build": "astro build"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
-    "astro": "^0.13.2",
+    "astro": "^0.12.0",
     "tailwindcss": "^2.1.4"
   }
 }
