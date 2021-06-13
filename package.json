@@ -5,7 +5,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
-    "astro": "^0.12.9",
+    "astro": "^0.13.2",
     "tailwindcss": "^2.1.4"
   }
 }
