@@ -44,10 +44,11 @@ Then, we import different Prism "components" that allow it to parse different la
 
 Then, we tell Marked that we want to handle code highlighting differently. If the code block has a language indicated, like this:
 
+<!-- Spaces before the contents of this code block so they're not actually rendered as a code block. -->
 ````markdown
-```javascript
-// we've indicated that this code is javascript
-```
+ ```javascript
+ // we've indicated that this code is javascript
+ ```
 ````
 
 ...**and** Prism is able to parse it (tested by seeing whether it's in `prism.languages` - Prism will be able to parse languages that we imported components for), we use `prism.highlight()` to syntax-highlight the code. Otherwise, we just return the code itself.
