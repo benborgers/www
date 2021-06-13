@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "astro dev",
-    "build": "echo '{ \"imports\": { \"astro/components\": \"./astro/components.js\", \"astro/components/Prism.astro\": \"./astro/components/Prism.astro.js\", \"astro/dist/internal/__astro_component.js\": \"./astro/dist/internal/__astro_component.js\", \"astro/dist/internal/h.js\": \"./astro/dist/internal/h.js\" } }' > node_modules/.cache/snowpack/build/astro@0.13.2/import-map.json && astro build"
+    "build": "astro build"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
