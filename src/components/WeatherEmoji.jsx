@@ -41,7 +41,7 @@ export default function WeatherEmoji({ className }) {
 
     return (
         emoji
-        ? <img src={`https://emojicdn.elk.sh/${emoji}`} className={className} title={`Currently: ${phrase}`} />
+        ? <img src={`https://emojicdn.elk.sh/${emoji}`} className={className} title={`Currently: ${phrase}`} alt={emoji} />
         : <span className={className} />
     )
 }
