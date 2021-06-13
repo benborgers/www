@@ -1,11 +1,14 @@
 {
-  "scripts": {
-    "start": "astro dev",
-    "build": "astro build"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.4.1",
-    "astro": "^0.13.2",
-    "tailwindcss": "^2.1.4"
-  }
+    "name": "www",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "astro dev",
+        "build": "astro build"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.4.1",
+        "astro": "^0.13.0",
+        "tailwindcss": "^2.1.4"
+    }
 }
