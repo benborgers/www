@@ -5,15 +5,16 @@ export default function WeatherEmoji({ className }) {
     const [phrase, setPhrase] = useState()
 
     const emojis = {
+        '⛈️': ['thunderstorm'],
         '🌤': ['mostly sunny'],
         '⛅': ['partly sunny', 'partly cloudy'],
         '☁️': ['cloud'],
         '🌧️': ['rain'],
         '🌨️': [],
-        '⛈️': ['thunderstorms'],
-        '☀️': ['sun'],
+        '☀️': ['sun', 'clear'],
         '❄️': ['snow'],
-        '🌩️': []
+        '🌩️': [],
+        '🌫': ['fog']
     }
 
     useEffect(() => {
