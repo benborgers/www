@@ -6,7 +6,7 @@ export default function WeatherEmoji({ className }) {
 
     const emojis = {
         '⛈️': ['thunderstorm'],
-        '🌤': ['mostly sunny'],
+        '🌤': ['mostly sunny', 'mostly clear'],
         '⛅': ['partly sunny', 'partly cloudy'],
         '☁️': ['cloud'],
         '🌧️': ['rain'],
