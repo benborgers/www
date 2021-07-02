@@ -20,7 +20,11 @@ import PostsPage from '../components/PostsPage'
         <p>--</p>
         <p class="space-x-4">
             <span>{new Date(content.date).toLocaleString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}</span>
-            <a href="https://twitter.com/benborgers" class="underline hover:text-blue-600 transition-colors duration-200">@benborgers</a>
+            <a
+                href="https://twitter.com/benborgers"
+                class="underline hover:text-blue-600 transition-colors duration-200"
+                onclick="window.fathom.trackGoal('E3LD3YS1', 0)"
+            >@benborgers</a>
         </p>
     </div>
 </PostsPage>
