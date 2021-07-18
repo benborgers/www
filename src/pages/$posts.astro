@@ -1,13 +1,44 @@
 ---
+import matter from 'gray-matter'
 import Head from '../components/Head'
 import PostsPage from '../components/PostsPage'
+import PostLayout from '../layouts/post'
 
 const { collection } = Astro.props
 
 export async function createCollection() {
+    const connections = (
+        await (
+            await fetch('https://obby.vercel.app/api/note?name=Blog Index&token=obby_tcihXZB58s31Ux04sk6Xr')
+        ).json()
+    ).connections
+
+    const obsidianPosts = []
+
+    for(const title of connections) {
+        const json = await (
+            await fetch(`https://obby.vercel.app/api/note?name=${title}&token=obby_tcihXZB58s31Ux04sk6Xr`)
+        ).json()
+        const frontmatter = matter(json.body).data
+        json.slug = frontmatter.slug
+        json.url = `/posts/${frontmatter.slug}`
+        json.date = new Date(json.last_edited_time)
+        obsidianPosts.push(json)
+    }
+
     return {
-        async data() {
-            const posts = Astro.fetchContent('./posts/*.md')
+        routes: obsidianPosts,
+        permalink: ({ params }) => params.url,
+        data({ params }) {
+            if(params.slug) {
+                return obsidianPosts.find(post => post.slug === params.slug)
+            }
+
+            const content = Astro.fetchContent('./posts/*.md')
+            const posts = [
+                ...content,
+                ...obsidianPosts
+            ]
             posts.sort((a, b) => new Date(b.date) - new Date(a.date))
             return posts
         },
@@ -16,23 +47,35 @@ export async function createCollection() {
 }
 ---
 
-<Head title="Posts" />
+{collection.params ? (
+    <PostLayout
+        content={{
+            title: collection.data[0].title,
+            date: collection.data[0].date
+        }}
+        markdown={collection.data[0].body.split('---')[2]}
+    />
+) : (
+    <>
+        <Head title="Posts" />
 
-<PostsPage>
-    <div class="border-b-2 border-gray-200 pb-2">
-        <p>
-            This is an index of the blog posts that I’ve written. These are mostly meant to be found when googling, but having a single list of them can also be useful.
-        </p>
-    </div>
+        <PostsPage>
+            <div class="border-b-2 border-gray-200 pb-2">
+                <p>
+                    This is an index of the blog posts that I’ve written. These are mostly meant to be found when googling, but having a single list of them can also be useful.
+                </p>
+            </div>
 
-    <div class="mt-8 space-y-8 sm:space-y-2">
-        {collection.data.map(post => (
-            <a href={post.url} class="block group">
-                <div class="sm:flex sm:justify-between sm:space-x-4">
-                    <p class="group-hover:underline font-medium text-gray-900 underline sm:no-underline">{post.title}</p>
-                    <p class="text-gray-500">{new Date(post.date).toLocaleString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' })}</p>
-                </div>
-            </a>
-        ))}
-    </div>
-</PostsPage>
+            <div class="mt-8 space-y-8 sm:space-y-2">
+                {collection.data.map(post => (
+                    <a href={post.url} class="block group">
+                        <div class="sm:flex sm:justify-between sm:space-x-4">
+                            <p class="group-hover:underline font-medium text-gray-900 underline sm:no-underline">{post.title}</p>
+                            <p class="text-gray-500">{new Date(post.date).toLocaleString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                        </div>
+                    </a>
+                ))}
+            </div>
+        </PostsPage>
+    </>
+)}

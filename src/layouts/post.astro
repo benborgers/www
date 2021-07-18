@@ -1,6 +1,7 @@
 ---
-const { content } = Astro.props
+const { content, markdown } = Astro.props
 
+import { Markdown } from 'astro/components'
 import Head from '../components/Head'
 import PostsPage from '../components/PostsPage'
 ---
@@ -13,7 +14,10 @@ import PostsPage from '../components/PostsPage'
 <PostsPage>
     <h1 class="font-black text-3xl text-gray-900">{content.title}</h1>
     <div class="prose mt-8 max-w-none md:max-w-prose">
-        <slot />
+        {markdown
+            ? <div><Markdown content={markdown} /></div>
+            : <slot />
+        }
     </div>
 
     <div class="mt-16 text-gray-500">
