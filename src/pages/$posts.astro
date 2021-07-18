@@ -2,7 +2,7 @@
 import Head from '../components/Head'
 import PostsPage from '../components/PostsPage'
 
-export let collection
+const { collection } = Astro.props
 
 export async function createCollection() {
     return {
@@ -11,7 +11,7 @@ export async function createCollection() {
             posts.sort((a, b) => new Date(b.date) - new Date(a.date))
             return posts
         },
-        pageSize: 9999
+        pageSize: Infinity
     }
 }
 ---
