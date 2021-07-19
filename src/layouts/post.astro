@@ -23,7 +23,7 @@ import PostsPage from '../components/PostsPage'
     <div class="mt-16 text-gray-500">
         <p>--</p>
         <p>
-            {new Date(content.date).toLocaleString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}
+            Last updated {new Date(content.date).toLocaleString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}
         </p>
     </div>
 </PostsPage>
