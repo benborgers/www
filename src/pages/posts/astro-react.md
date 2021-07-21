@@ -33,12 +33,12 @@ Now, you can import and use the React component in any `.astro` page:
 import Counter from '../components/Counter.jsx'
 ---
 
-<Counter:load />
+<Counter client:load />
 ```
 
-Where the `:load` option is specified in the code above, there are four options:
+Where the `client:load` option is specified in the code above, there are four options:
 
-- `<Counter:load />` renders the component on page load.
-- `<Counter:idle />` renders the component as soon as the browser has some free time.
-- `<Counter:visible />` renders the component only once it is scrolled into view.
+- `<Counter client:load />` renders the component on page load.
+- `<Counter client:idle />` renders the component as soon as the browser has some free time.
+- `<Counter client:visible />` renders the component only once it is scrolled into view.
 - `<Counter />` (with no option specified) renders an HTML-only version of the component, so any click handlers or state won't work.
