@@ -1,0 +1,43 @@
+<img class="inline-block w-6 md:w-9 h-auto transform -translate-y-1 mx-0.5" id="weather-emoji" />
+
+<script>
+    const emojis = {
+        '⛈️': ['thunderstorm'],
+        '🌤': ['mostly sunny', 'mostly clear'],
+        '⛅': ['partly sunny', 'partly cloudy'],
+        '☁️': ['cloud'],
+        '🌧️': ['rain'],
+        '🌨️': [],
+        '☀️': ['sun', 'clear'],
+        '❄️': ['snow'],
+        '🌩️': [],
+        '🌫': ['fog']
+    }
+
+    fetch('https://api.weather.gov/gridpoints/BOX/64,79/forecast')
+        .then(res => res.json())
+        .then(json => {
+            const phrase = json.properties.periods[0].shortForecast.toLowerCase()
+
+            let selectedEmoji
+            for(const emoji in emojis) {
+                if(selectedEmoji) break
+
+                const matchWords = emojis[emoji]
+                matchWords.forEach(word => {
+                    if(phrase.includes(word)) {
+                        selectedEmoji = emoji
+                    }
+                })
+            }
+
+            if(! selectedEmoji) {
+                selectedEmoji = '🏙'
+            }
+
+            const img = document.querySelector('#weather-emoji')
+            img.src = `https://emojicdn.elk.sh/${selectedEmoji}`
+            img.title = `Currently: ${phrase}`
+            img.alt = selectedEmoji
+        })
+</script>
