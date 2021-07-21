@@ -1,0 +1,36 @@
+---
+import Head from '../components/Head'
+---
+
+<Head />
+
+<div class="h-screen">
+    <img src="/img/christian.jpg" class="w-1/6 absolute transition-all top-0 left-0">
+</div>
+
+<script>
+    const img = document.querySelector('img')
+    const TIME = 2000
+    img.style.transitionDuration = TIME + 'ms'
+
+    const move = () => {
+        const { width: imgWidth, height: imgHeight } = img.getBoundingClientRect()
+
+        const windowHeight = window.innerHeight - imgHeight
+        const windowWidth = window.innerWidth - imgWidth
+
+        const top = Math.floor(Math.random() * windowHeight)
+        const left = Math.floor(Math.random() * windowWidth)
+
+        img.style.top = top + 'px'
+        img.style.left = left + 'px'
+    }
+
+    setTimeout(() => {
+        move()
+    }, 100)
+
+    setInterval(() => {
+        move()
+    }, TIME)
+</script>
