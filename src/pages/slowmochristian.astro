@@ -4,33 +4,52 @@ import Head from '../components/Head'
 
 <Head />
 
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700" rel="stylesheet">
+</head>
+
 <div class="h-screen">
-    <img src="/img/christian.jpg" class="w-1/6 absolute transition-all top-0 left-0">
+    <img src="/img/christian.jpg" class="absolute transition-all transform-gpu ease-linear top-0 left-0 w-1/6">
+    <p class="absolute transition-all transform-gpu ease-linear top-0 left-0 font-bold text-gray-900 text-xl sm:text-5xl bg-white" style="font-family: Balsamiq Sans"></p>
+
+    <div class="fixed bottom-4 inset-x-4">
+        <input type="range" min="0" max="5000" value="2000" class="w-full sm:w-1/2 mx-auto block" />
+    </div>
 </div>
 
 <script>
-    const img = document.querySelector('img')
-    const TIME = 2000
-    img.style.transitionDuration = TIME + 'ms'
+    const time = () => 5100 - document.querySelector('input').value
 
     const move = () => {
-        const { width: imgWidth, height: imgHeight } = img.getBoundingClientRect()
+        for(const query of ['img', 'p', 'input']) {
+            const el = document.querySelector(query)
+            el.style.transitionDuration = time() + 'ms'
 
-        const windowHeight = window.innerHeight - imgHeight
-        const windowWidth = window.innerWidth - imgWidth
+            const { width: imgWidth, height: imgHeight } = el.getBoundingClientRect()
 
-        const top = Math.floor(Math.random() * windowHeight)
-        const left = Math.floor(Math.random() * windowWidth)
+            const windowHeight = window.innerHeight - imgHeight
+            const windowWidth = window.innerWidth - imgWidth
 
-        img.style.top = top + 'px'
-        img.style.left = left + 'px'
+            const top = Math.floor(Math.random() * windowHeight)
+            const left = Math.floor(Math.random() * windowWidth)
+
+            el.style.top = top + 'px'
+            el.style.left = left + 'px'
+
+
+            if(query === 'p') {
+                el.innerHTML = `${time() < 3000 ? 'fast' : 'slow'}-mo christian`
+            }
+        }
+
+        setTimeout(() => move(), time())
     }
 
-    setTimeout(() => {
-        move()
-    }, 100)
+    move()
 
-    setInterval(() => {
+    document.querySelector('input').addEventListener('change', () => {
         move()
-    }, TIME)
+    })
 </script>
