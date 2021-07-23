@@ -28,6 +28,6 @@ const varString = JSON.stringify(vars).replace(/"/g, '&quot;')
     <script data-vars={varString}>
         const vars = JSON.parse(document.currentScript.dataset.vars)
         const minsAgo = Math.round((new Date().getTime() - vars.now) / 1000 / 60)
-        console.log(`${vars.emojis} benborgers.com was last deployed ${minsAgo} minute${minsAgo === 1 ? '' : 's'} ago.`)
+        console.log(`${vars.emojis} benborgers.com was last deployed ${minsAgo} minute${minsAgo === 1 ? '' : 's'} ago`)
     </script>
 </head>
