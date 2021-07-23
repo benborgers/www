@@ -18,6 +18,8 @@
         .then(res => res.json())
         .then(json => {
             const phrase = json.properties.periods[0].shortForecast.toLowerCase()
+                                .replace(/then .*/, '') // Removes forecast for later (e.g. "mostly sunny then scattered showers and thunderstorms").
+                                .trim()
 
             let selectedEmoji
             for(const emoji in emojis) {
