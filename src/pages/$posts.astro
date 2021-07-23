@@ -1,6 +1,7 @@
 ---
 import matter from 'gray-matter'
-import { Markdown } from 'astro/components'
+// TODO: remove Prism component, this is a hack to get Snowpack to work.
+import { Markdown, Prism } from 'astro/components'
 import Post from '../components/Post'
 import loadObsidianPosts from '../lib/loadObsidianPosts'
 
