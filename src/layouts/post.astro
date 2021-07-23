@@ -1,29 +1,11 @@
 ---
-const { content, markdown } = Astro.props
-
-import { Markdown } from 'astro/components'
-import Head from '../components/Head'
-import PostsPage from '../components/PostsPage'
+const { content } = Astro.props
+import Post from '../components/Post'
 ---
 
-<Head title={content.title} />
-<head>
-    <link rel="stylesheet" href="/style/prism.css" />
-</head>
-
-<PostsPage>
-    <h1 class="font-black text-3xl text-gray-900">{content.title}</h1>
-    <div class="prose mt-8 max-w-none md:max-w-prose">
-        {markdown
-            ? <div><Markdown content={markdown} /></div>
-            : <slot />
-        }
-    </div>
-
-    <div class="mt-16 text-gray-500">
-        <p>--</p>
-        <p>
-            Last updated {new Date(content.date).toLocaleString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}
-        </p>
-    </div>
-</PostsPage>
+<Post
+    title={content.title}
+    date={content.date}
+>
+    <slot />
+</Post>
