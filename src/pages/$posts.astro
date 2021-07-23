@@ -1,7 +1,6 @@
 ---
 import matter from 'gray-matter'
-// TODO: remove Prism component, this is a hack to get Snowpack to work.
-import { Markdown, Prism } from 'astro/components'
+import { Markdown } from 'astro/components'
 import Post from '../components/Post'
 import loadObsidianPosts from '../lib/loadObsidianPosts'
 
@@ -21,8 +20,6 @@ export async function createCollection() {
 
 const { post } = Astro.props
 ---
-
-<Prism code={`const foo = 'bar' `} />
 
 <Post
     title={post.title}
