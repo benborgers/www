@@ -1,5 +1,19 @@
 ---
 const { title } = Astro.props
+
+const randomEmoji = async () => {
+    const res = await fetch('https://emojipedia.org/random/')
+    const body = await res.text()
+
+    return body.match(/<title>(.+?) .*<\/title>/)[1]
+}
+
+const vars = {
+    emojis: await randomEmoji() + await randomEmoji(),
+    now: new Date().getTime()
+}
+
+const varString = JSON.stringify(vars).replace(/"/g, '&quot;')
 ---
 
 <head>
@@ -10,4 +24,10 @@ const { title } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {process.env.NODE_ENV === 'production' && <script src="https://anteater.benborgers.com/script.js" data-site="ZWCPJCUA" defer></script>}
+
+    <script data-vars={varString}>
+        const vars = JSON.parse(document.currentScript.dataset.vars)
+        const minsAgo = Math.round((new Date().getTime() - vars.now) / 1000 / 60)
+        console.log(`${vars.emojis} benborgers.com was last deployed ${minsAgo} minute${minsAgo === 1 ? '' : 's'} ago.`)
+    </script>
 </head>
