@@ -1,45 +1,44 @@
-<img class="inline-block w-6 md:w-9 h-auto transform -translate-y-1 mx-0.5" id="weather-emoji" />
+---
+const emojis = {
+    '⛈️': ['thunderstorm'],
+    '🌤': ['mostly sunny', 'mostly clear'],
+    '⛅': ['partly sunny', 'partly cloudy'],
+    '☁️': ['cloud'],
+    '🌧️': ['rain'],
+    '🌨️': [],
+    '☀️': ['sun', 'clear'],
+    '❄️': ['snow'],
+    '🌩️': [],
+    '🌫': ['fog']
+}
 
-<script>
-    const emojis = {
-        '⛈️': ['thunderstorm'],
-        '🌤': ['mostly sunny', 'mostly clear'],
-        '⛅': ['partly sunny', 'partly cloudy'],
-        '☁️': ['cloud'],
-        '🌧️': ['rain'],
-        '🌨️': [],
-        '☀️': ['sun', 'clear'],
-        '❄️': ['snow'],
-        '🌩️': [],
-        '🌫': ['fog']
-    }
+const res = await fetch('https://api.weather.gov/gridpoints/BOX/64,79/forecast')
+const json = await res.json()
 
-    fetch('https://api.weather.gov/gridpoints/BOX/64,79/forecast')
-        .then(res => res.json())
-        .then(json => {
-            const phrase = json.properties.periods[0].shortForecast.toLowerCase()
-                                .replace(/then .*/, '') // Removes forecast for later (e.g. "mostly sunny then scattered showers and thunderstorms").
-                                .trim()
+const fullPhrase = json.properties.periods[0].shortForecast.toLowerCase()
+// For matching, we remove the forecast for later (e.g. "mostly sunny then scattered showers and thunderstorms").
+const phraseForMatching = fullPhrase.replace(/then .*/, '').trim()
 
-            let selectedEmoji
-            for(const emoji in emojis) {
-                if(selectedEmoji) break
 
-                const matchWords = emojis[emoji]
-                matchWords.forEach(word => {
-                    if(phrase.includes(word)) {
-                        selectedEmoji = emoji
-                    }
-                })
-            }
+let selectedEmoji
+for(const emoji in emojis) {
+    if(selectedEmoji) break
 
-            if(! selectedEmoji) {
-                selectedEmoji = '🏙'
-            }
+    const matchWords = emojis[emoji]
+    matchWords.forEach(word => {
+        if(phraseForMatching.includes(word)) {
+            selectedEmoji = emoji
+        }
+    })
+}
 
-            const img = document.querySelector('#weather-emoji')
-            img.src = `https://emojicdn.elk.sh/${selectedEmoji}`
-            img.title = `Currently: ${phrase}`
-            img.alt = selectedEmoji
-        })
-</script>
+if(! selectedEmoji) {
+    selectedEmoji = '🏙'
+}
+---
+
+<img
+    src={`https://emojicdn.elk.sh/${selectedEmoji}`}
+    title={`Currently: ${fullPhrase}`}
+    class="inline-block w-6 md:w-9 h-auto transform -translate-y-1 mx-0.5"
+/>
