@@ -6,7 +6,7 @@
         "start": "astro dev",
         "build": "NODE_ENV=production astro build"
     },
-    "devDependencies": {
+    "dependencies": {
         "@tailwindcss/typography": "^0.4.1",
         "astro": "^0.18.0-next.4",
         "gray-matter": "^4.0.3",
