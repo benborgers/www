@@ -1,16 +1,20 @@
 {
-    "name": "www",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "start": "astro dev",
-        "build": "NODE_ENV=production astro build"
-    },
-    "dependencies": {
-        "@tailwindcss/typography": "^0.4.1",
-        "astro": "^0.18.5",
-        "gray-matter": "^4.0.3",
-        "node-fetch": "^2.6.1",
-        "tailwindcss": "^2.1.4"
-    }
+  "name": "www",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "11.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0"
+  }
 }
