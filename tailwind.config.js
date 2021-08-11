@@ -11,6 +11,6 @@ module.exports = {
         }
     },
     mode: 'jit',
-    purge: ['./public/**/*.html', './src/**/*.{astro,js,jsx,ts,tsx,vue}'],
+    purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
     plugins: [require('@tailwindcss/typography')]
 }
