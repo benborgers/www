@@ -1,5 +1,50 @@
 import CustomHead from 'components/CustomHead'
 
+const emojis = {
+    '⛈️': ['thunderstorm'],
+    '🌤': ['mostly sunny', 'mostly clear'],
+    '⛅': ['partly sunny', 'partly cloudy'],
+    '☁️': ['cloud'],
+    '🌧️': ['rain'],
+    '🌨️': [],
+    '☀️': ['sun', 'clear'],
+    '❄️': ['snow'],
+    '🌩️': [],
+    '🌫': ['fog', 'haze']
+}
+
+export async function getStaticProps(context) {
+    const res = await fetch('https://api.weather.gov/gridpoints/BOX/64,79/forecast')
+    const json = await res.json()
+
+    const fullPhrase = json.properties.periods[0].shortForecast.toLowerCase()
+    // For matching, we remove the forecast for later (e.g. "mostly sunny then scattered showers and thunderstorms").
+    const phraseForMatching = fullPhrase.replace(/then .*/, '').trim()
+
+    let selectedEmoji
+    for(const emoji in emojis) {
+        if(selectedEmoji) break
+
+        const matchWords = emojis[emoji]
+        matchWords.forEach(word => {
+            if(phraseForMatching.includes(word)) {
+                selectedEmoji = emoji
+            }
+        })
+    }
+
+    if(! selectedEmoji) {
+        selectedEmoji = '🏙'
+    }
+
+    return {
+        props: {
+            selectedEmoji,
+            fullPhrase
+        }
+    }
+}
+
 const ProjectCard = ({ emoji, background, title, subtitle, link }) => {
     return (
         <a
@@ -24,7 +69,7 @@ const ProjectCard = ({ emoji, background, title, subtitle, link }) => {
     )
 }
 
-export default function Index() {
+export default function Index({ selectedEmoji, fullPhrase }) {
     return (
         <>
             <CustomHead title="Ben Borgers" />
@@ -41,7 +86,13 @@ export default function Index() {
                             <span>welcome to my island on the internet</span>
                         </p>
                         <h1 className="text-2xl md:text-4xl leading-snug md:leading-snug text-gray-800 mt-1">
-                            I’m Ben Borgers, an 18 year-old developer from Boston, MA.
+                            I’m Ben Borgers, an 18 year-old developer from{' '}
+                            <img
+                                src={`https://emojicdn.elk.sh/${selectedEmoji}`}
+                                title={`Currently: ${fullPhrase}`}
+                                className="inline-block w-6 md:w-9 h-auto transform -translate-y-1 mx-0.5"
+                            />
+                            {' '}Boston, MA.
                             In the fall, I’m going to Tufts University to study computer science.
                         </h1>
 
