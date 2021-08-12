@@ -23,7 +23,8 @@ export async function getStaticProps(context) {
                     text: post.body
                 })
             ).data
-        }
+        },
+        revalidate: 60 * 60 * 24 // Changes to blog posts are eventually shown, after 24 hours.
     }
 }
 
