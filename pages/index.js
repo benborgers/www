@@ -1,4 +1,4 @@
-import Head from 'components/Head'
+import CustomHead from 'components/CustomHead'
 
 const ProjectCard = ({ emoji, background, title, subtitle, link }) => {
     return (
@@ -27,7 +27,7 @@ const ProjectCard = ({ emoji, background, title, subtitle, link }) => {
 export default function Index() {
     return (
         <>
-            <Head title="Ben Borgers" />
+            <CustomHead title="Ben Borgers" />
 
             <div className="p-4 sm:p-6 pb-36 sm:pb-36">
                 <div className="flex justify-end">
