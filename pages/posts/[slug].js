@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import 'github-syntax-light/lib/github-light.css'
 import loadPosts from 'lib/loadPosts'
 import BlogLayout from 'components/BlogLayout'
 import CustomHead from 'components/CustomHead'
@@ -45,9 +46,7 @@ export default function Post({ post, html }) {
 
     return (
         <>
-            <CustomHead title={`${post.title} - Ben Borgers`}>
-                <link rel="stylesheet" href="https://unpkg.com/github-syntax-light@latest/lib/github-light.css" />
-            </CustomHead>
+            <CustomHead title={`${post.title} - Ben Borgers`} />
 
             <BlogLayout>
                 <h1 className="font-black text-3xl text-gray-900">{post.title}</h1>
