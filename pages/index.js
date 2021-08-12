@@ -45,7 +45,7 @@ export async function getStaticProps() {
             fullPhrase,
             nowString: new Date().toLocaleString('en-US', { timeZone: 'America/New_York', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' })
         },
-        revalidate: 60 * 60 // New weather every hour
+        revalidate: 60 * 60 // New weather every hour.
     }
 }
 
