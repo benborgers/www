@@ -17,7 +17,7 @@ export default function PostsIndex({ posts }) {
         <BlogLayout>
             <div className="border-b-2 border-gray-200 pb-2">
                 <p>
-                    This is an index of the {posts.length} blog posts I’ve written.
+                    This is an index of the blog posts I’ve written.
                     These are mostly meant to be found when googling, but having a single list of them can also be nice.
                 </p>
             </div>
