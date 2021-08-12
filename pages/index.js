@@ -41,8 +41,10 @@ export async function getStaticProps() {
     return {
         props: {
             selectedEmoji,
-            fullPhrase
-        }
+            fullPhrase,
+            nowString: new Date().toLocaleString('en-US', { timeZone: 'America/New_York', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' })
+        },
+        revalidate: 60 * 60 // New weather every hour
     }
 }
 
@@ -70,7 +72,7 @@ const ProjectCard = ({ emoji, background, title, subtitle, link }) => {
     )
 }
 
-export default function Index({ selectedEmoji, fullPhrase }) {
+export default function Index({ selectedEmoji, fullPhrase, nowString }) {
     return (
         <>
             <CustomHead title="Ben Borgers" />
@@ -90,7 +92,7 @@ export default function Index({ selectedEmoji, fullPhrase }) {
                             I’m Ben Borgers, an 18 year-old developer from{' '}
                             <img
                                 src={`https://emojicdn.elk.sh/${selectedEmoji}`}
-                                title={`Currently: ${fullPhrase}`}
+                                title={`Currently: ${fullPhrase} (as of ${nowString})`}
                                 className="inline-block w-6 md:w-9 h-auto transform -translate-y-1 mx-0.5"
                             />
                             {' '}Boston, MA.
