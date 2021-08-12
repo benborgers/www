@@ -6,9 +6,9 @@ export async function getStaticProps() {
     const posts = await loadPosts()
     return {
         props: {
-            posts,
-            revalidate: 60 * 60 // Blog index shows new posts after an hour.
-        }
+            posts
+        },
+        revalidate: 60 * 60 // Blog index shows new posts after an hour.
     }
 }
 
