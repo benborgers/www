@@ -10,7 +10,6 @@ export async function getStaticProps() {
 }
 
 export default function PostsIndex({ posts }) {
-    console.log(posts)
     return (
         <BlogLayout>
             <div className="border-b-2 border-gray-200 pb-2">
