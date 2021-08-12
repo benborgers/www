@@ -4,6 +4,7 @@ const ProjectCard = ({ emoji, background, title, subtitle, link }) => {
             className="grid space-x-6 items-start group grid-cols-[max-content,1fr]"
             href={link}
             target="_blank"
+            rel="noreferrer"
         >
             <div className={`${background} rounded-lg w-14 h-14 flex items-center justify-center`}>
                 <img src={`https://emojicdn.elk.sh/${emoji}`} className="w-8" />
@@ -54,7 +55,13 @@ export default function Index() {
                                 link: 'https://github.com/benborgers'
                             }
                         ].map(({ label, link }) => (
-                            <a className="block bg-indigo-50 px-4 py-1 rounded-full text-indigo-500 font-semibold text-sm" href={link} target="_blank" key={label}>
+                            <a
+                                className="block bg-indigo-50 px-4 py-1 rounded-full text-indigo-500 font-semibold text-sm"
+                                href={link}
+                                target="_blank"
+                                rel="noreferrer"
+                                key={label}
+                            >
                                 {label}
                             </a>
                         ))}
