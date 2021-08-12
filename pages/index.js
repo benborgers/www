@@ -1,4 +1,5 @@
 import CustomHead from 'components/CustomHead'
+import Link from 'next/link'
 
 const emojis = {
     '⛈️': ['thunderstorm'],
@@ -76,7 +77,7 @@ export default function Index({ selectedEmoji, fullPhrase }) {
 
             <div className="p-4 sm:p-6 pb-36 sm:pb-36">
                 <div className="flex justify-end">
-                    <a href="/posts" className="block text-gray-400 underline">Blog</a>
+                    <Link href="/posts"><a className="block text-gray-400 underline">Blog</a></Link>
                 </div>
 
                 <div className="max-w-screen-lg mx-auto">
