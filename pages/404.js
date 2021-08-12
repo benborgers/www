@@ -1,5 +1,6 @@
-import CustomHead from 'components/CustomHead'
 import Link from 'next/link'
+import { ArrowCircleRightIcon } from '@heroicons/react/solid'
+import CustomHead from 'components/CustomHead'
 
 // macOS-inspired design inspired by https://mad.ac
 
@@ -29,9 +30,7 @@ export default function Custom404() {
                                 <a>
                                     <div className="flex space-x-2 items-center mt-4 bg-gray-100 py-2 px-3 rounded-md justify-between text-gray-600 font-semibold hover:bg-gray-200 hover:text-gray-800 transition-colors duration-200">
                                         <span>All Posts</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
-                                        </svg>
+                                        <ArrowCircleRightIcon className="h-5 w-5" />
                                     </div>
                                 </a>
                             </Link>

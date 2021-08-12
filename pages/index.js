@@ -1,5 +1,6 @@
-import CustomHead from 'components/CustomHead'
 import Link from 'next/link'
+import CustomHead from 'components/CustomHead'
+import { ArrowRightIcon } from '@heroicons/react/solid'
 
 const emojis = {
     '⛈️': ['thunderstorm'],
@@ -60,11 +61,9 @@ const ProjectCard = ({ emoji, background, title, subtitle, link }) => {
                 <img src={`https://emojicdn.elk.sh/${emoji}`} className="w-8" />
             </div>
             <div>
-                <p className="font-medium text-gray-800 text-lg flex items-center space-x-1">
-                    <span>{title}</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform -rotate-45 text-gray-400 opacity-0 group-hover:opacity-100 tarnsition-opacity duration-200" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
+                <p className="font-medium text-gray-800 text-lg flex items-center">
+                    <span className="mr-1">{title}</span>
+                    <ArrowRightIcon className="h-4 w-4 transform -rotate-45 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </p>
                 <p className="text-gray-500">{subtitle}</p>
             </div>
