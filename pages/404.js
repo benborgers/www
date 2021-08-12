@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function Custom404() {
     return (
         <>
-            <CustomHead title="Not Found" />
+            <CustomHead title="Not Found - Ben Borgers" />
 
             <div className="min-h-screen bg-gradient-to-br from-orange-100 via-rose-200 to-red-200 flex items-start sm:items-center justify-center p-6">
                 <div className="bg-white w-full max-w-sm rounded-xl shadow-lg sm:mb-36 overflow-hidden">
