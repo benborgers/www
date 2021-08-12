@@ -14,7 +14,7 @@ const emojis = {
     '🌫': ['fog', 'haze']
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
     const res = await fetch('https://api.weather.gov/gridpoints/BOX/64,79/forecast')
     const json = await res.json()
 
