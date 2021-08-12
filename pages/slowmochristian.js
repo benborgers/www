@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import CustomHead from 'components/CustomHead'
 
@@ -39,7 +39,7 @@ export default function SlowMoChristian() {
         <>
             <CustomHead title="Slow-Mo Christian">
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
                 <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700" rel="stylesheet" />
             </CustomHead>
 
