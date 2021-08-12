@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@octokit/core": "^3.5.1",
     "gray-matter": "^4.0.3",
     "next": "11.1.0",
     "react": "17.0.2",

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function CustomHead({ title }) {
+export default function CustomHead({ title, children = null }) {
     return (
         <Head>
             <title>{title}</title>
@@ -8,6 +8,8 @@ export default function CustomHead({ title }) {
             {process.env.NODE_ENV === 'production' &&
                 <script src="https://anteater.benborgers.com/script.js" data-site="ZWCPJCUA" defer></script>
             }
+
+            {children}
         </Head>
     )
 }
