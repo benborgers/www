@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import * as Fathom from 'fathom-client'
 
 export default function BlogLayout({ children }) {
     return (
@@ -17,7 +18,7 @@ export default function BlogLayout({ children }) {
                         target="_blank"
                         rel="noreferrer"
                         className="text-gray-400 hover:text-blue-600 transition-colors duration-200"
-                        onClick={() => window.fathom.trackGoal('E3LD3YS1', 0)}
+                        onClick={() => Fathom.trackGoal('E3LD3YS1', 0)}
                     >
                         ⇢ Twitter
                     </a>
