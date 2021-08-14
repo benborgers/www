@@ -7,7 +7,7 @@ Sometimes you just want to send a simple email from within a Laravel controller 
 In these cases, you can use the `Mail::raw` method:
 
 ```php
-use Illuminate\\Support\\Facades\\Mail;
+use Illuminate\Support\Facades\Mail;
 
 Mail::raw('Hello there!', function ($message) {
     $message->from('mail@example.com', 'From Name');

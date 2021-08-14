@@ -23,7 +23,7 @@ I could leverage the `$messages` property like this to override the default vali
 ```php
 <?php
 
-use Livewire\\Component;
+use Livewire\Component;
 
 class LivewireComponent extends Component
 {

@@ -7,5 +7,5 @@ When developing a Laravel app locally, the `::dispatch()` method might not work 
 Instead, after starting Tinker (`php artisan tinker`), try this command:
 
 ```php
-\\Bus::dispatch(new App\\Jobs\\SomeJob($arguments))
+\Bus::dispatch(new App\Jobs\SomeJob($arguments))
 ```

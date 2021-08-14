@@ -5,7 +5,7 @@ date: 2021-01-30
 Here's how you can use Laravel's `Str` helper to remove double spaces from a string in PHP, using regex:
 
 ```php
-use Illuminate\\Support\\Str;
+use Illuminate\Support\Str;
 
 $string = 'Here is my sentence.  There are  double spaces.';
 

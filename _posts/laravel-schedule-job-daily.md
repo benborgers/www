@@ -14,13 +14,13 @@ Now to schedule it, open Laravel's `app/Console/Kernel.php` file. In that file's
 protected function schedule(Schedule $schedule)
 {
     // Run this job every day at midnight
-    $schedule->job(new App\\Jobs\\SomeJob)->daily();
+    $schedule->job(new App\Jobs\SomeJob)->daily();
 
     // Run this job every day at a certain time (here, 3 p.m.)
-    $schedule->job(new App\\Jobs\\SomeJob)->dailyAt('15:00');
+    $schedule->job(new App\Jobs\SomeJob)->dailyAt('15:00');
 
     // You can also set a time zone for the cron job
-    $schedule->job(new App\\Jobs\\SomeJob)
+    $schedule->job(new App\Jobs\SomeJob)
         ->timezone('America/New_York')
         ->dailyAt('15:00');
 }
