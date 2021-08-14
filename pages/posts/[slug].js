@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import 'github-syntax-light/lib/github-light.css'
 import loadPosts from 'lib/loadPosts'
 import BlogLayout from 'components/BlogLayout'
@@ -33,17 +32,11 @@ export async function getStaticPaths() {
     const posts = await loadPosts()
     return {
         paths: posts.map(post => `/posts/${post.slug}`),
-        fallback: true
+        fallback: 'blocking'
     }
 }
 
 export default function Post({ post, html }) {
-    const router = useRouter()
-
-    if(router.isFallback) {
-        return <div>Loading...</div>
-    }
-
     return (
         <>
             <CustomHead title={`${post.title} - Ben Borgers`} />
