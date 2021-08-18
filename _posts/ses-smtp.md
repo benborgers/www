@@ -6,7 +6,7 @@ date: 2021-04-24
 First, you'll need to create your SMTP credentials for AWS Simple Email Service (SES):
 
 - On the old SES console, there's an **SMTP Settings** link on the left side.
-- On the new SES console, the link is under **Account dashboard** at the bottom of the page.
+- On the new SES console, the link is under **Account dashboard** on the left sidebar.
 
 Go through the steps to create new SMTP credentials, and copy them down somewhere.
 
