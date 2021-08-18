@@ -16,7 +16,8 @@ const emojis = {
 }
 
 export async function getStaticProps() {
-    const res = await fetch('https://api.weather.gov/gridpoints/BOX/64,79/forecast')
+    // This grid point is for Tufts.
+    const res = await fetch('https://api.weather.gov/gridpoints/BOX/68,78/forecast/hourly')
     const json = await res.json()
 
     const fullPhrase = json.properties.periods[0].shortForecast.toLowerCase()
