@@ -32,7 +32,7 @@ export default function PostsIndex({ posts }) {
                             <a className="block group">
                                 <div className="sm:flex sm:justify-between sm:space-x-4">
                                     <p className="group-hover:underline font-medium text-gray-900 underline sm:no-underline">{post.title}</p>
-                                    <p className="text-gray-500">{new Date(post.date).toLocaleString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                                    <p className="text-gray-500">{new Date(post.date).toLocaleString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', year: 'numeric' })}</p>
                                 </div>
                             </a>
                         </Link>
