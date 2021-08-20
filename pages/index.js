@@ -174,7 +174,7 @@ export default function Index({ selectedEmoji, fullPhrase, nowString }) {
                             emoji="🥳"
                             background="bg-yellow-100"
                             title="EMOJICDN"
-                            subtitle="API for getting images of emojis that serves two million requests per month."
+                            subtitle="API for getting images of emojis that serves over a million requests per month."
                             link="https://emojicdn.elk.sh"
                         />
 
