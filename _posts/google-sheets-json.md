@@ -41,7 +41,7 @@ You can add `&sheet=Other Sheet Name` to the end of the URL to get data from ano
 
 ---
 
-## Old Method (may be removed now)
+## Old Method (may have stopped working)
 
 1. To start, open the Google Sheet and go to **File → Publish to the web**. Publish the entire document, so that it can be accessed without logging in.
 2. Copy and paste the *spreadsheet key*, which is the long random string in the URL of the spreadsheet. Make sure to copy the entire random part of the URL between two slashes.
