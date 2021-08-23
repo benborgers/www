@@ -44,7 +44,7 @@ export default function SlowMoChristian() {
             </CustomHead>
 
             <div className="h-screen overflow-hidden">
-                <img data-move src="/christian.jpg" className="absolute transition-all transform-gpu ease-linear top-0 left-0 w-1/6" />
+                <img data-move src="/christian.jpg" alt="" className="absolute transition-all transform-gpu ease-linear top-0 left-0 w-1/6" />
                 <p data-move className="absolute transition-all transform-gpu ease-linear top-0 left-0 font-bold text-gray-900 text-xl sm:text-5xl bg-white italic" style={{ fontFamily: 'Balsamiq Sans' }}>
                     {text}
                 </p>
