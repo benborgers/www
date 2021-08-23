@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Link from 'next/link'
 import CustomHead from 'components/CustomHead'
 import { ArrowRightIcon } from '@heroicons/react/solid'
@@ -59,7 +61,7 @@ const ProjectCard = ({ emoji, background, title, subtitle, link }) => {
             rel="noreferrer"
         >
             <div className={`${background} rounded-lg w-14 h-14 flex items-center justify-center`}>
-                <img src={`https://emojicdn.elk.sh/${emoji}`} className="w-8" />
+                <img src={`https://emojicdn.elk.sh/${emoji}`} alt={emoji} className="w-8" />
             </div>
             <div>
                 <p className="font-medium text-gray-800 text-lg flex items-center">
@@ -85,13 +87,14 @@ export default function Index({ selectedEmoji, fullPhrase, nowString }) {
                 <div className="max-w-screen-lg mx-auto">
                     <div className="mt-6 lg:mt-32">
                         <p className="text-indigo-400 text-sm font-bold">
-                            <img src="https://emojicdn.elk.sh/🏝" className="inline-block mr-2 w-4 transform -translate-y-0.5" />
+                            <img src="https://emojicdn.elk.sh/🏝" alt={'🏝'} className="inline-block mr-2 w-4 transform -translate-y-0.5" />
                             <span>welcome to my island on the internet</span>
                         </p>
                         <h1 className="text-2xl md:text-4xl leading-snug md:leading-snug text-gray-800 mt-1">
                             I’m Ben Borgers, an 18 year-old developer from{' '}
                             <img
                                 src={`https://emojicdn.elk.sh/${selectedEmoji}`}
+                                alt={selectedEmoji}
                                 title={`Currently: ${fullPhrase} (as of ${nowString})`}
                                 className="inline-block w-6 md:w-9 h-auto transform -translate-y-1 mx-0.5"
                             />
