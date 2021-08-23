@@ -87,7 +87,7 @@ export default function Index({ selectedEmoji, fullPhrase, nowString }) {
                 <div className="max-w-screen-lg mx-auto">
                     <div className="mt-6 lg:mt-32">
                         <p className="text-indigo-400 text-sm font-bold">
-                            <img src="https://emojicdn.elk.sh/🏝" alt={'🏝'} className="inline-block mr-2 w-4 transform -translate-y-0.5" />
+                            <img src="https://emojicdn.elk.sh/🏝" alt="🏝" className="inline-block mr-2 w-4 transform -translate-y-0.5" />
                             <span>welcome to my island on the internet</span>
                         </p>
                         <h1 className="text-2xl md:text-4xl leading-snug md:leading-snug text-gray-800 mt-1">
