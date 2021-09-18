@@ -13,8 +13,8 @@ const command = spawn('git clone https://github.com/benborgers/potion', {
   shell: true
 })
 
-command.stdout.on('data', data =>   console.log(data.toString())
-command.stderr.on('data', data => console.error(data.toString())
+command.stdout.on('data', data =>   console.log(data.toString()))
+command.stderr.on('data', data => console.error(data.toString()))
 ```
 
 Now, the output of your `spawn` shell command will be streamed to the console in real time.
