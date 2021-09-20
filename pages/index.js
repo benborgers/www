@@ -91,7 +91,7 @@ export default function Index({ selectedEmoji, fullPhrase, nowString }) {
                             <span>welcome to my island on the internet</span>
                         </p>
                         <h1 className="text-2xl md:text-4xl leading-snug md:leading-snug text-gray-800 mt-1">
-                            I’m Ben Borgers, an 18 year-old developer from{' '}
+                            I’m Ben Borgers, a developer from{' '}
                             <img
                                 src={`https://emojicdn.elk.sh/${selectedEmoji}`}
                                 alt={selectedEmoji}
@@ -99,7 +99,7 @@ export default function Index({ selectedEmoji, fullPhrase, nowString }) {
                                 className="inline-block w-6 md:w-9 h-auto transform -translate-y-1 mx-0.5"
                             />
                             {' '}Boston, MA.
-                            In the fall, I’m going to Tufts University to study computer science.
+                            I’m currently a freshman at Tufts University studying computer science.
                         </h1>
 
                         <div className="mt-4 flex space-x-3">
