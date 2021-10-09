@@ -1,3 +1,4 @@
 module.exports = {
-    layout: 'layouts/post'
+    layout: 'layouts/post',
+    tags: 'posts'
 }
