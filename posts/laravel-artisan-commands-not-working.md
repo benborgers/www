@@ -10,7 +10,7 @@ This was weird, because it was a completely fresh installation of Laravel and Je
 
 I eventually realized that the issue lay in the `.env` file. The new Laravel installation has a `.env` file with these values:
 
-```env
+```text
 DB_CONNECTION=mysql
 # DB_HOST=127.0.0.1
 DB_HOST=mysql
