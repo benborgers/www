@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/post
 title: How to use the weather.gov API
 date: 2021-06-19
 ---
