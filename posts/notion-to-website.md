@@ -3,7 +3,7 @@ title: "How to turn a Notion doc into a website"
 date: 2021-01-24
 ---
 
-**Heads up!** This post was written before Notion came out with an official API, and uses a reverse-engineering method that isn’t offically supported. Notion now has an official developer API, so you should probably [use that instead](https://developers.notion.com).
+**Heads up!** This post was written before Notion came out with an official API, and uses a reverse-engineering method that isn’t offically supported. Notion now has an official developer API, so you should [use that instead](https://developers.notion.com). I no longer maintain [Potion](https://github.com/benborgers/potion), used here.
 
 ---
 
