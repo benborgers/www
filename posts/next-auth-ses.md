@@ -9,7 +9,7 @@ It took me a while to figure out how to get an SMTP connection string for Amazon
 
 Follow that guide to set up NextAuth.js like this:
 
-```jsx
+```javascript
 providers: [
 	Providers.Email({
 		server: 'smtp://username:password@email-smtp.us-east-1.amazonaws.com:587',
