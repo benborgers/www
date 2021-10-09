@@ -14,7 +14,7 @@ npx tailwindcss init -p
 
 In your `tailwind.config.js` file, set the `purge` property. This will allow Tailwind to remove all unused CSS when building your Eleventy site, which makes it **much** faster.
 
-```
+```javascript
 purge: [ '_site/**/*.html' ],
 ```
 

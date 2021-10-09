@@ -64,7 +64,7 @@ public function uploadFiles(User $user)
 
 In order to access this bucket from your local environment too, modify or add these values in your `.env` file:
 
-```
+```text
 FILESYSTEM_DRIVER=s3
 
 AWS_ACCESS_KEY_ID=
@@ -81,7 +81,7 @@ You'll also need to open your S3 bucket up to public read access. This is so tha
 
 Log in to the [S3 Console](https://s3.console.aws.amazon.com/), and select the bucket you just created. Go to the **Permissions** tab, then **Bucket Policy**. Paste in the following policy, replacing "`my-bucket`" with your bucket's name:
 
-```
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -197,7 +197,7 @@ $body = preg_replace('/tmp\//', '', request('body'));
 
 Now, the images in the HTML output point to the non-temporary copy of the attachment in S3.
 
-```
+```text
 Before replacement: https://my-bucket.s3.amazonaws.com/tmp/random-filename
  After replacement: https://my-bucket.s3.amazonaws.com/random-filename
 ```

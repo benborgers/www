@@ -34,7 +34,7 @@ Now, we'll use [Potion](https://potion-api.now.sh) to read the table.
 
 The endpoint we want to send a GET request to is:
 
-```
+```text
 https://potion-api.now.sh/table?id=NOTION_DOCUMENT_ID
 ```
 

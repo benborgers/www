@@ -14,7 +14,7 @@ This returns a token and adds it (hashed) to the `password_resets` table of your
 
 To use it, use this path:
 
-```
+```text
 /password/reset/{token}?email={user_email_address}
 ```
 

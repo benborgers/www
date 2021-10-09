@@ -50,7 +50,7 @@ First, we create a function called `reject()`, which is used to prevent a person
 
 If the visitor types a username and password into the prompt, it'll be sent via a header called `authorization` in the format below. However, everything after `Basic ` will be encoded in base64 format:
 
-```
+```text
 Basic myusername:mypassword
 ```
 

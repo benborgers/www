@@ -4,7 +4,7 @@ date: 2021-01-30
 ---
 Playing a sound with pure javascript is surprisingly easy. First, you need a URL to the audio file you want to play. We'll use this one:
 
-```
+```text
 https://www.w3schools.com/html/horse.mp3
 ```
 

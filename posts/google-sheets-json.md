@@ -16,7 +16,7 @@ _This post originally included a method that seems to have been removed in Augus
 2. Copy the _spreadsheet ID_, which is the long random string in the URL of the spreadsheet. Make sure to copy the entire random part of the URL between two slashes.
 3. We’ll be using this URL to get the spreadsheet’s data, replacing `spreadsheet_id` with your spreadsheet ID from the previous step:
 
-```
+```text
 https://docs.google.com/spreadsheets/d/spreadsheet_id/gviz/tq?tqx=out:json
 ```
 
@@ -47,7 +47,7 @@ You can add `&sheet=Other Sheet Name` to the end of the URL to get data from ano
 2. Copy and paste the *spreadsheet key*, which is the long random string in the URL of the spreadsheet. Make sure to copy the entire random part of the URL between two slashes.
 3. Then, use the URL endpoint below to get the spreadsheet's contents, replacing `spreadsheet_key` with your spreadsheet key from the last step:
 
-```
+```text
 https://spreadsheets.google.com/feeds/list/spreadsheet_key/1/public/values?alt=json
 ```
 
@@ -124,6 +124,6 @@ Of course, it's up to you how you parse and use the spreadsheet data for your ap
 
 In Google Sheets, you can add multiple "sheets", which are like multiple pages. If you'd like to read the contents of the second sheet of your spreadsheet, replace the `1` in the URL with `2` (or whatever number sheet you'd like to read):
 
-```
+```text
 https://spreadsheets.google.com/feeds/list/spreadsheet_key/2/public/values?alt=json
 ```
