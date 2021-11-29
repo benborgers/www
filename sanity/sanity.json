@@ -1,0 +1,31 @@
+{
+  "root": true,
+  "project": {
+    "name": "Ben Borgers"
+  },
+  "api": {
+    "projectId": "wg50cnqt",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/code-input",
+    "latex-input"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    }
+  ]
+}
