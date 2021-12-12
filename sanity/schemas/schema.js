@@ -48,11 +48,27 @@ export default createSchema({
           of: [
             {
               type: "block",
-              of: [{ type: "latex", title: "Inline Math", icon: mathIcon }],
+              of: [
+                {
+                  type: "latex",
+                  title: "Inline Math",
+                  icon: mathIcon,
+                  options: {
+                    modal: { type: "popover" },
+                  },
+                },
+              ],
             },
             { type: "code" },
             { type: "image" },
-            { type: "latex", title: "Block Math", icon: mathIcon },
+            {
+              type: "latex",
+              title: "Block Math",
+              icon: mathIcon,
+              options: {
+                modal: { type: "popover" },
+              },
+            },
           ],
         },
       ],
