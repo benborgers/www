@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./app/**/*.jsx"],
+  content: ["./app/**/*.{jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -11,5 +11,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

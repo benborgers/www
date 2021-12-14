@@ -1,10 +1,20 @@
 import { json, useLoaderData } from "remix";
 import sanity from "~/lib/sanity.server";
+import BlockContent from "~/components/BlockContent";
 
 export function meta({ data }) {
   return {
-    title: data.title + " - Ben Borgers",
+    title: (data?.title || "Not Found") + " - Ben Borgers",
   };
+}
+
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: "https://unpkg.com/katex@0.15.1/dist/katex.min.css",
+    },
+  ];
 }
 
 export async function loader({ params }) {
@@ -26,6 +36,7 @@ export default function () {
   return (
     <>
       <h1 className="font-serif text-3xl">{data.title}</h1>
+      <BlockContent blocks={data.body} />
     </>
   );
 }

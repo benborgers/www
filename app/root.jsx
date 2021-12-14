@@ -44,10 +44,7 @@ export function ErrorBoundary({ error }) {
         <h1>There was an error</h1>
         <p>{error.message}</p>
         <hr />
-        <p>
-          Hey, developer, you should replace this with what you want your users
-          to see.
-        </p>
+        <p>Sorry! Please report this error via email to ben@elk.sh</p>
       </div>
     </Document>
   );
