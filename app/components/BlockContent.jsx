@@ -30,8 +30,10 @@ export default function ({ blocks }) {
   };
 
   return (
-    <div className="prose max-w-none">
-      <BlockContent blocks={blocks} serializers={serializers} />
-    </div>
+    <BlockContent
+      blocks={blocks}
+      serializers={serializers}
+      className="prose max-w-none"
+    />
   );
 }

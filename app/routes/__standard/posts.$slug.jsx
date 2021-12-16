@@ -47,7 +47,9 @@ export default function () {
         </p>
       </div>
 
-      <BlockContent blocks={data.body} />
+      <div className="mt-6">
+        <BlockContent blocks={data.body} />
+      </div>
     </>
   );
 }
