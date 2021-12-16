@@ -20,6 +20,7 @@ export default function () {
             return (
               <El
                 to={links[label]}
+                prefetch="intent"
                 href={links[label]}
                 key={label}
                 className={`block px-3 py-2 border rounded-lg
