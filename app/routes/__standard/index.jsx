@@ -1,6 +1,4 @@
-import type { MetaFunction } from "remix";
-
-export let meta: MetaFunction = () => ({
+export let meta = () => ({
   title: "Ben Borgers",
 });
 
