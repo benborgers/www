@@ -40,6 +40,7 @@ export default function () {
       <div className="border-l-2 border-sky-300 py-2 mt-2 -mx-4 sm:-mx-6 pl-5 sm:pl-7 bg-gray-50">
         <p className="text-gray-500 text-sm font-medium">
           {new Date(data.date).toLocaleString("en-US", {
+            timeZone: "UTC",
             month: "long",
             day: "numeric",
             year: "numeric",
