@@ -36,7 +36,7 @@ export default function () {
           })}
         </div>
 
-        <div className="bg-white p-4 sm:p-6 shadow-lg border border-gray-100 rounded-xl mt-3">
+        <div className="bg-white p-4 sm:p-6 shadow-lg border border-gray-100 rounded-xl mt-4">
           <Outlet />
         </div>
       </div>
