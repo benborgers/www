@@ -12,7 +12,7 @@ export default function () {
 
   return (
     <div className="p-2 sm:p-6 pb-24 sm:pb-24">
-      <div className="w-full max-w-[70ch] mx-auto">
+      <div className="w-full max-w-[44rem] mx-auto">
         <div className="flex space-x-4">
           {Object.keys(links).map((label) => {
             const El = links[label].startsWith("/") ? Link : "a";
