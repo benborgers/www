@@ -17,7 +17,12 @@ export default function () {
   return (
     <>
       {data.posts.map((data) => (
-        <Link to={`/posts/${data.slug}`} key={data.slug} className="block">
+        <Link
+          to={data.slug}
+          prefetch="intent"
+          key={data.slug}
+          className="block"
+        >
           {data.title}
         </Link>
       ))}
