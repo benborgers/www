@@ -37,7 +37,7 @@ export default function () {
     <>
       <h1 className="font-serif text-3xl">{data.title}</h1>
 
-      <div className="border-l-2 border-sky-300 py-2 mt-2 -ml-6 -mr-6 pl-7 bg-gray-50">
+      <div className="border-l-2 border-sky-300 py-2 mt-2 -mx-4 sm:-mx-6 pl-5 sm:pl-7 bg-gray-50">
         <p className="text-gray-500 text-sm font-medium">
           {new Date(data.date).toLocaleString("en-US", {
             month: "long",
