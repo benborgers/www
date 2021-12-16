@@ -1,6 +1,7 @@
 import { json, useLoaderData } from "remix";
 import sanity from "~/lib/sanity.server";
 import BlockContent from "~/components/BlockContent";
+import markdown from "~/lib/markdown.server";
 
 export function meta({ data }) {
   return {
@@ -8,19 +9,39 @@ export function meta({ data }) {
   };
 }
 
+import prismCss from "~/styles/prism.css";
+
 export function links() {
   return [
     {
       rel: "stylesheet",
       href: "https://unpkg.com/katex@0.15.1/dist/katex.min.css",
     },
+    { rel: "stylesheet", href: prismCss },
   ];
 }
 
 export async function loader({ params }) {
+  const fs = require("fs");
+  const matter = require("gray-matter");
+
+  const slug = params.slug.toLowerCase();
+
+  const path = `./app/posts/${slug}.md`;
+  if (fs.existsSync(path)) {
+    const file = fs.readFileSync(path, "utf-8");
+    const { data, content } = matter(file);
+
+    return json({
+      title: data.title,
+      date: data.date,
+      body: markdown(content),
+    });
+  }
+
   const result = await sanity.fetch(
     `*[_type == "post" && slug.current == $slug][0]`,
-    { slug: params.slug.toLowerCase() }
+    { slug }
   );
 
   if (!result) {
@@ -49,7 +70,14 @@ export default function () {
       </div>
 
       <div className="mt-6">
-        <BlockContent blocks={data.body} />
+        {Array.isArray(data.body) ? (
+          <BlockContent blocks={data.body} />
+        ) : (
+          <div
+            dangerouslySetInnerHTML={{ __html: data.body }}
+            className="prose max-w-none"
+          />
+        )}
       </div>
     </>
   );
