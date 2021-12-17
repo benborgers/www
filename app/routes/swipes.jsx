@@ -6,7 +6,7 @@ export let handle = { hydrate: false };
 export async function loader() {
   const res = await fetch("https://www.jumbocash.net/index.php", {
     headers: {
-      Cookie: "jsa_session=9969894b13a5037f71cd68bfa71131b5",
+      Cookie: "jsa_session=4fbf0c66036692ebb7999f12c9531cb9",
     },
   });
   const page = await res.text();
