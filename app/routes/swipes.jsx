@@ -29,9 +29,7 @@ export default function () {
       <div>
         <div className="max-w-max mx-auto px-3 py-1 rounded-full bg-red-500 flex items-center space-x-1.5">
           <div className="h-2 w-2 rounded-full bg-white animate-pulse" />
-          <p className="text-uppercase text-white text-sm font-semibold">
-            Live
-          </p>
+          <p className="text-white text-sm font-semibold">Live</p>
         </div>
 
         <p className="mt-4 text-3xl font-black text-gray-900">
