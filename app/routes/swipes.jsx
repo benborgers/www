@@ -34,7 +34,7 @@ export default function () {
         </div>
 
         <p className="mt-4 text-3xl font-black text-gray-900">
-          I have used{" "}
+          Ben has used{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-sky-400 to-blue-600">
             {400 - data.swipesLeft}/400
           </span>{" "}
