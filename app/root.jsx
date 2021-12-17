@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   useCatch,
+  useMatches,
 } from "remix";
 
 import tailwindStylesUrl from "~/styles/tailwind-build.css";
@@ -85,6 +86,10 @@ export function CatchBoundary() {
 }
 
 function Document({ children, title }) {
+  const matches = useMatches();
+
+  const noScript = matches.some((match) => match.handle?.hydrate === false);
+
   return (
     <html lang="en">
       <head>
@@ -98,7 +103,7 @@ function Document({ children, title }) {
       <body className="bg-white text-gray-700 antialiased">
         {children}
         <ScrollRestoration />
-        <Scripts />
+        {!noScript && <Scripts />}
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>

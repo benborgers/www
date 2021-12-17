@@ -1,6 +1,7 @@
 import { json, useLoaderData } from "remix";
 
 export let meta = { title: "Meal Swipes - Ben Borgers" };
+export let handle = { hydrate: false };
 
 export async function loader() {
   const res = await fetch("https://www.jumbocash.net/index.php", {
