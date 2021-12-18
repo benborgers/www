@@ -5,7 +5,7 @@
   "license": "",
   "scripts": {
     "build": "npm run build:css && remix build",
-    "dev": "remix dev & npm run watch:css",
+    "dev": "railway run remix dev & npm run watch:css",
     "postinstall": "remix setup node",
     "start": "remix-serve build",
     "watch:css": "npx tailwindcss -o app/styles/tailwind-build.css --watch",
@@ -21,8 +21,10 @@
     "katex": "^0.15.1",
     "markdown-it": "^12.3.0",
     "prismjs": "^1.25.0",
+    "puppeteer": "^13.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "redis": "^4.0.1",
     "remix": "^1.0.6",
     "tailwindcss": "^3.0.0"
   },
