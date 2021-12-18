@@ -45,8 +45,8 @@ export async function action() {
 export default function () {
   const data = useLoaderData();
 
-  const minsAgo = Math.floor(
-    Math.round((new Date().getTime() - data.timestamp) / (1000 * 60))
+  const minsAgo = Math.round(
+    (new Date().getTime() - data.timestamp) / (1000 * 60)
   );
 
   return (
