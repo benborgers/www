@@ -9,12 +9,12 @@ COPY package.json ./
 
 # Install deps
 RUN npm install
-RUN npm run postinstall
 
 # Bundle app source
 COPY . .
 
 # Build
+RUN npm run postinstall
 RUN npm run build
 
 # Start
