@@ -1,52 +1,12 @@
-# Based on https://github.com/remix-run/remix-jokes/blob/main/Dockerfile
+FROM node:16
 
-# base node image
-FROM node:16-bullseye-slim as base
+WORKDIR /usr/src/app
 
-# set for base and all that inherit from it
-ENV NODE_ENV=production
+COPY package*.json ./
 
-# Install all node_modules, including dev dependencies
-FROM base as deps
-
-RUN mkdir /app
-WORKDIR /app
-
-ADD package.json package-lock.json ./
-RUN npm install --production=false
-
-# Setup production node_modules
-FROM base as production-deps
-
-RUN mkdir /app
-WORKDIR /app
-
-COPY --from=deps /app/node_modules /app/node_modules
-ADD package.json package-lock.json ./
-RUN npm prune --production
-
-# Build the app
-FROM base as build
-
-RUN mkdir /app
-WORKDIR /app
-
-COPY --from=deps /app/node_modules /app/node_modules
-
-ADD . .
+RUN npm install
 RUN npm run build
 
-# Finally, build the production image with minimal footprint
-FROM base
-
-ENV NODE_ENV=production
-
-RUN mkdir /app
-WORKDIR /app
-
-COPY --from=production-deps /app/node_modules /app/node_modules
-COPY --from=build /app/build /app/build
-COPY --from=build /app/public /app/public
-ADD . .
+COPY . .
 
 CMD ["npm", "start"]
