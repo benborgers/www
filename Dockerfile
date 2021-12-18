@@ -5,7 +5,7 @@ FROM zenika/alpine-chrome:with-node
 # Create app directory
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY package.json ./
 
 # Install deps
 RUN npm install
