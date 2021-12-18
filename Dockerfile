@@ -1,26 +1,52 @@
-# Copied from https://github.com/railwayapp/og-generator/blob/main/Dockerfile
+# Based on https://github.com/remix-run/remix-jokes/blob/main/Dockerfile
 
-FROM zenika/alpine-chrome:with-node
+# base node image
+FROM node:16-bullseye-slim as base
 
-ARG NODE_ENV
-ARG REDIS_URL
-ARG PORT
-ARG JUMBOCASH_PASSWORD
+# set for base and all that inherit from it
+ENV NODE_ENV=production
 
-# Create app directory
-WORKDIR /usr/src/app
+# Install all node_modules, including dev dependencies
+FROM base as deps
 
-COPY package.json ./
+RUN mkdir /app
+WORKDIR /app
 
-# Install deps
-RUN npm install
+ADD package.json package-lock.json ./
+RUN npm install --production=false
 
-# Bundle app source
-COPY . .
+# Setup production node_modules
+FROM base as production-deps
 
-# Build
+RUN mkdir /app
+WORKDIR /app
+
+COPY --from=deps /app/node_modules /app/node_modules
+ADD package.json package-lock.json ./
+RUN npm prune --production
+
+# Build the app
+FROM base as build
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY --from=deps /app/node_modules /app/node_modules
+
+ADD . .
 RUN npm run build
-RUN npm run postinstall
 
-# Start
-CMD [ "npm", "start" ]
+# Finally, build the production image with minimal footprint
+FROM base
+
+ENV NODE_ENV=production
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY --from=production-deps /app/node_modules /app/node_modules
+COPY --from=build /app/build /app/build
+COPY --from=build /app/public /app/public
+ADD . .
+
+CMD ["npm", "start"]
