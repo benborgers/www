@@ -2,6 +2,11 @@
 
 FROM zenika/alpine-chrome:with-node
 
+ARG NODE_ENV
+ARG REDIS_URL
+ARG PORT
+ARG JUMBOCASH_PASSWORD
+
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -14,8 +19,8 @@ RUN npm install
 COPY . .
 
 # Build
-RUN npm run postinstall
 RUN npm run build
+RUN npm run postinstall
 
 # Start
 CMD [ "npm", "start" ]
