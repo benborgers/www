@@ -1,7 +1,10 @@
-import { Link, Outlet, useLocation } from "remix";
+import { Link, Outlet, useLocation, useMatches } from "remix";
 
 export default function () {
   const location = useLocation();
+
+  const matches = useMatches();
+  const noPadding = matches.some((match) => match.handle?.noPadding);
 
   const links = {
     "Ben Borgers": "/",
@@ -36,7 +39,11 @@ export default function () {
           })}
         </div>
 
-        <div className="bg-white p-4 sm:p-6 shadow-lg border border-gray-100 rounded-xl mt-4 overflow-hidden">
+        <div
+          className={`bg-white shadow-lg border border-gray-100 rounded-xl mt-4 overflow-hidden ${
+            noPadding ? "" : "p-4 sm:p-6"
+          }`}
+        >
           <Outlet />
         </div>
       </div>
