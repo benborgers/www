@@ -1,4 +1,4 @@
-import { json, useLoaderData } from "remix";
+import { json, useLoaderData, Link } from "remix";
 import sanity from "~/lib/sanity.server";
 import BlockContent from "~/components/BlockContent";
 import markdown from "~/lib/markdown.server";
@@ -75,9 +75,22 @@ export default function () {
         ) : (
           <div
             dangerouslySetInnerHTML={{ __html: data.body }}
-            className="prose max-w-none"
+            className="prose max-w-none prose-sky"
           />
         )}
+      </div>
+
+      <div className="mt-8 bg-gray-50 -mx-4 -mb-4 sm:-mx-6 sm:-mb-6 p-4 sm:p-6 border-t-2 border-gray-200">
+        <p className="text-sm text-gray-400 font-semibold">A quick favor:</p>
+        <p className="mt-1 text-gray-600">
+          Was anything I wrote incorrect or misspelled, or do you still have
+          questions? <br className="hidden md:block" />
+          Please{" "}
+          <Link to="/contact" className="underline text-sky-600 font-medium">
+            use this contact form
+          </Link>{" "}
+          to let me know or ask for help!
+        </p>
       </div>
     </>
   );
