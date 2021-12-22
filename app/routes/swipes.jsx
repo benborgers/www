@@ -29,6 +29,7 @@ export async function action() {
   );
   const swipes = parseInt(rawSwipes.replace("Current Balance", "").trim());
 
+  await page.close();
   await browser.close();
 
   await redis.set(
