@@ -10,9 +10,10 @@ export async function loader() {
 }
 
 export async function action() {
-  // Turn `headless` to `true` for debugging.
+  // Turn `headless` to `false` for debugging.
   const browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--disable-dev-shm-usage"],
+    // These args are to avoid running out of memory: https://stackoverflow.com/a/62396078
+    args: ["--no-sandbox", "--no-zygote", "--single-process"],
     headless: true,
   });
   const page = await browser.newPage();
