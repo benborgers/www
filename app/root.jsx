@@ -88,6 +88,8 @@ function Document({ children, title }) {
   const matches = useMatches();
 
   const noScript = matches.some((match) => match.handle?.hydrate === false);
+  const bgClass = matches.find((match) => match.handle?.bgClass)?.handle
+    ?.bgClass;
 
   return (
     <html lang="en">
@@ -99,7 +101,11 @@ function Document({ children, title }) {
         <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
         <Links />
       </head>
-      <body className="bg-white text-gray-700 antialiased">
+      <body
+        className={`text-gray-700 antialiased ${
+          bgClass ? bgClass : "bg-white"
+        }`}
+      >
         {children}
         <ScrollRestoration />
         {!noScript && <Scripts />}

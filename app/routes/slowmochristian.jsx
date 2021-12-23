@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import * as Slider from "@radix-ui/react-slider";
 
 export let meta = { title: "Slow-Mo Christian" };
+export let handle = { bgClass: "bg-black" };
 
 const SIDES = ["bottom", "right", "top", "left"];
 let sideIndex = 0;
