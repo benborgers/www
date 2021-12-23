@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import * as Slider from "@radix-ui/react-slider";
 
 export let meta = { title: "Slow-Mo Christian" };
 
@@ -60,19 +61,25 @@ export default function () {
         ref={img}
       />
 
-      <div className="bg-white/20 backdrop-blur-md fixed bottom-6 inset-x-0 mx-auto w-[calc(100vw-2rem)] max-w-[24rem] px-6 py-3 rounded-full">
+      <div className="bg-white/20 backdrop-blur-md fixed bottom-6 inset-x-0 mx-auto w-[calc(100vw-2rem)] max-w-[24rem] px-6 pb-3 pt-4 rounded-full">
         <div className="w-full">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            className="w-full"
-            value={speed}
-            onChange={(e) => setSpeed(e.target.value)}
-          />
+          <Slider.Root
+            min={0}
+            max={100}
+            value={[speed]}
+            onValueChange={(value) => setSpeed(value)}
+            className="relative flex items-center"
+          >
+            <Slider.Track className="relative h-1 w-full bg-white/30 rounded-full">
+              <Slider.Range className="absolute bg-white/80 h-full rounded-l-full" />
+            </Slider.Track>
+
+            <Slider.Thumb className="block h-4 w-4 bg-white shadow rounded-full outline-none cursor-pointer" />
+          </Slider.Root>
         </div>
+
         <p
-          className={`font-bold text-center text-white ${
+          className={`mt-2 font-bold text-center text-white ${
             speed < 50 ? "" : "italic"
           }`}
         >
