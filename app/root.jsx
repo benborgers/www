@@ -10,13 +10,12 @@ import {
 } from "remix";
 
 import tailwindStylesUrl from "~/styles/tailwind-build.css";
+import customStylesUrl from "~/styles/custom.css";
 
 export function links() {
   return [
-    {
-      rel: "stylesheet",
-      href: tailwindStylesUrl,
-    },
+    { rel: "stylesheet", href: tailwindStylesUrl },
+    { rel: "stylesheet", href: customStylesUrl },
     {
       rel: "stylesheet",
       href: "https://fonts.googleapis.com/css2?family=Fraunces:wght@400&display=swap",
