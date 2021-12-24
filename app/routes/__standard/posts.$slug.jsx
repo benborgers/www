@@ -56,10 +56,13 @@ export default function () {
 
   return (
     <>
-      <h1 className="font-serif text-3xl">{data.title}</h1>
+      <div className="mt-12 sm:mt-28" />
 
-      <div className="border-l-2 border-sky-300 py-2 mt-2 -mx-4 sm:-mx-6 pl-5 sm:pl-7 bg-gray-50">
-        <p className="text-gray-500 text-sm font-medium">
+      <div className="border border-neutral-900 rounded-xl overflow-hidden">
+        <h1 className="text-white text-lg font-semibold tracking-tighter bg-neutral-900 px-4 py-3">
+          {data.title}
+        </h1>
+        <p className="text-neutral-500 tracking-tighter px-4 py-3">
           {new Date(data.date).toLocaleString("en-US", {
             timeZone: "UTC",
             month: "long",
@@ -69,24 +72,25 @@ export default function () {
         </p>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-8">
         {Array.isArray(data.body) ? (
           <BlockContent blocks={data.body} />
         ) : (
           <div
             dangerouslySetInnerHTML={{ __html: data.body }}
-            className="prose max-w-none prose-sky"
+            className="prose max-w-none prose-neutral prose-a:font-normal prose-a:text-inherit"
           />
         )}
       </div>
 
-      <div className="mt-8 bg-gray-50 -mx-4 -mb-4 sm:-mx-6 sm:-mb-6 p-4 sm:p-6 border-t-2 border-gray-200">
-        <p className="text-sm text-gray-400 font-semibold">A quick favor:</p>
-        <p className="mt-1 text-gray-600">
-          Was anything I wrote incorrect or misspelled, or do you still have
-          questions? <br className="hidden md:block" />
-          Please{" "}
-          <Link to="/contact" className="underline text-sky-600 font-medium">
+      <div className="mt-12 border border-neutral-900 rounded-xl overflow-hidden p-4">
+        <p className="text-neutral-600">
+          <strong className="text-neutral-900 font-semibold">
+            A quick favor:
+          </strong>{" "}
+          was anything I wrote incorrect or misspelled, or do you still have
+          questions? Please{" "}
+          <Link to="/contact" className="underline">
             use this contact form
           </Link>{" "}
           to let me know or ask for help!

@@ -18,7 +18,7 @@ export default function () {
         Ben Borgers
       </p>
 
-      <div className="mt-8 prose prose-neutral prose-a:font-normal prose-a:text-inherit">
+      <div className="mt-8 prose max-w-none prose-neutral prose-a:font-normal prose-a:text-inherit">
         <p>
           Hi! I’m Ben Borgers, a freshman at Tufts University studying computer
           science.
