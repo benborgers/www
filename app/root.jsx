@@ -20,10 +20,6 @@ export function links() {
     { rel: "stylesheet", href: customStylesUrl },
     {
       rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Fraunces:wght@400&display=swap",
-    },
-    {
-      rel: "stylesheet",
       href: "https://rsms.me/inter/inter.css",
     },
   ];
@@ -60,7 +56,7 @@ export function ErrorBoundary({ error }) {
           {error.message}
         </p>
 
-        <p className="mt-2 text-lg text-gray-700">
+        <p className="mt-2 text-lg">
           Sorry! Please{" "}
           <Link to="/contact" className="underline decoration-gray-300">
             report this error to me
