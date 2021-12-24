@@ -32,8 +32,10 @@ export default function () {
           You can find me on{" "}
           <a href="https://twitter.com/benborgers">twitter</a> or{" "}
           <a href="https://github.com/benborgers">github</a>. I also write{" "}
-          <Link to="/posts">programming-related blog posts</Link> on this
-          website.
+          <button onClick={scrollToPosts} className="underline">
+            programming-related blog posts
+          </button>{" "}
+          on this website.
         </p>
         <p>
           Lastly, I love getting emails:{" "}
@@ -162,9 +164,7 @@ const Table = ({ title, rows, maxShownRows = 4 }) => {
     if (window.location.hash === "#posts" && title.includes("Posts")) {
       setShow(true);
       setTimeout(() => {
-        document
-          .querySelector("#posts-scroll-marker")
-          .scrollIntoView({ behavior: "smooth" });
+        scrollToPosts();
       }, 200);
       window.location.hash = "";
     }
@@ -291,4 +291,10 @@ const Row = ({ title, subtitle = null, description = null, link = null }) => {
       {innards}
     </Link>
   );
+};
+
+const scrollToPosts = () => {
+  document
+    .querySelector("#posts-scroll-marker")
+    .scrollIntoView({ behavior: "smooth" });
 };
