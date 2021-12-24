@@ -117,7 +117,7 @@ function Document({ children, title, bgClass = null }) {
         <Links />
       </head>
       <body
-        className={`text-gray-700 antialiased ${
+        className={`antialiased ${
           internalBgClass ? internalBgClass : "bg-white"
         }`}
       >

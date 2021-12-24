@@ -16,7 +16,7 @@ export default function () {
     <>
       <div className="mt-16 sm:mt-32" />
       <div className="flex justify-between items-center">
-        <p className="text-neutral-900 text-lg font-semibold tracking-tighter">
+        <p className="text-neutral-900 text-lg font-semibold tracking-tight">
           Ben Borgers
         </p>
 
@@ -176,7 +176,9 @@ const Table = ({ title, rows, maxShownRows = 4 }) => {
     <>
       <div className="border border-neutral-900 rounded-xl overflow-hidden">
         <div className="p-4 bg-neutral-900">
-          <p className="text-white text-lg font-semibold">{title}</p>
+          <p className="text-white text-lg font-semibold tracking-tight">
+            {title}
+          </p>
         </div>
 
         <div
@@ -200,7 +202,7 @@ const Table = ({ title, rows, maxShownRows = 4 }) => {
                 >
                   <motion.button
                     onClick={() => setShow(true)}
-                    className="block w-full px-4 py-3 font-semibold text-sm bg-gray-200 text-neutral-600"
+                    className="block w-full px-4 py-3 font-semibold text-sm bg-neutral-100 text-neutral-600"
                   >
                     Show More
                   </motion.button>

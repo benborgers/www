@@ -13,7 +13,7 @@ export default function () {
           <div className="max-w-[42rem] mx-auto flex justify-between">
             <Link
               to="/"
-              className="block text-neutral-900 font-semibold tracking-tighter"
+              className="block text-neutral-900 font-semibold tracking-tight"
             >
               Ben Borgers
             </Link>
