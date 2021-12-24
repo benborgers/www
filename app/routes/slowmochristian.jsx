@@ -4,7 +4,7 @@ import * as Slider from "@radix-ui/react-slider";
 export let meta = { title: "Slow-Mo Christian" };
 export let handle = { bgClass: "bg-black" };
 
-const SIDES = ["bottom", "right", "top", "left"];
+const SIDES = ["right", "top", "left", "bottom"];
 let sideIndex = 0;
 let interval;
 
