@@ -16,7 +16,7 @@ export default function () {
   return (
     <div className="p-2 sm:p-6 pb-24 sm:pb-24">
       <div className="w-full max-w-[44rem] mx-auto">
-        <div className="flex space-x-4">
+        <div className="flex space-x-1.5 sm:space-x-4">
           {Object.keys(links).map((label) => {
             const El = links[label].startsWith("/") ? Link : "a";
 
@@ -26,7 +26,7 @@ export default function () {
                 prefetch="intent"
                 href={links[label]}
                 key={label}
-                className={`block px-3 py-2 border rounded-lg
+                className={`block px-2 sm:px-3 py-1 sm:py-2 border rounded-lg
                   ${
                     location.pathname === links[label]
                       ? "text-sky-700 border-sky-200 bg-sky-50"
