@@ -1,5 +1,6 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLoaderData } from "remix";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 import getPosts from "~/lib/getPosts.server";
 
@@ -125,7 +126,7 @@ export default function () {
         ]}
       />
 
-      <div className="mt-16" />
+      <div className="mt-16 scroll-mt-8" id="posts-scroll-marker" />
       <Table
         title="Technical Blog Posts"
         rows={data.posts.map((post) => ({
@@ -146,6 +147,26 @@ export default function () {
 }
 
 const Table = ({ title, rows }) => {
+  const SHOWN_ROWS = 4; // The number of rows that are shown by default.
+  const shownRows = rows.slice(0, SHOWN_ROWS);
+  const hiddenRows = rows.slice(SHOWN_ROWS);
+
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    if (window.location.hash === "#posts" && title.includes("Posts")) {
+      setShow(true);
+      setTimeout(() => {
+        document
+          .querySelector("#posts-scroll-marker")
+          .scrollIntoView({ behavior: "smooth" });
+      }, 200);
+      window.location.hash = "";
+    }
+  }, []);
+
+  const transition = { type: "spring", bounce: 0.1, duration: 0.2 };
+
   return (
     <>
       <div className="border border-neutral-900 rounded-xl overflow-hidden">
@@ -154,11 +175,52 @@ const Table = ({ title, rows }) => {
             {title}
           </p>
         </div>
-        <div className="divide-y divide-neutral-900">
-          {rows.map((row) => (
+
+        <div
+          className={`divide-y divide-neutral-900 ${
+            hiddenRows.length > 0 ? "border-b border-neutral-900" : ""
+          }`}
+        >
+          {shownRows.map((row) => (
             <Row key={row.title} {...row} />
           ))}
         </div>
+
+        {hiddenRows.length > 0 && (
+          <>
+            <AnimatePresence>
+              {!show && (
+                <motion.div
+                  className="overflow-hidden"
+                  exit={{ height: 0 }}
+                  transition={transition}
+                >
+                  <motion.button
+                    onClick={() => setShow(true)}
+                    className="block w-full px-4 py-3 font-semibold text-sm bg-gray-200 text-neutral-600"
+                  >
+                    Show More
+                  </motion.button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+              {show && (
+                <motion.div
+                  className="divide-y divide-neutral-900 overflow-hidden"
+                  initial={{ height: 0 }}
+                  animate={{ height: "auto" }}
+                  transition={transition}
+                >
+                  {hiddenRows.map((row) => (
+                    <Row key={row.title} {...row} />
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </>
+        )}
       </div>
     </>
   );

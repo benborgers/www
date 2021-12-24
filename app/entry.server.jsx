@@ -24,6 +24,10 @@ export default function handleRequest(
     redirect = pathname.replace(/\/$/, "");
   }
 
+  if (pathname === "/posts") {
+    redirect = "/#posts";
+  }
+
   if (redirect) {
     return new Response("", {
       status: 301,
