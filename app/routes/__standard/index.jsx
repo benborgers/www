@@ -10,7 +10,8 @@ export default function () {
       <div className="grid sm:grid-cols-[1fr,max-content] gap-4">
         <div className="prose max-w-none prose-sky">
           <p>
-            Hi! I’m a freshman at Tufts University studying computer science.
+            Hi! I’m Ben Borgers, a freshman at Tufts University studying
+            computer science.
           </p>
           <p>
             You can find me on{" "}
