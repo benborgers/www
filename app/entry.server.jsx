@@ -1,5 +1,6 @@
 import { renderToString } from "react-dom/server";
 import { RemixServer } from "remix";
+import redirects from "~/data/redirects";
 
 export default function handleRequest(
   request,
@@ -7,6 +8,29 @@ export default function handleRequest(
   responseHeaders,
   remixContext
 ) {
+  // Redirects
+  const { pathname } = new URL(request.url);
+  let redirect;
+
+  if (redirects[pathname]) {
+    redirect = redirects[pathname];
+  }
+
+  if (pathname.startsWith("/blog")) {
+    redirect = pathname.replace("/blog", "/posts");
+  }
+
+  if (pathname.endsWith("/") && pathname !== "/") {
+    redirect = pathname.replace(/\/$/, "");
+  }
+
+  if (redirect) {
+    return new Response("", {
+      status: 301,
+      headers: { location: redirect },
+    });
+  }
+
   let markup = renderToString(
     <RemixServer context={remixContext} url={request.url} />
   );
