@@ -4,8 +4,6 @@ export let meta = () => ({
   title: "Contact Ben Borgers",
 });
 
-export let handle = { noPadding: true };
-
 export default function () {
   useEffect(() => {
     const el = document.createElement("script");

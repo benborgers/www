@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "remix";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 import getPosts from "~/lib/getPosts.server";
+import NavLinks from "~/components/NavLinks";
 
 export let meta = () => ({ title: "Ben Borgers" });
 
@@ -14,9 +15,13 @@ export default function () {
   return (
     <>
       <div className="mt-16 sm:mt-32" />
-      <p className="text-neutral-900 text-lg font-semibold tracking-tighter">
-        Ben Borgers
-      </p>
+      <div className="flex justify-between items-center">
+        <p className="text-neutral-900 text-lg font-semibold tracking-tighter">
+          Ben Borgers
+        </p>
+
+        <NavLinks />
+      </div>
 
       <div className="mt-8 prose max-w-none prose-neutral prose-a:font-normal prose-a:text-inherit">
         <p>
