@@ -141,7 +141,10 @@ export default function () {
             <div className="absolute inset-0 bg-white/90 rounded-full" />
             <div className="absolute inset-0 bg-white/90 rounded-full animate-ping" />
           </div>
-          <p>last checked {updatedMinsAgo} mins ago</p>
+          <p>
+            last checked {updatedMinsAgo}{" "}
+            {updatedMinsAgo === 1 ? "min" : "mins"} ago
+          </p>
         </div>
 
         <p className="text-right text-slate-500">
