@@ -1,5 +1,7 @@
-import { useLoaderData } from "remix";
+import { Link, useLoaderData } from "remix";
 import redis from "~/lib/redis.server";
+import { motion } from "framer-motion";
+import { DateTime } from "luxon";
 
 export let meta = { title: "Meal Swipes - Ben Borgers" };
 
@@ -47,32 +49,94 @@ export async function action() {
 export default function () {
   const data = useLoaderData();
 
-  const minsAgo = Math.round(
-    (new Date().getTime() - data.timestamp) / (1000 * 60)
+  const percentUsed = ((400 - data.swipes_left) / 400) * 100;
+
+  const now = DateTime.now();
+  const START_OF_SEMESTER = DateTime.fromObject({
+    year: 2022,
+    month: 1,
+    day: 19,
+  });
+  const END_OF_SEMESTER = DateTime.fromObject({
+    year: 2022,
+    month: 5,
+    day: 13,
+  });
+
+  const semesterTotalHours = END_OF_SEMESTER.diff(
+    START_OF_SEMESTER,
+    "hours"
+  ).toObject().hours;
+  const hoursSoFar = Math.max(
+    0,
+    now.diff(START_OF_SEMESTER, "hours").toObject().hours
   );
+  const progressThroughSemester = hoursSoFar / semesterTotalHours;
+  const swipesToBeOnTrack = progressThroughSemester * 400;
+  const percentToBeOnTrack = (swipesToBeOnTrack / 400) * 100;
 
   return (
-    <div className="p-4 text-center h-[90vh] grid place-items-center">
-      <div>
-        <div className="max-w-max mx-auto px-3 py-1 rounded-full bg-red-500 flex items-center space-x-1.5">
-          <div className="h-2 w-2 rounded-full bg-white animate-pulse" />
-          <p className="text-white text-sm font-semibold">
-            updated{" "}
-            {minsAgo === 0
-              ? "just now"
-              : `${minsAgo} ${minsAgo === 1 ? "min" : "mins"} ago`}
-          </p>
+    <div className="p-4 sm:p-6 h-screen grid grid-rows-[max-content,max-content,1fr]">
+      <div className="max-w-xl">
+        <h1 className="font-black text-3xl sm:text-5xl sm:leading-tight text-transparent bg-clip-text bg-gradient-to-br from-slate-900 to-slate-600">
+          I want to use all of my ridiculously many meal swipes this semester.
+        </h1>
+        <h2 className="mt-2 text-slate-400 font-semibold">
+          This will result in me buying a lot of granola bars.
+        </h2>
+      </div>
+
+      <div className="mt-8 space-y-4 sm:space-y-8">
+        <div className="shadow-lg rounded-xl h-16 sm:h-24 bg-white overflow-hidden border-4 border-slate-900 grid">
+          <motion.div
+            className="bg-gradient-to-r from-sky-200 to-cyan-400 h-full col-start-1 row-start-1"
+            initial={{ width: 0 }}
+            animate={{ width: percentUsed + "%" }}
+            transition={{ type: "spring", bounce: 0, duration: 0.5 }}
+          />
+
+          <motion.p
+            className="font-bold text-sky-900 col-start-1 row-start-1 ml-4 self-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.25 }}
+          >
+            swipes used so far ({400 - data.swipes_left}/400)
+          </motion.p>
         </div>
 
-        <p className="mt-4 text-3xl font-black text-gray-900">
-          Ben has used{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-br from-sky-400 to-blue-600">
-            {400 - data.swipes_left}/400
-          </span>{" "}
-          swipes this semester.
-        </p>
-        <p className="mt-2 text-gray-500">
-          Next semester, I will try to use them all.
+        <div className="shadow-lg rounded-xl h-16 sm:h-24 bg-white overflow-hidden border-4 border-slate-900 grid">
+          <motion.div
+            className="bg-gradient-to-r from-slate-200 to-slate-300 h-full col-start-1 row-start-1"
+            initial={{ width: 0 }}
+            animate={{ width: percentToBeOnTrack + "%" }}
+            transition={{
+              type: "spring",
+              bounce: 0,
+              duration: 0.5,
+              delay: 0.15,
+            }}
+          />
+
+          <motion.p
+            className="font-bold text-slate-900 col-start-1 row-start-1 ml-4 self-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            ideal swipes to be on track (
+            {Math.round(swipesToBeOnTrack * 10) / 10}/400)
+          </motion.p>
+        </div>
+      </div>
+
+      <div className="self-end">
+        <p className="text-right text-slate-500">
+          An aspirational project by{" "}
+          <Link to="/" className="underline">
+            Ben Borgers
+          </Link>
+          .
         </p>
       </div>
     </div>
