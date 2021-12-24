@@ -49,9 +49,14 @@ export async function action() {
 export default function () {
   const data = useLoaderData();
 
+  const now = DateTime.now();
+
+  const updatedMinsAgo = Math.round(
+    now.diff(DateTime.fromMillis(data.timestamp), "minutes").toObject().minutes
+  );
+
   const percentUsed = ((400 - data.swipes_left) / 400) * 100;
 
-  const now = DateTime.now();
   const START_OF_SEMESTER = DateTime.fromObject({
     year: 2022,
     month: 1,
@@ -130,7 +135,15 @@ export default function () {
         </div>
       </div>
 
-      <div className="self-end">
+      <div className="self-end flex flex-col sm:flex-row items-end justify-between gap-1">
+        <div className="bg-red-500 text-white text-sm font-medium px-3 py-0.5 rounded-full flex items-center gap-2">
+          <div className="relative h-2 w-2">
+            <div className="absolute inset-0 bg-white/90 rounded-full" />
+            <div className="absolute inset-0 bg-white/90 rounded-full animate-ping" />
+          </div>
+          <p>live data from {updatedMinsAgo} mins ago</p>
+        </div>
+
         <p className="text-right text-slate-500">
           An aspirational project by{" "}
           <Link to="/" className="underline">
