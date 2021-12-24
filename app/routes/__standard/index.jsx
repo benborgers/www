@@ -173,7 +173,7 @@ const Row = ({ title, subtitle = null, description = null, link = null }) => {
       className={`px-4 py-3 bg-white
       ${
         hasLink
-          ? "grid grid-cols-[1fr,max-content] gap-x-4 hover:bg-gray-100 transition-colors duration-200"
+          ? "grid grid-cols-[1fr,max-content] gap-x-4 hover:bg-neutral-100 transition-colors duration-200"
           : ""
       }`}
     >
