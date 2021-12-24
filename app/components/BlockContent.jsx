@@ -1,5 +1,6 @@
 import BlockContent from "@sanity/block-content-to-react";
 import katex from "katex";
+import syntaxHighlight from "~/lib/syntaxHighlight";
 
 export default function ({ blocks }) {
   let serializers = {
@@ -25,6 +26,18 @@ export default function ({ blocks }) {
         const El = displayMode ? "div" : "span";
 
         return <El dangerouslySetInnerHTML={{ __html: html }} />;
+      },
+      code(props) {
+        return (
+          <pre>
+            <code
+              className={`language-${props.node.language}`}
+              dangerouslySetInnerHTML={{
+                __html: syntaxHighlight(props.node.code, props.node.language),
+              }}
+            />
+          </pre>
+        );
       },
     },
   };
