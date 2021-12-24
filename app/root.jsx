@@ -20,10 +20,6 @@ export function links() {
     { rel: "stylesheet", href: customStylesUrl },
     {
       rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Fraunces:wght@400&display=swap",
-    },
-    {
-      rel: "stylesheet",
       href: "https://rsms.me/inter/inter.css",
     },
   ];
@@ -52,21 +48,25 @@ export default function App() {
 export function ErrorBoundary({ error }) {
   console.error(error);
   return (
-    <Document title="Error!">
-      <div className="mt-[30vh] text-center">
-        <h1 className="text-4xl font-black text-red-500">Unexpected error!</h1>
-
-        <p className="mt-2 p-2 rounded-lg text-red-600 font-mono bg-red-100 max-w-prose mx-auto">
-          {error.message}
-        </p>
-
-        <p className="mt-2 text-lg text-gray-700">
-          Sorry! Please{" "}
-          <Link to="/contact" className="underline decoration-gray-300">
-            report this error to me
-          </Link>
-          .
-        </p>
+    <Document title="Unexpected Error">
+      <div className="h-screen grid place-items-center p-4">
+        <div className="border border-neutral-900 rounded-xl overflow-hidden w-full max-w-sm mx-auto">
+          <h1 className="text-white text-lg font-semibold bg-neutral-900 px-4 py-3">
+            Unexpected Error
+          </h1>
+          <div className="divide-y divide-neutral-900">
+            <p className="px-4 py-3 font-mono text-neutral-500 overflow-scroll max-h-20">
+              {error.message}
+            </p>
+            <p className="text-neutral-600 px-4 py-3">
+              Sorry! Please{" "}
+              <Link to="/contact" className="underline">
+                report this error to me
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
       </div>
     </Document>
   );
@@ -78,18 +78,23 @@ export function CatchBoundary() {
 
   return (
     <Document title={`${caught.status} ${caught.statusText}`}>
-      <div className="mt-[30vh] text-center">
-        <h1 className="text-4xl font-black text-red-500">
-          {caught.status}: {caught.statusText}
-        </h1>
-
-        <p className="mt-2 text-lg text-gray-700">
-          Sorry about that! Try returning to the{" "}
-          <Link to="/" className="underline decoration-gray-300">
-            homepage
-          </Link>
-          .
-        </p>
+      <div className="h-screen grid place-items-center p-4">
+        <div className="border border-neutral-900 rounded-xl overflow-hidden w-full max-w-sm mx-auto">
+          <h1 className="text-white text-lg font-semibold bg-neutral-900 px-4 py-3">
+            {caught.status}: {caught.statusText}
+          </h1>
+          <p className="text-neutral-600 px-4 py-3">
+            Sorry! Please try{" "}
+            <Link to="/" className="underline">
+              returning to the homepage
+            </Link>
+            . If you clicked on a link to get here, please{" "}
+            <Link to="/contact" className="underline">
+              report the broken link
+            </Link>
+            .
+          </p>
+        </div>
       </div>
     </Document>
   );
@@ -106,13 +111,13 @@ function Document({ children, title, bgClass = null }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <Meta />
         {title ? <title>{title}</title> : null}
+        <Meta />
         <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
         <Links />
       </head>
       <body
-        className={`text-gray-700 antialiased ${
+        className={`antialiased ${
           internalBgClass ? internalBgClass : "bg-white"
         }`}
       >

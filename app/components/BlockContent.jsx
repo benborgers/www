@@ -46,7 +46,7 @@ export default function ({ blocks }) {
     <BlockContent
       blocks={blocks}
       serializers={serializers}
-      className="prose max-w-none prose-sky"
+      className="prose max-w-none prose-neutral prose-a:font-normal prose-a:text-inherit"
       projectId="wg50cnqt"
       dataset="production"
     />
