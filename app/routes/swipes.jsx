@@ -1,15 +1,15 @@
 import { useLoaderData } from "remix";
-import puppeteer from "puppeteer";
 import redis from "~/lib/redis.server";
 
 export let meta = { title: "Meal Swipes - Ben Borgers" };
-export let handle = { hydrate: false };
 
 export async function loader() {
   return JSON.parse(await redis.get("swipes"));
 }
 
 export async function action() {
+  const puppeteer = require("puppeteer");
+
   // Turn `headless` to `false` for debugging.
   const browser = await puppeteer.launch({
     // These args are to avoid running out of memory: https://stackoverflow.com/a/62396078

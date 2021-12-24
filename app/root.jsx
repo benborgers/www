@@ -98,7 +98,6 @@ export function CatchBoundary() {
 function Document({ children, title, bgClass = null }) {
   const matches = useMatches();
 
-  const noScript = matches.some((match) => match.handle?.hydrate === false);
   const internalBgClass =
     bgClass || matches.find((match) => match.handle?.bgClass)?.handle?.bgClass;
 
@@ -119,7 +118,7 @@ function Document({ children, title, bgClass = null }) {
       >
         {children}
         <ScrollRestoration />
-        {!noScript && <Scripts />}
+        <Scripts />
         <script
           src="https://owl.benborgers.com/script.js"
           data-spa="auto"
