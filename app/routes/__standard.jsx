@@ -32,6 +32,12 @@ export default function () {
                       ? "text-sky-700 border-sky-200 bg-sky-50"
                       : "text-gray-600 border-gray-200 bg-gray-50 hover:bg-gray-100 transition-colors duration-150"
                   }`}
+                onClick={() => {
+                  if (label === "Twitter") {
+                    window.fathom.trackGoal("E3LD3YS1", 0);
+                  }
+                }}
+                target={label === "Twitter" ? "_blank" : undefined}
               >
                 {label}
               </El>
