@@ -9,7 +9,7 @@ export default function handleRequest(
   remixContext
 ) {
   // Redirects
-  const { pathname } = new URL(request.url);
+  const { pathname, href } = new URL(request.url);
   let redirect;
 
   if (redirects[pathname]) {
@@ -22,6 +22,12 @@ export default function handleRequest(
 
   if (pathname.endsWith("/") && pathname !== "/") {
     redirect = pathname.replace(/\/$/, "");
+  }
+
+  // I'm not sure what the SEO implications of having the
+  // same content on two domains is, so I'm redirecting.
+  if (href.startsWith("https://ben.cv/")) {
+    redirect = href.replace("https://ben.cv/", "https://benborgers.com/");
   }
 
   if (redirect) {
