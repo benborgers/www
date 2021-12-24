@@ -88,12 +88,12 @@ export default function () {
           <strong className="text-neutral-900 font-semibold">
             A quick favor:
           </strong>{" "}
-          was anything I wrote incorrect or misspelled, or do you still have
+          was anything I wrote incorrect or misspelled, or do you have any
           questions? Please{" "}
           <Link to="/contact" className="underline">
             use this contact form
           </Link>{" "}
-          to let me know or ask for help!
+          to let me know!
         </p>
       </div>
     </>
