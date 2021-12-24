@@ -20,7 +20,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   deploy:
@@ -34,6 +34,8 @@ jobs:
           php-version: 8.0
           tools: composer:v2
           coverage: none
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-interaction --no-dev
       - name: Require Vapor CLI
         run: composer global require laravel/vapor-cli
       - name: Deploy Environment
