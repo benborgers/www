@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
   useCatch,
   useMatches,
+  Link,
 } from "remix";
 
 import tailwindStylesUrl from "~/styles/tailwind-build.css";
@@ -40,11 +41,20 @@ export function ErrorBoundary({ error }) {
   console.error(error);
   return (
     <Document title="Error!">
-      <div>
-        <h1>There was an error</h1>
-        <p>{error.message}</p>
-        <hr />
-        <p>Sorry! Please report this error via email to ben@elk.sh</p>
+      <div className="mt-[30vh] text-center">
+        <h1 className="text-4xl font-black text-red-500">Unexpected error!</h1>
+
+        <p className="mt-2 p-2 rounded-lg text-red-600 font-mono bg-red-100 max-w-prose mx-auto">
+          {error.message}
+        </p>
+
+        <p className="mt-2 text-lg text-gray-700">
+          Sorry! Please{" "}
+          <Link to="/contact" className="underline decoration-gray-300">
+            report this error to me
+          </Link>
+          .
+        </p>
       </div>
     </Document>
   );
@@ -54,42 +64,31 @@ export function ErrorBoundary({ error }) {
 export function CatchBoundary() {
   let caught = useCatch();
 
-  let message;
-  switch (caught.status) {
-    case 401:
-      message = (
-        <p>
-          Oops! Looks like you tried to visit a page that you do not have access
-          to.
-        </p>
-      );
-      break;
-    case 404:
-      message = (
-        <p>Oops! Looks like you tried to visit a page that does not exist.</p>
-      );
-      break;
-
-    default:
-      throw new Error(caught.data || caught.statusText);
-  }
-
   return (
     <Document title={`${caught.status} ${caught.statusText}`}>
-      <h1>
-        {caught.status}: {caught.statusText}
-      </h1>
-      {message}
+      <div className="mt-[30vh] text-center">
+        <h1 className="text-4xl font-black text-red-500">
+          {caught.status}: {caught.statusText}
+        </h1>
+
+        <p className="mt-2 text-lg text-gray-700">
+          Sorry about that! Try returning to the{" "}
+          <Link to="/" className="underline decoration-gray-300">
+            homepage
+          </Link>
+          .
+        </p>
+      </div>
     </Document>
   );
 }
 
-function Document({ children, title }) {
+function Document({ children, title, bgClass = null }) {
   const matches = useMatches();
 
   const noScript = matches.some((match) => match.handle?.hydrate === false);
-  const bgClass = matches.find((match) => match.handle?.bgClass)?.handle
-    ?.bgClass;
+  const internalBgClass =
+    bgClass || matches.find((match) => match.handle?.bgClass)?.handle?.bgClass;
 
   return (
     <html lang="en">
@@ -103,7 +102,7 @@ function Document({ children, title }) {
       </head>
       <body
         className={`text-gray-700 antialiased ${
-          bgClass ? bgClass : "bg-white"
+          internalBgClass ? internalBgClass : "bg-white"
         }`}
       >
         {children}
