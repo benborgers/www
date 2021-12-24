@@ -26,6 +26,8 @@ export default function handleRequest(
 
   // I'm not sure what the SEO implications of having the
   // same content on two domains is, so I'm redirecting.
+  console.log(new URL(request.url));
+  console.log(request.headers);
   if (href.startsWith("https://ben.cv")) {
     redirect = href.replace("https://ben.cv", "https://benborgers.com");
   }
