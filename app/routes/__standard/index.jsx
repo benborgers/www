@@ -176,9 +176,7 @@ const Table = ({ title, rows, maxShownRows = 4 }) => {
     <>
       <div className="border border-neutral-900 rounded-xl overflow-hidden">
         <div className="p-4 bg-neutral-900">
-          <p className="text-white text-lg font-semibold tracking-tighter">
-            {title}
-          </p>
+          <p className="text-white text-lg font-semibold">{title}</p>
         </div>
 
         <div

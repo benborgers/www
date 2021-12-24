@@ -59,10 +59,10 @@ export default function () {
       <div className="mt-12 sm:mt-28" />
 
       <div className="border border-neutral-900 rounded-xl overflow-hidden">
-        <h1 className="text-white text-lg font-semibold tracking-tighter bg-neutral-900 px-4 py-3">
+        <h1 className="text-white text-lg font-semibold bg-neutral-900 px-4 py-3">
           {data.title}
         </h1>
-        <p className="text-neutral-500 tracking-tighter px-4 py-3">
+        <p className="text-neutral-500 tracking-tight px-4 py-3">
           {new Date(data.date).toLocaleString("en-US", {
             timeZone: "UTC",
             month: "long",
