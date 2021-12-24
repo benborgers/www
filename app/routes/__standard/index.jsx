@@ -13,7 +13,7 @@ export default function () {
 
   return (
     <>
-      <div className="mt-32" />
+      <div className="mt-16 sm:mt-32" />
       <p className="text-neutral-900 text-lg font-semibold tracking-tighter">
         Ben Borgers
       </p>
@@ -255,7 +255,7 @@ const Row = ({ title, subtitle = null, description = null, link = null }) => {
       </div>
 
       {link && (
-        <div>
+        <div className="mt-1">
           <ArrowRightIcon
             className={`h-4 w-4 text-neutral-600 ${
               externalLink ? "-rotate-45" : ""
