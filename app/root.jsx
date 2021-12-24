@@ -109,6 +109,13 @@ function Document({ children, title }) {
         {children}
         <ScrollRestoration />
         {!noScript && <Scripts />}
+        <script
+          src="https://owl.benborgers.com/script.js"
+          data-spa="auto"
+          data-site="ZWCPJCUA"
+          data-included-domains="benborgers.com,ben.cv"
+          defer
+        ></script>
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
