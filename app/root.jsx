@@ -9,6 +9,7 @@ import {
   useMatches,
   Link,
 } from "remix";
+import { useEffect } from "react";
 
 import tailwindStylesUrl from "~/styles/tailwind-build.css";
 import customStylesUrl from "~/styles/custom.css";
@@ -29,6 +30,17 @@ export function links() {
 }
 
 export default function App() {
+  useEffect(() => {
+    // I'm not sure what the SEO implications of having the
+    // same content on two domains is, so I'm redirecting.
+    if (window.location.href.startsWith("https://ben.cv")) {
+      window.location = window.location.href.replace(
+        "https://ben.cv",
+        "https://benborgers.com"
+      );
+    }
+  }, []);
+
   return (
     <Document>
       <Outlet />
