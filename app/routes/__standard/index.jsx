@@ -141,15 +141,15 @@ export default function () {
             .toLowerCase(),
           link: `posts/${post.slug}`,
         }))}
+        maxShownRows={8}
       />
     </>
   );
 }
 
-const Table = ({ title, rows }) => {
-  const SHOWN_ROWS = 4; // The number of rows that are shown by default.
-  const shownRows = rows.slice(0, SHOWN_ROWS);
-  const hiddenRows = rows.slice(SHOWN_ROWS);
+const Table = ({ title, rows, maxShownRows = 4 }) => {
+  const shownRows = rows.slice(0, maxShownRows);
+  const hiddenRows = rows.slice(maxShownRows);
 
   const [show, setShow] = useState(false);
 
