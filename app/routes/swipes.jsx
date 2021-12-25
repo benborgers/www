@@ -1,4 +1,5 @@
-import { Link, useLoaderData } from "remix";
+import { useState, useEffect } from "react";
+import { Link, useLoaderData, useFetcher } from "remix";
 import redis from "~/lib/redis.server";
 import { motion } from "framer-motion";
 import { DateTime } from "luxon";
@@ -47,7 +48,7 @@ export async function action() {
 }
 
 export default function () {
-  const data = useLoaderData();
+  const [data, setData] = useState(useLoaderData());
 
   const now = DateTime.now();
 
@@ -79,6 +80,32 @@ export default function () {
   const progressThroughSemester = hoursSoFar / semesterTotalHours;
   const swipesToBeOnTrack = progressThroughSemester * 400;
   const percentToBeOnTrack = (swipesToBeOnTrack / 400) * 100;
+
+  // REVALIDATION
+  // Update data every 30 seconds when tab is active,
+  // and whenever the user returns to this tab.
+  const fetcher = useFetcher();
+
+  const revalidate = () => {
+    if (document.visibilityState === "visible") {
+      fetcher.load("/swipes");
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      revalidate();
+    }, 30 * 1000);
+
+    document.addEventListener("visibilitychange", revalidate);
+
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener("visibilitychange", revalidate);
+    };
+  }, []);
+
+  useEffect(() => fetcher.data && setData(fetcher.data), [fetcher.data]);
 
   return (
     <div className="p-4 sm:p-6 h-screen grid grid-rows-[max-content,max-content,1fr]">
