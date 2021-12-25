@@ -5,6 +5,7 @@ export default function () {
     <p className="space-x-3">
       <NavLink
         to="/contact"
+        prefetch="intent"
         className={({ isActive }) =>
           `text-sm font-medium ${
             isActive ? "text-neutral-900" : "text-neutral-500"
