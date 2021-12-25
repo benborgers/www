@@ -36,9 +36,13 @@ export default function App() {
       bar.current.style.width = "100%";
       setTimeout(() => {
         bar.current.style.opacity = 0;
+        // Technically, fading out the bar should take 200ms,
+        // so we wait until it's fully gone to bring the bar
+        // back to 0%. In practice, this seems to only be a
+        // concern on iOS Safari.
         setTimeout(() => {
           bar.current.style.width = "0%";
-        }, 100);
+        }, 300);
       }, 200);
     } else {
       bar.current.style.opacity = 1;
