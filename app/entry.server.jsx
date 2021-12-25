@@ -9,7 +9,8 @@ export default function handleRequest(
   remixContext
 ) {
   // Redirects
-  const { pathname, href } = new URL(request.url);
+  const url = new URL(request.url);
+  const pathname = url.pathname.toLowerCase();
   let redirect;
 
   if (redirects[pathname]) {
