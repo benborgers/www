@@ -36,7 +36,9 @@ export default function App() {
       bar.current.style.width = "100%";
       setTimeout(() => {
         bar.current.style.opacity = 0;
-        bar.current.style.width = "0%";
+        setTimeout(() => {
+          bar.current.style.width = "0%";
+        }, 100);
       }, 200);
     } else {
       bar.current.style.opacity = 1;
