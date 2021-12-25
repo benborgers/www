@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import {
   Links,
   LiveReload,
@@ -8,8 +9,8 @@ import {
   useCatch,
   useMatches,
   Link,
+  useTransition,
 } from "remix";
-import { useEffect } from "react";
 
 import tailwindStylesUrl from "~/styles/tailwind-build.css";
 import customStylesUrl from "~/styles/custom.css";
@@ -26,8 +27,29 @@ export function links() {
 }
 
 export default function App() {
+  const transition = useTransition();
+  const bar = useRef();
+
+  // Fake loading bar.
+  useEffect(() => {
+    if (transition.state === "idle") {
+      bar.current.style.width = "100%";
+      setTimeout(() => {
+        bar.current.style.opacity = 0;
+        bar.current.style.width = "0%";
+      }, 200);
+    } else {
+      bar.current.style.opacity = 1;
+      bar.current.style.width = "15%";
+    }
+  }, [transition.state]);
+
   return (
     <Document>
+      <div
+        className="fixed inset-x-0 top-0 z-50 h-0.5 bg-sky-400 shadow shadow-sky-400/30 w-0 opacity-0 transition-all duration-200"
+        ref={bar}
+      />
       <Outlet />
     </Document>
   );
