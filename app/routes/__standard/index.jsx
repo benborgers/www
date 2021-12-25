@@ -39,7 +39,9 @@ export default function () {
         </p>
         <p>
           Lastly, I love getting emails:{" "}
-          <Link to="/contact">please reach out!</Link>
+          <Link to="/contact" prefetch="intent">
+            please reach out!
+          </Link>
         </p>
       </div>
 
@@ -287,7 +289,7 @@ const Row = ({ title, subtitle = null, description = null, link = null }) => {
   }
 
   return (
-    <Link to={link} className="block">
+    <Link to={link} prefetch="intent" className="block">
       {innards}
     </Link>
   );

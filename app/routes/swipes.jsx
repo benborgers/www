@@ -149,7 +149,7 @@ export default function () {
 
         <p className="text-right text-slate-500">
           An aspirational project by{" "}
-          <Link to="/" className="underline">
+          <Link to="/" prefetch="intent" className="underline">
             Ben Borgers
           </Link>
           .

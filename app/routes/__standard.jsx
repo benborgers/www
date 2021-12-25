@@ -13,6 +13,7 @@ export default function () {
           <div className="max-w-[42rem] mx-auto flex justify-between">
             <Link
               to="/"
+              prefetch="intent"
               className="block text-neutral-900 font-semibold tracking-tight"
             >
               Ben Borgers

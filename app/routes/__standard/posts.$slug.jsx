@@ -90,7 +90,7 @@ export default function () {
           </strong>{" "}
           was anything I wrote incorrect or misspelled, or do you have any
           questions? Please{" "}
-          <Link to="/contact" className="underline">
+          <Link to="/contact" prefetch="intent" className="underline">
             use this contact form
           </Link>{" "}
           to let me know!

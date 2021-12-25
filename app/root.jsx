@@ -49,7 +49,7 @@ export function ErrorBoundary({ error }) {
             </p>
             <p className="text-neutral-600 px-4 py-3">
               Sorry! Please{" "}
-              <Link to="/contact" className="underline">
+              <Link to="/contact" prefetch="intent" className="underline">
                 report this error to me
               </Link>
               .
@@ -74,11 +74,11 @@ export function CatchBoundary() {
           </h1>
           <p className="text-neutral-600 px-4 py-3">
             Sorry! Please try{" "}
-            <Link to="/" className="underline">
+            <Link to="/" prefetch="intent" className="underline">
               returning to the homepage
             </Link>
             . If you clicked on a link to get here, please{" "}
-            <Link to="/contact" className="underline">
+            <Link to="/contact" prefetch="intent" className="underline">
               report the broken link
             </Link>
             .
