@@ -1,6 +1,6 @@
 import { json, useLoaderData, Link } from "remix";
 import sanity from "~/lib/sanity.server";
-import BlockContent from "~/components/BlockContent";
+import BlockContent, { proseClasses } from "~/components/BlockContent";
 import markdown from "~/lib/markdown.server";
 
 export function meta({ data }) {
@@ -78,7 +78,7 @@ export default function () {
         ) : (
           <div
             dangerouslySetInnerHTML={{ __html: data.body }}
-            className="prose max-w-none prose-neutral prose-a:font-normal prose-a:text-inherit"
+            className={proseClasses}
           />
         )}
       </div>

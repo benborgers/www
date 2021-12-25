@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 import getPosts from "~/lib/getPosts.server";
 import NavLinks from "~/components/NavLinks";
+import { proseClasses } from "~/components/BlockContent";
 
 export let meta = () => ({ title: "Ben Borgers" });
 
@@ -23,7 +24,7 @@ export default function () {
         <NavLinks />
       </div>
 
-      <div className="mt-8 prose max-w-none prose-neutral prose-a:font-normal prose-a:text-inherit">
+      <div className={`mt-8 ${proseClasses}`}>
         <p>
           Hi! I’m Ben Borgers, a freshman at Tufts University studying computer
           science.
