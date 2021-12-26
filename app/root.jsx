@@ -94,7 +94,7 @@ export function CatchBoundary() {
   let caught = useCatch();
 
   return (
-    <Document title={`${caught.status} ${caught.statusText}`}>
+    <Document title={`${caught.statusText}`}>
       <div className="h-screen grid place-items-center p-4">
         <div className="border border-neutral-900 rounded-xl overflow-hidden w-full max-w-sm mx-auto">
           <h1 className="text-white text-lg font-semibold bg-neutral-900 px-4 py-3">
