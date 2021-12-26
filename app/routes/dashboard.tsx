@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { MetaFunction, LoaderFunction, HeadersFunction } from "remix";
-import { json, useLoaderData, useFetcher } from "remix";
+import { json, useLoaderData, useFetcher, Link } from "remix";
 import { DateTime } from "luxon";
 import { motion } from "framer-motion";
 
@@ -48,11 +48,13 @@ export default function () {
 
   if (!data.authorized) {
     return (
-      <div className="p-4 text-gray-900">
-        <p className="font-mono">
-          You don’t have permission to view this page.
-        </p>
-      </div>
+      <p className="p-6 text-gray-900">
+        You have to{" "}
+        <Link to="." reloadDocument className="underline">
+          log in
+        </Link>{" "}
+        to see this page.
+      </p>
     );
   }
 
