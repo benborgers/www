@@ -3,7 +3,7 @@ import { json, useLoaderData } from "remix";
 import { DateTime } from "luxon";
 import { motion } from "framer-motion";
 
-export const meta: MetaFunction = () => ({ title: "benborgers/dashboard" });
+export const meta: MetaFunction = () => ({ title: "Dashboard" });
 export const headers: HeadersFunction = () => ({
   "WWW-Authenticate": "Basic",
 });
