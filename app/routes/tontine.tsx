@@ -2,7 +2,7 @@ import type { ActionFunction } from "remix";
 import launchBrowser from "~/lib/launchBrowser.server";
 
 export const action: ActionFunction = async () => {
-  const browser = await launchBrowser(true);
+  const browser = await launchBrowser();
   const page = await browser.newPage();
   // Tontine shows different UI on mobile, so force desktop.
   await page.setViewport({ width: 1200, height: 800 });
