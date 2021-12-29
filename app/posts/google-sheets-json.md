@@ -21,7 +21,7 @@ However, **I’ve built a free API that you can use for this**, which doesn’t 
 The URL format for using the API is:
 
 ```
-https://opensheet.vercel.app/spreadsheet_id/sheet_name
+https://opensheet.elk.sh/spreadsheet_id/sheet_name
 ```
 
 Replace `spreadsheet_id` with the ID in the URL of the Google Sheet. Here’s the part you should copy and paste:
@@ -32,7 +32,7 @@ Next, replace `sheet_name` with the name of the sheet (basically “tab”) that
 
 ![The sheet tabs at the bottom of Google Sheets](/img/posts/google-sheets-json-sheet-name.png)
 
-And that’s it! You can [click here](https://opensheet.vercel.app/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Sheet+One) to see an example API response.
+And that’s it! You can [click here](https://opensheet.elk.sh/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet) to see an example API response.
 
 The data gets returned as an array of objects, where the key is the name of the column and the value is a cell’s value.
 
@@ -41,19 +41,21 @@ The data gets returned as an array of objects, where the key is the name of the 
 This example uses [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), a modern built-in way to make HTTP requests with JavaScript.
 
 ```js
-fetch('https://opensheet.vercel.app/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet')
-  .then(res => res.json())
-  .then(data => {
-    data.forEach(row => {
+fetch(
+  "https://opensheet.elk.sh/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet"
+)
+  .then((res) => res.json())
+  .then((data) => {
+    data.forEach((row) => {
       // Do something with each row here.
-    })
-  })
+    });
+  });
 ```
 
 ## Wrap-up
 
-You can check out the code for [opensheet](https://github.com/benborgers/opensheet) here, but you’re welcome to use my hosted instance at `opensheet.vercel.app`.
+You can check out the code for [opensheet](https://github.com/benborgers/opensheet) here, but you’re welcome to use my hosted instance at `opensheet.elk.sh`.
 
-Responses are cached for 30 seconds to improve performance, so it might take up to 30 seconds for changes to show up.
+You can also check out [the documentation](https://opensheet.elk.sh) for some more information, including how to fetch sheets by their number/index instead of their name.
 
 If you have any questions about how to use this little utility API, [please reach out](/contact)! I’d love to help.
