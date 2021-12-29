@@ -3,6 +3,7 @@ import { Link, useLoaderData, useFetcher } from "remix";
 import redis from "~/lib/redis.server";
 import { motion } from "framer-motion";
 import { DateTime } from "luxon";
+import launchBrowser from "~/lib/launchBrowser.server";
 
 export let meta = { title: "Meal Swipes - Ben Borgers" };
 
@@ -11,14 +12,7 @@ export async function loader() {
 }
 
 export async function action() {
-  const puppeteer = require("puppeteer");
-
-  // Turn `headless` to `false` for debugging.
-  const browser = await puppeteer.launch({
-    // These args are to avoid running out of memory: https://stackoverflow.com/a/62396078
-    args: ["--no-sandbox", "--no-zygote", "--single-process"],
-    headless: true,
-  });
+  const browser = await launchBrowser();
   const page = await browser.newPage();
 
   await page.goto("https://www.jumbocash.net/login.php");
