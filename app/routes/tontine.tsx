@@ -38,6 +38,7 @@ export const action: ActionFunction = async () => {
 
   await page.waitForSelector(".complete");
 
+  await page.close();
   await browser.close();
 
   return null;
