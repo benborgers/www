@@ -29,12 +29,7 @@ export const action: ActionFunction = async () => {
   await page.evaluate(() => {
     document.querySelectorAll("button").forEach((button) => {
       if (button.innerText.toLowerCase().includes("alive")) {
-        // Testing that the ".complete" check below fails if we
-        // don't click this. (It could be that Tontine has the
-        // ".complete" class even before we click the button.)
-        // Un-comment this once we're sure that this cron job
-        // fails is we don't click the button.
-        // button.click();
+        button.click();
       }
     });
   });
