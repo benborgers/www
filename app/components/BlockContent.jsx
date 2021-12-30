@@ -54,4 +54,4 @@ export default function ({ blocks }) {
 }
 
 export const proseClasses =
-  "prose max-w-none prose-neutral prose-a:font-normal prose-a:text-inherit";
+  "prose max-w-none prose-neutral prose-a:font-normal prose-a:text-inherit prose-img:mx-auto";
