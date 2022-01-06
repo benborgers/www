@@ -103,6 +103,22 @@ export default function () {
 
   useEffect(() => fetcher.data && setData(fetcher.data), [fetcher.data]);
 
+  const relativeUpdatedAt = (() => {
+    if (updatedMinsAgo === 0) {
+      return "just now";
+    }
+
+    if (updatedMinsAgo === 1) {
+      return "1 min ago";
+    }
+
+    if (updatedMinsAgo < 60) {
+      return `${updatedMinsAgo} mins ago`;
+    }
+
+    return `${Math.round(updatedMinsAgo / 60)} hours ago`;
+  })();
+
   return (
     <div className="p-4 sm:p-6 h-screen grid grid-rows-[max-content,max-content,1fr]">
       <div className="max-w-xl">
@@ -164,14 +180,7 @@ export default function () {
             <div className="absolute inset-0 bg-white/90 rounded-full" />
             <div className="absolute inset-0 bg-white/90 rounded-full animate-ping" />
           </div>
-          <p>
-            last checked{" "}
-            {updatedMinsAgo === 0
-              ? "just now"
-              : `${updatedMinsAgo} ${
-                  updatedMinsAgo === 1 ? "min" : "mins"
-                } ago`}
-          </p>
+          <p>last checked {relativeUpdatedAt}</p>
         </div>
 
         <p className="text-right text-slate-500">
