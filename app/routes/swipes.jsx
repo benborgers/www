@@ -12,6 +12,8 @@ export async function loader() {
 }
 
 export async function action() {
+  return null;
+
   const browser = await launchBrowser();
   const page = await browser.newPage();
 
