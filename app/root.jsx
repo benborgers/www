@@ -12,7 +12,7 @@ import {
   useTransition,
 } from "remix";
 
-import tailwindStylesUrl from "~/styles/tailwind-build.css";
+import tailwindStylesUrl from "~/generated/tailwind-build.css";
 import customStylesUrl from "~/styles/custom.css";
 
 export function links() {

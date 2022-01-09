@@ -9,8 +9,8 @@
     "postinstall": "remix setup cloudflare-pages",
     "dev:remix": "remix watch",
     "dev:wrangler": "wrangler pages dev ./public --watch ./build",
-    "dev:css": "npx tailwindcss -o app/styles/tailwind-build.css --watch",
-    "build:css": "npx tailwindcss -o app/styles/tailwind-build.css --minify"
+    "dev:css": "npx tailwindcss -o app/generated/tailwind-build.css --watch",
+    "build:css": "npx tailwindcss -o app/generated/tailwind-build.css --minify"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
