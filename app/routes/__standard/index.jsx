@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "remix";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 import NavLinks from "~/components/NavLinks";
-import { proseClasses } from "~/components/BlockContent";
+import { proseClasses } from "~/routes/__standard/posts.$slug.jsx";
 import posts from "~/generated/posts.json";
 
 export let meta = () => ({ title: "Ben Borgers" });

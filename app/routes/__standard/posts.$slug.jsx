@@ -54,7 +54,7 @@ export default function () {
       <div className="mt-8">
         <div
           dangerouslySetInnerHTML={{ __html: post.html }}
-          className="prose max-w-none prose-neutral prose-a:font-normal prose-a:text-inherit prose-img:mx-auto"
+          className={proseClasses}
         />
       </div>
 
@@ -74,3 +74,6 @@ export default function () {
     </>
   );
 }
+
+export const proseClasses =
+  "prose max-w-none prose-neutral prose-a:font-normal prose-a:text-inherit prose-img:mx-auto";

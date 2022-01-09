@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link, useLoaderData, useFetcher } from "remix";
-import redis from "~/lib/redis.server";
 import { motion } from "framer-motion";
 import { DateTime } from "luxon";
 
