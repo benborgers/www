@@ -96,7 +96,6 @@ export default function () {
             title: "War Room",
             subtitle: "fall 2021",
             description: "A shared to-do list app with friends.",
-            link: "posts/war-room",
           },
           {
             title: "Bagel Institute",
