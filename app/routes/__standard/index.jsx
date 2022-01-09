@@ -8,7 +8,10 @@ import posts from "~/generated/posts.json";
 
 export let meta = () => ({ title: "Ben Borgers" });
 
-export let loader = async () => ({ posts });
+export let loader = async () => ({
+  // Remove html because it’s unnecessary for this page.
+  posts: posts.map((post) => ({ ...post, html: undefined })),
+});
 
 export default function () {
   const data = useLoaderData();
