@@ -4,12 +4,13 @@
   "description": "",
   "license": "",
   "scripts": {
-    "build": "cross-env NODE_ENV=production node posts-to-json && remix build",
+    "build": "cross-env NODE_ENV=production node posts-to-json && npm run build:css && remix build",
     "dev": "cross-env NODE_ENV=development run-p dev:*",
     "postinstall": "remix setup cloudflare-pages",
     "dev:remix": "remix watch",
     "dev:wrangler": "wrangler pages dev ./public --watch ./build",
-    "start": "npm run dev:wrangler"
+    "dev:css": "npx tailwindcss -o app/styles/tailwind-build.css --watch",
+    "build:css": "npx tailwindcss -o app/styles/tailwind-build.css --minify"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
