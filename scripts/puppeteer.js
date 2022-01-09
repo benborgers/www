@@ -13,6 +13,8 @@ const launchBrowser = async (debug = false) => {
 };
 
 const tontine = async () => {
+  console.log("RUNNING: tontine");
+
   const browser = await launchBrowser();
   const page = await browser.newPage();
   // Tontine shows different UI on mobile, so force desktop.
