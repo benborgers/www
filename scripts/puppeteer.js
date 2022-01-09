@@ -1,7 +1,5 @@
 const TONTINE_PASSWORD = process.env.TONTINE_PASSWORD;
 
-console.log("TONTINE_PASSWORD", TONTINE_PASSWORD);
-
 const puppeteer = require("puppeteer");
 
 const launchBrowser = async (debug = false) => {
