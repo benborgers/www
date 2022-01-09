@@ -17,7 +17,7 @@ jobs:
           cache: "npm"
       # `npm install` would install all the packages, but we don’t need
       # them all and that takes longer (it seems to be the longest step).
-      - run: npm install
+      - run: npm install puppeteer
       - run: node scripts/puppeteer
         env:
           TONTINE_PASSWORD: ${{ secrets.TONTINE_PASSWORD }}
