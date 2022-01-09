@@ -12,4 +12,4 @@ jobs:
           node-version: "16"
       - run: node scripts/puppeteer
         env:
-          TONTINE_PASSWORD: ${{ TONTINE_PASSWORD }}
+          TONTINE_PASSWORD: ${{ secrets.TONTINE_PASSWORD }}
