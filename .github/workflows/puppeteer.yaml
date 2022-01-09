@@ -2,9 +2,8 @@ name: Puppeteer
 
 on:
   schedule:
-    - cron: '0 1,2,7 * * *' # Tontine
-  schedule:
-    - cron: '*/15 8-22 * * *' # Meal Swipes
+    - cron: "0 1,2,7 * * *" # Tontine
+    - cron: "*/15 8-22 * * *" # Meal Swipes
 
 jobs:
   puppeteer:
