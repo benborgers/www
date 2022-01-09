@@ -4,7 +4,7 @@
   "description": "",
   "license": "",
   "scripts": {
-    "build": "cross-env NODE_ENV=production remix build",
+    "build": "cross-env NODE_ENV=production node posts-to-json && remix build",
     "dev": "cross-env NODE_ENV=development run-p dev:*",
     "postinstall": "remix setup cloudflare-pages",
     "dev:remix": "remix watch",

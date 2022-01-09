@@ -6,3 +6,5 @@ node_modules
 /build
 /public/build
 /app/styles/tailwind-build.css
+
+/app/generated

@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, useLoaderData } from "remix";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRightIcon } from "@heroicons/react/solid";
-import getPosts from "~/lib/getPosts.server";
 import NavLinks from "~/components/NavLinks";
 import { proseClasses } from "~/components/BlockContent";
+import posts from "~/generated/posts.json";
 
 export let meta = () => ({ title: "Ben Borgers" });
 
-export let loader = async () => ({ posts: await getPosts() });
+export let loader = async () => ({ posts });
 
 export default function () {
   const data = useLoaderData();
