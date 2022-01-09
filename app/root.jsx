@@ -98,7 +98,8 @@ export function CatchBoundary() {
       <div className="h-screen grid place-items-center p-4">
         <div className="border border-neutral-900 rounded-xl overflow-hidden w-full max-w-sm mx-auto">
           <h1 className="text-white text-lg font-semibold bg-neutral-900 px-4 py-3">
-            {caught.status}: {caught.statusText}
+            {caught.status}
+            {caught.statusText ? ": " + caught.statusText : ""}
           </h1>
           <p className="text-neutral-600 px-4 py-3">
             Sorry! Please try{" "}

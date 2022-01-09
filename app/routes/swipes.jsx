@@ -3,7 +3,6 @@ import { Link, useLoaderData, useFetcher } from "remix";
 import redis from "~/lib/redis.server";
 import { motion } from "framer-motion";
 import { DateTime } from "luxon";
-import launchBrowser from "~/lib/launchBrowser.server";
 
 export let meta = { title: "Meal Swipes - Ben Borgers" };
 
