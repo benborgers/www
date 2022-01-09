@@ -7,3 +7,5 @@ node_modules
 /public/build
 
 /app/generated
+
+.env

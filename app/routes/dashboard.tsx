@@ -15,19 +15,19 @@ type LoaderData = {
   harvestTimeEntries?: Array<{ hours: number; billable_rate: number }>;
 };
 
-export const loader: LoaderFunction = async ({ request }) => {
-  if (!isAuthorized(request)) {
+export const loader: LoaderFunction = async ({ request, context }) => {
+  if (!isAuthorized(request, context.env.DASHBOARD_PASSWORD)) {
     return json<LoaderData>({ authorized: false }, { status: 401 });
   }
 
   const monday = DateTime.now().setZone("America/New_York").startOf("week");
 
-  const harvestData = await (
+  const harvestData: any = await (
     await fetch(
       `https://api.harvestapp.com/v2/time_entries?from=${monday.toISO()}`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.HARVEST_TOKEN}`,
+          Authorization: `Bearer ${context.env.HARVEST_TOKEN}`,
           "Harvest-Account-Id": "1339826",
           "User-Agent": "Ben Borgers Dashboard (benborgers@hey.com)",
         },
@@ -112,7 +112,7 @@ export default function () {
   );
 }
 
-const isAuthorized = (request: Request): boolean => {
+const isAuthorized = (request: Request, correctPassword: string): boolean => {
   const header = request.headers.get("Authorization");
 
   if (!header) {
@@ -120,11 +120,9 @@ const isAuthorized = (request: Request): boolean => {
   }
 
   const base64 = header.replace("Basic ", "");
-  const [username, password] = Buffer.from(base64, "base64")
-    .toString()
-    .split(":");
+  const [username, password] = atob(base64).split(":");
 
-  return username === "ben" && password === process.env.DASHBOARD_PASSWORD;
+  return username === "ben" && password === correctPassword;
 };
 
 const formatMoney = (number: number): string => {
