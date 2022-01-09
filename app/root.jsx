@@ -145,7 +145,7 @@ function Document({ children, title, bgClass = null }) {
           src="https://owl.benborgers.com/script.js"
           data-spa="auto"
           data-site="ZWCPJCUA"
-          data-included-domains="benborgers.com,ben.cv"
+          data-included-domains="benborgers.com"
           defer
         ></script>
         {process.env.NODE_ENV === "development" && <LiveReload />}
