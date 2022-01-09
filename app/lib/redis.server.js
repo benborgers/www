@@ -1,7 +1,7 @@
-import { createClient } from "redis";
+// import { createClient } from "redis";
 
-const client = createClient({ url: process.env.REDIS_URL });
+// const client = createClient({ url: process.env.REDIS_URL });
 
-client.connect();
+// client.connect();
 
-export default client;
+// export default client;

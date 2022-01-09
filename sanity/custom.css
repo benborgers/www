@@ -1,4 +1,0 @@
-/* Fixes inline LaTeX being wrapped when it gets too long. */
-*[data-ui="Card"] > span > span {
-  max-width: none;
-}
