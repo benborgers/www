@@ -5,10 +5,6 @@ import { DateTime } from "luxon";
 
 export let meta = { title: "Meal Swipes - Ben Borgers" };
 
-export async function loader() {
-  return JSON.parse(await redis.get("swipes"));
-}
-
 export async function action() {
   return null;
 
@@ -42,6 +38,22 @@ export async function action() {
 }
 
 export default function () {
+  return (
+    <div className="p-4">
+      <p>
+        This page is “down for maintenance” (just like{" "}
+        <a
+          href="https://jumbocash.net"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          JumboCash
+        </a>{" "}
+        😭).
+      </p>
+    </div>
+  );
+
   const [data, setData] = useState(useLoaderData());
 
   const now = DateTime.now();
