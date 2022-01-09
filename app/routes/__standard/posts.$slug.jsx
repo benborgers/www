@@ -4,9 +4,9 @@ import BlockContent, { proseClasses } from "~/components/BlockContent";
 import markdown from "~/lib/markdown.server";
 import posts from "~/generated/posts.json";
 
-export function meta({ post }) {
+export function meta({ data }) {
   return {
-    title: (post?.title || "Not Found") + " - Ben Borgers",
+    title: (data?.title || "Not Found") + " - Ben Borgers",
   };
 }
 
