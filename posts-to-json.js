@@ -16,9 +16,10 @@ filenames.forEach((filename) => {
 
   json.push({
     ...data,
+    slug: filename.replace(".md", ""),
     html: content,
   });
 });
 
 fs.mkdirSync("app/generated", { recursive: true });
-fs.writeFileSync(`app/generated/posts.json`, JSON.stringify(json));
+fs.writeFileSync(`app/generated/posts.json`, JSON.stringify(json, null, 2));

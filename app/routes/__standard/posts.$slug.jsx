@@ -2,10 +2,11 @@ import { json, useLoaderData, Link } from "remix";
 import sanity from "~/lib/sanity.server";
 import BlockContent, { proseClasses } from "~/components/BlockContent";
 import markdown from "~/lib/markdown.server";
+import posts from "~/generated/posts.json";
 
-export function meta({ data }) {
+export function meta({ post }) {
   return {
-    title: (data?.title || "Not Found") + " - Ben Borgers",
+    title: (post?.title || "Not Found") + " - Ben Borgers",
   };
 }
 
@@ -22,37 +23,18 @@ export function links() {
 }
 
 export async function loader({ params }) {
-  const fs = require("fs");
-  const matter = require("gray-matter");
-
   const slug = params.slug.toLowerCase();
+  const post = posts.find((post) => post.slug === slug);
 
-  const path = `./app/posts/${slug}.md`;
-  if (fs.existsSync(path)) {
-    const file = fs.readFileSync(path, "utf-8");
-    const { data, content } = matter(file);
-
-    return json({
-      title: data.title,
-      date: data.date,
-      body: markdown(content),
-    });
-  }
-
-  const result = await sanity.fetch(
-    `*[_type == "post" && slug.current == $slug][0]`,
-    { slug }
-  );
-
-  if (!result) {
+  if (!post) {
     throw new Response("", { status: 404 });
   }
 
-  return json(result);
+  return json(post);
 }
 
 export default function () {
-  const data = useLoaderData();
+  const post = useLoaderData();
 
   return (
     <>
@@ -60,10 +42,10 @@ export default function () {
 
       <div className="border border-neutral-900 rounded-xl overflow-hidden">
         <h1 className="text-white text-lg font-semibold bg-neutral-900 px-4 py-3">
-          {data.title}
+          {post.title}
         </h1>
         <p className="text-neutral-500 tracking-tight px-4 py-3">
-          {new Date(data.date).toLocaleString("en-US", {
+          {new Date(post.date).toLocaleString("en-US", {
             timeZone: "UTC",
             month: "long",
             day: "numeric",
@@ -73,14 +55,10 @@ export default function () {
       </div>
 
       <div className="mt-8">
-        {Array.isArray(data.body) ? (
-          <BlockContent blocks={data.body} />
-        ) : (
-          <div
-            dangerouslySetInnerHTML={{ __html: data.body }}
-            className={proseClasses}
-          />
-        )}
+        <div
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          className={proseClasses}
+        />
       </div>
 
       <div className="mt-12 border border-neutral-900 rounded-xl overflow-hidden p-4">
