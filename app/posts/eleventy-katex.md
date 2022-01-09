@@ -2,7 +2,6 @@
 title: "How to use KaTeX with Eleventy"
 date: 2020-12-30
 ---
-<!-- This post uses zero width spacers between the $​$ and {​{ characters so they won't be misinterpreted by Eleventy as equations or Nunjucks. -->
 
 When building this blog using Eleventy, I had some equations that I wanted to have rendered as LaTeX. I wrote them directly into the markdown of the posts, surrounded by two dollar signs:
 
@@ -15,11 +14,7 @@ I found some ways to do this online that involved extending the markdown rendere
 First, go to the layout for your blog posts, and pipe the page's contents through a `latex` filter that we'll create in a moment:
 
 ```html
-{# before: #}
-{​{ content | safe }}
-
-{# after: #}
-{​{ content | latex | safe }}
+{# before: #} {​{ content | safe }} {# after: #} {​{ content | latex | safe }}
 ```
 
 Now, we have to create that `latex` filter. First, install the KaTeX package to render math equations:
@@ -31,21 +26,19 @@ npm install katex
 and import it in your `.eleventy.js` file:
 
 ```javascript
-const katex = require('katex')
+const katex = require("katex");
 ```
 
 Now, we can write the `latex` filter in your `.eleventy.js` file:
 
 ```javascript
-eleventyConfig.addFilter('latex', content => {
+eleventyConfig.addFilter("latex", (content) => {
   return content.replace(/\$\$(.+?)\$\$/g, (_, equation) => {
-    const cleanEquation = equation
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
+    const cleanEquation = equation.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 
-    return katex.renderToString(cleanEquation, { throwOnError: false })
-  })
-})
+    return katex.renderToString(cleanEquation, { throwOnError: false });
+  });
+});
 ```
 
 What this does is it registers a new Eleventy filter called `latex`, which will affect the `content` of our page.
@@ -59,7 +52,10 @@ We use KaTeX's `renderToString` method to render this equation so it looks like 
 Finally, add this CSS file to your layout's `<head>`. It loads the necessary fonts and CSS to display the equations.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/katex@latest/dist/katex.min.css" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/katex@latest/dist/katex.min.css"
+/>
 ```
 
 And that's it! Now, any LaTeX written in your markdown in the format `$​$equation here$$` will be beautifully rendered on the page.

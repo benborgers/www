@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLoaderData } from "remix";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRightIcon } from "@heroicons/react/solid";
-import getPosts from "~/lib/getPosts.server";
 import NavLinks from "~/components/NavLinks";
-import { proseClasses } from "~/components/BlockContent";
+import { proseClasses } from "~/routes/__standard/posts.$slug.jsx";
+import posts from "~/generated/posts.json";
 
 export let meta = () => ({ title: "Ben Borgers" });
 
-export let loader = async () => ({ posts: await getPosts() });
+export let loader = async () => ({
+  // Remove html because it’s unnecessary for this page.
+  posts: posts.map((post) => ({ ...post, html: undefined })),
+});
 
 export default function () {
   const data = useLoaderData();
@@ -93,7 +96,6 @@ export default function () {
             title: "War Room",
             subtitle: "fall 2021",
             description: "A shared to-do list app with friends.",
-            link: "posts/war-room",
           },
           {
             title: "Bagel Institute",

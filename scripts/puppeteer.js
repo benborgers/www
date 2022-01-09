@@ -1,7 +1,18 @@
-import type { ActionFunction } from "remix";
-import launchBrowser from "~/lib/launchBrowser.server";
+const TONTINE_PASSWORD = process.env.TONTINE_PASSWORD;
 
-export const action: ActionFunction = async () => {
+const puppeteer = require("puppeteer");
+
+const launchBrowser = async (debug = false) => {
+  // Turn `headless` to `false` for debugging.
+  const browser = await puppeteer.launch({
+    args: ["--no-sandbox"],
+    headless: debug ? false : true,
+  });
+
+  return browser;
+};
+
+const tontine = async () => {
   const browser = await launchBrowser();
   const page = await browser.newPage();
   // Tontine shows different UI on mobile, so force desktop.
@@ -19,10 +30,7 @@ export const action: ActionFunction = async () => {
   });
 
   await page.type('input[placeholder="email"]', "ben@elk.sh");
-  await page.type(
-    'input[placeholder="password"]',
-    process.env.TONTINE_PASSWORD as string
-  );
+  await page.type('input[placeholder="password"]', TONTINE_PASSWORD);
   await page.click("button.login-btn");
   await page.waitForTimeout(1000);
 
@@ -40,6 +48,6 @@ export const action: ActionFunction = async () => {
 
   await page.close();
   await browser.close();
-
-  return null;
 };
+
+tontine();

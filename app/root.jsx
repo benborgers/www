@@ -12,7 +12,7 @@ import {
   useTransition,
 } from "remix";
 
-import tailwindStylesUrl from "~/styles/tailwind-build.css";
+import tailwindStylesUrl from "~/generated/tailwind-build.css";
 import customStylesUrl from "~/styles/custom.css";
 
 export function links() {
@@ -98,7 +98,8 @@ export function CatchBoundary() {
       <div className="h-screen grid place-items-center p-4">
         <div className="border border-neutral-900 rounded-xl overflow-hidden w-full max-w-sm mx-auto">
           <h1 className="text-white text-lg font-semibold bg-neutral-900 px-4 py-3">
-            {caught.status}: {caught.statusText}
+            {caught.status}
+            {caught.statusText ? ": " + caught.statusText : ""}
           </h1>
           <p className="text-neutral-600 px-4 py-3">
             Sorry! Please try{" "}
@@ -145,7 +146,7 @@ function Document({ children, title, bgClass = null }) {
           src="https://owl.benborgers.com/script.js"
           data-spa="auto"
           data-site="ZWCPJCUA"
-          data-included-domains="benborgers.com,ben.cv"
+          data-included-domains="benborgers.com"
           defer
         ></script>
         {process.env.NODE_ENV === "development" && <LiveReload />}
