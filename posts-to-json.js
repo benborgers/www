@@ -45,5 +45,7 @@ filenames.forEach((filename) => {
   });
 });
 
+json.sort((a, b) => b.date - a.date);
+
 fs.mkdirSync("app/generated", { recursive: true });
 fs.writeFileSync(`app/generated/posts.json`, JSON.stringify(json, null, 2));
