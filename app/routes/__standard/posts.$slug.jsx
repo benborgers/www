@@ -10,13 +10,7 @@ export function meta({ data }) {
 import prismCss from "~/styles/prism.css";
 
 export function links() {
-  return [
-    {
-      rel: "stylesheet",
-      href: "https://unpkg.com/katex@0.15.1/dist/katex.min.css",
-    },
-    { rel: "stylesheet", href: prismCss },
-  ];
+  return [{ rel: "stylesheet", href: prismCss }];
 }
 
 export async function loader({ params }) {
