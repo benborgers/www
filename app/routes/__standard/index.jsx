@@ -96,6 +96,7 @@ export default function () {
             title: "War Room",
             subtitle: "fall 2021",
             description: "A shared to-do list app with friends.",
+            link: "https://ben.cv/war-room/",
           },
           {
             title: "Bagel Institute",
@@ -114,7 +115,7 @@ export default function () {
             subtitle: "2019 - 2021",
             description:
               "An app for my high school’s schedule used by over 2,000 students and teachers.",
-            link: "https://blocks.elk.sh",
+            link: "https://ben.cv/blocks/",
           },
           {
             title: "Cornflakes",
