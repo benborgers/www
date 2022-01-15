@@ -3,7 +3,7 @@ title: How to convert HEIC to JPEG on macOS
 date: 2022-01-15
 ---
 
-If you have a `.heic` image on your Mac that you’d like to convert into a `.jpeg`, it’s really easy to without installing any outside tools or using any websites.
+If you have a `.heic` image on your Mac that you’d like to convert into a `.jpeg`, it’s really easy to do so without installing any outside tools or using any websites.
 
 First, open Finder (it should be the leftmost app in your app dock), and locate the photo (if it’s on your desktop, find it in the Desktop folder; if it’s in Documents, find it in your Documents folder, etc).
 
