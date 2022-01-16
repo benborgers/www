@@ -9,3 +9,4 @@ node_modules
 /app/generated
 
 .env
+.mf

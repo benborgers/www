@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=development run-p dev:*",
     "postinstall": "remix setup cloudflare-pages",
     "dev:remix": "remix watch",
-    "dev:wrangler": "wrangler pages dev ./public --binding $(cat .env)",
+    "dev:wrangler": "wrangler pages dev ./public --binding $(cat .env) --kv KV",
     "dev:css": "npx tailwindcss -o app/generated/tailwind-build.css --watch",
     "build:css": "npx tailwindcss -o app/generated/tailwind-build.css --minify"
   },
@@ -22,6 +22,7 @@
     "gray-matter": "^4.0.3",
     "luxon": "^2.2.0",
     "markdown-it": "^12.3.2",
+    "node-fetch": "^2.6.6",
     "prismjs": "^1.26.0",
     "puppeteer": "^13.0.1",
     "react": "^17.0.2",

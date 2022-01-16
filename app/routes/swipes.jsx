@@ -5,32 +5,18 @@ import { DateTime } from "luxon";
 
 export let meta = { title: "Meal Swipes - Ben Borgers" };
 
-export async function action() {
-  return null;
+export async function loader({ context }) {
+  return context.env.KV.get("swipes", { type: "json" });
+}
 
-  const browser = await launchBrowser();
-  const page = await browser.newPage();
+export async function action({ request, context }) {
+  const body = await request.json();
 
-  await page.goto("https://www.jumbocash.net/login.php");
-  await page.waitForSelector("#loginphrase");
-  await page.type("#loginphrase", "1370784");
-  await page.type("#password", process.env.JUMBOCASH_PASSWORD);
-  await page.click('input[type="submit"]');
-  await page.waitForSelector(".jsa_transactions"); // Wait for account page to load.
-
-  const rawSwipes = await page.evaluate(
-    () => document.querySelector("table:last-of-type tbody .sr-only").innerText
-  );
-  const swipes = parseInt(rawSwipes.replace("Current Balance", "").trim());
-
-  await page.close();
-  await browser.close();
-
-  await redis.set(
+  await context.env.KV.put(
     "swipes",
     JSON.stringify({
+      swipes_left: body.swipes_left,
       timestamp: new Date().getTime(),
-      swipes_left: swipes,
     })
   );
 
@@ -38,22 +24,6 @@ export async function action() {
 }
 
 export default function () {
-  return (
-    <div className="p-4">
-      <p>
-        This page is “down for maintenance” (just like{" "}
-        <a
-          href="https://jumbocash.net"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          JumboCash
-        </a>{" "}
-        😭).
-      </p>
-    </div>
-  );
-
   const [data, setData] = useState(useLoaderData());
 
   const now = DateTime.now();

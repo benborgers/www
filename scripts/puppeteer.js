@@ -1,6 +1,8 @@
 const TONTINE_PASSWORD = process.env.TONTINE_PASSWORD;
+const JUMBOCASH_PASSWORD = process.env.JUMBOCASH_PASSWORD;
 
 const puppeteer = require("puppeteer");
+const fetch = require("node-fetch");
 
 const launchBrowser = async (debug = false) => {
   // Turn `headless` to `false` for debugging.
@@ -52,4 +54,34 @@ const tontine = async () => {
   await browser.close();
 };
 
+const swipes = async () => {
+  console.log("RUNNING: swipes");
+
+  const browser = await launchBrowser();
+  const page = await browser.newPage();
+
+  await page.goto("https://www.jumbocash.net/login.php");
+  await page.waitForSelector("#loginphrase");
+  await page.type("#loginphrase", "1370784");
+  await page.type("#password", JUMBOCASH_PASSWORD);
+  await page.click('input[type="submit"]');
+  await page.waitForSelector(".jsa_transactions"); // Wait for account page to load.
+
+  const rawSwipes = await page.evaluate(
+    () => document.querySelector("table:last-of-type tbody .sr-only").innerText
+  );
+  const swipes = parseInt(rawSwipes.replace("Current Balance", "").trim());
+  console.log(`${swipes} swipes left`);
+
+  fetch("http://127.0.0.1:8788/swipes", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ swipes_left: swipes }),
+  });
+
+  await page.close();
+  await browser.close();
+};
+
 tontine();
+swipes();
