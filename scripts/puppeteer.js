@@ -73,7 +73,7 @@ const swipes = async () => {
   const swipes = parseInt(rawSwipes.replace("Current Balance", "").trim());
   console.log(`${swipes} swipes left`);
 
-  fetch("http://127.0.0.1:8788/swipes", {
+  fetch("https://benborgers.com/swipes", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ swipes_left: swipes }),
