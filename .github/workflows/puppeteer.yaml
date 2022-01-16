@@ -1,6 +1,7 @@
 name: Puppeteer
 
 on:
+  push
   schedule:
     # In UTC
     - cron: "0 6,8 * * *" # Tontine: 1am, 3am
