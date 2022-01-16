@@ -1,6 +1,10 @@
 name: Puppeteer
 
-on: push
+on:
+  schedule:
+    # In UTC
+    - cron: "0 6,8 * * *" # Tontine: 1am, 3am
+    - cron: "*/15 13-23,0-2 * * *" # Meal Swipes: every 15 mins 8am - 9pm
 
 jobs:
   puppeteer:
