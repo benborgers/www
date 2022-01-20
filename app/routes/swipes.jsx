@@ -26,34 +26,70 @@ export async function action({ request, context }) {
 export default function () {
   const [data, setData] = useState(useLoaderData());
 
-  const now = DateTime.now();
-
-  const updatedMinsAgo = Math.round(
-    now.diff(DateTime.fromMillis(data.timestamp), "minutes").toObject().minutes
-  );
+  // CALCULATING USED SWIPES
 
   const percentUsed = ((400 - data.swipes_left) / 400) * 100;
 
-  const START_OF_SEMESTER = DateTime.fromObject({
-    year: 2022,
-    month: 1,
-    day: 19,
-  });
-  const END_OF_SEMESTER = DateTime.fromObject({
-    year: 2022,
-    month: 5,
-    day: 13,
-  });
+  // CALCULATING IDEAL SWIPES
 
-  const semesterTotalHours = END_OF_SEMESTER.diff(
-    START_OF_SEMESTER,
-    "hours"
-  ).toObject().hours;
-  const hoursSoFar = Math.max(
-    0,
-    now.diff(START_OF_SEMESTER, "hours").toObject().hours
+  const now = DateTime.now();
+
+  const START_OF_SEMESTER = DateTime.fromObject(
+    {
+      year: 2022,
+      month: 1,
+      day: 19,
+    },
+    { zone: "America/New_York" }
   );
-  const progressThroughSemester = hoursSoFar / semesterTotalHours;
+  const END_OF_SEMESTER = DateTime.fromObject(
+    {
+      year: 2022,
+      month: 5,
+      day: 13,
+    },
+    { zone: "America/New_York" }
+  );
+
+  const semesterHoursThatCount = [];
+
+  let cursor = START_OF_SEMESTER;
+
+  while (cursor <= END_OF_SEMESTER) {
+    // We only count hours between 8am and 10pm, when dining is open.
+    if (cursor.hour >= 8 && cursor.hour < 22) {
+      // Leave out spring break.
+      const SPRING_BREAK_START = DateTime.fromObject(
+        {
+          year: 2022,
+          month: 3,
+          day: 19,
+        },
+        { zone: "America/New_York" }
+      );
+      const SPRING_BREAK_END = DateTime.fromObject(
+        {
+          year: 2022,
+          month: 3,
+          day: 27,
+        },
+        { zone: "America/New_York" }
+      );
+
+      if (cursor < SPRING_BREAK_START || cursor > SPRING_BREAK_END) {
+        semesterHoursThatCount.push(cursor);
+      }
+    }
+
+    cursor = cursor.plus({ hours: 1 });
+  }
+
+  const totalHoursThatCount = semesterHoursThatCount.length;
+  const hoursThatHavePassed = semesterHoursThatCount.filter(
+    (date) => date < now
+  ).length;
+
+  const progressThroughSemester = hoursThatHavePassed / totalHoursThatCount;
   const swipesToBeOnTrack = progressThroughSemester * 400;
   const percentToBeOnTrack = (swipesToBeOnTrack / 400) * 100;
 
@@ -82,6 +118,12 @@ export default function () {
   }, []);
 
   useEffect(() => fetcher.data && setData(fetcher.data), [fetcher.data]);
+
+  // UPDATED AGO
+
+  const updatedMinsAgo = Math.round(
+    now.diff(DateTime.fromMillis(data.timestamp), "minutes").toObject().minutes
+  );
 
   const relativeUpdatedAt = (() => {
     if (updatedMinsAgo === 0) {
