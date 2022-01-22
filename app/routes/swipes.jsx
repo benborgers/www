@@ -77,17 +77,25 @@ export default function () {
       );
 
       if (cursor < SPRING_BREAK_START || cursor > SPRING_BREAK_END) {
-        semesterHoursThatCount.push(cursor);
+        const isWeekend = cursor.weekday === 6 || cursor.weekday === 7;
+
+        semesterHoursThatCount.push({
+          date: cursor,
+          weight: isWeekend ? 1 : 2,
+        });
       }
     }
 
     cursor = cursor.plus({ hours: 1 });
   }
 
-  const totalHoursThatCount = semesterHoursThatCount.length;
-  const hoursThatHavePassed = semesterHoursThatCount.filter(
-    (date) => date < now
-  ).length;
+  const totalWeight = (array) =>
+    array.reduce((accumulator, item) => accumulator + item.weight, 0);
+
+  const totalHoursThatCount = totalWeight(semesterHoursThatCount);
+  const hoursThatHavePassed = totalWeight(
+    semesterHoursThatCount.filter(({ date }) => date < now)
+  );
 
   const progressThroughSemester = hoursThatHavePassed / totalHoursThatCount;
   const swipesToBeOnTrack = progressThroughSemester * 400;
