@@ -81,7 +81,7 @@ export default function () {
 
         semesterHoursThatCount.push({
           date: cursor,
-          weight: isWeekend ? 1 : 2,
+          weight: isWeekend ? 1 : 4,
         });
       }
     }
