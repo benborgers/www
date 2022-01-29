@@ -146,7 +146,8 @@ export default function () {
       return `${updatedMinsAgo} mins ago`;
     }
 
-    return `${Math.round(updatedMinsAgo / 60)} hours ago`;
+    const hoursAgo = Math.round(updatedMinsAgo / 60);
+    return `${hoursAgo} ${hoursAgo === 1 ? "hour" : "hours"} ago`;
   })();
 
   return (
