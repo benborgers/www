@@ -1,5 +1,5 @@
 ---
-title: How to prevent a flex item from shrinking with TailwindCSS
+title: How to prevent a flex item from shrinking with Tailwind CSS
 date: 2021-09-30
 ---
 
@@ -13,7 +13,7 @@ The markup looked a bit like this:
 
 ```html
 <div class="flex">
-	<svg class="flex-shrink-0"></svg>
-	<p>...</p>
+  <svg class="flex-shrink-0"></svg>
+  <p>...</p>
 </div>
 ```

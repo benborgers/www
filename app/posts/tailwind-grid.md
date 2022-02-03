@@ -3,7 +3,7 @@ title: How to create custom CSS Grids with Tailwind JIT mode
 date: 2021-07-07
 ---
 
-If you have [just-in-time compiler](https://tailwindcss.com/docs/just-in-time-mode) activated for TailwindCSS, you can now define custom CSS grid layouts just using utility classes that are generated on the fly.
+If you have [just-in-time compiler](https://tailwindcss.com/docs/just-in-time-mode) activated for Tailwind CSS, you can now define custom CSS grid layouts just using utility classes that are generated on the fly.
 
 To use it, just list out the measurements you would normally write with a comma in between.
 

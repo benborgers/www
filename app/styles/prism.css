@@ -1,6 +1,6 @@
 /**
  * Taken from https://unpkg.com/prism-themes@1.9.0/themes/prism-dracula.css,
- * but only the token colors (TailwindCSS Typography takes care of the rest).
+ * but only the token colors (Tailwind Typography takes care of the rest).
  */
 
 .token.comment,
