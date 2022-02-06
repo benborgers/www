@@ -1,6 +1,6 @@
 ---
 const res = await fetch('https://api.github.com/repos/benborgers/cms/issues/1', {
-  headers: { 'Accept': 'application/vnd.github.VERSION.html+json' }
+  headers: { 'Accept': 'application/vnd.github.v3.html+json' }
 })
 
 const json = await res.json()
