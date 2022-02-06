@@ -5,7 +5,7 @@ date: 2021-12-29
 
 HTTP Basic authentication is an authentication method that’s built into the browser, that you can use with your [Remix](https://remix.run) apps. Basic authentication often looks like this:
 
-![](/img/posts/remix-basic-auth.png)
+![](/posts/remix-basic-auth.png)
 
 I usually use it for password-protecting sites where I should be the only person seeing it, since Basic authentication doesn’t require building a login form so it’s quick and easy to implement.
 
