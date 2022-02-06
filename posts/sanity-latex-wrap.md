@@ -5,7 +5,7 @@ date: 2021-12-23
 
 I was having an issue with [Sanity](https://sanity.io)’s [official LaTeX plugin](https://www.sanity.io/plugins/sanity-plugin-latex-input) where inline equations were being wrapped at a certain width, and were therefore overlapping back on themselves:
 
-![](/img/posts/sanity-latex-wrap-before.png)
+![](/posts/sanity-latex-wrap-before.png)
 
 I found that this was due to some CSS that’s bundled inside Sanity Studio.
 
@@ -34,4 +34,4 @@ Then, to tell Sanity Studio to include that CSS `custom.css` file, I referenced 
 
 Now, with that custom CSS fixing the issue, the LaTeX inline inputs are the correct width!
 
-![](/img/posts/sanity-latex-wrap-after.png)
+![](/posts/sanity-latex-wrap-after.png)
