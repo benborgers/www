@@ -2,15 +2,48 @@
 export async function getStaticPaths() {
   const posts = Astro.fetchContent('../../../posts/*.md')
 
-  return posts
-    .map(post => post.file.pathname)
-    .map(filename => filename.replace('/posts/', '').replace('.md', ''))
-    .map(slug => ({
-      params: { slug }
-    }))
+  const localPosts = posts
+    .map(post => {
+      const slug = post.file.pathname
+        .replace('/posts/', '')
+        .replace('.md', '')
+
+      return {
+        params: { slug },
+        props: {
+          type: 'file',
+          data: post
+        }
+      }
+    })
+
+  return localPosts
 }
 
 const { slug } = Astro.request.params
+const { type, data } = Astro.props
+
+const post = {
+  title: null,
+  date: null,
+  html: null
+}
+
+if (type == 'file') {
+  post.title = data.title
+  post.date = data.date
+  post.html = data.content.html
+}
 ---
 
-<p>slug: {slug}</p>
+<h1>{post.title}</h1>
+<p>{
+  new Date(post.date).toLocaleString("en-US", {
+    timeZone: "UTC",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  })
+}</p>
+
+<div set:html={post.html} />
