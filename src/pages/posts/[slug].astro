@@ -1,0 +1,16 @@
+---
+export async function getStaticPaths() {
+  const posts = Astro.fetchContent('../../../posts/*.md')
+
+  return posts
+    .map(post => post.file.pathname)
+    .map(filename => filename.replace('/posts/', '').replace('.md', ''))
+    .map(slug => ({
+      params: { slug }
+    }))
+}
+
+const { slug } = Astro.request.params
+---
+
+<p>slug: {slug}</p>
