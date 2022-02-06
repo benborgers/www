@@ -1,9 +1,8 @@
 ---
-const res = await fetch('https://api.github.com/repos/benborgers/cms/issues/1', {
-  headers: { 'Accept': 'application/vnd.github.v3.html+json' }
-})
+import ghost from '../lib/ghost'
 
-const json = await res.json()
+const data = await ghost('pages/slug/home')
+const page = data.pages[0]
 ---
 
-<div set:html={json.body_html} />
+<div set:html={page.html} />
