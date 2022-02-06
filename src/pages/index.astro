@@ -6,4 +6,4 @@ const res = await fetch('https://api.github.com/repos/benborgers/cms/issues/1', 
 const json = await res.json()
 ---
 
-<div>{json.body_html}</div>
+<div set:html={json.body_html} />
