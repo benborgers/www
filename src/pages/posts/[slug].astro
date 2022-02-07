@@ -1,4 +1,5 @@
 ---
+import { Code } from 'astro/components'
 import ghost from '../../lib/ghost'
 
 export async function getStaticPaths() {
@@ -13,6 +14,7 @@ export async function getStaticPaths() {
       return {
         params: { slug },
         props: {
+          type: 'file',
           post: {
             title: post.title,
             date: post.date,
@@ -27,6 +29,7 @@ export async function getStaticPaths() {
       return {
         params: { slug: post.slug },
         props: {
+          type: 'ghost',
           post: {
             title: post.title,
             date: post.published_at,
@@ -39,7 +42,7 @@ export async function getStaticPaths() {
   return [...localPosts, ...ghostPosts]
 }
 
-const { post } = Astro.props
+const { type, post } = Astro.props
 ---
 
 <h1>{post.title}</h1>
@@ -52,4 +55,25 @@ const { post } = Astro.props
   })
 }</p>
 
-<div set:html={post.html} />
+{type === 'file' && (
+  <div set:html={post.html} />
+)}
+
+{type === 'ghost' && (() => {
+  const pieces = post.html.split(/<\/?pre>/)
+
+  console.log(pieces)
+
+  return pieces.map(piece => {
+    if (piece.startsWith('<code')) {
+      const language = piece.match(/class="language-(.+?)"/)[1]
+      const code = piece.match(/<code .*>(.+?)<\/code>/s)[1]
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+
+      return <Code code={code} lang={language} theme="dracula" />
+    }
+
+    return <Fragment set:html={piece} />
+  })
+})}
