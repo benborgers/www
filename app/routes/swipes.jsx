@@ -6,14 +6,11 @@ import { DateTime } from "luxon";
 export let meta = { title: "Meal Swipes - Ben Borgers" };
 
 export async function loader() {
-  const gist = await (
-    await fetch("https://api.github.com/gists/f87b1fb5b39209697c156bded77fe23d")
+  return await (
+    await fetch(
+      "https://gist.githubusercontent.com/benborgers/f87b1fb5b39209697c156bded77fe23d/raw/swipes.json"
+    )
   ).json();
-
-  return {
-    swipes_left: gist.files["swipes.txt"].content,
-    timestamp: new Date(gist.updated_at).getTime(),
-  };
 }
 
 export default function () {
@@ -21,7 +18,7 @@ export default function () {
 
   // CALCULATING USED SWIPES
 
-  const percentUsed = ((400 - data.swipes_left) / 400) * 100;
+  const percentUsed = ((400 - data.swipesLeft) / 400) * 100;
 
   // CALCULATING IDEAL SWIPES
 
@@ -169,7 +166,7 @@ export default function () {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25 }}
           >
-            swipes used so far ({400 - data.swipes_left}/400)
+            swipes used so far ({400 - data.swipesLeft}/400)
           </motion.p>
         </div>
 
@@ -204,7 +201,7 @@ export default function () {
             <div className="absolute inset-0 bg-white/90 rounded-full" />
             <div className="absolute inset-0 bg-white/90 rounded-full animate-ping" />
           </div>
-          <p>Ben last swiped {relativeUpdatedAt}</p>
+          <p>last checked {relativeUpdatedAt}</p>
         </div>
 
         <p className="text-right text-slate-500">
