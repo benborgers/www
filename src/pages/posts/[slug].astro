@@ -62,8 +62,6 @@ const { type, post } = Astro.props
 {type === 'ghost' && (() => {
   const pieces = post.html.split(/<\/?pre>/)
 
-  console.log(pieces)
-
   return pieces.map(piece => {
     if (piece.startsWith('<code')) {
       const language = piece.match(/class="language-(.+?)"/)[1]
