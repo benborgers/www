@@ -83,5 +83,5 @@ const swipes = async () => {
   await browser.close();
 };
 
-tontine();
+// tontine();
 swipes();
