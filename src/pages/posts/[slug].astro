@@ -1,4 +1,6 @@
 ---
+import ghost from '../../lib/ghost'
+
 export async function getStaticPaths() {
   const posts = Astro.fetchContent('../../../posts/*.md')
 
@@ -11,29 +13,33 @@ export async function getStaticPaths() {
       return {
         params: { slug },
         props: {
-          type: 'file',
-          data: post
+          post: {
+            title: post.title,
+            date: post.date,
+            html: post.content.html
+          }
         }
       }
     })
 
-  return localPosts
+  const ghostPosts = (await ghost('posts')).posts
+    .map(post => {
+      return {
+        params: { slug: post.slug },
+        props: {
+          post: {
+            title: post.title,
+            date: post.published_at,
+            html: post.html
+          }
+        }
+      }
+    })
+
+  return [...localPosts, ...ghostPosts]
 }
 
-const { slug } = Astro.request.params
-const { type, data } = Astro.props
-
-const post = {
-  title: null,
-  date: null,
-  html: null
-}
-
-if (type == 'file') {
-  post.title = data.title
-  post.date = data.date
-  post.html = data.content.html
-}
+const { post } = Astro.props
 ---
 
 <h1>{post.title}</h1>
