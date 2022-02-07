@@ -5,22 +5,15 @@ import { DateTime } from "luxon";
 
 export let meta = { title: "Meal Swipes - Ben Borgers" };
 
-export async function loader({ context }) {
-  return context.env.KV.get("swipes", { type: "json" });
-}
+export async function loader() {
+  const gist = await (
+    await fetch("https://api.github.com/gists/f87b1fb5b39209697c156bded77fe23d")
+  ).json();
 
-export async function action({ request, context }) {
-  const body = await request.json();
-
-  await context.env.KV.put(
-    "swipes",
-    JSON.stringify({
-      swipes_left: body.swipes_left,
-      timestamp: new Date().getTime(),
-    })
-  );
-
-  return null;
+  return {
+    swipes_left: gist.files["swipes.txt"].content,
+    timestamp: new Date(gist.updated_at).getTime(),
+  };
 }
 
 export default function () {
@@ -211,7 +204,7 @@ export default function () {
             <div className="absolute inset-0 bg-white/90 rounded-full" />
             <div className="absolute inset-0 bg-white/90 rounded-full animate-ping" />
           </div>
-          <p>last checked {relativeUpdatedAt}</p>
+          <p>Ben last swiped {relativeUpdatedAt}</p>
         </div>
 
         <p className="text-right text-slate-500">
