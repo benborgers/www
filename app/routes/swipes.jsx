@@ -8,7 +8,7 @@ export let meta = { title: "Meal Swipes - Ben Borgers" };
 export async function loader() {
   return await (
     await fetch(
-      "https://gist.githubusercontent.com/benborgers/f87b1fb5b39209697c156bded77fe23d/raw/swipes.json"
+      `https://gist.githubusercontent.com/benborgers/f87b1fb5b39209697c156bded77fe23d/raw/swipes.json?v=${new Date().getTime()}`
     )
   ).json();
 }
