@@ -48,16 +48,25 @@ const { type, post } = Astro.props
 ---
 
 <Layout title={post.title}>
-  <h1>{post.title}</h1>
+  <a href="/posts" class="block max-w-max sm:mt-4 text-rose-600 font-bold text-sm">
+    &larr; benborgers.com/posts
+  </a>
 
-  <p>{
-    new Date(post.date).toLocaleString("en-US", {
-      timeZone: "UTC",
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    })
-  }</p>
+  <div class="mt-12 sm:mt-24"></div>
+
+  <div class="space-y-1 sm:space-y-2">
+    <h1 class="text-3xl sm:text-4xl text-neutral-900 font-extrabold">{post.title}</h1>
+    <p class="text-neutral-500 font-medium">{
+      new Date(post.date).toLocaleString("en-US", {
+        timeZone: "UTC",
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      })
+    }</p>
+  </div>
+
+  <div class="mt-8" />
 
   <Prose>
     {type === 'file' && (
