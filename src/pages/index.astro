@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Prose from '../components/Prose.astro'
 import ghost from '../lib/ghost'
 
 const data = await ghost('pages/slug/home')
@@ -7,5 +8,7 @@ const page = data.pages[0]
 ---
 
 <Layout>
-  <div set:html={page.html} />
+  <Prose>
+    <Fragment set:html={page.html} />
+  </Prose>
 </Layout>
