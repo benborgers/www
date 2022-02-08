@@ -1,4 +1,5 @@
 ---
+import Layout from '../../layouts/Layout.astro'
 import { Code } from 'astro/components'
 import ghost from '../../lib/ghost'
 
@@ -45,35 +46,38 @@ export async function getStaticPaths() {
 const { type, post } = Astro.props
 ---
 
-<h1>{post.title}</h1>
-<p>{
-  new Date(post.date).toLocaleString("en-US", {
-    timeZone: "UTC",
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  })
-}</p>
+<Layout title={post.title}>
 
-{type === 'file' && (
-  <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.9.0/themes/prism-dracula.min.css" />
+  <h1>{post.title}</h1>
+  <p>{
+    new Date(post.date).toLocaleString("en-US", {
+      timeZone: "UTC",
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    })
+  }</p>
 
-  <div set:html={post.html} />
-)}
+  {type === 'file' && (
+    <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.9.0/themes/prism-dracula.min.css" />
 
-{type === 'ghost' && (() => {
-  const pieces = post.html.split(/<\/?pre>/)
+    <div set:html={post.html} />
+  )}
 
-  return pieces.map(piece => {
-    if (piece.startsWith('<code')) {
-      const language = piece.match(/class="language-(.+?)"/)[1]
-      const code = piece.match(/<code .*>(.+?)<\/code>/s)[1]
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
+  {type === 'ghost' && (() => {
+    const pieces = post.html.split(/<\/?pre>/)
 
-      return <Code code={code} lang={language} theme="dracula" />
-    }
+    return pieces.map(piece => {
+      if (piece.startsWith('<code')) {
+        const language = piece.match(/class="language-(.+?)"/)[1]
+        const code = piece.match(/<code .*>(.+?)<\/code>/s)[1]
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
 
-    return <Fragment set:html={piece} />
-  })
-})}
+        return <Code code={code} lang={language} theme="dracula" />
+      }
+
+      return <Fragment set:html={piece} />
+    })
+  })}
+</Layout>

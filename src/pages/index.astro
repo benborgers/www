@@ -1,8 +1,11 @@
 ---
+import Layout from '../layouts/Layout.astro'
 import ghost from '../lib/ghost'
 
 const data = await ghost('pages/slug/home')
 const page = data.pages[0]
 ---
 
-<div set:html={page.html} />
+<Layout>
+  <div set:html={page.html} />
+</Layout>
