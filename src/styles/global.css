@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+code:not(pre code) {
+  @apply bg-neutral-200 px-1 py-0.5 rounded-md;
+}
