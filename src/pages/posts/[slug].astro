@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import Prose from '../../components/Prose.astro'
 import { Code } from 'astro/components'
 import ghost from '../../lib/ghost'
 
@@ -47,8 +48,8 @@ const { type, post } = Astro.props
 ---
 
 <Layout title={post.title}>
-
   <h1>{post.title}</h1>
+
   <p>{
     new Date(post.date).toLocaleString("en-US", {
       timeZone: "UTC",
@@ -58,26 +59,28 @@ const { type, post } = Astro.props
     })
   }</p>
 
-  {type === 'file' && (
-    <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.9.0/themes/prism-dracula.min.css" />
+  <Prose>
+    {type === 'file' && (
+      <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.9.0/themes/prism-dracula.min.css" />
 
-    <div set:html={post.html} />
-  )}
+      <Fragment set:html={post.html} />
+    )}
 
-  {type === 'ghost' && (() => {
-    const pieces = post.html.split(/<\/?pre>/)
+    {type === 'ghost' && (() => {
+      const pieces = post.html.split(/<\/?pre>/)
 
-    return pieces.map(piece => {
-      if (piece.startsWith('<code')) {
-        const language = piece.match(/class="language-(.+?)"/)[1]
-        const code = piece.match(/<code .*>(.+?)<\/code>/s)[1]
-          .replace(/&lt;/g, '<')
-          .replace(/&gt;/g, '>')
+      return pieces.map(piece => {
+        if (piece.startsWith('<code')) {
+          const language = piece.match(/class="language-(.+?)"/)[1]
+          const code = piece.match(/<code .*>(.+?)<\/code>/s)[1]
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
 
-        return <Code code={code} lang={language} theme="dracula" />
-      }
+          return <Code code={code} lang={language} theme="dracula" />
+        }
 
-      return <Fragment set:html={piece} />
-    })
-  })}
+        return <Fragment set:html={piece} />
+      })
+    })}
+  </Prose>
 </Layout>
