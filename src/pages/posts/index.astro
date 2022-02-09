@@ -1,0 +1,52 @@
+---
+import ghost from '../../lib/ghost'
+const markdownFiles = Astro.fetchContent('../../../posts/*.md')
+
+const localPosts = markdownFiles.map(post => {
+  return {
+    title: post.title,
+    date: post.date,
+    slug: post.file.pathname.replace('/posts/', '').replace('.md', '')
+  }
+})
+
+const ghostPosts = (await ghost('posts')).posts.map(post => {
+  return {
+    title: post.title,
+    date: post.published_at,
+    slug: post.slug
+  }
+})
+
+const posts = [...localPosts, ...ghostPosts]
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+const getYearMonth = dateString => {
+  if (!dateString) return null
+  const date = new Date(dateString)
+  return `${date.getFullYear()}-${date.getMonth() + 1}`
+}
+---
+
+<div>
+  {posts.map((post, index) => {
+    const prevPost = posts[index - 1]
+    const thisPostYearMonth = getYearMonth(post.date)
+    const prevPostYearMonth = getYearMonth(prevPost?.date)
+    const addMonthHeader = thisPostYearMonth !== prevPostYearMonth
+
+    return (
+      <Fragment>
+        {addMonthHeader && (
+          <h2>
+            {new Date(post.date).toLocaleString('en-US', { month: 'long', year: 'numeric'})}
+          </h2>
+        )}
+
+        <a href={`/posts/${post.slug}`}>
+          <p>{post.title}</p>
+        </a>
+      </Fragment>
+    )
+  })}
+</div>
