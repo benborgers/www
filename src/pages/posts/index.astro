@@ -1,4 +1,5 @@
 ---
+import Layout from '../../layouts/Layout.astro'
 import ghost from '../../lib/ghost'
 const markdownFiles = Astro.fetchContent('../../../posts/*.md')
 
@@ -28,25 +29,30 @@ const getYearMonth = dateString => {
 }
 ---
 
-<div>
-  {posts.map((post, index) => {
-    const prevPost = posts[index - 1]
-    const thisPostYearMonth = getYearMonth(post.date)
-    const prevPostYearMonth = getYearMonth(prevPost?.date)
-    const addMonthHeader = thisPostYearMonth !== prevPostYearMonth
+<Layout title="Ben Borgers’ Blog">
+  <div>
+    {posts.map((post, index) => {
+      const prevPost = posts[index - 1]
+      const thisPostYearMonth = getYearMonth(post.date)
+      const prevPostYearMonth = getYearMonth(prevPost?.date)
+      const addMonthHeader = thisPostYearMonth !== prevPostYearMonth
 
-    return (
-      <Fragment>
-        {addMonthHeader && (
-          <h2>
-            {new Date(post.date).toLocaleString('en-US', { month: 'long', year: 'numeric'})}
-          </h2>
-        )}
+      return (
+        <Fragment>
+          {addMonthHeader && (
+            <h2 class="mt-8 text-lg sm:text-xl text-neutral-800 font-bold">
+              {new Date(post.date).toLocaleString('en-US', { month: 'long', year: 'numeric'})}
+            </h2>
+          )}
 
-        <a href={`/posts/${post.slug}`}>
-          <p>{post.title}</p>
-        </a>
-      </Fragment>
-    )
-  })}
-</div>
+          <a
+            href={`/posts/${post.slug}`}
+            class="block max-w-max ml-4 mt-2 sm:text-lg font-serif text-neutral-800 underline decoration-neutral-400"
+          >
+            {post.title}
+          </a>
+        </Fragment>
+      )
+    })}
+  </div>
+</Layout>
