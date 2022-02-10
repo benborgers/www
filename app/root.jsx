@@ -134,7 +134,7 @@ function Document({ children, title, bgClass = null }) {
         <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
         <Links />
         
-        <meta name="ahrefs-site-verification" content="bd9f05320c5f00ef5f2542125d2b922fe98f2c3b6749cc38c9f1c972b9af91cb">
+        <meta name="ahrefs-site-verification" content="bd9f05320c5f00ef5f2542125d2b922fe98f2c3b6749cc38c9f1c972b9af91cb" />
       </head>
       <body
         className={`antialiased ${
