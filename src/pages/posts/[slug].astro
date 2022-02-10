@@ -58,7 +58,6 @@ const { type, post } = Astro.props
     <h1 class="text-3xl sm:text-4xl text-neutral-900 font-extrabold">{post.title}</h1>
     <p class="text-neutral-500 font-medium">{
       new Date(post.date).toLocaleString("en-US", {
-        timeZone: "UTC",
         month: "long",
         day: "numeric",
         year: "numeric",
