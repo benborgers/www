@@ -1,40 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import ghost from '../../lib/ghost'
-const markdownFiles = Astro.fetchContent('../../../posts/*.md')
+import getPosts, { POST_TYPE } from '../../lib/getPosts'
 
-const localPosts = markdownFiles.map(post => {
-  return {
-    title: post.title,
-    date: post.date,
-    slug: post.file.pathname.replace('/posts/', '').replace('.md', '')
-  }
-})
+const posts = await getPosts(Astro.fetchContent('../../../posts/*.md'))
 
-const ghostPosts = (await ghost('posts')).posts.map(post => {
-  return {
-    title: post.title,
-    date: post.published_at,
-    slug: post.slug,
-    tags: post?.tags.map(tag => tag.name) || []
-  }
-})
-
-const allPosts = [
-  ...localPosts,
-  ...ghostPosts
-].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-
-const technicalPosts = []
-const posts = []
-
-for(const post of allPosts) {
-  if (!post.tags || post.tags.includes('#technical')) {
-    technicalPosts.push(post)
-  } else {
-    posts.push(post)
-  }
-}
+const technicalPosts = posts.filter(post => post.type === POST_TYPE.TECHNICAL)
+const nonTechnicalPosts = posts.filter(post => post.type === POST_TYPE.NON_TECHNICAL)
 
 const getYearMonth = dateString => {
   if (!dateString) return null
@@ -69,7 +40,7 @@ const getYearMonth = dateString => {
   </div>
 
   <div data-technical-hide>
-    {posts.map((post, index) => {
+    {nonTechnicalPosts.map((post, index) => {
       const prevPost = technicalPosts[index - 1]
       const addMonthHeader = getYearMonth(post.date) !== getYearMonth(prevPost?.date)
 
