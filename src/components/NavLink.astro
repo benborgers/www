@@ -17,6 +17,4 @@ if (icon == 'home') {
 const target = href.startsWith('http') ? '_blank' : null
 ---
 
-<a href={href} class="block" target={target}>
-  {svg}
-</a>
+<a href={href} class="block" target={target} set:html={svg} />
