@@ -19,6 +19,7 @@ const getYearMonth = dateString => {
     <p data-technical-hide>
       Welcome to my blog! I’m trying my best to write a post here every day,
       with no guarantee for the quality but doing my best.
+      I’ve currently written for <span id="streak">? days</span> in a row.
     </p>
     <p data-technical-hide>
       I hope some of it is interesting! If it is, I’d love to hear from you.
@@ -55,6 +56,14 @@ const getYearMonth = dateString => {
           <a
             href={`/posts/${post.slug}`}
             class="block max-w-max ml-4 mt-2 text-gray-700 underline decoration-gray-300"
+            data-streak-ymd={(() => {
+              const date = new Date(post.date)
+              const year = date.toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric' })
+              const month = date.toLocaleString('en-US', { timeZone: 'America/New_York', month: 'numeric' })
+              const day = date.toLocaleString('en-US', { timeZone: 'America/New_York', day: 'numeric' })
+
+              return `${year}-${month}-${day}`
+            })()}
           >
             {post.title}
           </a>
@@ -75,16 +84,36 @@ const getYearMonth = dateString => {
   </div>
 
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      if (document.location.search === "?technical") {
-        document
-          .querySelectorAll("[data-technical-show]")
-          .forEach((el) => el.hidden = false);
+    if (document.location.search === "?technical") {
+      document
+        .querySelectorAll("[data-technical-show]")
+        .forEach((el) => el.hidden = false);
 
-        document
-          .querySelectorAll("[data-technical-hide]")
-          .forEach((el) => el.hidden = true);
+      document
+        .querySelectorAll("[data-technical-hide]")
+        .forEach((el) => el.hidden = true);
+    }
+
+    let streak = 0
+    const currentDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York', }))
+    let isToday = true
+    let keepCounting = true
+    while(keepCounting) {
+      currentDate.setDate(currentDate.getDate() - (isToday ? 0 : 1))
+      const ymd = `${currentDate.toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric' })
+      }-${currentDate.toLocaleString('en-US', { timeZone: 'America/New_York', month: 'numeric' })
+      }-${currentDate.toLocaleString('en-US', { timeZone: 'America/New_York', day: 'numeric' })}`
+
+      const postExists = document.querySelector(`[data-streak-ymd="${ymd}"]`)
+      if(postExists) {
+        streak++
+      } else if (!isToday) {
+        keepCounting = false
       }
-    });
+
+      isToday = false
+    }
+
+    document.querySelector('#streak').innerHTML = `${streak} ${streak === 1 ? 'day' : 'days'}`
   </script>
 </Layout>
