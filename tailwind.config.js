@@ -7,6 +7,10 @@ module.exports = {
       colors: {
         gray: colors.zinc,
       },
+      fontFamily: {
+        sans: ["'Public Sans'", "sans-serif"],
+        serif: ["Fraunces", "serif"],
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
