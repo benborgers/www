@@ -64,7 +64,7 @@ const getYearMonth = dateString => {
       for a solution.
     </p>
     <p data-technical-show hidden>
-      <a href="/posts/" class="italic font-semibold underline decoration-gray-400">See the rest of my blog posts here</a>.
+      <a href="/posts" class="italic font-semibold underline decoration-gray-400">See the rest of my blog posts here</a>.
     </p>
   </div>
 
@@ -82,7 +82,7 @@ const getYearMonth = dateString => {
           )}
 
           <a
-            href={`/posts/${post.slug}/`}
+            href={`/posts/${post.slug}`}
             class="block max-w-max ml-4 mt-2 text-gray-700 underline decoration-gray-300"
           >
             {post.title}
@@ -95,7 +95,7 @@ const getYearMonth = dateString => {
   <div class="mt-8 ml-2 space-y-2" data-technical-show hidden>
     {technicalPosts.map(post => (
       <a
-        href={`/posts/${post.slug}/`}
+        href={`/posts/${post.slug}`}
         class="block max-w-max text-gray-700 underline decoration-gray-300"
       >
         {post.title}
