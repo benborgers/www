@@ -22,6 +22,9 @@ const { post } = Astro.props
     <h1 class="text-3xl text-gray-900 font-black font-serif">{post.title}</h1>
     <p class="text-gray-400 font-medium">{
       new Date(post.date).toLocaleString("en-US", {
+        // For markdown files, the date is written manually, so it should be UTC.
+        // For Ghost, dates are shown in my time zone (as I intended).
+        timeZone: post.source === POST_SOURCE.FILE ? "UTC" : "America/New_York",
         month: "long",
         day: "numeric",
         year: "numeric",
