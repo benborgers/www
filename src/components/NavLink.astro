@@ -17,4 +17,10 @@ if (icon == 'home') {
 const target = href.startsWith('http') ? '_blank' : null
 ---
 
-<a href={href} class="block" target={target} set:html={svg}></a>
+<a
+  href={href}
+  class="block"
+  target={target}
+  set:html={svg}
+  onclick="this.href.includes('twitter') && fathom.trackGoal('E3LD3YS1', 0)"
+></a>
