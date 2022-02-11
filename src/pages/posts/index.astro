@@ -29,7 +29,7 @@ const getYearMonth = dateString => {
 }
 ---
 
-<Layout title="Ben Borgers’ Blog">
+<Layout title="Blog">
   <div>
     {posts.map((post, index) => {
       const prevPost = posts[index - 1]
@@ -40,14 +40,14 @@ const getYearMonth = dateString => {
       return (
         <Fragment>
           {addMonthHeader && (
-            <h2 class="mt-8 text-lg sm:text-xl text-gray-800 font-bold">
+            <h2 class="mt-8 text-lg text-gray-800 font-extrabold">
               {new Date(post.date).toLocaleString('en-US', { month: 'long', year: 'numeric'})}
             </h2>
           )}
 
           <a
             href={`/posts/${post.slug}`}
-            class="block max-w-max ml-4 mt-2 sm:text-lg text-gray-800 underline decoration-gray-400"
+            class="block max-w-max ml-4 mt-2 text-gray-700 underline decoration-gray-300"
           >
             {post.title}
           </a>
