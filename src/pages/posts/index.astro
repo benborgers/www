@@ -40,14 +40,14 @@ const getYearMonth = dateString => {
       return (
         <Fragment>
           {addMonthHeader && (
-            <h2 class="mt-8 text-lg sm:text-xl text-neutral-800 font-bold">
+            <h2 class="mt-8 text-lg sm:text-xl text-gray-800 font-bold">
               {new Date(post.date).toLocaleString('en-US', { month: 'long', year: 'numeric'})}
             </h2>
           )}
 
           <a
             href={`/posts/${post.slug}`}
-            class="block max-w-max ml-4 mt-2 sm:text-lg font-serif text-neutral-800 underline decoration-neutral-400"
+            class="block max-w-max ml-4 mt-2 sm:text-lg font-serif text-gray-800 underline decoration-gray-400"
           >
             {post.title}
           </a>

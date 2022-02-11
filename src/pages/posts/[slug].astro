@@ -48,15 +48,9 @@ const { type, post } = Astro.props
 ---
 
 <Layout title={post.title}>
-  <a href="/posts" class="block max-w-max sm:mt-4 text-rose-600 font-bold text-sm">
-    &larr; Ben Borgers’ Blog
-  </a>
-
-  <div class="mt-12 sm:mt-24"></div>
-
   <div class="space-y-1 sm:space-y-2">
-    <h1 class="text-3xl sm:text-4xl text-neutral-900 font-extrabold">{post.title}</h1>
-    <p class="text-neutral-500 font-medium">{
+    <h1 class="text-3xl text-gray-900 font-extrabold">{post.title}</h1>
+    <p class="text-gray-400 font-medium">{
       new Date(post.date).toLocaleString("en-US", {
         month: "long",
         day: "numeric",
