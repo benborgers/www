@@ -44,7 +44,7 @@ const getYearMonth = dateString => {
 ---
 
 <Layout title="Ben Borgers’ Blog">
-  <div class="bg-gray-100 text-gray-700 italic p-4 space-y-2">
+  <div class="bg-gray-100 text-gray-700 italic p-4 space-y-4">
     <p data-technical-hide>
       Welcome to my blog! I’m trying my best to write a post here every day,
       with no guarantee for the quality but doing my best.
@@ -54,14 +54,16 @@ const getYearMonth = dateString => {
     </p>
     <p data-technical-hide>
       I also write blog posts about programming ({technicalPosts.length} posts so far),
-      but they’re only interesting if you want to fix a niche problem.
+      but they’re probably only interesting if you have a need to fix the problem it’s solving.
       Still, you can
       <a href="?technical" class="italic font-semibold underline decoration-gray-400">see the list of them here</a>.
     </p>
-    <p data-technical-show>
-      These are my blog posts on niche programming solutions.
+    <p data-technical-show hidden>
+      These are my blog posts on niche programming topics,
+      which are probably only interesting if you’re searching the internet
+      for a solution.
     </p>
-    <p data-technical-show>
+    <p data-technical-show hidden>
       <a href="/posts/" class="italic font-semibold underline decoration-gray-400">See the rest of my blog posts here</a>.
     </p>
   </div>
@@ -90,7 +92,7 @@ const getYearMonth = dateString => {
     })}
   </div>
 
-  <div class="mt-8 ml-2 space-y-2" data-technical-show>
+  <div class="mt-8 ml-2 space-y-2" data-technical-show hidden>
     {technicalPosts.map(post => (
       <a
         href={`/posts/${post.slug}/`}
@@ -100,4 +102,18 @@ const getYearMonth = dateString => {
       </a>
     ))}
   </div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      if (document.location.search === "?technical") {
+        document
+          .querySelectorAll("[data-technical-show]")
+          .forEach((el) => el.hidden = false);
+
+        document
+          .querySelectorAll("[data-technical-hide]")
+          .forEach((el) => el.hidden = true);
+      }
+    });
+  </script>
 </Layout>
