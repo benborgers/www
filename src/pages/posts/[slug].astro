@@ -42,7 +42,7 @@ const { post } = Astro.props
     )}
 
     {post.source === POST_SOURCE.GHOST && (() => {
-      const pieces = post.html.split(/<\/?pre>/)
+      const pieces = (post.html || '').split(/<\/?pre>/)
 
       return pieces.map(piece => {
         if (piece.startsWith('<code')) {
