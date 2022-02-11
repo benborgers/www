@@ -9,4 +9,8 @@
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
   renderers: [],
+  buildOptions: {
+    site: "https://benborgers.com",
+    sitemap: true,
+  },
 });
