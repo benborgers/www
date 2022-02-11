@@ -15,12 +15,26 @@ const ghostPosts = (await ghost('posts')).posts.map(post => {
   return {
     title: post.title,
     date: post.published_at,
-    slug: post.slug
+    slug: post.slug,
+    tags: post?.tags.map(tag => tag.name) || []
   }
 })
 
-const posts = [...localPosts, ...ghostPosts]
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+const allPosts = [
+  ...localPosts,
+  ...ghostPosts
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+const technicalPosts = []
+const posts = []
+
+for(const post of allPosts) {
+  if (!post.tags || post.tags.includes('#technical')) {
+    technicalPosts.push(post)
+  } else {
+    posts.push(post)
+  }
+}
 
 const getYearMonth = dateString => {
   if (!dateString) return null
@@ -29,13 +43,37 @@ const getYearMonth = dateString => {
 }
 ---
 
+<script type="module">
+  import '../../js/posts.js';
+</script>
+
 <Layout title="Ben Borgers’ Blog">
-  <div>
+  <div class="bg-gray-100 text-gray-800 italic p-4 space-y-2">
+    <p data-technical-hide>
+      Welcome to my blog! I’m trying my best to write a post here every day,
+      with no guarantee for the quality but doing my best.
+    </p>
+    <p data-technical-hide>
+      I hope some of it is interesting! If it is, I’d love to hear from you.
+    </p>
+    <p data-technical-hide>
+      I also write blog posts about programming ({technicalPosts.length} posts so far),
+      but they’re only interesting if you want to fix a niche problem.
+      Still, you can
+      <a href="?technical" class="italic font-semibold underline decoration-gray-400">see the list of them here</a>.
+    </p>
+    <p data-technical-show>
+      These are my blog posts on niche programming solutions.
+    </p>
+    <p data-technical-show>
+      <a href="/posts/" class="italic font-semibold underline decoration-gray-400">See the rest of my blog posts here</a>.
+    </p>
+  </div>
+
+  <div data-technical-hide>
     {posts.map((post, index) => {
-      const prevPost = posts[index - 1]
-      const thisPostYearMonth = getYearMonth(post.date)
-      const prevPostYearMonth = getYearMonth(prevPost?.date)
-      const addMonthHeader = thisPostYearMonth !== prevPostYearMonth
+      const prevPost = technicalPosts[index - 1]
+      const addMonthHeader = getYearMonth(post.date) !== getYearMonth(prevPost?.date)
 
       return (
         <Fragment>
@@ -54,5 +92,16 @@ const getYearMonth = dateString => {
         </Fragment>
       )
     })}
+  </div>
+
+  <div class="mt-8 ml-2 space-y-2" data-technical-show>
+    {technicalPosts.map(post => (
+      <a
+        href={`/posts/${post.slug}/`}
+        class="block max-w-max text-gray-700 underline decoration-gray-300"
+      >
+        {post.title}
+      </a>
+    ))}
   </div>
 </Layout>
