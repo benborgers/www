@@ -2,49 +2,19 @@
 import Layout from '../../layouts/Layout.astro'
 import Prose from '../../components/Prose.astro'
 import { Code } from 'astro/components'
-import ghost from '../../lib/ghost'
+import getPosts, { POST_SOURCE } from '../../lib/getPosts'
 
 export async function getStaticPaths() {
-  const posts = Astro.fetchContent('../../../posts/*.md')
-
-  const localPosts = posts
-    .map(post => {
-      const slug = post.file.pathname
-        .replace('/posts/', '')
-        .replace('.md', '')
-
-      return {
-        params: { slug },
-        props: {
-          type: 'file',
-          post: {
-            title: post.title,
-            date: post.date,
-            html: post.content.html
-          }
-        }
-      }
-    })
-
-  const ghostPosts = (await ghost('posts')).posts
-    .map(post => {
-      return {
-        params: { slug: post.slug },
-        props: {
-          type: 'ghost',
-          post: {
-            title: post.title,
-            date: post.published_at,
-            html: post.html
-          }
-        }
-      }
-    })
-
-  return [...localPosts, ...ghostPosts]
+  const posts = await getPosts(Astro.fetchContent('../../../posts/*.md'))
+  return posts.map(post => {
+    return {
+      params: { slug: post.slug },
+      props: { post }
+    }
+  })
 }
 
-const { type, post } = Astro.props
+const { post } = Astro.props
 ---
 
 <Layout title={`${post.title} - Ben Borgers`}>
@@ -62,13 +32,13 @@ const { type, post } = Astro.props
   <div class="mt-8" />
 
   <Prose>
-    {type === 'file' && (
+    {post.source === POST_SOURCE.FILE && (
       <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.9.0/themes/prism-dracula.min.css" />
 
       <Fragment set:html={post.html} />
     )}
 
-    {type === 'ghost' && (() => {
+    {post.source === POST_SOURCE.GHOST && (() => {
       const pieces = post.html.split(/<\/?pre>/)
 
       return pieces.map(piece => {
