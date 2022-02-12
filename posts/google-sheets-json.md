@@ -58,6 +58,6 @@ You can check out the code for [opensheet](https://github.com/benborgers/openshe
 
 You can also check out [the documentation](https://opensheet.elk.sh) for some more information, including how to fetch sheets by their number/index instead of their name.
 
-If you have any questions about how to use this little utility API, [please reach out](/contact)! I’d love to help.
+If you have any questions about how to use this little utility API, please reach out (benborgers@hey.com)! I’d love to help.
 
-Also, if you’re not a programmer and you’d like help integrating Google Sheets, [send me a quick message](/contact) and I can help out!
+Also, if you’re not a programmer and you’d like help integrating Google Sheets, send me a quick message (again, benborgers@hey.com) and I can help out!
