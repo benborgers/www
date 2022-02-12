@@ -26,20 +26,20 @@ const { title } = Astro.props
 </head>
 
 <body class="bg-white">
-  <nav class="hidden md:block h-screen fixed inset-y-0 left-0 bg-gray-100 pt-16 w-16 space-y-6">
+  <nav class="hidden sm:block h-screen fixed inset-y-0 left-0 bg-gray-100 pt-16 w-16 space-y-6">
     <NavLink icon="home" href="/" />
     <NavLink icon="blog" href="/posts" />
     <NavLink icon="twitter" href="https://twitter.com/benborgers" />
   </nav>
 
-  <nav class="md:hidden bg-gray-100 p-3 rounded-xl m-4 mb-2 flex gap-x-6 justify-center">
+  <nav class="sm:hidden bg-gray-100 p-3 rounded-xl m-4 mb-2 flex gap-x-6 justify-center">
     <NavLink icon="home" href="/" />
     <NavLink icon="blog" href="/posts" />
     <NavLink icon="twitter" href="https://twitter.com/benborgers" />
   </nav>
 
-  <div class="p-4 md:ml-16">
-    <div class="max-w-xl mx-auto md:mt-16 mb-36">
+  <div class="p-4 sm:ml-16">
+    <div class="max-w-xl mx-auto sm:mt-16 mb-36">
       <slot />
     </div>
   </div>
