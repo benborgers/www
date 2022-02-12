@@ -4,7 +4,7 @@ const { icon, href } = Astro.props
 let svg = ''
 
 const current = Astro.request.url.pathname === href
-const classList = `mx-auto h-7 w-7 hover:scale-110 active:scale-95 transition-transform ${current ? 'fill-rose-600' : 'fill-gray-400'}`
+const classList = `mx-auto h-7 w-7 group-hover:scale-110 group-active:scale-95 transition-transform ${current ? 'fill-rose-600' : 'fill-gray-400'}`
 
 if (icon == 'home') {
   svg = `<svg xmlns="http://www.w3.org/2000/svg" class="${classList}" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M218.8,103.7,138.8,31a16,16,0,0,0-21.6,0l-80,72.7A16,16,0,0,0,32,115.5v92.1a16.4,16.4,0,0,0,4,11A15.9,15.9,0,0,0,48,224H96a8,8,0,0,0,8-8V168a8,8,0,0,1,8-8h32a8,8,0,0,1,8,8v48a8,8,0,0,0,8,8h48a15.6,15.6,0,0,0,7.6-1.9A16.1,16.1,0,0,0,224,208V115.5A16,16,0,0,0,218.8,103.7Z"></path></svg>`
@@ -19,7 +19,7 @@ const target = href.startsWith('http') ? '_blank' : null
 
 <a
   href={href}
-  class="block"
+  class="block group"
   target={target}
   set:html={svg}
   onclick="this.href.includes('twitter') && fathom.trackGoal('E3LD3YS1', 0)"
