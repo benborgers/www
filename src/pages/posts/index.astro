@@ -42,7 +42,7 @@ const getYearMonth = dateString => {
 
   <div data-technical-hide>
     {nonTechnicalPosts.map((post, index) => {
-      const prevPost = technicalPosts[index - 1]
+      const prevPost = nonTechnicalPosts[index - 1]
       const addMonthHeader = getYearMonth(post.date) !== getYearMonth(prevPost?.date)
 
       return (
