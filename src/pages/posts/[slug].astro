@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props
 ---
 
-<Layout title={`${post.title} - Ben Borgers`}>
+<Layout title={post.title}>
   <div class="space-y-1 sm:space-y-2">
     <h1 class="text-3xl text-gray-900 font-black font-serif">{post.title}</h1>
     <p class="text-gray-400 font-medium">{
