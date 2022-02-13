@@ -26,11 +26,11 @@ https://opensheet.elk.sh/spreadsheet_id/sheet_name
 
 Replace `spreadsheet_id` with the ID in the URL of the Google Sheet. Here’s the part you should copy and paste:
 
-![A URL bar with the spreadsheet ID highlighted in yellow](/img/posts/google-sheets-json-url.png)
+![A URL bar with the spreadsheet ID highlighted in yellow](/posts/google-sheets-json-url.png)
 
 Next, replace `sheet_name` with the name of the sheet (basically “tab”) that you to want to get the values from. You can find and rename the sheets at the bottom of Google Sheets:
 
-![The sheet tabs at the bottom of Google Sheets](/img/posts/google-sheets-json-sheet-name.png)
+![The sheet tabs at the bottom of Google Sheets](/posts/google-sheets-json-sheet-name.png)
 
 And that’s it! You can [click here](https://opensheet.elk.sh/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet) to see an example API response.
 
@@ -58,6 +58,6 @@ You can check out the code for [opensheet](https://github.com/benborgers/openshe
 
 You can also check out [the documentation](https://opensheet.elk.sh) for some more information, including how to fetch sheets by their number/index instead of their name.
 
-If you have any questions about how to use this little utility API, [please reach out](/contact)! I’d love to help.
+If you have any questions about how to use this little utility API, please reach out (benborgers@hey.com)! I’d love to help.
 
-Also, if you’re not a programmer and you’d like help integrating Google Sheets, [send me a quick message](/contact) and I can help out!
+Also, if you’re not a programmer and you’d like help integrating Google Sheets, send me a quick message (again, benborgers@hey.com) and I can help out!

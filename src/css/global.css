@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+code:not(pre code) {
+  @apply bg-gray-100 !text-red-500 px-1 py-0.5 rounded-md;
+}

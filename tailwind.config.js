@@ -1,14 +1,17 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
-  content: ["./app/**/*.{jsx,tsx}"],
+  content: ["./src/**/*.astro"],
   theme: {
     extend: {
+      colors: {
+        gray: colors.zinc,
+      },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["'Public Sans'", "sans-serif"],
+        serif: ["Fraunces", "serif"],
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [require("@tailwindcss/typography")],
 };

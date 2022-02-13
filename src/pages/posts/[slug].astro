@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Prose from '../../components/Prose.astro'
+import { Code } from 'astro/components'
+import getPosts, { POST_SOURCE, POST_TYPE } from '../../lib/getPosts'
+
+export async function getStaticPaths() {
+  const posts = await getPosts(Astro.fetchContent('../../../posts/*.md'))
+  return posts.map(post => {
+    return {
+      params: { slug: post.slug },
+      props: { post }
+    }
+  })
+}
+
+const { post } = Astro.props
+---
+
+<Layout title={`${post.title} - Ben Borgers`}>
+  <div class="space-y-1 sm:space-y-2">
+    <h1 class="text-3xl text-gray-900 font-black font-serif">{post.title}</h1>
+    <p class="text-gray-400 font-medium">{
+      new Date(post.date).toLocaleString("en-US", {
+        // For markdown files, the date is written manually, so it should be UTC.
+        // For Ghost, dates are shown in my time zone (as I intended).
+        timeZone: post.source === POST_SOURCE.FILE ? "UTC" : "America/New_York",
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      })
+    }</p>
+  </div>
+
+  <div class="mt-8" />
+
+  <Prose>
+    {post.source === POST_SOURCE.FILE && (
+      <link rel="stylesheet" href="https://unpkg.com/prism-themes@1.9.0/themes/prism-dracula.min.css" />
+
+      <Fragment set:html={post.html} />
+    )}
+
+    {post.source === POST_SOURCE.GHOST && (() => {
+      const pieces = (post.html || '').split(/<\/?pre>/)
+
+      return pieces.map(piece => {
+        if (piece.startsWith('<code')) {
+          const language = piece.match(/class="language-(.+?)"/)[1]
+          const code = piece.match(/<code .*>(.+?)<\/code>/s)[1]
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+
+          return <Code code={code} lang={language} theme="dracula" />
+        }
+
+        return <Fragment set:html={piece} />
+      })
+    })}
+  </Prose>
+
+  {post.type === POST_TYPE.TECHNICAL && (
+    <div class="mt-12 bg-gray-100 text-gray-600 italic p-4 space-y-4">
+      <p>
+        If anything’s incorrect, no longer working, or misspelled, please let me know via
+        <a
+          href={`https://forms.reform.app/ben/report?f5cafa8b-0766-463a-af43-80ed7f9ea55a=${encodeURIComponent(Astro.request.url.pathname)}`}
+          class="whitespace-nowrap font-semibold underline decoration-gray-400"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          this quick anonymous form</a>.
+      </p>
+      <p>
+        If you still have questions, I’d love to help you!
+        Please reach out:
+        <a href="mailto:benborgers@hey.com" class="font-semibold underline decoration-gray-400">
+          benborgers@hey.com
+        </a>
+      </p>
+    </div>
+  )}
+</Layout>

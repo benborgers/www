@@ -1,0 +1,119 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import getPosts, { POST_TYPE } from '../../lib/getPosts'
+
+const posts = await getPosts(Astro.fetchContent('../../../posts/*.md'))
+
+const technicalPosts = posts.filter(post => post.type === POST_TYPE.TECHNICAL)
+const nonTechnicalPosts = posts.filter(post => post.type === POST_TYPE.NON_TECHNICAL)
+
+const getYearMonth = dateString => {
+  if (!dateString) return null
+  const date = new Date(dateString)
+  return `${date.getFullYear()}-${date.getMonth() + 1}`
+}
+---
+
+<Layout title="Ben Borgers’ Blog">
+  <div class="bg-gray-100 text-gray-700 italic p-4 space-y-4">
+    <p data-technical-hide>
+      Welcome to my blog! I’m trying my best to write a post here every day,
+      with no guarantee for the quality but doing my best.
+      I’ve currently written for <span id="streak" class="whitespace-nowrap">? days</span> in a row.
+    </p>
+    <p data-technical-hide>
+      I hope some of it is interesting! If it is, I’d love to hear from you.
+    </p>
+    <p data-technical-hide>
+      I also write blog posts about programming ({technicalPosts.length} posts so far),
+      but they’re probably only interesting if you have a need to fix the problem it’s solving.
+      Still, you can
+      <a href="?technical" class="font-semibold underline decoration-gray-400">see the list of them here</a>.
+    </p>
+    <p data-technical-show hidden>
+      These are my blog posts on niche programming topics,
+      which are probably only interesting if you’re searching the internet
+      for a solution.
+    </p>
+    <p data-technical-show hidden>
+      <a href="/posts" class="font-semibold underline decoration-gray-400">See the rest of my blog posts here</a>.
+    </p>
+  </div>
+
+  <div data-technical-hide>
+    {nonTechnicalPosts.map((post, index) => {
+      const prevPost = technicalPosts[index - 1]
+      const addMonthHeader = getYearMonth(post.date) !== getYearMonth(prevPost?.date)
+
+      return (
+        <Fragment>
+          {addMonthHeader && (
+            <h2 class="mt-8 text-lg text-gray-800 font-extrabold">
+              {new Date(post.date).toLocaleString('en-US', { month: 'long', year: 'numeric'})}
+            </h2>
+          )}
+
+          <a
+            href={`/posts/${post.slug}`}
+            class="block max-w-max ml-4 mt-2 text-gray-700 underline decoration-gray-300"
+            data-streak-ymd={(() => {
+              const date = new Date(post.date)
+              const year = date.toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric' })
+              const month = date.toLocaleString('en-US', { timeZone: 'America/New_York', month: 'numeric' })
+              const day = date.toLocaleString('en-US', { timeZone: 'America/New_York', day: 'numeric' })
+
+              return `${year}-${month}-${day}`
+            })()}
+          >
+            {post.title}
+          </a>
+        </Fragment>
+      )
+    })}
+  </div>
+
+  <div class="mt-8 ml-2 space-y-2" data-technical-show hidden>
+    {technicalPosts.map(post => (
+      <a
+        href={`/posts/${post.slug}`}
+        class="block max-w-max text-gray-700 underline decoration-gray-300"
+      >
+        {post.title}
+      </a>
+    ))}
+  </div>
+
+  <script>
+    if (document.location.search === "?technical") {
+      document
+        .querySelectorAll("[data-technical-show]")
+        .forEach((el) => el.hidden = false);
+
+      document
+        .querySelectorAll("[data-technical-hide]")
+        .forEach((el) => el.hidden = true);
+    }
+
+    let streak = 0
+    const currentDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York', }))
+    let isToday = true
+    let keepCounting = true
+    while(keepCounting) {
+      currentDate.setDate(currentDate.getDate() - (isToday ? 0 : 1))
+      const ymd = `${currentDate.toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric' })
+      }-${currentDate.toLocaleString('en-US', { timeZone: 'America/New_York', month: 'numeric' })
+      }-${currentDate.toLocaleString('en-US', { timeZone: 'America/New_York', day: 'numeric' })}`
+
+      const postExists = document.querySelector(`[data-streak-ymd="${ymd}"]`)
+      if(postExists) {
+        streak++
+      } else if (!isToday) {
+        keepCounting = false
+      }
+
+      isToday = false
+    }
+
+    document.querySelector('#streak').innerHTML = `${streak} ${streak === 1 ? 'day' : 'days'}`
+  </script>
+</Layout>

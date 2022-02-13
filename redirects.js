@@ -1,8 +1,15 @@
-{
+// Builds a _redirects file for Netlify.
+
+const redirects = {
+  "/contact": "/",
+
   "/blog": "/posts",
+  "/blog/*": "/posts/:splat",
   "/posts/50": "/posts/notion-to-website",
-  "/92258a23-27df-4946-9d43-03041a8fd803": "/posts/netlify-cancel-build-programmatically",
-  "/901f8d0e-ba28-4bfc-af74-e36d7c111d23": "/posts/tailwind-typography-customize",
+  "/92258a23-27df-4946-9d43-03041a8fd803":
+    "/posts/netlify-cancel-build-programmatically",
+  "/901f8d0e-ba28-4bfc-af74-e36d7c111d23":
+    "/posts/tailwind-typography-customize",
   "/28f8b29b-97a2-48b2-9988-03a9b8d4335f": "/posts/tailwind-font",
   "/b10e36b0-9568-4c4a-9660-88cf9fb3fe97": "/posts/node-sha1",
   "/1b635a80-be09-46d1-ba85-a6d1921068eb": "/posts/node-fetch-download-image",
@@ -67,7 +74,8 @@
   "/js-textarea-auto-resize": "/posts/js-textarea-auto-resize",
   "/json-ld": "/posts/json-ld",
   "/kill-localhost": "/posts/kill-localhost",
-  "/laravel-artisan-commands-not-working": "/posts/laravel-artisan-commands-not-working",
+  "/laravel-artisan-commands-not-working":
+    "/posts/laravel-artisan-commands-not-working",
   "/laravel-double-spaces": "/posts/laravel-double-spaces",
   "/laravel-log-404": "/posts/laravel-log-404",
   "/laravel-mix-notifications": "/posts/laravel-mix-notifications",
@@ -77,7 +85,8 @@
   "/laravel-schedule-job-daily": "/posts/laravel-schedule-job-daily",
   "/laravel-schedule-prevent": "/posts/laravel-schedule-prevent",
   "/laravel-tinker-dispatch-job": "/posts/laravel-tinker-dispatch-job",
-  "/livewire-refresh-other-component": "/posts/livewire-refresh-other-component",
+  "/livewire-refresh-other-component":
+    "/posts/livewire-refresh-other-component",
   "/livewire-test-class-not-found": "/posts/livewire-test-class-not-found",
   "/livewire-url-changing": "/posts/livewire-url-changing",
   "/livewire-validation-messages": "/posts/livewire-validation-messages",
@@ -132,5 +141,15 @@
   "/vercel-cors": "/posts/vercel-cors",
   "/vscode-spellcheck": "/posts/vscode-spellcheck",
   "/webkit-tap-highlight-color": "/posts/webkit-tap-highlight-color",
-  "/zeit-regions": "/posts/zeit-regions"
+  "/zeit-regions": "/posts/zeit-regions",
+};
+
+const fs = require("fs");
+
+let generatedRedirects = [];
+
+for (const [from, to] of Object.entries(redirects)) {
+  generatedRedirects.push(`${from} ${to}`);
 }
+
+fs.writeFileSync(`dist/_redirects`, generatedRedirects.join("\n"));
