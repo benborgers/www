@@ -46,8 +46,8 @@ const { post } = Astro.props
 
       return pieces.map(piece => {
         if (piece.startsWith('<code')) {
-          const language = piece.match(/class="language-(.+?)"/)[1]
-          const code = piece.match(/<code .*>(.+?)<\/code>/s)[1]
+          const language = piece.match(/class="language-(.+?)"/)?.[1]
+          const code = piece.match(/<code.*>(.+?)<\/code>/s)[1]
             .replace(/&lt;/g, '<')
             .replace(/&gt;/g, '>')
 
