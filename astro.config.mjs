@@ -12,5 +12,6 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   buildOptions: {
     site: "https://benborgers.com",
     sitemap: true,
+    pageUrlFormat: "file",
   },
 });
