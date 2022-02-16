@@ -4,8 +4,20 @@ import Prose from '../../components/Prose.astro'
 import { Code } from 'astro/components'
 import getPosts, { POST_SOURCE, POST_TYPE } from '../../lib/getPosts'
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ rss }) {
   const posts = await getPosts(Astro.fetchContent('../../../posts/*.md'))
+
+  rss({
+    title: 'Ben Borgers',
+    description: 'Ben Borgers’ personal blog',
+    stylesheet: true,
+    items: posts.filter(post => post.type === POST_TYPE.NON_TECHNICAL).map(post => ({
+      title: post.title,
+      link: `https://benborgers.com/posts/${post.slug}`,
+      pubDate: post.date
+    }))
+  })
+
   return posts.map(post => {
     return {
       params: { slug: post.slug },
