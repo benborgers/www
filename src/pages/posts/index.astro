@@ -40,7 +40,17 @@ const getYearMonth = dateString => {
     </p>
   </div>
 
-  <div data-technical-hide>
+  <div class="mt-8" data-technical-hide>
+    <p class="text-right">
+      <a
+        class="mb-1 text-sm font-semibold text-gray-500 italic underline decoration-gray-300"
+        href="/rss.xml"
+        target="_blank"
+      >
+        rss feed
+      </a>
+    </p>
+
     {nonTechnicalPosts.map((post, index) => {
       const prevPost = nonTechnicalPosts[index - 1]
       const addMonthHeader = getYearMonth(post.date) !== getYearMonth(prevPost?.date)
@@ -48,7 +58,7 @@ const getYearMonth = dateString => {
       return (
         <Fragment>
           {addMonthHeader && (
-            <h2 class="mt-8 text-lg text-gray-800 font-extrabold">
+            <h2 class={`${index !== 0 ? 'mt-8' : ''} text-lg text-gray-800 font-extrabold`}>
               {new Date(post.date).toLocaleString('en-US', { month: 'long', year: 'numeric'})}
             </h2>
           )}
