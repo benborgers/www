@@ -33,7 +33,7 @@ export default async function (markdownPosts) {
         date: post.published_at,
         html: post.html.replace(
           /<figure class="kg-card kg-video-card">.*<video src="(.*?)".*<\/figure>/g,
-          (_, src) => `<video src=${src} controls></video>`
+          (_, src) => `<video src=${src} controls playsinline></video>`
         ),
         source: POST_SOURCE.GHOST,
         type: post.tags.find((tag) => tag.name === "#technical")
