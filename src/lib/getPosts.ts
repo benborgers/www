@@ -32,7 +32,7 @@ export default async function (markdownPosts) {
         title: post.title,
         date: post.published_at,
         html: post.html.replace(
-          /<figure class="kg-card kg-video-card">.*<video src="(.*?)".*<\/figure>/g,
+          /<figure class="kg-card kg-video-card">.*?<video src="(.*?)".*?<\/figure>/g,
           (_, src) => `<video src=${src} controls playsinline></video>`
         ),
         source: POST_SOURCE.GHOST,
