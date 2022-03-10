@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Contact Ben Borgers" fullBleed>
+  <div id="reform"></div>
+
+  <script>window.Reform=window.Reform||function(){(Reform.q=Reform.q||[]).push(arguments)};</script>
+  <script id="reform-script" async src="https://embed.reform.app/v1/embed.js"></script>
+  <script>
+      Reform('init', {
+          url: 'https://forms.reform.app/ben/contact',
+          target: '#reform',
+          background: 'transparent',
+      })
+  </script>
+</Layout>
