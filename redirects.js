@@ -1,8 +1,6 @@
 // Builds a _redirects file for Netlify.
 
 const redirects = {
-  "/contact": "/",
-
   "/blog": "/posts",
   "/blog/*": "/posts/:splat",
   "/posts/50": "/posts/notion-to-website",
