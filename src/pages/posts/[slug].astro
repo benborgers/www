@@ -70,16 +70,15 @@ const { post } = Astro.props
         return <Fragment set:html={piece} />
       })
     })}
-  </Prose>
 
-  {post.type === POST_TYPE.TECHNICAL && (
-    <div class="mt-12 bg-gray-100 text-gray-600 italic p-4 space-y-4">
+    {post.type === POST_TYPE.TECHNICAL && (
+      <hr />
       <p>
         <strong>A quick favor:</strong>
         was anything I wrote incorrect or misspelled, or do you have any questions? Please
-        <a href="/contact" class="underline">use this contact form</a>
+        <a href="/contact">use this contact form</a>
         to let me know!
       </p>
-    </div>
-  )}
+    )}
+  </Prose>
 </Layout>
