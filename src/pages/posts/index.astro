@@ -63,7 +63,7 @@ const getYearMonth = dateString => {
         <Fragment>
           {addMonthHeader && (
             <h2 class={`${index !== 0 ? 'mt-8' : ''} text-lg text-gray-800 font-extrabold`}>
-              {new Date(post.date).toLocaleString('en-US', { month: 'long', year: 'numeric'})}
+              {new Date(post.date).toLocaleString('en-US', { month: 'long', year: 'numeric', timeZone: 'America/New_York' })}
             </h2>
           )}
 
