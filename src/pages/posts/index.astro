@@ -9,7 +9,11 @@ const nonTechnicalPosts = posts.filter(post => post.type === POST_TYPE.NON_TECHN
 
 const getYearMonth = dateString => {
   if (!dateString) return null
-  const date = new Date(dateString)
+  const date = new Date(
+    new Date(dateString).toLocaleString('en-US', {
+      timeZone: 'America/New_York'
+    })
+  )
   return `${date.getFullYear()}-${date.getMonth() + 1}`
 }
 ---
