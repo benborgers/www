@@ -36,6 +36,19 @@ function all_posts() {
                 return $post;
             });
 
-        return $localTechnicalPosts->sortByDesc('date')->values();
+        $ghostPosts = collect(
+            json_decode(file_get_contents(resource_path('ghost.json')))->db[0]->data->posts
+        )
+            ->filter(fn ($post) => $post->type === 'post' && $post->status === 'published')
+            ->map(function ($post) {
+                return [
+                    'title' => $post->title,
+                    'date' => Carbon::parse($post->published_at),
+                    'slug' => $post->slug,
+                    'html' => $post->html
+                ];
+            });
+
+        return $localTechnicalPosts->concat($ghostPosts)->sortByDesc('date')->values();
     });
 }
