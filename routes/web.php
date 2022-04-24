@@ -8,3 +8,9 @@ Route::get('/', function () {
         'content' => Blob::firstWhere('name', 'index')->data['content']
     ]);
 });
+
+Route::get('/posts', function () {
+    $posts = all_posts();
+
+    return view('posts.index', ['posts' => $posts]);
+});
