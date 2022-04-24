@@ -1,9 +1,0 @@
-[[redirects]]
-  from = "/slowmochristian/*"
-  to = "https://slowmochristian.netlify.app/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/swipes/*"
-  to = "https://mealswipes.netlify.app/:splat"
-  status = 200
