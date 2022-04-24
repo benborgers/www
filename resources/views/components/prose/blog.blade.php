@@ -1,0 +1,14 @@
+<div
+    @class([
+        'prose max-w-none',
+        'prose-zinc prose-rose',
+        'prose-headings:font-serif',
+        'prose-img:mx-auto prose-video:mx-auto',
+        'prose-img:max-h-[80vh] prose-video:max-h-[80vh]',
+        'prose-img:w-auto prose-video:w-auto',
+        'before:prose-code:content-none',
+        'after:prose-code:content-none'
+    ])
+>
+  {{ $slot }}
+</div>

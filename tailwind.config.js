@@ -1,7 +1,12 @@
 module.exports = {
     content: ["./resources/**/*.blade.php"],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                fraunces: ["Fraunces", "serif"],
+                "public-sans": ["Public Sans", "sans-serif"],
+            },
+        },
     },
-    plugins: [],
+    plugins: [require("@tailwindcss/typography")],
 };
