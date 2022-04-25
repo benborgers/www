@@ -12,5 +12,16 @@ Route::get('/', function () {
 Route::get('/posts', function () {
     $posts = all_posts();
 
-    return view('posts.index', ['posts' => $posts]);
+    return view('posts.index', [
+        'posts' => $posts->where('type', 'non_technical')->values()
+    ]);
 })->name('posts.index');
+
+Route::get('/technical-posts', function () {
+    $posts = all_posts();
+
+    return view('posts.index', [
+        'posts' => $posts->where('type', 'technical')->values(),
+        'months' => false
+    ]);
+})->name('posts.technical-index');
