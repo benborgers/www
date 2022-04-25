@@ -43,7 +43,7 @@ function all_posts() {
             ->map(function ($post) use ($ghostData) {
                 return [
                     'title' => $post->title,
-                    'date' => Carbon::parse($post->published_at),
+                    'date' => Carbon::parse($post->published_at)->timezone('America/New_York'),
                     'slug' => $post->slug,
                     'html' => $post->html,
                     'type' => collect($ghostData->posts_tags)
