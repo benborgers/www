@@ -13,7 +13,8 @@ Route::get('/posts', function () {
     $posts = all_posts();
 
     return view('posts.index', [
-        'posts' => $posts->where('type', 'non_technical')->values()
+        'posts' => $posts->where('type', 'non_technical')->values(),
+        'months' => true
     ]);
 })->name('posts.index');
 

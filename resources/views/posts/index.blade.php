@@ -2,7 +2,7 @@
     <x-layouts.blog>
         @foreach($posts as $post)
             @if(
-                $months ?? true &&
+                $months &&
                 ($loop->index === 0 || $posts[$loop->index-1]['date']->month != $post['date']->month)
             )
                 <h2 class="mt-8 text-lg text-zinc-800 font-extrabold">{{ $post['date']->format('F Y') }}</h2>
@@ -11,7 +11,7 @@
             <div
                 href="/posts/{{ $post['slug'] }}"
                 @class([
-                    'ml-4' => $months ?? true,
+                    'ml-4' => $months,
                     'mt-2 sm:flex sm:justify-between sm:space-x-4'
                 ])
             >
