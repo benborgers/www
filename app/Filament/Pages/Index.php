@@ -30,7 +30,7 @@ class Index extends Page
     {
         return [
             Forms\Components\Card::make()->schema([
-                Forms\Components\RichEditor::make('content')->required()
+                Forms\Components\MarkdownEditor::make('content')->required()
             ])
         ];
     }
