@@ -32,20 +32,24 @@ function all_posts() {
 
                 $post['markdown'] = str($markdown)->trim()->toString();
                 $post['slug'] = str($slug)->replaceMatches('/\.md$/', '')->toString();
+                $post['type'] = 'technical';
 
                 return $post;
             });
 
-        $ghostPosts = collect(
-            json_decode(file_get_contents(resource_path('ghost.json')))->db[0]->data->posts
-        )
+        $ghostData = json_decode(file_get_contents(resource_path('ghost.json')))->db[0]->data;
+        $ghostPosts = collect($ghostData->posts)
             ->filter(fn ($post) => $post->type === 'post' && $post->status === 'published')
-            ->map(function ($post) {
+            ->map(function ($post) use ($ghostData) {
                 return [
                     'title' => $post->title,
                     'date' => Carbon::parse($post->published_at),
                     'slug' => $post->slug,
-                    'html' => $post->html
+                    'html' => $post->html,
+                    'type' => collect($ghostData->posts_tags)
+                        ->firstWhere('post_id', $post->id)
+                        ?->tag_id === '6201374c0476c71d38b9a1e4' // Ghost ID for '#technical' tag
+                        ? 'technical' : 'non_technical'
                 ];
             });
 
