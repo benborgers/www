@@ -26,11 +26,11 @@ https://opensheet.elk.sh/spreadsheet_id/sheet_name
 
 Replace `spreadsheet_id` with the ID in the URL of the Google Sheet. Here’s the part you should copy and paste:
 
-![A URL bar with the spreadsheet ID highlighted in yellow](/posts/google-sheets-json-url.png)
+![A URL bar with the spreadsheet ID highlighted in yellow]/img/posts/google-sheets-json-url.png)
 
 Next, replace `sheet_name` with the name of the sheet (basically “tab”) that you to want to get the values from. You can find and rename the sheets at the bottom of Google Sheets:
 
-![The sheet tabs at the bottom of Google Sheets](/posts/google-sheets-json-sheet-name.png)
+![The sheet tabs at the bottom of Google Sheets]/img/posts/google-sheets-json-sheet-name.png)
 
 And that’s it! You can [click here](https://opensheet.elk.sh/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet) to see an example API response.
 
@@ -42,14 +42,14 @@ This example uses [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fet
 
 ```js
 fetch(
-  "https://opensheet.elk.sh/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet"
+    "https://opensheet.elk.sh/1o5t26He2DzTweYeleXOGiDjlU4Jkx896f95VUHVgS8U/Test+Sheet"
 )
-  .then((res) => res.json())
-  .then((data) => {
-    data.forEach((row) => {
-      // Do something with each row here.
+    .then((res) => res.json())
+    .then((data) => {
+        data.forEach((row) => {
+            // Do something with each row here.
+        });
     });
-  });
 ```
 
 ## Wrap-up

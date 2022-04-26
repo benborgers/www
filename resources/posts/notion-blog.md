@@ -41,5 +41,5 @@ Then, for each published post, it takes the `id` of that row in the table and ma
 
 I've written some other blog posts on using the Potion API for Notion:
 
-* [API to read a Notion table](/posts/notion-table)
-* [How to turn a Notion doc into a website](/posts/notion-to-website)
+-   [API to read a Notion table]/img/posts/notion-table)
+-   [How to turn a Notion doc into a website]/img/posts/notion-to-website)
