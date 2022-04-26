@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Blob;
 
+require __DIR__.'/redirects.php';
+
 Route::get('/', function () {
     return view('index', [
         'content' => Blob::firstWhere('name', 'index')->data['content']
@@ -31,4 +33,4 @@ Route::get('/posts/{slug}', function ($slug) {
     $post = all_posts()->firstWhere('slug', $slug);
     abort_if(! $post, 404);
     return view('posts.show', ['post' => $post]);
-});
+})->name('posts.show');
