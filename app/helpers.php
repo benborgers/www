@@ -14,7 +14,8 @@ function all_posts() {
                 $post = [];
 
                 $contents = str(file_get_contents(resource_path("posts/$slug")));
-                [, $rawFrontmatter, $markdown] = $contents->split('/---/');
+                $rawFrontmatter = $contents->replaceFirst('---', '')->before('---');
+                $markdown = $contents->replaceFirst('---', '')->after('---');
                 str($rawFrontmatter)
                     ->split('/\n/')
                     ->filter(fn ($line) => str($line)->trim()->isNotEmpty())
