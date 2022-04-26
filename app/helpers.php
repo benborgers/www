@@ -49,7 +49,8 @@ function all_posts() {
                             language: $matches[1] === '' ? 'plaintext' : $matches[1],
                             theme: config('markdown.code_highlighting.theme')
                         );
-                    });
+                    })
+                    ->replaceMatches('/__GHOST_URL__\/content\/images/', '/img/ghost');
 
                 return [
                     'title' => $post->title,
