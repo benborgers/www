@@ -7,10 +7,10 @@
 }
 
 .prose--blog code:not(pre code) {
-    @apply bg-gray-100 !text-red-500 px-1 py-0.5 rounded-md;
+    @apply bg-zinc-100 !text-red-500 px-1 py-0.5 rounded-md;
 }
 
 /* From Ghost HTML */
 .kg-callout-card {
-    @apply bg-gray-100 p-4 grid grid-cols-[max-content,1fr] gap-x-4;
+    @apply bg-zinc-100 p-4 grid grid-cols-[max-content,1fr] gap-x-4;
 }
