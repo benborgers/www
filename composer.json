@@ -14,7 +14,9 @@
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "spatie/laravel-markdown": "^2.2"
+        "spatie/laravel-markdown": "^2.2",
+        "spatie/laravel-ray": "^1.29",
+        "spatie/shiki-php": "^1.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

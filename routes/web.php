@@ -26,3 +26,9 @@ Route::get('/technical-posts', function () {
         'months' => false
     ]);
 })->name('posts.technical-index');
+
+Route::get('/posts/{slug}', function ($slug) {
+    $post = all_posts()->firstWhere('slug', $slug);
+    abort_if(! $post, 404);
+    return view('posts.show', ['post' => $post]);
+});

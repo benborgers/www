@@ -1,5 +1,6 @@
 <div
     @class([
+        'prose--blog',
         'prose max-w-none',
         'prose-zinc prose-rose',
         'prose-headings:font-serif',

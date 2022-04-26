@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Cache;
 use Carbon\Carbon;
+use Spatie\ShikiPhp\Shiki;
 
 function all_posts() {
     // TODO: remove
-    Cache::forget('posts');
+    // Cache::forget('posts');
     return Cache::rememberForever('posts', function () {
         $localTechnicalPosts = collect(scandir(resource_path('posts')))
             ->filter(fn ($slug) => ! str($slug)->startsWith('.'))
@@ -41,11 +42,20 @@ function all_posts() {
         $ghostPosts = collect($ghostData->posts)
             ->filter(fn ($post) => $post->type === 'post' && $post->status === 'published')
             ->map(function ($post) use ($ghostData) {
+                $html = str($post->html)
+                    ->replaceMatches('/<pre><code(?: class="language-(.*?)")?>(.*?)<\/code><\/pre>/s', function ($matches) {
+                        return Shiki::highlight(
+                            code: htmlspecialchars_decode($matches[2]),
+                            language: $matches[1] === '' ? 'plaintext' : $matches[1],
+                            theme: config('markdown.code_highlighting.theme')
+                        );
+                    });
+
                 return [
                     'title' => $post->title,
                     'date' => Carbon::parse($post->published_at)->timezone('America/New_York'),
                     'slug' => $post->slug,
-                    'html' => $post->html,
+                    'html' => $html->toString(),
                     'type' => collect($ghostData->posts_tags)
                         ->firstWhere('post_id', $post->id)
                         ?->tag_id === '6201374c0476c71d38b9a1e4' // Ghost ID for '#technical' tag
