@@ -5,7 +5,10 @@
                 $months &&
                 ($loop->index === 0 || $posts[$loop->index-1]['date']->month != $post['date']->month)
             )
-                <h2 class="mt-8 text-lg text-zinc-800 font-extrabold">{{ $post['date']->format('F Y') }}</h2>
+                <h2 @class([
+                    'text-lg text-zinc-800 font-extrabold',
+                    'mt-8' => !$loop->first
+                ])>{{ $post['date']->format('F Y') }}</h2>
             @endif
 
             <div
