@@ -13,6 +13,8 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
 
         @stack('head')
+
+        <script src="https://owl.benborgers.com/script.js" data-site="ZWCPJCUA" data-included-domains="benborgers.com" defer></script>
     </head>
     <body class="antialiased">
         {{ $slot }}
