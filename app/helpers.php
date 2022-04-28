@@ -5,8 +5,6 @@ use Carbon\Carbon;
 use Spatie\ShikiPhp\Shiki;
 
 function all_posts() {
-    // TODO: remove
-    // Cache::forget('posts');
     return Cache::rememberForever('posts', function () {
         $localTechnicalPosts = collect(scandir(resource_path('posts')))
             ->filter(fn ($slug) => ! str($slug)->startsWith('.'))

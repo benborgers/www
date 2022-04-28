@@ -12,19 +12,35 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/posts', function () {
-    $posts = all_posts();
+    $posts = all_posts()->where('technical', false)->values();
+
+    $today = today('America/New_York');
+    $currentDate = $today;
+    $streak = 0;
+
+    while (true) {
+        if (
+            $posts->first(fn ($post) => $post['date']->isSameDay($currentDate))
+        ) {
+            $streak++;
+            $currentDate->subDay();
+        } else {
+            break;
+        }
+    }
 
     return view('posts.index', [
-        'posts' => $posts->where('technical', false)->values(),
-        'months' => true
+        'posts' => $posts,
+        'months' => true,
+        'streak' => $streak
     ]);
 })->name('posts.index');
 
 Route::get('/technical-posts', function () {
-    $posts = all_posts();
+    $posts = all_posts()->where('technical', true)->values();
 
     return view('posts.index', [
-        'posts' => $posts->where('technical', true)->values(),
+        'posts' => $posts,
         'months' => false
     ]);
 })->name('posts.technical-index');

@@ -1,5 +1,9 @@
 <x-layouts.app title="Ben Borgers’ Blog">
     <x-layouts.blog>
+        <div>
+            {{ $streak }}
+        </div>
+
         @foreach($posts as $post)
             @if(
                 $months &&
