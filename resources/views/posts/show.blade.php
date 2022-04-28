@@ -13,6 +13,22 @@
                     {!! $post['markdown'] !!}
                 </x-markdown>
             @endisset
+
+            @if($post['technical'])
+                <hr />
+                <ul>
+                    <li>
+                        If you have any lingering questions or corrections, email me at <a href="mailto:benborgers@hey.com">benborgers@hey.com</a>!
+                    </li>
+                    <li>
+                        Check out <a href="https://twitter.com/benborgers" onclick="fathom.trackGoal('E3LD3YS1')">my twitter</a>
+                        for screenshots of what I’m working on.
+                    </li>
+                    <li>
+                        I write a <a href="{{ route('posts.index') }}">daily blog post</a> on this website.
+                    </li>
+                </ul>
+            @endif
         </x-prose.blog>
     </x-layouts.blog>
 </x-layouts.app>
