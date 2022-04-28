@@ -34,7 +34,7 @@ function all_posts() {
 
                 $post['markdown'] = str($markdown)->trim()->toString();
                 $post['slug'] = str($slug)->replaceMatches('/\.md$/', '')->toString();
-                $post['type'] = 'technical';
+                $post['technical'] = true;
 
                 return $post;
             });
@@ -58,10 +58,10 @@ function all_posts() {
                     'date' => Carbon::parse($post->published_at)->timezone('America/New_York'),
                     'slug' => $post->slug,
                     'html' => $html->toString(),
-                    'type' => collect($ghostData->posts_tags)
-                        ->firstWhere('post_id', $post->id)
-                        ?->tag_id === '6201374c0476c71d38b9a1e4' // Ghost ID for '#technical' tag
-                        ? 'technical' : 'non_technical'
+                    'technical' => collect($ghostData->posts_tags)
+                        ->where('post_id', $post->id)
+                        ->where('tag_id', '6201374c0476c71d38b9a1e4') // Ghost ID for '#technical' tag
+                        ->isNotEmpty()
                 ];
             });
 
