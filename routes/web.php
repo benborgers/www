@@ -12,6 +12,10 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/posts', function () {
+    if (request()->has('technical')) {
+        return redirect()->route('posts.technical-index');
+    }
+
     $posts = all_posts()->where('technical', false)->values();
 
     $today = today('America/New_York');
