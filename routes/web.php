@@ -16,7 +16,8 @@ Route::get('/posts', function () {
         return redirect()->route('posts.technical-index');
     }
 
-    $posts = all_posts()->where('technical', false)->values();
+    $allPosts = all_posts();
+    $posts = $allPosts->where('technical', false)->values();
 
     $today = today('America/New_York');
     $currentDate = $today;
@@ -36,7 +37,8 @@ Route::get('/posts', function () {
     return view('posts.index', [
         'posts' => $posts,
         'months' => true,
-        'streak' => $streak
+        'streak' => $streak,
+        'technicalPostsCount' => $allPosts->where('technical', true)->count()
     ]);
 })->name('posts.index');
 
