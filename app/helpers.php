@@ -23,6 +23,7 @@ function all_posts() {
                             ->after(':')
                             ->trim()
                             ->replaceMatches('/^"|"$/', '')
+                            ->replaceMatches('/\\\"/', '"')
                             ->toString();
                         if ($key === 'date') {
                             $value = Carbon::parse($value);
