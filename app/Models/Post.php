@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
+use App\Jobs\OptimizeImages;
+
 class Post extends Model
 {
     use HasFactory;
@@ -25,13 +27,16 @@ class Post extends Model
                 cache()->forget('posts');
                 all_posts(); // Fill cache again so everything’s fast.
             });
+
+            OptimizeImages::dispatch();
         });
     }
 
     protected function markdown(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->body
+            get: fn () => str($this->body)
+                ->replaceMatches('/\(\/storage/', '(/storage/optimized')
         );
     }
 
