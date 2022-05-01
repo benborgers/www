@@ -16,9 +16,11 @@ return [
 
         Jpegoptim::class => [
             '-m85', // set maximum quality to 85%
-             // '--strip-all',  // this strips out all text information such as comments and EXIF data
+            // Commented out --strip-all because it seems to make images
+            // rotate the wrong way because it removes EXIF data.
+            // '--strip-all',  // this strips out all text information such as comments and EXIF data
             '--all-progressive',  // this will make sure the resulting image is a progressive one
-            '--size=200' // 1 megabyte
+            '--size=1000' // 1 megabyte
         ],
 
         Pngquant::class => [
