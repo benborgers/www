@@ -32,7 +32,10 @@ class PostResource extends Resource
                     ->columnSpan(2),
                 Forms\Components\Card::make()
                     ->schema([
-                        Forms\Components\Toggle::make('published')->required()->default(false),
+                        Forms\Components\Select::make('status')
+                            ->options(static::statusOptions())
+                            ->required()
+                            ->default('idea'),
                         Forms\Components\Toggle::make('technical')->required()->default(false),
                         Forms\Components\DatePicker::make('date')->default(today('America/New_York'))
                             ->required()
@@ -50,17 +53,14 @@ class PostResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\TextColumn::make('date')->date(),
-                Tables\Columns\BooleanColumn::make('published')
-                    ->trueIcon('heroicon-o-eye')
-                    ->trueColor('primary')
-                    ->falseIcon('heroicon-o-eye-off')
-                    ->falseColor('secondary')
+                Tables\Columns\BadgeColumn::make('status')
+                    ->enum(static::statusOptions())
+                    ->colors(['success' => 'published'])
             ])
             ->defaultSort('updated_at', 'desc')
             ->filters([
-                Tables\Filters\Filter::make('drafts')
-                    ->query(fn ($query) => $query->where('published', false))
-                    ->default(),
+                Tables\Filters\SelectFilter::make('status')
+                    ->options(static::statusOptions()),
                 Tables\Filters\SelectFilter::make('technical')
                     ->options([
                         true => 'Technical',
@@ -68,6 +68,15 @@ class PostResource extends Resource
                     ])
                     ->default(0)
             ]);
+    }
+
+    protected static function statusOptions()
+    {
+        return [
+            'idea' => '💡 Idea',
+            'draft' => '🚧 Draft',
+            'published' => '🌎 Published'
+        ];
     }
 
     public static function getRelations(): array

@@ -14,8 +14,7 @@ class Post extends Model
 
     protected $casts = [
         'date' => 'datetime',
-        'technical' => 'boolean',
-        'published' => 'boolean'
+        'technical' => 'boolean'
     ];
 
     public static function boot()
@@ -42,6 +41,6 @@ class Post extends Model
 
     public function scopePublished($query)
     {
-        return $query->where('published', true);
+        return $query->where('status', 'published');
     }
 }
