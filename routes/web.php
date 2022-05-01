@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Blob;
+use App\Models\Post;
 
 require __DIR__.'/redirects.php';
 
@@ -20,7 +21,7 @@ Route::get('/posts', function () {
     $posts = $allPosts->where('technical', false)->values();
 
     $today = today('America/New_York');
-    $currentDate = $today;
+    $currentDate = clone $today;
     $streak = 0;
 
     while (true) {
@@ -28,10 +29,13 @@ Route::get('/posts', function () {
             $posts->first(fn ($post) => $post['date']->isSameDay($currentDate))
         ) {
             $streak++;
-            $currentDate->subDay();
         } else {
-            break;
+            if(! $currentDate->isSameDay($today)) {
+                break;
+            }
         }
+
+        $currentDate->subDay();
     }
 
     return view('posts.index', [
@@ -52,7 +56,7 @@ Route::get('/technical-posts', function () {
 })->name('posts.technical-index');
 
 Route::get('/posts/{slug}', function ($slug) {
-    $post = all_posts()->firstWhere('slug', $slug);
+    $post = Post::firstWhere('slug', $slug) ?? all_posts()->firstWhere('slug', $slug);
     abort_if(! $post, 404);
     return view('posts.show', ['post' => $post]);
 })->name('posts.show');
