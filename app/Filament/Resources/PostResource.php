@@ -66,7 +66,7 @@ class PostResource extends Resource
                         true => 'Technical',
                         false => 'Non-Technical'
                     ])
-                    ->default(false)
+                    ->default(0)
             ]);
     }
 
