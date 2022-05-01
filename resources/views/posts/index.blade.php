@@ -4,7 +4,7 @@
             @if($posts->first()['technical'])
                 <p>
                     These are my blog posts on niche programming solutions,
-                    which are probably only interesting if you’re looking for a specific solution.
+                    which are probably only interesting if you’re searching for a specific solution.
                 </p>
                 <p>
                     <a href="{{ route('posts.index') }}" class="font-medium underline decoration-zinc-400">
@@ -18,7 +18,8 @@
                 </p>
                 <p>I hope some of it is interesting! If it is, I’d love to hear from you.</p>
                 <p class="text-zinc-500">
-                    I also write blog posts about programming ({{ $technicalPostsCount }} so far),
+                    I also write blog posts about programming
+                    (<span class="font-fraunces font-semibold">{{ $technicalPostsCount }}</span> so far),
                     but they’re niche and meant to be found when searching. Still, you can
                     <a href="{{ route('posts.technical-index') }}" class="font-medium underline decoration-zinc-400">see the list of them here</a>.
                 </p>

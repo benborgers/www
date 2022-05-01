@@ -50,7 +50,8 @@ function all_posts() {
                             theme: config('markdown.code_highlighting.theme')
                         );
                     })
-                    ->replaceMatches('/__GHOST_URL__\/content\/images/', '/img/ghost');
+                    ->replaceMatches('/__GHOST_URL__\/content\/images/', '/img/ghost')
+                    ->replaceMatches('/__GHOST_URL__/', '/posts');
 
                 return [
                     'title' => $post->title,
