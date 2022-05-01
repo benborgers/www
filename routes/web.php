@@ -14,7 +14,7 @@ Route::get('/', function () {
 
 Route::get('/posts', function () {
     if (request()->has('technical')) {
-        return redirect()->route('posts.technical-index');
+        return redirect()->route('posts.technicalIndex');
     }
 
     $allPosts = all_posts();
@@ -53,10 +53,16 @@ Route::get('/technical-posts', function () {
         'posts' => $posts,
         'months' => false
     ]);
-})->name('posts.technical-index');
+})->name('posts.technicalIndex');
 
 Route::get('/posts/{slug}', function ($slug) {
     $post = Post::firstWhere('slug', $slug) ?? all_posts()->firstWhere('slug', $slug);
     abort_if(! $post, 404);
     return view('posts.show', ['post' => $post]);
 })->name('posts.show');
+
+Route::get('/og-image', function () {
+    return view('og-image', [
+        'title' => request('title')
+    ]);
+})->name('ogImage');

@@ -21,7 +21,7 @@
                     I also write blog posts about programming
                     (<span class="font-fraunces font-semibold">{{ $technicalPostsCount }}</span> so far),
                     but they’re niche and meant to be found when searching. Still, you can
-                    <a href="{{ route('posts.technical-index') }}" class="font-medium underline decoration-zinc-400">see the list of them here</a>.
+                    <a href="{{ route('posts.technicalIndex') }}" class="font-medium underline decoration-zinc-400">see the list of them here</a>.
                 </p>
             @endif
         </div>
