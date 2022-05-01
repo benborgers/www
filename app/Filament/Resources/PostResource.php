@@ -63,10 +63,10 @@ class PostResource extends Resource
                     ->default(),
                 Tables\Filters\SelectFilter::make('technical')
                     ->options([
-                        1 => 'Technical',
-                        0 => 'Non-Technical'
+                        true => 'Technical',
+                        false => 'Non-Technical'
                     ])
-                    ->default(0)
+                    ->default(false)
             ]);
     }
 

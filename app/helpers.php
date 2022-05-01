@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Cache;
 use Carbon\Carbon;
 use Spatie\ShikiPhp\Shiki;
 
+use App\Models\Post;
+
 function all_posts() {
     return Cache::rememberForever('posts', function () {
         $localTechnicalPosts = collect(scandir(resource_path('posts')))
@@ -65,6 +67,12 @@ function all_posts() {
                 ];
             });
 
-        return $localTechnicalPosts->concat($ghostPosts)->sortByDesc('date')->values();
+        $postModels = Post::published()->get();
+
+        return $localTechnicalPosts
+            ->concat($ghostPosts)
+            ->concat($postModels)
+            ->sortByDesc('date')
+            ->values();
     });
 }
