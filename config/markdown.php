@@ -77,6 +77,9 @@ return [
      * More info: https://commonmark.thephpleague.com/2.1/customization/rendering/
      */
     'inline_renderers' => [
-        // ['class' => FencedCode::class, 'renderer' => new MyCustomCodeRenderer(), 'priority' => 0]
+        [
+            'class' => League\CommonMark\Extension\CommonMark\Node\Inline\Image::class,
+            'renderer' => new App\Extras\ImageRenderer()
+        ]
     ],
 ];

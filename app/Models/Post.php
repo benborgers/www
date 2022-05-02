@@ -34,8 +34,7 @@ class Post extends Model
     protected function markdown(): Attribute
     {
         return Attribute::make(
-            get: fn () => str($this->body)
-                ->replaceMatches('/\(\/storage/', '(/storage/optimized')
+            get: fn () => $this->body
         );
     }
 
