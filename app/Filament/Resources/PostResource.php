@@ -24,7 +24,12 @@ class PostResource extends Resource
                 Forms\Components\Card::make()
                     ->schema([
                         Forms\Components\TextInput::make('title')->required(),
-                        Forms\Components\TextInput::make('slug')->required(),
+                        Forms\Components\TextInput::make('slug')
+                            ->required()
+                            ->reactive()
+                            ->afterStateUpdated(fn ($state, $set) => $set('slug',
+                                str($state)->replaceMatches('/ /', '-')->lower()
+                            )),
                         Forms\Components\MarkdownEditor::make('body')
                             ->columnSpan(2),
                     ])
