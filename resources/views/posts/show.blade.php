@@ -21,7 +21,7 @@
                         If you have any lingering questions or corrections, email me at <a href="mailto:benborgers@hey.com">benborgers@hey.com</a>
                     </li>
                     <li>
-                        Check out <a href="https://twitter.com/benborgers" onclick="fathom.trackGoal('E3LD3YS1')">my twitter</a>
+                        Check out <a href="https://twitter.com/benborgers" target="_blank" onclick="fathom.trackGoal('E3LD3YS1')">my twitter</a>
                         to follow along with what I’m working on.
                     </li>
                     <li>
