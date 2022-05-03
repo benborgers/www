@@ -8,7 +8,7 @@
         <div class="grid sm:grid-cols-2 grid-rows-[repeat(2,max-content)] gap-x-4 gap-y-2 sm:gap-y-0 mt-1">
             <div>
                 <p>
-                    I write a weekly newsletter with links to new writing and what I’ve been up to.
+                    I write a weekly newsletter with links to new posts and what I’ve been up to.
                 </p>
 
                 <p class="text-zinc-400 text-sm mt-2">
