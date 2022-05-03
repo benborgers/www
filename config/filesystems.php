@@ -56,6 +56,15 @@ return [
             'throw' => false,
         ],
 
+        'backup' => [
+            'driver' => 's3',
+            'key' => env('BACKUP_ACCESS_KEY_ID'),
+            'secret' => env('BACKUP_SECRET_ACCESS_KEY'),
+            'bucket' => 'ben-backups',
+            'region' => 'nyc3',
+            'endpoint' => 'https://nyc3.digitaloceanspaces.com'
+        ],
+
     ],
 
     /*
