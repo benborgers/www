@@ -1,11 +1,33 @@
-<section class="mt-4 text-zinc-700 bg-zinc-100 p-4 rounded-xl">
+<section
+    class="mt-4 text-zinc-700 bg-zinc-100 p-4 rounded-xl transition-[padding]"
+    x-data="{ newsletterExpanded: $persist(true) }"
+    :class="{ 'py-1': !newsletterExpanded }"
+    x-cloak
+>
     @if($success)
-        <p class="font-black font-fraunces text-zinc-900">
+        <p class="font-black font-fraunces text-zinc-900" x-init="newsletterExpanded = false">
             Subscribed! Thank you :)
         </p>
     @else
-        <p class="font-fraunces font-black text-lg text-zinc-900">Want to keep up with my blog?</p>
-        <div class="grid sm:grid-cols-2 grid-rows-[repeat(2,max-content)] gap-x-4 gap-y-2 sm:gap-y-0 mt-1">
+        <div
+            class="flex justify-between"
+            :class="{ 'items-start': newsletterExpanded, 'items-center': !newsletterExpanded }"
+        >
+            <p class="font-fraunces font-black text-zinc-900">Want to keep up with my blog?</p>
+
+            <button
+                x-on:click="newsletterExpanded = !newsletterExpanded"
+            >
+                <x-heroicon-o-x class="h-4 w-4 text-zinc-400" x-show="newsletterExpanded" />
+                <x-heroicon-o-chevron-down class="h-4 w-4 text-zinc-400" x-show="!newsletterExpanded" />
+            </button>
+        </div>
+
+        <div
+            class="grid sm:grid-cols-2 grid-rows-[repeat(2,max-content)] gap-x-4 gap-y-2 sm:gap-y-0 mt-1"
+            x-show="newsletterExpanded"
+            x-collapse.duration.150ms
+        >
             <div>
                 <p>
                     I write a weekly newsletter with links to new posts and what I’ve been up to.
@@ -19,7 +41,7 @@
             <form wire:submit.prevent="submit" class="flex flex-col items-end space-y-3 mt-1">
                 <div class="w-full">
                     <input
-                        wire:model="email"
+                        wire:model.defer="email"
                         type="email"
                         placeholder="coolperson@gmail.com"
                         required
@@ -29,8 +51,12 @@
                         <p class="text-rose-600 mt-1 text-right text-sm font-medium">{{ $message }}</p>
                     @enderror
                 </div>
-                <button class="bg-zinc-900 text-zinc-50 font-semibold text-sm px-2 py-1 rounded-lg">
-                    Subscribe
+                <button
+                    class="bg-zinc-900 text-zinc-50 font-semibold text-sm px-2 py-1 rounded-lg"
+                    wire:loading.delay.attr="disabled"
+                >
+                    <span wire:loading.delay.remove>Subscribe</span>
+                    <span wire:loading.delay>Subscribing...</span>
                 </button>
             </form>
         </div>
