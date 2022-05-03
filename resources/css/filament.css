@@ -1,0 +1,9 @@
+/**
+ * CSS for Filament CMS.
+ */
+
+/* Fix weird ghosting behind markdown editor. */
+[x-ref="overlay"] {
+    opacity: 0;
+    pointer-events: none;
+}

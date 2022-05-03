@@ -24,8 +24,8 @@ class FilamentServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Filament::registerScripts([
-            asset('js/filament.js')
+        Filament::registerStyles([
+            asset('css/filament.css')
         ]);
     }
 }
