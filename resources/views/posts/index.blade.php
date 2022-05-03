@@ -26,6 +26,10 @@
             @endif
         </div>
 
+        @unless($posts->first()['technical'])
+            @livewire('newsletter-signup')
+        @endunless
+
         <div class="mt-6">
             @foreach($posts as $post)
                 @if(
@@ -33,7 +37,7 @@
                     ($loop->index === 0 || $posts[$loop->index-1]['date']->month != $post['date']->month)
                 )
                     <h2 @class([
-                        'text-lg text-zinc-800 font-extrabold',
+                        'text-lg text-zinc-900 font-extrabold',
                         'mt-8' => !$loop->first
                     ])>{{ $post['date']->format('F Y') }}</h2>
                 @endif

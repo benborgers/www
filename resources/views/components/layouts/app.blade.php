@@ -16,8 +16,12 @@
         @stack('head')
 
         <script src="https://owl.benborgers.com/script.js" data-site="ZWCPJCUA" data-included-domains="benborgers.com" defer></script>
+
+        @livewireStyles
     </head>
     <body class="antialiased">
         {{ $slot }}
+
+        @livewireScripts
     </body>
 </html>

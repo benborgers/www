@@ -19,6 +19,7 @@
         "tailwindcss": "^3.0.24"
     },
     "dependencies": {
+        "@tailwindcss/forms": "^0.5.0",
         "shiki": "^0.10.1"
     }
 }
