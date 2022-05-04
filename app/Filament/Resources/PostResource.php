@@ -29,7 +29,7 @@ class PostResource extends Resource
                             ->autofocus(),
                         Forms\Components\TextInput::make('slug')
                             ->required()
-                            ->unique()
+                            ->unique(ignorable: fn ($record) => $record)
                             ->reactive()
                             ->afterStateUpdated(fn ($state, $set) => $set('slug',
                                 str($state)->replaceMatches('/ /', '-')->lower()
