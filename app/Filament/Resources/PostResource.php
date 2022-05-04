@@ -23,13 +23,18 @@ class PostResource extends Resource
             ->schema([
                 Forms\Components\Card::make()
                     ->schema([
-                        Forms\Components\TextInput::make('title')->required(),
+                        Forms\Components\TextInput::make('title')
+                            ->required()
+                            ->disableAutocomplete()
+                            ->autofocus(),
                         Forms\Components\TextInput::make('slug')
                             ->required()
+                            ->unique()
                             ->reactive()
                             ->afterStateUpdated(fn ($state, $set) => $set('slug',
                                 str($state)->replaceMatches('/ /', '-')->lower()
-                            )),
+                            ))
+                            ->disableAutocomplete(),
                         Forms\Components\MarkdownEditor::make('body')
                             ->columnSpan(2),
                     ])
