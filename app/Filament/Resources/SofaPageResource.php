@@ -39,7 +39,7 @@ class SofaPageResource extends Resource
                             ->afterStateUpdated(fn ($state, $set) => $set('slug',
                                 str($state)->replaceMatches('/ /', '-')->lower()
                             ))
-                            ->helperText(fn ($state) => str($state)->isNotEmpty() ? "/s/$state" : null)
+                            ->helperText(fn ($state) => str($state)->isNotEmpty() ? "benborgers.com/s/$state" : null)
                             ->disableAutocomplete()
                     ])
                     ->columnSpan(1)
