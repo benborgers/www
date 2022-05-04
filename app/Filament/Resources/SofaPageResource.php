@@ -14,7 +14,7 @@ use Filament\Tables;
 class SofaPageResource extends Resource
 {
     protected static ?string $model = SofaPage::class;
-    protected static ?string $navigationIcon = 'heroicon-o-document-duplicate';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $recordTitleAttribute = 'title';
 
     public static function form(Form $form): Form
