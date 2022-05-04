@@ -1,4 +1,4 @@
-@props(['title'])
+@props(['title', 'bg' => 'bg-white'])
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -20,7 +20,7 @@
 
         @livewireStyles
     </head>
-    <body class="antialiased">
+    <body class="antialiased {{ $bg }}">
         {{ $slot }}
 
         @livewireScripts

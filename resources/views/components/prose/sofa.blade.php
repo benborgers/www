@@ -1,0 +1,7 @@
+<div
+    @class([
+        'prose max-w-none'
+    ])
+>
+    {{ $slot }}
+</div>
