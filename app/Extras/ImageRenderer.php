@@ -18,8 +18,12 @@ class ImageRenderer implements NodeRendererInterface
 
         $captionHtml = $caption ? "<figcaption>$caption</figcaption>" : '';
 
+        $assetHtml = $src->endsWith('mp4')
+            ? "<video src=\"$src\" controls style=\"margin-bottom: 0\"></video>"
+            : "<img src=\"$src\" alt=\"$caption\" style=\"margin-bottom: 0\">";
+
         return "<figure>
-            <img src=\"$src\" alt=\"$caption\" style=\"margin-bottom: 0\">
+            $assetHtml
             $captionHtml
         </figure>";
     }
