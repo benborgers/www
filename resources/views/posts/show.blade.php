@@ -31,4 +31,8 @@
             @endif
         </x-prose.blog>
     </x-layouts.blog>
+
+    @push('head')
+        <link rel="stylesheet" href="https://unpkg.com/github-syntax-light@0.5.0/lib/github-light.css" />
+    @endpush
 </x-layouts.app>

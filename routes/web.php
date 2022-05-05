@@ -59,11 +59,11 @@ Route::get('posts/{slug}', function ($slug) {
     return view('posts.show', ['post' => $post]);
 })->name('posts.show');
 
-// Route::get('/s/{slug}', function ($slug) {
-//     $page = SofaPage::firstWhere('slug', $slug);
-//     abort_if(! $page, 404);
-//     return view('sofa-page', ['page' => $page]);
-// });
+Route::get('/+/{slug}', function ($slug) {
+    $page = github_issues()->firstWhere('slug', $slug);
+    abort_if(! $page, 404);
+    return view('page', ['page' => $page]);
+});
 
 Route::get('og-image', function () {
     return view('og-image', [
