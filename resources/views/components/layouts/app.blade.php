@@ -14,6 +14,8 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
         <style>[x-cloak] { display: none !important; }</style>
 
+        <link rel="stylesheet" href="https://unpkg.com/github-syntax-light@0.5.0/lib/github-light.css" />
+
         @stack('head')
 
         <script src="https://owl.benborgers.com/script.js" data-site="ZWCPJCUA" data-included-domains="benborgers.com" defer></script>

@@ -8,7 +8,7 @@
         'prose-img:max-h-[70vh] prose-video:max-h-[70vh]',
         'prose-figcaption:text-center',
         'prose-img:w-auto prose-video:w-auto',
-        'prose-pre:!bg-zinc-100',
+        'prose-pre:!bg-zinc-100 prose-pre:text-zinc-800',
         'before:prose-code:content-none',
         'after:prose-code:content-none'
     ])
