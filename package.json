@@ -10,7 +10,11 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@alpinejs/collapse": "^3.10.2",
+        "@alpinejs/persist": "^3.10.2",
+        "@tailwindcss/forms": "^0.5.1",
         "@tailwindcss/typography": "^0.5.2",
+        "alpinejs": "^3.10.2",
         "autoprefixer": "^10.4.5",
         "axios": "^0.25",
         "laravel-mix": "^6.0.6",
@@ -19,10 +23,6 @@
         "tailwindcss": "^3.0.24"
     },
     "dependencies": {
-        "@alpinejs/collapse": "^3.10.2",
-        "@alpinejs/persist": "^3.10.2",
-        "@tailwindcss/forms": "^0.5.0",
-        "alpinejs": "^3.10.2",
         "shiki": "^0.10.1"
     }
 }
