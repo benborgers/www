@@ -10,7 +10,7 @@ function github_issues()
     return Cache::rememberForever('github_issues', function () {
         return Http::withToken(env('GITHUB_TOKEN'))
             ->withHeaders(['accept' => 'application/vnd.github.VERSION.full+json'])
-            ->get('https://api.github.com/repos/benborgers/hq/issues?state=open&per_page=100')
+            ->get('https://api.github.com/repos/benborgers/HQ/issues?state=open&per_page=100')
             ->collect()
             ->map(function ($issue) {
                 $frontmatterLines = str($issue['body'])->startsWith('```')
