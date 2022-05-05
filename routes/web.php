@@ -1,19 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Blob;
-use App\Models\Post;
-use App\Models\SofaPage;
 
 require __DIR__.'/redirects.php';
 
 Route::get('/', function () {
     return view('index', [
-        'content' => Blob::firstWhere('name', 'index')->data['content']
+        'content' => github_issues()->firstWhere('title', 'benborgers.com')['html']
     ]);
 })->name('index');
 
-Route::get('/posts', function () {
+Route::get('posts', function () {
     if (request()->has('technical')) {
         return redirect()->route('posts.technicalIndex');
     }
@@ -47,7 +44,7 @@ Route::get('/posts', function () {
     ]);
 })->name('posts.index');
 
-Route::get('/technical-posts', function () {
+Route::get('technical-posts', function () {
     $posts = all_posts()->where('technical', true)->values();
 
     return view('posts.index', [
@@ -56,19 +53,19 @@ Route::get('/technical-posts', function () {
     ]);
 })->name('posts.technicalIndex');
 
-Route::get('/posts/{slug}', function ($slug) {
-    $post = Post::firstWhere('slug', $slug) ?? all_posts()->firstWhere('slug', $slug);
+Route::get('posts/{slug}', function ($slug) {
+    $post = all_posts()->firstWhere('slug', $slug);
     abort_if(! $post, 404);
     return view('posts.show', ['post' => $post]);
 })->name('posts.show');
 
-Route::get('/s/{slug}', function ($slug) {
-    $page = SofaPage::firstWhere('slug', $slug);
-    abort_if(! $page, 404);
-    return view('sofa-page', ['page' => $page]);
-});
+// Route::get('/s/{slug}', function ($slug) {
+//     $page = SofaPage::firstWhere('slug', $slug);
+//     abort_if(! $page, 404);
+//     return view('sofa-page', ['page' => $page]);
+// });
 
-Route::get('/og-image', function () {
+Route::get('og-image', function () {
     return view('og-image', [
         'title' => request('title')
     ]);
