@@ -1,5 +1,5 @@
 <x-layouts.app :title="$page['title']" bg="bg-neutral-900 font-sf-rounded">
-    <a href="{{ route('index') }}" class="block group w-full fixed top-0 inset-x-0 p-4 bg-neutral-900/50 backdrop-blur-xl border-b border-neutral-800">
+    <a href="{{ route('index') }}" class="block group w-full fixed top-0 inset-x-0 p-4 bg-neutral-900/60 backdrop-blur-lg border-b border-neutral-800">
         <div class="max-w-prose mx-auto">
             <p @class([
                 'block text-neutral-400 font-medium',
