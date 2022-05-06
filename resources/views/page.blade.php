@@ -19,7 +19,7 @@
                 </p>
             </div>
 
-            <div class="mt-16 prose prose-neutral prose-rose !prose-invert">
+            <div class="mt-16 prose prose-neutral !prose-invert">
                 {!! $page['html'] !!}
             </div>
         </div>
