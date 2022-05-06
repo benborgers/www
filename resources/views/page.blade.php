@@ -10,7 +10,7 @@
         </div>
     </a>
 
-    <div class="p-4 pt-48 pb-24">
+    <div class="p-4 pt-48 pb-36">
         <div class="max-w-prose mx-auto">
             <div>
                 <h1 class="text-3xl font-extrabold text-white">{{ $page['title'] }}</h1>
