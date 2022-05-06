@@ -19,7 +19,11 @@
                 </p>
             </div>
 
-            <div class="mt-16 prose prose-neutral !prose-invert">
+            <div @class([
+                'mt-16',
+                'prose prose-neutral !prose-invert',
+                'prose-p:tracking-wide'
+            ])>
                 {!! $page['html'] !!}
             </div>
         </div>
