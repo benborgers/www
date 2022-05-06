@@ -8,18 +8,18 @@
                 </p>
                 <p>
                     <a href="{{ route('posts.index') }}" class="font-medium underline decoration-zinc-400">
-                        The rest of my blog posts are here</a>.
+                        The rest of my blog posts are here
+                    </a>.
                 </p>
             @else
                 <p>
-                    Welcome to my blog! I write a post here every day, currently for
+                    Welcome to my blog! I’ve written a post here every day for
                     <span class="font-fraunces font-semibold">{{ $streak }}</span>
                     {{ str()->plural('day', $streak) }} in a row.
                 </p>
                 <p>I hope some of it is interesting! If it is, I’d love to hear from you.</p>
                 <p class="text-zinc-500">
-                    I also write blog posts about programming
-                    (<span class="font-fraunces font-semibold">{{ $technicalPostsCount }}</span> so far),
+                    I also write blog posts about programming,
                     but they’re niche and meant to be found when searching. Still, you can
                     <a href="{{ route('posts.technicalIndex') }}" class="font-medium underline decoration-zinc-400">see the list of them here</a>.
                 </p>
