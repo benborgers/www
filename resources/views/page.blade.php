@@ -3,7 +3,7 @@
         <div class="max-w-prose mx-auto">
             <h1 class="text-3xl font-extrabold text-white">{{ $page['title'] }}</h1>
 
-            <div class="mt-4 prose prose-neutral prose-blue !prose-invert">
+            <div class="mt-4 prose prose-neutral prose-rose !prose-invert">
                 {!! $page['html'] !!}
             </div>
         </div>
