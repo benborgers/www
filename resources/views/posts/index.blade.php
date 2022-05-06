@@ -42,13 +42,12 @@
                     ])>{{ $post['date']->format('F Y') }}</h2>
                 @endif
                 <div
-                    href="/posts/{{ $post['slug'] }}"
                     @class([
                         'ml-4' => $months,
                         'mt-2 sm:flex sm:justify-between sm:space-x-4'
                     ])
                 >
-                    <a href="/posts/{{ $post['slug'] }}" class="block text-zinc-700 underline decoration-zinc-300">{{ $post['title'] }}</a>
+                    <a href="{{ route('posts.show', $post['slug']) }}" class="block text-zinc-700 underline decoration-zinc-300">{{ $post['title'] }}</a>
                     <p class="text-zinc-300 whitespace-nowrap">{{ $post['date']->format('M j, Y') }}</p>
                 </div>
             @endforeach
