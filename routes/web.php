@@ -63,7 +63,7 @@ Route::get('/+/{slug}', function ($slug) {
     $page = github_issues()->firstWhere('slug', $slug);
     abort_if(! $page, 404);
     return view('page', ['page' => $page]);
-});
+})->where('slug', '.*');
 
 Route::get('og-image', function () {
     return view('og-image', [
