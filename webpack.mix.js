@@ -4,7 +4,8 @@ mix.disableNotifications();
 
 mix.js("resources/js/app.js", "public/js")
     .postCss("resources/css/app.css", "public/css", [require("tailwindcss")])
-    .postCss("resources/css/redaction.css", "public/css");
+    .postCss("resources/css/redaction.css", "public/css")
+    .postCss("resources/css/sf-rounded.css", "public/css");
 
 if (mix.inProduction()) {
     mix.version();

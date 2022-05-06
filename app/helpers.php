@@ -39,7 +39,8 @@ function github_issues()
                                     '<video src="$1" controls></video>'
                                 )
                                 ->toString(),
-                    'labels' => collect($issue['labels'])->map(fn ($label) => $label['name'])
+                    'labels' => collect($issue['labels'])->map(fn ($label) => $label['name']),
+                    'updated_at' => Carbon::parse($issue['updated_at'])
                 ];
             });
     });
