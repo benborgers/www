@@ -22,7 +22,7 @@
             <div @class([
                 'mt-16',
                 'prose prose-neutral !prose-invert',
-                'prose-p:tracking-wide'
+                'prose-p:tracking-wide prose-li:tracking-wide'
             ])>
                 {!! $page['html'] !!}
             </div>
