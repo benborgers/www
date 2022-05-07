@@ -20,6 +20,10 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('backup:clean')->daily();
         $schedule->command('backup:run')->daily();
+
+        $schedule->job(new \App\Jobs\CheckLinks)
+            ->timezone('America/New_York')
+            ->dailyAt('6:00');
     }
 
     /**
