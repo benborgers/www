@@ -1,11 +1,13 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
     content: ["./resources/**/*.blade.php"],
     theme: {
         extend: {
             fontFamily: {
-                fraunces: ["Fraunces", "serif"],
-                "public-sans": ["Public Sans", "sans-serif"],
-                "sf-rounded": ["SFRounded", "sans-serif"],
+                fraunces: ["Fraunces", ...defaultTheme.fontFamily.serif],
+                "public-sans": ["Public Sans", ...defaultTheme.fontFamily.sans],
+                "sf-rounded": ["SFRounded", ...defaultTheme.fontFamily.sans],
             },
         },
     },
