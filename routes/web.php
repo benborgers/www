@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Subscriber;
 
 require __DIR__.'/redirects.php';
 
@@ -70,3 +71,9 @@ Route::get('og-image', function () {
         'title' => request('title')
     ]);
 })->name('ogImage');
+
+Route::get('subscribers', function () {
+    return response(
+        Subscriber::latest()->pluck('email')->join("\n")
+    )->header('content-type', 'text/plain');
+})->name('subscribers')->middleware('signed');
