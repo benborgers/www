@@ -61,7 +61,11 @@ Route::get('posts/{slug}', function ($slug) {
 })->name('posts.show');
 
 Route::get('/+/{slug}', function ($slug) {
-    $page = github_issues()->firstWhere('slug', $slug);
+    $page = github_issues()
+        ->filter(fn ($issue) => $issue['labels']->contains('Pages') && $issue['labels']->doesntContain('Draft'))
+        ->where('slug', $slug)
+        ->first();
+
     abort_if(! $page, 404);
     return view('page', ['page' => $page]);
 })->where('slug', '.*');
