@@ -7,7 +7,11 @@ module.exports = {
             fontFamily: {
                 fraunces: ["Fraunces", ...defaultTheme.fontFamily.serif],
                 "public-sans": ["Public Sans", ...defaultTheme.fontFamily.sans],
-                "sf-rounded": ["SFRounded", ...defaultTheme.fontFamily.sans],
+                rounded: [
+                    "ui-rounded",
+                    "SF Pro Rounded",
+                    ...defaultTheme.fontFamily.sans,
+                ],
             },
         },
     },

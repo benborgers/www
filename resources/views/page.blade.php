@@ -1,4 +1,4 @@
-<x-layouts.app :title="$page['title']" bg="bg-neutral-900 font-sf-rounded">
+<x-layouts.app :title="$page['title']" bg="bg-neutral-900 font-rounded">
     <a href="{{ route('index') }}" class="block group w-full fixed top-0 inset-x-0 p-4 bg-neutral-900/60 backdrop-blur-lg border-b border-neutral-800">
         <div class="max-w-screen-sm mx-auto">
             <p @class([
@@ -21,15 +21,10 @@
 
             <div @class([
                 'mt-16',
-                'prose prose-neutral !prose-invert',
-                'prose-p:tracking-wide prose-li:tracking-wide'
+                'prose prose-neutral !prose-invert'
             ])>
                 {!! $page['html'] !!}
             </div>
         </div>
     </div>
-
-    @push('head')
-        <link rel="stylesheet" href="{{ mix('css/sf-rounded.css') }}">
-    @endpush
 </x-layouts.app>
