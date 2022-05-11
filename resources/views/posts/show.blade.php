@@ -16,17 +16,8 @@
 
             @if($post['technical'])
                 <hr />
-                <ul>
-                    <li>
-                        If you have any lingering questions or corrections, email me at <a href="mailto:benborgers@hey.com">benborgers@hey.com</a>
-                    </li>
-                    <li>
-                        Check out <a href="https://twitter.com/benborgers" target="_blank" onclick="fathom.trackGoal('E3LD3YS1')">my twitter</a>
-                        to follow along with what I’m working on.
-                    </li>
-                    <li>
-                        I write a <a href="{{ route('posts.index') }}">daily blog post</a> on this website!
-                    </li>
+                    Follow <a href="https://twitter.com/benborgers" target="_blank" onclick="fathom.trackGoal('E3LD3YS1')">my twitter (@benborgers)</a>
+                    to see the work-in-progress of coding projects I’m working on!
                 </ul>
             @endif
         </x-prose.blog>
