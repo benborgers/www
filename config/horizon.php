@@ -93,15 +93,15 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you can configure for how long (in minutes) you desire Horizon to
-    | persist the recent and failed jobs. Typically, recent jobs are kept
-    | for one hour while all failed jobs are stored for an entire week.
+    | persist the recent and failed jobs. Here I have configured all jobs
+    | to persist for an entire week, deviating from default behavior.
     |
     */
 
     'trim' => [
-        'recent' => 60,
-        'pending' => 60,
-        'completed' => 60,
+        'recent' => 10080,
+        'pending' => 10080,
+        'completed' => 10080,
         'recent_failed' => 10080,
         'failed' => 10080,
         'monitored' => 10080,
