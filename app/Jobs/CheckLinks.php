@@ -18,24 +18,41 @@ class CheckLinks implements ShouldQueue
     private $seenLinks = [];
     private $deadLinks = [];
 
+    private $sites = [
+        [
+            'domain' => 'benborgers.com',
+            'email' => null
+        ],
+        [
+            'domain' => 'connellmccarthy.com',
+            'email' => 'me@connellmccarthy.com'
+        ]
+    ];
+
     public function handle()
     {
-        $this->checkPageLinks('/');
+        foreach ($this->sites as $site) {
+            $this->checkPageLinks(
+                url: '/',
+                origin: '',
+                site: $site
+            );
+        }
     }
 
-    private function checkPageLinks($url, $origin = '')
+    private function checkPageLinks($url, $origin, $site)
     {
-        $url = $this->normalizeUrl($url);
+        $url = $this->normalizeUrl($url, $site);
 
         if (
             in_array($url, $this->seenLinks)
-            || ! str($url)->startsWith('https://benborgers.com')
+            || ! str($url)->startsWith('https://' . $site['domain'])
             || str($url)->contains('cdn-cgi')
         ) {
             return;
         }
 
-        // ray('checking ' . $url . ' via ' . $origin);
+        ray('checking ' . $url . ' via ' . $origin);
 
         $this->seenLinks[] = $url;
 
@@ -53,33 +70,48 @@ class CheckLinks implements ShouldQueue
         }
 
         $links = str($response->body())->matchAll('/href="(.*?)"/');
-        $links->each(fn ($link) => $this->checkPageLinks($link, $url));
+        $links->each(fn ($link) => $this->checkPageLinks($link, $url, $site));
 
-        if ($url === 'https://benborgers.com/') {
+        if (
+            $url === $this->normalizeUrl('/', $site)
+            && count($this->deadLinks) > 0
+        ) {
             $seenLinksCount = count($this->seenLinks);
+            $seenLinksWord = str()->plural('link', $seenLinksCount);
             $deadLinksCount = count($this->deadLinks);
+            $deadLinksWord = str()->plural('link', $deadLinksCount);
 
-            Mail::raw(
-                'Good morning! We checked ' . $seenLinksCount . ' ' . str()->plural('link', $seenLinksCount)
-                . ' on benborgers.com and found ' . $deadLinksCount . ' ' . str()->plural('dead link', $deadLinksCount) . '.' . "\n\n"
-                . collect($this->deadLinks)->map(fn ($link) => '• ' . $link)->join("\n"),
-                function ($message) use ($deadLinksCount) {
-                    $message->from(config('mail.from.address'), config('mail.from.name'));
-                    $message->to('benborgers@hey.com');
-                    $message->subject(
-                        $deadLinksCount > 0
-                        ? $deadLinksCount . ' ' . str()->plural('dead link', $deadLinksCount) . ' found'
-                        : 'No dead links found!'
-                    );
-                }
-            );
+            $domain = $site['domain'];
+
+            $recipients = ['benborgers@hey.com']; // I get sent a copy every time.
+            if ($site['email']) {
+                $recipients[] = $site['email']; // Maybe there's another recipient, if not just me.
+            }
+
+            foreach ($recipients as $recipient) {
+                Mail::raw(
+                    "Hello there! We checked {$seenLinksCount} ${seenLinksWord} on {$domain} and found {$deadLinksCount} dead {$deadLinksWord}.\n\n"
+                    . collect($this->deadLinks)->map(fn ($link) => '• ' . $link)->join("\n")
+                    . "\n\n— Reach out to Ben Borgers (benborgers@hey.com) if you have questions about this email.",
+
+                    function ($message) use ($deadLinksCount, $recipient, $deadLinksWord, $domain) {
+                        $message->from(config('mail.from.address'), config('mail.from.name'));
+                        $message->to($recipient);
+                        $message->replyTo('benborgers@hey.com');
+                        $message->subject("{$deadLinksCount} dead {$deadLinksWord} on found on {$domain}");
+                    }
+                );
+            }
+
+            $this->seenLinks = [];
+            $this->deadLinks = [];
         }
     }
 
-    private function normalizeUrl($url)
+    private function normalizeUrl($url, $site)
     {
         if (str($url)->startsWith('/')) {
-            return 'https://benborgers.com' . $url;
+            return 'https://' . $site['domain'] . $url;
         }
 
         return $url;
@@ -87,6 +119,6 @@ class CheckLinks implements ShouldQueue
 
     private function reportDeadUrl($url, $origin)
     {
-        $this->deadLinks[] = "$url via $origin";
+        $this->deadLinks[] = "$url, linked from $origin";
     }
 }
