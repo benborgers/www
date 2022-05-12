@@ -52,7 +52,7 @@ class CheckLinks implements ShouldQueue
             return;
         }
 
-        ray('checking ' . $url . ' via ' . $origin);
+        // ray('checking ' . $url . ' via ' . $origin);
 
         $this->seenLinks[] = $url;
 
