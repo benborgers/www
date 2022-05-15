@@ -13,7 +13,7 @@
             class="flex justify-between"
             :class="{ 'items-start': newsletterExpanded, 'items-center': !newsletterExpanded }"
         >
-            <p class="font-fraunces font-black text-zinc-900">Want to keep up with my blog?</p>
+            <p class="font-fraunces font-black text-zinc-900">Want to keep up with my world?</p>
 
             <button
                 x-on:click="newsletterExpanded = !newsletterExpanded"
@@ -24,13 +24,13 @@
         </div>
 
         <div
-            class="grid sm:grid-cols-2 grid-rows-[repeat(2,max-content)] gap-x-4 gap-y-2 sm:gap-y-0 mt-1"
+            class="grid sm:grid-cols-[1.1fr,1fr] grid-rows-[repeat(2,max-content)] gap-x-4 gap-y-2 sm:gap-y-0 mt-1"
             x-show="newsletterExpanded"
             x-collapse.duration.150ms
         >
             <div>
                 <p>
-                    I write a weekly newsletter with links to new posts and what I’ve been up to.
+                    I write a weekly newsletter with new blog posts and <em>~exclusive~</em> updates/ideas.
                 </p>
 
                 <p class="text-zinc-400 text-sm mt-2">
