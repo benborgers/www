@@ -40,8 +40,7 @@ Route::get('posts', function () {
     return view('posts.index', [
         'posts' => $posts,
         'months' => true,
-        'streak' => $streak,
-        'technicalPostsCount' => $allPosts->where('technical', true)->count()
+        'streak' => $streak
     ]);
 })->name('posts.index');
 
