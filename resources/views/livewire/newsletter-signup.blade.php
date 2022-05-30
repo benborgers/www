@@ -30,7 +30,7 @@
         >
             <div>
                 <p>
-                    I write a weekly newsletter with new blog posts and <em>~exclusive~</em> updates/ideas.
+                    I write a weekly newsletter with new blog posts and updates!
                 </p>
 
                 <p class="text-zinc-400 text-sm mt-2">
