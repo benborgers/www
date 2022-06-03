@@ -8,7 +8,7 @@ use Spatie\ShikiPhp\Shiki;
 function github_issues()
 {
     return Cache::rememberForever('github_issues', function () {
-        return Http::withToken(env('GITHUB_TOKEN'))
+        $issues = Http::withToken(env('GITHUB_TOKEN'))
             ->withHeaders(['accept' => 'application/vnd.github.VERSION.full+json'])
             ->get('https://api.github.com/repos/benborgers/HQ/issues?state=open&per_page=100')
             ->collect()
@@ -43,6 +43,11 @@ function github_issues()
                     'updated_at' => Carbon::parse($issue['updated_at'])
                 ];
             });
+
+        // Back up GitHub Issues to laravel-backup.
+        file_put_contents(storage_path('app/issues_backup.json'), json_encode($issues, JSON_PRETTY_PRINT));
+
+        return $issues;
     });
 }
 
