@@ -9,7 +9,7 @@ Draggable is quite easy to integrate with [Livewire](https://laravel-livewire.co
 
 Let's say our Livewire component has a list of items, and we want to be able to reorder this list and then save the new order. Here's the Livewire Blade component:
 
-```html
+```blade
 <div class="sortable">
     @foreach($items as $item)
         <div id="{{ $item->id }}">
@@ -31,9 +31,12 @@ Then underneath that, I'll add my own script tag where we can write a bit of cod
 
 ```html
 <script>
-    const sortable = new Sortable.default(document.querySelectorAll('.sortable'), {
-        draggable: '.sortable > div'
-    })
+    const sortable = new Sortable.default(
+        document.querySelectorAll(".sortable"),
+        {
+            draggable: ".sortable > div",
+        }
+    );
 </script>
 ```
 

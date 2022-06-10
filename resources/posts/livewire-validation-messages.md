@@ -2,13 +2,14 @@
 title: "How to customize validation messages in Livewire"
 date: 2020-11-15
 ---
+
 Livewire allows you to write validation in a protected `$rules` property that is used whenever you call `$this->validate()` or `$this->validateOnly('propertyName')`.
 
 If you want to show a different error message for one of the validation rules, you can use the protected `$messages` property to do it.
 
 For example, say I have this Livewire Blade view, with a simple input and the possibility of showing an error message for that input's value:
 
-```html
+```blade
 <div>
   <input wire:model="text" />
 
