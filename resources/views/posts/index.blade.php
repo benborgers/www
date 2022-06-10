@@ -8,8 +8,7 @@
                 </p>
                 <p>
                     <a href="{{ route('posts.index') }}" class="font-medium underline decoration-zinc-400">
-                        The rest of my blog posts are here
-                    </a>.
+                        The rest of my blog posts are here</a>.
                 </p>
             @else
                 <p>
