@@ -10,7 +10,7 @@ Instead, I settled on a hacky (but simple and effective!) solution:
 
 You can customize Laravel's 404 error page by creating a view at `resources/views/errors/404.blade.php`. I built a simple "not found" page there, and then wrote the PHP code I wanted to run in the view within a `@php` blade directive in that view:
 
-```php
+```blade
 {{-- resources/views/errors/404.blade.php --}}
 
 @php
