@@ -1,4 +1,4 @@
-@props(['title', 'bg' => 'bg-white'])
+@props(['title', 'bg' => 'bg-white', 'livewire' => false])
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -18,11 +18,11 @@
 
         <script src="https://owl.benborgers.com/script.js" data-site="ZWCPJCUA" data-included-domains="benborgers.com" defer></script>
 
-        @livewireStyles
+        @if($livewire) @livewireStyles @endif
     </head>
     <body class="antialiased {{ $bg }}">
         {{ $slot }}
 
-        @livewireScripts
+        @if($livewire) @livewireScripts @endif
     </body>
 </html>

@@ -1,7 +1,9 @@
-<x-layouts.app title="Ben Borgers’ Blog">
+@php($technical = $posts->first()['technical'])
+
+<x-layouts.app title="Ben Borgers’ Blog" :livewire="!$technical">
     <x-layouts.blog>
         <div class="text-zinc-700 space-y-2 bg-zinc-100 p-4 rounded-xl">
-            @if($posts->first()['technical'])
+            @if($technical)
                 <p>
                     These are my blog posts on niche programming solutions,
                     which are probably only interesting if you’re searching for a specific solution.
@@ -25,7 +27,7 @@
             @endif
         </div>
 
-        @unless($posts->first()['technical'])
+        @unless($technical)
             @livewire('newsletter-signup')
         @endunless
 
