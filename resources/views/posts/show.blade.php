@@ -50,17 +50,16 @@
                             $watch('turbo', update)
                         }"
                     >
-                        <div class="not-prose flex justify-end">
-                            <input type="checkbox" x-model="turbo" id="turbo" class="hidden" />
-                            <label for="turbo" class="flex items-center space-x-2 cursor-pointer">
+                        <div class="not-prose flex justify-end" x-on:click="turbo = !turbo">
+                            <button class="flex items-center space-x-2 cursor-pointer">
                                 <span class="text-zinc-500 text-sm font-medium italic">Turbo Reader</span>
-                                <div class="bg-zinc-200 h-4 w-7 rounded-full">
+                                <div class="h-4 w-7 rounded-full" :class="{ 'bg-zinc-400': turbo, 'bg-zinc-200': !turbo }">
                                     <div
-                                        class="bg-zinc-600 h-3 w-3 rounded-full mt-0.5 ml-0.5 transition-transform"
+                                        class="bg-white shadow h-3 w-3 rounded-full mt-0.5 ml-0.5 transition-transform"
                                         :class="{ 'translate-x-3': turbo }"
                                     ></div>
                                 </div>
-                            </label>
+                            </button>
                         </div>
                         <div x-ref="content">
                             {!! $post['html'] !!}
