@@ -16,9 +16,10 @@
 
             @if($post['technical'])
                 <hr />
+                <p>
                     Follow <a href="https://twitter.com/benborgers" target="_blank" onclick="fathom.trackGoal('E3LD3YS1')">my twitter (@benborgers)</a>
                     to see the work-in-progress of coding projects I’m working on!
-                </ul>
+                </p>
             @endif
         </x-prose.blog>
     </x-layouts.blog>
