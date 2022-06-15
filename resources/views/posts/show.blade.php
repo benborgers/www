@@ -27,11 +27,7 @@
                                                     .map(word => {
                                                         if (word.length > 0) {
                                                             const length = word.replace(/[^a-zA-Z0-9]+$/, '').length
-                                                            const boldedLength = Math.floor(length / 2)
-
-                                                            if (boldedLength === 0) {
-                                                                return word
-                                                            }
+                                                            const boldedLength = length === 1 ? 1 : Math.floor(length / 2)
 
                                                             return `<strong>${word.substring(0, boldedLength)}</strong>${word.substring(boldedLength)}`
                                                         }
