@@ -34,7 +34,7 @@
     </nav>
 
     <div class="p-4 pb-36 sm:ml-16">
-        <div class="md:mt-16 sm:mt-11 max-w-prose mx-auto">
+        <div class="md:mt-16 sm:mt-11 max-w-screen-sm mx-auto">
             {{ $slot }}
         </div>
     </div>

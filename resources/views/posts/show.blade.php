@@ -7,7 +7,66 @@
 
         <x-prose.blog>
             @isset($post['html'])
-                {!! $post['html'] !!}
+                @if($post['technical'])
+                    {!! $post['html'] !!}
+                @else
+                    <div
+                        x-data="{ turbo: $persist(false), originalContent: null }"
+                        x-init="function() {
+                            originalContent = $refs.content.innerHTML
+
+                            function update() {
+                                if (turbo) {
+                                    $refs.content.querySelectorAll('p, li, em').forEach(el => {
+                                        const children = el.childNodes
+
+                                        children.forEach(child => {
+                                            if (child.nodeType === Node.TEXT_NODE) {
+                                                const span = document.createElement('span')
+                                                span.innerHTML = child.nodeValue.split(' ')
+                                                    .map(word => {
+                                                        if (word.length > 0) {
+                                                            const length = word.replace(/[^a-zA-Z0-9]+$/, '').length
+                                                            const boldedLength = Math.floor(length / 2)
+
+                                                            if (boldedLength === 0) {
+                                                                return word
+                                                            }
+
+                                                            return `<strong>${word.substring(0, boldedLength)}</strong>${word.substring(boldedLength)}`
+                                                        }
+                                                    }).join(' ')
+
+                                                el.replaceChild(span, child)
+                                            }
+                                        })
+                                    })
+                                } else {
+                                    $refs.content.innerHTML = originalContent
+                                }
+                            }
+
+                            update()
+                            $watch('turbo', update)
+                        }"
+                    >
+                        <div class="not-prose flex justify-end">
+                            <input type="checkbox" x-model="turbo" id="turbo" class="hidden" />
+                            <label for="turbo" class="flex items-center space-x-2 cursor-pointer">
+                                <span class="text-zinc-500 text-sm font-medium italic">Turbo Reader</span>
+                                <div class="bg-zinc-200 h-4 w-7 rounded-full">
+                                    <div
+                                        class="bg-zinc-600 h-3 w-3 rounded-full mt-0.5 ml-0.5 transition-transform"
+                                        :class="{ 'translate-x-3': turbo }"
+                                    ></div>
+                                </div>
+                            </label>
+                        </div>
+                        <div x-ref="content">
+                            {!! $post['html'] !!}
+                        </div>
+                    </div>
+                @endif
             @else
                 <x-markdown>
                     {!! $post['markdown'] !!}
