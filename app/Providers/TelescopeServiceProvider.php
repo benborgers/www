@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Gate;
 use Laravel\Telescope\IncomingEntry;
 use Laravel\Telescope\Telescope;
 use Laravel\Telescope\TelescopeApplicationServiceProvider;
+use Illuminate\Support\Facades\Http;
 
 class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 {
@@ -30,6 +31,15 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
                    $entry->isFailedJob() ||
                    $entry->isScheduledTask() ||
                    $entry->hasMonitoredTag();
+        });
+
+        Telescope::afterStoring(function ($entries) {
+            if (app()->environment('production')) {
+                Http::post('http://127.0.0.1:8000/api/telescope-ping', [
+                    'domain' => 'benborgers.com',
+                    'entries' => $entries
+                ]);
+            }
         });
     }
 
