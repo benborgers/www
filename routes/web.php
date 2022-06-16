@@ -5,11 +5,6 @@ use App\Models\Subscriber;
 
 require __DIR__.'/redirects.php';
 
-// TODO: remove
-Route::get('test', function () {
-    throw new \Exception('Test exception');
-});
-
 Route::get('/', function () {
     return view('index', [
         'content' => github_issues()->firstWhere('title', 'benborgers.com')['html']

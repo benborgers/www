@@ -32,15 +32,6 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
                    $entry->isScheduledTask() ||
                    $entry->hasMonitoredTag();
         });
-
-        Telescope::afterStoring(function ($entries) {
-            if (app()->environment('production')) {
-                Http::post('http://127.0.0.1:8000/api/telescope-ping', [
-                    'domain' => 'benborgers.com',
-                    'entries' => $entries
-                ]);
-            }
-        });
     }
 
     /**
