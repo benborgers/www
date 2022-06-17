@@ -1,8 +1,8 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
-use Carbon\Carbon;
 use Spatie\ShikiPhp\Shiki;
 
 function github_issues()
@@ -40,7 +40,7 @@ function github_issues()
                                 )
                                 ->toString(),
                     'labels' => collect($issue['labels'])->map(fn ($label) => $label['name']),
-                    'updated_at' => Carbon::parse($issue['updated_at'])
+                    'updated_at' => Carbon::parse($issue['updated_at']),
                 ];
             });
 
@@ -51,7 +51,8 @@ function github_issues()
     });
 }
 
-function all_posts() {
+function all_posts()
+{
     // static_posts stores posts that aren’t gonna change much:
     // locally stored markdown posts and exporeted data from Ghost.
     $staticPosts = Cache::rememberForever('static_posts', function () {
@@ -110,7 +111,7 @@ function all_posts() {
                     'technical' => collect($ghostData->posts_tags)
                         ->where('post_id', $post->id)
                         ->where('tag_id', '6201374c0476c71d38b9a1e4') // Ghost ID for '#technical' tag
-                        ->isNotEmpty()
+                        ->isNotEmpty(),
                 ];
             });
 
@@ -124,7 +125,7 @@ function all_posts() {
                 ->map(function ($issue) {
                     return [
                         ...$issue,
-                        'technical' => $issue['labels']->contains('Technical')
+                        'technical' => $issue['labels']->contains('Technical'),
                     ];
                 })
         )

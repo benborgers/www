@@ -18,3 +18,5 @@ public/js
 public/mix-manifest.json
 
 .DS_Store
+
+.php-cs-fixer.cache

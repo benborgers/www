@@ -4,9 +4,9 @@
 
 namespace App\Extras;
 
-use League\CommonMark\Renderer\NodeRendererInterface;
 use League\CommonMark\Node\Node;
 use League\CommonMark\Renderer\ChildNodeRendererInterface;
+use League\CommonMark\Renderer\NodeRendererInterface;
 
 class ImageRenderer implements NodeRendererInterface
 {

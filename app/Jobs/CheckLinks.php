@@ -3,7 +3,6 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -13,7 +12,10 @@ use Illuminate\Support\Facades\Mail;
 
 class CheckLinks implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable;
+    use InteractsWithQueue;
+    use Queueable;
+    use SerializesModels;
 
     private $seenLinks = [];
     private $deadLinks = [];
@@ -21,12 +23,12 @@ class CheckLinks implements ShouldQueue
     private $sites = [
         [
             'domain' => 'benborgers.com',
-            'email' => null
+            'email' => null,
         ],
         [
             'domain' => 'connellmccarthy.com',
-            'email' => 'me@connellmccarthy.com'
-        ]
+            'email' => 'me@connellmccarthy.com',
+        ],
     ];
 
     public function handle()
@@ -61,11 +63,13 @@ class CheckLinks implements ShouldQueue
 
             if (! $response->ok()) {
                 $this->reportDeadUrl($url, $origin);
+
                 return;
             }
         } catch (\Exception $e) {
             $this->reportDeadUrl($url, $origin);
             logger()->error($e->getMessage());
+
             return;
         }
 
@@ -93,7 +97,6 @@ class CheckLinks implements ShouldQueue
                     "Hello there! We checked {$seenLinksCount} ${seenLinksWord} on {$domain} and found {$deadLinksCount} dead {$deadLinksWord}.\n\n"
                     . collect($this->deadLinks)->map(fn ($link) => '• ' . $link)->join("\n")
                     . "\n\n— Reach out to Ben Borgers (benborgers@hey.com) if you have questions about this email.",
-
                     function ($message) use ($deadLinksCount, $recipient, $deadLinksWord, $domain) {
                         $message->from(config('mail.from.address'), config('mail.from.name'));
                         $message->to($recipient);

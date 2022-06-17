@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
-use Illuminate\Support\Facades\Mail;
 use App\Models\Subscriber;
+use Illuminate\Support\Facades\Mail;
+use Livewire\Component;
 
 class NewsletterSignup extends Component
 {
@@ -12,11 +12,11 @@ class NewsletterSignup extends Component
     public $success = false;
 
     protected $rules = [
-        'email' => 'required|email|unique:subscribers'
+        'email' => 'required|email|unique:subscribers',
     ];
 
     protected $messages = [
-        'email.unique' => 'You’re already subscribed!'
+        'email.unique' => 'You’re already subscribed!',
     ];
 
     public function submit()
@@ -26,7 +26,7 @@ class NewsletterSignup extends Component
         $this->validate();
 
         Subscriber::updateOrCreate([
-            'email' => $this->email
+            'email' => $this->email,
         ]);
 
         Mail::raw('', function ($message) {
