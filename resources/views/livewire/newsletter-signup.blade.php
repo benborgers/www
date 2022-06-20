@@ -24,13 +24,13 @@
         </div>
 
         <div
-            class="grid sm:grid-cols-[1.1fr,1fr] grid-rows-[repeat(2,max-content)] gap-x-4 gap-y-2 sm:gap-y-0 mt-1"
+            class="grid sm:grid-cols-2 grid-rows-[repeat(2,max-content)] gap-x-4 gap-y-2 sm:gap-y-0 mt-1"
             x-show="newsletterExpanded"
             x-collapse.duration.150ms
         >
             <div>
                 <p>
-                    I write a weekly newsletter with new blog posts and updates!
+                    I write a weekly newsletter with new blog posts and assorted life updates!
                 </p>
 
                 <p class="text-zinc-400 text-sm mt-2">
