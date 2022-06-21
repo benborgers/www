@@ -32,6 +32,15 @@
         @endunless
 
         <div class="mt-6">
+            @unless($technical)
+                <div class="">
+                    <a
+                        href="{{ route('feeds.blog') }}"
+                        class="block text-right underline decoration-zinc-300 italic text-zinc-400 font-semibold text-sm"
+                    >rss feed</a>
+                </div>
+            @endunless
+
             @foreach($posts as $post)
                 @if(
                     $months &&

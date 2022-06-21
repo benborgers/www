@@ -5,6 +5,8 @@ use App\Models\Subscriber;
 
 require __DIR__.'/redirects.php';
 
+Route::feeds();
+
 Route::get('/', function () {
     return view('index', [
         'content' => github_issues()->firstWhere('title', 'benborgers.com')['html']

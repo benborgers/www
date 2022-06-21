@@ -10,6 +10,8 @@
         <link rel="icon" href="https://emojicdn.elk.sh/🐙">
         <meta property="og:image" content="https://v1.screenshot.11ty.dev/{{ urlencode(route('ogImage', ['title' => $title])) }}/opengraph/{{ now()->timestamp }}">
 
+        <x-feed-links />
+
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <script src="{{ mix('js/app.js') }}" defer></script>
         <style>[x-cloak] { display: none !important; }</style>
