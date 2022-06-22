@@ -19,7 +19,7 @@ return [
             'url' => 'feed',
 
             'title' => 'Ben Borgers',
-            // 'description' => '',
+            'description' => 'Welcome to my blog! I write a post here every day. I hope some of it is interesting! If it is, I’d love to hear from you.',
             'language' => 'en-US',
 
             /*
@@ -27,7 +27,7 @@ return [
              * a banner/logo; for RSS and JSON feeds, it's displayed as an icon.
              * An empty value omits the image attribute from the feed.
              */
-            'image' => 'https://emojicdn.elk.sh/🐙',
+            'image' => 'https://emojicdn.elk.sh/octopus',
 
             /*
              * The format of the feed. Acceptable values are 'rss', 'atom', or 'json'.
