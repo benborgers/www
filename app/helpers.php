@@ -122,6 +122,7 @@ function all_posts()
         ->concat(
             github_issues()
                 ->filter(fn ($issue) => $issue['labels']->contains('Blog') && $issue['labels']->doesntContain('Draft'))
+                ->filter(fn ($issue) => $issue['date']->lte(today('America/New_York')))
                 ->map(function ($issue) {
                     return [
                         ...$issue,
