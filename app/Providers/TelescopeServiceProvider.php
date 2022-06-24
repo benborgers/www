@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Http;
 use Laravel\Telescope\IncomingEntry;
 use Laravel\Telescope\Telescope;
 use Laravel\Telescope\TelescopeApplicationServiceProvider;
@@ -30,6 +31,15 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
                    $entry->isFailedJob() ||
                    $entry->isScheduledTask() ||
                    $entry->hasMonitoredTag();
+        });
+
+        Telescope::afterStoring(function ($entries) {
+            if (app()->environment(('production'))) {
+                Http::post('https://friede.gg/api/telescope', [
+                    'domain' => 'benborgers.com',
+                    'entries' => $entries
+                ]);
+            }
         });
     }
 
