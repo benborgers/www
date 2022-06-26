@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire;
 use App\Models\Subscriber;
 
 require __DIR__.'/redirects.php';
@@ -71,14 +72,16 @@ Route::get('/+/{slug}', function ($slug) {
     return view('page', ['page' => $page]);
 })->where('slug', '.*');
 
-Route::get('og-image', function () {
-    return view('og-image', [
-        'title' => request('title')
-    ]);
-})->name('ogImage');
+Route::get('unsubscribe', Livewire\Unsubscribe::class);
 
 Route::get('subscribers', function () {
     return response(
         Subscriber::latest()->pluck('email')->join("\n")
     )->header('content-type', 'text/plain');
 })->name('subscribers')->middleware('signed');
+
+Route::get('og-image', function () {
+    return view('og-image', [
+        'title' => request('title')
+    ]);
+})->name('ogImage');
