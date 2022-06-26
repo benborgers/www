@@ -7,10 +7,6 @@ require __DIR__.'/redirects.php';
 
 Route::feeds();
 
-Route::get('/crash', function () {
-    throw new Exception('This is a test exception.');
-});
-
 Route::get('/', function () {
     return view('index', [
         'content' => github_issues()->firstWhere('title', 'benborgers.com')['html']
