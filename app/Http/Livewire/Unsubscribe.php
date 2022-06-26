@@ -15,7 +15,7 @@ class Unsubscribe extends Component
         return [
             'email' => ['required', 'email', function($attribute, $value, $fail) {
                 if (Subscriber::where('email', $value)->doesntExist()) {
-                    $fail('This email address isn’t subscribed to the newsletter.');
+                    $fail('This email address isn’t subscribed.');
                 }
             }],
         ];
