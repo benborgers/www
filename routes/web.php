@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cache;
 use App\Http\Livewire;
 use App\Models\Subscriber;
 
@@ -85,3 +86,11 @@ Route::get('og-image', function () {
         'title' => request('title')
     ]);
 })->name('ogImage');
+
+Route::prefix('admin')->group(function () {
+    Route::get('clear-cache', function () {
+        Cache::forget('static_posts');
+        all_posts();
+        return response('Cache cleared and repopulated.');
+    });
+});
