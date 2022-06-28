@@ -15,33 +15,33 @@ Next, open the GitHub repository for the Laravel app you want to deploy. Go to S
 
 Then, create a file in your project at `.github/workflows/deploy.yml`. This file will automatically be detected by GitHub. Fill the file with this:
 
-```yml
+```yaml
 name: Deploy
 
 on:
-  push:
-    branches: [main]
+    push:
+        branches: [main]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.0
-          tools: composer:v2
-          coverage: none
-      - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-interaction --no-dev
-      - name: Require Vapor CLI
-        run: composer global require laravel/vapor-cli
-      - name: Deploy Environment
-        run: vapor deploy production --without-waiting
-        env:
-          VAPOR_API_TOKEN: ${{ secrets.VAPOR_API_TOKEN }}
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: 8.0
+                  tools: composer:v2
+                  coverage: none
+            - name: Install Composer dependencies
+              run: composer install --prefer-dist --no-interaction --no-dev
+            - name: Require Vapor CLI
+              run: composer global require laravel/vapor-cli
+            - name: Deploy Environment
+              run: vapor deploy production --without-waiting
+              env:
+                  VAPOR_API_TOKEN: ${{ secrets.VAPOR_API_TOKEN }}
 ```
 
 This workflow runs on GitHub Actions every time there's a new push on the `main` branch. You can change which branch you'd like to deploy if you'd like.
