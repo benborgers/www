@@ -89,8 +89,11 @@ Route::get('og-image', function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('clear-cache', function () {
-        Cache::forget('static_posts');
-        all_posts();
-        return response('Cache cleared and repopulated.');
+        dispatch(function () {
+            Cache::forget('static_posts');
+            Cache::forget('github_issues');
+            all_posts();
+        });
+        return response('A background job has been dispatched to clear and repopulate the cache.');
     });
 });
