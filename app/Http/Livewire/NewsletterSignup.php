@@ -9,6 +9,7 @@ use Livewire\Component;
 class NewsletterSignup extends Component
 {
     public $email;
+
     public $success = false;
 
     protected $rules = [

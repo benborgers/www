@@ -2,18 +2,19 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
 use App\Models\Subscriber;
+use Livewire\Component;
 
 class Unsubscribe extends Component
 {
     public $email;
+
     public $success = false;
 
     protected function rules()
     {
         return [
-            'email' => ['required', 'email', function($attribute, $value, $fail) {
+            'email' => ['required', 'email', function ($attribute, $value, $fail) {
                 if (Subscriber::where('email', $value)->doesntExist()) {
                     $fail('This email address isn’t subscribed.');
                 }
@@ -38,7 +39,7 @@ class Unsubscribe extends Component
             ->layoutData([
                 'title' => 'Unsubscribe',
                 'bg' => 'bg-zinc-200',
-                'livewire' => true
+                'livewire' => true,
             ]);
     }
 }

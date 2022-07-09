@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Cache;
 use App\Http\Livewire;
 use App\Models\Subscriber;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/redirects.php';
 
@@ -11,7 +11,7 @@ Route::feeds();
 
 Route::get('/', function () {
     return view('index', [
-        'content' => github_issues()->firstWhere('title', 'benborgers.com')['html']
+        'content' => github_issues()->firstWhere('title', 'benborgers.com')['html'],
     ]);
 })->name('index');
 
@@ -33,7 +33,7 @@ Route::get('posts', function () {
         ) {
             $streak++;
         } else {
-            if(! $currentDate->isSameDay($today)) {
+            if (! $currentDate->isSameDay($today)) {
                 break;
             }
         }
@@ -44,7 +44,7 @@ Route::get('posts', function () {
     return view('posts.index', [
         'posts' => $posts,
         'months' => true,
-        'streak' => $streak
+        'streak' => $streak,
     ]);
 })->name('posts.index');
 
@@ -53,13 +53,14 @@ Route::get('technical-posts', function () {
 
     return view('posts.index', [
         'posts' => $posts,
-        'months' => false
+        'months' => false,
     ]);
 })->name('posts.technicalIndex');
 
 Route::get('posts/{slug}', function ($slug) {
     $post = all_posts()->firstWhere('slug', $slug);
     abort_if(! $post, 404);
+
     return view('posts.show', ['post' => $post]);
 })->name('posts.show');
 
@@ -70,6 +71,7 @@ Route::get('/+/{slug}', function ($slug) {
         ->first();
 
     abort_if(! $page, 404);
+
     return view('page', ['page' => $page]);
 })->where('slug', '.*');
 
@@ -83,7 +85,7 @@ Route::get('subscribers', function () {
 
 Route::get('og-image', function () {
     return view('og-image', [
-        'title' => request('title')
+        'title' => request('title'),
     ]);
 })->name('ogImage');
 
@@ -94,6 +96,7 @@ Route::prefix('admin')->group(function () {
             Cache::forget('github_issues');
             all_posts();
         });
+
         return response('A background job has been dispatched to clear and repopulate the cache.');
     });
 });

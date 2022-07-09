@@ -79,7 +79,7 @@ return [
     'inline_renderers' => [
         [
             'class' => League\CommonMark\Extension\CommonMark\Node\Inline\Image::class,
-            'renderer' => new App\Extras\ImageRenderer()
-        ]
+            'renderer' => new App\Extras\ImageRenderer(),
+        ],
     ],
 ];

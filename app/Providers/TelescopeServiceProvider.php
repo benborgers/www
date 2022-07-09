@@ -37,7 +37,7 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
             if (app()->environment(('production'))) {
                 Http::post('https://friede.gg/api/telescope', [
                     'domain' => 'benborgers.com',
-                    'entries' => $entries
+                    'entries' => $entries,
                 ]);
             }
         });

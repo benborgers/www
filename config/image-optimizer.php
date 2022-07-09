@@ -20,7 +20,7 @@ return [
             // rotate the wrong way because it removes EXIF data.
             // '--strip-all',  // this strips out all text information such as comments and EXIF data
             '--all-progressive',  // this will make sure the resulting image is a progressive one
-            '--size=1000' // 1 megabyte
+            '--size=1000', // 1 megabyte
         ],
 
         Pngquant::class => [

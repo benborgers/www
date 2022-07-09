@@ -62,7 +62,7 @@ return [
             'secret' => env('BACKUP_SECRET_ACCESS_KEY'),
             'bucket' => 'ben-backups',
             'region' => 'nyc3',
-            'endpoint' => 'https://nyc3.digitaloceanspaces.com'
+            'endpoint' => 'https://nyc3.digitaloceanspaces.com',
         ],
 
     ],

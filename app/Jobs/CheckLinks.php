@@ -18,6 +18,7 @@ class CheckLinks implements ShouldQueue
     use SerializesModels;
 
     private $seenLinks = [];
+
     private $deadLinks = [];
 
     private $sites = [
@@ -48,7 +49,7 @@ class CheckLinks implements ShouldQueue
 
         if (
             in_array($url, $this->seenLinks)
-            || ! str($url)->startsWith('https://' . $site['domain'])
+            || ! str($url)->startsWith('https://'.$site['domain'])
             || str($url)->contains('cdn-cgi')
         ) {
             return;
@@ -95,8 +96,8 @@ class CheckLinks implements ShouldQueue
             foreach ($recipients as $recipient) {
                 Mail::raw(
                     "Hello there! We checked {$seenLinksCount} ${seenLinksWord} on {$domain} and found {$deadLinksCount} dead {$deadLinksWord}.\n\n"
-                    . collect($this->deadLinks)->map(fn ($link) => '• ' . $link)->join("\n")
-                    . "\n\n— Reach out to Ben Borgers (benborgers@hey.com) if you have questions about this email.",
+                    .collect($this->deadLinks)->map(fn ($link) => '• '.$link)->join("\n")
+                    ."\n\n— Reach out to Ben Borgers (benborgers@hey.com) if you have questions about this email.",
                     function ($message) use ($deadLinksCount, $recipient, $deadLinksWord, $domain) {
                         $message->from(config('mail.from.address'), config('mail.from.name'));
                         $message->to($recipient);
@@ -114,7 +115,7 @@ class CheckLinks implements ShouldQueue
     private function normalizeUrl($url, $site)
     {
         if (str($url)->startsWith('/')) {
-            return 'https://' . $site['domain'] . $url;
+            return 'https://'.$site['domain'].$url;
         }
 
         return $url;
