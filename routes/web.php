@@ -61,7 +61,22 @@ Route::get('posts/{slug}', function ($slug) {
     $post = all_posts()->firstWhere('slug', $slug);
     abort_if(! $post, 404);
 
-    return view('posts.show', ['post' => $post]);
+    $previousPost = null;
+    $nextPost = null;
+    if (! $post['technical']) {
+        $posts = all_posts()->where('technical', false)->values();
+        $index = $posts->search(function ($post) use ($slug) {
+            return $post['slug'] === $slug;
+        });
+        $previousPost = $posts->get($index + 1);
+        $nextPost = $posts->get($index - 1);
+    }
+
+    return view('posts.show', [
+        'post' => $post,
+        'previousPost' => $previousPost,
+        'nextPost' => $nextPost
+    ]);
 })->name('posts.show');
 
 Route::get('/+/{slug}', function ($slug) {

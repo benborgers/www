@@ -76,6 +76,27 @@
                 </p>
             @endif
         </x-prose.blog>
+
+        @unless($post['technical'])
+            <div class="mt-12 flex justify-between space-x-4">
+                <div>
+                    @if($previousPost)
+                        <a href="{{ route('posts.show', $previousPost['slug']) }}" class="flex items-start space-x-2 text-zinc-400 hover:text-zinc-500 transition-colors">
+                            <x-heroicon-s-arrow-narrow-left class="h-4 w-4 mt-[0.05rem]" />
+                            <p class="italic text-sm font-semibold leading-tight">{{ $previousPost['title'] }}</p>
+                        </a>
+                    @endif
+                </div>
+                <div>
+                    @if($nextPost)
+                        <a href="{{ route('posts.show', $nextPost['slug']) }}" class="flex items-start space-x-2 text-zinc-400 hover:text-zinc-500 transition-colors">
+                            <p class="italic text-sm font-semibold leading-tight text-right">{{ $nextPost['title'] }}</p>
+                            <x-heroicon-s-arrow-narrow-right class="h-4 w-4 mt-[0.05rem]" />
+                        </a>
+                    @endif
+                </div>
+            </div>
+        @endunless
     </x-layouts.blog>
 
     @push('head')
