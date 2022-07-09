@@ -75,7 +75,7 @@ Route::get('posts/{slug}', function ($slug) {
     return view('posts.show', [
         'post' => $post,
         'previousPost' => $previousPost,
-        'nextPost' => $nextPost
+        'nextPost' => $nextPost,
     ]);
 })->name('posts.show');
 
