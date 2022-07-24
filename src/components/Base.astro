@@ -1,0 +1,23 @@
+---
+const { title, ogImage } = Astro.props
+---
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{title ? title + ' - Ben Borgers' : 'Ben Borgers'}</title>
+  <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
+
+  {ogImage &&
+  <meta property="og:image" content={ogImage} />
+  }
+</head>
+
+<body class="antialiased bg-white">
+  <slot />
+</body>
+
+</html>
