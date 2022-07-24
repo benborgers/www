@@ -14,6 +14,8 @@ const { title, ogImage } = Astro.props
   {ogImage &&
   <meta property="og:image" content={ogImage} />
   }
+
+  <slot name="head" />
 </head>
 
 <body class="antialiased bg-white">
