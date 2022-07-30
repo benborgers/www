@@ -1,28 +1,30 @@
 ---
 import Base from '../components/Base.astro'
+import Icon from '../components/Icon'
 ---
 
 <Base title="Ben Borgers" bg="bg-neutral-50">
 <div class="p-4 pb-20 pt-36">
   <div class="max-w-screen-sm mx-auto text-neutral-700">
-    <div class="flex gap-4 items-end">
-      <div class="mb-1">
-        <p class="font-semibold text-neutral-900">Hi! I’m Ben Borgers.</p>
+    <div class="flex items-start gap-4">
+      <div class="h-7 w-7 bg-rose-600 flex items-center justify-center rounded-lg flex-shrink-0">
+        <Icon name="hand-waving" weight="duotone" className="h-5 w-5 fill-white text-white" />
+      </div>
+      <div class="mt-2">
+        <p class="font-semibold text-neutral-900 leading-none">Hi! I’m Ben Borgers.</p>
         <p class="mt-1 text-neutral-500">
           I’m a rising sophomore at Tufts University studying computer science.
         </p>
+        <div class="mt-4 flex flex-wrap gap-4">
+          <a href="https://twitter.com/benborgers" target="_blank" class="block text-sky-600">
+            @benborgers
+          </a>
+          {/* TODO: click to copy w/ tooltip that says "Click to Copy" */}
+          <a href="mailto:benborgers@hey.com" target="_blank" class="block text-rose-500">
+            benborgers@hey.com
+          </a>
+        </div>
       </div>
-      <img src="/me.jpg" class="w-20 rounded-full border-4 border-rose-500" />
-    </div>
-
-    <div class="mt-2 flex flex-wrap gap-4">
-      <a href="https://twitter.com/benborgers" target="_blank" class="block text-sky-600">
-        @benborgers
-      </a>
-      {/* TODO: click to copy w/ tooltip that says "Click to Copy" */}
-      <a href="mailto:benborgers@hey.com" target="_blank" class="block text-rose-500">
-        benborgers@hey.com
-      </a>
     </div>
 
     <div class="mt-8 bg-neutral-200/50 p-4 rounded-xl
@@ -31,15 +33,46 @@ import Base from '../components/Base.astro'
       <ul class="mt-3 space-y-3 list-disc ml-6 text-neutral-600">
         <li>
           <p>
-            Internship at <a href="https://lu.ma" class="text-[#de3163]" target="_blank">Luma</a> and <a href="https://glow.app" class="text-[#bb2dc7]" target="_blank">Glow</a> working on web apps and their Chrome extension.
+            Internship at <a href="https://lu.ma" class="text-[#de3163]" target="_blank">Luma</a> and <a
+              href="https://glow.app" class="text-[#bb2dc7]" target="_blank">Glow</a> working on web apps and their
+            Chrome extension.
           </p>
           <p class="text-neutral-400 italic text-sm font-medium">Summer 2022</p>
         </li>
         <li>
           <p>
-            Freelance development in Vue for <a href="https://buttondown.email" class="text-[#0069ff]" target="_blank">Buttondown</a>.
+            Freelance development in Vue for <a href="https://buttondown.email" class="text-[#0069ff]"
+              target="_blank">Buttondown</a>.
           </p>
           <p class="text-neutral-400 italic text-sm font-medium block">Summer 2021 - Present</p>
+        </li>
+        <li>
+          <p>
+            Website for <a href="https://uphamdesign.com" class="text-[#034f63]" target="_blank">Upham Design</a>, a
+            creative collective
+            run by a family friend.
+          </p>
+          <p class="text-neutral-400 italic text-sm font-medium block">Fall 2021 - present</p>
+        </li>
+        <li>
+          <p>
+            Wrote a bit of code that powered TV graphics for STU National Championships, a Brazilian
+            skateboarding championship.
+          </p>
+          <p class="text-neutral-400 italic text-sm font-medium block">Winter 2021</p>
+        </li>
+        <li>
+          <p>
+            Developed a course registration and management app in Laravel for <a href="https://diyiboston.com"
+              class="text-[#5850ec]" target="_blank">Diyi</a>, an online school based in the Boston area.
+          </p>
+          <p class="text-neutral-400 italic text-sm font-medium block">Summer 2020</p>
+        </li>
+        <li>
+          <p>Interned at <a href="https://www.ibm.com/products/guardium-insights" class="text-[#0031b4]"
+              target="_blank">IBM
+              Security</a> for two summers,
+            working on a new security offering for enterprise.</p>
         </li>
       </ul>
     </div>
