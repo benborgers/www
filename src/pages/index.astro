@@ -1,21 +1,18 @@
 ---
 import Base from '../components/Base.astro'
-import Icon from '../components/Icon'
 ---
 
 <Base title="Ben Borgers" bg="bg-neutral-50">
-<div class="p-4 pb-20 pt-36">
+<div class="p-4 pb-20 pt-8 sm:pt-36">
   <div class="max-w-screen-sm mx-auto text-neutral-700">
-    <div class="flex items-start gap-4">
-      <div class="h-7 w-7 bg-rose-600 flex items-center justify-center rounded-lg flex-shrink-0">
-        <Icon name="hand-waving" weight="duotone" className="h-5 w-5 fill-white text-white" />
-      </div>
+    <div class="flex items-start gap-6">
+      <img src="/me.jpg" class="h-16 rounded-full" />
       <div class="mt-2">
         <p class="font-semibold text-neutral-900 leading-none">Hi! I’m Ben Borgers.</p>
         <p class="mt-1 text-neutral-500">
           I’m a rising sophomore at Tufts University studying computer science.
         </p>
-        <div class="mt-4 flex flex-wrap gap-4">
+        <div class="mt-4 flex flex-wrap gap-x-4">
           <a href="https://twitter.com/benborgers" target="_blank" class="block text-sky-600">
             @benborgers
           </a>
