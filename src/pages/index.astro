@@ -2,7 +2,7 @@
 import Base from '../components/Base.astro'
 ---
 
-<Base title="Ben Borgers">
+<Base title="Ben Borgers" bg="bg-neutral-50">
 <div class="p-4 pb-20 pt-36">
   <div class="max-w-screen-sm mx-auto text-neutral-700">
     <div class="flex gap-4 items-end">
@@ -23,6 +23,25 @@ import Base from '../components/Base.astro'
       <a href="mailto:benborgers@hey.com" target="_blank" class="block text-rose-500">
         benborgers@hey.com
       </a>
+    </div>
+
+    <div class="mt-8 bg-neutral-200/50 p-4 rounded-xl
+      [&_a]:underline [&_a]:font-medium">
+      <p class="font-semibold text-neutral-900">Work Experience</p>
+      <ul class="mt-3 space-y-3 list-disc ml-6 text-neutral-600">
+        <li>
+          <p>
+            Internship at <a href="https://lu.ma" class="text-[#de3163]" target="_blank">Luma</a> and <a href="https://glow.app" class="text-[#bb2dc7]" target="_blank">Glow</a> working on web apps and their Chrome extension.
+          </p>
+          <p class="text-neutral-400 italic text-sm font-medium">Summer 2022</p>
+        </li>
+        <li>
+          <p>
+            Freelance development in Vue for <a href="https://buttondown.email" class="text-[#0069ff]" target="_blank">Buttondown</a>.
+          </p>
+          <p class="text-neutral-400 italic text-sm font-medium block">Summer 2021 - Present</p>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
