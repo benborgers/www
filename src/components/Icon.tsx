@@ -1,10 +1,10 @@
 import React from "react";
-import { HandWaving } from "phosphor-react";
+import { ArrowDown } from "phosphor-react";
 
-type IconName = "hand-waving";
+type IconName = "arrow-down";
 
 const ICONS: Record<IconName, React.ReactNode> = {
-  "hand-waving": HandWaving,
+  "arrow-down": ArrowDown,
 };
 
 export default function Icon({
