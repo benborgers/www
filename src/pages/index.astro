@@ -3,15 +3,27 @@ import Base from '../components/Base.astro'
 ---
 
 <Base title="Ben Borgers">
-<h1>Hi! I’m Ben Borgers.</h1>
+<div class="p-4 pb-20 pt-36">
+  <div class="max-w-screen-sm mx-auto text-neutral-700">
+    <div class="flex gap-4 items-end">
+      <div class="mb-1">
+        <p class="font-semibold text-neutral-900">Hi! I’m Ben Borgers.</p>
+        <p class="mt-1 text-neutral-500">
+          I’m a rising sophomore at Tufts University studying computer science.
+        </p>
+      </div>
+      <img src="/me.jpg" class="w-20 rounded-full border-4 border-rose-500" />
+    </div>
 
-<div class="prose">
-  <p>
-    I’m a rising sophomore at Tufts University studying computer science, and an intern at <a
-      href="https://lu.ma">Luma</a>/<a href="https://glow.app">Glow</a> this summer.
-  </p>
-  <p>
-    I write <a href="/posts">blog posts</a> and <a href="/technical-posts">technical blog posts</a>
-  </p>
+    <div class="mt-2 flex flex-wrap gap-4">
+      <a href="https://twitter.com/benborgers" target="_blank" class="block text-sky-600">
+        @benborgers
+      </a>
+      {/* TODO: click to copy w/ tooltip that says "Click to Copy" */}
+      <a href="mailto:benborgers@hey.com" target="_blank" class="block text-rose-500">
+        benborgers@hey.com
+      </a>
+    </div>
+  </div>
 </div>
 </Base>
