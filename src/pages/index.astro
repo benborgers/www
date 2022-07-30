@@ -1,17 +1,17 @@
 ---
-import BlogLayout from '../components/BlogLayout.astro'
+import Base from '../components/Base.astro'
 ---
 
-<BlogLayout>
-  <h1>Hi! I’m Ben Borgers.</h1>
+<Base title="Ben Borgers">
+<h1>Hi! I’m Ben Borgers.</h1>
 
-  <div class="prose">
-    <p>
-      I’m a rising sophomore at Tufts University studying computer science, and an intern at <a
-        href="https://lu.ma">Luma</a>/<a href="https://glow.app">Glow</a> this summer.
-    </p>
-    <p>
-      I write <a href="/posts">blog posts</a> and <a href="/technical-posts">technical blog posts</a>
-    </p>
-  </div>
-</BlogLayout>
+<div class="prose">
+  <p>
+    I’m a rising sophomore at Tufts University studying computer science, and an intern at <a
+      href="https://lu.ma">Luma</a>/<a href="https://glow.app">Glow</a> this summer.
+  </p>
+  <p>
+    I write <a href="/posts">blog posts</a> and <a href="/technical-posts">technical blog posts</a>
+  </p>
+</div>
+</Base>
