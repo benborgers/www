@@ -15,13 +15,17 @@ import Icon from '../components/Icon.tsx'
         <p class="mt-1 text-neutral-500">
           I’m a rising sophomore at Tufts University studying computer science.
         </p>
-        <div class="mt-4 flex flex-wrap gap-x-4">
-          <a href="https://twitter.com/benborgers" target="_blank" class="block text-sky-600">
-            @benborgers
+        <div class="mt-2 flex flex-wrap gap-x-2">
+          <a href="https://twitter.com/benborgers" target="_blank"
+            class="bg-sky-500 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2">
+            <Icon name="twitter" weight="fill" />
+            <span>Twitter</span>
           </a>
           {/* TODO: click to copy w/ tooltip that says "Click to Copy" */}
-          <a href="mailto:benborgers@hey.com" target="_blank" class="block text-rose-500">
-            benborgers@hey.com
+          <a href="/contact" target="_blank"
+            class="bg-rose-600 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2">
+            <Icon name="paper-plane-tilt" weight="fill" />
+            Contact
           </a>
         </div>
       </div>
@@ -35,9 +39,9 @@ import Icon from '../components/Icon.tsx'
       <div x-show="!expanded"
         class="h-1/2 absolute inset-x-0 bottom-0 bg-gradient-to-b from-neutral-200/0 to-neutral-200 pointer-events-none" />
       <button
-        class="text-white bg-rose-600 px-3 py-0.5 rounded-full absolute bottom-4 right-4 flex items-center gap-1 border-2 border-white transition-opacity"
+        class="text-white bg-neutral-700 px-3 py-0.5 rounded-full absolute bottom-4 right-4 flex items-center gap-1 border-2 border-white transition-opacity"
         x-bind:class="{ 'opacity-0': expanded }" x-on:click="expanded = true">
-        <span class=" text-sm font-semibold">Show All</span>
+        <span class=" text-sm font-semibold">See More</span>
         <Icon name="arrow-down" weight="fill" className="w-4 h-4" />
       </button>
 
