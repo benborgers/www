@@ -6,10 +6,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
         fraunces: ["Fraunces", ...defaultTheme.fontFamily.serif],
         "public-sans": ["Public Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

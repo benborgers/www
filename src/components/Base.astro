@@ -15,6 +15,9 @@ const { title, ogImage } = Astro.props
   <meta property="og:image" content={ogImage} />
   }
 
+  {/* Since this is the default sans-serif font, every page gets it. */}
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
   <slot name="head" />
 </head>
 
