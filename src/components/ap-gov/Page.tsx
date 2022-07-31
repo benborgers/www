@@ -1,5 +1,6 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Icon from "../Icon";
 
 export default function () {
@@ -182,13 +183,27 @@ const Case: React.FC<{ name: string; bullets: string[] }> = ({
               </div>
             </Disclosure.Button>
 
-            <Disclosure.Panel className="mt-3 mb-4 text-gray-600">
-              <ul className="list-disc ml-8 space-y-2">
-                {bullets.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
-            </Disclosure.Panel>
+            <AnimatePresence>
+              {open && (
+                <Disclosure.Panel
+                  static
+                  className="text-gray-600 overflow-hidden"
+                  as={motion.div}
+                  initial={{ height: 0 }}
+                  animate={{ height: "auto" }}
+                  exit={{ height: 0 }}
+                  transition={{ type: "spring", bounce: 0.15, duration: 0.3 }}
+                >
+                  <div className="mt-3 mb-4">
+                    <ul className="list-disc ml-8 space-y-2">
+                      {bullets.map((line) => (
+                        <li key={line}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </Disclosure.Panel>
+              )}
+            </AnimatePresence>
           </>
         )}
       </Disclosure>
