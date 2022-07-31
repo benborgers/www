@@ -150,15 +150,18 @@ export default function () {
   );
 }
 
-function Heading({ children }: { children: React.ReactNode }) {
+const Heading: React.FC = ({ children }) => {
   return (
     <h1 className="mt-12 font-black text-3xl tracking-tight text-gray-900">
       {children}
     </h1>
   );
-}
+};
 
-function Case({ name, bullets }: { name: string; bullets: string[] }) {
+const Case: React.FC<{ name: string; bullets: string[] }> = ({
+  name,
+  bullets,
+}) => {
   return (
     <div className="block mt-3 border-2 border-gray-200 bg-gray-100 pt-3 pb-2 px-3 w-full rounded-lg">
       <Disclosure>
@@ -191,4 +194,4 @@ function Case({ name, bullets }: { name: string; bullets: string[] }) {
       </Disclosure>
     </div>
   );
-}
+};
