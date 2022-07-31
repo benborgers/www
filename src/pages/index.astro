@@ -1,7 +1,7 @@
 ---
 import Base from '../components/Base.astro'
 import LoadAlpine from '../components/LoadAlpine.astro'
-import Icon from '../components/Icon.tsx'
+import Icon from '../components/Icon'
 ---
 
 <Base title="Ben Borgers" bg="bg-neutral-50">
@@ -18,12 +18,12 @@ import Icon from '../components/Icon.tsx'
         <div class="mt-2 flex flex-wrap gap-x-2">
           <a href="https://twitter.com/benborgers" target="_blank"
             class="bg-sky-500 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2">
-            <Icon name="twitter" weight="fill" />
+            <Icon name="TwitterLogo" weight="fill" />
             <span>Twitter</span>
           </a>
           <a href="/contact"
             class="bg-rose-600 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2">
-            <Icon name="paper-plane-tilt" weight="fill" />
+            <Icon name="PaperPlaneTilt" weight="fill" />
             <span>Contact</span>
           </a>
         </div>
@@ -41,7 +41,7 @@ import Icon from '../components/Icon.tsx'
         class="text-white bg-neutral-700 px-3 py-0.5 rounded-full absolute bottom-4 right-4 flex items-center gap-1 border-2 border-white transition-opacity"
         x-bind:class="{ 'opacity-0': expanded }" x-on:click="expanded = true">
         <span class=" text-sm font-semibold">See More</span>
-        <Icon name="arrow-down" weight="fill" className="w-4 h-4" />
+        <Icon name="ArrowDown" weight="fill" className="w-4 h-4" />
       </button>
 
       <p class="font-semibold text-neutral-900">Work Experience</p>
