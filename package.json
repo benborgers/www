@@ -12,6 +12,7 @@
     "@astrojs/mdx": "^0.4.0",
     "@astrojs/react": "^0.4.2",
     "@astrojs/tailwind": "^0.2.5",
+    "@headlessui/react": "^1.6.6",
     "@tailwindcss/typography": "^0.5.4",
     "astro": "^1.0.0-rc.3",
     "phosphor-react": "^1.4.1",
