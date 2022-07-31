@@ -1,7 +1,7 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { motion, AnimatePresence } from "framer-motion";
-import Icon from "../Icon";
+import { X, Plus } from "phosphor-react";
 
 export default function () {
   return (
@@ -171,11 +171,7 @@ const Case: React.FC<{ name: string; bullets: string[] }> = ({
             <Disclosure.Button className="group">
               <div className="flex items-center space-x-2">
                 <div className="group-hover:bg-gray-200 group-hover:text-gray-900 transition-colors p-1 rounded">
-                  {open ? (
-                    <Icon name="X" weight="bold" />
-                  ) : (
-                    <Icon name="Plus" weight="bold" />
-                  )}
+                  {open ? <X weight="bold" /> : <Plus weight="bold" />}
                 </div>
                 <p className="mt-0.5 text-left font-bold text-gray-800">
                   {name}
