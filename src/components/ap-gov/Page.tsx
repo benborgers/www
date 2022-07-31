@@ -167,7 +167,11 @@ function Case({ name, bullets }: { name: string; bullets: string[] }) {
             <Disclosure.Button className="group">
               <div className="flex items-center space-x-2">
                 <div className="group-hover:bg-gray-200 group-hover:text-gray-900 transition-colors p-1 rounded">
-                  {open ? <Icon name="X" /> : <Icon name="Plus" />}
+                  {open ? (
+                    <Icon name="X" weight="bold" />
+                  ) : (
+                    <Icon name="Plus" weight="bold" />
+                  )}
                 </div>
                 <p className="mt-0.5 text-left font-bold text-gray-800">
                   {name}
