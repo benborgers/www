@@ -1,17 +1,19 @@
 ---
 const { title, className } = Astro.props
-import { ArrowDown } from 'phosphor-react'
+import { ArrowDown, ArrowUp } from 'phosphor-react'
 ---
 
-<div x-data="{ expanded: false }" x-show="expanded" x-collapse.min.230px x-cloak class={`bg-neutral-100 p-4 rounded-xl
-  overflow-hidden relative ${className}`}>
+<div x-data="{ expanded: false }" x-show="expanded" x-collapse.min.230px x-cloak class={`bg-neutral-100 p-4 pb-14
+  rounded-xl overflow-hidden relative ${className}`}>
   <div x-bind:class="{'opacity-0': expanded }"
     class="h-1/2 absolute inset-x-0 bottom-0 bg-gradient-to-b from-neutral-100/0 to-neutral-100 pointer-events-none transition-opacity" />
   <button
     class="text-white bg-neutral-700 px-3 py-0.5 rounded-full absolute bottom-4 right-4 flex items-center gap-1 border-2 border-white transition-opacity"
-    x-bind:class="{ 'opacity-0 pointer-events-none': expanded }" x-on:click="expanded = true">
-    <span class=" text-sm font-semibold">See More</span>
-    <ArrowDown weight="fill" />
+    x-on:click="expanded = !expanded">
+    <span class="text-sm font-semibold" x-show="!expanded">See More</span>
+    <ArrowDown weight="fill" x-show="!expanded" />
+    <span class="text-sm font-semibold" x-show="expanded">Close</span>
+    <ArrowUp weight="fill" x-show="expanded" />
   </button>
 
   <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-neutral-200/0 via-neutral-200 to-neutral-200/0" />
