@@ -2,6 +2,7 @@
 import Base from '../components/Base.astro'
 import LoadAlpine from '../components/LoadAlpine.astro'
 import Icon from '../components/Icon'
+import { TwitterLogo, PaperPlaneTilt, ArrowDown, ArrowSquareOut, CalendarBlank } from 'phosphor-react'
 
 const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
   .sort((a, b) => new Date(a.frontmatter.date) > new Date(b.frontmatter.date) ? -1 : 1)
@@ -21,12 +22,12 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
         <div class="mt-2 flex flex-wrap gap-x-2">
           <a href="https://twitter.com/benborgers" target="_blank" class="bg-sky-500 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2
             hover:ring-2 hover:ring-offset-2 hover:ring-sky-500 hover:ring-offset-neutral-50 transition-shadow">
-            <Icon name="TwitterLogo" weight="fill" />
+            <TwitterLogo weight="fill" />
             <span>Twitter</span>
           </a>
           <a href="/contact" class="bg-rose-600 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2
             hover:ring-2 hover:ring-offset-2 hover:ring-rose-600 hover:ring-offset-neutral-50 transition-shadow">
-            <Icon name="PaperPlaneTilt" weight="fill" />
+            <PaperPlaneTilt weight="fill" />
             <span>Contact</span>
           </a>
         </div>
@@ -44,7 +45,7 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
         class="text-white bg-neutral-700 px-3 py-0.5 rounded-full absolute bottom-4 right-4 flex items-center gap-1 border-2 border-white transition-opacity"
         x-bind:class="{ 'opacity-0': expanded }" x-on:click="expanded = true">
         <span class=" text-sm font-semibold">See More</span>
-        <Icon name="ArrowDown" weight="fill" className="w-4 h-4" />
+        <ArrowDown weight="fill" />
       </button>
 
       <p class="font-semibold text-neutral-900">Work Experience</p>
@@ -109,7 +110,7 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
       <a href="/posts"
         class="bg-rose-600 hover:ring-2 hover:ring-offset-2 hover:ring-rose-600 hover:ring-offset-neutral-50 transition-shadow p-3 rounded-xl flex items-start gap-2">
         <div class="mt-px">
-          <Icon name="ArrowSquareOut" weight="bold" className="h-4 w-4 text-white" />
+          <ArrowSquareOut weight="bold" className="text-white" />
         </div>
         <div>
           <p class="text-white font-bold text-sm">180 Daily Blog Posts</p>
@@ -121,7 +122,7 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
       <a href="https://bite.guide" target="_blank"
         class="bg-emerald-900 hover:ring-2 hover:ring-offset-2 hover:ring-emerald-900 hover:ring-offset-neutral-50 transition-shadow p-3 rounded-xl flex items-start gap-2">
         <div class="mt-px">
-          <Icon name="ArrowSquareOut" weight="bold" className="h-4 w-4 text-white" />
+          <ArrowSquareOut weight="bold" className="text-white" />
         </div>
         <div>
           <p class="text-white font-bold text-sm">Bite</p>
@@ -137,7 +138,7 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
       <div class="grid grid-cols-[max-content,1fr] gap-x-4">
         <div>
           <div class="h-7 w-7 bg-neutral-200 rounded-full flex items-center justify-center">
-            <Icon name="CalendarBlank" weight="bold" className="h-4 w-4 text-neutral-600" />
+            <CalendarBlank weight="bold" className="text-neutral-600" />
           </div>
           {i !== timelineEntries.length -1 && (
           <div class="border-l border-neutral-200 border-dashed h-full mt-2 ml-[calc(0.875rem-0.5px)]" />

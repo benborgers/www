@@ -3,7 +3,7 @@ import Base from '../components/Base.astro'
 
 import TextContainer from '../components/pittsburgh/TextContainer.astro'
 import Photo from '../components/pittsburgh/Photo.astro'
-import Icon from '../components/Icon'
+import { ArrowLeft } from 'phosphor-react'
 ---
 
 <Base title="Pittsburgh Trip, Summer 2022" bg="bg-orange-50">
@@ -15,7 +15,7 @@ import Icon from '../components/Icon'
     <div
       class="fixed top-0 left-0 right-0 sm:right-auto p-3 sm:p-4 bg-orange-50 rounded-br-none sm:rounded-br-xl z-50 flex justify-center">
       <a href="/" class="text-orange-900 flex items-center gap-2">
-        <Icon name="ArrowLeft" weight="bold" className="h-3 w-3" />
+        <ArrowLeft weight="bold" className="h-3 w-3" />
         <span class="text-sm font-semibold underline decoration-orange-900/40">benborgers.com</span>
       </a>
     </div>
