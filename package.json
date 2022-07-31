@@ -9,6 +9,7 @@
     "preview": "astro preview"
   },
   "devDependencies": {
+    "@astrojs/mdx": "^0.4.0",
     "@astrojs/react": "^0.4.2",
     "@astrojs/tailwind": "^0.2.5",
     "@tailwindcss/typography": "^0.5.4",

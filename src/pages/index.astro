@@ -2,6 +2,9 @@
 import Base from '../components/Base.astro'
 import LoadAlpine from '../components/LoadAlpine.astro'
 import Icon from '../components/Icon'
+
+const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
+  .sort((a, b) => new Date(a.frontmatter.date) > new Date(b.frontmatter.date) ? -1 : 1)
 ---
 
 <Base title="Ben Borgers" bg="bg-neutral-50">
@@ -100,6 +103,30 @@ import Icon from '../components/Icon'
           <p class="text-neutral-400 italic text-sm font-medium">Summer 2020</p>
         </li>
       </ul>
+    </div>
+
+    <div class="mt-12">
+      {timelineEntries.map((entry, i) => (
+      <div class="grid grid-cols-[max-content,1fr] gap-x-4 mt-11">
+        <div>
+          <div class="h-7 w-7 bg-neutral-200 rounded-full flex items-center justify-center">
+            <Icon name="CalendarBlank" weight="bold" className="h-4 w-4 text-neutral-600" />
+          </div>
+          {i !== timelineEntries.length -1 && (
+          <div class="border-l border-neutral-200 border-dashed h-full mt-2 ml-[calc(0.875rem-0.5px)]" />
+          )}
+        </div>
+        <div class="mt-1">
+          <p class="text-neutral-400 font-semibold text-sm tracking-tight">
+            {new Date(entry.frontmatter.date)
+            .toLocaleString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}
+          </p>
+          <div class="mt-2">
+            <entry.default />
+          </div>
+        </div>
+      </div>
+      ))}
     </div>
   </div>
 </div>
