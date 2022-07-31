@@ -2,6 +2,8 @@
 import Base from '../components/Base.astro'
 import LoadAlpine from '../components/LoadAlpine.astro'
 import { TwitterLogo, PaperPlaneTilt, ArrowDown, ArrowSquareOut, CalendarBlank } from 'phosphor-react'
+import ExpandableSection from '../components/index/ExpandableSection.astro'
+import ExpandableSectionEntry from '../components/index/ExpandableSectionEntry.astro'
 
 const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
   .sort((a, b) => new Date(a.frontmatter.date) > new Date(b.frontmatter.date) ? -1 : 1)
@@ -33,77 +35,41 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
       </div>
     </div>
 
-    <div x-data="{ expanded: false }" x-show="expanded" x-collapse.min.230px x-cloak class="
-        mt-8 bg-neutral-200/50 p-4 rounded-xl
-        overflow-hidden relative
-        [&_a]:underline [&_a]:font-medium
-      ">
-      <div x-show="!expanded"
-        class="h-1/2 absolute inset-x-0 bottom-0 bg-gradient-to-b from-neutral-200/0 to-neutral-200 pointer-events-none" />
-      <button
-        class="text-white bg-neutral-700 px-3 py-0.5 rounded-full absolute bottom-4 right-4 flex items-center gap-1 border-2 border-white transition-opacity"
-        x-bind:class="{ 'opacity-0': expanded }" x-on:click="expanded = true">
-        <span class=" text-sm font-semibold">See More</span>
-        <ArrowDown weight="fill" />
-      </button>
-
-      <p class="font-semibold text-neutral-900">Work Experience</p>
-      <ul class="mt-3 space-y-3 list-disc ml-6 text-neutral-600">
-        <li>
-          <p>
-            Internship at <a href="https://lu.ma" class="text-[#de3163]" target="_blank">Luma</a> and <a
-              href="https://glow.app" class="text-[#bb2dc7]" target="_blank">Glow</a> working on web apps and their
-            Chrome extension.
-          </p>
-          <p class="text-neutral-400 italic text-sm font-medium">Summer 2022</p>
-        </li>
-        <li>
-          <p>
-            Freelance development in Vue for <a href="https://buttondown.email" class="text-[#0069ff]"
-              target="_blank">Buttondown</a>, an email newsletter provider.
-          </p>
-          <p class="text-neutral-400 italic text-sm font-medium block">Summer 2021 - present</p>
-        </li>
-        <li>
-          <p>
-            Website for <a href="https://uphamdesign.com" class="text-[#034f63]" target="_blank">Upham Design</a>, a
-            creative collective
-            run by a family friend.
-          </p>
-          <p class="text-neutral-400 italic text-sm font-medium block">Fall 2021 - present</p>
-        </li>
-        <li>
-          <p>
-            Wrote code that powered TV graphics for STU National Championships, a Brazilian
-            skateboarding championship.
-          </p>
-          <p class="text-neutral-400 italic text-sm font-medium block">Winter 2021</p>
-        </li>
-        <li>
-          <p>
-            Developed a course registration and management app in Laravel for <a href="https://diyiboston.com"
-              class="text-[#5850ec]" target="_blank">Diyi</a>, an online school based in the Boston area.
-          </p>
-          <p class="text-neutral-400 italic text-sm font-medium block">Summer 2020</p>
-        </li>
-        <li>
-          <p>Interned at
-            <a href="https://www.ibm.com/products/guardium-insights" class="text-[#0031b4]" target="_blank">
-              IBM Security</a>
-            for two summers,
-            working on a new security offering for enterprise.
-          </p>
-          <p class="text-neutral-400 italic text-sm font-medium">Summer 2019, Summer 2020</p>
-        </li>
-        <li>
-          <p>
-            Full-stack development using React and Node.js for <a href="https://rep.ly" class="text-neutral-900"
-              target="_blank">Rep.ly</a>.
-          </p>
-          <p class="text-neutral-400 italic text-sm font-medium">Summer 2020</p>
-        </li>
-      </ul>
-    </div>
+    <ExpandableSection title="Work Experience">
+      <ExpandableSectionEntry subtitle="Summer 2022">
+        Internship at <a href="https://lu.ma" class="text-[#de3163]" target="_blank">Luma</a> and <a
+          href="https://glow.app" class="text-[#bb2dc7]" target="_blank">Glow</a> working on web apps and their
+        Chrome extension.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry subtitle="Summer 2021 - present">
+        Freelance development in Vue for <a href="https://buttondown.email" class="text-[#0069ff]"
+          target="_blank">Buttondown</a>, an email newsletter provider.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry subtitle="Fall 2021 - present">
+        Website for <a href="https://uphamdesign.com" class="text-[#034f63]" target="_blank">Upham Design</a>, a
+        creative collective
+        run by a family friend.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry subtitle="Winter 2021">
+        Wrote code that powered TV graphics for STU National Championships, a Brazilian
+        skateboarding championship.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry subtitle="Summer 2020">
+        Developed a course registration and management app in Laravel for <a href="https://diyiboston.com"
+          class="text-[#5850ec]" target="_blank">Diyi</a>, an online school based in the Boston area.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry subtitle="Summer 2019, Summer 2020">
+        Interned at
+        <a href="https://www.ibm.com/products/guardium-insights" class="text-[#0031b4]" target="_blank">
+          IBM Security</a>
+        for two summers,
+        working on a new security offering for enterprise.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry subtitle="Summer 2020">
+        Full-stack development using React and Node.js for <a href="https://rep.ly" class="text-neutral-900"
+          target="_blank">Rep.ly</a>.
+      </ExpandableSectionEntry>
+    </ExpandableSection>
 
     <div class="mt-12 grid grid-cols-2 gap-3">
       <a href="/posts"

@@ -1,0 +1,12 @@
+---
+const { subtitle } = Astro.props
+---
+
+<li>
+  <p>
+    <slot />
+  </p>
+  <p class="text-neutral-400 italic text-sm font-medium">
+    {subtitle}
+  </p>
+</li>
