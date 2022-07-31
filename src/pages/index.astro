@@ -9,7 +9,7 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
 
 <Base title="Ben Borgers" bg="bg-neutral-50">
 <LoadAlpine />
-<div class="p-4 pb-20 pt-8 sm:pt-36">
+<div class="p-4 pb-36 pt-8 sm:pt-36">
   <div class="max-w-screen-sm mx-auto text-neutral-700">
     <div class="flex items-start gap-6">
       <img src="/me.jpg" class="h-16 rounded-full" />
@@ -19,13 +19,13 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
           I’m a rising sophomore at Tufts University studying computer science.
         </p>
         <div class="mt-2 flex flex-wrap gap-x-2">
-          <a href="https://twitter.com/benborgers" target="_blank"
-            class="bg-sky-500 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2">
+          <a href="https://twitter.com/benborgers" target="_blank" class="bg-sky-500 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2
+            hover:ring-2 hover:ring-offset-2 hover:ring-sky-500 hover:ring-offset-neutral-50 transition-shadow">
             <Icon name="TwitterLogo" weight="fill" />
             <span>Twitter</span>
           </a>
-          <a href="/contact"
-            class="bg-rose-600 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2">
+          <a href="/contact" class="bg-rose-600 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2
+            hover:ring-2 hover:ring-offset-2 hover:ring-rose-600 hover:ring-offset-neutral-50 transition-shadow">
             <Icon name="PaperPlaneTilt" weight="fill" />
             <span>Contact</span>
           </a>
@@ -105,9 +105,37 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
       </ul>
     </div>
 
-    <div class="mt-12">
+    <div class="mt-12 grid grid-cols-2 gap-3">
+      <a href="/posts"
+        class="bg-rose-600 hover:ring-2 hover:ring-offset-2 hover:ring-rose-600 hover:ring-offset-neutral-50 transition-shadow p-3 rounded-xl flex items-start gap-2">
+        <div class="mt-px">
+          <Icon name="ArrowSquareOut" weight="bold" className="h-4 w-4 text-white" />
+        </div>
+        <div>
+          <p class="text-white font-bold text-sm">Read 180 Daily Blog Posts</p>
+          <p class="text-white/70 text-sm font-medium leading-tight">
+            As an experiment, I wrote a blog post every day from January 13th
+            until July 11th.
+          </p>
+        </div>
+      </a>
+      <a href="https://bite.guide" target="_blank"
+        class="bg-emerald-900 hover:ring-2 hover:ring-offset-2 hover:ring-emerald-900 hover:ring-offset-neutral-50 transition-shadow p-3 rounded-xl flex items-start gap-2">
+        <div class="mt-px">
+          <Icon name="ArrowSquareOut" weight="bold" className="h-4 w-4 text-white" />
+        </div>
+        <div>
+          <p class="text-white font-bold text-sm">Bite</p>
+          <p class="text-white/70 text-sm font-medium leading-tight">
+            A review site where my girlfriend and I are reviewing restaurants and things to do.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <div class="mt-6 space-y-11">
       {timelineEntries.map((entry, i) => (
-      <div class="grid grid-cols-[max-content,1fr] gap-x-4 mt-11">
+      <div class="grid grid-cols-[max-content,1fr] gap-x-4">
         <div>
           <div class="h-7 w-7 bg-neutral-200 rounded-full flex items-center justify-center">
             <Icon name="CalendarBlank" weight="bold" className="h-4 w-4 text-neutral-600" />
