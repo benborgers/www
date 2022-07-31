@@ -5,10 +5,11 @@ import { X, Plus } from "phosphor-react";
 
 export default function () {
   return (
-    <div className="max-w-screen-sm mx-auto text-gray-700">
+    <div className="max-w-screen-sm mx-auto text-neutral-700">
       <div className="p-4 sm:pt-12 pb-32">
-        <div>
+        <div className="text-neutral-900">
           <p>These are the ... </p>
+          <p>(as of 2021)</p>
         </div>
 
         <div>
@@ -153,7 +154,7 @@ export default function () {
 
 const Heading: React.FC = ({ children }) => {
   return (
-    <h1 className="mt-12 font-black text-3xl tracking-tight text-gray-900">
+    <h1 className="mt-12 font-bold text-2xl tracking-tight text-neutral-800 font-serif italic">
       {children}
     </h1>
   );
@@ -164,16 +165,16 @@ const Case: React.FC<{ name: string; bullets: string[] }> = ({
   bullets,
 }) => {
   return (
-    <div className="block mt-3 border-2 border-gray-200 bg-gray-100 pt-3 pb-2 px-3 w-full rounded-lg">
+    <div className="block mt-3 bg-neutral-200/50 pt-3 pb-2 px-3 w-full rounded-lg">
       <Disclosure>
         {({ open }) => (
           <>
             <Disclosure.Button className="group">
               <div className="flex items-center space-x-2">
-                <div className="group-hover:bg-gray-200 group-hover:text-gray-900 transition-colors p-1 rounded">
+                <div className="text-neutral-500 group-hover:bg-neutral-200 group-hover:text-neutral-700 transition-colors p-1 rounded">
                   {open ? <X weight="bold" /> : <Plus weight="bold" />}
                 </div>
-                <p className="mt-0.5 text-left font-bold text-gray-800">
+                <p className="mt-0.5 text-left font-semibold text-neutral-800">
                   {name}
                 </p>
               </div>
@@ -183,7 +184,7 @@ const Case: React.FC<{ name: string; bullets: string[] }> = ({
               {open && (
                 <Disclosure.Panel
                   static
-                  className="text-gray-600 overflow-hidden"
+                  className="text-neutral-600 overflow-hidden"
                   as={motion.div}
                   initial={{ height: 0 }}
                   animate={{ height: "auto" }}
