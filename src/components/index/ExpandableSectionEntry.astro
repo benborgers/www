@@ -3,10 +3,13 @@ const { subtitle } = Astro.props
 ---
 
 <li>
-  <p>
+  <p class="[&_a]:underline [&_a]:font-medium">
     <slot />
   </p>
+
+  {subtitle && (
   <p class="text-neutral-400 italic text-sm font-medium">
     {subtitle}
   </p>
+  )}
 </li>

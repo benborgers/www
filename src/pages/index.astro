@@ -35,7 +35,7 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
       </div>
     </div>
 
-    <ExpandableSection title="Work Experience">
+    <ExpandableSection title="Work Experience" className="mt-8">
       <ExpandableSectionEntry subtitle="Summer 2022">
         Internship at <a href="https://lu.ma" class="text-[#de3163]" target="_blank">Luma</a> and <a
           href="https://glow.app" class="text-[#bb2dc7]" target="_blank">Glow</a> working on web apps and their
@@ -71,34 +71,50 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
       </ExpandableSectionEntry>
     </ExpandableSection>
 
-    <div class="mt-12 grid grid-cols-2 gap-3">
-      <a href="/posts"
-        class="bg-rose-600 hover:ring-2 hover:ring-offset-2 hover:ring-rose-600 hover:ring-offset-neutral-50 transition-shadow p-3 rounded-xl flex items-start gap-2">
-        <div class="mt-px">
-          <ArrowSquareOut weight="bold" className="text-white" />
-        </div>
-        <div>
-          <p class="text-white font-bold text-sm">180 Daily Blog Posts</p>
-          <p class="mt-1 text-white/70 text-sm font-medium leading-tight">
-            As an experiment, I wrote a blog post every day and stopped after 180 days.
-          </p>
-        </div>
-      </a>
-      <a href="https://bite.guide" target="_blank"
-        class="bg-emerald-900 hover:ring-2 hover:ring-offset-2 hover:ring-emerald-900 hover:ring-offset-neutral-50 transition-shadow p-3 rounded-xl flex items-start gap-2">
-        <div class="mt-px">
-          <ArrowSquareOut weight="bold" className="text-white" />
-        </div>
-        <div>
-          <p class="text-white font-bold text-sm">Bite</p>
-          <p class="mt-1 text-white/70 text-sm font-medium leading-tight">
-            A site where my girlfriend and I review restaurants and things to do.
-          </p>
-        </div>
-      </a>
-    </div>
+    <ExpandableSection title="Personal Projects" className="mt-4">
+      <ExpandableSectionEntry>
+        As an experiment, I wrote <a href="/posts" class="text-rose-600">daily blog posts</a> for 180 days.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry>
+        <a href="https://bite.guide" class="text-emerald-800" target="_blank">Bite</a>,
+        a site where my girlfriend and I review restaurants and things to do.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry>
+        <a href="/posts/war-room" class="text-cyan-600">War Room</a>,
+        a social to-do list I built for my friends and I.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry>
+        <a href="/posts/tmrw" class="text-neutral-800">tmrw</a>,
+        a calendar-based to-do list app for myself.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry>
+        <a href="https://bagel.institute" class="text-violet-700" target="_blank">Bagel Institute</a>,
+        an app I built for my dad to use for college teaching.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry>
+        <a href="https://opensheet.elk.sh" class="text-neutral-800" target="_blank">opensheet</a>,
+        an open-source hosted Google Sheets API that receives about 15 million hits/month.
+        I’ve also written a <a href="/posts/google-sheets-json">blog post</a> on how to use it.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry>
+        <a href="https://vault.elk.sh" class="text-neutral-800" target="_blank">Vault</a>,
+        a password manager I built for myself. You can use it too!
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry>
+        <a href="/posts/blocks" class="text-red-600">Blocks</a>,
+        a schedule app I built for my high school (2019 - 2021) which was used by over 2,000 students and teachers.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry>
+        <a href="/posts/cornflakes" class="text-amber-600">Cornflakes</a>,
+        a simple and privacy-focused email newsletter tool.
+      </ExpandableSectionEntry>
+      <ExpandableSectionEntry>
+        <a href="https://emojicdn.elk.sh" class="text-purple-500" target="_blank">emojicdn</a>,
+        an API for getting PNG images of emojis.
+      </ExpandableSectionEntry>
+    </ExpandableSection>
 
-    <div class="mt-6 space-y-11">
+    <div class="mt-12 space-y-11">
       {timelineEntries.map((entry, i) => (
       <div class="grid grid-cols-[max-content,1fr] gap-x-4">
         <div>
