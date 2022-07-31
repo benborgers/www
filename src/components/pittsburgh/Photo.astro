@@ -3,7 +3,7 @@ const { filename, caption, hideCaption = false, className = '' } = Astro.props
 ---
 
 <figure class={`bg-white border border-neutral-100 p-2 sm:p-4 shadow-lg h-max ${className}`}>
-  <img src={`/pittsburgh/${filename}.jpeg`} alt={caption} />
+  <img src={`/pittsburgh/${filename}.jpeg`} alt={caption} loading="lazy" />
   {!hideCaption && (
   <figcaption
     class="mt-2 sm:mt-4 text-center text-sm sm:text-base text-neutral-600 font-[Kalam] font-bold tracking-tight sm:leading-tight">
