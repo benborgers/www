@@ -3,14 +3,23 @@ import Base from '../components/Base.astro'
 
 import TextContainer from '../components/pittsburgh/TextContainer.astro'
 import Photo from '../components/pittsburgh/Photo.astro'
+import Icon from '../components/Icon'
 ---
 
 <Base title="Pittsburgh Trip, Summer 2022" bg="bg-orange-50">
 <link slot="head" rel="stylesheet"
   href="https://api.fontshare.com/v2/css?f[]=alpino@400,700,900,500&amp;f[]=kalam@700,400&amp;display=swap" />
 
-<div class="overflow-hidden p-4 pb-36 text-neutral-700 text-lg">
+<div class="overflow-hidden p-4 pt-16 pb-36 text-neutral-700 text-lg">
   <div class="max-w-screen-sm mx-auto">
+    <div
+      class="fixed top-0 left-0 right-0 sm:right-auto p-2 sm:p-4 bg-orange-50 rounded-br-none sm:rounded-br-xl z-50 flex justify-center">
+      <a href="/" class="flex items-center gap-2">
+        <Icon name="ArrowLeft" weight="bold" className="h-3 w-3" />
+        <span class="text-sm font-semibold underline decoration-orange-900/40 text-orange-900">benborgers.com</span>
+      </a>
+    </div>
+
     <div class="mt-8">
       <div class="relative max-w-max mx-auto">
         <p class="relative text-6xl text-center font-black text-neutral-900 tracking-tight font-[Alpino,sans-serif]">
@@ -48,9 +57,8 @@ import Photo from '../components/pittsburgh/Photo.astro'
         talks. One was about the app that I built for teaching college
         classes that he’s been using for two years:
         <a href="https://bagel.institute" target="_blank" class="underline">
-          Bagel Institute
-        </a>
-        . I got to come along and give half of the talk!
+          Bagel Institute</a>.
+        I got to come along and give half of the talk!
       </p>
       <p class="pt-8">
         But first, it was the first flight I’ve taken since before Covid:
@@ -124,9 +132,8 @@ import Photo from '../components/pittsburgh/Photo.astro'
         <span class="inline-block whitespace-nowrap pl-1">
           <img src="/pittsburgh/decorative/duo.svg" class="inline-block h-8" />
           <span>Duolingo</span>
-        </span>
-        , the language learning app that it turns out is headquartered in
-        Pittsburgh.
+        </span>,
+        the language learning app that it turns out is headquartered in Pittsburgh.
       </p>
       <p>
         They have a pop-up shop attached to their headquarters, and my dad
