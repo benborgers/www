@@ -8,11 +8,11 @@ import { ArrowDown, ArrowUp } from 'phosphor-react'
   <div x-bind:class="{'opacity-0': expanded }"
     class="h-1/2 absolute inset-x-0 bottom-0 bg-gradient-to-b from-neutral-100/0 to-neutral-100 pointer-events-none transition-opacity" />
   <button
-    class="text-white bg-neutral-700 px-3 py-0.5 rounded-full absolute bottom-4 right-4 flex items-center gap-1 border-2 border-white transition-opacity"
+    class="text-white bg-neutral-700 px-3 py-0.5 rounded-full absolute bottom-4 right-4 flex items-center gap-1 border-2 border-white"
     x-on:click="expanded = !expanded">
     <span class="text-sm font-semibold" x-show="!expanded">See More</span>
     <ArrowDown weight="fill" x-show="!expanded" />
-    <span class="text-sm font-semibold" x-show="expanded">Close</span>
+    <span class="text-sm font-semibold" x-show="expanded">See Less</span>
     <ArrowUp weight="fill" x-show="expanded" />
   </button>
 
