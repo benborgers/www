@@ -21,7 +21,7 @@ const { title, ogImage, bg = "" } = Astro.props
   <slot name="head" />
 </head>
 
-<body class={`antialiased ${bg ?? 'bg-white'}`}>
+<body class={`antialiased ${ bg ?? 'bg-white' }`}>
   <slot />
 </body>
 
