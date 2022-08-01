@@ -1,5 +1,13 @@
 ---
 import Base from '../components/Base.astro'
+import { allBlogPosts } from '../lib/posts';
+
+const posts =
+  (await allBlogPosts(
+    await Astro.glob('../content/posts/**/*.md'),
+    await Astro.glob('../content/posts/ghost.json')
+  ))
+    // .filter(post => post.technical === false)
 ---
 
 <Base title="Ben Borgers’ Blog">
@@ -8,4 +16,14 @@ import Base from '../components/Base.astro'
 <link slot="head"
   href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
   rel="stylesheet" />
+
+<div>
+  {posts.map(post => (
+  <div>
+    {post.technical ? 'TECHNICAL:' : ''}
+    {post.title}
+    {post.date.toLocaleString('en-US', { timeZone: 'UTC' })}
+  </div>
+  ))}
+</div>
 </Base>
