@@ -9,7 +9,7 @@ First, open Finder (it should be the leftmost app in your app dock), and locate 
 
 Once you’ve found the HEIC image, right-click on it (usually that’s a two-finger click), hover over Quick Actions, and then click on Convert Image.
 
-![](/img/posts/heic-to-jpeg.png)
+![](/markdown-posts/heic-to-jpeg.png)
 
 From there, choose your options and click Convert to JPEG.
 

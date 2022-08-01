@@ -5,7 +5,7 @@ date: 2021-12-29
 
 HTTP Basic authentication is an authentication method that’s built into the browser, that you can use with your [Remix](https://remix.run) apps. Basic authentication often looks like this:
 
-![](/img/posts/remix-basic-auth.png)
+![](/markdown-posts/remix-basic-auth.png)
 
 I usually use it for password-protecting sites where I should be the only person seeing it, since Basic authentication doesn’t require building a login form so it’s quick and easy to implement.
 
@@ -15,7 +15,7 @@ To start password-protecting a page in a Remix app, we’ll define a header so t
 // app/routes/my-protected-route.jsx
 
 export const headers = () => ({
-    "WWW-Authenticate": "Basic",
+  "WWW-Authenticate": "Basic",
 });
 ```
 
@@ -25,18 +25,16 @@ Now, we’ll write a function on the page that defines whether someone is author
 // app/routes/my-protected-route.jsx
 
 const isAuthorized = (request) => {
-    const header = request.headers.get("Authorization");
+  const header = request.headers.get("Authorization");
 
-    if (!header) return false;
+  if (!header) return false;
 
-    const base64 = header.replace("Basic ", "");
-    const [username, password] = Buffer.from(base64, "base64")
-        .toString()
-        .split(":");
+  const base64 = header.replace("Basic ", "");
+  const [username, password] = Buffer.from(base64, "base64")
+    .toString()
+    .split(":");
 
-    return (
-        username === process.env.USERNAME && password === process.env.PASSWORD
-    );
+  return username === process.env.USERNAME && password === process.env.PASSWORD;
 };
 ```
 
@@ -58,16 +56,16 @@ If the visitor* is* authorized, we’ll load the data that we’re putting behin
 import { json } from "remix";
 
 export const loader = async ({ request }) => {
-    if (!isAuthorized(request)) {
-        return json({ authorized: false }, { status: 401 });
-    }
+  if (!isAuthorized(request)) {
+    return json({ authorized: false }, { status: 401 });
+  }
 
-    // Load data for password-protected page here.
+  // Load data for password-protected page here.
 
-    return json({
-        authorized: true,
-        // Include extra data for password-protected page here.
-    });
+  return json({
+    authorized: true,
+    // Include extra data for password-protected page here.
+  });
 };
 ```
 
@@ -79,18 +77,18 @@ Now, having loaded the data we need (or not, if the visitor isn’t logged in), 
 import { json, useLoaderData } from "remix";
 
 export default function () {
-    const data = useLoaderData();
+  const data = useLoaderData();
 
-    if (!data.authorized) {
-        return <p>Unauthorized</p>;
-    }
+  if (!data.authorized) {
+    return <p>Unauthorized</p>;
+  }
 
-    return (
-        <div>
-            {/* Your logged-in page here, using the
+  return (
+    <div>
+      {/* Your logged-in page here, using the
           extra data you loaded in your loader. */}
-        </div>
-    );
+    </div>
+  );
 }
 ```
 
