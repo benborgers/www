@@ -1,0 +1,26 @@
+---
+import Base from '../../components/Base.astro'
+import { allBlogPosts } from '../../lib/posts'
+
+export async function getStaticPaths() {
+  const posts = await allBlogPosts(
+    await Astro.glob('../../content/posts/**/*.md'),
+    await Astro.glob('../../content/posts/ghost.json')
+  )
+
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }))
+}
+
+const post = Astro.props.post
+---
+
+<Base title={post.title}>
+{post.html ? (
+<Fragment set:html={post.html} />
+) : (
+<post.component />
+)}
+</Base>

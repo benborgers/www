@@ -1,11 +1,11 @@
 ---
-import Base from '../components/Base.astro'
-import { allBlogPosts } from '../lib/posts';
+import Base from '../../components/Base.astro'
+import { allBlogPosts } from '../../lib/posts'
 
 const posts =
   (await allBlogPosts(
-    await Astro.glob('../content/posts/**/*.md'),
-    await Astro.glob('../content/posts/ghost.json')
+    await Astro.glob('../../content/posts/**/*.md'),
+    await Astro.glob('../../content/posts/ghost.json')
   ))
     // .filter(post => post.technical === false)
 ---
