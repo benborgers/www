@@ -40,7 +40,9 @@ export const allBlogPosts = async (files, ghosts): Promise<BlogPost[]> => {
             pivot.post_id === object.id &&
             pivot.tag_id === "6201374c0476c71d38b9a1e4" // Ghost ID for '#technical' tag
         ),
-        html: object.html,
+        html: object.html
+          .replace(/__GHOST_URL__\/content\/images/g, "/ghost")
+          .replace(/__GHOST_URL__/g, "/posts"),
       };
 
       return post;
