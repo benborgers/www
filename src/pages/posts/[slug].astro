@@ -1,5 +1,6 @@
 ---
 import Base from '../../components/Base.astro'
+import BlogLayout from '../../components/BlogLayout.astro'
 import { allBlogPosts } from '../../lib/posts'
 
 export async function getStaticPaths() {
@@ -18,9 +19,22 @@ const post = Astro.props.post
 ---
 
 <Base title={post.title}>
-{post.html ? (
-<Fragment set:html={post.html} />
-) : (
-<post.component />
-)}
+<BlogLayout>
+  <div class="space-y-1 sm:space-y-2">
+    <h1 class="font-fraunces font-black text-3xl text-zinc-900">{post.title}</h1>
+    <p class="text-zinc-400 font-medium">{post.date.toLocaleString('en-US', { timeZone: 'UTC', month: 'long', day:
+      'numeric', year:
+      'numeric'})}</p>
+  </div>
+
+  <div class="mt-8" />
+
+  <div class="prose prose-zinc prose-rose">
+    {post.html ? (
+    <Fragment set:html={post.html} />
+    ) : (
+    <post.component />
+    )}
+  </div>
+</BlogLayout>
 </Base>
