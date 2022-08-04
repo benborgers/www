@@ -8,18 +8,29 @@ const posts =
     await Astro.glob('../../content/posts/**/*.md'),
     await Astro.glob('../../content/posts/ghost.json')
   ))
-    // .filter(post => post.technical === false)
+    .filter(post => post.technical === false)
 ---
 
 <Base title="Ben Borgers’ Blog">
 <BlogLayout>
-  <div class="space-y-1">
-    {posts.map(post => (
-    <a href={`/posts/${post.slug}`} class="block underline decoration-gray-300">
-      {post.technical ? 'TECHNICAL:' : ''}
-      {post.title}
-      {post.date.toLocaleString('en-US', { timeZone: 'UTC' })}
-    </a>
+  <div class="space-y-2">
+    {posts.map((post, i) => (
+    <>
+      {((i === 0) || posts[i - 1].date.getMonth() !== post.date.getMonth()) && (
+      <h2 class="text-lg text-zinc-900 font-extrabold pt-8 first-of-type:pt-0">
+        {post.date.toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', year: 'numeric'})}
+      </h2>
+      )}
+
+      <div class="flex justify-between ml-4">
+        <a href={`/posts/${post.slug}`} class="block underline decoration-zinc-300">
+          {post.title}
+        </a>
+        <p class="text-zinc-300">
+          {post.date.toLocaleString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' })}
+        </p>
+      </div>
+    </>
     ))}
   </div>
 </BlogLayout>
