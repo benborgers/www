@@ -14,9 +14,14 @@ const posts =
 <Base title="Ben Borgers’ Blog">
 <BlogLayout>
   <div class="space-y-2">
-    {posts.map((post, i) => (
+    {posts.map((post, i) => {
+    const prevPostDate = posts[i - 1]?.date
+    prevPostDate?.setHours(posts[i - 1 ].date.getHours() - 5)
+
+    return (
     <>
-      {((i === 0) || posts[i - 1].date.getMonth() !== post.date.getMonth()) && (
+      {((i === 0) || prevPostDate.getMonth() !== post.date.getMonth())
+      && (
       <h2 class="text-lg text-zinc-900 font-extrabold pt-8 first-of-type:pt-0">
         {post.date.toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', year: 'numeric'})}
       </h2>
@@ -31,7 +36,8 @@ const posts =
         </p>
       </div>
     </>
-    ))}
+    )
+    })}
   </div>
 </BlogLayout>
 </Base>
