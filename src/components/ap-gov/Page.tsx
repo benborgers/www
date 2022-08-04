@@ -170,8 +170,8 @@ const Case: React.FC<{ name: string; bullets: string[] }> = ({
         {({ open }) => (
           <>
             <Disclosure.Button className="group">
-              <div className="flex items-center space-x-2">
-                <div className="text-neutral-500 group-hover:bg-neutral-200 group-hover:text-neutral-700 transition-colors p-1 rounded">
+              <div className="flex items-start space-x-2">
+                <div className="mt-[0.08rem] text-neutral-500 group-hover:bg-neutral-200 group-hover:text-neutral-700 transition-colors p-1 rounded">
                   {open ? <X weight="bold" /> : <Plus weight="bold" />}
                 </div>
                 <p className="mt-0.5 text-left font-semibold text-neutral-800">
