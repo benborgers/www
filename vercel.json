@@ -17,7 +17,8 @@
       "has": [
         {
           "type": "query",
-          "key": "technical"
+          "key": "technical",
+          "value": "undefined"
         }
       ]
     }
