@@ -1,7 +1,7 @@
 ---
 import Base from '../../components/Base.astro'
 import BlogLayout from '../../components/BlogLayout.astro'
-import { CaretLeft } from 'phosphor-react'
+import { CaretLeft, ArrowLeft, ArrowRight } from 'phosphor-react'
 import { allBlogPosts } from '../../lib/posts'
 
 export async function getStaticPaths() {
@@ -10,13 +10,21 @@ export async function getStaticPaths() {
     await Astro.glob('../../content/posts/ghost.json')
   )
 
-  return posts.map(post => ({
-    params: { slug: post.slug },
-    props: { post }
-  }))
+  return posts.map(post => {
+    const postsOfSameType = posts.filter(p => p.technical === post.technical)
+
+    return {
+      params: { slug: post.slug },
+      props: {
+        post,
+        previousPost: postsOfSameType?.[postsOfSameType.indexOf(post) + 1],
+        nextPost: postsOfSameType?.[postsOfSameType.indexOf(post) - 1]
+      }
+    }
+  })
 }
 
-const post = Astro.props.post
+const { post, previousPost, nextPost } = Astro.props
 ---
 
 <Base title={post.title} bg="bg-zinc-50">
@@ -57,5 +65,26 @@ const post = Astro.props.post
     <post.component />
     )}
   </div>
+
+  {!post.technical && (
+  <div class="mt-12 flex justify-between space-x-4">
+    <div>
+      {previousPost && (
+      <a href={`/posts/${previousPost.slug}`} class="flex items-start space-x-2 text-zinc-400">
+        <ArrowLeft weight="bold" size={14} className="mt-[0.1rem] [&_polyline]:[stroke-width:28]" />
+        <span class="italic text-sm font-bold leading-tight">{previousPost.title}</span>
+      </a>
+      )}
+    </div>
+    <div>
+      {nextPost && (
+      <a href={`/posts/${nextPost.slug}`} class="flex items-start space-x-2 text-zinc-400">
+        <span class="italic text-sm font-bold leading-tight">{nextPost.title}</span>
+        <ArrowRight weight="bold" size={14} className="mt-[0.1rem] [&_polyline]:[stroke-width:28]" />
+      </a>
+      )}
+    </div>
+  </div>
+  )}
 </BlogLayout>
 </Base>
