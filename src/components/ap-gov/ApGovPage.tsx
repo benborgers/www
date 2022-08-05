@@ -1,15 +1,38 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Plus } from "phosphor-react";
+import { X, Plus, ArrowLeft } from "phosphor-react";
 
 export default function () {
   return (
     <div className="max-w-screen-sm mx-auto text-neutral-700">
-      <div className="p-4 sm:pt-12 pb-32">
-        <div className="text-neutral-900">
-          <p>These are the ... </p>
-          <p>(as of 2021)</p>
+      <div className="p-4 sm:pt-24 pb-32">
+        <div>
+          <a
+            href="/"
+            class="flex items-center gap-2 text-neutral-400 max-w-max hover:bg-neutral-200/50 transition-colors px-2 py-1 rounded-lg -ml-2"
+          >
+            <ArrowLeft weight="bold" size={12} />
+            <span class="text-sm font-semibold">benborgers.com</span>
+          </a>
+        </div>
+
+        <div className="mt-4 prose prose-neutral">
+          <p>
+            This page lists the court cases that we had to know for the AP Gov
+            exam (as of 2021).
+          </p>
+          <p>
+            I took AP Gov in my senior year of high school, and liked it a lot.
+            I made this page in May of 2021 as a way of studying for the AP
+            test.
+          </p>
+          <p>
+            It eventually got lost from my website, but now (in July of 2022)
+            I’ve copied over the original page and republished it. I quite liked
+            thinking about these court cases, so I thought they’d be nice to
+            have here.
+          </p>
         </div>
 
         <div>
@@ -171,7 +194,7 @@ const Case: React.FC<{ name: string; bullets: string[] }> = ({
           <>
             <Disclosure.Button className="group">
               <div className="flex items-start space-x-2">
-                <div className="mt-[0.08rem] text-neutral-500 group-hover:bg-neutral-200 group-hover:text-neutral-700 transition-colors p-1 rounded">
+                <div className="mt-[0.08rem] text-neutral-500 group-hover:bg-neutral-200 transition-colors p-1 rounded">
                   {open ? <X weight="bold" /> : <Plus weight="bold" />}
                 </div>
                 <p className="mt-0.5 text-left font-semibold text-neutral-800">
