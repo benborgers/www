@@ -9,17 +9,6 @@
       "source": "/blog/(.*?)",
       "destination": "/posts/$1",
       "permanent": true
-    },
-    {
-      "source": "/posts",
-      "has": [
-        {
-          "type": "query",
-          "key": "technical"
-        }
-      ],
-      "destination": "/technical-posts",
-      "permanent": true
     }
   ],
   "cleanUrls": true,
