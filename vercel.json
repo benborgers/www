@@ -1,7 +1,7 @@
 {
   "redirects": [
     {
-      "source": "/blog/:slug",
+      "source": "/blog/:slug.*",
       "destination": "/posts/:slug",
       "permanent": true
     }
