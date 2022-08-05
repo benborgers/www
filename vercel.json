@@ -11,24 +11,6 @@
       "permanent": true
     }
   ],
-  "rewrites": [
-    {
-      "source": "/swipes",
-      "destination": "https://mealswipes.netlify.app"
-    },
-    {
-      "source": "/swipes/(.*)",
-      "destination": "https://mealswipes.netlify.app/$1"
-    },
-    {
-      "source": "/slowmochristian",
-      "destination": "https://slowmochristian.netlify.app"
-    },
-    {
-      "source": "/slowmochristian/(.*)",
-      "destination": "https://slowmochristian.netlify.app/$1"
-    }
-  ],
   "cleanUrls": true,
   "trailingSlash": false,
   "github": { "silent": true }
