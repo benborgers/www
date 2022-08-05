@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/blog",
+      "destination": "/posts",
+      "permanent": true
+    },
+    {
       "source": "/blog/(.*?)",
       "destination": "/posts/$1",
       "permanent": true
@@ -8,12 +13,20 @@
   ],
   "rewrites": [
     {
-      "source": "/swipes/(?<path>.*)",
-      "destination": "https://mealswipes.netlify.app/$path"
+      "source": "/swipes",
+      "destination": "https://mealswipes.netlify.app"
     },
     {
-      "source": "/slowmochristian/(?<path>.*)",
-      "destination": "https://slowmochristian.netlify.app/$path"
+      "source": "/swipes/(.*)",
+      "destination": "https://mealswipes.netlify.app/$1"
+    },
+    {
+      "source": "/slowmochristian",
+      "destination": "https://slowmochristian.netlify.app"
+    },
+    {
+      "source": "/slowmochristian/(.*)",
+      "destination": "https://slowmochristian.netlify.app/$1"
     }
   ],
   "cleanUrls": true,
