@@ -2,6 +2,7 @@
 import Base from '../../components/Base.astro'
 import BlogLayout from '../../components/BlogLayout.astro'
 import { allBlogPosts } from '../../lib/posts'
+import { House } from 'phosphor-react'
 
 export async function getStaticPaths() {
   const posts = await allBlogPosts(
@@ -18,13 +19,19 @@ export async function getStaticPaths() {
 const post = Astro.props.post
 ---
 
-<Base title={post.title}>
+<Base title={post.title} bg="bg-zinc-50">
 <BlogLayout>
+  <div class="mb-6">
+    <a href="/posts"
+      class="flex items-center gap-2 bg-rose-500 text-sm font-semibold text-white px-3 py-0.5 rounded-full max-w-max font-sans">
+      <House weight="fill" />
+      <span>Ben Borgers’ Blog</span>
+    </a>
+  </div>
+
   <div class="space-y-1 sm:space-y-2">
     <h1 class="font-fraunces font-black text-3xl text-zinc-900">{post.title}</h1>
-    <p class="text-zinc-400 font-medium">{post.date.toLocaleString('en-US', { timeZone: 'UTC', month: 'long', day:
-      'numeric', year:
-      'numeric'})}</p>
+    <p class="text-zinc-400 font-medium">{post.date.toFormat('LLLL dd, yyyy')}</p>
   </div>
 
   <div class="mt-8" />

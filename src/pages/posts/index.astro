@@ -11,18 +11,17 @@ const posts =
     .filter(post => post.technical === false)
 ---
 
-<Base title="Ben Borgers’ Blog">
+<Base title="Ben Borgers’ Blog" bg="bg-zinc-50">
 <BlogLayout>
   <div class="space-y-2">
     {posts.map((post, i) => (
     <>
       {(
       (i === 0) ||
-      posts[i - 1].date.toLocaleString('en-US', { timeZone: 'UTC', month: 'numeric', year: 'numeric'}) !==
-      post.date.toLocaleString('en-US', { timeZone: 'UTC', month: 'numeric', year: 'numeric'})
+      posts[i - 1].date.toFormat('LL yyyy') !== post.date.toFormat('LL yyyy')
       ) && (
       <h2 class="text-lg text-zinc-900 font-extrabold pt-8 first-of-type:pt-0">
-        {post.date.toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', year: 'numeric'})}
+        {post.date.toFormat('LLLL yyyy')}
       </h2>
       )}
 
@@ -30,8 +29,8 @@ const posts =
         <a href={`/posts/${post.slug}`} class="block underline decoration-zinc-300">
           {post.title}
         </a>
-        <p class="text-zinc-300">
-          {post.date.toLocaleString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' })}
+        <p class="text-zinc-400">
+          {post.date.toFormat('LLLL d')}
         </p>
       </div>
     </>

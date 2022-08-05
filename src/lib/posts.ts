@@ -1,6 +1,8 @@
+import { DateTime } from "luxon";
+
 type BlogPost = {
   title: string;
-  date: Date;
+  date: DateTime;
   slug: string;
   technical: boolean;
   html?: string;
@@ -11,7 +13,7 @@ export const allBlogPosts = async (files, ghosts): Promise<BlogPost[]> => {
   const markdownPosts: BlogPost[] = files.map((file) => {
     const post: BlogPost = {
       title: file.frontmatter.title,
-      date: new Date(file.frontmatter.date),
+      date: DateTime.fromISO(file.frontmatter.date, { zone: "UTC" }),
       slug: file.file.split("/").pop().split(".")[0],
       technical: file.file.includes("markdown")
         ? true
@@ -25,15 +27,11 @@ export const allBlogPosts = async (files, ghosts): Promise<BlogPost[]> => {
   const ghostPosts: BlogPost[] = ghosts[0].default.db[0].data.posts
     .filter((object) => object.type === "post" && object.status === "published")
     .map((object) => {
-      const publishedAt = new Date(object.published_at);
-
       const post: BlogPost = {
         title: object.title,
-        // Eastern time is either 4 or 5 hours behind UTC, depending on daylight savings.
-        // We subtract 5 hours to get the EST date that Ghost saves back into EST when it's
-        // interpreted as UTC (we render dates as timeZone: UTC to make markdown dates work).
-        // It's a hack, but it works since we don't have any posts published 12am - 1am Eastern.
-        date: new Date(publishedAt.setHours(publishedAt.getHours() - 5)),
+        date: DateTime.fromISO(object.published_at, {
+          zone: "America/New_York",
+        }),
         slug: object.slug,
         technical: !!ghosts[0].default.db[0].data.posts_tags.find(
           (pivot) =>
