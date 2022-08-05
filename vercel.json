@@ -8,11 +8,11 @@
   ],
   "rewrites": [
     {
-      "source": "/swipes/(?<path>.*?)",
+      "source": "/swipes/(?<path>.*)",
       "destination": "https://mealswipes.netlify.app/$path"
     },
     {
-      "source": "/slowmochristian/(?<path>.*?)",
+      "source": "/slowmochristian/(?<path>.*)",
       "destination": "https://slowmochristian.netlify.app/$path"
     }
   ],
