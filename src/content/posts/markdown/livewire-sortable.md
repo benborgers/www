@@ -9,13 +9,11 @@ Draggable is quite easy to integrate with [Livewire](https://laravel-livewire.co
 
 Let's say our Livewire component has a list of items, and we want to be able to reorder this list and then save the new order. Here's the Livewire Blade component:
 
-```blade
+```html
 <div class="sortable">
-    @foreach($items as $item)
-        <div id="{{ $item->id }}">
-            {{ $item->name }}
-        </div>
-    @endforeach
+  @foreach($items as $item)
+    <div id="{{ $item->id }}">{{ $item->name }}</div>
+  @endforeach
 </div>
 ```
 
@@ -31,12 +29,12 @@ Then underneath that, I'll add my own script tag where we can write a bit of cod
 
 ```html
 <script>
-    const sortable = new Sortable.default(
-        document.querySelectorAll(".sortable"),
-        {
-            draggable: ".sortable > div",
-        }
-    );
+  const sortable = new Sortable.default(
+    document.querySelectorAll(".sortable"),
+    {
+      draggable: ".sortable > div",
+    }
+  );
 </script>
 ```
 
@@ -48,16 +46,16 @@ Continuing the same script tag as above, add:
 
 ```html
 <script>
-    const sortable = ... // stuff from above
+  const sortable = ... // stuff from above
 
-    sortable.on('sortable:stop', () => {
-        setTimeout(() => {
-            @this.reorder(
-                Array.from(document.querySelectorAll('.sortable > div'))
-                    .map(el => el.id)
-            )
-        }, 0)
-    })
+  sortable.on('sortable:stop', () => {
+      setTimeout(() => {
+          @this.reorder(
+              Array.from(document.querySelectorAll('.sortable > div'))
+                  .map(el => el.id)
+          )
+      }, 0)
+  })
 </script>
 ```
 

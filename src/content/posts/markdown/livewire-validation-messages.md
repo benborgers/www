@@ -9,7 +9,7 @@ If you want to show a different error message for one of the validation rules, y
 
 For example, say I have this Livewire Blade view, with a simple input and the possibility of showing an error message for that input's value:
 
-```blade
+```html
 <div>
   <input wire:model="text" />
 
