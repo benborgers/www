@@ -1,18 +1,18 @@
 {
   "redirects": [
     {
-      "source": "/blog/(.*)",
+      "source": "/blog/(.*?)",
       "destination": "/posts/$1",
       "permanent": true
     }
   ],
   "rewrites": [
     {
-      "source": "/swipes/(.*)",
+      "source": "/swipes/(.*?)",
       "destination": "https://mealswipes.netlify.app/$1"
     },
     {
-      "source": "/slowmochristian/(.*)",
+      "source": "/slowmochristian/(.*?)",
       "destination": "https://slowmochristian.netlify.app/$1"
     }
   ],
