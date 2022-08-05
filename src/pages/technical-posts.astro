@@ -14,15 +14,26 @@ const posts =
 
 <Base title="Ben Borgers’ Blog" bg="bg-zinc-50">
 <BlogLayout>
-  <div class="mb-6">
+  <div>
     <a href="/"
       class="flex items-center gap-1.5 bg-rose-600 text-sm font-semibold text-white px-2.5 py-0.5 rounded-full max-w-max">
       <CaretLeft weight="bold" className="[&_polyline]:[stroke-width:36]" />
       <span>Ben Borgers</span>
     </a>
   </div>
-  <div class="space-y-2">
 
+  <div
+    class="mt-6 space-y-2 [&_a]:font-medium [&_a]:underline [&_a]:decoration-zinc-400 bg-zinc-200/50 px-4 py-3 rounded-xl">
+    <p>
+      These are my blog posts on niche programming solutions, which are probably only interesting if you’re searching
+      for a specific solution.
+    </p>
+    <p>
+      <a href="/posts">The rest of my blog posts are here</a>.
+    </p>
+  </div>
+
+  <div class="mt-6 space-y-2">
     {posts.map(post => (
     <div class="flex justify-between">
       <a href={`/posts/${post.slug}`} class="block underline decoration-zinc-300">
