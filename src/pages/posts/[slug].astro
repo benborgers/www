@@ -48,6 +48,7 @@ const post = Astro.props.post
     before:prose-code:content-none
     after:prose-code:content-none
     [&_summary]:cursor-pointer [&_summary]:bg-zinc-100 [&_summary]:px-4 [&_summary]:py-2 [&_summary]:rounded-xl
+    [&_code:not(pre_code)]:bg-zinc-200/50 [&_code:not(pre_code)]:text-red-500 [&_code:not(pre_code)]:px-1 [&_code:not(pre_code)]:py-0.5 [&_code:not(pre_code)]:rounded-md
   ">
     {post.html ? (
     <Fragment set:html={post.html} />
