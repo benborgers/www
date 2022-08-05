@@ -10,6 +10,8 @@ type BlogPost = {
 };
 
 export const allBlogPosts = async (files, ghosts): Promise<BlogPost[]> => {
+  console.log("allBlogPosts()");
+
   const markdownPosts: BlogPost[] = files.map((file) => {
     const post: BlogPost = {
       title: file.frontmatter.title,
