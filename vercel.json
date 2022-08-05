@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/blog/*", "destination": "/posts/$1", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/swipes/*",
