@@ -9,6 +9,667 @@
       "source": "/blog/(.*?)",
       "destination": "/posts/$1",
       "permanent": true
+    },
+    {
+      "source": "/posts/50",
+      "destination": "/posts/notion-to-website",
+      "permanent": true
+    },
+    {
+      "source": "/92258a23-27df-4946-9d43-03041a8fd803",
+      "destination": "/posts/netlify-cancel-build-programmatically",
+      "permanent": true
+    },
+    {
+      "source": "/901f8d0e-ba28-4bfc-af74-e36d7c111d23",
+      "destination": "/posts/tailwind-typography-customize",
+      "permanent": true
+    },
+    {
+      "source": "/28f8b29b-97a2-48b2-9988-03a9b8d4335f",
+      "destination": "/posts/tailwind-font",
+      "permanent": true
+    },
+    {
+      "source": "/b10e36b0-9568-4c4a-9660-88cf9fb3fe97",
+      "destination": "/posts/node-sha1",
+      "permanent": true
+    },
+    {
+      "source": "/1b635a80-be09-46d1-ba85-a6d1921068eb",
+      "destination": "/posts/node-fetch-download-image",
+      "permanent": true
+    },
+    {
+      "source": "/e0f14f4b-5a8d-4100-8f45-4653622a9f38",
+      "destination": "/posts/fathom-netlify",
+      "permanent": true
+    },
+    {
+      "source": "/ad1b276c-edae-46da-afaa-6c8f653851ca",
+      "destination": "/posts/react-static-tailwind",
+      "permanent": true
+    },
+    {
+      "source": "/9713fcf4-abba-4cc2-98f5-b7adcd2ce0b3",
+      "destination": "/posts/react-static-scroll",
+      "permanent": true
+    },
+    {
+      "source": "/e021ff80-253b-4dc2-931e-9d67a582bccb",
+      "destination": "/posts/react-static-head",
+      "permanent": true
+    },
+    {
+      "source": "/dba3cd3d-7517-476c-a564-994112f355e3",
+      "destination": "/posts/react-static-sitemap",
+      "permanent": true
+    },
+    {
+      "source": "/29ed200d-5148-48bd-b2ba-23e4230e79c1",
+      "destination": "/posts/error-spread-array-tslib",
+      "permanent": true
+    },
+    {
+      "source": "/e61f1f37-e664-45a3-92d1-d892e49fd5c0",
+      "destination": "/posts/ses-smtp",
+      "permanent": true
+    },
+    {
+      "source": "/332a561c-992f-4e46-b291-4ad4bdf42eb8",
+      "destination": "/posts/next-auth-ses",
+      "permanent": true
+    },
+    {
+      "source": "/b7874b71-45c1-432f-8a20-ca5db1769224",
+      "destination": "/posts/psql",
+      "permanent": true
+    },
+    {
+      "source": "/alpine-textarea-auto-resize",
+      "destination": "/posts/alpine-textarea-auto-resize",
+      "permanent": true
+    },
+    {
+      "source": "/css-list-disc",
+      "destination": "/posts/css-list-disc",
+      "permanent": true
+    },
+    {
+      "source": "/eleventy-katex",
+      "destination": "/posts/eleventy-katex",
+      "permanent": true
+    },
+    {
+      "source": "/eleventy-tailwind",
+      "destination": "/posts/eleventy-tailwind",
+      "permanent": true
+    },
+    {
+      "source": "/emoji-favicon",
+      "destination": "/posts/emoji-favicon",
+      "permanent": true
+    },
+    {
+      "source": "/emojicdn-how",
+      "destination": "/posts/emojicdn-how",
+      "permanent": true
+    },
+    {
+      "source": "/emojicdn",
+      "destination": "/posts/emojicdn",
+      "permanent": true
+    },
+    {
+      "source": "/emotion-global",
+      "destination": "/posts/emotion-global",
+      "permanent": true
+    },
+    {
+      "source": "/error-spread-array-tslib",
+      "destination": "/posts/error-spread-array-tslib",
+      "permanent": true
+    },
+    {
+      "source": "/expo-app-name",
+      "destination": "/posts/expo-app-name",
+      "permanent": true
+    },
+    {
+      "source": "/expo-ip",
+      "destination": "/posts/expo-ip",
+      "permanent": true
+    },
+    {
+      "source": "/expo-mailto",
+      "destination": "/posts/expo-mailto",
+      "permanent": true
+    },
+    {
+      "source": "/expo-screen-height",
+      "destination": "/posts/expo-screen-height",
+      "permanent": true
+    },
+    {
+      "source": "/expo-screen-width",
+      "destination": "/posts/expo-screen-width",
+      "permanent": true
+    },
+    {
+      "source": "/expo-version",
+      "destination": "/posts/expo-version",
+      "permanent": true
+    },
+    {
+      "source": "/express-access-cookies",
+      "destination": "/posts/express-access-cookies",
+      "permanent": true
+    },
+    {
+      "source": "/express-password-protect",
+      "destination": "/posts/express-password-protect",
+      "permanent": true
+    },
+    {
+      "source": "/express-powered-by",
+      "destination": "/posts/express-powered-by",
+      "permanent": true
+    },
+    {
+      "source": "/express-set-cookies",
+      "destination": "/posts/express-set-cookies",
+      "permanent": true
+    },
+    {
+      "source": "/fathom-gatsby",
+      "destination": "/posts/fathom-gatsby",
+      "permanent": true
+    },
+    {
+      "source": "/feature-branches-clients",
+      "destination": "/posts/feature-branches-clients",
+      "permanent": true
+    },
+    {
+      "source": "/feature-branches",
+      "destination": "/posts/feature-branches",
+      "permanent": true
+    },
+    {
+      "source": "/gatsby-active-link",
+      "destination": "/posts/gatsby-active-link",
+      "permanent": true
+    },
+    {
+      "source": "/gatsby-favicon",
+      "destination": "/posts/gatsby-favicon",
+      "permanent": true
+    },
+    {
+      "source": "/gatsby-google-fonts",
+      "destination": "/posts/gatsby-google-fonts",
+      "permanent": true
+    },
+    {
+      "source": "/gatsby-last-built",
+      "destination": "/posts/gatsby-last-built",
+      "permanent": true
+    },
+    {
+      "source": "/gatsby-meta",
+      "destination": "/posts/gatsby-meta",
+      "permanent": true
+    },
+    {
+      "source": "/gatsby-react-helmet-async",
+      "destination": "/posts/gatsby-react-helmet-async",
+      "permanent": true
+    },
+    {
+      "source": "/gatsby-sitemap",
+      "destination": "/posts/gatsby-sitemap",
+      "permanent": true
+    },
+    {
+      "source": "/github-syntax-highlighting",
+      "destination": "/posts/github-syntax-highlighting",
+      "permanent": true
+    },
+    {
+      "source": "/glitch-awake",
+      "destination": "/posts/glitch-awake",
+      "permanent": true
+    },
+    {
+      "source": "/glitch-cors",
+      "destination": "/posts/glitch-cors",
+      "permanent": true
+    },
+    {
+      "source": "/glitch-cron-job",
+      "destination": "/posts/glitch-cron-job",
+      "permanent": true
+    },
+    {
+      "source": "/glitch-disk-space",
+      "destination": "/posts/glitch-disk-space",
+      "permanent": true
+    },
+    {
+      "source": "/glitch-password-protect",
+      "destination": "/posts/glitch-password-protect",
+      "permanent": true
+    },
+    {
+      "source": "/google-sheets-json",
+      "destination": "/posts/google-sheets-json",
+      "permanent": true
+    },
+    {
+      "source": "/grid-center",
+      "destination": "/posts/grid-center",
+      "permanent": true
+    },
+    {
+      "source": "/instagram-bio",
+      "destination": "/posts/instagram-bio",
+      "permanent": true
+    },
+    {
+      "source": "/js-array-remove-duplicates",
+      "destination": "/posts/js-array-remove-duplicates",
+      "permanent": true
+    },
+    {
+      "source": "/js-audio",
+      "destination": "/posts/js-audio",
+      "permanent": true
+    },
+    {
+      "source": "/js-back-and-refresh",
+      "destination": "/posts/js-back-and-refresh",
+      "permanent": true
+    },
+    {
+      "source": "/js-copy-text",
+      "destination": "/posts/js-copy-text",
+      "permanent": true
+    },
+    {
+      "source": "/js-double-spaces",
+      "destination": "/posts/js-double-spaces",
+      "permanent": true
+    },
+    {
+      "source": "/js-hash-passwords",
+      "destination": "/posts/js-hash-passwords",
+      "permanent": true
+    },
+    {
+      "source": "/js-hash",
+      "destination": "/posts/js-hash",
+      "permanent": true
+    },
+    {
+      "source": "/js-object-changes",
+      "destination": "/posts/js-object-changes",
+      "permanent": true
+    },
+    {
+      "source": "/js-relative-date",
+      "destination": "/posts/js-relative-date",
+      "permanent": true
+    },
+    {
+      "source": "/js-remove-hash",
+      "destination": "/posts/js-remove-hash",
+      "permanent": true
+    },
+    {
+      "source": "/js-snow",
+      "destination": "/posts/js-snow",
+      "permanent": true
+    },
+    {
+      "source": "/js-textarea-auto-resize",
+      "destination": "/posts/js-textarea-auto-resize",
+      "permanent": true
+    },
+    {
+      "source": "/json-ld",
+      "destination": "/posts/json-ld",
+      "permanent": true
+    },
+    {
+      "source": "/kill-localhost",
+      "destination": "/posts/kill-localhost",
+      "permanent": true
+    },
+    {
+      "source": "/laravel-artisan-commands-not-working",
+      "destination": "/posts/laravel-artisan-commands-not-working",
+      "permanent": true
+    },
+    {
+      "source": "/laravel-double-spaces",
+      "destination": "/posts/laravel-double-spaces",
+      "permanent": true
+    },
+    {
+      "source": "/laravel-log-404",
+      "destination": "/posts/laravel-log-404",
+      "permanent": true
+    },
+    {
+      "source": "/laravel-mix-notifications",
+      "destination": "/posts/laravel-mix-notifications",
+      "permanent": true
+    },
+    {
+      "source": "/laravel-password-resets-tinker",
+      "destination": "/posts/laravel-password-resets-tinker",
+      "permanent": true
+    },
+    {
+      "source": "/laravel-plaintext-emails",
+      "destination": "/posts/laravel-plaintext-emails",
+      "permanent": true
+    },
+    {
+      "source": "/laravel-return-path",
+      "destination": "/posts/laravel-return-path",
+      "permanent": true
+    },
+    {
+      "source": "/laravel-schedule-job-daily",
+      "destination": "/posts/laravel-schedule-job-daily",
+      "permanent": true
+    },
+    {
+      "source": "/laravel-schedule-prevent",
+      "destination": "/posts/laravel-schedule-prevent",
+      "permanent": true
+    },
+    {
+      "source": "/laravel-tinker-dispatch-job",
+      "destination": "/posts/laravel-tinker-dispatch-job",
+      "permanent": true
+    },
+    {
+      "source": "/livewire-refresh-other-component",
+      "destination": "/posts/livewire-refresh-other-component",
+      "permanent": true
+    },
+    {
+      "source": "/livewire-test-class-not-found",
+      "destination": "/posts/livewire-test-class-not-found",
+      "permanent": true
+    },
+    {
+      "source": "/livewire-url-changing",
+      "destination": "/posts/livewire-url-changing",
+      "permanent": true
+    },
+    {
+      "source": "/livewire-validation-messages",
+      "destination": "/posts/livewire-validation-messages",
+      "permanent": true
+    },
+    {
+      "source": "/marked-prism",
+      "destination": "/posts/marked-prism",
+      "permanent": true
+    },
+    {
+      "source": "/marked-quotes",
+      "destination": "/posts/marked-quotes",
+      "permanent": true
+    },
+    {
+      "source": "/media-hover",
+      "destination": "/posts/media-hover",
+      "permanent": true
+    },
+    {
+      "source": "/navigator-sendbeacon",
+      "destination": "/posts/navigator-sendbeacon",
+      "permanent": true
+    },
+    {
+      "source": "/netlify-functions-cors",
+      "destination": "/posts/netlify-functions-cors",
+      "permanent": true
+    },
+    {
+      "source": "/netlify-toml-gatsby",
+      "destination": "/posts/netlify-toml-gatsby",
+      "permanent": true
+    },
+    {
+      "source": "/next-auth-ses",
+      "destination": "/posts/next-auth-ses",
+      "permanent": true
+    },
+    {
+      "source": "/node-fetch-download-image",
+      "destination": "/posts/node-fetch-download-image",
+      "permanent": true
+    },
+    {
+      "source": "/node-latex-to-html",
+      "destination": "/posts/node-latex-to-html",
+      "permanent": true
+    },
+    {
+      "source": "/node-minify-css",
+      "destination": "/posts/node-minify-css",
+      "permanent": true
+    },
+    {
+      "source": "/node-minify-html",
+      "destination": "/posts/node-minify-html",
+      "permanent": true
+    },
+    {
+      "source": "/node-serve-static-files",
+      "destination": "/posts/node-serve-static-files",
+      "permanent": true
+    },
+    {
+      "source": "/node-sha1",
+      "destination": "/posts/node-sha1",
+      "permanent": true
+    },
+    {
+      "source": "/node-shell",
+      "destination": "/posts/node-shell",
+      "permanent": true
+    },
+    {
+      "source": "/node-spawn-callback",
+      "destination": "/posts/node-spawn-callback",
+      "permanent": true
+    },
+    {
+      "source": "/node-spawn-logging",
+      "destination": "/posts/node-spawn-logging",
+      "permanent": true
+    },
+    {
+      "source": "/normalize-gatsby",
+      "destination": "/posts/normalize-gatsby",
+      "permanent": true
+    },
+    {
+      "source": "/notion-blog",
+      "destination": "/posts/notion-blog",
+      "permanent": true
+    },
+    {
+      "source": "/notion-table",
+      "destination": "/posts/notion-table",
+      "permanent": true
+    },
+    {
+      "source": "/notion-to-website",
+      "destination": "/posts/notion-to-website",
+      "permanent": true
+    },
+    {
+      "source": "/php-datetime-add-days",
+      "destination": "/posts/php-datetime-add-days",
+      "permanent": true
+    },
+    { "source": "/psql", "destination": "/posts/psql", "permanent": true },
+    {
+      "source": "/pwa-detect-installed",
+      "destination": "/posts/pwa-detect-installed",
+      "permanent": true
+    },
+    {
+      "source": "/react-helmet-async",
+      "destination": "/posts/react-helmet-async",
+      "permanent": true
+    },
+    {
+      "source": "/react-native-right-align",
+      "destination": "/posts/react-native-right-align",
+      "permanent": true
+    },
+    {
+      "source": "/react-native-width",
+      "destination": "/posts/react-native-width",
+      "permanent": true
+    },
+    {
+      "source": "/react-static-head",
+      "destination": "/posts/react-static-head",
+      "permanent": true
+    },
+    {
+      "source": "/react-static-scroll",
+      "destination": "/posts/react-static-scroll",
+      "permanent": true
+    },
+    {
+      "source": "/react-static-sitemap",
+      "destination": "/posts/react-static-sitemap",
+      "permanent": true
+    },
+    {
+      "source": "/react-static-tailwind",
+      "destination": "/posts/react-static-tailwind",
+      "permanent": true
+    },
+    {
+      "source": "/route53-list-dns",
+      "destination": "/posts/route53-list-dns",
+      "permanent": true
+    },
+    {
+      "source": "/route53-pricing",
+      "destination": "/posts/route53-pricing",
+      "permanent": true
+    },
+    {
+      "source": "/ses-smtp",
+      "destination": "/posts/ses-smtp",
+      "permanent": true
+    },
+    {
+      "source": "/speed-up-gatsby-on-netlify",
+      "destination": "/posts/speed-up-gatsby-on-netlify",
+      "permanent": true
+    },
+    {
+      "source": "/subreddit-json",
+      "destination": "/posts/subreddit-json",
+      "permanent": true
+    },
+    {
+      "source": "/swr-refresh",
+      "destination": "/posts/swr-refresh",
+      "permanent": true
+    },
+    {
+      "source": "/tailwind-colors",
+      "destination": "/posts/tailwind-colors",
+      "permanent": true
+    },
+    {
+      "source": "/tailwind-font",
+      "destination": "/posts/tailwind-font",
+      "permanent": true
+    },
+    {
+      "source": "/tailwind-gradient-text",
+      "destination": "/posts/tailwind-gradient-text",
+      "permanent": true
+    },
+    {
+      "source": "/tailwind-postcss-error",
+      "destination": "/posts/tailwind-postcss-error",
+      "permanent": true
+    },
+    {
+      "source": "/tailwind-typography-customize",
+      "destination": "/posts/tailwind-typography-customize",
+      "permanent": true
+    },
+    {
+      "source": "/terminal-mkdir",
+      "destination": "/posts/terminal-mkdir",
+      "permanent": true
+    },
+    {
+      "source": "/textarea-tab",
+      "destination": "/posts/textarea-tab",
+      "permanent": true
+    },
+    {
+      "source": "/trix-disable-files",
+      "destination": "/posts/trix-disable-files",
+      "permanent": true
+    },
+    {
+      "source": "/vapor-database",
+      "destination": "/posts/vapor-database",
+      "permanent": true
+    },
+    {
+      "source": "/vapor-maintenance",
+      "destination": "/posts/vapor-maintenance",
+      "permanent": true
+    },
+    {
+      "source": "/vapor-migrations",
+      "destination": "/posts/vapor-migrations",
+      "permanent": true
+    },
+    {
+      "source": "/vapor-trix-attachments",
+      "destination": "/posts/vapor-trix-attachments",
+      "permanent": true
+    },
+    {
+      "source": "/vercel-cors",
+      "destination": "/posts/vercel-cors",
+      "permanent": true
+    },
+    {
+      "source": "/vscode-spellcheck",
+      "destination": "/posts/vscode-spellcheck",
+      "permanent": true
+    },
+    {
+      "source": "/webkit-tap-highlight-color",
+      "destination": "/posts/webkit-tap-highlight-color",
+      "permanent": true
+    },
+    {
+      "source": "/zeit-regions",
+      "destination": "/posts/zeit-regions",
+      "permanent": true
     }
   ],
   "cleanUrls": true,
