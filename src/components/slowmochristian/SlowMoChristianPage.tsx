@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as Slider from "@radix-ui/react-slider";
 
 const SIDES = ["right", "top", "left", "bottom"];
