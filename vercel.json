@@ -12,15 +12,14 @@
     },
     {
       "source": "/posts",
-      "destination": "/technical-posts",
-      "permanent": true,
       "has": [
         {
           "type": "query",
-          "key": "technical",
-          "value": "undefined"
+          "key": "technical"
         }
-      ]
+      ],
+      "destination": "/technical-posts",
+      "permanent": true
     }
   ],
   "cleanUrls": true,
