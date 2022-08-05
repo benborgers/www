@@ -9,8 +9,12 @@ type BlogPost = {
   component?: Function;
 };
 
+let ALL_BLOG_POSTS_CACHE = null;
+
 export const allBlogPosts = async (files, ghosts): Promise<BlogPost[]> => {
-  console.log("allBlogPosts()");
+  if (ALL_BLOG_POSTS_CACHE) {
+    return ALL_BLOG_POSTS_CACHE;
+  }
 
   const markdownPosts: BlogPost[] = files.map((file) => {
     const post: BlogPost = {
@@ -48,7 +52,9 @@ export const allBlogPosts = async (files, ghosts): Promise<BlogPost[]> => {
       return post;
     });
 
-  return [...markdownPosts, ...ghostPosts].sort((a, b) =>
+  ALL_BLOG_POSTS_CACHE = [...markdownPosts, ...ghostPosts].sort((a, b) =>
     a.date > b.date ? -1 : 1
   );
+
+  return ALL_BLOG_POSTS_CACHE;
 };
