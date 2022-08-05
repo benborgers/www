@@ -11,18 +11,19 @@ If you don't have the coordinates of the location you'd like weather from, one e
 
 First, make a GET request to this URL with the coordinates:
 
-```plaintext
+```
 https://api.weather.gov/points/{latitude},{longitude}
 ```
 
 For example:
-```plaintext
+
+```
 https://api.weather.gov/points/40.7484,-73.9856
 ```
 
 The JSON response contains a URL at `properties.forecast` which is the URL that will give you the forecast for that location. In this case, that URL is:
 
-```plaintext
+```
 https://api.weather.gov/gridpoints/OKX/33,36/forecast
 ```
 

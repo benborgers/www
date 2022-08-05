@@ -2,6 +2,7 @@
 title: "Handling Trix file attachments on Laravel Vapor"
 date: 2020-06-28
 ---
+
 After a couple hours of work, I've finally gotten file attachments with Basecamp's Trix editor to work on Laravel Vapor.
 
 To start, let's assume you have a basic Trix form set up, which mirrors its contents into an `input`. Getting to this point is fairly straightforward with the [Trix docs](https://github.com/basecamp/trix).
@@ -64,7 +65,7 @@ public function uploadFiles(User $user)
 
 In order to access this bucket from your local environment too, modify or add these values in your `.env` file:
 
-```text
+```
 FILESYSTEM_DRIVER=s3
 
 AWS_ACCESS_KEY_ID=
@@ -120,40 +121,41 @@ To start, let's add an extra input to our `<form>`. This input will keep track o
 <input type="hidden" name="trix_files" value="[]" />
 ```
 
-*Notice that the value is an empty array if no attachments are ever added.*
+_Notice that the value is an empty array if no attachments are ever added._
 
 Here's all the client-side javascript that makes uploading files work. I'll explain it below.
 
 ```javascript
-window.Vapor = require('laravel-vapor')
+window.Vapor = require("laravel-vapor");
 
-document.addEventListener('trix-attachment-add', event => {
-  if(event.attachment.file) {
-    const attachment = event.attachment
+document.addEventListener("trix-attachment-add", (event) => {
+  if (event.attachment.file) {
+    const attachment = event.attachment;
 
     Vapor.store(attachment.file, {
-      progress: amount => attachment.setUploadProgress(amount * 100)
-	})
-      .then(response => {
-        attachment.setAttributes({
-          key: response.key,
-          url: response.url.split('?')[0]
-        })
+      progress: (amount) => attachment.setUploadProgress(amount * 100),
+    }).then((response) => {
+      attachment.setAttributes({
+        key: response.key,
+        url: response.url.split("?")[0],
+      });
 
-        updateTrixFiles(event)
-    })
+      updateTrixFiles(event);
+    });
   }
-})
+});
 
-const updateTrixFiles = event => {
-  const allAttachments = event.attachment.attachmentManager.managedAttachments
-  const keys = Object.keys(allAttachments).map(id => allAttachments[id].attachment.attributes.values.key)
+const updateTrixFiles = (event) => {
+  const allAttachments = event.attachment.attachmentManager.managedAttachments;
+  const keys = Object.keys(allAttachments).map(
+    (id) => allAttachments[id].attachment.attributes.values.key
+  );
 
-  const input = document.querySelector('input[name="trix_files"]')
-  input.value = JSON.stringify(keys)
-}
+  const input = document.querySelector('input[name="trix_files"]');
+  input.value = JSON.stringify(keys);
+};
 
-document.addEventListener('trix-attachment-remove', updateTrixFiles)
+document.addEventListener("trix-attachment-remove", updateTrixFiles);
 ```
 
 You'll see that this utilizes the `laravel-vapor` npm package we installed earlier.
@@ -170,8 +172,8 @@ When an attachment is removed from the Trix editor (event `trix-attachment-remov
 
 When this form is submitted, we have two pieces of data we need to worry about:
 
-* `body` contains the Trix HTML
-* `trix_files` includes the list of temporary files in S3 we now need to copy into permanent S3 storage (since remember, `tmp/` gets erased after 24 hours)
+- `body` contains the Trix HTML
+- `trix_files` includes the list of temporary files in S3 we now need to copy into permanent S3 storage (since remember, `tmp/` gets erased after 24 hours)
 
 To persist the files in S3, we use the `Storage` facade in our controller:
 
@@ -197,7 +199,7 @@ $body = preg_replace('/tmp\//', '', request('body'));
 
 Now, the images in the HTML output point to the non-temporary copy of the attachment in S3.
 
-```text
+```
 Before replacement: https://my-bucket.s3.amazonaws.com/tmp/random-filename
  After replacement: https://my-bucket.s3.amazonaws.com/random-filename
 ```

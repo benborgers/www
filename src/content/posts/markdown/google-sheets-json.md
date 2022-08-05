@@ -20,7 +20,7 @@ However, **I’ve built a free API that you can use for this**, which doesn’t 
 
 The URL format for using the API is:
 
-```plaintext
+```
 https://opensheet.elk.sh/spreadsheet_id/tab_name
 ```
 

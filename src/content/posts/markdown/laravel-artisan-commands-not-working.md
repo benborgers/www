@@ -2,6 +2,7 @@
 title: "Artisan commands not working in fresh Laravel installation"
 date: 2020-12-11
 ---
+
 I just created a new Laravel app and installed Jetstream, and when I went to run `php artisan serve` it hung and didn't do anything.
 
 Then, I tried to run `php artisan migrate`, and it also stalled for a while before giving me an error that the database connection had timed out.
@@ -10,7 +11,7 @@ This was weird, because it was a completely fresh installation of Laravel and Je
 
 I eventually realized that the issue lay in the `.env` file. The new Laravel installation has a `.env` file with these values:
 
-```text
+```
 DB_CONNECTION=mysql
 # DB_HOST=127.0.0.1
 DB_HOST=mysql

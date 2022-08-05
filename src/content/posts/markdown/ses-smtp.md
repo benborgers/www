@@ -12,7 +12,7 @@ Go through the steps to create new SMTP credentials, and copy them down somewher
 
 The fully formed SMTP connection string looks like this:
 
-```plain
+```
 smtp://username:password@email-smtp.us-east-1.amazonaws.com:587
 ```
 

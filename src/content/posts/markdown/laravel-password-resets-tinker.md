@@ -2,6 +2,7 @@
 title: "How to manually generate Laravel password resets"
 date: 2020-08-01
 ---
+
 Instead of sending password resets via email, you can also generate one whenever you'd like using Laravel Tinker on the command line (even in production) and send it manually.
 
 First, run `php artisan tinker` to open up Laravel Tinker. Then, use this command to generate a password reset token for the `User` with ID `1`.
@@ -14,7 +15,7 @@ This returns a token and adds it (hashed) to the `password_resets` table of your
 
 To use it, use this path:
 
-```text
+```
 /password/reset/{token}?email={user_email_address}
 ```
 

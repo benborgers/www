@@ -23,8 +23,7 @@ Then, click the **Copy page link** button and paste the link somewhere. The long
 
 ![image](https://user-images.githubusercontent.com/30215449/105642549-6d5ee280-5e58-11eb-92af-a2063be272c6.png)
 
-
-*The ID in this example is `2364751436224832ba85e279417ea798`.*
+_The ID in this example is `2364751436224832ba85e279417ea798`._
 
 You'll need to give this ID to the API in order to tell it which table to read from.
 
@@ -34,7 +33,7 @@ Now, we'll use [Potion](https://potion-api.now.sh) to read the table.
 
 The endpoint we want to send a GET request to is:
 
-```text
+```
 https://potion-api.now.sh/table?id=NOTION_DOCUMENT_ID
 ```
 
@@ -44,10 +43,10 @@ Here's an example for javascript using `fetch`, which is built in to the browser
 
 ```jsx
 fetch("https://potion-api.now.sh/table?id=2364751436224832ba85e279417ea798")
-  .then(res => res.json())
-  .then(json => {
-    console.log(json)
-  })
+  .then((res) => res.json())
+  .then((json) => {
+    console.log(json);
+  });
 ```
 
 From here, you can use the data however you'd like. Feel free to use it to populate a website, read data for running a daily script, etc. This opens up a ton of new possibilities!

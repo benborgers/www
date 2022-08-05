@@ -15,7 +15,7 @@ nano /etc/caddy/Caddyfile
 
 Then, I modified the contents to be like this:
 
-```text
+```
 www.benborgers.com {
   redir https://benborgers.com{uri}
 }

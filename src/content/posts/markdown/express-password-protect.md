@@ -2,6 +2,7 @@
 title: "How to password protect a route with Express"
 date: 2020-09-30
 ---
+
 You can password protect a Glitch site if you're writing Node.js (which means you've got a `package.json` file).
 
 We're going to be using `express`, the default Node.js server framework that new Glitch projects use. We're also going to be using a technique called **Basic authentication**, which is built into every browser.
@@ -13,44 +14,49 @@ This is what it'll look like:
 Let's say we want to password-protect this secret admin route:
 
 ```javascript
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
 
-app.get('/admin', (req, res) => {
-  res.send('Top secret stuff here')
-})
+app.get("/admin", (req, res) => {
+  res.send("Top secret stuff here");
+});
 ```
 
 Here's a code snippet of how to do it, and then I'll explain how it works:
 
 ```javascript
-app.get('/admin', (req, res) => {
+app.get("/admin", (req, res) => {
   const reject = () => {
-    res.setHeader('www-authenticate', 'Basic')
-    res.sendStatus(401)
+    res.setHeader("www-authenticate", "Basic");
+    res.sendStatus(401);
+  };
+
+  const authorization = req.headers.authorization;
+
+  if (!authorization) {
+    return reject();
   }
 
-  const authorization = req.headers.authorization
+  const [username, password] = Buffer.from(
+    authorization.replace("Basic ", ""),
+    "base64"
+  )
+    .toString()
+    .split(":");
 
-  if(!authorization) {
-    return reject()
+  if (!(username === "ben" && password === "my-favorite-password")) {
+    return reject();
   }
 
-  const [username, password] = Buffer.from(authorization.replace('Basic ', ''), 'base64').toString().split(':')
-
-  if(! (username === 'ben' && password === 'my-favorite-password')) {
-    return reject()
-  }
-
-  res.send('Top secret stuff here')
-})
+  res.send("Top secret stuff here");
+});
 ```
 
 First, we create a function called `reject()`, which is used to prevent a person from viewing the page. This function sets a header that instructs the browser to ask for a username and password, and otherwise sends a `401 Unauthorized` error code.
 
 If the visitor types a username and password into the prompt, it'll be sent via a header called `authorization` in the format below. However, everything after `Basic ` will be encoded in base64 format:
 
-```text
+```
 Basic myusername:mypassword
 ```
 
