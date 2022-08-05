@@ -1,8 +1,8 @@
 ---
 import Base from '../../components/Base.astro'
 import BlogLayout from '../../components/BlogLayout.astro'
+import { CaretLeft } from 'phosphor-react'
 import { allBlogPosts } from '../../lib/posts'
-import { House } from 'phosphor-react'
 
 export async function getStaticPaths() {
   const posts = await allBlogPosts(
@@ -23,8 +23,8 @@ const post = Astro.props.post
 <BlogLayout>
   <div class="mb-6">
     <a href="/posts"
-      class="flex items-center gap-2 bg-rose-500 text-sm font-semibold text-white px-3 py-0.5 rounded-full max-w-max font-sans">
-      <House weight="fill" />
+      class="flex items-center gap-1.5 bg-rose-500 text-sm font-semibold text-white px-2.5 py-0.5 rounded-full max-w-max">
+      <CaretLeft weight="bold" className="[&_polyline]:[stroke-width:36]" />
       <span>Ben Borgers’ Blog</span>
     </a>
   </div>

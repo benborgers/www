@@ -1,6 +1,7 @@
 ---
 import Base from '../../components/Base.astro'
 import BlogLayout from '../../components/BlogLayout.astro'
+import { CaretLeft } from 'phosphor-react'
 import { allBlogPosts } from '../../lib/posts'
 
 const posts =
@@ -19,7 +20,15 @@ const posts =
     }
   </script>
 
+  <div class="mb-6">
+    <a href="/"
+      class="flex items-center gap-1.5 bg-rose-500 text-sm font-semibold text-white px-2.5 py-0.5 rounded-full max-w-max">
+      <CaretLeft weight="bold" className="[&_polyline]:[stroke-width:36]" />
+      <span>Ben Borgers</span>
+    </a>
+  </div>
   <div class="space-y-2">
+
     {posts.map((post, i) => (
     <>
       {(
@@ -43,4 +52,4 @@ const posts =
     ))}
   </div>
 </BlogLayout>
-</Base>
+</Base></Base>
