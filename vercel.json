@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/contact",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/blog",
       "destination": "/posts",
       "permanent": true
