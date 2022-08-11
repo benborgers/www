@@ -9,7 +9,7 @@ const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
   .sort((a, b) => new Date(a.frontmatter.date) > new Date(b.frontmatter.date) ? -1 : 1)
 ---
 
-<Base title="Ben Borgers" bg="bg-neutral-50">
+<Base title="Ben Borgers" bg="bg-neutral-50" ogImage="/og-images/index_">
 <LoadAlpine />
 <div class="p-4 pb-36 pt-8 sm:pt-36">
   <div class="max-w-screen-sm mx-auto text-neutral-700">

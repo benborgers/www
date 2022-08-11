@@ -7,6 +7,7 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), mdx()],
+  site: "https://benborgers.vercel.app",
   build: {
     format: "file",
   },

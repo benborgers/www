@@ -1,5 +1,12 @@
 ---
 const { title, ogImage, bg } = Astro.props
+
+let ogImageUrl = null
+if (ogImage) {
+  if (ogImage.startsWith('/og-images/')) {
+    ogImageUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(Astro.site.origin + ogImage)}/opengraph/${new Date().getTime()}`
+  }
+}
 ---
 
 <html lang="en">
@@ -11,8 +18,8 @@ const { title, ogImage, bg } = Astro.props
   <title>{title}</title>
   <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
 
-  {ogImage &&
-  <meta property="og:image" content={ogImage} />
+  {ogImageUrl &&
+  <meta property="og:image" content={ogImageUrl} />
   }
 
   {/* Since this is the default sans-serif font, every page gets it. */}

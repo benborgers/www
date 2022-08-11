@@ -1,0 +1,17 @@
+---
+// There’s an underscore in the filename, because otherwise the url would be
+// /og-images and that would be weird because it’s not the “index page.”
+// Instead, the url is /og-images/index_.
+
+import Base from '../../components/Base.astro'
+import OgImageLayout from '../../components/OgImageLayout.astro';
+---
+
+<Base>
+<OgImageLayout className="bg-neutral-50 grid place-items-center">
+  <div class="flex items-center gap-x-12">
+    <img src="/me.jpg" class="h-36 w-36 rounded-full" />
+    <p class="text-9xl font-black text-neutral-900 tracking-tight">Ben Borgers</p>
+  </div>
+</OgImageLayout>
+</Base>
