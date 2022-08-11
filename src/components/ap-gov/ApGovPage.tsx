@@ -28,10 +28,10 @@ export default function () {
             test.
           </p>
           <p>
-            It eventually got lost from my website, but now (in July of 2022)
-            I’ve copied over the original page and republished it. I quite liked
-            thinking about these court cases, so I thought they’d be nice to
-            have here.
+            It eventually got lost when I re-did my website, but now (in July of
+            2022) I’ve copied over the original page and republished it. I quite
+            liked thinking about these court cases, so I thought they’d be nice
+            to have here.
           </p>
         </div>
 
