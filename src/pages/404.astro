@@ -14,4 +14,15 @@ import Base from '../components/Base.astro'
     </p>
   </div>
 </div>
+
+<script>
+  fetch('https://neptune.ooo/report-ben-borgers-404', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      path: window.location.pathname,
+      referrer: document.referrer
+    })
+  })
+</script>
 </Base>
