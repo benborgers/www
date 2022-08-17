@@ -1,141 +1,175 @@
 ---
-import Base from '../components/Base.astro'
-import LoadAlpine from '../components/LoadAlpine.astro'
-import { TwitterLogo, PaperPlaneTilt, CalendarBlank } from 'phosphor-react'
-import ExpandableSection from '../components/index/ExpandableSection.astro'
-import ExpandableSectionEntry from '../components/index/ExpandableSectionEntry.astro'
+import Base from "../components/Base.astro";
+import LoadAlpine from "../components/LoadAlpine.astro";
+import { TwitterLogo, PaperPlaneTilt, CalendarBlank } from "phosphor-react";
+import ExpandableSection from "../components/index/ExpandableSection.astro";
+import ExpandableSectionEntry from "../components/index/ExpandableSectionEntry.astro";
 
-const timelineEntries = (await Astro.glob('../content/timeline/*.mdx'))
-  .sort((a, b) => new Date(a.frontmatter.date) > new Date(b.frontmatter.date) ? -1 : 1)
+const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
+  (a, b) =>
+    new Date(a.frontmatter.date) > new Date(b.frontmatter.date) ? -1 : 1
+);
 ---
 
 <Base title="Ben Borgers" bg="bg-neutral-50" ogImage="/og-images/index_">
-<LoadAlpine />
-<div class="p-4 pb-36 pt-8 sm:pt-36">
-  <div class="max-w-screen-sm mx-auto text-neutral-700">
-    <div class="flex items-start gap-6">
-      <img src="/me.jpg" class="h-16 w-16 rounded-full" />
-      <div class="mt-2">
-        <p class="font-semibold text-neutral-900 leading-none">Hi! I’m Ben Borgers.</p>
-        <p class="mt-1 text-neutral-500">
-          I’m a rising sophomore at Tufts University studying computer science.
-        </p>
-        <div class="mt-2 flex flex-wrap gap-x-2 gap-y-1.5">
-          <a href="https://twitter.com/benborgers" target="_blank" class="bg-sky-500 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2
-            hover:ring-2 hover:ring-offset-2 hover:ring-sky-500 hover:ring-offset-neutral-50 transition-shadow">
-            <TwitterLogo weight="fill" />
-            <span>@benborgers</span>
-          </a>
-          <a href="mailto:benborgers@hey.com" class="bg-rose-600 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2
-            hover:ring-2 hover:ring-offset-2 hover:ring-rose-600 hover:ring-offset-neutral-50 transition-shadow">
-            <PaperPlaneTilt weight="fill" />
-            <span>benborgers@hey.com</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <ExpandableSection title="Work Experience" className="mt-8">
-      <ExpandableSectionEntry subtitle="Summer 2022">
-        Internship at <a href="https://lu.ma" target="_blank">Luma</a> and <a href="https://glow.app"
-          target="_blank">Glow</a> working on web apps and their
-        Chrome extension.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry subtitle="Summer 2021 - present">
-        Freelance development in Vue for <a href="https://buttondown.email" target="_blank">Buttondown</a>, an email
-        newsletter provider.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry subtitle="Fall 2021 - present">
-        Website for <a href="https://uphamdesign.com" target="_blank">Upham Design</a>, a
-        creative collective
-        run by a family friend.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry subtitle="Winter 2021">
-        Wrote code that powered TV graphics for STU National Championships, a Brazilian
-        skateboarding championship.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry subtitle="Summer 2020">
-        Developed a course registration and management app in Laravel for <a href="https://diyiboston.com"
-          target="_blank">Diyi</a>, an online school based in the Boston area.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry subtitle="Summer 2019, Summer 2020">
-        Interned at
-        <a href="https://www.ibm.com/products/guardium-insights" target="_blank">
-          IBM Security</a>
-        for two summers,
-        working on a new security offering for enterprise.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry subtitle="Summer 2020">
-        Full-stack development using React and Node.js for <a href="https://rep.ly" target="_blank">Rep.ly</a>.
-      </ExpandableSectionEntry>
-    </ExpandableSection>
-
-    <ExpandableSection title="Personal Projects" className="mt-5">
-      <ExpandableSectionEntry>
-        As an experiment, I wrote <a href="/posts">daily blog posts</a> for 180 days.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry>
-        <a href="https://bagel.institute" target="_blank">Bagel Institute</a>,
-        an app that my dad has used to teach math classes at Tufts University for two years.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry>
-        <a href="/posts/war-room">War Room</a>,
-        a social to-do list app that my friends and I (and 150+ other college students) use.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry>
-        <a href="https://bite.guide" target="_blank">Bite</a>,
-        a site where my girlfriend and I review restaurants and things to do.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry>
-        <a href="https://opensheet.elk.sh" target="_blank">opensheet</a>,
-        an open-source hosted Google Sheets API that receives about 15 million hits/month.
-        I’ve also written a <a href="/posts/google-sheets-json">blog post</a> on how to use it.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry>
-        <a href="/posts/tmrw">tmrw</a>,
-        a calendar-based to-do list app.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry>
-        <a href="https://vault.elk.sh" target="_blank">Vault</a>,
-        a password manager.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry subtitle="2019 - 2021">
-        <a href="/posts/blocks">Blocks</a>,
-        a schedule app I built for my high school which was used by over 2,000 students and teachers.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry>
-        <a href="/posts/cornflakes">Cornflakes</a>,
-        a simple and privacy-focused email newsletter SaaS.
-      </ExpandableSectionEntry>
-      <ExpandableSectionEntry>
-        <a href="https://emojicdn.elk.sh" target="_blank">emojicdn</a>,
-        an API for getting PNG images of emojis.
-      </ExpandableSectionEntry>
-    </ExpandableSection>
-
-    <div class="mt-12 space-y-11">
-      {timelineEntries.map((entry, i) => (
-      <div class="grid grid-cols-[max-content,1fr] gap-x-4">
-        <div>
-          <div class="h-7 w-7 bg-neutral-200 rounded-full flex items-center justify-center">
-            <CalendarBlank weight="bold" className="text-neutral-600" />
-          </div>
-          {i !== timelineEntries.length -1 && (
-          <div class="border-l-2 border-neutral-200 border-dashed h-full mt-2 ml-[calc(0.875rem-0.5px)]" />
-          )}
-        </div>
-        <div class="mt-1">
-          <p class="text-neutral-400 font-semibold text-sm tracking-tight">
-            {new Date(entry.frontmatter.date)
-            .toLocaleString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}
+  <LoadAlpine />
+  <div class="p-4 pb-36 pt-8 sm:pt-36">
+    <div class="max-w-screen-sm mx-auto text-neutral-700">
+      <div class="flex items-start gap-6">
+        <img src="/me.jpg" class="h-16 w-16 rounded-full" />
+        <div class="mt-2">
+          <p class="font-semibold text-neutral-900 leading-none">
+            Hi! I’m Ben Borgers.
           </p>
-          <div class="mt-2">
-            <entry.default />
+          <p class="mt-1 text-neutral-500">
+            I’m a rising sophomore at Tufts University studying computer
+            science.
+          </p>
+          <div class="mt-2 flex flex-wrap gap-x-2 gap-y-1.5">
+            <a
+              href="https://twitter.com/benborgers"
+              target="_blank"
+              class="bg-sky-500 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2 hover:ring-2 hover:ring-offset-2 hover:ring-sky-500 hover:ring-offset-neutral-50 transition-shadow"
+            >
+              <TwitterLogo weight="fill" />
+              <span>@benborgers</span>
+            </a>
+            <a
+              href="mailto:benborgers@hey.com"
+              class="bg-rose-600 text-white text-sm font-semibold px-3 py-0.5 rounded-full flex items-center gap-2 hover:ring-2 hover:ring-offset-2 hover:ring-rose-600 hover:ring-offset-neutral-50 transition-shadow"
+            >
+              <PaperPlaneTilt weight="fill" />
+              <span>benborgers@hey.com</span>
+            </a>
           </div>
         </div>
       </div>
-      ))}
+
+      <ExpandableSection title="Work Experience" className="mt-8">
+        <ExpandableSectionEntry subtitle="Summer 2022">
+          Internship at <a href="https://lu.ma" target="_blank">Luma</a> and <a
+            href="https://glow.app"
+            target="_blank"
+            >Glow
+          </a> working on web apps and their Chrome extension.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry subtitle="Summer 2021 - present">
+          Freelance development in Vue for <a
+            href="https://buttondown.email"
+            target="_blank"
+            >Buttondown
+          </a>, an email newsletter provider.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry subtitle="Fall 2021 - present">
+          Website for <a href="https://uphamdesign.com" target="_blank"
+            >Upham Design
+          </a>, a creative collective run by a family friend.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry subtitle="Winter 2021">
+          Wrote code that powered TV graphics for STU National Championships, a
+          Brazilian skateboarding championship.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry subtitle="Summer 2020">
+          Developed a course registration and management app in Laravel for <a
+            href="https://diyiboston.com"
+            target="_blank"
+            >Diyi
+          </a>, an online school based in the Boston area.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry subtitle="Summer 2019, Summer 2020">
+          Interned at
+          <a
+            href="https://www.ibm.com/products/guardium-insights"
+            target="_blank"
+          >
+            IBM Security
+          </a>
+          for two summers, working on a new security offering for enterprise.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry subtitle="Summer 2020">
+          Full-stack development using React and Node.js for <a
+            href="https://rep.ly"
+            target="_blank"
+            >Rep.ly
+          </a>.
+        </ExpandableSectionEntry>
+      </ExpandableSection>
+
+      <ExpandableSection title="Personal Projects" className="mt-5">
+        <ExpandableSectionEntry>
+          As an experiment, I wrote <a href="/posts">daily blog posts</a> for 180
+          days.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry>
+          <a href="https://bagel.institute" target="_blank">Bagel Institute</a>,
+          an app that my dad has used to teach math classes at Tufts University
+          for two years.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry>
+          <a href="/posts/war-room">War Room</a>, a social to-do list app that
+          my friends and I (and 150+ other college students) use.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry>
+          <a href="https://bite.guide" target="_blank">Bite</a>, a site where my
+          girlfriend and I review restaurants and things to do.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry>
+          <a href="https://opensheet.elk.sh" target="_blank">opensheet</a>, an
+          open-source hosted Google Sheets API that receives about 15 million
+          hits/month. I’ve also written a <a href="/posts/google-sheets-json"
+            >blog post
+          </a> on how to use it.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry>
+          <a href="/posts/tmrw">tmrw</a>, a calendar-based to-do list app.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry>
+          <a href="https://vault.elk.sh" target="_blank">Vault</a>, a password
+          manager.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry subtitle="2019 - 2021">
+          <a href="/posts/blocks">Blocks</a>, a schedule app I built for my high
+          school which was used by over 2,000 students and teachers.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry>
+          <a href="/posts/cornflakes">Cornflakes</a>, a simple and
+          privacy-focused email newsletter SaaS.
+        </ExpandableSectionEntry>
+        <ExpandableSectionEntry>
+          <a href="https://emojicdn.elk.sh" target="_blank">emojicdn</a>, an API
+          for getting PNG images of emojis.
+        </ExpandableSectionEntry>
+      </ExpandableSection>
+
+      <div class="mt-12 space-y-11">
+        {
+          timelineEntries.map((entry, i) => (
+            <div class="grid grid-cols-[max-content,1fr] gap-x-4">
+              <div>
+                <div class="h-7 w-7 bg-neutral-200 rounded-full flex items-center justify-center">
+                  <CalendarBlank weight="bold" className="text-neutral-600" />
+                </div>
+                {i !== timelineEntries.length - 1 && (
+                  <div class="border-l-2 border-neutral-200 border-dashed h-full mt-2 ml-[calc(0.875rem-1px)]" />
+                )}
+              </div>
+              <div class="mt-1">
+                <p class="text-neutral-400 font-semibold text-sm tracking-tight">
+                  {new Date(entry.frontmatter.date).toLocaleString("en-US", {
+                    timeZone: "UTC",
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </p>
+                <div class="mt-2">
+                  <entry.default />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
-</div>
 </Base>
