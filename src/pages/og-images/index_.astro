@@ -3,15 +3,18 @@
 // /og-images and that would be weird because it’s not the “index page.”
 // Instead, the url is /og-images/index_.
 
-import Base from '../../components/Base.astro'
-import OgImageLayout from '../../components/OgImageLayout.astro';
+import Base from "../../components/Base.astro";
+import OgImageLayout from "../../components/OgImageLayout.astro";
 ---
 
 <Base>
-<OgImageLayout className="bg-neutral-900 grid place-items-center">
-  <div class="flex items-center gap-x-10">
-    <img src="/me.jpg" class="h-36 w-36 rounded-full" />
-    <p class="text-9xl font-black text-white tracking-tight">Ben Borgers</p>
-  </div>
-</OgImageLayout>
+  <OgImageLayout className="bg-neutral-900 grid place-items-center">
+    <div class="flex items-center gap-x-10">
+      <img
+        src="/me.jpg"
+        class="h-64 w-64 rounded-full border-8 border-neutral-400"
+      />
+      <p class="text-9xl font-black text-white tracking-tight">Ben Borgers</p>
+    </div>
+  </OgImageLayout>
 </Base>
