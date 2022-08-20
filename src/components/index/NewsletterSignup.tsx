@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "phosphor-react";
 
 export default function NewsletterSignup() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function NewsletterSignup() {
             exit={{ opacity: 0 }}
             transition={{ type: "spring", duration: 0.3 }}
           >
-            <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+            <div className="fixed inset-0 bg-black/50" aria-hidden="true" />
 
             <div className="fixed bottom-4 inset-x-4 sm:inset-0 flex items-center justify-center">
               <Dialog.Panel
