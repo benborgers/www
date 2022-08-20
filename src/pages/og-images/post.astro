@@ -1,0 +1,18 @@
+---
+import Base from "../../components/Base.astro";
+import OgImageLayout from "../../components/OgImageLayout.astro";
+---
+
+<Base>
+<OgImageLayout className="bg-neutral-900 p-16 flex flex-col justify-between">
+  <p class="text-neutral-400 text-4xl font-bold">Ben Borgers</p>
+  <p id="title" class={`text-white font-semibold`}></p>
+
+  <script>
+    const titleEl = document.querySelector('#title')
+    const title = new URLSearchParams(location.search).get('title')
+    titleEl.innerText = title
+    titleEl.classList.add(title.length <= 35 ? 'text-9xl' : 'text-8xl')
+  </script>
+</OgImageLayout>
+</Base>

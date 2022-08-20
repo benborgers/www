@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 const { post, previousPost, nextPost } = Astro.props
 ---
 
-<Base title={post.title} bg="bg-zinc-50">
+<Base title={post.title} bg="bg-zinc-50" ogImage={`/og-images/post?title=${encodeURIComponent(post.title)}`}>
 <BlogLayout>
   <div class="mb-6">
     <a href="/posts"
