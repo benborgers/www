@@ -1,8 +1,7 @@
 ---
 import Base from "../components/Base.astro";
-import LoadAlpine from "../components/LoadAlpine.astro";
 import { TwitterLogo, PaperPlaneTilt, CalendarBlank } from "phosphor-react";
-import ExpandableSection from "../components/index/ExpandableSection.astro";
+import ExpandableSection from "../components/index/ExpandableSection";
 import ExpandableSectionEntry from "../components/index/ExpandableSectionEntry.astro";
 
 const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
@@ -12,7 +11,6 @@ const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
 ---
 
 <Base title="Ben Borgers" bg="bg-neutral-50" ogImage="/og-images/index_">
-  <LoadAlpine />
   <div class="p-4 pb-36 pt-8 sm:pt-36">
     <div class="max-w-screen-sm mx-auto text-neutral-700">
       <div class="flex items-start gap-6">
@@ -45,7 +43,7 @@ const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
         </div>
       </div>
 
-      <ExpandableSection title="Work Experience" className="mt-8">
+      <ExpandableSection client:idle title="Work Experience" className="mt-8">
         <ExpandableSectionEntry subtitle="Summer 2022">
           Internship at
           <a href="https://lu.ma" target="_blank">Luma</a>
@@ -83,7 +81,7 @@ const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
         </ExpandableSectionEntry>
       </ExpandableSection>
 
-      <ExpandableSection title="Personal Projects" className="mt-5">
+      <ExpandableSection client:idle title="Personal Projects" className="mt-5">
         <ExpandableSectionEntry>
           As an experiment, I wrote <a href="/posts">daily blog posts</a> for 180
           days.

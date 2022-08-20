@@ -9,14 +9,12 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@alpinejs/collapse": "^3.10.3",
     "@astrojs/mdx": "^0.10.0",
     "@astrojs/react": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0",
     "@headlessui/react": "^1.6.6",
     "@radix-ui/react-slider": "^1.0.0",
     "@tailwindcss/typography": "^0.5.4",
-    "alpinejs": "^3.10.3",
     "astro": "^1.0.6",
     "framer-motion": "^7.2.0",
     "luxon": "^3.0.1",
