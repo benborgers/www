@@ -3,6 +3,7 @@ import Base from "../components/Base.astro";
 import { TwitterLogo, PaperPlaneTilt, CalendarBlank } from "phosphor-react";
 import ExpandableSection from "../components/index/ExpandableSection";
 import ExpandableSectionEntry from "../components/index/ExpandableSectionEntry.astro";
+import NewsletterSignup from '../components/index/NewsletterSignup'
 
 const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
   (a, b) =>
@@ -127,7 +128,12 @@ const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
         </ExpandableSectionEntry>
       </ExpandableSection>
 
-      <div class="mt-12 space-y-11">
+      <div class="mt-12">
+        <div class="flex justify-end">
+          <NewsletterSignup client:visible />
+        </div>
+
+        <div class="space-y-11">
         {
           timelineEntries.map((entry, i) => (
             <div class="grid grid-cols-[max-content,1fr] gap-x-4">
@@ -155,6 +161,7 @@ const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
             </div>
           ))
         }
+        </div>
       </div>
     </div>
   </div>
