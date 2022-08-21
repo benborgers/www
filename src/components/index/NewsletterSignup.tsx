@@ -55,7 +55,7 @@ export default function NewsletterSignup() {
                   <div className="mt-4">
                     <Confetti weight="duotone" size={24} className="mx-auto" />
                     <p className="mt-1 text-neutral-800 font-semibold text-center">
-                      Thank you for subscribing!
+                      Thank you!
                     </p>
                   </div>
                 ) : (
@@ -123,7 +123,7 @@ function Form({ onSuccess }: { onSuccess: () => void }) {
     <form ref={ref} onSubmit={handleSubmit}>
       <input
         type="email"
-        // required
+        required
         placeholder="your email"
         className="w-full rounded-lg border-neutral-300 bg-neutral-50 shadow-sm focus:border-rose-500 focus:ring-rose-500"
       />
