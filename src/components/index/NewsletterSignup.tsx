@@ -133,14 +133,14 @@ function Form({ onSuccess }: { onSuccess: () => void }) {
         type="email"
         required
         placeholder="type your email..."
-        className="w-full rounded-lg placeholder:text-neutral-400 border-neutral-300 bg-neutral-50 shadow-sm focus:border-rose-500 focus:ring-rose-500"
+        className="w-full rounded-lg placeholder:text-neutral-400 border-neutral-300 bg-neutral-50 shadow-sm focus:ring-0 focus:border-blue-400"
       />
 
       {error && <p className="mt-2 text-red-600">{error}</p>}
 
       <div className="mt-3 flex justify-end">
         <button
-          className="px-4 py-2.5 rounded-lg shadow bg-rose-600 text-white font-semibold relative"
+          className="px-4 py-2 rounded-lg shadow bg-rose-600 text-white font-semibold relative"
           disabled={loading}
         >
           <span className={loading ? "opacity-0" : ""}>Subscribe</span>
