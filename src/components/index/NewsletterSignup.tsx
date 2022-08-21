@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Dialog } from "@headlessui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Confetti, Envelope } from "phosphor-react";
@@ -76,7 +76,7 @@ export default function NewsletterSignup() {
                     </div>
 
                     <div className="mt-4 mb-1">
-                      <Form onSuccess={() => setSuccess(true)} />
+                      <Form onSuccess={() => setSuccess(true)} open={open} />
                     </div>
                   </>
                 )}
@@ -89,7 +89,7 @@ export default function NewsletterSignup() {
   );
 }
 
-function Form({ onSuccess }: { onSuccess: () => void }) {
+function Form({ onSuccess, open }: { onSuccess: () => void; open: boolean }) {
   const ref = useRef<HTMLFormElement | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -127,11 +127,19 @@ function Form({ onSuccess }: { onSuccess: () => void }) {
       });
   }
 
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => {
+        console.log("hi");
+        ref.current?.querySelector('input[type="email"]')?.focus();
+      });
+    }
+  }, [open]);
+
   return (
     <form ref={ref} onSubmit={handleSubmit}>
       <input
         type="email"
-        required
         placeholder="type your email..."
         className="w-full rounded-lg placeholder:text-neutral-400 border-neutral-300 bg-neutral-50 shadow-sm focus:border-rose-500 focus:ring-rose-500"
       />

@@ -1,5 +1,5 @@
 ---
-const { title, ogImage, bg } = Astro.props
+const { title, ogImage, bg, noIndex = false } = Astro.props
 
 let ogImageUrl = null
 if (ogImage) {
@@ -26,6 +26,8 @@ if (ogImage) {
 
   {/* Since this is the default sans-serif font, every page gets it. */}
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+  {noIndex && <meta name="robots" content="noindex" />}
 
   <slot name="head" />
 </head>
