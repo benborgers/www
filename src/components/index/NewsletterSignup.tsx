@@ -133,7 +133,7 @@ function Form({ onSuccess }: { onSuccess: () => void }) {
         type="email"
         required
         placeholder="type your email..."
-        className="w-full rounded-lg placeholder:text-neutral-400 border-neutral-300 bg-neutral-50 shadow-sm focus:ring-0 focus:border-blue-400"
+        className="w-full rounded-lg placeholder:text-neutral-400 border-neutral-300 bg-neutral-50 shadow-sm focus:border-rose-500 focus:ring-rose-500"
       />
 
       {error && <p className="mt-2 text-red-600">{error}</p>}
