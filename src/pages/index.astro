@@ -133,7 +133,7 @@ const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
           <NewsletterSignup client:visible />
         </div>
 
-        <div class="space-y-11">
+        <div class="mt-1 sm:mt-0 space-y-11">
         {
           timelineEntries.map((entry, i) => (
             <div class="grid grid-cols-[max-content,1fr] gap-x-4">

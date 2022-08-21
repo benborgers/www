@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Dialog } from "@headlessui/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Confetti } from "phosphor-react";
+import { X, Confetti, Envelope } from "phosphor-react";
 
 export default function NewsletterSignup() {
   const [open, setOpen] = useState(false);
@@ -9,7 +9,14 @@ export default function NewsletterSignup() {
 
   return (
     <>
-      <button onClick={() => setOpen(true)}>newsletter!</button>
+      <button
+        onClick={() => setOpen(true)}
+        className="text-right text-sm font-semibold text-rose-600 flex items-center gap-1.5
+          underline decoration-transparent hover:decoration-rose-600 transition-colors duration-100"
+      >
+        <Envelope weight="fill" size={16} />
+        Get updates via email
+      </button>
 
       <AnimatePresence>
         {open && (
@@ -36,8 +43,8 @@ export default function NewsletterSignup() {
               >
                 <div className="flex items-start justify-between gap-8">
                   {!success ? (
-                    <Dialog.Title className="text-lg font-semibold text-neutral-800">
-                      Get updates about my work!
+                    <Dialog.Title className="text-lg font-bold text-neutral-800 tracking-tight">
+                      Subscribe to my newsletter!
                     </Dialog.Title>
                   ) : (
                     <div />
@@ -62,8 +69,9 @@ export default function NewsletterSignup() {
                   <>
                     <div className="mt-2 text-neutral-600">
                       <p>
-                        I send out an email newsletter every two weeks with
-                        interesting new projects and updates.
+                        I send out an email newsletter every two weeks with new
+                        project and life updates. I’d love to have you follow
+                        along!
                       </p>
                     </div>
 
@@ -124,8 +132,8 @@ function Form({ onSuccess }: { onSuccess: () => void }) {
       <input
         type="email"
         required
-        placeholder="your email"
-        className="w-full rounded-lg border-neutral-300 bg-neutral-50 shadow-sm focus:border-rose-500 focus:ring-rose-500"
+        placeholder="type your email..."
+        className="w-full rounded-lg placeholder:text-neutral-400 border-neutral-300 bg-neutral-50 shadow-sm focus:border-rose-500 focus:ring-rose-500"
       />
 
       {error && <p className="mt-2 text-red-600">{error}</p>}
