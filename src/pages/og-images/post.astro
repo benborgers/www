@@ -4,9 +4,15 @@ import OgImageLayout from "../../components/OgImageLayout.astro";
 ---
 
 <Base>
-<OgImageLayout className="bg-neutral-900 p-16 flex flex-col justify-between">
-  <p class="text-neutral-400 text-4xl font-bold">Ben Borgers</p>
-  <p id="title" class={`text-white font-semibold`}></p>
+<link
+  slot="head"
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900"
+  rel="stylesheet"
+/>
+
+<OgImageLayout className="bg-zinc-50 p-16 flex flex-col justify-between">
+  <p class="text-white bg-rose-600 px-8 py-2 max-w-max text-4xl font-bold rounded-full">Ben Borgers</p>
+  <p id="title" class="text-neutral-900 font-black font-fraunces"></p>
 
   <script>
     const titleEl = document.querySelector('#title')
