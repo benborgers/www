@@ -13,11 +13,13 @@ app('auth.password.broker')->createToken(User::find(1))
 
 This returns a token and adds it (hashed) to the `password_resets` table of your database.
 
-To use it, use this path:
+To use it, use this path (if your app was set up using Laravel Breeze or Laravel Jetstream):
 
 ```
-/password/reset/{token}?email={user_email_address}
+/reset-password/{token}?email={email}
 ```
+
+_(If you’re using the older Laravel scaffolding, the link will be `/password/reset/{token}?email={user_email_address}`.)_
 
 To get this working in production on Laravel Vapor, I ran this command:
 
