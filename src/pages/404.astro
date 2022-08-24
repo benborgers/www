@@ -13,15 +13,21 @@ import Base from '../components/Base.astro'
 </div>
 
 <script>
+  const body = {
+    path: window.location.href,
+    referrer: document.referrer,
+    'user-agent': navigator.userAgent,
+  }
+
   if (location.hostname === 'benborgers.com') {
     fetch('https://neptune.ooo/report-benborgers-404', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        path: window.location.href,
-        referrer: document.referrer
-      })
+      body: JSON.stringify(body)
     })
+  } else {
+    // For debugging
+    console.log(body)
   }
 </script>
 </Base>
