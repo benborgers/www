@@ -16,18 +16,23 @@ import Base from '../components/Base.astro'
   const body = {
     path: window.location.href,
     referrer: document.referrer,
-    'user-agent': navigator.userAgent,
   }
 
-  if (location.hostname === 'benborgers.com') {
-    fetch('https://neptune.ooo/report-benborgers-404', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
-    })
-  } else {
-    // For debugging
-    console.log(body)
+  // Don’t report for these URLs, they’re known 404s
+  const blocklist = ['/og-image']
+
+  if (!blocklist.includes(window.location.pathname)) {
+    if (location.hostname === 'benborgers.com') {
+      fetch('https://neptune.ooo/report-benborgers-404', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      })
+    } else {
+      // For debugging
+      console.log(body)
+    }
   }
+
 </script>
 </Base>
