@@ -44,7 +44,12 @@ const isIndex = file.endsWith("index.mdx");
                 href={`/tufts/${course}`}
                 class="flex items-center gap-2 w-max text-sm text-zinc-800 hover:text-zinc-500 transition-colors"
               >
-                <ArrowBendDownRight weight="bold" className="text-zinc-400" />
+                <ArrowBendDownRight
+                  weight="bold"
+                  className={
+                    url.includes(course) ? "text-orange-500" : "text-zinc-400"
+                  }
+                />
                 <span>{courseToName[course]}</span>
               </a>
             ))
