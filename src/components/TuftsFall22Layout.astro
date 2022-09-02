@@ -12,8 +12,71 @@ const isIndex = file.endsWith("index.mdx");
 ---
 
 <Base title={frontmatter.title + (!isIndex ? " - " + courseName : "")}>
-  <h1>{frontmatter.title}</h1>
-  {!isIndex && <h2>{courseName}</h2>}
+  <link slot="head" rel="preconnect" href="https://fonts.bunny.net" />
+  <link
+    slot="head"
+    href="https://fonts.bunny.net/css?family=pt-serif:400,400i,700,700i"
+    rel="stylesheet"
+  />
 
-  <slot />
+  <div class="p-4 pl-20 pt-32 text-zinc-700 flex gap-x-40 gap-y-16">
+    {/* Column 1 */}
+    <div>
+      <div class="sticky top-12 grid grid-rows-[120px,max-content]">
+        <div
+          class="bg-orange-500 text-white rounded-full p-2 aspect-square h-max flex items-center"
+        >
+          <p class="text-xs font-black uppercase">F’22</p>
+        </div>
+
+        <nav class="pl-1.5">nav</nav>
+      </div>
+    </div>
+
+    {/* Column 2 */}
+    <div class="grid grid-rows-[120px,max-content] w-full max-w-screen-sm">
+      <p class="mt-2.5 font-bold text-zinc-900">Ben Borgers</p>
+
+      <div>
+        <div
+          class="flex justify-between items-baseline border-b-2 border-zinc-100 pb-4"
+        >
+          <div>
+            <h1 class="prose text-3xl font-black text-zinc-900">
+              {frontmatter.title}
+            </h1>
+            {
+              !isIndex && (
+                <h2 class="mt-0.5 text-orange-500 text-sm font-bold">
+                  {courseName}
+                </h2>
+              )
+            }
+          </div>
+
+          {
+            frontmatter.date && (
+              <p class="text-zinc-400 text-sm font-semibold italic tracking-tight">
+                <time datetime={frontmatter.date}>
+                  {new Date(frontmatter.date).toLocaleString("en-US", {
+                    timeZone: "UTC",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </time>
+              </p>
+            )
+          }
+        </div>
+
+        <div class="mt-12"></div>
+
+        <div
+          class="pb-36 prose prose-zinc prose-orange font-['PT_Serif',Georgia,serif] prose-headings:font-sans"
+        >
+          <slot />
+        </div>
+      </div>
+    </div>
+  </div>
 </Base>
