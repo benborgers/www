@@ -1,7 +1,19 @@
 ---
 import Base from "./Base.astro";
+
+const { frontmatter, url, file } = Astro.props;
+
+const courseName = {
+  psy1: "Intro to Psychology",
+  ger170: "Grimms’ Fairy Tales",
+}[url.split("/")[2]];
+
+const isIndex = file.endsWith("index.mdx");
 ---
 
-<Base>
+<Base title={frontmatter.title + (!isIndex ? " - " + courseName : "")}>
+  <h1>{frontmatter.title}</h1>
+  {!isIndex && <h2>{courseName}</h2>}
+
   <slot />
 </Base>
