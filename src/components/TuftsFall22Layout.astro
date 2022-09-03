@@ -9,7 +9,8 @@ const courseToName = {
   ger170: "Grimms’ Fairy Tales",
 };
 
-const courseName = courseToName[url.split("/")[2]];
+const courseId = url.split("/")[2];
+const courseName = courseToName[courseId];
 
 const isIndex = file.endsWith("index.mdx");
 ---
@@ -22,17 +23,26 @@ const isIndex = file.endsWith("index.mdx");
     rel="stylesheet"
   />
 
-  <div class="p-4 pl-20 pt-32 text-zinc-700 flex gap-x-28 gap-y-16">
+  <div class="p-4 lg:pl-20 md:pt-32 text-zinc-700 md:flex gap-x-20 lg:gap-x-28">
     {/* Column 1 */}
     <div>
-      <div class="sticky top-12 grid grid-rows-[120px,max-content]">
+      <div
+        class="md:sticky md:top-12 grid grid-cols-[1fr,max-content] md:grid-cols-1 md:grid-rows-[120px,max-content]"
+      >
+        <a
+          href="/"
+          class="md:hidden underline decoration-transparent hover:decoration-orange-500 transition-colors duration-100 font-semibold tracking-tight text-zinc-900"
+        >
+          Ben Borgers
+        </a>
+
         <div
-          class="bg-orange-500 text-white rounded-full p-2 aspect-square h-max w-max flex items-center"
+          class="hidden md:flex items-center bg-orange-500 text-white rounded-full p-2 aspect-square h-max w-max"
         >
           <p class="text-xs font-black uppercase">F’22</p>
         </div>
 
-        <nav class="pl-1.5 space-y-1.5">
+        <nav class="md:ml-1.5 mt-0.5 md:mt-0 space-y-1.5">
           <a
             href="/tufts#fall22"
             class="block w-max text-sm text-zinc-800 hover:text-zinc-500 transition-colors"
@@ -59,8 +69,10 @@ const isIndex = file.endsWith("index.mdx");
     </div>
 
     {/* Column 2 */}
-    <div class="grid grid-rows-[110px,max-content] w-full max-w-screen-sm">
-      <div class="mt-2.5">
+    <div
+      class="grid grid-rows-[110px,max-content] w-full max-w-screen-sm mt-8 md:mt-0"
+    >
+      <div class="mt-2.5 hidden md:block">
         <a
           href="/"
           class="underline decoration-transparent hover:decoration-orange-500 transition-colors duration-100 mt-2.5 font-semibold tracking-tight text-zinc-900"
@@ -79,9 +91,11 @@ const isIndex = file.endsWith("index.mdx");
             </h1>
             {
               !isIndex && (
-                <h2 class="mt-0.5 text-orange-500 text-sm font-bold">
-                  {courseName}
-                </h2>
+                <a href={`/tufts/${courseId}`}>
+                  <h2 class="mt-0.5 text-orange-500 text-sm font-bold underline decoration-transparent decoration-2 hover:decoration-orange-500 transition-colors duration-100">
+                    {courseName}
+                  </h2>
+                </a>
               )
             }
           </div>
