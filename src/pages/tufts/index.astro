@@ -1,0 +1,36 @@
+---
+import Base from "../../components/Base.astro";
+import CourseRow from "../../components/tufts/CourseRow.astro";
+---
+
+<Base title="Tufts">
+  <link
+    slot="head"
+    href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,701,501,401,901,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <div
+    class="text-neutral-700 font-[Satoshi] max-w-screen-sm mx-auto p-4 pb-36 pt-16"
+  >
+    <p class="font-bold text-neutral-400">
+      From the website of <a href="/" class="underline">Ben Borgers</a>:
+    </p>
+    <h1 class="mt-2 font-black text-zinc-900 text-4xl tracking-tight">
+      Classes I’ve taken at Tufts.
+    </h1>
+
+    <div class="mt-12">
+      <CourseRow
+        label="Fall 2021"
+        courses={[
+          { title: "CS 11", subtitle: "Introduction to Computer Science" },
+          { title: "Linear Algebra" },
+          { title: "Chinese 3" },
+          { title: "Expository Writing" },
+          { title: "Fight Against Mass Shootings" },
+        ]}
+      />
+    </div>
+  </div>
+</Base>

@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/+/tufts",
+      "destination": "/tufts",
+      "permanent": true
+    },
+    {
       "source": "/contact",
       "destination": "/",
       "permanent": false
