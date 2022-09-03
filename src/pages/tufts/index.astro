@@ -17,10 +17,20 @@ import CourseRow from "../../components/tufts/CourseRow.astro";
       From the website of <a href="/" class="underline">Ben Borgers</a>:
     </p>
     <h1 class="mt-2 font-black text-zinc-900 text-4xl tracking-tight">
-      Classes I’ve taken at Tufts.
+      Classes I’ve taken at Tufts
     </h1>
 
     <div class="mt-12">
+      <CourseRow
+        label="Spring 2022"
+        courses={[
+          { title: "CS 15", subtitle: "Data Structures" },
+          { title: "Bridge to Higher Mathematics" },
+          { title: "Chinese 4" },
+          { title: "Introduction to World Music" },
+        ]}
+        className="mt-6"
+      />
       <CourseRow
         label="Fall 2021"
         courses={[
@@ -30,6 +40,7 @@ import CourseRow from "../../components/tufts/CourseRow.astro";
           { title: "Expository Writing" },
           { title: "Fight Against Mass Shootings" },
         ]}
+        className="mt-6"
       />
     </div>
   </div>

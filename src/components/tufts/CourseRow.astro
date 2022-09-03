@@ -1,26 +1,29 @@
 ---
 // courses = [{ title, subtitle, href }]
-const { label, courses } = Astro.props;
+const { label, courses, className } = Astro.props;
 ---
 
-<h2
-  class="font-black bg-emerald-600 border border-zinc-900 text-white p-2 text-sm"
-  id={label.toLowerCase().replace(/ /g, "-")}
->
-  {label}
-</h2>
-<div
-  class="-mt-px sm:grid border border-zinc-900 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900"
-  style={{ gridTemplateColumns: `repeat(${courses.length}, 1fr)` }}
->
-  {
-    courses.map((course) => (
-      <div class="p-2">
-        <p class="font-bold text-zinc-800">{course.title}</p>
-        {course.subtitle && (
-          <p class="font-medium text-zinc-500">{course.subtitle}</p>
-        )}
-      </div>
-    ))
-  }
+<div class={className}>
+  <h2
+    class="font-black bg-emerald-600 border border-zinc-900 text-white p-2 text-sm"
+    id={label.toLowerCase().replace(/ /g, "-")}
+  >
+    {label}
+  </h2>
+
+  <div
+    class="-mt-px sm:grid border border-zinc-900 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900"
+    style={{ gridTemplateColumns: `repeat(${courses.length}, 1fr)` }}
+  >
+    {
+      courses.map((course) => (
+        <div class="p-2">
+          <p class="font-bold text-zinc-800">{course.title}</p>
+          {course.subtitle && (
+            <p class="font-medium text-zinc-500">{course.subtitle}</p>
+          )}
+        </div>
+      ))
+    }
+  </div>
 </div>
