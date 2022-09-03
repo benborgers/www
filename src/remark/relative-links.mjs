@@ -1,4 +1,4 @@
-const URL_PREFIXES = ["/tufts/psy1", "/tufts/ger170"];
+const URL_PREFIXES = ["/tufts/psy1", "/tufts/chem6", "/tufts/ger170"];
 
 export default function () {
   return (node, info) => {

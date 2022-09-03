@@ -6,6 +6,7 @@ const { frontmatter, url, file } = Astro.props;
 
 const courseToName = {
   psy1: "Intro to Psychology",
+  chem6: "Bang Bang to Humankind",
   ger170: "Grimms’ Fairy Tales",
 };
 
@@ -23,11 +24,11 @@ const isIndex = file.endsWith("index.mdx");
     rel="stylesheet"
   />
 
-  <div class="p-4 lg:pl-20 md:pt-32 text-zinc-700 md:flex gap-x-20 lg:gap-x-28">
+  <div class="p-4 lg:pl-16 md:pt-32 text-zinc-700 md:flex gap-x-20 lg:gap-x-24">
     {/* Column 1 */}
     <div>
       <div
-        class="md:sticky md:top-12 grid grid-cols-[1fr,max-content] md:grid-cols-1 md:grid-rows-[120px,max-content]"
+        class="md:sticky md:top-12 flex justify-between md:grid md:grid-cols-1 md:grid-rows-[120px,max-content]"
       >
         <a
           href="/"
@@ -47,7 +48,7 @@ const isIndex = file.endsWith("index.mdx");
           </div>
         </a>
 
-        <nav class="md:ml-1.5 mt-0.5 md:mt-0 space-y-1.5">
+        <nav class="md:ml-1.5 mt-0.5 md:mt-0 space-y-0.5 md:space-y-1.5">
           <a
             href="/tufts#fall-2022"
             class="block w-max text-sm text-zinc-800 hover:text-zinc-500 transition-colors"
