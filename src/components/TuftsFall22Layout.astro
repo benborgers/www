@@ -28,23 +28,24 @@ const isIndex = file.endsWith("index.mdx");
     {/* Column 1 */}
     <div>
       <div
-        class="md:sticky md:top-12 flex justify-between md:grid md:grid-cols-1 md:grid-rows-[120px,max-content]"
+        class="md:sticky md:top-12 grid grid-cols-[1fr,max-content] md:grid-cols-1 md:grid-rows-[120px,max-content]"
       >
         <a
           href="/"
-          class="md:hidden underline decoration-transparent hover:decoration-orange-500 transition-colors duration-100 font-semibold tracking-tight text-zinc-900"
+          class="md:hidden underline decoration-transparent hover:decoration-orange-500 transition-colors duration-100 font-semibold tracking-tight text-zinc-900 max-w-max h-max"
         >
           Ben Borgers
         </a>
 
-        <a
-          href="/tufts#fall-2022"
-          class="w-max h-max hover:opacity-80 transition-opacity duration-200"
-        >
+        <a href="/tufts#fall-2022" class="hidden md:block w-max h-max group">
           <div
-            class="hidden md:flex items-center bg-orange-500 text-white rounded-full p-2 aspect-square h-max w-max"
+            class="border-2 border-orange-500 px-2 py-1 group-hover:bg-orange-500 transition-colors duration-100"
           >
-            <p class="text-xs font-black uppercase">F’22</p>
+            <p
+              class="text-sm font-black text-zinc-900 group-hover:text-white transition-colors duration-100"
+            >
+              F’22
+            </p>
           </div>
         </a>
 
@@ -78,7 +79,7 @@ const isIndex = file.endsWith("index.mdx");
     <div
       class="grid grid-rows-[110px,max-content] w-full max-w-screen-sm mt-8 md:mt-0"
     >
-      <div class="mt-2.5 hidden md:block">
+      <div class="mt-1.5 hidden md:block">
         <a
           href="/"
           class="underline decoration-transparent hover:decoration-orange-500 transition-colors duration-100 mt-2.5 font-semibold tracking-tight text-zinc-900"
