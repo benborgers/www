@@ -1,6 +1,8 @@
 ---
 // courses = [{ title, subtitle, href }]
 const { label, courses, className } = Astro.props;
+
+import { ArrowRight } from "phosphor-react";
 ---
 
 <div class={className}>
@@ -17,10 +19,23 @@ const { label, courses, className } = Astro.props;
   >
     {
       courses.map((course) => (
-        <div class="p-2">
+        <div class="p-2 relative">
           <p class="font-bold text-zinc-800">{course.title}</p>
           {course.subtitle && (
             <p class="font-medium text-zinc-500">{course.subtitle}</p>
+          )}
+
+          {course.href && (
+            <div class="mt-2 flex items-center justify-end gap-x-1 text-zinc-400">
+              <span class="text-xs font-bold italic">Notes</span>
+              <ArrowRight
+                weight="bold"
+                size={10}
+                className="[&_*]:[stroke-width:32]"
+              />
+            </div>
+
+            <a href={course.href} class="absolute inset-0 hover:bg-zinc-900/10 transition-colors"></a>
           )}
         </div>
       ))
