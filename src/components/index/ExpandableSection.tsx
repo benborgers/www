@@ -15,7 +15,7 @@ export default function ExpandableSection({
 
   return (
     <motion.div
-      className={`bg-neutral-100  rounded-xl overflow-hidden relative ${className}`}
+      className={`bg-neutral-100 rounded-xl overflow-hidden relative ${className}`}
       initial={false}
       animate={{ height: open ? "auto" : 230 }}
       transition={{
