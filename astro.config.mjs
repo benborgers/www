@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 
-import relativeLinks from "./src/remark/relative-links.mjs";
+import wikilinks from "./src/remark/wikilinks.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,7 +17,7 @@ export default defineConfig({
     shikiConfig: {
       theme: "github-light",
     },
-    remarkPlugins: [relativeLinks],
+    remarkPlugins: [wikilinks],
     extendDefaultPlugins: true,
   },
 });

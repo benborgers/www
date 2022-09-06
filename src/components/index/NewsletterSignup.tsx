@@ -130,7 +130,6 @@ function Form({ onSuccess, open }: { onSuccess: () => void; open: boolean }) {
   useEffect(() => {
     if (open) {
       setTimeout(() => {
-        console.log("hi");
         ref.current?.querySelector('input[type="email"]')?.focus();
       });
     }
