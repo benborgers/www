@@ -103,7 +103,7 @@ const isIndex = file.endsWith("index.mdx");
                   <time datetime={frontmatter.date}>
                     {new Date(frontmatter.date).toLocaleString("en-US", {
                       timeZone: "UTC",
-                      month: "long",
+                      month: "short",
                       year: "numeric",
                     })}
                   </time>
