@@ -89,35 +89,35 @@ const isIndex = file.endsWith("index.mdx");
       </div>
 
       <div>
-        <div
-          class="flex justify-between items-baseline border-b-2 border-zinc-100 pb-4"
-        >
-          <div>
-            <h1 class="prose text-3xl font-black text-zinc-900">
-              {frontmatter.title}
-            </h1>
+        <div class="border-b-2 border-zinc-100 pb-4">
+          <div class="flex justify-between items-end gap-2">
+            <div>
+              <h1 class="prose text-2xl md:text-3xl font-black text-zinc-900">
+                {frontmatter.title}
+              </h1>
+            </div>
+
             {
-              !isIndex && (
-                <a href={`/tufts/${courseId}`}>
-                  <h2 class="mt-0.5 text-orange-500 text-sm font-bold underline decoration-transparent decoration-2 hover:decoration-orange-500 transition-colors duration-100">
-                    {courseName}
-                  </h2>
-                </a>
+              frontmatter.date && (
+                <p class="text-zinc-400 text-sm font-medium italic whitespace-nowrap">
+                  <time datetime={frontmatter.date}>
+                    {new Date(frontmatter.date).toLocaleString("en-US", {
+                      timeZone: "UTC",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </time>
+                </p>
               )
             }
           </div>
-
           {
-            frontmatter.date && (
-              <p class="text-zinc-400 text-sm font-medium italic">
-                <time datetime={frontmatter.date}>
-                  {new Date(frontmatter.date).toLocaleString("en-US", {
-                    timeZone: "UTC",
-                    month: "long",
-                    year: "numeric",
-                  })}
-                </time>
-              </p>
+            !isIndex && (
+              <a href={`/tufts/${courseId}`} class="block max-w-max">
+                <h2 class="mt-0.5 text-orange-500 text-sm font-bold underline decoration-transparent decoration-2 hover:decoration-orange-500 transition-colors duration-100">
+                  {courseName}
+                </h2>
+              </a>
             )
           }
         </div>
