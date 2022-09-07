@@ -1,39 +1,42 @@
 ---
-const { title, ogImage, bg, noIndex = false } = Astro.props
+const { title, ogImage, bg, noIndex = false } = Astro.props;
 
-let ogImageUrl = null
+let ogImageUrl = null;
 if (ogImage) {
-  if (ogImage.startsWith('/og-images/')) {
-    ogImageUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(Astro.site.origin + ogImage)}/opengraph/${new Date().getTime()}`
+  if (ogImage.startsWith("/og-image/")) {
+    ogImageUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(
+      Astro.site.origin + ogImage
+    )}/opengraph/${new Date().getTime()}`;
   }
 }
 ---
 
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
 
-  <title>{title}</title>
-  <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
+    <script
+      src="https://owl.benborgers.com/script.js"
+      data-site="ZWCPJCUA"
+      data-included-domains="benborgers.com"
+      defer
+    ></script>
 
-  <script src="https://owl.benborgers.com/script.js" data-site="ZWCPJCUA" data-included-domains="benborgers.com" defer></script>
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
 
-  {ogImageUrl &&
-  <meta property="og:image" content={ogImageUrl} />
-  }
+    {/* Since this is the default sans-serif font, every page gets it. */}
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-  {/* Since this is the default sans-serif font, every page gets it. */}
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    {noIndex && <meta name="robots" content="noindex" />}
 
-  {noIndex && <meta name="robots" content="noindex" />}
+    <slot name="head" />
+  </head>
 
-  <slot name="head" />
-</head>
-
-<body class={`antialiased ${ bg ?? 'bg-white' }`}>
-  <slot />
-</body>
-
+  <body class={`antialiased ${bg ?? "bg-white"}`}>
+    <slot />
+  </body>
 </html>

@@ -3,7 +3,7 @@ import Base from "../components/Base.astro";
 import { TwitterLogo, PaperPlaneTilt, CalendarBlank } from "phosphor-react";
 import ExpandableSection from "../components/index/ExpandableSection";
 import ExpandableSectionEntry from "../components/index/ExpandableSectionEntry.astro";
-import NewsletterSignup from '../components/index/NewsletterSignup'
+import NewsletterSignup from "../components/index/NewsletterSignup";
 
 const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
   (a, b) =>
@@ -11,11 +11,15 @@ const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
 );
 ---
 
-<Base title="Ben Borgers" bg="bg-neutral-50" ogImage="/og-images/index_">
+<Base title="Ben Borgers" bg="bg-neutral-50" ogImage="/og-image/index_">
   <div class="p-4 pb-36 pt-8 sm:pt-36">
     <div class="max-w-screen-sm mx-auto text-neutral-700">
       <div class="flex items-start gap-6">
-        <img src="/me.jpg" class="h-16 w-16 rounded-full" alt="Portrait of Ben Borgers" />
+        <img
+          src="/me.jpg"
+          class="h-16 w-16 rounded-full"
+          alt="Portrait of Ben Borgers"
+        />
         <div class="mt-2">
           <p class="font-semibold text-neutral-900 leading-none">
             Hi! I’m Ben Borgers.
@@ -73,7 +77,10 @@ const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
         </ExpandableSectionEntry>
         <ExpandableSectionEntry subtitle="Summer 2019, Summer 2020">
           Interned at
-          <a href="https://www.ibm.com/products/guardium-insights" target="_blank">IBM Security</a>
+          <a
+            href="https://www.ibm.com/products/guardium-insights"
+            target="_blank">IBM Security</a
+          >
           for two summers, working on a new security offering for enterprise.
         </ExpandableSectionEntry>
         <ExpandableSectionEntry subtitle="Summer 2020">
@@ -134,33 +141,33 @@ const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
         </div>
 
         <div class="mt-1 sm:mt-0 space-y-11">
-        {
-          timelineEntries.map((entry, i) => (
-            <div class="grid grid-cols-[max-content,1fr] gap-x-4">
-              <div>
-                <div class="h-7 w-7 bg-neutral-200 rounded-full flex items-center justify-center">
-                  <CalendarBlank weight="bold" className="text-neutral-600" />
+          {
+            timelineEntries.map((entry, i) => (
+              <div class="grid grid-cols-[max-content,1fr] gap-x-4">
+                <div>
+                  <div class="h-7 w-7 bg-neutral-200 rounded-full flex items-center justify-center">
+                    <CalendarBlank weight="bold" className="text-neutral-600" />
+                  </div>
+                  {i !== timelineEntries.length - 1 && (
+                    <div class="border-l-2 border-neutral-200 border-dashed h-full mt-2 ml-[calc(0.875rem-1px)]" />
+                  )}
                 </div>
-                {i !== timelineEntries.length - 1 && (
-                  <div class="border-l-2 border-neutral-200 border-dashed h-full mt-2 ml-[calc(0.875rem-1px)]" />
-                )}
-              </div>
-              <div class="mt-1">
-                <p class="text-neutral-400 font-semibold text-sm tracking-tight">
-                  {new Date(entry.frontmatter.date).toLocaleString("en-US", {
-                    timeZone: "UTC",
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </p>
-                <div class="mt-2">
-                  <entry.default />
+                <div class="mt-1">
+                  <p class="text-neutral-400 font-semibold text-sm tracking-tight">
+                    {new Date(entry.frontmatter.date).toLocaleString("en-US", {
+                      timeZone: "UTC",
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </p>
+                  <div class="mt-2">
+                    <entry.default />
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
-        }
+            ))
+          }
         </div>
       </div>
     </div>
