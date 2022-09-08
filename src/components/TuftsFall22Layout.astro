@@ -99,7 +99,7 @@ const isIndex = file.endsWith("index.mdx");
             </div>
 
             {
-              frontmatter.date && (
+              frontmatter.date && !frontmatter.title.trim().endsWith(", 2022") && (
                 <p class="text-zinc-400 text-sm font-medium italic whitespace-nowrap">
                   <time datetime={frontmatter.date}>
                     {new Date(frontmatter.date).toLocaleString("en-US", {
