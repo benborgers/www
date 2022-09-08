@@ -1,8 +1,10 @@
 import matter from "gray-matter";
 
 export default function () {
-  return function (node) {
-    visit(node);
+  return function (node, info) {
+    if (info.history[0].includes("/pages/tufts")) {
+      visit(node);
+    }
   };
 }
 
