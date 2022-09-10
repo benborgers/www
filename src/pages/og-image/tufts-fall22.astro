@@ -1,0 +1,23 @@
+---
+import Base from "../../components/Base.astro";
+import OgImageLayout from "../../components/OgImageLayout.astro";
+---
+
+<Base>
+  <OgImageLayout
+    className="bg-orange-600 pl-20 pr-24 py-16 flex flex-col justify-end"
+  >
+    <p id="course" class="text-white/70 text-4xl font-bold uppercase"></p>
+    <p
+      id="title"
+      class="mt-4 text-white font-extrabold tracking-tight text-9xl break-words"
+    >
+    </p>
+
+    <script>
+      const params = new URLSearchParams(location.search);
+      document.querySelector("#course").innerText = params.get("course");
+      document.querySelector("#title").innerText = params.get("title");
+    </script>
+  </OgImageLayout>
+</Base>
