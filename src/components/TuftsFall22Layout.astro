@@ -22,7 +22,7 @@ const isIndex = file.endsWith("index.mdx");
   title={frontmatter.title + (!isIndex ? " - " + courseName : "")}
   ogImage={`/og-image/tufts-fall22?title=${encodeURIComponent(
     frontmatter.title
-  )}&course=${encodeURIComponent(courseName)}`}
+  )}&course=${isIndex ? "" : encodeURIComponent(courseName)}`}
 >
   <link slot="head" rel="preconnect" href="https://fonts.bunny.net" />
   <link
