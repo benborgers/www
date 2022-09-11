@@ -1,38 +1,45 @@
 ---
-import Base from '../components/Base.astro'
+import Base from "../components/Base.astro";
 ---
 
 <Base title="Page Not Found" bg="bg-neutral-200">
-<div class="text-neutral-700 font-serif min-h-screen grid place-items-center p-4">
-  <div class="bg-white p-4 mb-16 border border-neutral-700 [box-shadow:6px_6px_0_black]">
-    <h1 class="text-lg font-bold tracking-tight">This page could not be found. Sorry about that!</h1>
-    <p class="mt-2 text-lg text-right italic">
-      <a href="/" class="underline decoration-neutral-400">head to Ben’s homepage &rarr;</a>
-    </p>
+  <div
+    class="text-neutral-700 font-serif min-h-screen grid place-items-center p-4"
+  >
+    <div
+      class="bg-white p-4 mb-16 border border-neutral-700 [box-shadow:6px_6px_0_black]"
+    >
+      <h1 class="text-lg font-bold tracking-tight">
+        This page could not be found. Sorry about that!
+      </h1>
+      <p class="mt-2 text-lg text-right italic">
+        <a href="/" class="underline decoration-neutral-400"
+          >head to Ben’s homepage &rarr;</a
+        >
+      </p>
+    </div>
   </div>
-</div>
 
-<script>
-  const body = {
-    path: window.location.href,
-    referrer: document.referrer,
-  }
+  <script>
+    const body = {
+      path: window.location.href,
+      referrer: document.referrer,
+    };
 
-  // Don’t report for these URLs, they’re known 404s
-  const blocklist = ['/og-image']
+    // Don’t report for these URLs, they’re known 404s
+    const blocklist = ["/og-image", "/og-images"];
 
-  if (!blocklist.includes(window.location.pathname)) {
-    if (location.hostname === 'benborgers.com') {
-      fetch('https://neptune.ooo/report-benborgers-404', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      })
-    } else {
-      // For debugging
-      console.log(body)
+    if (!blocklist.includes(window.location.pathname)) {
+      if (location.hostname === "benborgers.com") {
+        fetch("https://neptune.ooo/report-benborgers-404", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+      } else {
+        // For debugging
+        console.log(body);
+      }
     }
-  }
-
-</script>
+  </script>
 </Base>
