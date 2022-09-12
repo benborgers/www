@@ -21,20 +21,19 @@ import captions from "../content/nyc-2022/captions.json";
           <div class="bg-emerald-300 h-10 w-10 rounded-full -translate-y-3">
           </div>
         </div>
-        <img
-          src="/nyc-2022/icon.svg"
-          loading="lazy"
-          class="w-12 mx-auto isolate"
-        />
+        <img src="/nyc-2022/icon.svg" class="w-12 mx-auto isolate" />
       </div>
       <span class="mt-1">New York City Trip 2022</span>
     </h1>
 
     <div class="mt-6 grid md:grid-cols-2 gap-x-8 gap-y-10">
       {
-        Object.keys(captions).map((filename) => (
+        Object.keys(captions).map((filename, i) => (
           <div>
-            <img src={`/nyc-2022/${filename}`} />
+            <img
+              src={`/nyc-2022/${filename}`}
+              loading={i > 4 ? "lazy" : "eager"}
+            />
             <p class="mt-2 text-stone-500 text-sm">{captions[filename]}</p>
           </div>
         ))
