@@ -1,0 +1,72 @@
+---
+import Base from "../components/Base.astro";
+---
+
+<Base title="Best Laundry Time">
+  <script>
+    import { DateTime } from "luxon";
+    import Chart from "chart.js/auto";
+
+    fetch("https://neptune.ooo/laundry")
+      .then((res) => res.text())
+      .then((text) => {
+        const rows = text.split("|");
+        const weeks = [];
+        let currentWeekNumber = null;
+
+        for (const item of rows) {
+          const timestamp = parseInt(item.split(",")[0]);
+          const washersUsed = item.split(",")[1];
+          const dryersUsed = item.split(",")[2];
+
+          const weekNumber = DateTime.fromSeconds(timestamp).weekNumber;
+
+          if (weekNumber !== currentWeekNumber) {
+            weeks.push([]);
+          }
+
+          weeks[weeks.length - 1].push({ timestamp, washersUsed, dryersUsed });
+
+          currentWeekNumber = weekNumber;
+        }
+
+        weeks.reverse().forEach((week) => {
+          const id = Math.random().toString();
+          const div = document.createElement("div");
+          div.innerHTML = `<h1>${DateTime.fromSeconds(
+            week[0].timestamp
+          ).toFormat("LLLL d, y")}</h1><canvas id="${id}"></canvas>`;
+          document.body.appendChild(div);
+
+          new Chart(document.getElementById(id), {
+            type: "bar",
+            data: {
+              labels: week.map((s) =>
+                DateTime.fromSeconds(s.timestamp).toFormat("ccc h:mm a")
+              ),
+              datasets: [
+                {
+                  label: "Washers Used",
+                  data: week.map((s) => s.washersUsed),
+                  backgroundColor: "rgba(54, 162, 235, 0.8)",
+                },
+                {
+                  label: "Dryers Used",
+                  data: week.map((s) => s.dryersUsed),
+                  backgroundColor: "rgba(255, 99, 132, 0.8)",
+                },
+              ],
+            },
+            options: {
+              scales: {
+                yAxis: {
+                  min: 0,
+                  max: 4,
+                },
+              },
+            },
+          });
+        });
+      });
+  </script>
+</Base>
