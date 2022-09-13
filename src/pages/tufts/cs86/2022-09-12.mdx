@@ -1,0 +1,16 @@
+---
+layout: ../../../components/TuftsFall22Layout.astro
+title: September 12th, 2022
+date: 2022-09-12
+---
+
+- In Java, `Rectangle r1` creates a _pointer_ to a variable of class Rectangle, but `Rectangle r1 = new Rectangle()` creates the real thing. 
+- `abstract class` can’t be instantiated, it can only be inherited from. 
+- We often store bounding boxes instead of x/y/width/height because it works for all shapes and simplifies calculations. 
+- Variables of type `Shape` can hold `Rectangle` or `Circle` at runtime (and this is how you do inheritance). 
+	```java
+	Shape s1;
+	s1 = new Circle();
+	```
+- `protected` allows sub-classes to access a variable (method), while `private` does not. 
+- `abstract public void functionName()` in the parent class givves a heads-up that subclasses provide that function. 
