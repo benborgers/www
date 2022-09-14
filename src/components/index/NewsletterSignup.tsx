@@ -69,9 +69,8 @@ export default function NewsletterSignup() {
                   <>
                     <div className="mt-2 text-neutral-600">
                       <p>
-                        I send out an email newsletter every two weeks with new
-                        project and life updates. I’d love to have you follow
-                        along!
+                        I send out an email newsletter every week with new
+                        projects and life updates. Follow along!
                       </p>
                     </div>
 
