@@ -32,7 +32,7 @@ import captions from "../content/nyc-2022/captions.json";
           <div>
             <img
               src={`/nyc-2022/${filename}`}
-              loading={i > 4 ? "lazy" : "eager"}
+              loading={i >= 4 ? "lazy" : "eager"}
             />
             <p class="mt-2 text-stone-500 text-sm">{captions[filename]}</p>
           </div>
