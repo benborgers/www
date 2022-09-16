@@ -27,7 +27,7 @@ import Base from "../components/Base.astro";
     };
 
     // Don’t report for these URLs, they’re known 404s
-    const blocklist = ["/og-image", "/og-images"];
+    const blocklist = ["/og-image", "/og-images/post"];
 
     if (!blocklist.includes(window.location.pathname)) {
       if (location.hostname === "benborgers.com") {
