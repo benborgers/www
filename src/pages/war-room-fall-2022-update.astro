@@ -1,0 +1,46 @@
+---
+import Base from "../components/Base.astro";
+import { ArrowLeft } from "phosphor-react";
+import SuperadminText from "../components/SuperadminText";
+
+const entry = (
+  await (
+    await fetch("https://superadmin.elk.sh/~benborgers/writing.json")
+  ).json()
+).find((x) => x.id === "war-room-fall-2022-update");
+---
+
+<Base title="War Room Fall 2022 Update" bg="bg-slate-100">
+  <div class="text-slate-700 font-mono p-4 sm:pt-8 pb-36">
+    <div class="max-w-screen-sm mx-auto">
+      <a
+        href="/"
+        class="text-slate-500 hover:text-slate-800 transition-colors text-sm underline decoration-slate-300"
+      >
+        benborgers.com
+      </a>
+
+      <div class="mt-6 sm:mt-12 font-sans">
+        <h1 class="font-bold text-lg tracking-tight text-slate-900">
+          War Room Fall 2022 Update
+        </h1>
+        <p class="sm:mt-0.5 text-slate-400 text-sm font-medium">
+          {
+            new Date(entry.date).toLocaleString("en-US", {
+              timeZone: "UTC",
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })
+          }
+        </p>
+      </div>
+
+      <div
+        class="mt-4 sm:mt-6 prose prose-slate prose-cyan prose-a:text-cyan-500 prose-a:font-bold"
+      >
+        <SuperadminText data={entry.body} />
+      </div>
+    </div>
+  </div>
+</Base>
