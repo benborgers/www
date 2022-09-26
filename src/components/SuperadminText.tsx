@@ -9,19 +9,16 @@ function Block({ block }) {
 
   if (block.type === "image") {
     const url = `https://superadmin.elk.sh${block.data.file.url}`;
-    const cdnUrl = `https://images.weserv.nl/?url=${encodeURIComponent(url)}`;
 
-    if (block.data.file.url.endsWith(".gif")) {
-      return (
-        <a href={url} target="_blank">
-          <img src={url} alt="" />
-        </a>
-      );
-    }
+    let src = block.data.file.url.endsWith(".gif")
+      ? url
+      : `https://images.weserv.nl/?url=${encodeURIComponent(
+          url
+        )}&w=1600&output=jpg&q=80`;
 
     return (
-      <a href={url} target="_blank">
-        <img src={`${cdnUrl}&w=1600&output=jpg&q=80`} alt="" />
+      <a href={url} target="_blank" className="cursor-zoom-in">
+        <img src={src} alt="" />
       </a>
     );
   }
