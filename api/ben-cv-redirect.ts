@@ -18,5 +18,5 @@ export default (req: Request) => {
     return Response.redirect(REDIRECTS[path]);
   }
 
-  return new Response("hello from ben-cv-redirect! your path is " + path);
+  return Response.redirect(`${BASE}/posts/${path}`);
 };
