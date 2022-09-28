@@ -141,7 +141,7 @@ const timelineEntries = (await Astro.glob("../content/timeline/*.mdx")).sort(
 
       <div class="mt-12">
         <div class="flex justify-end">
-          <NewsletterSignup client:visible />
+          <NewsletterSignup client:load />
         </div>
 
         <div class="mt-1 sm:mt-0 space-y-11">
