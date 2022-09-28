@@ -3,7 +3,7 @@ export const config = { runtime: "experimental-edge" };
 const BASE = "https://benborgers.com";
 
 const REDIRECTS: Record<string, string> = {
-  newsletter: `${BASE}/?newsletter`,
+  newsletter: `${BASE}/#newsletter`,
 };
 
 export default (req: Request) => {

@@ -7,6 +7,15 @@ export default function NewsletterSignup() {
   const [open, setOpen] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  useEffect(() => {
+    // Enable deeplinking into the newsletter signup modal.
+    // benborgers.com/#newsletter
+    if (window.location.hash === "#newsletter") {
+      setOpen(true);
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  }, []);
+
   return (
     <>
       <button
@@ -33,9 +42,9 @@ export default function NewsletterSignup() {
           >
             <div className="fixed inset-0 bg-black/50" aria-hidden="true" />
 
-            <div className="fixed bottom-4 inset-x-4 sm:inset-0 flex items-center justify-center">
+            <div className="fixed inset-0 flex items-center justify-center p-2">
               <Dialog.Panel
-                className="mx-auto w-full max-w-lg rounded-xl bg-white p-4 sm:p-6 h-[70vh] sm:h-auto"
+                className="mx-auto w-full max-w-lg rounded-xl bg-white p-4 sm:p-6"
                 as={motion.div}
                 initial={{ y: 4 }}
                 animate={{ y: 0 }}
