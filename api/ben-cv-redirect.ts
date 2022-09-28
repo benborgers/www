@@ -11,12 +11,12 @@ export default (req: Request) => {
   const path = params.get("path");
 
   if (path === null || path === "") {
-    return Response.redirect(`${BASE}/?ref=ben.cv`);
+    return Response.redirect(`${BASE}`);
   }
 
   if (REDIRECTS[path]) {
     return Response.redirect(REDIRECTS[path]);
   }
 
-  return Response.redirect(`${BASE}/posts/${path}?ref=ben.cv`);
+  return Response.redirect(`${BASE}/posts/${path}`);
 };
