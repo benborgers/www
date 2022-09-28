@@ -1,0 +1,59 @@
+---
+layout: ../../../components/TuftsFall22Layout.astro
+title: September 28th, 2022
+date: 2022-09-28
+---
+
+- In a subclass’ constructor, you can use `super(x, y)` to run a constructor from the parent class. 
+	- The `x, y` you choose determines which constructor is called. 
+	- There’s also `super.methodName()` to call a method in the super class. 
+
+
+## Drawing
+
+```java
+// Main.java
+import java.awt.*;
+import javax.swing.*;
+
+public class Main extends JFrame {
+    public static void main (String [] args) {
+	java.awt.EventQueue.invokeLater (new Runnable() {
+            public void run() {
+		new Main ();
+            }
+        });
+    }
+
+    public Main () {
+	// Window setup
+	setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+	setSize (300, 300);
+	
+	// Put a Canvas in
+	Canvas canvas = new Canvas ();
+	add (canvas);
+    
+	// Show the window
+	setVisible (true);
+
+	// No drawing here, do it in Canvas callback
+	
+    }
+}
+```
+
+```java
+// Canvas.java
+import java.awt.*;
+import java.awt.geom.*;
+import javax.swing.*;
+
+public class Canvas extends JPanel {
+    // This is the draw callback
+    public void paintComponent (Graphics g) {
+			super.paintComponent(g);
+			g.drawLine (50, 50, 100, 50);
+    }
+}
+```
