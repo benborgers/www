@@ -1,0 +1,68 @@
+---
+layout: ../../../components/TuftsFall22Layout.astro
+title: October 3rd, 2022
+date: 2022-03-2022
+---
+
+- You use `paintComponent` to define the code that paints in a panel. 
+- You use `repaint` when underlying instance variables change. Don’t call `paintComponent`, because `repaint` takes into account concurrency. 
+- If you want to pass data into classes, pass a pointer of the data object to the drawing object. 
+
+
+## `Graphics2D`
+
+More sophisticated drawing system than `Graphics`. 
+
+```java
+public void paintComponent(Graphics2D g2) {
+	Shape s = new Rectangle2D(...); // They all have 2D at the end.
+	g2.draw(s);
+	
+	// kinda pseudocode
+	Shape p = new Path2D();
+	p.moveTo();
+	p.lineTo();
+	g2.draw(p);
+}
+```
+
+## Listening for clicks in your canvas
+
+```java
+
+import java.awt.*;
+import java.awt.geom.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Canvas extends JPanel implements MouseListener {
+    Canvas () {
+	    addMouseListener (this);
+    }
+
+    // This is the draw callback
+    public void paintComponent (Graphics g) {
+	super.paintComponent(g);
+	g.drawLine (50, 50, 100, 50);
+    }
+
+    // Listener callback
+    public void mousePressed (MouseEvent event) {
+        System.out.println ("Mouse down at " + event.getPoint().x + ", " + event.getPoint().y);
+    }
+
+    // MouseListener defines all of these, so we must supply them
+    public void mouseReleased (MouseEvent event) {}
+    public void mouseClicked (MouseEvent event) {}
+    public void mouseEntered (MouseEvent event) {}
+    public void mouseExited (MouseEvent event) {}
+}
+```
+
+## MVC
+
+We’re gonna use Model View Controller architecture. 
+
+- A data object is the model
+- Canvas/JPanel is view
+- Button is controller
