@@ -24,7 +24,7 @@ export default function NewsletterSignup() {
           underline decoration-transparent hover:decoration-rose-600 transition-colors duration-100"
       >
         <Envelope weight="fill" size={16} />
-        Get updates via email
+        Subscribe to my newsletter!
       </button>
 
       <AnimatePresence>
@@ -76,11 +76,12 @@ export default function NewsletterSignup() {
                   </div>
                 ) : (
                   <>
-                    <div className="mt-2 text-neutral-600">
+                    <div className="mt-2 text-neutral-600 space-y-2">
                       <p>
-                        I send out an email newsletter every week with new
-                        projects and life updates. Follow along!
+                        I send out a weekly newsletter with new blog posts and
+                        behind-the-scenes of coding projects I’m working on.
                       </p>
+                      <p>Follow along!</p>
                     </div>
 
                     <div className="mt-4 mb-1">
@@ -147,7 +148,7 @@ function Form({ onSuccess, open }: { onSuccess: () => void; open: boolean }) {
     <form ref={ref} onSubmit={handleSubmit}>
       <input
         type="email"
-        placeholder="type your email..."
+        placeholder="you@gmail.com"
         className="w-full rounded-lg placeholder:text-neutral-400 border-neutral-300 bg-neutral-50 shadow-sm focus:border-rose-500 focus:ring-rose-500"
       />
 
