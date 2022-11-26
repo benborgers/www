@@ -3,11 +3,161 @@ import Base from "../components/Base.astro";
 import { ArrowLeft } from "phosphor-react";
 import SuperadminText from "../components/SuperadminText";
 
-const entry = (
-  await (
-    await fetch("https://superadmin.elk.sh/~benborgers/writing.json")
-  ).json()
-).find((x) => x.id === "war-room-fall-2022-update");
+const entry = {
+  id: "war-room-fall-2022-update",
+  order: 0,
+  created_at: 1664147860,
+  updated_at: 1666477705,
+  body: {
+    time: 1666477704182,
+    blocks: [
+      {
+        id: "4zDLFrl3CL",
+        data: {
+          text: 'At the end of August I made a sizable update to&nbsp;<b>War Room</b>, a <a href="https://benborgers.com/posts/war-room">social to-do list app</a>&nbsp;that I started building a year ago.',
+        },
+        type: "paragraph",
+      },
+      {
+        id: "q5qJNL0nZD",
+        data: {
+          text: "It was the biggest update since building the app a year ago, so today I wanted to write a bit about those updates for posterity.&nbsp;",
+        },
+        type: "paragraph",
+      },
+      {
+        id: "lTW6bicIuF",
+        data: {
+          text: "The core of the app is a large dashboard that shows your tasks, your friends\u2019 statuses and their tasks, and a feed of all the tasks that your friends have completed lately.&nbsp;",
+        },
+        type: "paragraph",
+      },
+      {
+        id: "BSkwrzXC6O",
+        data: {
+          file: {
+            url: "/storage/editorjs/Fshn1r7geilPBjdKTkIAghu6XsjEVdNCzW09IDlQ.png",
+          },
+          caption: null,
+          stretched: false,
+          withBorder: false,
+          withBackground: false,
+        },
+        type: "image",
+      },
+      {
+        id: "R5MBvUil8F",
+        data: {
+          text: 'The change that I made is that, over 3 days, I rewrote this dashboard in <a href="https://reactjs.org">React</a>, where previously it was <a href="https://laravel-livewire.com">Livewire</a>.&nbsp;',
+        },
+        type: "paragraph",
+      },
+      {
+        id: "IzM_nZAlvZ",
+        data: {
+          text: "That allowed me to do small things, like smooth animations in the interface:&nbsp;",
+        },
+        type: "paragraph",
+      },
+      {
+        id: "Hhrz9izISI",
+        data: {
+          file: {
+            url: "/storage/editorjs/dpR4ZhENYhnB2joOE6MJp5SSa56XKgV8AQZZ4P0R.gif",
+          },
+          caption: null,
+          stretched: false,
+          withBorder: false,
+          withBackground: false,
+        },
+        type: "image",
+      },
+      {
+        id: "Ypa4I1nr9K",
+        data: {
+          text: "Small interactions should also feel faster, due to a technique called&nbsp;<i>optimistic UI</i>&nbsp;(essentially, assuming that taking an action was successful and updating accordingly, instead of waiting for the server to confirm that it\u2019s been saved and then updating).&nbsp;",
+        },
+        type: "paragraph",
+      },
+      {
+        id: "S9fMO1YPX-",
+        data: {
+          text: "Excitingly, the move to React allowed me to move status editing into a quick overlay modal:&nbsp;",
+        },
+        type: "paragraph",
+      },
+      {
+        id: "YO6u3q1kBF",
+        data: {
+          file: {
+            url: "/storage/editorjs/t5Y99Fo6UkQLdbJ2UdpuTSsMyMVZMX6fgxMWlrfE.gif",
+          },
+          caption: null,
+          stretched: false,
+          withBorder: false,
+          withBackground: false,
+        },
+        type: "image",
+      },
+      {
+        id: "16Q30CLmQY",
+        data: {
+          text: 'Using emojis to react to friends\u2019 tasks has also moved into a modal, and uses an incredible React-based emoji picker called <a href="https://github.com/missive/emoji-mart">emoji-mart</a>. Seriously, I almost teared up the first time I saw it pop up in my app.&nbsp;',
+        },
+        type: "paragraph",
+      },
+      {
+        id: "28OMXdwMHD",
+        data: {
+          file: {
+            url: "/storage/editorjs/81cqu6rdBW7a8dn0dSgh5kJlnkaps2JWcjSPzuqT.gif",
+          },
+          caption: null,
+          stretched: false,
+          withBorder: false,
+          withBackground: false,
+        },
+        type: "image",
+      },
+      {
+        id: "JndRYoRV5e",
+        data: {
+          text: "Lastly, the rewrite allowed me to add something that\u2019s been highly requested for a while: dividers. Tasks don\u2019t have to be in a long list anymore, they can be in sections that can be collapsed away.&nbsp;",
+        },
+        type: "paragraph",
+      },
+      {
+        id: "wqtbRHOb7l",
+        data: {
+          file: {
+            url: "/storage/editorjs/lBZs70fZLOloS2kVwKENSktIERnR3ttqFADJK7LS.gif",
+          },
+          caption: null,
+          stretched: false,
+          withBorder: false,
+          withBackground: false,
+        },
+        type: "image",
+      },
+      {
+        id: "Blv1GZ0MSd",
+        data: {
+          text: "Altogether, I\u2019m super happy with this update. Rewriting the dashboard seemed like a complex undertaking, but in the end I was able to get a good momentum and finish it in just a couple days (empty days, thanks to the gap between my summer internship and school starting again).&nbsp;",
+        },
+        type: "paragraph",
+      },
+      {
+        id: "7qsslLlPEm",
+        data: {
+          text: "It also lays a groundwork for the UI that makes me excited to add features again.&nbsp;",
+        },
+        type: "paragraph",
+      },
+    ],
+    version: "2.25.0",
+  },
+  date: "2022-09-25",
+};
 ---
 
 <Base title="War Room Fall 2022 Update" bg="bg-slate-100">
