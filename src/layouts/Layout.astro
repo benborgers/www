@@ -16,35 +16,42 @@ import { Planet } from "phosphor-react";
     <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
   </head>
   <body
-    class="antialiased font-width-4 text-gray-700 p-4 sm:pt-8 pb-36 border-t-4 border-rose-500"
+    class:list={[
+      "antialiased font-width-4 text-gray-700",
+      "bg-rose-500 pt-1 sm:p-2",
+      "min-h-screen h-0",
+    ]}
   >
-    <div class="max-w-screen-sm mx-auto">
-      <header class="flex items-center justify-between">
-        <a
-          href="/"
-          class:list={[
-            "block w-max font-extrabold font-width-5 text-gray-800",
-            "flex items-center gap-x-1.5",
-          ]}
-        >
-          <Planet weight="fill" className="-mt-0.5" />
-          <span>Ben Borgers</span>
-        </a>
-        <a
-          href="/posts"
-          class:list={[
-            "font-medium text-gray-400",
-            {
-              "underline decoration-gray-300": Astro.url.pathname === "/posts",
-            },
-          ]}
-        >
-          Blog
-        </a>
-      </header>
-      <main class="mt-12">
-        <slot />
-      </main>
+    <div class="bg-white h-full p-4 sm:pt-8 pb-36 sm:rounded-xl shadow-sm">
+      <div class="max-w-screen-sm mx-auto">
+        <header class="flex items-center justify-between">
+          <a
+            href="/"
+            class:list={[
+              "block w-max font-extrabold font-width-5 text-gray-800",
+              "flex items-center gap-x-1.5",
+            ]}
+          >
+            <Planet weight="fill" className="-mt-0.5" />
+            <span>Ben Borgers</span>
+          </a>
+          <a
+            href="/posts"
+            class:list={[
+              "font-medium text-gray-400",
+              {
+                "underline decoration-gray-300":
+                  Astro.url.pathname === "/posts",
+              },
+            ]}
+          >
+            Blog
+          </a>
+        </header>
+        <main class="mt-12">
+          <slot />
+        </main>
+      </div>
     </div>
   </body>
 </html>
