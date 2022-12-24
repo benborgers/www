@@ -29,7 +29,7 @@ import { Planet } from "phosphor-react";
           <a
             href="/"
             class:list={[
-              "block w-max font-extrabold font-width-5 text-gray-800",
+              "block w-max font-extrabold font-width-5 text-gray-800 hover:text-rose-500 transition-colors",
               "flex items-center gap-x-1.5",
             ]}
           >
@@ -38,13 +38,7 @@ import { Planet } from "phosphor-react";
           </a>
           <a
             href="/posts"
-            class:list={[
-              "font-medium text-gray-400",
-              {
-                "underline decoration-gray-300":
-                  Astro.url.pathname === "/posts",
-              },
-            ]}
+            class="font-medium text-gray-400 hover:text-rose-500 transition-colors"
           >
             Blog
           </a>
