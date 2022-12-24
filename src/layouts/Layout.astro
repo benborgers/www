@@ -5,7 +5,7 @@ export interface Props {
   title: string;
 }
 
-import { Planet } from "phosphor-react";
+import { Planet, ArrowCircleLeft } from "phosphor-react";
 ---
 
 <html lang="en">
@@ -23,14 +23,28 @@ import { Planet } from "phosphor-react";
         <a
           href="/"
           class:list={[
-            "block w-max font-extrabold font-width-5 text-gray-900",
+            "block w-max font-extrabold font-width-5 text-gray-800",
             "flex items-center gap-x-1.5",
           ]}
         >
-          <Planet weight="fill" className="-mt-0.5" />
+          {
+            Astro.url.pathname === "/" ? (
+              <Planet weight="fill" className="-mt-0.5" />
+            ) : (
+              <ArrowCircleLeft weight="bold" className="-mt-0.5" />
+            )
+          }
           <span>Ben Borgers</span>
         </a>
-        <a href="/posts" class="font-width-5 font-medium text-gray-400">
+        <a
+          href="/posts"
+          class:list={[
+            "font-medium text-gray-400",
+            {
+              "underline decoration-gray-300": Astro.url.pathname === "/posts",
+            },
+          ]}
+        >
           Blog
         </a>
       </header>
