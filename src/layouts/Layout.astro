@@ -2,6 +2,8 @@
 export interface Props {
   title: string;
 }
+
+import { Planet } from "phosphor-react";
 ---
 
 <html lang="en">
@@ -11,14 +13,23 @@ export interface Props {
     <title>{Astro.props.title}</title>
     <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
   </head>
-  <body class="antialiased font-width-4 text-gray-700 p-4 sm:pt-6 pb-36">
+  <body
+    class="antialiased font-width-4 text-gray-700 p-4 sm:pt-8 pb-36 border-t-4 border-rose-500"
+  >
     <div class="max-w-screen-sm mx-auto">
-      <header>
+      <header class="flex items-center justify-between">
         <a
           href="/"
-          class="block w-max bg-rose-500 text-white font-bold font-width-5 px-5 py-3 rounded-full leading-none"
+          class:list={[
+            "block w-max font-extrabold font-width-5 text-gray-900",
+            "flex items-center gap-x-1.5",
+          ]}
         >
-          Ben Borgers
+          <Planet weight="fill" className="-mt-0.5" />
+          <span>Ben Borgers</span>
+        </a>
+        <a href="/posts" class="font-width-5 font-medium text-gray-400">
+          Blog
         </a>
       </header>
       <main class="mt-8">
