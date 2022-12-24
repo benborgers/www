@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/Mona-Sans.woff2") format("woff2 supports variations"),
+    url("/Mona-Sans.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+* {
+  font-variation-settings: "wdth" var(--font-width);
+}
+
+.font-width-1 {
+  --font-width: 75;
+}
+
+.font-width-2 {
+  --font-width: 85;
+}
+
+.font-width-3 {
+  --font-width: 95;
+}
+
+.font-width-4 {
+  --font-width: 105;
+}
+
+.font-width-5 {
+  --font-width: 115;
+}
+
+.font-width-6 {
+  --font-width: 125;
+}
