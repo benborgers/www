@@ -13,14 +13,12 @@ const posts = (await getPosts()).filter((post) => !post.technical);
           <a
             href={`/posts/${post.slug}`}
             class:list={[
-              "p-4 flex items-baseline justify-between gap-x-4 group hover:bg-rose-500 transition-colors duration-100",
+              "p-4 flex items-baseline justify-between gap-x-4 hover:bg-gray-100 transition-colors duration-100",
               { "pt-5": i === 0 },
             ]}
           >
-            <p class="text-gray-800 font-bold group-hover:text-white">
-              {post.title}
-            </p>
-            <p class="text-gray-400 font-width-3 flex-shrink-0 group-hover:text-white">
+            <p class="text-gray-800 font-bold">{post.title}</p>
+            <p class="text-gray-400 font-width-3 flex-shrink-0">
               {post.date.toFormat("LLLL d, yyyy")}
             </p>
           </a>
