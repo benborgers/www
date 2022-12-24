@@ -59,39 +59,41 @@ const { post, nextPost, previousPost } = Astro.props;
   {
     !post.technical && (
       <div class="mt-16 flex items-start justify-between">
-        {previousPost ? (
-          <a
-            href={`/posts/${previousPost.slug}`}
-            class="flex items-start gap-x-2 text-gray-400 hover:text-rose-500 transition-colors"
-          >
-            <ArrowLeft
-              weight="bold"
-              className="mt-0.5 flex-shrink-0"
-              size={14}
-            />
-            <span class="text-sm font-semibold font-width-5 font-slant-10">
-              {previousPost.title}
-            </span>
-          </a>
-        ) : (
-          <div />
-        )}
+        <div>
+          {previousPost && (
+            <a
+              href={`/posts/${previousPost.slug}`}
+              class="flex items-start gap-x-2 text-gray-400 hover:text-rose-500 transition-colors"
+            >
+              <ArrowLeft
+                weight="bold"
+                className="mt-0.5 flex-shrink-0"
+                size={14}
+              />
+              <span class="text-sm font-semibold font-width-5 font-slant-10">
+                {previousPost.title}
+              </span>
+            </a>
+          )}
+        </div>
 
-        {nextPost && (
-          <a
-            href={`/posts/${nextPost.slug}`}
-            class="flex items-start gap-x-2 text-gray-400 hover:text-rose-500 transition-colors"
-          >
-            <span class="text-sm font-semibold font-width-5 font-slant-10 text-right">
-              {nextPost.title}
-            </span>
-            <ArrowRight
-              weight="bold"
-              className="mt-0.5 flex-shrink-0"
-              size={14}
-            />
-          </a>
-        )}
+        <div>
+          {nextPost && (
+            <a
+              href={`/posts/${nextPost.slug}`}
+              class="flex items-start gap-x-2 text-gray-400 hover:text-rose-500 transition-colors"
+            >
+              <span class="text-sm font-semibold font-width-5 font-slant-10 text-right">
+                {nextPost.title}
+              </span>
+              <ArrowRight
+                weight="bold"
+                className="mt-0.5 flex-shrink-0"
+                size={14}
+              />
+            </a>
+          )}
+        </div>
       </div>
     )
   }
