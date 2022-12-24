@@ -2,9 +2,34 @@
 import Layout from "../layouts/Layout.astro";
 import { getPosts } from "../lib/blog";
 
-const posts = await getPosts();
+const posts = (await getPosts()).filter((post) => !post.technical);
 ---
 
 <Layout title="Ben Borgers’ Blog">
-  <pre>{JSON.stringify(posts, null, 2)}</pre>
+  <div class="bg-gray-50 border border-gray-100 rounded-xl overflow-hidden">
+    {
+      posts.map((post, i) => (
+        <>
+          <a
+            href={`/posts/${post.slug}`}
+            class:list={[
+              "p-4 flex items-baseline justify-between gap-x-4 group hover:bg-rose-500 transition-colors duration-100",
+              { "pt-5": i === 0 },
+            ]}
+          >
+            <p class="text-gray-800 font-bold group-hover:text-white">
+              {post.title}
+            </p>
+            <p class="text-gray-400 font-width-3 flex-shrink-0 group-hover:text-white">
+              {post.date.toFormat("LLLL d, yyyy")}
+            </p>
+          </a>
+
+          {i !== posts.length - 1 && (
+            <div class="h-px bg-gray-100 w-[calc(100%-1rem)] ml-auto mr-0" />
+          )}
+        </>
+      ))
+    }
+  </div>
 </Layout>

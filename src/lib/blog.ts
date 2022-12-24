@@ -15,6 +15,8 @@ function slugFromPath(path: string): string {
 }
 
 export async function getPosts() {
+  console.log("uncached getPosts()");
+
   const posts: Post[] = [];
 
   const glob = await import.meta.glob("../../posts/**/*");
@@ -58,5 +60,5 @@ export async function getPosts() {
     }
   }
 
-  return posts;
+  return posts.sort((a, b) => (b.date > a.date ? 1 : -1));
 }
