@@ -1,5 +1,4 @@
 ---
-import { ArrowCircleLeft } from "phosphor-react";
 import Layout from "../../layouts/Layout.astro";
 import { getPosts } from "../../lib/blog";
 
@@ -19,4 +18,8 @@ const { post } = Astro.props;
   <h1 class="mt-2 text-gray-800 font-width-6 font-bold text-3xl">
     {post.title}
   </h1>
+
+  <div>
+    {post.component ? <post.component /> : <Fragment set:html={post.html} />}
+  </div>
 </Layout>
