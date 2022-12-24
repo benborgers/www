@@ -15,7 +15,11 @@ function slugFromPath(path: string): string {
   return pieces[pieces.length - 1].split(".")[0];
 }
 
+let POSTS_CACHE: Post[];
+
 export async function getPosts() {
+  if (POSTS_CACHE) return POSTS_CACHE;
+
   console.log("uncached getPosts()");
 
   const highlighter = await shiki.getHighlighter({ theme: "dracula" });
@@ -72,5 +76,6 @@ export async function getPosts() {
     }
   }
 
-  return posts.sort((a, b) => (b.date > a.date ? 1 : -1));
+  POSTS_CACHE = posts.sort((a, b) => (b.date > a.date ? 1 : -1));
+  return POSTS_CACHE;
 }
