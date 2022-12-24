@@ -15,9 +15,14 @@ import { Planet } from "phosphor-react";
     <title>{Astro.props.title}</title>
     <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
   </head>
-  <body class:list={["antialiased text-gray-700", "bg-rose-500 px-2 py-2.5"]}>
+  <body
+    class:list={[
+      "antialiased text-gray-700",
+      "bg-rose-500 pt-2 sm:px-2 sm:py-2.5",
+    ]}
+  >
     <div
-      class="bg-white min-h-[calc(100vh-1.25rem)] rounded-xl shadow-sm p-4 sm:pt-8 pb-36"
+      class="bg-white min-h-[calc(100vh-0.5rem)] sm:min-h-[calc(100vh-1.25rem)] sm:rounded-xl shadow-sm p-4 sm:pt-8 pb-36"
     >
       <div class="max-w-screen-sm mx-auto">
         <header class="flex items-center justify-between">
