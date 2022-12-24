@@ -15,12 +15,27 @@ function slugFromPath(path: string): string {
   return pieces[pieces.length - 1].split(".")[0];
 }
 
+const highlighter = await shiki.getHighlighter({ theme: "dracula" });
+
+function processGhostHtml(html: string): string {
+  return html
+    .replace(/__GHOST_URL__\/content\/images/g, "/ghost")
+    .replace(/__GHOST_URL__/g, "/posts")
+    .replace(
+      /<pre><code class="language-(.+?)">(.+?)<\/code><\/pre>/gs,
+      (_: any, language: string, code: string) => {
+        return highlighter.codeToHtml(
+          code.replace(/&gt;/g, ">").replace(/&lt;/g, "<"),
+          { lang: language }
+        );
+      }
+    );
+}
+
 let POSTS_CACHE: Post[];
 
 export async function getPosts() {
   if (POSTS_CACHE) return POSTS_CACHE;
-
-  const highlighter = await shiki.getHighlighter({ theme: "dracula" });
 
   const posts: Post[] = [];
 
@@ -47,18 +62,7 @@ export async function getPosts() {
                 pivot.tag_id === "6201374c0476c71d38b9a1e4" // Ghost ID for '#technical' tag
             )
           ),
-          html: object.html
-            .replace(/__GHOST_URL__\/content\/images/g, "/ghost")
-            .replace(/__GHOST_URL__/g, "/posts")
-            .replace(
-              /<pre><code class="language-(.+?)">(.+?)<\/code><\/pre>/gs,
-              (_: any, language: string, code: string) => {
-                return highlighter.codeToHtml(
-                  code.replace(/&gt;/g, ">").replace(/&lt;/g, "<"),
-                  { lang: language }
-                );
-              }
-            ),
+          html: processGhostHtml(object.html),
         });
       }
     } else {
@@ -72,6 +76,26 @@ export async function getPosts() {
         component: file.Content,
       });
     }
+  }
+
+  const ghostContent = await (
+    await fetch(
+      "https://write.benborgers.com/ghost/api/content/posts?include=tags&key=518c3697d04ae2e5c791df241b"
+    )
+  ).json();
+
+  for (const object of ghostContent.posts) {
+    posts.push({
+      title: object.title,
+      date: DateTime.fromISO(object.published_at, {
+        zone: "America/New_York",
+      }),
+      slug: object.slug,
+      technical: Boolean(
+        object.tags.find((tag: any) => tag.name === "#technical")
+      ),
+      html: processGhostHtml(object.html),
+    });
   }
 
   POSTS_CACHE = posts.sort((a, b) => (b.date > a.date ? 1 : -1));
