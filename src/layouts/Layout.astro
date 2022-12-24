@@ -44,7 +44,13 @@ import { Planet } from "phosphor-react";
           </a>
           <a
             href="/posts"
-            class="font-medium text-gray-400 hover:text-rose-500 transition-colors font-width-3"
+            class:list={[
+              "font-medium text-gray-400 hover:text-rose-500 transition-colors font-width-3",
+              {
+                "underline decoration-gray-300":
+                  Astro.url.pathname === "/posts",
+              },
+            ]}
           >
             Blog
           </a>
