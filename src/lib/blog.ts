@@ -1,7 +1,7 @@
 import { DateTime } from "luxon";
 import shiki from "shiki";
 
-type Post = {
+export type Post = {
   title: string;
   date: DateTime;
   slug: string;
@@ -32,6 +32,7 @@ export async function getPosts() {
         (post: any) => post.type === "post" && post.status === "published"
       );
       for (const object of ghostObjects) {
+        console.log(object.slug);
         posts.push({
           title: object.title,
           date: DateTime.fromISO(object.published_at, {
