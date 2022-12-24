@@ -1,6 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { getPosts } from "../lib/blog";
+import Layout from "../../layouts/Layout.astro";
+import { getPosts } from "../../lib/blog";
 
 const posts = (await getPosts()).filter((post) => !post.technical);
 ---

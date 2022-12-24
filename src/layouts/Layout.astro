@@ -5,7 +5,7 @@ export interface Props {
   title: string;
 }
 
-import { Planet, ArrowCircleLeft } from "phosphor-react";
+import { Planet } from "phosphor-react";
 ---
 
 <html lang="en">
@@ -27,13 +27,7 @@ import { Planet, ArrowCircleLeft } from "phosphor-react";
             "flex items-center gap-x-1.5",
           ]}
         >
-          {
-            Astro.url.pathname === "/" ? (
-              <Planet weight="fill" className="-mt-0.5" />
-            ) : (
-              <ArrowCircleLeft weight="bold" className="-mt-0.5" />
-            )
-          }
+          <Planet weight="fill" className="-mt-0.5" />
           <span>Ben Borgers</span>
         </a>
         <a

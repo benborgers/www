@@ -1,0 +1,29 @@
+---
+import { ArrowCircleLeft } from "phosphor-react";
+import Layout from "../../layouts/Layout.astro";
+import { getPosts } from "../../lib/blog";
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<Layout title={post.title}>
+  <div class="h-6"></div>
+  <a
+    href="/posts"
+    class="w-max font-medium text-gray-400 hover:text-rose-500 transition-colors font-width-3 flex items-center gap-x-1.5"
+  >
+    <ArrowCircleLeft weight="bold" className="-mt-0.5" />
+    <span>Blog</span>
+  </a>
+  <h1 class="mt-2 text-gray-800 font-width-6 font-bold text-3xl">
+    {post.title}
+  </h1>
+</Layout>
