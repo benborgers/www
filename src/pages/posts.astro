@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getPosts } from "../lib/blog";
+
+const posts = await getPosts();
+---
+
+<Layout title="Ben Borgers’ Blog">
+  <pre>{JSON.stringify(posts, null, 2)}</pre>
+</Layout>
