@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import shiki from "shiki";
 
 type Post = {
   title: string;
@@ -16,6 +17,8 @@ function slugFromPath(path: string): string {
 
 export async function getPosts() {
   console.log("uncached getPosts()");
+
+  const highlighter = await shiki.getHighlighter({ theme: "dracula" });
 
   const posts: Post[] = [];
 
@@ -44,7 +47,16 @@ export async function getPosts() {
           ),
           html: object.html
             .replace(/__GHOST_URL__\/content\/images/g, "/ghost")
-            .replace(/__GHOST_URL__/g, "/posts"),
+            .replace(/__GHOST_URL__/g, "/posts")
+            .replace(
+              /<pre><code class="language-(.+?)">(.+?)<\/code><\/pre>/gs,
+              (_: any, language: string, code: string) => {
+                return highlighter.codeToHtml(
+                  code.replace(/&gt;/g, ">").replace(/&lt;/g, "<"),
+                  { lang: language }
+                );
+              }
+            ),
         });
       }
     } else {
