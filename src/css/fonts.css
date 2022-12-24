@@ -7,29 +7,6 @@
 }
 
 * {
-  font-variation-settings: "wdth" var(--font-width);
-}
-
-.font-width-1 {
-  --font-width: 75;
-}
-
-.font-width-2 {
-  --font-width: 85;
-}
-
-.font-width-3 {
-  --font-width: 95;
-}
-
-.font-width-4 {
-  --font-width: 105;
-}
-
-.font-width-5 {
-  --font-width: 115;
-}
-
-.font-width-6 {
-  --font-width: 125;
+  font-variation-settings: "wdth" var(--font-width, 100),
+    "ital" var(--font-slant, 0);
 }

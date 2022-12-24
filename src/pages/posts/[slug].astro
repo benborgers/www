@@ -15,11 +15,17 @@ const { post } = Astro.props;
 
 <Layout title={post.title}>
   <div class="h-6"></div>
-  <h1 class="mt-2 text-gray-800 font-width-6 font-bold text-3xl">
+  <h1 class="mt-2 text-gray-900 font-width-5 font-bold text-4xl">
     {post.title}
   </h1>
 
-  <div>
+  <div
+    class:list={[
+      "mt-8",
+      "prose sm:prose-lg max-w-none",
+      "prose-em:not-italic prose-em:font-slant-10 prose-blockquote:not-italic prose-blockquote:font-slant-10",
+    ]}
+  >
     {post.component ? <post.component /> : <Fragment set:html={post.html} />}
   </div>
 </Layout>
