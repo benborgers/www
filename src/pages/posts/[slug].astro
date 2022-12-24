@@ -14,10 +14,14 @@ const { post } = Astro.props;
 ---
 
 <Layout title={post.title}>
-  <div class="h-6"></div>
-  <h1 class="mt-2 text-gray-900 font-width-5 font-bold text-3xl sm:text-4xl">
-    {post.title}
-  </h1>
+  <div class="pt-12">
+    <h1 class="text-gray-900 font-width-5 font-bold text-3xl sm:text-4xl">
+      {post.title}
+    </h1>
+    <p class="mt-1 text-right font-width-3 font-medium text-gray-400">
+      {post.date.toFormat("LLLL d, yyyy")}
+    </p>
+  </div>
 
   <div
     class:list={[
