@@ -20,8 +20,6 @@ let POSTS_CACHE: Post[];
 export async function getPosts() {
   if (POSTS_CACHE) return POSTS_CACHE;
 
-  console.log("uncached getPosts()");
-
   const highlighter = await shiki.getHighlighter({ theme: "dracula" });
 
   const posts: Post[] = [];
