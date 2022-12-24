@@ -11,12 +11,17 @@ export interface Props {
     <title>{Astro.props.title}</title>
     <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
   </head>
-  <body class="antialiased text-gray-700 p-4 sm:pt-6 pb-36">
+  <body class="antialiased font-width-4 text-gray-700 p-4 sm:pt-6 pb-36">
     <div class="max-w-screen-sm mx-auto">
       <header>
-        <a href="/" class="block">Ben Borgers</a>
+        <a
+          href="/"
+          class="block w-max bg-rose-500 text-white font-bold font-width-5 px-5 py-3 rounded-full leading-none"
+        >
+          Ben Borgers
+        </a>
       </header>
-      <main>
+      <main class="mt-8">
         <slot />
       </main>
     </div>
