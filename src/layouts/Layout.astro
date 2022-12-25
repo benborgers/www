@@ -46,7 +46,7 @@ import { Planet } from "phosphor-react";
       class="bg-white min-h-screen sm:min-h-[calc(100vh-1.25rem)] sm:rounded-xl shadow-sm p-4 sm:pt-8 pb-36"
     >
       <div class="max-w-screen-sm mx-auto">
-        <header class="flex items-center justify-between">
+        <header class="flex items-end justify-between">
           <a
             href="/"
             class:list={[
@@ -57,18 +57,28 @@ import { Planet } from "phosphor-react";
             <Planet weight="fill" className="-mt-0.5" />
             <span>Ben Borgers</span>
           </a>
-          <a
-            href="/posts"
-            class:list={[
-              "font-medium text-gray-400 hover:text-rose-500 transition-colors font-width-4",
-              {
-                "underline decoration-gray-300":
-                  Astro.url.pathname === "/posts/",
-              },
-            ]}
-          >
-            Blog
-          </a>
+
+          <div class="space-x-3">
+            {
+              [
+                { label: "Home", href: "/" },
+                { label: "Blog", href: "/posts" },
+              ].map(({ label, href }) => (
+                <a
+                  href={href}
+                  class:list={[
+                    "font-medium text-gray-400 hover:text-rose-500 transition-colors font-width-4",
+                    {
+                      "underline decoration-gray-300":
+                        Astro.url.pathname === href ||
+                        // Production Astro has trailing slash on URL if it's not root (/).
+                        Astro.url.pathname === href + "/",
+                    },
+                  ]}
+                >{label}</a>
+              ))
+            }
+          </div>
         </header>
         <main class="mt-12">
           <slot />
