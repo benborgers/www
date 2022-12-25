@@ -1,5 +1,5 @@
 const plugin = require("tailwindcss/plugin");
-const defaultConfig = require("tailwindcss/defaultConfig");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Mona Sans", ...defaultConfig.fontFamily.sans],
+        sans: ["Mona Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },
