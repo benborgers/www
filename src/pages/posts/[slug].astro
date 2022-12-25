@@ -31,7 +31,7 @@ const { post, nextPost, previousPost } = Astro.props;
 
 <Layout title={post.title}>
   <div class="pt-12">
-    <h1 class="text-gray-900 font-width-5 font-bold text-3xl sm:text-4xl">
+    <h1 class="text-gray-900 font-width-5 font-bold text-3xl">
       {post.title}
     </h1>
     <p class="mt-1 text-right font-width-3 font-medium text-gray-400">
@@ -42,7 +42,7 @@ const { post, nextPost, previousPost } = Astro.props;
   <div
     class:list={[
       "mt-8",
-      "prose sm:prose-lg max-w-none",
+      "prose max-w-none",
       "prose-a:text-rose-500",
       "prose-headings:font-width-5",
       "prose-em:not-italic prose-em:font-slant-10 prose-blockquote:not-italic prose-blockquote:font-slant-10",
