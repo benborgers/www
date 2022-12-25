@@ -4,6 +4,16 @@
   "github": { "silent": true },
   "redirects": [
     {
+      "source": "/slowmochristian",
+      "destination": "https://slowmochristian.ben.page"
+    },
+    { "source": "/swipes", "destination": "https://swipes.ben.page" },
+    { "source": "/tufts", "destination": "https://tufts.ben.page" },
+    {
+      "source": "/tufts/(cs86|psy1|chem6|ger170|cshd167)",
+      "destination": "https://fall22.ben.page/$1"
+    },
+    {
       "source": "/\\+/tufts",
       "destination": "/tufts",
       "permanent": true
