@@ -1,4 +1,5 @@
 import rss from "@astrojs/rss";
+import sanitize from "sanitize-html";
 import { getPosts } from "../lib/blog";
 
 export const get = async () =>
@@ -12,5 +13,7 @@ export const get = async () =>
         title: post.title,
         link: `/posts/${post.slug}`,
         pubDate: post.date.toJSDate(),
+        // This doesn't work for markdown posts, but I'm not writing any new markdown posts.
+        content: post.html ? sanitize(post.html) : "",
       })),
   });
