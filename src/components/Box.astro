@@ -1,0 +1,42 @@
+---
+export interface Props {
+  index: 1 | 2 | 3 | 4;
+  title: string;
+  stylelessLinks?: boolean;
+}
+
+import {
+  NumberCircleOne,
+  NumberCircleTwo,
+  NumberCircleThree,
+  NumberCircleFour,
+} from "phosphor-react";
+
+const { index, title, stylelessLinks = false } = Astro.props;
+
+const IndexIcon = {
+  1: NumberCircleOne,
+  2: NumberCircleTwo,
+  3: NumberCircleThree,
+  4: NumberCircleFour,
+}[index];
+---
+
+<div class="bg-gray-50 border border-gray-100 rounded-xl overflow-hidden">
+  <div class="px-4 py-3 border-b border-gray-200">
+    <div class="text-gray-800 flex items-center gap-x-2">
+      <IndexIcon weight="bold" className="mb-0.5" />
+      <p class="font-bold font-width-5">{title}</p>
+    </div>
+  </div>
+  <div
+    class:list={[
+      {
+        "[&_a]:text-rose-500 [&_a]:font-medium [&_a]:underline":
+          !stylelessLinks,
+      },
+    ]}
+  >
+    <slot />
+  </div>
+</div>

@@ -1,0 +1,36 @@
+---
+import type { Post } from "../lib/blog";
+
+export interface Props {
+  posts: Post[];
+  subtle?: boolean;
+}
+
+const { posts, subtle = false } = Astro.props;
+---
+
+{
+  posts.map((post, i) => (
+    <a
+      href={`/posts/${post.slug}`}
+      class:list={[
+        "p-4 flex items-baseline justify-between gap-x-4 hover:bg-gray-100 transition-colors duration-100",
+        { "pt-5": i === 0 },
+      ]}
+    >
+      <p
+        class:list={[
+          {
+            "text-gray-800 font-bold": !subtle,
+            "text-gray-500 font-medium": subtle,
+          },
+        ]}
+      >
+        {post.title}
+      </p>
+      <p class="text-gray-400 font-width-3 flex-shrink-0">
+        {post.date.toFormat("LLLL d, yyyy")}
+      </p>
+    </a>
+  ))
+}

@@ -1,34 +1,14 @@
 ---
 import type { Post } from "../lib/blog";
+import PostList from "./PostList.astro";
 
 export interface Props {
   posts: Post[];
 }
-
-const { posts } = Astro.props;
 ---
 
-<div class="bg-gray-50 border border-gray-100 rounded-xl overflow-hidden">
-  {
-    posts.map((post, i) => (
-      <>
-        <a
-          href={`/posts/${post.slug}`}
-          class:list={[
-            "p-4 flex items-baseline justify-between gap-x-4 hover:bg-gray-100 transition-colors duration-100",
-            { "pt-5": i === 0 },
-          ]}
-        >
-          <p class="text-gray-800 font-bold">{post.title}</p>
-          <p class="text-gray-400 font-width-3 flex-shrink-0">
-            {post.date.toFormat("LLLL d, yyyy")}
-          </p>
-        </a>
-
-        {i !== posts.length - 1 && (
-          <div class="h-px bg-gray-100 w-[calc(100%-1rem)] ml-auto mr-0" />
-        )}
-      </>
-    ))
-  }
+<div
+  class="bg-gray-50 border border-gray-100 rounded-xl overflow-hidden divide-y divide-gray-100"
+>
+  <PostList posts={Astro.props.posts} />
 </div>

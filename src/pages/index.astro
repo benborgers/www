@@ -1,7 +1,116 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Box from "../components/Box.astro";
+import List from "../components/List.astro";
+import PostList from "../components/PostList.astro";
+import { getPosts } from "../lib/blog";
+import { ArrowCircleRight } from "phosphor-react";
+
+const recentPosts = (await getPosts()).slice(0, 4);
 ---
 
 <Layout title="Ben Borgers">
-  <p>Hello, world!</p>
+  <div class="space-y-6">
+    <Box index={1} title="Introduction">
+      <div class="p-4 space-y-2">
+        <p>
+          Hi! I’m Ben, a sophomore at Tufts University studying computer
+          science.
+        </p>
+        <p>
+          You can also find me on
+          <a href="https://twitter.com/benborgers" target="_blank">Twitter</a> and
+          <a href="https://github.com/benborgers" target="_blank">GitHub</a>,
+          and I’m happy to chat via email:
+          <a href="mailto:benborgers@hey.com">benborgers@hey.com</a>.
+        </p>
+      </div>
+    </Box>
+
+    <Box index={2} title="Blog" stylelessLinks>
+      <div class="divide-y divide-gray-100">
+        <PostList posts={recentPosts} subtle />
+        <a
+          href="/posts"
+          class="p-4 text-gray-400 flex items-center gap-x-2 hover:bg-gray-100 transition-colors duration-100"
+        >
+          <p class="font-medium">More Posts</p>
+          <ArrowCircleRight weight="bold" className="mb-0.5" />
+        </a>
+      </div>
+    </Box>
+
+    <List
+      index={3}
+      title="Work Experience"
+      items={[
+        {
+          title: `Internship at <a href="https://lu.ma" target="_blank">Luma</a> and <a href="https://glow.app" target="_blank">Glow</a> working on web apps and their Chrome extension.`,
+          subtitle: "Summer 2022",
+        },
+        {
+          title: `Freelance development in Vue for <a href="https://buttondown.email" target="_blank">Buttondown</a>, an email newsletter provider.`,
+          subtitle: "Summer 2021 - present",
+        },
+        {
+          title: `Website for <a href="https://uphamdesign.com" target="_blank">Upham Design</a>, a creative collective run by a family friend.`,
+          subtitle: "Fall 2021 - present",
+        },
+        {
+          title: `Wrote code that powered TV graphics for STU National Championships, a Brazilian skateboarding championship.`,
+          subtitle: "Winter 2021",
+        },
+        {
+          title: `Developed a course registration and management app in Laravel for <a href="https://diyiboston.com" target="_blank">Diyi</a>, an online school based in the Boston area.`,
+          subtitle: "Summer 2020",
+        },
+        {
+          title: `Interned at <a href="https://www.ibm.com/products/guardium-insights" target="_blank">IBM Security</a> for two summers, working on a new security offering for enterprise.`,
+          subtitle: "Summer 2019, Summer 2020",
+        },
+        {
+          title: `Full-stack development using React and Node.js for <a href="https://rep.ly" target="_blank">Rep.ly</a>.`,
+          subtitle: "Summer 2020",
+        },
+      ]}
+    />
+
+    <List
+      index={4}
+      title="Side Projects"
+      items={[
+        {
+          title: `As an experiment, I wrote <a href="/posts">daily blog posts</a> for 180 days.`,
+        },
+        {
+          title: `<a href="https://bagel.institute" target="_blank">Bagel Institute</a>, an app that my dad has used to teach math classes at Tufts University for two years.`,
+        },
+        {
+          title: `<a href="/posts/war-room">War Room</a>, a social to-do list app that my friends and I (and 150+ other college students) use.`,
+        },
+        {
+          title: `<a href="https://bite.guide" target="_blank">Bite</a>, a personal blog for reviewing restaurants and attractions.`,
+        },
+        {
+          title: `<a href="https://opensheet.elk.sh" target="_blank">opensheet</a>, an open-source hosted Google Sheets API that receives about 20 million hits/month. I’ve also written a <a href="/posts/google-sheets-json">blog post</a> on how to use it.`,
+        },
+        {
+          title: `<a href="/posts/tmrw">tmrw</a>, a calendar-based to-do list app.`,
+        },
+        {
+          title: `<a href="https://vault.elk.sh" target="_blank">Vault</a>, a password manager.`,
+        },
+        {
+          title: `<a href="/posts/blocks">Blocks</a>, a schedule app I built for my high school which was used by over 2,000 students and teachers.`,
+          subtitle: "2019 - 2021",
+        },
+        {
+          title: `<a href="/posts/cornflakes">Cornflakes</a>, a simple and privacy-focused email newsletter SaaS.`,
+        },
+        {
+          title: `<a href="https://emojicdn.elk.sh" target="_blank">emojicdn</a>, an API for getting PNG images of emojis.`,
+        },
+      ]}
+    />
+  </div>
 </Layout>
