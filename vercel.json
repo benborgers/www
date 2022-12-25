@@ -1,4 +1,7 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "github": { "silent": true },
   "redirects": [
     {
       "source": "/\\+/tufts",
@@ -681,8 +684,5 @@
       "destination": "/posts/zeit-regions",
       "permanent": true
     }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "github": { "silent": true }
+  ]
 }
