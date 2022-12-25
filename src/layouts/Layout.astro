@@ -18,59 +18,6 @@ import { Planet } from "phosphor-react";
 
     <meta name="theme-color" content="#f43f5e" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll("a").forEach((el) => {
-          if (el.href.startsWith(location.origin)) {
-            el.addEventListener("click", (e) => {
-              e.preventDefault();
-
-              localStorage.setItem("page_animation", "true");
-
-              const div = document.createElement("div");
-              div.style.height = "100vh";
-              div.style.width = "100vw";
-              div.style.position = "absolute";
-              div.style.top = "-100vh";
-              div.style.left = "0";
-              div.style.right = "0";
-              div.style.transition = "transform 0.2s";
-              div.classList.add("bg-rose-500");
-              document.body.append(div);
-
-              requestAnimationFrame(() => {
-                div.style.transform = "translateY(100vh)";
-
-                setTimeout(() => {
-                  window.location.href = el.href;
-                }, 250);
-              });
-            });
-          }
-        });
-      });
-
-      if (localStorage.getItem("page_animation")) {
-        localStorage.removeItem("page_animation");
-
-        const div = document.createElement("div");
-        div.style.height = "100vh";
-        div.style.width = "100vw";
-        div.style.position = "absolute";
-        div.style.top = "-100vh";
-        div.style.left = "0";
-        div.style.right = "0";
-        div.style.transform = "translateY(100vh)";
-        div.style.transition = "transform 0.3s";
-        div.classList.add("bg-rose-500");
-        document.body.append(div);
-
-        requestAnimationFrame(() => {
-          div.style.transform = "translateY(0)";
-        });
-      }
-    </script>
   </head>
   <body
     class:list={[
