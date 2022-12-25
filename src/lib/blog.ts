@@ -25,7 +25,10 @@ function processGhostHtml(html: string): string {
       /<pre><code class="language-(.+?)">(.+?)<\/code><\/pre>/gs,
       (_: any, language: string, code: string) => {
         return highlighter.codeToHtml(
-          code.replace(/&gt;/g, ">").replace(/&lt;/g, "<"),
+          code
+            .replace(/&gt;/g, ">")
+            .replace(/&lt;/g, "<")
+            .replace(/&amp;/g, "&"),
           { lang: language }
         );
       }
