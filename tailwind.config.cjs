@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
     plugin(function ({ addUtilities }) {
       addUtilities({
         ".font-width-1": { "--font-width": "75" },

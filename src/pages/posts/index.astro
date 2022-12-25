@@ -1,11 +1,16 @@
 ---
-import PostIndex from "../../components/PostIndex.astro";
 import Layout from "../../layouts/Layout.astro";
+import Newsletter from "../../components/Newsletter.astro";
+import PostIndex from "../../components/PostIndex.astro";
 import { getPosts } from "../../lib/blog";
 
 const posts = (await getPosts()).filter((post) => !post.technical);
 ---
 
 <Layout title="Ben Borgers’ Blog">
+  <Newsletter />
+
+  <div class="mt-8"></div>
+
   <PostIndex posts={posts} />
 </Layout>
