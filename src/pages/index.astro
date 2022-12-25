@@ -12,18 +12,23 @@ const recentPosts = (await getPosts()).slice(0, 4);
 <Layout title="Ben Borgers">
   <div class="space-y-8">
     <Box index={1} title="Introduction">
-      <div class="p-4 space-y-2">
-        <p>
-          Hi! I’m Ben, a sophomore at Tufts University studying computer
-          science.
-        </p>
-        <p>
-          You can also find me on
-          <a href="https://twitter.com/benborgers" target="_blank">Twitter</a> and
-          <a href="https://github.com/benborgers" target="_blank">GitHub</a>,
-          and I’m happy to chat via email:
-          <a href="mailto:benborgers@hey.com">benborgers@hey.com</a>.
-        </p>
+      <div class="p-4 flex items-start justify-between gap-x-8">
+        <div class="space-y-2">
+          <p>
+            Hi! I’m Ben, a sophomore at Tufts University studying computer
+            science.
+          </p>
+          <p>
+            You can also find me on
+            <a href="https://twitter.com/benborgers" target="_blank">Twitter</a>
+            and
+            <a href="https://github.com/benborgers" target="_blank">GitHub</a>,
+            and I’m happy to chat via email:
+            <a href="mailto:benborgers@hey.com">benborgers@hey.com</a>.
+          </p>
+        </div>
+
+        <img src="/me.jpg" alt="" class="w-24 rounded-full" />
       </div>
     </Box>
 
