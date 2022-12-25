@@ -3,6 +3,7 @@
   "trailingSlash": false,
   "github": { "silent": true },
   "redirects": [
+    { "source": "/pittsburgh", "destination": "https://pittsburgh.ben.page" },
     {
       "source": "/slowmochristian",
       "destination": "https://slowmochristian.ben.page"
