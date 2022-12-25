@@ -14,7 +14,7 @@ const { posts, subtle = false } = Astro.props;
     <a
       href={`/posts/${post.slug}`}
       class:list={[
-        "p-4 flex items-baseline justify-between gap-x-4 hover:bg-gray-100 transition-colors duration-100",
+        "p-4 flex items-baseline justify-between gap-x-4 max-sm:flex-col hover:bg-gray-100 transition-colors duration-100",
         { "pt-5": i === 0 },
       ]}
     >
