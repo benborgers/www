@@ -6,7 +6,9 @@ import PostList from "../components/PostList.astro";
 import { getPosts } from "../lib/blog";
 import { ArrowCircleRight } from "phosphor-react";
 
-const recentPosts = (await getPosts()).slice(0, 4);
+const recentPosts = (await getPosts())
+  .filter((post) => !post.technical)
+  .slice(0, 4);
 ---
 
 <Layout title="Ben Borgers">
