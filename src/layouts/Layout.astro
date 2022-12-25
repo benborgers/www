@@ -18,6 +18,13 @@ import { Planet } from "phosphor-react";
 
     <meta name="theme-color" content="#f43f5e" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta
+      property="og:image"
+      content={`https://v1.screenshot.11ty.dev/${encodeURIComponent(
+        Astro.url.href
+      )}/opengraph/_${new Date().getTime()}`}
+    />
   </head>
   <body
     class:list={[
