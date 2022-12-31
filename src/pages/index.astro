@@ -34,7 +34,7 @@ const recentPosts = (await getPosts())
       </div>
     </Box>
 
-    <Box index={2} title="Blog" stylelessLinks>
+    <Box index={2} title="Blog" href="/posts" stylelessLinks>
       <div class="divide-y divide-gray-100">
         <PostList posts={recentPosts} subtle />
         <a
