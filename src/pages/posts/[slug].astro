@@ -31,6 +31,16 @@ const { post, nextPost, previousPost } = Astro.props;
 ---
 
 <Layout title={post.title}>
+  <script
+    src={`https://write.benborgers.com/public/cards.min.js?v=${new Date().getTime()}`}
+    defer
+    slot="head"
+  ></script>
+  <link
+    rel="stylesheet"
+    href={`https://write.benborgers.com/public/cards.min.css?v=${new Date().getTime()}`}
+  />
+
   <div class="pt-6 sm:pt-10">
     <h1 class="text-gray-900 font-width-5 font-bold text-3xl">
       {post.title}
