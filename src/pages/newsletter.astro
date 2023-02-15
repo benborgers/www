@@ -1,0 +1,32 @@
+---
+import { ArrowRight } from "phosphor-react";
+
+import Layout from "../layouts/Layout.astro";
+import Newsletter from "../components/Newsletter.astro";
+---
+
+<Layout title="Ben Borgers’ Technical Blog">
+  <Newsletter />
+
+  <div class="mt-6">
+    <p class="font-width-4 font-slant-10 font-medium text-gray-400">
+      Alternatively...
+    </p>
+    <div class="mt-2 space-y-2">
+      <a
+        href="/"
+        class="flex items-center gap-1.5 bg-rose-100 text-rose-500 transition-colors font-medium px-2 py-1 rounded-lg max-w-max"
+      >
+        <span>Personal Projects & Work Experience</span>
+        <ArrowRight weight="bold" />
+      </a>
+      <a
+        href="/posts"
+        class="flex items-center gap-1.5 bg-rose-100 text-rose-500 transition-colors font-medium px-2 py-1 rounded-lg max-w-max"
+      >
+        <span>Blog Posts</span>
+        <ArrowRight weight="bold" />
+      </a>
+    </div>
+  </div>
+</Layout>

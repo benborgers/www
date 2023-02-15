@@ -45,7 +45,7 @@ import { Planet } from "phosphor-react";
     ]}
   >
     <div
-      class="bg-white min-h-screen sm:min-h-[calc(100vh-1.25rem)] sm:rounded-xl shadow-sm p-4 sm:pt-8 pb-36"
+      class="bg-white sm:min-h-[calc(100vh-1.25rem)] sm:rounded-xl shadow-sm p-4 sm:pt-8 pb-36"
     >
       <div class="max-w-screen-sm mx-auto">
         <header class="flex items-end justify-between">
@@ -77,7 +77,9 @@ import { Planet } from "phosphor-react";
                         Astro.url.pathname === href + "/",
                     },
                   ]}
-                >{label}</a>
+                >
+                  {label}
+                </a>
               ))
             }
           </div>
