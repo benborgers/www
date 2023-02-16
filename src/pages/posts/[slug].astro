@@ -39,6 +39,7 @@ const { post, nextPost, previousPost } = Astro.props;
   <link
     rel="stylesheet"
     href={`https://write.benborgers.com/public/cards.min.css?v=${new Date().getTime()}`}
+    slot="head"
   />
 
   <div class="pt-6 sm:pt-10">
