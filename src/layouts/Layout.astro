@@ -65,10 +65,10 @@ import { Planet } from "phosphor-react";
               [
                 { label: "Home", href: "/" },
                 { label: "Blog", href: "/posts" },
-              ].map(({ label, href }) => (
-                <a
-                  href={href}
-                  class:list={[
+              ].map(({ label, href }) =>
+                // Extra spaces around the {label} makes the underline extend too long on “Home”.
+                // prettier-ignore
+                <a href={href} class:list={[
                     "font-medium text-gray-400 hover:text-rose-500 transition-colors font-width-4",
                     {
                       "underline decoration-gray-300":
@@ -76,11 +76,8 @@ import { Planet } from "phosphor-react";
                         // Production Astro has trailing slash on URL if it's not root (/).
                         Astro.url.pathname === href + "/",
                     },
-                  ]}
-                >
-                  {label}
-                </a>
-              ))
+                  ]}>{label}</a>
+              )
             }
           </div>
         </header>
