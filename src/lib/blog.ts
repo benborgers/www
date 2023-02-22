@@ -83,7 +83,7 @@ export async function getPosts() {
 
   const ghostContent = await (
     await fetch(
-      "https://write.benborgers.com/ghost/api/content/posts?include=tags&key=518c3697d04ae2e5c791df241b"
+      "https://write.benborgers.com/ghost/api/content/posts?include=tags&limit=all&key=518c3697d04ae2e5c791df241b"
     )
   ).json();
 
