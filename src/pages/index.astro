@@ -17,8 +17,7 @@ const recentPosts = (await getPosts())
       <div class="p-4 flex items-start justify-between gap-x-8">
         <div class="space-y-2">
           <p>
-            Hi! I’m Ben, a rising junior at Tufts University studying computer
-            science.
+            Hi! I’m Ben, a junior at Tufts University studying computer science.
           </p>
           <p>
             You can also find me on
@@ -52,6 +51,10 @@ const recentPosts = (await getPosts())
       title="Work Experience"
       items={[
         {
+          title: `React Native development at <a href="https://locket.camera" target="_blank">Locket</a>, a social media app, rapidly shipping new features to millions of active users.`,
+          subtitle: "Summer–Fall 2023",
+        },
+        {
           title: `Development in Vue + Django and technical customer support for <a href="https://buttondown.email" target="_blank">Buttondown</a>, an email newsletter provider.`,
           subtitle: "Summer 2021 - present",
         },
@@ -83,7 +86,10 @@ const recentPosts = (await getPosts())
       title="Side Projects"
       items={[
         {
-          title: `<a href="https://ask.kiwi" target="_blank">Kiwi</a>, an app for students to ask anonymous questions in lecture. Built for a University of Michigan study.`,
+          title: `<a href="https://4.ben.page/2023/04/stickies" target="_blank">Stickies</a>, a note-taking app that lays notes out spacially.`,
+        },
+        {
+          title: `<a href="https://ask.kiwi" target="_blank">Kiwi</a>, an app for students to ask anonymous questions in lecture. Built for a University of Michigan study and currently being tested in large lectures.`,
         },
         {
           title: `<a href="/posts/superadmin-styled">Superadmin</a>, a little content management system for websites I make.`,
