@@ -27,8 +27,26 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+
     <title>{title}</title>
     <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
+    <meta property="og:title" content={title} />
+    <meta property="og:site_name" content="Ben Borgers" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Ben Borgers"
+      href="/rss"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <script
+      src="https://owl.benborgers.com/script.js"
+      data-site="ZWCPJCUA"
+      data-included-domains="benborgers.com"
+      defer
+      is:inline></script>
   </head>
   <body class="antialiased bg-gray-800">
     <div
