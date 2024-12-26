@@ -25,9 +25,9 @@ export default defineConfig({
 
   redirects: {
     "/rss.xml": "/rss",
-    "/slowmochristian": "https://slowmochristian.ben.page",
-    "/swipes": "https://swipes.ben.page",
-    "/blog/(.*)": "/$1",
-    "/posts/(.*)": "/$1",
+    "/slowmochristian": "http://slowmochristian.ben.page",
+    "/swipes": "http://swipes.ben.page",
+    "/blog/[...slug]": "/[...slug]",
+    "/posts/[...slug]": "/[..slug]",
   },
 });
