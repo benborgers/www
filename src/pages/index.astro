@@ -9,7 +9,7 @@ const posts = (await getCollection("posts"))
 ---
 
 <Layout title="Ben Borgers">
-  <div class="space-y-4">
+  <div class="space-y-2 sm:space-y-4">
     {
       posts.map(async (post) => {
         return <Post post={post} preview />;

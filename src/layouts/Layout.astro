@@ -90,7 +90,7 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
       </header>
 
       <div
-        class="bg-gray-800 p-4 rounded-2xl grid grid-rows-[max-content,1fr] sm:grid-rows-none sm:grid-cols-[3fr_1fr] gap-x-4"
+        class="bg-gray-800 p-2 sm:p-4 sm:rounded-2xl grid grid-rows-[max-content,1fr] sm:grid-rows-none sm:grid-cols-[3fr_1fr] gap-x-4"
       >
         <main class="min-w-0">
           <slot />
@@ -98,7 +98,7 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
 
         <div
           class:list={[
-            "space-y-4 max-sm:-order-1",
+            "space-y-2 sm:space-y-4 max-sm:-order-1",
             "max-h-96 max-sm:data-[nav=closed]:max-h-0 max-sm:data-[nav=closed]:opacity-0 max-sm:data-[nav=closed]:pointer-events-none",
             "transition-all duration-300 ease-in-out",
           ]}
