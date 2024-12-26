@@ -8,6 +8,6 @@ import removeMarkdown from "remove-markdown";
 const { markdown } = Astro.props;
 ---
 
-<div class="line-clamp-2">
-  <p>{removeMarkdown(markdown).substring(0, 200)}</p>
+<div class="line-clamp-3">
+  <p>{removeMarkdown(markdown).substring(0, 250)}</p>
 </div>
