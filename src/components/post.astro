@@ -20,6 +20,7 @@ const h1ClassName = [
 
 <section
   class:list={[
+    "relative",
     "bg-gray-700 p-5 rounded-xl ring-1 ring-gray-900/40",
     "border-t border-t-gray-600",
     "border-b border-b-gray-900/40",
@@ -66,4 +67,6 @@ const h1ClassName = [
       </div>
     )
   }
+
+  {preview && <a href={`/${post.slug}`} class="absolute inset-0" />}
 </section>
