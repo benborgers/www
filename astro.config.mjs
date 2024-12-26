@@ -22,12 +22,4 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
-
-  redirects: {
-    "/rss.xml": "/rss",
-    "/slowmochristian": "http://slowmochristian.ben.page",
-    "/swipes": "http://swipes.ben.page",
-    "/blog/[...slug]": "/[...slug]",
-    "/posts/[...slug]": "/[..slug]",
-  },
 });
