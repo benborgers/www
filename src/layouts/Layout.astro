@@ -99,7 +99,8 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
         <div
           class:list={[
             "space-y-4 max-sm:-order-1",
-            "max-h-96 max-sm:data-[nav=closed]:max-h-0 max-sm:data-[nav=closed]:opacity-0 transition-all duration-300 ease-in-out",
+            "max-h-96 max-sm:data-[nav=closed]:max-h-0 max-sm:data-[nav=closed]:opacity-0 max-sm:data-[nav=closed]:pointer-events-none",
+            "transition-all duration-300 ease-in-out",
           ]}
           data-nav-container
           data-nav="closed"
