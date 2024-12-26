@@ -4,10 +4,12 @@ import NavLink from "../components/nav-link.tsx";
 import {
   Butterfly,
   CalendarBlank,
+  EnvelopeSimple,
   GithubLogo,
   House,
   List,
   Package,
+  Rss,
   TwitterLogo,
   User,
   X,
@@ -92,20 +94,21 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
       <div
         class="bg-gray-800 p-2 sm:p-4 sm:rounded-2xl grid grid-rows-[max-content,1fr] sm:grid-rows-none sm:grid-cols-[3fr_1fr] gap-x-4"
       >
-        <main class="min-w-0">
+        <main class="min-w-0 z-20">
           <slot />
         </main>
 
-        <div
+        <nav
           class:list={[
             "space-y-2 sm:space-y-4 max-sm:-order-1",
             "max-h-96 max-sm:data-[nav=closed]:max-h-0 max-sm:data-[nav=closed]:opacity-0 max-sm:data-[nav=closed]:pointer-events-none",
             "transition-all duration-300 ease-in-out",
+            "z-10",
           ]}
           data-nav-container
           data-nav="closed"
         >
-          <nav class="ring-1 ring-gray-900/40 shadow-sm rounded-xl">
+          <div class="ring-1 ring-gray-900/40 shadow-sm rounded-xl">
             <NavLink
               href="/"
               label="Home"
@@ -132,7 +135,7 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
               icon={CalendarBlank}
               pathname={Astro.url.pathname}
             />
-          </nav>
+          </div>
 
           <div class="ring-1 ring-gray-900/40 shadow-sm rounded-xl">
             <NavLink
@@ -155,9 +158,19 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
             />
           </div>
 
+          <div class="ring-1 ring-gray-900/40 shadow-sm rounded-xl">
+            <NavLink
+              href="https://buttondown.com/benborgers"
+              newTab
+              label="Newsletter"
+              icon={EnvelopeSimple}
+            />
+            <NavLink href="/rss" newTab label="RSS feed" icon={Rss} />
+          </div>
+
           {/* Spacer at bottom of nav on mobile. */}
-          <div></div>
-        </div>
+          <div class="sm:hidden"></div>
+        </nav>
       </div>
     </div>
 
