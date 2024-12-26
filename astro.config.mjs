@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://benborgers.com",
+  site: "https://benborgers.comg",
 
   integrations: [tailwind(), react(), sitemap()],
 
@@ -23,5 +23,13 @@ export default defineConfig({
 
   devToolbar: {
     enabled: false,
+  },
+
+  redirects: {
+    "/rss.xml": "/rss",
+    "/slowmochristian": "https://slowmochristian.ben.page",
+    "/swipes": "https://swipes.ben.page",
+    "/blog/(.*)": "/$1",
+    "/posts/(.*)": "/$1",
   },
 });
