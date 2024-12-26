@@ -36,11 +36,19 @@ const h1ClassName = [
     )
   }
 
-  <div class:list={[!preview && "mt-4"]}>
-    <Prose>
-      {preview ? <Excerpt markdown={post.body} /> : <Content />}
-    </Prose>
-  </div>
+  {
+    preview ? (
+      <div class="mt-4 text-gray-200 leading-[1.5]">
+        <Excerpt markdown={post.body} />
+      </div>
+    ) : (
+      <div class="mt-4">
+        <Prose>
+          <Content />
+        </Prose>
+      </div>
+    )
+  }
 
   {
     post.data.date && (
