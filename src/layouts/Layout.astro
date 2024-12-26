@@ -90,7 +90,7 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
       </header>
 
       <div
-        class="bg-gray-800 p-4 rounded-2xl grid sm:grid-cols-[3fr_1fr] gap-x-4"
+        class="bg-gray-800 p-4 rounded-2xl grid grid-rows-[max-content,1fr] sm:grid-rows-none sm:grid-cols-[3fr_1fr] gap-x-4"
       >
         <main class="min-w-0">
           <slot />
@@ -154,6 +154,7 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
             />
           </div>
 
+          {/* Spacer at bottom of nav on mobile. */}
           <div></div>
         </div>
       </div>
