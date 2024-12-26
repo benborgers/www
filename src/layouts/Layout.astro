@@ -6,9 +6,11 @@ import {
   CalendarBlank,
   GithubLogo,
   House,
+  List,
   Package,
   TwitterLogo,
   User,
+  X,
 } from "@phosphor-icons/react";
 
 interface Props {
@@ -45,19 +47,45 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
           Ben Borgers
         </a>
 
-        <img
-          src="/me.jpg"
-          alt=""
-          class="h-12 shadow-sm rounded-lg rotate-3 ring-1 ring-gray-800/40"
-        />
+        <div class="flex items-end gap-x-4">
+          <img
+            src="/me.jpg"
+            alt=""
+            class="h-12 shadow-sm rounded-lg rotate-3 ring-1 ring-gray-800/40"
+          />
+
+          <button class="sm:hidden p-1" data-nav-toggle>
+            <List
+              weight="bold"
+              size={24}
+              className="text-gray-500 data-[nav=open]:hidden"
+              data-nav="closed"
+            />
+            <X
+              weight="bold"
+              size={24}
+              className="text-gray-500 data-[nav=closed]:hidden"
+              data-nav="closed"
+            />
+          </button>
+        </div>
       </header>
 
-      <div class="bg-gray-800 p-4 rounded-2xl grid grid-cols-[3fr_1fr] gap-x-4">
+      <div
+        class="bg-gray-800 p-4 rounded-2xl grid sm:grid-cols-[3fr_1fr] gap-x-4"
+      >
         <main class="min-w-0">
           <slot />
         </main>
 
-        <div class="space-y-4">
+        <div
+          class:list={[
+            "space-y-4 max-sm:-order-1",
+            "max-h-96 max-sm:data-[nav=closed]:max-h-0 max-sm:data-[nav=closed]:opacity-0 transition-all duration-300 ease-in-out",
+          ]}
+          data-nav-container
+          data-nav="closed"
+        >
           <nav class="ring-1 ring-gray-900/40 shadow-sm rounded-xl">
             <NavLink
               href="/"
@@ -107,8 +135,33 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
               icon={GithubLogo}
             />
           </div>
+
+          <div></div>
         </div>
       </div>
     </div>
+
+    <script>
+      // Nav toggle
+      const button = document.querySelector(
+        "[data-nav-toggle]"
+      ) as HTMLButtonElement;
+      const container = document.querySelector(
+        "[data-nav-container]"
+      ) as HTMLDivElement;
+
+      let open = false;
+
+      button.addEventListener("click", () => {
+        open = !open;
+        const dataNav = open ? "open" : "closed";
+
+        container.dataset.nav = dataNav;
+
+        button.querySelectorAll("*").forEach((icon) => {
+          (icon as SVGElement).dataset.nav = dataNav;
+        });
+      });
+    </script>
   </body>
 </html>
