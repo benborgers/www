@@ -13,6 +13,7 @@
     "@astrojs/rss": "^4.0.10",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.4",
+    "@astrojs/vercel": "^8.0.1",
     "@phosphor-icons/react": "^2.1.7",
     "@tailwindcss/typography": "^0.5.15",
     "@types/react": "^19.0.2",
