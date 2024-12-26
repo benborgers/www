@@ -1,132 +1,19 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Box from "../components/Box.astro";
-import List from "../components/List.astro";
-import PostList from "../components/PostList.astro";
-import { getPosts } from "../lib/blog";
-import { ArrowCircleRight } from "phosphor-react";
+import Post from "../components/post.astro";
 
-const recentPosts = (await getPosts())
-  .filter((post) => !post.technical)
-  .slice(0, 4);
+const posts = (await getCollection("posts"))
+  .filter((post) => !post.data.unlisted)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <Layout title="Ben Borgers">
-  <div class="space-y-8">
-    <Box index={1} title="Introduction">
-      <div class="p-4 flex items-start justify-between gap-x-8">
-        <div class="space-y-2">
-          <p>
-            Hi! I’m Ben, a junior at Tufts University studying computer science.
-          </p>
-          <p>
-            You can also find me on
-            <a href="https://twitter.com/benborgers" target="_blank">Twitter</a>
-            and
-            <a href="https://github.com/benborgers" target="_blank">GitHub</a>,
-            and I’m happy to chat via email:
-            <a href="mailto:benborgers@hey.com">benborgers@hey.com</a>.
-          </p>
-        </div>
-
-        <img src="/me.jpg" alt="" class="w-24 rounded-full max-sm:hidden" />
-      </div>
-    </Box>
-
-    <Box index={2} title="Blog" href="/posts" stylelessLinks>
-      <div class="divide-y divide-gray-100">
-        <PostList posts={recentPosts} subtle />
-        <a
-          href="/posts"
-          class="p-4 text-gray-400 flex items-center gap-x-2 hover:bg-gray-100 transition-colors duration-100"
-        >
-          <p class="font-medium">More Posts</p>
-          <ArrowCircleRight weight="bold" className="mb-0.5" />
-        </a>
-      </div>
-    </Box>
-
-    <List
-      index={3}
-      title="Work Experience"
-      items={[
-        {
-          title: `React Native development at <a href="https://locket.camera" target="_blank">Locket</a>, a social media app, rapidly shipping new features to millions of active users.`,
-          subtitle: "Summer–Fall 2023",
-        },
-        {
-          title: `Development in Vue + Django and technical customer support for <a href="https://buttondown.email" target="_blank">Buttondown</a>, an email newsletter provider.`,
-          subtitle: "Summer 2021 - present",
-        },
-        {
-          title: `Mobile app development for <a href="https://www.markitsocial.net">Markit</a>, an events promotion platform, using React Native.`,
-          subtitle: "Fall 2022",
-        },
-        {
-          title: `Internship at <a href="https://lu.ma" target="_blank">Luma</a> and <a href="https://glow.app" target="_blank">Glow</a> working on web apps and their Chrome extension using React + TypeScript.`,
-          subtitle: "Summer 2022",
-        },
-        {
-          title: `Developed a course registration and management app in Laravel for <a href="https://diyiboston.com" target="_blank">Diyi</a>, an online school based in the Boston area.`,
-          subtitle: "Summer 2020",
-        },
-        {
-          title: `Interned at <a href="https://www.ibm.com/products/guardium-insights" target="_blank">IBM Security</a> for two summers, working on a new security offering for enterprise.`,
-          subtitle: "Summer 2019, Summer 2020",
-        },
-        {
-          title: `Full-stack development using React and Node.js for <a href="https://rep.ly" target="_blank">Rep.ly</a>.`,
-          subtitle: "Summer 2020",
-        },
-      ]}
-    />
-
-    <List
-      index={4}
-      title="Side Projects"
-      items={[
-        {
-          title: `<a href="https://4.ben.page/2023/04/stickies" target="_blank">Stickies</a>, a note-taking app that lays notes out spacially.`,
-        },
-        {
-          title: `<a href="https://ask.kiwi" target="_blank">Kiwi</a>, an app for students to ask anonymous questions in lecture. Built for a University of Michigan study and currently being tested in large lectures.`,
-        },
-        {
-          title: `<a href="/posts/superadmin-styled">Superadmin</a>, a little content management system for websites I make.`,
-        },
-        {
-          title: `As an experiment, I wrote <a href="/posts">daily blog posts</a> for 180 days.`,
-          subtitle: "January - July 2022",
-        },
-        {
-          title: `<a href="https://bagel.institute" target="_blank">Bagel Institute</a>, an app that my dad has used to teach math classes at Tufts University for two years.`,
-        },
-        {
-          title: `<a href="/posts/war-room">War Room</a>, a social to-do list app that my friends and I (and 200+ other people) use.`,
-        },
-        {
-          title: `<a href="https://bite.guide" target="_blank">Bite</a>, a personal blog for reviewing restaurants and attractions.`,
-        },
-        {
-          title: `<a href="https://opensheet.elk.sh" target="_blank">opensheet</a>, an open-source hosted Google Sheets API that receives about 40 million hits/month. I’ve also written a <a href="/posts/google-sheets-json">blog post</a> on how to use it.`,
-        },
-        {
-          title: `<a href="/posts/tmrw">tmrw</a>, a calendar-based to-do list app.`,
-        },
-        {
-          title: `<a href="https://vault.elk.sh" target="_blank">Vault</a>, a password manager.`,
-        },
-        {
-          title: `<a href="/posts/blocks">Blocks</a>, a schedule app I built for my high school which was used by over 2,000 students and teachers.`,
-          subtitle: "2019 - 2021",
-        },
-        {
-          title: `<a href="/posts/cornflakes">Cornflakes</a>, a simple and privacy-focused email newsletter SaaS.`,
-        },
-        {
-          title: `<a href="https://emojicdn.elk.sh" target="_blank">emojicdn</a>, an API for getting PNG images of emojis.`,
-        },
-      ]}
-    />
+  <div class="space-y-4">
+    {
+      posts.map(async (post) => {
+        return <Post post={post} preview />;
+      })
+    }
   </div>
 </Layout>

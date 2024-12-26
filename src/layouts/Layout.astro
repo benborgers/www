@@ -1,89 +1,113 @@
 ---
-import "../css/fonts.css";
+import { getEntry } from "astro:content";
+import NavLink from "../components/nav-link.tsx";
+import {
+  Butterfly,
+  CalendarBlank,
+  GithubLogo,
+  House,
+  Package,
+  TwitterLogo,
+  User,
+} from "@phosphor-icons/react";
 
-export interface Props {
+interface Props {
   title: string;
 }
 
-import { Planet } from "phosphor-react";
+const { title } = Astro.props;
+
+const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-
-    <title>{Astro.props.title}</title>
+    <title>{title}</title>
     <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
-    <meta name="theme-color" content="#f43f5e" />
-
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
-
-    <meta
-      property="og:image"
-      content={`https://v1.screenshot.11ty.dev/${encodeURIComponent(
-        Astro.url.href
-      )}/opengraph/1:1/bigger/_${new Date().getTime()}_wait:2`}
-    />
-
-    <slot name="head" />
-
-    <script
-      src="https://cdn.usefathom.com/script.js"
-      data-site="ZWCPJCUA"
-      data-included-domains="benborgers.com"
-      defer
-    ></script>
   </head>
-  <body
-    class:list={[
-      "antialiased text-gray-700",
-      "bg-white sm:bg-rose-500",
-      "sm:px-2 sm:py-2.5",
-      "max-sm:border-t-4 max-sm:border-t-rose-500",
-    ]}
-  >
+  <body class="antialiased bg-gray-800">
     <div
-      class="bg-white sm:min-h-[calc(100vh-1.25rem)] sm:rounded-xl shadow-sm p-4 sm:pt-8 pb-36"
+      class="absolute inset-x-0 top-0 h-3/4 bg-gradient-to-b from-gray-700 to-gray-800"
     >
-      <div class="max-w-screen-sm mx-auto">
-        <header class="flex items-end justify-between">
-          <a
-            href="/"
-            class:list={[
-              "block w-max font-extrabold font-width-5 text-gray-800 hover:text-rose-500 transition-colors",
-              "flex items-center gap-x-1.5",
-            ]}
-          >
-            <Planet weight="fill" className="-mt-0.5" />
-            <span>Ben Borgers</span>
-          </a>
+    </div>
 
-          <div class="space-x-3">
-            {
-              [
-                { label: "Home", href: "/" },
-                { label: "Blog", href: "/posts" },
-              ].map(({ label, href }) =>
-                // Extra spaces around the {label} makes the underline extend too long on “Home”.
-                // prettier-ignore
-                <a href={href} class:list={[
-                    "font-medium text-gray-400 hover:text-rose-500 transition-colors font-width-4",
-                    {
-                      "underline decoration-gray-300":
-                        Astro.url.pathname === href ||
-                        // Production Astro has trailing slash on URL if it's not root (/).
-                        Astro.url.pathname === href + "/",
-                    },
-                  ]}>{label}</a>
-              )
-            }
-          </div>
-        </header>
-        <main class="mt-12">
+    <div
+      class="relative w-full max-w-screen-md mx-auto min-h-screen grid grid-rows-[auto_1fr] pb-24"
+    >
+      <header class="sm:mt-10 p-4 flex justify-between items-end">
+        <a
+          href="/"
+          class="text-lg font-semibold text-gray-200 tracking-tight [text-shadow:0_0_1px_rgba(0,0,0,0.5)]"
+        >
+          Ben Borgers
+        </a>
+
+        <img
+          src="/me.jpg"
+          alt=""
+          class="h-12 shadow-sm rounded-lg rotate-3 ring-1 ring-gray-800/40"
+        />
+      </header>
+
+      <div class="bg-gray-800 p-4 rounded-2xl grid grid-cols-[3fr_1fr] gap-x-4">
+        <main class="min-w-0">
           <slot />
         </main>
+
+        <div class="space-y-4">
+          <nav class="ring-1 ring-gray-900/40 shadow-sm rounded-xl">
+            <NavLink
+              href="/"
+              label="Home"
+              icon={House}
+              pathname={Astro.url.pathname}
+            />
+            <NavLink
+              href="/about"
+              label="About"
+              icon={User}
+              pathname={Astro.url.pathname}
+            />
+            <NavLink
+              href="/projects"
+              label="Projects"
+              icon={Package}
+              pathname={Astro.url.pathname}
+            />
+            <NavLink
+              href="/now"
+              label="Now"
+              subtitle={nowPageLastUpdated &&
+                `Updated ${nowPageLastUpdated.toLocaleString("en-US", { timeZone: "UTC", month: "short", day: "numeric" })}`}
+              icon={CalendarBlank}
+              pathname={Astro.url.pathname}
+            />
+          </nav>
+
+          <div class="ring-1 ring-gray-900/40 shadow-sm rounded-xl">
+            <NavLink
+              href="https://x.com/benborgers"
+              newTab
+              label="Twitter"
+              icon={TwitterLogo}
+            />
+            <NavLink
+              href="https://bsky.app/profile/ben.page"
+              newTab
+              label="BlueSky"
+              icon={Butterfly}
+            />
+            <NavLink
+              href="https://github.com/benborgers"
+              newTab
+              label="GitHub"
+              icon={GithubLogo}
+            />
+          </div>
+        </div>
       </div>
     </div>
   </body>

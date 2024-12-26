@@ -1,0 +1,61 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Prose from "./prose.astro";
+import Excerpt from "./excerpt.astro";
+
+interface Props {
+  post: CollectionEntry<"posts"> | CollectionEntry<"pages">;
+  preview?: boolean;
+}
+
+const { post, preview = false } = Astro.props;
+
+const { Content } = preview ? { Content: "" } : await post.render();
+
+const h1ClassName = [
+  "font-bold text-gray-50 [text-shadow:0_0_1px_rgba(0,0,0,0.5)]",
+  preview ? "underline" : "",
+].join(" ");
+---
+
+<section
+  class:list={[
+    "bg-gray-700 p-5 rounded-xl ring-1 ring-gray-900/40",
+    "border-t border-t-gray-600",
+    "border-b border-b-gray-900/40",
+    !preview && "min-h-full",
+  ]}
+>
+  {
+    preview ? (
+      <a href={`/${post.slug}`}>
+        <h1 class={h1ClassName}>{post.data.title}</h1>
+      </a>
+    ) : (
+      <h1 class={h1ClassName}>{post.data.title}</h1>
+    )
+  }
+
+  <div class:list={[!preview && "mt-4"]}>
+    <Prose>
+      {preview ? <Excerpt markdown={post.body} /> : <Content />}
+    </Prose>
+  </div>
+
+  {
+    post.data.date && (
+      <div class:list={[preview ? "mt-4" : "mt-6"]}>
+        <p class="text-sm text-gray-500 font-medium text-right">
+          <date>
+            {post.data.date.toLocaleString("en-US", {
+              timeZone: "UTC",
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </date>
+        </p>
+      </div>
+    )
+  }
+</section>
