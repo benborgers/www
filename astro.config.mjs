@@ -11,6 +11,9 @@ export default defineConfig({
 
   integrations: [tailwind(), react()],
 
+  build: {
+    format: "file",
+  },
   trailingSlash: "never",
 
   markdown: {
