@@ -22,6 +22,11 @@
       "permanent": true
     },
     {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/blog/(.*)",
       "destination": "/$1",
       "permanent": true
