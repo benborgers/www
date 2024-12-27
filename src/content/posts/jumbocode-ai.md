@@ -1,6 +1,7 @@
 ---
 title: AI is an impediment to learning web development
 date: 2024-07-21
+hackerNewsUrl: https://news.ycombinator.com/item?id=41757711
 bestOf: true
 ---
 

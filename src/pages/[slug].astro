@@ -19,6 +19,12 @@ export const getStaticPaths = (async () => {
 const { post } = Astro.props;
 ---
 
-<Layout title={post.data.title}>
+<Layout
+  title={post.data.title}
+  hackerNewsUrl={post.collection === "posts"
+    ? (post.data.hackerNewsUrl ??
+      `https://news.ycombinator.com/submitlink?u=${Astro.url}&t=${post.data.title}`)
+    : undefined}
+>
   <Post post={post} />
 </Layout>

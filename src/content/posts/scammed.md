@@ -1,6 +1,7 @@
 ---
 title: How I got scammed on Facebook Marketplace
 date: 2023-07-10
+hackerNewsUrl: https://news.ycombinator.com/item?id=39291322
 cover_image: /posts/scammed/cover_image.jpeg
 bestOf: true
 ---

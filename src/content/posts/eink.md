@@ -1,6 +1,7 @@
 ---
 title: Building an e-ink picture frame that displays an iCloud photo album
 date: 2024-01-09
+hackerNewsUrl: https://news.ycombinator.com/item?id=38928277
 bestOf: true
 ---
 
