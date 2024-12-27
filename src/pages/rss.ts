@@ -1,26 +1,38 @@
 import type { APIRoute } from "astro";
 import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
-import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 import getPosts from "../lib/getPosts";
 
-const md = MarkdownIt();
+const md = MarkdownIt({ html: true });
 
-export const GET: APIRoute = async ({ site }) => {
+export const GET: APIRoute = async ({ site: _site }) => {
+  const site = _site!;
+
   const posts = await getPosts({ includeUnlisted: false });
+
+  const replaceRelativeWithAbsoluteUrls = (html: string) => {
+    const ATTRIBUTES = ["src", "href"];
+
+    for (const attribute of ATTRIBUTES) {
+      html = html.replace(
+        new RegExp(`${attribute}="([^"]+)"`, "g"),
+        (match, p1) =>
+          `${attribute}="${p1.startsWith("/") ? `${site.origin}${p1}` : p1}"`
+      );
+    }
+
+    return html;
+  };
 
   return rss({
     title: "Ben Borgers",
     description: "Ben Borgers’ personal website.",
-    site: site!,
+    site,
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
       link: `/${post.slug}`,
-      content: sanitizeHtml(md.render(post.body), {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-      }),
+      content: replaceRelativeWithAbsoluteUrls(md.render(post.body)),
     })),
     trailingSlash: false,
   });
