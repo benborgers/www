@@ -55,14 +55,14 @@ const h1ClassName = [
     post.data.date && (
       <div class:list={[preview ? "mt-4" : "mt-6"]}>
         <p class="text-sm text-gray-500 font-medium text-right">
-          <date>
+          <time datetime={post.data.date.toISOString().split("T")[0]}>
             {post.data.date.toLocaleString("en-US", {
               timeZone: "UTC",
               month: "long",
               day: "numeric",
               year: "numeric",
             })}
-          </date>
+          </time>
         </p>
       </div>
     )
