@@ -8,4 +8,4 @@ date: 2024-12-26
 
 ---
 
-_Learn more about [now pages](https://nownownow.com/about)._
+_This is a “now page” — [learn more](https://nownownow.com/about)._
