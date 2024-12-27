@@ -21,7 +21,7 @@ const { post } = Astro.props;
 
 <Layout
   title={post.data.title}
-  hackerNewsUrl={post.collection === "posts"
+  hackerNewsUrl={post.collection === "posts" && !post.data.unlisted
     ? (post.data.hackerNewsUrl ??
       `https://news.ycombinator.com/submitlink?u=${Astro.url}&t=${post.data.title}`)
     : undefined}
