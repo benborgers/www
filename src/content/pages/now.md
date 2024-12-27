@@ -1,6 +1,11 @@
 ---
 title: Now
-date: 2024-12-25
+date: 2024-12-26
 ---
 
-_(This is a [now page](https://nownownow.com)!)_
+- Recovering over winter break before my last semester of college.
+- Working on [some projects](/winter24) while on break.
+
+---
+
+_Learn more about [now pages](https://nownownow.com/about)._
