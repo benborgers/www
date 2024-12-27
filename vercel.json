@@ -27,12 +27,12 @@
       "permanent": true
     },
     {
-      "source": "/blog/(.*)",
+      "source": "/blog/([^/]+)",
       "destination": "/$1",
       "permanent": true
     },
     {
-      "source": "/posts/(.*)",
+      "source": "/posts/([^/]+)",
       "destination": "/$1",
       "permanent": true
     }
