@@ -6,7 +6,10 @@ import getPosts from "../lib/getPosts";
 const posts = await getPosts({ includeUnlisted: false });
 ---
 
-<Layout title="Ben Borgers">
+<Layout
+  title="Ben Borgers"
+  description="I’m a senior at Tufts University studying computer science and engineering psychology. I’m currently an engineer at Buttondown, and previously interned at Notion, Locket, and Luma."
+>
   <div class="space-y-2 sm:space-y-4">
     {
       posts.map(async (post) => {

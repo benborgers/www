@@ -19,10 +19,15 @@ import NavSection from "../components/nav-section.astro";
 import NavLink from "../components/nav-link.tsx";
 interface Props {
   title: string;
+  description?: string;
   hackerNewsUrl?: string;
 }
 
-const { title, hackerNewsUrl = undefined } = Astro.props;
+const {
+  title,
+  description = undefined,
+  hackerNewsUrl = undefined,
+} = Astro.props;
 
 const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
 ---
@@ -37,6 +42,8 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
     <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
     <meta property="og:title" content={title} />
     <meta property="og:site_name" content="Ben Borgers" />
+
+    {description && <meta name="description" content={description} />}
 
     <link
       rel="alternate"
