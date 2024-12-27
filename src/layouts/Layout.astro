@@ -69,11 +69,13 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
         </a>
 
         <div class="flex items-end gap-x-4">
-          <img
-            src="/me.jpg"
-            alt=""
-            class="h-12 shadow-sm rounded-lg rotate-3 ring-1 ring-gray-800/40"
-          />
+          <a href="/">
+            <img
+              src="/me.jpg"
+              alt=""
+              class="h-12 shadow-sm rounded-lg rotate-3 ring-1 ring-gray-800/40"
+            />
+          </a>
 
           <button class="sm:hidden p-1" data-nav-toggle>
             <List
