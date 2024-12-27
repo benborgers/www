@@ -1,11 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Post from "../components/post.astro";
+import getPosts from "../lib/getPosts";
 
-const posts = (await getCollection("posts"))
-  .filter((post) => !post.data.unlisted)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const posts = await getPosts({ includeUnlisted: false });
 ---
 
 <Layout title="Ben Borgers">

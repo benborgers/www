@@ -5,8 +5,9 @@ export const collections = {
     type: "content",
     schema: z.object({
       title: z.string(),
-      unlisted: z.boolean().default(false),
       date: z.date(),
+      unlisted: z.boolean().default(false),
+      draft: z.boolean().default(false),
     }),
   }),
   pages: defineCollection({

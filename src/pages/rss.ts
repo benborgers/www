@@ -1,10 +1,11 @@
 import type { APIRoute } from "astro";
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
+import getPosts from "../lib/getPosts";
 
 export const GET: APIRoute = async ({ site }) => {
   const posts = [
-    ...(await getCollection("posts")).filter((post) => !post.data.unlisted),
+    ...(await getPosts({ includeUnlisted: false })),
     ...(await getCollection("pages")),
   ];
 
