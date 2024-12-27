@@ -68,5 +68,9 @@ const h1ClassName = [
     )
   }
 
-  {preview && <a href={`/${post.slug}`} class="absolute inset-0" />}
+  {
+    preview && (
+      <a href={`/${post.slug}`} class="absolute inset-0" tabindex="-1" />
+    )
+  }
 </section>
