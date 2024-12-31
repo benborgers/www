@@ -183,12 +183,14 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
           {
             hackerNewsUrl && (
               <NavSection>
-                <NavLink
-                  href={hackerNewsUrl}
-                  newTab
-                  label="Discuss on HN"
-                  icon={Chats}
-                />
+                <div onclick="fathom.trackEvent('HN link click')">
+                  <NavLink
+                    href={hackerNewsUrl}
+                    newTab
+                    label="Discuss on HN"
+                    icon={Chats}
+                  />
+                </div>
               </NavSection>
             )
           }
