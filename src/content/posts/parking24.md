@@ -3,7 +3,7 @@ title: Parking Tickets Wrapped 2024
 date: 2025-01-07
 ---
 
-![](/posts/parking24/wrapped.jpg)
+![](../../assets/posts/parking24/wrapped.jpg)
 
 Embarrassingly, I got enough parking tickets in 2024 to warrant a Parking Tickets Wrapped.
 
