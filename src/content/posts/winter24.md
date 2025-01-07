@@ -16,7 +16,7 @@ For others:
 - Rebuilding a [JumboCode](/jumbocode) project for a team that didn't finish last year
 - Helping build a new [jumbocode.org](https://jumbocode.org)
 - Building a small static website for a friend of a friend
-- Launching fancy DNS changes for [Buttondown](https://buttondown.com) custom web archive domains (quite literally 1 more line of code is needed, and I've been sitting on this for months)
+- ~~Launching fancy DNS changes for [Buttondown](https://buttondown.com) custom web archive domains (quite literally 1 more line of code is needed, and I've been sitting on this for months)~~
 - Building a custom nameserver system for [Buttondown](https://buttondown.com) sending domains
 
 I’ve got until January 14th. I’ll cross things off as I go!
