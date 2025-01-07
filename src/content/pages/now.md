@@ -1,9 +1,10 @@
 ---
 title: Now
-date: 2024-12-26
+date: 2024-01-07
 ---
 
 - Recovering over winter break before my last semester of college.
+- Rebuilding my [Photo of the Day](https://photos.benborgers.com) website.
 - Working on [some projects](/winter24) while on break.
 
 ---
