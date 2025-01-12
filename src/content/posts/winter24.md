@@ -8,7 +8,7 @@ A year ago, I [wrote](/winter23) a list of the projects I wanted to get done ove
 For myself:
 
 - A first version of [War Room](https://war.elk.sh/home) v2
-- Planning how we'll build [JumboSmash](https://github.com/jumbosmash/tradition) 2025 in the spring semester
+- ~~Planning how we'll build [JumboSmash](https://github.com/jumbosmash/tradition) 2025 in the spring semester~~
 - Planning [JumboCode](/jumbocode)'s spring events schedule
 
 For others:
