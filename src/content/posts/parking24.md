@@ -59,7 +59,7 @@ Embarrassingly, I got enough parking tickets in 2024 to warrant a Parking Ticket
 
 **Amount:** ~~$50~~ $0
 
-**Reason:** Parking in a bike lane at Assembly Row in Cambridge.
+**Reason:** Parking in a bike lane at Assembly Row in Somerville.
 
 **My Defense:** I'm not sure whether that was a legal parking spot (although there were other cars in the same stretch), but there was _definitely_ no bike lane there. I took many pictures and disputed with the City of Somerville. My images _again_ didn't get uploaded, but I called them and had someone attach my images. I won the dispute!
 
