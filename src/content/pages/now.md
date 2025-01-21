@@ -1,11 +1,11 @@
 ---
 title: Now
-date: 2024-01-07
+date: 2024-01-21
 ---
 
-- Recovering over winter break before my last semester of college.
-- Rebuilding my [Photo of the Day](https://photos.benborgers.com) website.
-- Working on [some projects](/winter24) while on break.
+- In my [last semester of college](https://tufts.benborgers.com)
+- TA-ing [CS 40](https://www.cs.tufts.edu/comp/40)
+- Working at [Buttondown](https://buttondown.com)
 
 ---
 
