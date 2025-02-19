@@ -4,7 +4,6 @@ import { getEntry } from "astro:content";
 import {
   Butterfly,
   CalendarBlank,
-  Chats,
   EnvelopeSimple,
   GithubLogo,
   House,
@@ -175,7 +174,7 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
             <NavLink href="/rss" newTab label="RSS feed" icon={Rss} />
           </NavSection>
 
-          {/* Spacer at bottom of nav on mobile. */}
+          {/* Spacer at bottom of nav on mobile (uses space-y) */}
           <div class="sm:hidden"></div>
         </nav>
       </div>
