@@ -7,6 +7,7 @@ import {
   EnvelopeSimple,
   GithubLogo,
   House,
+  ImagesSquare,
   List,
   Package,
   Rss,
@@ -98,7 +99,7 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
       </header>
 
       <div
-        class="bg-gray-800 p-2 sm:p-4 sm:rounded-[1.75rem] grid grid-rows-[max-content,1fr] sm:grid-rows-none sm:grid-cols-[3fr_1fr] gap-x-4"
+        class="bg-gray-800 p-2 sm:p-4 sm:rounded-[1.75rem] grid grid-rows-[max-content,1fr] sm:grid-rows-none sm:grid-cols-[1fr_175px] gap-x-4"
       >
         <main class="min-w-0 z-20">
           <slot />
@@ -161,6 +162,12 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
               newTab
               label="GitHub"
               icon={GithubLogo}
+            />
+            <NavLink
+              href="https://photos.ben.page"
+              newTab
+              label="Photo of the Day"
+              icon={ImagesSquare}
             />
           </NavSection>
 
