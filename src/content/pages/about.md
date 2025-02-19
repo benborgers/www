@@ -2,7 +2,7 @@
 title: About
 ---
 
-Hello! I’m Ben Borgers, a senior at Tufts University studying computer science and engineering psychology.
+Hi! I’m Ben Borgers, a senior at Tufts University studying computer science and engineering psychology.
 
 I’d love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
 
