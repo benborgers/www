@@ -3,6 +3,12 @@
     {
       "source": "/rss",
       "headers": [{ "key": "Content-Type", "value": "application/rss+xml" }]
+    },
+    {
+      "source": "/me.jpg",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, immutable" }
+      ]
     }
   ],
   "redirects": [
