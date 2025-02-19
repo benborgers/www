@@ -1,7 +1,6 @@
 ---
 title: Donating forks to the dining hall
 date: 2024-05-29
-hackerNewsUrl: https://news.ycombinator.com/item?id=40508540
 bestOf: true
 ---
 

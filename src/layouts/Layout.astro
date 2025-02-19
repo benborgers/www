@@ -20,14 +20,9 @@ import NavLink from "../components/nav-link.tsx";
 interface Props {
   title: string;
   description?: string;
-  hackerNewsUrl?: string;
 }
 
-const {
-  title,
-  description = undefined,
-  hackerNewsUrl = undefined,
-} = Astro.props;
+const { title, description = undefined } = Astro.props;
 
 const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
 ---
@@ -179,21 +174,6 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
             />
             <NavLink href="/rss" newTab label="RSS feed" icon={Rss} />
           </NavSection>
-
-          {
-            hackerNewsUrl && (
-              <NavSection>
-                <div onclick="fathom.trackEvent('HN link click')">
-                  <NavLink
-                    href={hackerNewsUrl}
-                    newTab
-                    label="Discuss on HN"
-                    icon={Chats}
-                  />
-                </div>
-              </NavSection>
-            )
-          }
 
           {/* Spacer at bottom of nav on mobile. */}
           <div class="sm:hidden"></div>

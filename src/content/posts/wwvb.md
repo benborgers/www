@@ -1,7 +1,6 @@
 ---
 title: "60 kHz"
 date: 2022-02-27
-hackerNewsUrl: https://news.ycombinator.com/item?id=40541559
 bestOf: true
 ---
 

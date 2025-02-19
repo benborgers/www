@@ -8,7 +8,6 @@ export const collections = {
       date: z.date(),
       unlisted: z.boolean().default(false),
       draft: z.boolean().default(false),
-      hackerNewsUrl: z.string().optional(),
     }),
   }),
   pages: defineCollection({

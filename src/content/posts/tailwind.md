@@ -1,7 +1,6 @@
 ---
 title: Why I Love Tailwind CSS
 date: 2022-07-07
-hackerNewsUrl: https://news.ycombinator.com/item?id=39109393
 ---
 
 I’m a really big fan of [Tailwind CSS](https://tailwindcss.com), a framework for styling websites.

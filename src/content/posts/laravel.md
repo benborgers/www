@@ -1,7 +1,6 @@
 ---
 title: Why I Love Laravel
 date: 2022-07-08
-hackerNewsUrl: https://news.ycombinator.com/item?id=40421762
 bestOf: true
 ---
 
