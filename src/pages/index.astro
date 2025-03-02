@@ -1,12 +1,7 @@
 ---
-import { getEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Prose from "../components/prose.astro";
 import Post from "../components/post.astro";
 import getPosts from "../lib/getPosts";
-
-const aboutShort = await getEntry("pages", "about-short");
-const { Content } = await aboutShort!.render();
 
 const posts = await getPosts({ includeUnlisted: false });
 ---
@@ -16,19 +11,6 @@ const posts = await getPosts({ includeUnlisted: false });
   description="I’m a senior at Tufts University studying computer science and engineering psychology. I’m currently an engineer at Buttondown, and previously interned at Notion, Locket, and Luma."
 >
   <div class="space-y-2 sm:space-y-4">
-    <section
-      class:list={[
-        "relative",
-        "bg-gray-700/40 px-5 py-3 rounded-xl ring-1 ring-gray-900/40",
-        "border-t border-t-gray-700",
-        "border-b border-b-gray-900/40",
-        "[&_p]:!my-0 [&_p]:text-sm [&_p]:text-gray-300 [&_a]:decoration-gray-500 [&_p]:leading-[1.3]",
-      ]}
-    >
-      <Prose>
-        <Content />
-      </Prose>
-    </section>
     {
       posts.map(async (post) => {
         return <Post post={post} preview />;
