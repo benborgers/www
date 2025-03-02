@@ -2,6 +2,7 @@
 title: Projects
 ---
 
+- [TikTok Graveyard](https://tiktokgraveyard.com) and [IG Valentine](https://igvalentine.com): Viral marketing for [Locket](https://locket.camera).
 - [GovDiff](https://govdiff.com): Government websites before and after Trump.
 - [Speakology](https://speakology.ai): AI speaking partner for language learning.
 - [Govcentives](https://govcentives.com): Search engines for clean energy incentives, licensed to power authorities in California.
