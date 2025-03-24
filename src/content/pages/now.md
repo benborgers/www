@@ -1,6 +1,6 @@
 ---
 title: Now
-date: 2024-03-02
+date: 2024-03-24
 ---
 
 - In my [last semester of college](https://tufts.benborgers.com), counting down the weeks
