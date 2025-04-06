@@ -1,9 +1,9 @@
 ---
 title: Now
-date: 2024-03-24
+date: 2024-04-06
 ---
 
-- In my [last semester of college](https://tufts.benborgers.com), counting down the weeks
+- 3 weeks left in my [last semester of college](https://tufts.benborgers.com)
 - TA-ing [CS 40](https://www.cs.tufts.edu/cs/40)
 - Working at [Buttondown](https://buttondown.com)
 
