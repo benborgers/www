@@ -18,11 +18,11 @@ grid-template-rows: 2.5rem max-content 1fr;
 You can use these classes:
 
 ```html
-<div class="grid grid-rows-[2.5rem,max-content,1fr]"></div>
+<div class="grid grid-rows-[2.5rem_max-content_1fr]"></div>
 ```
 
 This has some benefits, such as being able to apply different grid layouts at different breakpoints:
 
 ```html
-<div class="grid grid-rows-[1rem,1fr] sm:grid-rows-[2.5rem,1fr]"></div>
+<div class="grid grid-rows-[1rem_1fr] sm:grid-rows-[2.5rem_1fr]"></div>
 ```
