@@ -1,6 +1,6 @@
 ---
 title: Now
-date: 2024-04-06
+date: 2024-04-14
 ---
 
 - 2 weeks left in my [last semester of college](https://tufts.benborgers.com)
