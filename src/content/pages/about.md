@@ -12,7 +12,7 @@ At Tufts, I’m the president of [JumboCode](https://jumbocode.org), a club of 1
 
 ## Work experience
 
-- [Notion](https://notion.so/product) (summer 2024): Built and shipped a new callout block to the editor and public API.
+- [Notion](https://notion.so/product) (summer 2024): Built and shipped a new version of the callout block to the editor and public API.
 - [Buttondown](https://buttondown.com) (summer 2021 – present): Support engineer & product engineer.
 - [Locket](https://locket.camera) (summer 2023 – spring 2024): Working on Android version of social media app; shipped features to millions of users regularly.
 - [Luma](https://lu.ma) and [Glow](https://glow.app) (summer 2022): Full-stack engineering intern.
