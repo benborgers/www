@@ -1,10 +1,10 @@
 ---
 title: Now
-date: 2024-04-28
+date: 2024-05-21
 ---
 
-- Done with classes for my [last semester of college](https://tufts.ben.page). Only final projects left now!
-- TA-ing [CS 40](https://www.cs.tufts.edu/cs/40)
+- Graduated from [Tufts](https://tufts.ben.page)!
+- Taking some time off before starting work at [Owner](https://owner.com) in early July.
 - Working at [Buttondown](https://buttondown.com)
 
 ---
