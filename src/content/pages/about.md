@@ -2,9 +2,9 @@
 title: About
 ---
 
-Hi! I’m Ben Borgers. I recently graduated from Tufts University, and I'm starting soon as a software engineer at [Owner](https://owner.com). I also work on [Buttondown](https://buttondown.com).
+Hi! I'm Ben Borgers. I recently graduated from Tufts University, and I'm starting soon as a software engineer at [Owner](https://owner.com). I also work on [Buttondown](https://buttondown.com), and I live in Boston.
 
-I’d love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
+I'd love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
 
 ## Work experience
 
