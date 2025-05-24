@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Prose from "./prose.astro";
 import Excerpt from "./excerpt.astro";
+import Prose from "./prose.astro";
 
 interface Props {
   post: CollectionEntry<"posts"> | CollectionEntry<"pages">;
@@ -39,7 +39,7 @@ const h1ClassName = [
 
   {
     preview ? (
-      <div class="mt-4 text-gray-200 leading-[1.5]">
+      <div class="mt-4 text-gray-300 leading-[1.5]">
         <Excerpt markdown={post.body} />
       </div>
     ) : (
