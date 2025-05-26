@@ -6,7 +6,7 @@ Hi! I'm <mark>Ben Borgers</mark>. I recently graduated from Tufts University, an
 
 I'd love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
 
-## Work experience
+## Work Experience
 
 - [Buttondown](https://buttondown.com) (summer 2021 – present): Product engineer and support engineer.
 - [Notion](https://notion.so/product) (summer 2024): Built and shipped a new version of the callout block to the editor and public API.
