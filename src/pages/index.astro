@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import Post from "../components/post.astro";
-import getPosts from "../lib/getPosts";
+import Layout from "../layouts/Layout.astro";
+import getPosts from "../lib/get-posts";
 
 const posts = await getPosts({ includeUnlisted: false });
 ---

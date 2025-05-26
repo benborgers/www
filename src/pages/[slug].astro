@@ -1,9 +1,9 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
 import Post from "../components/post.astro";
-import getPosts from "../lib/getPosts";
+import Layout from "../layouts/Layout.astro";
+import getPosts from "../lib/get-posts";
 
 export const getStaticPaths = (async () => {
   const posts = [

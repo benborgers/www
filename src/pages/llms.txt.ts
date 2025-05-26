@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import getPosts from "../lib/getPosts";
+import getPosts from "../lib/get-posts";
 
 function escapeForXml(unsafe: string): string {
   return unsafe.replace(/[<>&'"]/g, (c) => {
