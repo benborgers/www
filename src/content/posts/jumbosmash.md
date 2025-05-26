@@ -1,11 +1,10 @@
 ---
 title: I built JumboSmash, a dating app for Tufts seniors
-date: 2025-05-26
 bestOf: true
 draft: true
 ---
 
-On May 8th, some friends and I launched _JumboSmash_, a dating (*"dating"*) app for Tufts seniors during the last week before graduation.
+On May 8th, some friends and I launched _JumboSmash_, a dating (_"dating"_) app for Tufts seniors during the last week before graduation.
 
 JumboSmash is a 10-year tradition, and to contribute to future generations, I thought I'd write down my thoughts before I forget them.
 
@@ -17,4 +16,3 @@ JumboSmash is a 10-year tradition, and to contribute to future generations, I th
 - [2022](https://www.instagram.com/jumbosmash2022)
 - [2023](https://www.instagram.com/jumbosmash2023)
 - [2025 (us!)](https://instagram.com/jumbosmash25)
-

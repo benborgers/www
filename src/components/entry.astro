@@ -15,26 +15,39 @@ const { Content } = await entry.render();
 const relatedPosts = await getRelatedPosts(entry.slug);
 ---
 
-{
-  entry.collection === "posts" && (
-    <>
-      <h1 class="max-sm:mt-4 text-gray-900 text-3xl sm:text-4xl font-extrabold">
-        {entry.data.title}
-      </h1>
+<div class="max-sm:mt-4">
+  {
+    entry.collection === "posts" && entry.data.draft && (
+      <p class="mb-4 bg-rose-100 text-rose-950 px-2 py-0.5 font-medium max-w-max">
+        <span class="sm:hidden">You’re reading a draft post.</span>
+        <span class="max-sm:hidden">
+          You’re reading a draft post that’s still being written.
+        </span>
+      </p>
+    )
+  }
 
-      {entry.data.date && (
-        <time class="block mt-2 text-sm font-semibold text-gray-400">
-          {entry.data.date.toLocaleString("en-US", {
-            timeZone: "UTC",
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </time>
-      )}
-    </>
-  )
-}
+  {
+    entry.collection === "posts" && (
+      <>
+        <h1 class="text-gray-900 text-3xl sm:text-4xl font-extrabold">
+          {entry.data.title}
+        </h1>
+
+        {entry.data.date && (
+          <time class="block mt-2 text-sm font-semibold text-gray-400">
+            {entry.data.date.toLocaleString("en-US", {
+              timeZone: "UTC",
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </time>
+        )}
+      </>
+    )
+  }
+</div>
 
 <div class:list={[entry.collection === "posts" ? "mt-7" : "mt-2"]}>
   <Prose>

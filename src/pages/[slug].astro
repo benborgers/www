@@ -7,7 +7,7 @@ import { getPosts } from "../lib/posts";
 
 export const getStaticPaths = (async () => {
   const entries = [
-    ...(await getPosts({ includeUnlisted: true })),
+    ...(await getPosts({ includeUnlisted: true, includeDrafts: true })),
     ...(await getCollection("pages")).filter((entry) => entry.slug !== "index"),
   ];
   return entries.map((entry) => ({
