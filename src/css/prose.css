@@ -72,7 +72,7 @@
 
   img,
   video {
-    @apply max-h-[70vh] w-auto border border-gray-200;
+    @apply border border-gray-200;
   }
 
   pre {
