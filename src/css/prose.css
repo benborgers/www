@@ -23,7 +23,8 @@
   }
 
   > :not(p),
-  > p:has(> img) {
+  > p:has(> img),
+  p > img {
     @apply my-8;
   }
 
@@ -36,7 +37,16 @@
   }
 
   ul {
-    @apply list-['–__'] pl-5;
+    @apply list-['–__'];
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ul,
+  ol {
+    @apply pl-5;
   }
 
   li {
