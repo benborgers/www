@@ -1,14 +1,16 @@
 import { cos_sim, pipeline } from "@huggingface/transformers";
 import type { CollectionEntry } from "astro:content";
+import fs from "fs";
 import { getPosts } from "./posts";
 
 const NUMBER_OF_RELATED_POSTS = 3;
 const COSINE_SIMILARITY_CUTOFF = 0.85;
+const CACHE_FILE_PATH = `./node_modules/.astro/related-posts.json`;
 
 let posts: CollectionEntry<"posts">[] = [];
 
 // key: slug, value: embedding
-const embeddings: Record<string, number[]> = {};
+let embeddings: Record<string, number[]> = {};
 
 export const getRelatedPosts = async (
   slug: string
@@ -22,10 +24,22 @@ export const getRelatedPosts = async (
   }
 
   if (Object.keys(embeddings).length === 0) {
+    if (fs.existsSync(CACHE_FILE_PATH)) {
+      embeddings = JSON.parse(fs.readFileSync(CACHE_FILE_PATH, "utf8"));
+      console.log(
+        `[related-posts] Loaded ${
+          Object.keys(embeddings).length
+        } embeddings from cache`
+      );
+    }
+
     const extractor = await pipeline("feature-extraction", "Xenova/gte-small");
 
+    const postsToEmbed = posts.filter((post) => !(post.slug in embeddings));
+    console.log(`[related-posts] Need to embed ${postsToEmbed.length} posts`);
+
     const output = await extractor(
-      posts.map((post) => `${post.data.title} ${post.body}`),
+      postsToEmbed.map((post) => `${post.data.title} ${post.body}`),
       { pooling: "mean", normalize: true }
     );
 
@@ -41,9 +55,16 @@ export const getRelatedPosts = async (
       []
     );
 
-    for (let i = 0; i < posts.length; i++) {
-      embeddings[posts[i].slug] = calculatedEmbeddings[i];
+    for (let i = 0; i < postsToEmbed.length; i++) {
+      embeddings[postsToEmbed[i].slug] = calculatedEmbeddings[i];
     }
+
+    fs.writeFileSync(CACHE_FILE_PATH, JSON.stringify(embeddings, null, 2));
+    console.log(
+      `[related-posts] Saved ${
+        Object.keys(embeddings).length
+      } embeddings to cache`
+    );
   }
 
   /*
