@@ -38,33 +38,35 @@ export const getRelatedPosts = async (
     const postsToEmbed = posts.filter((post) => !(post.slug in embeddings));
     console.log(`[related-posts] Need to embed ${postsToEmbed.length} posts`);
 
-    const output = await extractor(
-      postsToEmbed.map((post) => `${post.data.title} ${post.body}`),
-      { pooling: "mean", normalize: true }
-    );
+    if (postsToEmbed.length !== 0) {
+      const output = await extractor(
+        postsToEmbed.map((post) => `${post.data.title} ${post.body}`),
+        { pooling: "mean", normalize: true }
+      );
 
-    const calculatedEmbeddings = Array.from(output.data).reduce<number[][]>(
-      (acc, value, index) => {
-        const embeddingIndex = Math.floor(index / output.dims[1]);
-        if (!acc[embeddingIndex]) {
-          acc[embeddingIndex] = [];
-        }
-        acc[embeddingIndex].push(value as number);
-        return acc;
-      },
-      []
-    );
+      const calculatedEmbeddings = Array.from(output.data).reduce<number[][]>(
+        (acc, value, index) => {
+          const embeddingIndex = Math.floor(index / output.dims[1]);
+          if (!acc[embeddingIndex]) {
+            acc[embeddingIndex] = [];
+          }
+          acc[embeddingIndex].push(value as number);
+          return acc;
+        },
+        []
+      );
 
-    for (let i = 0; i < postsToEmbed.length; i++) {
-      embeddings[postsToEmbed[i].slug] = calculatedEmbeddings[i];
+      for (let i = 0; i < postsToEmbed.length; i++) {
+        embeddings[postsToEmbed[i].slug] = calculatedEmbeddings[i];
+      }
+
+      fs.writeFileSync(CACHE_FILE_PATH, JSON.stringify(embeddings, null, 2));
+      console.log(
+        `[related-posts] Saved ${
+          Object.keys(embeddings).length
+        } embeddings to cache`
+      );
     }
-
-    fs.writeFileSync(CACHE_FILE_PATH, JSON.stringify(embeddings, null, 2));
-    console.log(
-      `[related-posts] Saved ${
-        Object.keys(embeddings).length
-      } embeddings to cache`
-    );
   }
 
   /*
