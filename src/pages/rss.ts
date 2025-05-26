@@ -1,7 +1,7 @@
 import rss from "@astrojs/rss";
 import type { APIRoute } from "astro";
 import MarkdownIt from "markdown-it";
-import getPosts from "../lib/get-posts";
+import { getPosts } from "../lib/posts";
 
 const md = MarkdownIt({ html: true });
 

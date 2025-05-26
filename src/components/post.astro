@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { getRelatedPosts } from "../lib/related-posts";
 import Excerpt from "./excerpt.astro";
 import Prose from "./prose.astro";
 
@@ -17,16 +18,18 @@ const h1ClassName = [
   "[text-shadow:0_0_1px_rgba(0,0,0,0.5)]",
   preview ? "underline decoration-gray-400" : "",
 ].join(" ");
+
+const sectionClassName = [
+  "relative",
+  "bg-gray-700 p-5 rounded-xl ring-1 ring-gray-900/40",
+  "border-t border-t-gray-600",
+  "border-b border-b-gray-900/40",
+].join(" ");
+
+const relatedPosts = preview ? [] : await getRelatedPosts(post.slug);
 ---
 
-<section
-  class:list={[
-    "relative",
-    "bg-gray-700 p-5 rounded-xl ring-1 ring-gray-900/40",
-    "border-t border-t-gray-600",
-    "border-b border-b-gray-900/40",
-  ]}
->
+<section class={sectionClassName}>
   {
     preview ? (
       <a href={`/${post.slug}`}>
@@ -74,3 +77,31 @@ const h1ClassName = [
     )
   }
 </section>
+
+{
+  relatedPosts.length > 0 && (
+    <section class:list={["mt-6", sectionClassName]}>
+      <Prose>
+        <p>
+          <strong>Related posts:</strong>
+          <ul>
+            {relatedPosts.map((post) => {
+              const date = post.data.date.toLocaleString("en-US", {
+                timeZone: "UTC",
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              });
+              return (
+                <li>
+                  <a href={`/${post.slug}`}>{post.data.title}</a>{" "}
+                  <span class="text-gray-500 whitespace-nowrap">({date})</span>
+                </li>
+              );
+            })}
+          </ul>
+        </p>
+      </Prose>
+    </section>
+  )
+}

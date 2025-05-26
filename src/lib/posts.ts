@@ -1,10 +1,10 @@
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, getEntry, type CollectionEntry } from "astro:content";
 
-export default async function getPosts({
+export const getPosts = async ({
   includeUnlisted,
 }: {
   includeUnlisted: boolean;
-}): Promise<CollectionEntry<"posts">[]> {
+}): Promise<CollectionEntry<"posts">[]> => {
   return (await getCollection("posts"))
     .filter((post) => {
       if (post.data.unlisted && !includeUnlisted) return false;
@@ -15,4 +15,8 @@ export default async function getPosts({
       return true;
     })
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-}
+};
+
+export const getPost = async (slug: string) => {
+  return await getEntry("posts", slug);
+};
