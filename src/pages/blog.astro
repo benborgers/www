@@ -1,0 +1,47 @@
+---
+import Star from "../components/star.astro";
+import Layout from "../layouts/layout.astro";
+import { getPosts } from "../lib/posts";
+
+const posts = await getPosts({ includeUnlisted: false });
+
+const postsByMonth = Object.groupBy(posts, (post) => {
+  const date = post.data.date;
+  return date.toLocaleString("en-US", {
+    timeZone: "UTC",
+    month: "long",
+    year: "numeric",
+  });
+});
+---
+
+<Layout title="Ben Borgers’ Blog">
+  <div>
+    {
+      Object.entries(postsByMonth).map(([heading, posts]) => (
+        <>
+          <p class="-mb-1 mt-6 first-of-type:mt-2 text-gray-400 font-medium">
+            {heading}
+          </p>
+
+          {posts!.map((post) => (
+            <div class="relative">
+              {post.data.bestOf && (
+                <div class="max-sm:hidden absolute -left-7">
+                  <div class="font-sans text-lg text-amber-300 select-none pointer-events-none">
+                    ★
+                  </div>
+                </div>
+              )}
+
+              {/* Control text wrapping with &nbsp; to avoid star being on its own line. */}
+              {/* Don't let Prettier add extra spaces. */}
+              {/* prettier-ignore */}
+              <p class="mt-2"><a href={`/${post.slug}`} class="text-gray-900 font-serif text-xl underline decoration-gray-300">{post.data.title}</a>&nbsp;{post.data.bestOf && (<span class="sm:hidden"><Star /></span>)}</p>
+            </div>
+          ))}
+        </>
+      ))
+    }
+  </div>
+</Layout>

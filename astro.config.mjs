@@ -1,13 +1,12 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 
-import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://benborgers.com",
-  integrations: [react(), sitemap()],
+  integrations: [sitemap()],
   trailingSlash: "never",
 
   vite: {
@@ -16,7 +15,7 @@ export default defineConfig({
 
   markdown: {
     shikiConfig: {
-      theme: "dracula",
+      theme: "github-light",
     },
   },
 

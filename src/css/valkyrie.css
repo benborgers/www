@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Valkyrie";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/valkyrie_b_regular.woff2");
+}
+
+@font-face {
+  font-family: "Valkyrie";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/fonts/valkyrie_b_italic.woff2");
+}
+
+@font-face {
+  font-family: "Valkyrie";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/fonts/valkyrie_b_bold.woff2");
+}
+
+@font-face {
+  font-family: "Valkyrie";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/fonts/valkyrie_b_bold_italic.woff2");
+}

@@ -1,0 +1,22 @@
+---
+interface Props {
+  href: string;
+  variant: "primary" | "secondary";
+}
+
+const { href, variant } = Astro.props;
+---
+
+<li
+  class:list={[
+    "max-sm:inline-block",
+    "text-right font-medium",
+    Astro.url.pathname === href && "underline",
+    variant === "primary" && "text-gray-800 decoration-gray-300",
+    variant === "secondary" && "text-gray-400",
+  ]}
+>
+  <a href={href} target={href.startsWith("http") ? "_blank" : undefined}>
+    <slot />
+  </a>
+</li>

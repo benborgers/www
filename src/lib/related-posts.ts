@@ -13,13 +13,15 @@ const embeddings: Record<string, number[]> = {};
 export const getRelatedPosts = async (
   slug: string
 ): Promise<CollectionEntry<"posts">[]> => {
+  if (posts.length === 0) {
+    posts = await getPosts({ includeUnlisted: false });
+  }
+
   if (import.meta.env.DEV) {
-    return [];
+    return posts.slice(0, NUMBER_OF_RELATED_POSTS);
   }
 
   if (Object.keys(embeddings).length === 0) {
-    posts = await getPosts({ includeUnlisted: false });
-
     const extractor = await pipeline("feature-extraction", "Xenova/gte-small");
 
     const output = await extractor(

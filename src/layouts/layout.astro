@@ -1,30 +1,14 @@
 ---
+import NavLink from "../components/nav-link.astro";
+import Polaroid from "../components/polaroid.astro";
 import "../css/index.css";
-import { getEntry } from "astro:content";
-import {
-  Butterfly,
-  CalendarBlank,
-  EnvelopeSimple,
-  GithubLogo,
-  House,
-  ImagesSquare,
-  List,
-  Package,
-  Rss,
-  TwitterLogo,
-  User,
-  X,
-} from "@phosphor-icons/react";
-import NavSection from "../components/nav-section.astro";
-import NavLink from "../components/nav-link.tsx";
+import "../css/valkyrie.css";
+
 interface Props {
   title: string;
-  description?: string;
 }
 
-const { title, description = undefined } = Astro.props;
-
-const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -38,7 +22,7 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
     <meta property="og:title" content={title} />
     <meta property="og:site_name" content="Ben Borgers" />
 
-    {description && <meta name="description" content={description} />}
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
     <link
       rel="alternate"
@@ -52,162 +36,69 @@ const nowPageLastUpdated = (await getEntry("pages", "now"))?.data.date;
       src="https://owl.benborgers.com/script.js"
       data-site="ZWCPJCUA"
       data-included-domains="benborgers.com"
-      defer
-      is:inline></script>
+      defer></script>
   </head>
-  <body class="antialiased bg-gray-800">
+  <body class="antialiased bg-gray-50 text-pretty selection:bg-amber-100">
     <div
-      class="absolute inset-x-0 top-0 h-3/4 bg-gradient-to-b from-gray-700 to-gray-800"
+      class:list={[
+        "grid grid-rows-[max-content_1fr] sm:grid-rows-none sm:grid-cols-[max-content_minmax(0,540px)] sm:gap-x-22",
+        "sm:max-w-max sm:mx-auto min-h-dvh",
+      ]}
     >
-    </div>
-
-    <div
-      class="relative w-full max-w-screen-md mx-auto min-h-screen grid grid-rows-[auto_1fr] pb-24"
-    >
-      <header class="sm:mt-10 p-4 flex justify-between items-end">
-        <a
-          href="/"
-          class="text-lg font-semibold text-gray-200 tracking-tight [text-shadow:0_0_1px_rgba(0,0,0,0.5)]"
-        >
-          Ben Borgers
-        </a>
-
-        <div class="flex items-end gap-x-4">
-          <a href="/">
-            <img
-              src="/me.jpg"
-              alt=""
-              class="h-12 shadow-sm rounded-lg rotate-3 ring-1 ring-gray-800/40"
-            />
-          </a>
-
-          <button class="sm:hidden p-1" data-nav-toggle>
-            <List
-              weight="bold"
-              size={24}
-              className="text-gray-500 data-[nav=open]:hidden"
-              data-nav="closed"
-            />
-            <X
-              weight="bold"
-              size={24}
-              className="text-gray-500 data-[nav=closed]:hidden"
-              data-nav="closed"
-            />
-          </button>
-        </div>
-      </header>
-
-      <div
-        class="bg-gray-800 p-2 sm:p-4 sm:rounded-[1.75rem] grid grid-rows-[max-content_1fr] sm:grid-rows-none sm:grid-cols-[1fr_175px] gap-x-4"
+      <nav
+        class="h-max max-sm:flex max-sm:items-end max-sm:gap-x-6 sm:sticky sm:top-0 sm:pt-14 pl-6 max-sm:pr-6 max-sm:pt-6"
       >
-        <main class="min-w-0 z-20">
-          <slot />
-        </main>
+        <Polaroid />
 
-        <nav
-          class:list={[
-            "space-y-2 sm:space-y-4 max-sm:-order-1",
-            "max-h-[500px] max-sm:data-[nav=closed]:max-h-0 max-sm:data-[nav=closed]:opacity-0 max-sm:data-[nav=closed]:pointer-events-none",
-            "transition-all duration-300 ease-in-out",
-            "z-10",
-          ]}
-          data-nav-container
-          data-nav="closed"
-        >
-          <NavSection>
-            <NavLink
-              href="/"
-              label="Home"
-              icon={House}
-              pathname={Astro.url.pathname}
-            />
-            <NavLink
-              href="/about"
-              label="About"
-              icon={User}
-              pathname={Astro.url.pathname}
-            />
-            <NavLink
-              href="/projects"
-              label="Projects"
-              icon={Package}
-              pathname={Astro.url.pathname}
-            />
-            <NavLink
-              href="/now"
-              label="Now"
-              subtitle={nowPageLastUpdated &&
-                `Updated ${nowPageLastUpdated.toLocaleString("en-US", { timeZone: "UTC", month: "short", day: "numeric" })}`}
-              icon={CalendarBlank}
-              pathname={Astro.url.pathname}
-            />
-          </NavSection>
+        <div class="pr-1">
+          <ul class="sm:mt-5 space-x-1.5 sm:space-x-0">
+            <NavLink href="/" variant="primary">
+              <span class="sm:hidden">Ben Borgers</span>
+              <span class="max-sm:hidden">Home</span>
+            </NavLink>
+            <NavLink href="/blog" variant="primary">Blog</NavLink>
+            <NavLink href="/now" variant="primary">Now</NavLink>
+          </ul>
 
-          <NavSection>
-            <NavLink
-              href="https://x.com/benborgers"
-              newTab
-              label="Twitter"
-              icon={TwitterLogo}
-            />
+          <ul class="mt-0.5 sm:mt-4 space-x-1.5 sm:space-x-0">
+            <NavLink href="https://twitter.com/benborgers" variant="secondary">
+              Twitter
+            </NavLink>
             <NavLink
               href="https://bsky.app/profile/benborgers.com"
-              newTab
-              label="Bluesky"
-              icon={Butterfly}
-            />
-            <NavLink
-              href="https://github.com/benborgers"
-              newTab
-              label="GitHub"
-              icon={GithubLogo}
-            />
-            <NavLink
-              href="https://photos.ben.page"
-              newTab
-              label="Photo of the Day"
-              icon={ImagesSquare}
-            />
-          </NavSection>
+              variant="secondary"
+            >
+              Bluesky
+            </NavLink>
+            <NavLink href="https://github.com/benborgers" variant="secondary">
+              GitHub
+            </NavLink>
+          </ul>
 
-          <NavSection>
+          <ul class="max-sm:hidden sm:mt-4 space-x-1.5 sm:space-x-0">
             <NavLink
-              href="https://buttondown.com/benborgers"
-              newTab
-              label="Newsletter"
-              icon={EnvelopeSimple}
-            />
-            <NavLink href="/rss" newTab label="RSS feed" icon={Rss} />
-          </NavSection>
+              href="https://buttondown.com/benborgers?as_embed=true"
+              variant="secondary"
+            >
+              Newsletter
+            </NavLink>
+            <NavLink href="https://photos.ben.page" variant="secondary">
+              Photos
+            </NavLink>
+            <NavLink href="/rss" variant="secondary"> RSS </NavLink>
+          </ul>
+        </div>
+      </nav>
 
-          {/* Spacer at bottom of nav on mobile (uses space-y) */}
-          <div class="sm:hidden"></div>
-        </nav>
-      </div>
+      <main class="pt-6 sm:pt-12 flex flex-col pr-6 max-sm:pl-6">
+        <slot />
+
+        <footer class="mt-auto pt-28 mb-6">
+          <p class="text-sm font-medium text-gray-400">
+            &copy; 2002 – {new Date().getFullYear()} Ben Borgers
+          </p>
+        </footer>
+      </main>
     </div>
-
-    <script>
-      // Nav toggle
-      const button = document.querySelector(
-        "[data-nav-toggle]"
-      ) as HTMLButtonElement;
-      const container = document.querySelector(
-        "[data-nav-container]"
-      ) as HTMLDivElement;
-
-      let open = false;
-
-      button.addEventListener("click", () => {
-        open = !open;
-        const dataNav = open ? "open" : "closed";
-
-        container.dataset.nav = dataNav;
-
-        button.querySelectorAll("*").forEach((icon) => {
-          (icon as SVGElement).dataset.nav = dataNav;
-        });
-      });
-    </script>
   </body>
 </html>

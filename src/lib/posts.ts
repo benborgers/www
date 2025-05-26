@@ -1,4 +1,4 @@
-import { getCollection, getEntry, type CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 export const getPosts = async ({
   includeUnlisted,
@@ -15,8 +15,4 @@ export const getPosts = async ({
       return true;
     })
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-};
-
-export const getPost = async (slug: string) => {
-  return await getEntry("posts", slug);
 };

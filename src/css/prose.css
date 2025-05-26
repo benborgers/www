@@ -1,0 +1,89 @@
+@utility prose {
+  @apply font-serif text-lg @sm:text-xl text-gray-800 leading-[1.6];
+
+  h2,
+  h3 {
+    @apply text-gray-900 font-sans font-bold !mt-14 !mb-6;
+
+    + * {
+      @apply !mt-0;
+    }
+  }
+
+  h2 {
+    @apply text-2xl leading-[1.2];
+  }
+
+  h3 {
+    @apply text-xl leading-[1.2];
+  }
+
+  > p {
+    @apply my-4;
+  }
+
+  > :not(p),
+  > p:has(> img) {
+    @apply my-8;
+  }
+
+  :first-child {
+    @apply mt-0;
+  }
+
+  :last-child {
+    @apply mb-0;
+  }
+
+  ul {
+    @apply list-['–__'] pl-5;
+  }
+
+  li {
+    @apply my-2;
+
+    &::marker {
+      @apply text-gray-400;
+    }
+  }
+
+  a {
+    @apply text-blue-800 underline decoration-[1.5px];
+  }
+
+  hr {
+    @apply h-auto mt-16 mb-13 border-none;
+
+    &::before {
+      content: "* * *";
+      @apply block text-center text-gray-400;
+    }
+  }
+
+  img,
+  video {
+    @apply max-h-[70vh] w-auto border border-gray-200;
+  }
+
+  pre {
+    @apply border border-gray-200 px-3 py-2 text-base leading-[1.5];
+  }
+
+  code:not(pre code) {
+    @apply bg-white border border-gray-200 text-lg text-red-700 px-1 py-0.5 break-words box-decoration-clone;
+  }
+
+  a:has(code) {
+    @apply decoration-red-700;
+  }
+
+  /* These two classes are for the poor man's image carousels in /wrapped. */
+
+  thead:has(th:empty) {
+    @apply hidden;
+  }
+
+  td img:only-child {
+    @apply my-0;
+  }
+}

@@ -1,20 +1,11 @@
 ---
-import Post from "../components/post.astro";
+import { getEntry } from "astro:content";
+import Entry from "../components/entry.astro";
 import Layout from "../layouts/layout.astro";
-import { getPosts } from "../lib/posts";
 
-const posts = await getPosts({ includeUnlisted: false });
+const entry = await getEntry("pages", "index")!;
 ---
 
-<Layout
-  title="Ben Borgers"
-  description="I’m a senior at Tufts University studying computer science and engineering psychology. I’m currently an engineer at Buttondown, and previously interned at Notion, Locket, and Luma."
->
-  <div class="space-y-2 sm:space-y-4">
-    {
-      posts.map(async (post) => {
-        return <Post post={post} preview />;
-      })
-    }
-  </div>
+<Layout title="Ben Borgers">
+  <Entry entry={entry} />
 </Layout>
