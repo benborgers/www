@@ -11,15 +11,17 @@ Students end up spending a lot of time in office hours debugging C programs with
 
 To answer these questions, I built **queuecounter**, a website that automatically tracks how busy office hours are.
 
+![](../../assets/posts/queuecounter/total-queue-joins.png)
+
 ---
 
-Collecting data is actually pretty easy: CS 40 doesn't have an office hours _room_; partners just sit anywhere on the second floor of the CS building and put themselves into the queue using a CLI tool called `halligan40`. When it's your turn, a TA will remove you from the queue and come find you.
+Collecting data is actually pretty easy: CS 40 doesn't have an office hours _room_ — partners just sit anywhere on the second floor of the CS building and put themselves onto a virtual queue using a CLI tool called `halligan40`. When it's your turn, a TA will remove you from the queue and come find you.
 
 Initially, I wrote a Node.js script on our shared department server that ran `halligan40 check_queue` every two seconds and sent the length of the queue to my remote server.
 
-I then realized that I was being dumb: `halligan40` is backed by a PHP script running on a professor's personal website. I had access to the Python script, and could see the endpoint that it was hitting (without authentication, mind you).
+I then realized that I was being dumb: `halligan40` is powered by a PHP script running on a professor's personal website. I had access to the Python script, and could see the endpoint that it was hitting (without authentication, mind you).
 
-I switched my approach to just have my remote server hit the professor's API every two seconds and record the result. (I'm sorry.)
+I switched my approach to just have my remote server hit the professor's API every two seconds and record the result. (I'm sorry.) No script on the department servers necessary.
 
 ---
 
