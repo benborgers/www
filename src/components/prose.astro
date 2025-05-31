@@ -4,7 +4,11 @@
   </div>
 </div>
 
-{/* <div class="cursor-zoom-in hover:opacity-75 transition-opacity"></div> */}
+{
+  // This prevents the classes used in the JS below from getting purged out by Tailwind.
+  // I tried using Tailwind's recommended `@source inline("")` approach, but the site didn't build.
+}
+<div class="hidden cursor-zoom-in hover:opacity-75 transition-opacity"></div>
 
 <script>
   document.querySelectorAll(".prose img").forEach((img) => {
