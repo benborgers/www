@@ -6,6 +6,8 @@
 
 <script>
   document.querySelectorAll(".prose img").forEach((img) => {
+    const imgElement = img as HTMLImageElement;
+
     const link = document.createElement("a");
     link.target = "_blank";
     link.classList.add(
@@ -14,9 +16,9 @@
       "transition-opacity"
     );
 
-    link.href = img.src;
+    link.href = imgElement.src;
 
-    img.parentNode?.replaceChild(link, img);
-    link.appendChild(img);
+    imgElement.parentNode?.replaceChild(link, imgElement);
+    link.appendChild(imgElement);
   });
 </script>

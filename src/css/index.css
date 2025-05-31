@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "./prose.css";
 
+/* From JS in prose.astro */
+@source inline("cursor-zoom-in", "hover:opacity-75", "transition-opacity");
+
 @theme {
   --font-sans: "InterDisplay", sans-serif;
   --font-serif: Valkyrie, Georgia, serif;
