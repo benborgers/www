@@ -1,6 +1,7 @@
 ---
-title: Graphing the busyness of office hours
-draft: true
+title: Automatically graphing how busy office hours are
+date: 2025-05-31
+bestOf: true
 ---
 
 This past year at Tufts, I was a TA for [CS 40](https://www.cs.tufts.edu/comp/40): _Machine Structure and Assembly Language Programming_.
@@ -25,23 +26,23 @@ I switched my approach to just have my remote server hit the professor's API eve
 
 ---
 
-I graphed the results, and now could construct a graph with the <mark>Max Queue Length</mark> over a day. Higher numbers meant that the line was getting longer before the TAs could beat it back down.
+I graphed the results, and now could construct a graph with the <mark>Max Queue Length</mark> over a day. Higher numbers meant that the queue was large before the TAs could beat it back down.
 
 ![](../../assets/posts/queuecounter/max-queue-length.png)
 
-Then, I realized that "how long is the queue this hour?" is a slightly different metric than "how many times did pairs join the queue this hour?". The former takes into account, in a way, TA efficiency/proper staffing. (The course sometimes schedules one, two, or three TAs, depending on how busy they think that shift will be.)
+Then, I realized that "how long is the queue this hour?" is a slightly different metric than "how many *times* did pairs join the queue this hour?". The former measures a student's perceived experience waiting; the latter measures the objective number of times that people had questions.
 
-So I also began recording and graphing <mark>Total Queue Joins</mark> per hour. I was able to do this without storing any personal information (I don't understand FERPA but this feels somewhat related) by hashing the student's name, location on the second floor, and the timestamp when they joined the queue — all as a unique identifier for _a singular time someone joined the queue_.
+So I also began recording and graphing <mark>Total Queue Joins</mark> per hour. I was able to do this without storing any personal information (I don't understand FERPA but this feels related) by hashing the student's name, location on the second floor, and the timestamp when they joined the queue — all as a single unique identifier for _a singular time someone joined the queue_.
 
 ![](../../assets/posts/queuecounter/total-queue-joins.png)
 
-These two screenshots, from the day *before* the most notorious assignment is due, tell a story:
+The above two screenshots, from the day *before* the most notorious assignment was due, tell a story:
 
-> Office hours were unusually busy throughout the day (people joined the queue 5-12 times per hour), but the TAs mostly had trouble keeping the queue down in the **evening** (peaking at 8 people in line around 7pm).
+> Office hours were unusually busy throughout the daytime (people joined the queue 5-12 times per hour), but the TAs mostly had trouble keeping the queue down in the **evening** (peaking at 8 people in line around 7pm).
 
 ---
 
-I aggregated the data a bit:
+I also aggregated the semester's data into a heatmap:
 
 ![](../../assets/posts/queuecounter/heatmap.png)
 
