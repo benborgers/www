@@ -38,7 +38,7 @@ So I also began recording and graphing total queue joins per hour. I was able to
 
 The above two screenshots, from the day *before* the most notorious assignment was due, tell a story:
 
-> Office hours were unusually busy throughout the daytime (people joined the queue 5-12 times per hour), but the <mark>TAs mostly had trouble keeping the queue down in the **evening**</mark> (peaking at 8 people in line around 7pm).
+> Office hours were unusually busy throughout the daytime (people joined the queue 5-12 times per hour), but the TAs mostly had trouble keeping the queue down in the **evening** (peaking at 8 people in line around 7pm).
 
 ---
 
