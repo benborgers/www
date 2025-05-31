@@ -87,6 +87,10 @@
     @apply decoration-red-700;
   }
 
+  blockquote {
+    @apply italic border-l-4 border-gray-300 pl-4 pt-2 pb-2.5 bg-gradient-to-r from-gray-200 to-transparent;
+  }
+
   /* These two classes are for the poor man's image carousels in /wrapped. */
 
   thead:has(th:empty) {
