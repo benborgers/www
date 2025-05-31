@@ -3,3 +3,20 @@
     <slot />
   </div>
 </div>
+
+<script>
+  document.querySelectorAll("img").forEach((img) => {
+    const link = document.createElement("a");
+    link.target = "_blank";
+    link.classList.add(
+      "cursor-zoom-in",
+      "hover:opacity-50",
+      "transition-opacity"
+    );
+
+    link.href = img.src;
+
+    img.parentNode?.replaceChild(link, img);
+    link.appendChild(img);
+  });
+</script>
