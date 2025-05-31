@@ -6,9 +6,9 @@ bestOf: true
 
 This past year at Tufts, I was a TA for [CS 40](https://www.cs.tufts.edu/comp/40): _Machine Structure and Assembly Language Programming_.
 
-CS 40 is a somewhat-infamous class in the Tufts sequence, consisting of eight pair-programming projects that take quite a lot of time. On the bright side, <mark>the CS department runs office hours for CS 40 every weekday from 10am until 11pm,</mark> plus slightly more limited hours on the weekends.
+CS 40 is a somewhat-infamous class in the Tufts sequence, consisting of eight pair-programming projects that take quite a lot of time. On the bright side, the CS department runs office hours for CS 40 every weekday from 10am until 11pm, plus slightly more limited hours on the weekends.
 
-Students end up spending a lot of time in office hours debugging C programs with TAs. I was curious: how busy does it get? Can we quantify the flurry of activity before a deadline, or the gap around 7pm for dinner?
+Students end up spending a lot of time in office hours debugging C programs with TAs. I was curious: <mark>how busy does it get</mark>? Can we quantify the flurry of activity before a deadline, or the gap around 7pm for dinner?
 
 To answer these questions, I built **queuecounter**, a website that automatically tracks how busy office hours are.
 
@@ -26,19 +26,19 @@ I switched my approach to just have my remote server hit the professor's API eve
 
 ---
 
-I graphed the results, and now could construct a graph with the <mark>Max Queue Length</mark> over a day. Higher numbers meant that the queue was large before the TAs could beat it back down.
+I graphed the results, and now could construct a graph showing the queue length over a day. Higher numbers meant that the queue was large before the TAs could beat it back down.
 
 ![](../../assets/posts/queuecounter/max-queue-length.png)
 
 Then, I realized that "how long is the queue this hour?" is a slightly different metric than "how many *times* did pairs join the queue this hour?". The former measures a student's perceived experience waiting; the latter measures the objective number of times that people had questions.
 
-So I also began recording and graphing <mark>Total Queue Joins</mark> per hour. I was able to do this without storing any personal information (I don't understand FERPA but this feels related) by hashing the student's name, location on the second floor, and the timestamp when they joined the queue — all as a single unique identifier for _a singular time someone joined the queue_.
+So I also began recording and graphing total queue joins per hour. I was able to do this without storing any personal information (I don't understand FERPA but this feels related) by hashing the student's name, location on the second floor, and the timestamp when they joined the queue — all as a single unique identifier for _a singular time someone joined the queue_.
 
 ![](../../assets/posts/queuecounter/total-queue-joins.png)
 
 The above two screenshots, from the day *before* the most notorious assignment was due, tell a story:
 
-> Office hours were unusually busy throughout the daytime (people joined the queue 5-12 times per hour), but the TAs mostly had trouble keeping the queue down in the **evening** (peaking at 8 people in line around 7pm).
+> Office hours were unusually busy throughout the daytime (people joined the queue 5-12 times per hour), but the <mark>TAs mostly had trouble keeping the queue down in the **evening**</mark> (peaking at 8 people in line around 7pm).
 
 ---
 
