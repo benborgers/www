@@ -3,7 +3,7 @@ title: What is JumboCode?
 date: 2023-05-03
 ---
 
-JumboCode is a club at Tufts that builds apps for non-profits.
+[JumboCode](https://jumbocode.org) is a club at Tufts that builds apps for non-profits.
 
 They’re letting me be the Head of Engineering for it next year! So I figured I’d write one short blog post about what it is, so every time I write about it I can link back here.
 
