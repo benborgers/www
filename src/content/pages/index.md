@@ -1,4 +1,4 @@
-Hi! I'm <mark>Ben Borgers</mark>. I’m a software engineer living in Boston. I currently work at [Owner](https://owner.com), and also contribute to [Buttondown](https://buttondown.com).
+Hi! I'm <mark>Ben Borgers</mark>. I’m a software engineer living in Boston. I work at [Owner](https://owner.com), and also contribute to [Buttondown](https://buttondown.com).
 
 I'd love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
 
