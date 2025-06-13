@@ -29,3 +29,18 @@ I'd love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
 - [opensheet](https://opensheet.elk.sh): Open-source Google Sheets API that receives over 200 million requests/month.
 - [emojicdn](https://emojicdn.elk.sh): CDN for PNG images of emojis that gets millions of requests/month.
 - [Blocks](/blocks): Schedule app for my high school that was used by 2,100 students and teachers (87% of the school).
+
+<script>
+  const currentScript = document.currentScript
+
+  fetch('/api/magic-bullet')
+    .then(res => res.text())
+    .then(text => {
+      currentScript.outerHTML = `
+        <h2>Interests</h2>
+        <ul>
+          <li>${text}</li>
+        </ul>
+      `;
+    })
+</script>
