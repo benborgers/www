@@ -36,6 +36,10 @@ I'd love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
   fetch('/api/magic-bullet')
     .then(res => res.text())
     .then(text => {
+      if (text === "") {
+        return;
+      }
+
       currentScript.outerHTML = `
         <h2>Interests</h2>
         <ul>
