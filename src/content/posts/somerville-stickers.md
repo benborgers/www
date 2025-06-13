@@ -1,6 +1,6 @@
 ---
 title: The stickiest parking permits known to man
-date: 2025-06-12
+date: 2025-06-13
 ---
 
 Somerville, Massachusetts *(where Tufts University is located)* has some of the stickiest resident parking permits down to man. They are virtually impossible to remove from a windshield.
