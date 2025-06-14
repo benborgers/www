@@ -31,20 +31,27 @@ I'd love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
 - [Blocks](/blocks): Schedule app for my high school that was used by 2,100 students and teachers (87% of the school).
 
 <script>
-  const currentScript = document.currentScript
+  const currentScript = document.currentScript;
+  const LOCAL_STORAGE_KEY = "www:magic_interest";
 
-  fetch('/api/magic-bullet')
-    .then(res => res.text())
-    .then(text => {
-      if (text === "") {
+  (async () => {
+    if (localStorage.getItem(LOCAL_STORAGE_KEY) === null) {
+      const res = await fetch('/api/magic-interest')
+
+      if (!res.ok) {
         return;
       }
 
-      currentScript.outerHTML = `
+      localStorage.setItem(LOCAL_STORAGE_KEY, await res.text())
+    }
+
+    currentScript.outerHTML = `
         <h2>Interests</h2>
         <ul>
-          <li>${text}</li>
+          <li>${localStorage.getItem(LOCAL_STORAGE_KEY)}</li>
         </ul>
+        <!-- https://github.com/benborgers/www/blob/main/src/pages/api/magic-interest.ts -->
+        <!-- :) -->
       `;
-    })
+  })()
 </script>
