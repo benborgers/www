@@ -2,7 +2,7 @@
 @import "./prose.css";
 
 @theme {
-  --font-sans: "InterDisplay", sans-serif;
+  --font-sans: "InterDisplay", system-ui, sans-serif;
   --font-serif: Valkyrie, Georgia, serif;
 
   --color-gray-50: var(--color-stone-50);
