@@ -32,8 +32,7 @@ export const GET: APIRoute = async ({ site: _site }) => {
       title: post.data.title,
       pubDate: post.data.date,
       link: `/${post.slug}`,
-      // content: replaceRelativeWithAbsoluteUrls(md.render(post.body)),
-      content: post.rendered?.html,
+      content: replaceRelativeWithAbsoluteUrls(md.render(post.body)),
     })),
     trailingSlash: false,
   });
