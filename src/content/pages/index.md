@@ -4,6 +4,7 @@ I'd love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
 
 ## Work Experience
 
+- [Owner](https://owner.com) (2025 – present): Software engineer.
 - [Buttondown](https://buttondown.com) (2021 – present): Product engineer and support engineer.
 - [Notion](https://notion.so/product) (summer 2024): Built and shipped a new version of the callout block to the editor and public API.
 - [Locket](https://locket.camera) (2023 – 2024): Shipped usernames, chat, and other features to millions of active users on Android.
