@@ -75,6 +75,10 @@
     @apply border border-gray-200;
   }
 
+  figcaption {
+    @apply mt-2 italic font-sans text-center text-base text-gray-400;
+  }
+
   pre {
     @apply border border-gray-200 px-3 py-2 text-base leading-[1.5];
   }
