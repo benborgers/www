@@ -26,7 +26,7 @@ const postsByMonth = Object.groupBy(posts, (post) => {
 
           {posts!.map((post) => (
             <div class="relative">
-              {post.data.bestOf && (
+              {post.data.starred && (
                 <div class="max-sm:hidden absolute -left-7">
                   <div class="font-sans text-lg text-amber-300 select-none pointer-events-none">
                     ★
@@ -37,7 +37,7 @@ const postsByMonth = Object.groupBy(posts, (post) => {
               {/* Control text wrapping with &nbsp; to avoid star being on its own line. */}
               {/* Don't let Prettier add extra spaces. */}
               {/* prettier-ignore */}
-              <p class="mt-2"><a href={`/${post.slug}`} class="text-gray-900 font-serif text-xl underline decoration-gray-300">{post.data.title}</a>&nbsp;{post.data.bestOf && (<span class="sm:hidden"><Star /></span>)}</p>
+              <p class="mt-2"><a href={`/${post.slug}`} class="text-gray-900 font-serif text-xl underline decoration-gray-300">{post.data.title}</a>&nbsp;{post.data.starred && (<span class="sm:hidden"><Star /></span>)}</p>
             </div>
           ))}
         </>

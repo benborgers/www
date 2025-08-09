@@ -1,6 +1,6 @@
 ---
 title: I built JumboSmash, a dating app for Tufts seniors
-bestOf: true
+starred: true
 draft: true
 ---
 

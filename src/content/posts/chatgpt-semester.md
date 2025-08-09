@@ -1,7 +1,6 @@
 ---
 title: How ChatGPT spoiled my semester
 date: 2024-10-13
-bestOf: false
 ---
 
 Every semester, I see a bit more ChatGPT being used in classes. This semester, the most obvious occurrences are in my Engineering Psychology classes.

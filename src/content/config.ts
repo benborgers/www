@@ -7,7 +7,7 @@ export const collections = {
       .object({
         title: z.string(),
         date: z.date().optional(),
-        bestOf: z.boolean().default(false),
+        starred: z.boolean().default(false),
         unlisted: z.boolean().default(false),
         draft: z.boolean().default(false),
       })

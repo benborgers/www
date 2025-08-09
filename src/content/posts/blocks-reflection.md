@@ -1,7 +1,7 @@
 ---
 title: "Reflection on Shutting Down Blocks"
 date: 2022-04-28
-bestOf: true
+starred: true
 ---
 
 In junior and senior years of high school, I ran a schedule app that ~2,100 students and teachers used. It’s a story I’ve [written about before](https://benborgers.com/posts/blocks).

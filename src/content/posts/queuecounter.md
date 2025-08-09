@@ -1,7 +1,7 @@
 ---
 title: Automatically graphing how busy office hours are
 date: 2025-05-31
-bestOf: true
+starred: true
 ---
 
 This past year at Tufts, I was a TA for [CS 40](https://www.cs.tufts.edu/comp/40): _Machine Structure and Assembly Language Programming_.
@@ -30,13 +30,13 @@ I graphed the results, and now could construct a graph showing the queue length 
 
 ![](../../assets/posts/queuecounter/max-queue-length.png)
 
-Then, I realized that "how long is the queue this hour?" is a slightly different metric than "how many *times* did pairs join the queue this hour?". The former measures a student's perceived experience waiting; the latter measures the objective number of times that people had questions.
+Then, I realized that "how long is the queue this hour?" is a slightly different metric than "how many _times_ did pairs join the queue this hour?". The former measures a student's perceived experience waiting; the latter measures the objective number of times that people had questions.
 
 So I also began recording and graphing total queue joins per hour. I was able to do this without storing any personal information (I don't understand FERPA but this feels related) by hashing the student's name, location on the second floor, and the timestamp when they joined the queue — all as a single unique identifier for _a singular time someone joined the queue_.
 
 ![](../../assets/posts/queuecounter/total-queue-joins.png)
 
-The above two screenshots, from the day *before* the most notorious assignment was due, tell a story:
+The above two screenshots, from the day _before_ the most notorious assignment was due, tell a story:
 
 > Office hours were unusually busy throughout the daytime (people joined the queue 5-12 times per hour), but the TAs mostly had trouble keeping the queue down in the **evening** (peaking at 8 people in line around 7pm).
 
@@ -54,5 +54,3 @@ I also aggregated the semester's data into a heatmap:
 By the time you're reading this, I've taken down the website — and given the professor's server a reprieve from being pung every two seconds during waking hours.
 
 However, the Laravel app I built for this is [open source on GitHub](https://github.com/benborgers/queuecounter/blob/main/app/Console/Commands/CheckQueue.php). And to preserve FERPA, or whatever, I've even excluded the professor's unsecured API endpoint :)
-
-

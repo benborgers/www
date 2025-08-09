@@ -1,7 +1,7 @@
 ---
 title: "Stickies: Spatial note-taking"
 date: 2023-04-02
-bestOf: true
+starred: true
 ---
 
 For the past few days, I’ve been building an app for myself called [Stickies](https://stickies.ben.page).

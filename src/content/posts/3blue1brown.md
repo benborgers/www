@@ -1,7 +1,7 @@
 ---
 title: 3blue1brown.elk.sh
 date: 2022-05-01
-bestOf: true
+starred: true
 ---
 
 Recently, the Tufts Math Department invited Grant Sanderson (creator of the [3Blue1Brown YouTube channel](https://youtube.com/3blue1brown)) to speak.
