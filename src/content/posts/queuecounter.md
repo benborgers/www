@@ -12,7 +12,7 @@ Students end up spending a lot of time in office hours debugging C programs with
 
 To answer these questions, I built **queuecounter**, a website that automatically tracks how busy office hours are.
 
-![](../../assets/posts/queuecounter/total-queue-joins.png)
+![](/posts/queuecounter/total-queue-joins.png)
 
 ---
 
@@ -28,13 +28,13 @@ I switched my approach to just have my remote server hit the professor's API eve
 
 I graphed the results, and now could construct a graph showing the queue length over a day. Higher numbers meant that the queue was large before the TAs could beat it back down.
 
-![](../../assets/posts/queuecounter/max-queue-length.png)
+![](/posts/queuecounter/max-queue-length.png)
 
 Then, I realized that "how long is the queue this hour?" is a slightly different metric than "how many _times_ did pairs join the queue this hour?". The former measures a student's perceived experience waiting; the latter measures the objective number of times that people had questions.
 
 So I also began recording and graphing total queue joins per hour. I was able to do this without storing any personal information (I don't understand FERPA but this feels related) by hashing the student's name, location on the second floor, and the timestamp when they joined the queue — all as a single unique identifier for _a singular time someone joined the queue_.
 
-![](../../assets/posts/queuecounter/total-queue-joins.png)
+![](/posts/queuecounter/total-queue-joins.png)
 
 The above two screenshots, from the day _before_ the most notorious assignment was due, tell a story:
 
@@ -44,7 +44,7 @@ The above two screenshots, from the day _before_ the most notorious assignment w
 
 I also aggregated the semester's data into a heatmap:
 
-![](../../assets/posts/queuecounter/heatmap.png)
+![](/posts/queuecounter/heatmap.png)
 
 - It looks like office hours were busiest in the afternoon, around 3-6pm.
 - If you look for it, you _can_ in fact see a dinner break around 6:30-8:30pm before things pick back up.
