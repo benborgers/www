@@ -32,7 +32,12 @@ This page contains all blog posts from Ben Borgers’ personal website, ${site.o
 
   const postStrings = posts.map((post) => {
     const title = post.data.title;
-    const date = post.data.date.toISOString().split("T")[0]; // yyyy-mm-dd
+    const date = post.data.date?.toISOString().split("T")[0]; // yyyy-mm-dd
+
+    if (!date) {
+      throw new Error(`Post ${post.slug} has no date`);
+    }
+
     const link = `${site.origin}/${post.slug}`;
 
     const escapedTitle = escapeForXml(title);
