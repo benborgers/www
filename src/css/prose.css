@@ -3,7 +3,7 @@
 
   h2,
   h3 {
-    @apply text-gray-900 font-medium !mt-10 !mb-6 underline underline-offset-8;
+    @apply text-gray-900 font-bold !mt-10 !mb-6;
 
     + * {
       @apply !mt-0;
@@ -58,7 +58,7 @@
   }
 
   a {
-    @apply text-blue-800 underline decoration-[1.5px];
+    @apply text-links underline underline-offset-4 decoration-[1.5px];
   }
 
   hr {

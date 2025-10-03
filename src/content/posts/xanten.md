@@ -1,6 +1,5 @@
 ---
 title: Trip to Germany, spring 2024
-unlisted: true
 date: 2024-05-26
 ---
 
@@ -16,8 +15,8 @@ We stayed at an apartment in Xanten, which happened to be next to a Renaissance 
 
 The dinner tonight was organized by my great-aunt, at the Hotel Zur Linde in Repelen. I met much of my family on my dad's side for the first time in years, including many of my cousins that I haven't talked to in a long time.
 
-| | |
-| --- | --- |
+|                                |                                |
+| ------------------------------ | ------------------------------ |
 | ![](/posts/xanten/dinner1.jpg) | ![](/posts/xanten/dinner2.jpg) |
 
 The dinner options almost all contained asparagus, of which I chose the asparagus ravioli.
@@ -34,8 +33,8 @@ After breakfast, another aunt and uncle joined us, and we walked around Xanten. 
 
 We parted ways from the uncles and my parents and I visited the Roman ruins in Xanten.
 
-| | |
-| --- | --- |
+|                              |                                |
+| ---------------------------- | ------------------------------ |
 | ![](/posts/xanten/arena.jpg) | ![](/posts/xanten/columns.jpg) |
 
 The dinner tonight was at the Neumaier Hotel, which took two hours to produce food which we had chosen from a menu months ago. My schnitzel was mediocre, but my crème brûlée was fantastic.
