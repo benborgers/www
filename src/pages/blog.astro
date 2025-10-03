@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import star from "../images/star.png";
 import Layout from "../layouts/layout.astro";
 import { getPosts } from "../lib/posts";
 
@@ -25,7 +27,16 @@ const postsByMonth = Object.groupBy(posts, (post) => {
           </p>
 
           {posts!.map((post) => (
-            <p class="mt-1">
+            <p
+              class:list={[
+                "mt-1 flex gap-x-2 items-baseline",
+                post.data.starred && "-ml-7",
+              ]}
+            >
+              {post.data.starred && (
+                <Image src={star} alt="Starred post" width={160} class="w-5" />
+              )}
+
               <a
                 href={`/${post.slug}`}
                 class="text-gray-900 font-medium text-xl underline decoration-1 decoration-gray-300 underline-offset-[1.5px]"
