@@ -46,7 +46,7 @@ const { title } = Astro.props;
       defer></script>
   </head>
   <body class="antialiased bg-white text-pretty selection:bg-amber-100">
-    <div class:list={["max-w-[540px] mx-auto"]}>
+    <div class="max-w-[540px] mx-auto">
       <!-- <nav
         class="h-max max-sm:flex max-sm:items-end max-sm:gap-x-6 sm:sticky sm:top-0 sm:pt-16 pl-6 max-sm:pr-6 max-sm:pt-6"
       >
@@ -92,7 +92,16 @@ const { title } = Astro.props;
         </div>
       </nav> -->
 
-      <main class="pt-12">
+      <nav class="mt-6 border-y py-2">
+        <a
+          href="/"
+          class="font-serif font-medium text-lg uppercase max-w-max mx-auto block"
+        >
+          Ben Borgers
+        </a>
+      </nav>
+
+      <main class="mt-12">
         <slot />
 
         <footer class="mt-auto pt-28 mb-6">
