@@ -1,9 +1,18 @@
 @utility prose {
   @apply text-lg text-gray-800 leading-[1.6];
 
+  strong {
+    @apply font-medium text-gray-900;
+    background: linear-gradient(
+      to top,
+      var(--color-brand-yellow-light) 40%,
+      transparent 40%
+    );
+  }
+
   h2,
   h3 {
-    @apply font-headings text-gray-950 font-medium !mt-12 !mb-6;
+    @apply font-headings font-medium text-gray-950 !mt-12 !mb-6;
 
     + * {
       @apply !mt-0;

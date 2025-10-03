@@ -13,6 +13,7 @@
   --color-brand-red-light: hsl(3deg, 99%, 96%);
 
   --color-brand-yellow: hsl(45deg, 100%, 50%);
+  --color-brand-yellow-light: hsl(45deg, 100%, 90%);
 
   --color-gray-50: var(--color-stone-50);
   --color-gray-100: var(--color-stone-100);
