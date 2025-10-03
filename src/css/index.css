@@ -2,8 +2,8 @@
 @import "./prose.css";
 
 @theme {
-  --font-sans: "InterDisplay", system-ui, sans-serif;
-  --font-serif: Valkyrie, Georgia, serif;
+  --font-sans: "PP Neue Montreal", system-ui, sans-serif;
+  --font-serif: "PP Right Serif Casual", Georgia, serif;
 
   --color-gray-50: var(--color-stone-50);
   --color-gray-100: var(--color-stone-100);

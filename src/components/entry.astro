@@ -36,12 +36,21 @@ const showNewsletterForm =
 {
   entry.collection === "posts" && (
     <>
-      <h1 class="text-gray-900 text-3xl sm:text-4xl font-extrabold">
+      {entry.data.cover_image && (
+        <img src={entry.data.cover_image} alt="" class="max-h-54 mx-auto" />
+      )}
+
+      <h1
+        class:list={[
+          "text-gray-900 text-3xl sm:text-4xl font-serif font-black uppercase text-center text-balance",
+          entry.data.cover_image && "mt-10",
+        ]}
+      >
         {entry.data.title}
       </h1>
 
       {entry.data.date && (
-        <time class="block mt-2 text-sm font-semibold text-gray-400">
+        <time class="block mt-2 text-sm font-medium text-gray-500 text-center">
           {entry.data.date.toLocaleString("en-US", {
             timeZone: "UTC",
             month: "long",
@@ -50,17 +59,11 @@ const showNewsletterForm =
           })}
         </time>
       )}
-
-      {entry.data.cover_image && (
-        <div class="mt-7 p-6 bg-white">
-          <img src={entry.data.cover_image} alt="" class="max-h-64 mx-auto" />
-        </div>
-      )}
     </>
   )
 }
 
-<div class:list={[entry.collection === "posts" ? "mt-7" : "mt-2"]}>
+<div class:list={[entry.collection === "posts" ? "mt-10" : "mt-2"]}>
   <Prose>
     <Content />
   </Prose>

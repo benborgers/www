@@ -1,6 +1,7 @@
 ---
 title: Make sure your university events are actually interesting
 date: 2025-03-01
+cover_image: /posts/interestingness/cover.png
 ---
 
 One of the biggest things I've learned from running [JumboCode](/jumbocode) this year is to **stop lying to yourself about how interesting your events actually are**.

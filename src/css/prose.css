@@ -1,9 +1,10 @@
 @utility prose {
-  @apply font-serif text-lg @sm:text-xl text-gray-800 leading-[1.6];
+  @apply text-lg text-gray-800 leading-[1.6];
 
   h2,
   h3 {
-    @apply text-gray-900 font-sans font-bold !mt-14 !mb-6;
+    @apply font-serif text-gray-900 font-black !my-8;
+    @apply border-y py-2 uppercase text-center text-balance;
 
     + * {
       @apply !mt-0;
