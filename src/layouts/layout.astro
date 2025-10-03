@@ -47,70 +47,90 @@ const { title } = Astro.props;
       defer></script>
   </head>
   <body class="antialiased bg-white text-pretty selection:bg-amber-100">
-    <div class="max-w-[540px] mx-auto">
-      <!-- <nav
-        class="h-max max-sm:flex max-sm:items-end max-sm:gap-x-6 sm:sticky sm:top-0 sm:pt-16 pl-6 max-sm:pr-6 max-sm:pt-6"
-      >
-        <Polaroid />
-
-        <div class="pr-1">
-          <ul class="sm:mt-5 space-x-1.5 sm:space-x-0">
-            <NavLink href="/" variant="primary">
-              <span class="sm:hidden">Ben Borgers</span>
-              <span class="max-sm:hidden">Home</span>
-            </NavLink>
-            <NavLink href="/blog" variant="primary">Blog</NavLink>
-            <NavLink href="/now" variant="primary">Now</NavLink>
-          </ul>
-
-          <ul class="mt-0.5 sm:mt-4 space-x-1.5 sm:space-x-0">
-            <NavLink href="https://twitter.com/benborgers" variant="secondary">
-              Twitter
-            </NavLink>
-            <NavLink
-              href="https://bsky.app/profile/benborgers.com"
-              variant="secondary"
-            >
-              Bluesky
-            </NavLink>
-            <NavLink href="https://github.com/benborgers" variant="secondary">
-              GitHub
-            </NavLink>
-          </ul>
-
-          <ul class="max-sm:hidden sm:mt-4 space-x-1.5 sm:space-x-0">
-            <NavLink
-              href="https://buttondown.com/benborgers?as_embed=true"
-              variant="secondary"
-            >
-              Newsletter
-            </NavLink>
-            <NavLink href="https://photos.ben.page" variant="secondary">
-              Photos
-            </NavLink>
-            <NavLink href="/rss" variant="secondary">RSS</NavLink>
-          </ul>
-        </div>
-      </nav> -->
-
-      <nav class="mt-6 border-y py-2">
+    <div class="grid grid-cols-[1fr_540px_1fr] gap-x-16">
+      <nav class="pt-4 pl-4 h-max sticky top-0">
         <a
           href="/"
-          class="font-serif font-medium text-lg uppercase max-w-max mx-auto block"
+          class="block max-w-max font-bold font-display text-lg uppercase"
         >
           Ben Borgers
         </a>
+
+        <div class="mt-2 text-gray-900">
+          <a
+            href="/"
+            class:list={[
+              "block max-w-max font-medium",
+              Astro.url.pathname === "/" && "underline",
+            ]}>Home</a
+          >
+          <a
+            href="/blog"
+            class:list={[
+              "block max-w-max font-medium",
+              Astro.url.pathname.startsWith("/blog") && "underline",
+            ]}
+          >
+            Blog
+          </a>
+          <a
+            href="/now"
+            class:list={[
+              "block max-w-max font-medium",
+              Astro.url.pathname === "/now" && "underline",
+            ]}
+          >
+            Now
+          </a>
+        </div>
+
+        <div class="mt-3 text-gray-400">
+          <a
+            href="https://twitter.com/benborgers"
+            target="_blank"
+            class="block max-w-max font-medium"
+          >
+            Twitter
+          </a>
+          <a
+            href="https://bsky.app/profile/benborgers.com"
+            target="_blank"
+            class="block max-w-max font-medium"
+          >
+            Bluesky
+          </a>
+          <a
+            href="https://github.com/benborgers"
+            target="_blank"
+            class="block max-w-max font-medium"
+          >
+            GitHub
+          </a>
+        </div>
+
+        <div class="mt-3 text-gray-400">
+          <a
+            href="https://buttondown.com/benborgers?as_embed=true"
+            target="_blank"
+            class="block max-w-max font-medium"
+          >
+            Newsletter
+          </a>
+          <a
+            href="https://photos.ben.page"
+            target="_blank"
+            class="block max-w-max font-medium"
+          >
+            Photos
+          </a>
+          <a href="/rss" target="_blank" class="block max-w-max font-medium">
+            RSS
+          </a>
+        </div>
       </nav>
 
-      <main class="mt-12">
+      <main class="pt-24">
         <slot />
-
-        <footer class="mt-auto pt-28 mb-6">
-          <p class="text-sm font-medium text-gray-400">
-            &copy; 2002 – {new Date().getFullYear()}
-            <span class="ml-0.5">Ben Borgers</span>
-          </p>
-        </footer>
       </main>
     </div>
   </body>
