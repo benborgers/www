@@ -1,7 +1,6 @@
 ---
 title: Winter break project list
 date: 2023-12-19
-cover_image: /posts/winter23/cover_image.jpeg
 ---
 
 I finished my semester yesterday! After a busy whirlwind of a semester, I'm excited to throw myself into some projects over winter break.

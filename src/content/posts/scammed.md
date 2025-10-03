@@ -1,7 +1,6 @@
 ---
 title: How I got scammed on Facebook Marketplace
 date: 2023-07-10
-cover_image: /posts/scammed/cover_image.jpeg
 starred: true
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: 5% of things go wrong
 date: 2023-12-23
-cover_image: /posts/wrong/cover_image.jpeg
 ---
 
 **Of the things you do in life, 5% are guaranteed to go wrong.**

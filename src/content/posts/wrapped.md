@@ -1,7 +1,6 @@
 ---
 title: Tufts Meal Plan Wrapped
 date: 2024-03-02
-cover_image: /posts/wrapped/cover_image.jpeg
 starred: true
 ---
 
