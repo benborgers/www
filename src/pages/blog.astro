@@ -1,5 +1,4 @@
 ---
-import Star from "../components/star.astro";
 import Layout from "../layouts/layout.astro";
 import { getPosts } from "../lib/posts";
 
@@ -21,25 +20,19 @@ const postsByMonth = Object.groupBy(posts, (post) => {
     {
       Object.entries(postsByMonth).map(([heading, posts]) => (
         <>
-          <p class="-mb-1 mt-6 first-of-type:mt-2 text-gray-400 font-medium">
+          <p class="mt-6 first-of-type:mt-0 text-gray-400 font-medium">
             {heading}
           </p>
 
           {posts!.map((post) => (
-            <div class="relative">
-              {post.data.starred && (
-                <div class="max-sm:hidden absolute -left-7">
-                  <div class="font-sans text-lg text-amber-300 select-none pointer-events-none">
-                    ★
-                  </div>
-                </div>
-              )}
-
-              {/* Control text wrapping with &nbsp; to avoid star being on its own line. */}
-              {/* Don't let Prettier add extra spaces. */}
-              {/* prettier-ignore */}
-              <p class="mt-2"><a href={`/${post.slug}`} class="text-gray-900 font-serif text-xl underline decoration-gray-300">{post.data.title}</a>&nbsp;{post.data.starred && (<span class="sm:hidden"><Star /></span>)}</p>
-            </div>
+            <p class="mt-1">
+              <a
+                href={`/${post.slug}`}
+                class="text-gray-900 font-medium text-xl underline decoration-1 decoration-gray-300 underline-offset-[1.5px]"
+              >
+                {post.data.title}
+              </a>
+            </p>
           ))}
         </>
       ))

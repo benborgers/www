@@ -22,10 +22,8 @@
     @apply my-4;
   }
 
-  > :not(p),
-  > p:has(> img),
-  p > img {
-    @apply my-8;
+  a:has(img) {
+    @apply block my-8;
   }
 
   :first-child {
@@ -46,7 +44,7 @@
 
   ul,
   ol {
-    @apply pl-5;
+    @apply pl-9;
   }
 
   ul ul {
