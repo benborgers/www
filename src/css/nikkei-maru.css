@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'PP Nikkei Maru';
+  src: url('/fonts/nikkei-maru/PPNikkeiMaru-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Nikkei Maru';
+  src: url('/fonts/nikkei-maru/PPNikkeiMaru-ThinItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Nikkei Maru';
+  src: url('/fonts/nikkei-maru/PPNikkeiMaru-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Nikkei Maru';
+  src: url('/fonts/nikkei-maru/PPNikkeiMaru-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Nikkei Maru';
+  src: url('/fonts/nikkei-maru/PPNikkeiMaru-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Nikkei Maru';
+  src: url('/fonts/nikkei-maru/PPNikkeiMaru-RegularItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Nikkei Maru';
+  src: url('/fonts/nikkei-maru/PPNikkeiMaru-Heavy.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Nikkei Maru';
+  src: url('/fonts/nikkei-maru/PPNikkeiMaru-HeavyItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Nikkei Maru';
+  src: url('/fonts/nikkei-maru/PPNikkeiMaru-Ultrabold.woff2') format('woff2');
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Nikkei Maru';
+  src: url('/fonts/nikkei-maru/PPNikkeiMaru-UltraboldItalic.woff2') format('woff2');
+  font-weight: 950;
+  font-style: italic;
+  font-display: swap;
+}

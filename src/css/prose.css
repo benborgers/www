@@ -3,8 +3,8 @@
 
   h2,
   h3 {
-    @apply font-serif text-gray-900 font-black !my-8;
-    @apply border-y py-2 uppercase text-center text-balance;
+    @apply font-display uppercase text-gray-900 font-bold !my-8
+      border-y py-2 text-center text-balance;
 
     + * {
       @apply !mt-0;

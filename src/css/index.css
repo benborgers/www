@@ -4,6 +4,7 @@
 @theme {
   --font-sans: "PP Neue Montreal", system-ui, sans-serif;
   --font-serif: "PP Right Serif Casual", Georgia, serif;
+  --font-display: "PP Right Serif Casual";
 
   --color-gray-50: var(--color-stone-50);
   --color-gray-100: var(--color-stone-100);
