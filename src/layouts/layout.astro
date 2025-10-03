@@ -61,14 +61,15 @@ const { title } = Astro.props;
             href="/"
             class:list={[
               "block max-w-max font-medium",
-              Astro.url.pathname === "/" && "underline",
+              Astro.url.pathname === "/" && "underline underline-offset-2",
             ]}>Home</a
           >
           <a
             href="/blog"
             class:list={[
               "block max-w-max font-medium",
-              Astro.url.pathname.startsWith("/blog") && "underline",
+              Astro.url.pathname.startsWith("/blog") &&
+                "underline underline-offset-2",
             ]}
           >
             Blog
@@ -77,7 +78,7 @@ const { title } = Astro.props;
             href="/now"
             class:list={[
               "block max-w-max font-medium",
-              Astro.url.pathname === "/now" && "underline",
+              Astro.url.pathname === "/now" && "underline underline-offset-2",
             ]}
           >
             Now
