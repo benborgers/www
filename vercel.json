@@ -23,11 +23,6 @@
       "permanent": true
     },
     {
-      "source": "/swipes",
-      "destination": "http://swipes.ben.page",
-      "permanent": true
-    },
-    {
       "source": "/blog/([^/]+)",
       "destination": "/$1",
       "permanent": true
