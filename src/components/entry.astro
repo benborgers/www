@@ -20,39 +20,45 @@ const showNewsletterForm =
   entry.collection === "posts" && entry.data.unlisted === false;
 ---
 
-<div class="max-sm:mt-4">
-  {
-    entry.collection === "posts" && entry.data.draft && (
-      <p class="mb-4 bg-rose-100 text-rose-950 px-2 py-0.5 font-medium max-w-max">
-        <span class="sm:hidden">You’re reading a draft post.</span>
-        <span class="max-sm:hidden">
-          You’re reading a draft post that’s still being written.
-        </span>
-      </p>
-    )
-  }
+<div class="max-sm:mt-4"></div>
 
-  {
-    entry.collection === "posts" && (
-      <>
-        <h1 class="text-gray-900 text-3xl sm:text-4xl font-extrabold">
-          {entry.data.title}
-        </h1>
+{
+  entry.collection === "posts" && entry.data.draft && (
+    <p class="mb-4 bg-rose-100 text-rose-950 px-2 py-0.5 font-medium max-w-max">
+      <span class="sm:hidden">You’re reading a draft post.</span>
+      <span class="max-sm:hidden">
+        You’re reading a draft post that’s still being written.
+      </span>
+    </p>
+  )
+}
 
-        {entry.data.date && (
-          <time class="block mt-2 text-sm font-semibold text-gray-400">
-            {entry.data.date.toLocaleString("en-US", {
-              timeZone: "UTC",
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            })}
-          </time>
-        )}
-      </>
-    )
-  }
-</div>
+{
+  entry.collection === "posts" && (
+    <>
+      <h1 class="text-gray-900 text-3xl sm:text-4xl font-extrabold">
+        {entry.data.title}
+      </h1>
+
+      {entry.data.date && (
+        <time class="block mt-2 text-sm font-semibold text-gray-400">
+          {entry.data.date.toLocaleString("en-US", {
+            timeZone: "UTC",
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })}
+        </time>
+      )}
+
+      {entry.data.cover_image && (
+        <div class="mt-7 p-12 bg-white">
+          <img src={entry.data.cover_image} alt="" />
+        </div>
+      )}
+    </>
+  )
+}
 
 <div class:list={[entry.collection === "posts" ? "mt-7" : "mt-2"]}>
   <Prose>
