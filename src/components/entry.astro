@@ -1,26 +1,25 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import Prose from "./prose.astro";
 
 interface Props {
-  coverImage?: string;
-  title?: string;
   entry: CollectionEntry<"posts"> | CollectionEntry<"pages">;
   preview?: boolean;
 }
 
-const { entry, ...props } = Astro.props;
+const { entry } = Astro.props;
 
-const coverImage =
-  props.coverImage ??
-  (entry.collection === "posts" ? entry.data.cover_image : undefined);
-
-const title =
-  props.title ?? (entry.collection === "posts" ? entry.data.title : undefined);
-
+const title = entry.collection === "posts" ? entry.data.title : undefined;
 const date = entry.collection === "posts" ? entry.data.date : undefined;
+const hasCoverImage =
+  (await import(`../cover-images/${entry.slug}.png`).catch(() => null)) !==
+  null;
+const coverImageImport = hasCoverImage
+  ? import(`../cover-images/${entry.slug}.png`)
+  : null;
 
-const hasFrontmatter = coverImage || title || date;
+const hasFrontmatter = hasCoverImage || title || date;
 
 const { Content } = await entry.render();
 ---
@@ -38,13 +37,15 @@ const { Content } = await entry.render();
 {
   hasFrontmatter && (
     <>
-      {coverImage && <img src={coverImage} alt="" class="max-h-54 mx-auto" />}
+      {hasCoverImage && (
+        <Image src={coverImageImport!} alt="" class="max-h-54 w-auto mx-auto" />
+      )}
 
       {title && (
         <h1
           class:list={[
             "text-gray-950 text-3xl sm:text-4xl font-h1 font-bold uppercase text-center text-balance",
-            coverImage && "mt-12",
+            hasCoverImage && "mt-12",
           ]}
         >
           {title}
