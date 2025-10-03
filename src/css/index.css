@@ -2,9 +2,9 @@
 @import "./prose.css";
 
 @theme {
-  --font-sans: "PP Neue Montreal", system-ui, sans-serif;
-  --font-serif: "PP Right Serif Casual", Georgia, serif;
-  --font-display: "PP Right Serif Casual";
+  --font-h1: "PP Right Serif Casual";
+  --font-headings: "PP Neue Montreal";
+  --font-sans: "PP Neue Montreal";
 
   --color-brand-blue: hsl(209deg, 95%, 40%);
   --color-brand-blue-light: hsl(209deg, 95%, 90%);
