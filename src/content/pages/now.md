@@ -1,7 +1,3 @@
----
-title: Now
----
-
 - Graduated from [Tufts](https://tufts.ben.page)!
 - Living in Fenway in Boston
 - Working at [Owner](https://owner.com)

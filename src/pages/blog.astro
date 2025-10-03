@@ -7,6 +7,7 @@ const posts = await getPosts({ includeUnlisted: false });
 
 const postsByMonth = Object.groupBy(posts, (post) => {
   const date = post.data.date;
+  if (!date) throw new Error("Post has no date");
   return date.toLocaleString("en-US", {
     timeZone: "UTC",
     month: "long",
