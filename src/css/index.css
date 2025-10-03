@@ -6,7 +6,13 @@
   --font-serif: "PP Right Serif Casual", Georgia, serif;
   --font-display: "PP Right Serif Casual";
 
-  --color-links: hsl(209deg, 95%, 40%);
+  --color-brand-blue: hsl(209deg, 95%, 40%);
+  --color-brand-blue-light: hsl(209deg, 95%, 90%);
+
+  --color-brand-red: hsl(3deg, 99%, 45%);
+  --color-brand-red-light: hsl(3deg, 99%, 96%);
+
+  --color-brand-yellow: hsl(45deg, 100%, 50%);
 
   --color-gray-50: var(--color-stone-50);
   --color-gray-100: var(--color-stone-100);
@@ -19,20 +25,4 @@
   --color-gray-800: var(--color-stone-800);
   --color-gray-900: var(--color-stone-900);
   --color-gray-950: var(--color-stone-950);
-}
-
-mark {
-  @apply bg-transparent box-decoration-clone;
-
-  background-image: linear-gradient(
-    to left,
-    color-mix(in srgb, var(--color-links) 40%, transparent),
-    color-mix(in srgb, var(--color-links) 10%, transparent) 0.3em,
-    color-mix(in srgb, var(--color-links) 20%, transparent) calc(100% - 0.5em),
-    color-mix(in srgb, var(--color-links) 50%, transparent)
-  );
-
-  border-radius: 0.5em 0.3em;
-  padding: 0.1em 0.3em;
-  margin: -0.1em -0.3em;
 }

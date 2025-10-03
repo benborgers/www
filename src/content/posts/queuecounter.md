@@ -9,7 +9,7 @@ This past year at Tufts, I was a TA for [CS 40](https://www.cs.tufts.edu/comp/40
 
 CS 40 is a somewhat-infamous class in the Tufts sequence, consisting of eight pair-programming projects that take quite a lot of time. On the bright side, the CS department runs office hours for CS 40 every weekday from 10am until 11pm, plus slightly more limited hours on the weekends.
 
-Students end up spending a lot of time in office hours debugging C programs with TAs. I was curious: <mark>how busy does it get</mark>? Can we quantify the flurry of activity before a deadline, or the gap around 7pm for dinner?
+Students end up spending a lot of time in office hours debugging C programs with TAs. I was curious: **how busy does it get?** Can we quantify the flurry of activity before a deadline, or the gap around 7pm for dinner?
 
 To answer these questions, I built **queuecounter**, a website that automatically tracks how busy office hours are.
 
