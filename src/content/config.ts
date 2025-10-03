@@ -18,5 +18,6 @@ export const collections = {
   }),
   pages: defineCollection({
     type: "content",
+    schema: z.object({}),
   }),
 };

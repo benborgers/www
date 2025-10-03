@@ -3,11 +3,24 @@ import type { CollectionEntry } from "astro:content";
 import Prose from "./prose.astro";
 
 interface Props {
+  coverImage?: string;
+  title?: string;
   entry: CollectionEntry<"posts"> | CollectionEntry<"pages">;
   preview?: boolean;
 }
 
-const { entry } = Astro.props;
+const { entry, ...props } = Astro.props;
+
+const coverImage =
+  props.coverImage ??
+  (entry.collection === "posts" ? entry.data.cover_image : undefined);
+
+const title =
+  props.title ?? (entry.collection === "posts" ? entry.data.title : undefined);
+
+const date = entry.collection === "posts" ? entry.data.date : undefined;
+
+const hasFrontmatter = coverImage || title || date;
 
 const { Content } = await entry.render();
 ---
@@ -23,24 +36,24 @@ const { Content } = await entry.render();
 }
 
 {
-  entry.collection === "posts" && (
+  hasFrontmatter && (
     <>
-      {entry.data.cover_image && (
-        <img src={entry.data.cover_image} alt="" class="max-h-54 mx-auto" />
+      {coverImage && <img src={coverImage} alt="" class="max-h-54 mx-auto" />}
+
+      {title && (
+        <h1
+          class:list={[
+            "text-gray-950 text-3xl sm:text-4xl font-h1 font-bold uppercase text-center text-balance",
+            coverImage && "mt-12",
+          ]}
+        >
+          {title}
+        </h1>
       )}
 
-      <h1
-        class:list={[
-          "text-gray-950 text-3xl sm:text-4xl font-h1 font-bold uppercase text-center text-balance",
-          entry.data.cover_image && "mt-12",
-        ]}
-      >
-        {entry.data.title}
-      </h1>
-
-      {entry.data.date && (
+      {date && (
         <time class="block mt-2 text-sm font-medium text-gray-500 text-center">
-          {entry.data.date.toLocaleString("en-US", {
+          {date.toLocaleString("en-US", {
             timeZone: "UTC",
             month: "long",
             day: "numeric",
@@ -52,7 +65,7 @@ const { Content } = await entry.render();
   )
 }
 
-<div class:list={[entry.collection === "posts" ? "mt-10" : "mt-2"]}>
+<div class:list={[hasFrontmatter ? "mt-10" : "mt-2"]}>
   <Prose>
     <Content />
   </Prose>
