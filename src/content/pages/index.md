@@ -2,6 +2,8 @@ Hi! I'm **Ben Borgers**. I’m a software engineer living in Boston. I work at [
 
 I'd love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
 
+<div style="margin-top: 200px"></div>
+
 ## Work Experience
 
 - [Owner](https://owner.com) (2025 – present): Software engineer.
