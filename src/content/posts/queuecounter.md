@@ -1,6 +1,7 @@
 ---
 title: Automatically graphing how busy office hours are
 date: 2025-05-31
+cover_image: /posts/queuecounter/cover.png
 starred: true
 ---
 
