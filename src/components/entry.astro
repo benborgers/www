@@ -19,7 +19,9 @@ const coverImageImport = hasCoverImage
   ? import(`../cover-images/${entry.slug}.png`)
   : null;
 
-const hasFrontmatter = hasCoverImage || title || date;
+const coverImageAtBottom = ["now"].includes(entry.slug);
+
+const hasFrontmatter = (hasCoverImage && !coverImageAtBottom) || title || date;
 
 const { Content } = await entry.render();
 ---
@@ -70,4 +72,14 @@ const { Content } = await entry.render();
   <Prose>
     <Content />
   </Prose>
+
+  {
+    coverImageAtBottom && (
+      <Image
+        src={coverImageImport!}
+        alt=""
+        class="mt-18 max-h-54 w-auto mx-auto"
+      />
+    )
+  }
 </div>
