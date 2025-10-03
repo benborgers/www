@@ -49,6 +49,10 @@
     @apply pl-5;
   }
 
+  ul ul {
+    @apply pt-2;
+  }
+
   li {
     @apply my-2;
   }
