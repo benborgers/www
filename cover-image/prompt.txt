@@ -1,9 +1,0 @@
-Draw an illustration in this style of:
-
-SUBJECT
-
-These are our brand colors:
-- hsl(209deg, 95%, 40%)
-- hsl(3deg, 99%, 45%)
-- hsl(45deg, 100%, 50%)
-Pick one or two to use where appropriate, but you are free to use other colors as well. Don't force it with the brand color usage (don't use the colors to color in unnatural places).
