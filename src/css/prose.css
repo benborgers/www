@@ -93,7 +93,7 @@
   }
 
   pre {
-    @apply border border-gray-200 px-3 py-2 text-base leading-[1.5];
+    @apply border border-gray-200 !bg-gray-50 px-3 py-2 text-base leading-[1.5];
   }
 
   code:not(pre code) {
