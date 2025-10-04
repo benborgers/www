@@ -15,14 +15,16 @@ const relatedPosts = await getRelatedPosts(entry.slug);
 
 {
   relatedPosts.length > 0 && (
-    <div class={className}>
+    <div class:list={["max-lg:text-lg", className]}>
       <div
         style={{ maxWidth: constrainWidth ? `${constrainWidth}px` : "none" }}
       >
-        <p class="font-medium text-gray-900">Related posts:</p>
-        <ul class="mt-1.5 space-y-1.5 list-['–_'] text-gray-400 marker:text-gray-300 pl-3.5">
+        <p class="font-semibold lg:font-medium text-gray-900 lg:tracking-tight">
+          Related posts:
+        </p>
+        <ul class="mt-1.5 space-y-1.5 list-['–_'] text-gray-500 lg:text-gray-400 marker:text-gray-300 pl-3.5">
           {relatedPosts.map((post) => (
-            <li class="font-medium leading-tight underline decoration-1 decoration-gray-300">
+            <li class="leading-tight underline decoration-1 decoration-gray-300">
               <a href={`/${post.slug}`}>{post.data.title}</a>
             </li>
           ))}

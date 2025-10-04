@@ -3,8 +3,8 @@
 
 @theme {
   --font-h1: "PP Right Serif Casual";
-  --font-headings: "PP Neue Montreal";
-  --font-sans: "PP Neue Montreal";
+  --font-headings: "neue-haas-unica";
+  --font-sans: "neue-haas-unica";
 
   --color-brand-blue: hsl(209deg, 95%, 40%);
   --color-brand-blue-light: hsl(209deg, 95%, 90%);

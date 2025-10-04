@@ -27,6 +27,9 @@ const { title } = Astro.props;
 
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
+    <link rel="stylesheet" href="https://use.typekit.net/clg6cgl.css" />
+    <link rel="stylesheet" href="https://jero.zone/fonts.css" />
+
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -53,15 +56,15 @@ const { title } = Astro.props;
         >
           <a
             href="/"
-            class="block max-w-max text-gray-900 font-medium bg-brand-blue-light px-1.5 -ml-1.5 max-lg:col-span-3"
+            class="block max-w-max text-gray-900 font-semibold tracking-tight bg-brand-blue-light px-1.5 -ml-1.5 max-lg:col-span-3"
           >
             Ben Borgers
           </a>
-          <div class="mt-2 text-gray-900">
+          <div class="mt-2 text-gray-900 font-medium tracking-tight">
             <a
               href="/"
               class:list={[
-                "block max-w-max font-medium",
+                "block max-w-max",
                 Astro.url.pathname === "/" &&
                   "underline underline-offset-[1.5px]",
               ]}
@@ -71,7 +74,7 @@ const { title } = Astro.props;
             <a
               href="/blog"
               class:list={[
-                "block max-w-max font-medium",
+                "block max-w-max",
                 Astro.url.pathname.startsWith("/blog") &&
                   "underline underline-offset-[1.5px]",
               ]}
@@ -81,7 +84,7 @@ const { title } = Astro.props;
             <a
               href="/now"
               class:list={[
-                "block max-w-max font-medium",
+                "block max-w-max",
                 Astro.url.pathname === "/now" &&
                   "underline underline-offset-[1.5px]",
               ]}
@@ -94,21 +97,21 @@ const { title } = Astro.props;
             <a
               href="https://twitter.com/benborgers"
               target="_blank"
-              class="block max-w-max font-medium"
+              class="block max-w-max"
             >
               Twitter
             </a>
             <a
               href="https://bsky.app/profile/benborgers.com"
               target="_blank"
-              class="block max-w-max font-medium"
+              class="block max-w-max"
             >
               Bluesky
             </a>
             <a
               href="https://github.com/benborgers"
               target="_blank"
-              class="block max-w-max font-medium"
+              class="block max-w-max"
             >
               GitHub
             </a>
@@ -118,20 +121,18 @@ const { title } = Astro.props;
             <a
               href="https://buttondown.com/benborgers"
               target="_blank"
-              class="block max-w-max font-medium"
+              class="block max-w-max"
             >
               Newsletter
             </a>
             <a
               href="https://photos.ben.page"
               target="_blank"
-              class="block max-w-max font-medium"
+              class="block max-w-max"
             >
               Photos
             </a>
-            <a href="/rss" target="_blank" class="block max-w-max font-medium">
-              RSS
-            </a>
+            <a href="/rss" target="_blank" class="block max-w-max"> RSS </a>
           </div>
         </div>
       </nav>

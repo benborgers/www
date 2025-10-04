@@ -1,5 +1,9 @@
 @utility prose {
-  @apply text-lg text-gray-800 leading-[1.6];
+  @apply tracking-tight text-lg text-gray-800 leading-[1.6];
+
+  strong {
+    @apply font-semibold;
+  }
 
   h2,
   h3 {
@@ -93,7 +97,7 @@
   }
 
   code:not(pre code) {
-    @apply text-base text-brand-red bg-brand-red-light border border-brand-red px-1 py-0.5;
+    @apply text-base text-brand-red bg-brand-red-light px-1 py-0.5;
   }
 
   a:has(code) {
