@@ -19,7 +19,7 @@ I'd love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
 
 ## Projects
 
-- [JumboSmash](https://jumbosmash.app): Dating app for Tufts seniors.
+- JumboSmash: Dating app for Tufts seniors.
 - [TikTok Graveyard](https://tiktokgraveyard.com), [IG Valentine](https://igvalentine.com), and [Locket Yearbook](https://locketyearbook.com/kXYrENR6d1FPjUYYTDRI): Viral marketing for [Locket](https://locket.camera).
 - [GovDiff](https://govdiff.com): Government websites before and after Trump.
 - [Speakology](https://speakology.ai): AI speaking partner for language learning.
