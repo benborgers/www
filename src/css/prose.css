@@ -42,6 +42,11 @@
     @apply mb-0;
   }
 
+  img,
+  video {
+    @apply mx-auto max-h-[80vh];
+  }
+
   ul {
     @apply list-['–__'];
   }
