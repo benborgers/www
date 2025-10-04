@@ -2,7 +2,7 @@
   @apply tracking-tight text-lg text-gray-800 leading-[1.6];
 
   strong {
-    @apply font-semibold;
+    @apply font-medium;
   }
 
   h2,
