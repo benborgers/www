@@ -23,7 +23,7 @@
   }
 
   > p {
-    @apply my-4;
+    @apply my-6;
   }
 
   figure {
@@ -68,7 +68,7 @@
   }
 
   hr {
-    @apply h-auto mt-9 mb-6 border-none;
+    @apply h-auto my-10 border-none;
 
     &::before {
       content: "# # #";
