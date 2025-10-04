@@ -29,19 +29,33 @@ const postsByMonth = Object.groupBy(posts, (post) => {
           {posts!.map((post) => (
             <p
               class:list={[
-                "mt-1 flex gap-x-2 items-baseline",
-                post.data.starred && "-ml-7",
+                "mt-2 lg:mt-1 flex gap-x-2 items-baseline",
+                post.data.starred && "lg:-ml-7",
               ]}
             >
               {post.data.starred && (
-                <Image src={star} alt="Starred post" width={128} class="w-5" />
+                <Image
+                  src={star}
+                  alt="Starred post"
+                  width={128}
+                  class="w-5 max-lg:hidden"
+                />
               )}
 
               <a
                 href={`/${post.slug}`}
-                class="text-gray-900 font-medium text-xl underline decoration-1 decoration-gray-300 underline-offset-[1.5px]"
+                class="text-gray-900 font-medium text-xl leading-[1.2] underline decoration-1 decoration-gray-300 underline-offset-[1.5px]"
               >
                 {post.data.title}
+
+                {post.data.starred && (
+                  <Image
+                    src={star}
+                    alt="Starred post"
+                    width={128}
+                    class="w-5 inline-block ml-1 -translate-y-1 lg:hidden"
+                  />
+                )}
               </a>
             </p>
           ))}

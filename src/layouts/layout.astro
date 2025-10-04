@@ -44,91 +44,101 @@ const { title } = Astro.props;
   <body
     class="antialiased bg-white text-pretty selection:bg-brand-yellow-light"
   >
-    <div class="grid grid-cols-[1fr_540px_1fr] gap-x-16">
-      <nav class="pl-4 pt-4 h-max sticky top-0">
-        <a
-          href="/"
-          class="block max-w-max text-gray-900 font-medium bg-brand-blue-light px-1.5 -ml-1.5"
+    <div class="lg:grid lg:grid-cols-[1fr_540px_1fr] lg:gap-x-16">
+      <nav
+        class="p-4 pr-0 h-max lg:sticky lg:top-0 max-lg:bg-gray-50 max-lg:border-b max-lg:border-gray-100"
+      >
+        <div
+          class="max-lg:max-w-[540px] max-lg:mx-auto max-lg:grid max-lg:grid-cols-3"
         >
-          Ben Borgers
-        </a>
-        <div class="mt-2 text-gray-900">
           <a
             href="/"
-            class:list={[
-              "block max-w-max font-medium",
-              Astro.url.pathname === "/" &&
-                "underline underline-offset-[1.5px]",
-            ]}
+            class="block max-w-max text-gray-900 font-medium bg-brand-blue-light px-1.5 -ml-1.5 max-lg:col-span-3"
           >
-            Home
+            Ben Borgers
           </a>
-          <a
-            href="/blog"
-            class:list={[
-              "block max-w-max font-medium",
-              Astro.url.pathname.startsWith("/blog") &&
-                "underline underline-offset-[1.5px]",
-            ]}
-          >
-            Blog
-          </a>
-          <a
-            href="/now"
-            class:list={[
-              "block max-w-max font-medium",
-              Astro.url.pathname === "/now" &&
-                "underline underline-offset-[1.5px]",
-            ]}
-          >
-            Now
-          </a>
-        </div>
-        <div class="mt-3 text-gray-400">
-          <a
-            href="https://twitter.com/benborgers"
-            target="_blank"
-            class="block max-w-max font-medium"
-          >
-            Twitter
-          </a>
-          <a
-            href="https://bsky.app/profile/benborgers.com"
-            target="_blank"
-            class="block max-w-max font-medium"
-          >
-            Bluesky
-          </a>
-          <a
-            href="https://github.com/benborgers"
-            target="_blank"
-            class="block max-w-max font-medium"
-          >
-            GitHub
-          </a>
-        </div>
-        <div class="mt-3 text-gray-400">
-          <a
-            href="https://buttondown.com/benborgers"
-            target="_blank"
-            class="block max-w-max font-medium"
-          >
-            Newsletter
-          </a>
-          <a
-            href="https://photos.ben.page"
-            target="_blank"
-            class="block max-w-max font-medium"
-          >
-            Photos
-          </a>
-          <a href="/rss" target="_blank" class="block max-w-max font-medium">
-            RSS
-          </a>
+          <div class="mt-2 text-gray-900">
+            <a
+              href="/"
+              class:list={[
+                "block max-w-max font-medium",
+                Astro.url.pathname === "/" &&
+                  "underline underline-offset-[1.5px]",
+              ]}
+            >
+              Home
+            </a>
+            <a
+              href="/blog"
+              class:list={[
+                "block max-w-max font-medium",
+                Astro.url.pathname.startsWith("/blog") &&
+                  "underline underline-offset-[1.5px]",
+              ]}
+            >
+              Blog
+            </a>
+            <a
+              href="/now"
+              class:list={[
+                "block max-w-max font-medium",
+                Astro.url.pathname === "/now" &&
+                  "underline underline-offset-[1.5px]",
+              ]}
+            >
+              Now
+            </a>
+          </div>
+
+          <div class="mt-3 text-gray-400">
+            <a
+              href="https://twitter.com/benborgers"
+              target="_blank"
+              class="block max-w-max font-medium"
+            >
+              Twitter
+            </a>
+            <a
+              href="https://bsky.app/profile/benborgers.com"
+              target="_blank"
+              class="block max-w-max font-medium"
+            >
+              Bluesky
+            </a>
+            <a
+              href="https://github.com/benborgers"
+              target="_blank"
+              class="block max-w-max font-medium"
+            >
+              GitHub
+            </a>
+          </div>
+
+          <div class="mt-3 text-gray-400">
+            <a
+              href="https://buttondown.com/benborgers"
+              target="_blank"
+              class="block max-w-max font-medium"
+            >
+              Newsletter
+            </a>
+            <a
+              href="https://photos.ben.page"
+              target="_blank"
+              class="block max-w-max font-medium"
+            >
+              Photos
+            </a>
+            <a href="/rss" target="_blank" class="block max-w-max font-medium">
+              RSS
+            </a>
+          </div>
         </div>
       </nav>
 
-      <main class="pt-24 pb-36">
+      <main
+        class="pt-14 lg:pt-24 pb-36 max-lg:px-4 max-lg:max-w-[540px] max-lg:mx-auto"
+      >
         <slot />
       </main>
 

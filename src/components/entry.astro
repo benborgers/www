@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import Prose from "./prose.astro";
+import RelatedPosts from "./related-posts.astro";
 
 interface Props {
   entry: CollectionEntry<"posts"> | CollectionEntry<"pages">;
@@ -26,8 +27,6 @@ const hasFrontmatter = (hasCoverImage && !coverImageAtBottom) || title || date;
 const { Content } = await entry.render();
 ---
 
-<div class="max-sm:mt-4"></div>
-
 {
   entry.collection === "posts" && entry.data.draft && (
     <p class="mb-10 bg-brand-yellow-light text-brand-red border border-brand-red px-2 py-0.5 font-medium max-w-max mx-auto">
@@ -40,7 +39,11 @@ const { Content } = await entry.render();
   hasFrontmatter && (
     <>
       {hasCoverImage && (
-        <Image src={coverImageImport!} alt="" class="max-h-54 w-auto mx-auto" />
+        <Image
+          src={coverImageImport!}
+          alt=""
+          class="max-h-48 sm:max-h-54 w-auto mx-auto"
+        />
       )}
 
       {title && (
@@ -74,11 +77,20 @@ const { Content } = await entry.render();
   </Prose>
 
   {
+    entry.collection === "posts" && (
+      <RelatedPosts
+        entry={entry}
+        class="lg:hidden mt-10 pt-10 border-t border-gray-100"
+      />
+    )
+  }
+
+  {
     coverImageAtBottom && (
       <Image
         src={coverImageImport!}
         alt=""
-        class="mt-18 max-h-54 w-auto mx-auto"
+        class="mt-18 max-h-48 sm:max-h-54 w-auto mx-auto"
       />
     )
   }

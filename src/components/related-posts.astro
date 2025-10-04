@@ -4,19 +4,22 @@ import { getRelatedPosts } from "../lib/related-posts";
 
 interface Props {
   entry: CollectionEntry<"posts">;
+  class?: string;
+  constrainWidth?: number;
 }
 
-const { entry } = Astro.props;
+const { entry, class: className, constrainWidth } = Astro.props;
 
 const relatedPosts = await getRelatedPosts(entry.slug);
 ---
 
 {
   relatedPosts.length > 0 && (
-    <div class="h-screen sticky top-0 flex justify-end items-end pb-[10vh] pr-4">
-      <div class="max-w-[200px]">
+    <div class={className}>
+      <div
+        style={{ maxWidth: constrainWidth ? `${constrainWidth}px` : "none" }}
+      >
         <p class="font-medium text-gray-900">Related posts:</p>
-
         <ul class="mt-1.5 space-y-1.5 list-['–_'] text-gray-400 marker:text-gray-300 pl-3.5">
           {relatedPosts.map((post) => (
             <li class="font-medium leading-tight underline decoration-1 decoration-gray-300">
