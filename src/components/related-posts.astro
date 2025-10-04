@@ -11,20 +11,20 @@ const { entry } = Astro.props;
 const relatedPosts = await getRelatedPosts(entry.slug);
 ---
 
-<div class="h-screen sticky top-0 flex justify-end items-end pb-[10vh] pr-4">
-  <div class="max-w-[200px]">
-    <p class="font-medium text-gray-900">Related posts:</p>
+{
+  relatedPosts.length > 0 && (
+    <div class="h-screen sticky top-0 flex justify-end items-end pb-[10vh] pr-4">
+      <div class="max-w-[200px]">
+        <p class="font-medium text-gray-900">Related posts:</p>
 
-    <ul
-      class="mt-1.5 space-y-1.5 list-['–_'] text-gray-400 marker:text-gray-300 pl-3.5"
-    >
-      {
-        relatedPosts.map((post) => (
-          <li class="font-medium leading-tight underline decoration-1 decoration-gray-300">
-            <a href={`/${post.slug}`}>{post.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-</div>
+        <ul class="mt-1.5 space-y-1.5 list-['–_'] text-gray-400 marker:text-gray-300 pl-3.5">
+          {relatedPosts.map((post) => (
+            <li class="font-medium leading-tight underline decoration-1 decoration-gray-300">
+              <a href={`/${post.slug}`}>{post.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
