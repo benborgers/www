@@ -3,14 +3,15 @@ export const prerender = false;
 import { OPENAI_API_KEY } from "astro:env/server";
 
 export const GET = async ({ request }: { request: Request }) => {
-  const city = request.headers.get("X-Vercel-IP-City");
-  const region = request.headers.get("X-Vercel-IP-Country-Region");
-  const country = request.headers.get("X-Vercel-IP-Country");
-
-  // For local dev
-  // const city = "Lexington";
-  // const region = "MA";
-  // const country = "US";
+  const city = import.meta.env.DEV
+    ? "Boston"
+    : request.headers.get("X-Vercel-IP-City");
+  const region = import.meta.env.DEV
+    ? "MA"
+    : request.headers.get("X-Vercel-IP-Country-Region");
+  const country = import.meta.env.DEV
+    ? "US"
+    : request.headers.get("X-Vercel-IP-Country");
 
   if (city === null || region === null || country === null) {
     return new Response("Missing location", { status: 500 });

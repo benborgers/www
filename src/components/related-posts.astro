@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getRelatedPosts } from "../lib/related-posts";
+
+interface Props {
+  entry: CollectionEntry<"posts">;
+  class?: string;
+  constrainWidth?: number;
+}
+
+const { entry, class: className, constrainWidth } = Astro.props;
+
+const relatedPosts = await getRelatedPosts(entry.slug);
+---
+
+{
+  relatedPosts.length > 0 && (
+    <div class:list={["max-lg:text-lg", className]}>
+      <div
+        style={{ maxWidth: constrainWidth ? `${constrainWidth}px` : "none" }}
+      >
+        <p class="font-semibold lg:font-medium text-gray-900 lg:tracking-tight">
+          Related posts:
+        </p>
+        <ul class="mt-1.5 space-y-1.5 list-['–_'] text-gray-500 lg:text-gray-400 marker:text-gray-300 pl-3.5">
+          {relatedPosts.map((post) => (
+            <li class="leading-tight underline decoration-1 decoration-gray-300">
+              <a href={`/${post.slug}`}>{post.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}

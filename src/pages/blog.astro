@@ -1,5 +1,6 @@
 ---
-import Star from "../components/star.astro";
+import { Image } from "astro:assets";
+import star from "../images/star.png";
 import Layout from "../layouts/layout.astro";
 import { getPosts } from "../lib/posts";
 
@@ -21,25 +22,44 @@ const postsByMonth = Object.groupBy(posts, (post) => {
     {
       Object.entries(postsByMonth).map(([heading, posts]) => (
         <>
-          <p class="-mb-1 mt-6 first-of-type:mt-2 text-gray-400 font-medium">
+          <p class="mt-6 first-of-type:mt-0 text-gray-400 font-medium">
             {heading}
           </p>
 
           {posts!.map((post) => (
-            <div class="relative">
+            <p
+              class:list={[
+                "mt-2 lg:mt-1.5 flex gap-x-1.5 items-baseline",
+                post.data.starred && "lg:-ml-6.5",
+              ]}
+            >
               {post.data.starred && (
-                <div class="max-sm:hidden absolute -left-7">
-                  <div class="font-sans text-lg text-amber-300 select-none pointer-events-none">
-                    ★
-                  </div>
-                </div>
+                <Image
+                  src={star}
+                  alt="Starred post"
+                  width={128}
+                  class="w-5 max-lg:hidden"
+                />
               )}
 
-              {/* Control text wrapping with &nbsp; to avoid star being on its own line. */}
-              {/* Don't let Prettier add extra spaces. */}
-              {/* prettier-ignore */}
-              <p class="mt-2"><a href={`/${post.slug}`} class="text-gray-900 font-serif text-xl underline decoration-gray-300">{post.data.title}</a>&nbsp;{post.data.starred && (<span class="sm:hidden"><Star /></span>)}</p>
-            </div>
+              <a
+                href={`/${post.slug}`}
+                class="text-gray-900 text-xl leading-[1.2]"
+              >
+                {/* Avoids the space after the underline */}
+                {/* prettier-ignore */}
+                <span class="underline decoration-1 decoration-gray-300 underline-offset-[1.5px]">{post.data.title}</span>
+
+                {post.data.starred && (
+                  <Image
+                    src={star}
+                    alt="Starred post"
+                    width={128}
+                    class="w-5 inline-block ml-1 -translate-y-0.5 lg:hidden"
+                  />
+                )}
+              </a>
+            </p>
           ))}
         </>
       ))
