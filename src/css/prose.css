@@ -22,15 +22,19 @@
     @apply my-4;
   }
 
-  a:has(img) {
+  figure {
+    @apply my-8;
+  }
+
+  p > a:has(img) {
     @apply block my-8;
   }
 
-  :first-child {
+  > :first-child {
     @apply mt-0;
   }
 
-  :last-child {
+  > :last-child {
     @apply mb-0;
   }
 
