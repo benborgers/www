@@ -48,7 +48,7 @@ Here's what my previous iteration looked like:
 ![](/posts/redesign-december-2024/prev-1.png)
 ![](/posts/redesign-december-2024/prev-2.png)
 
-I really liked it, especially the sidebar, but writing on it started to feel *precious*. The posts were styled to look upright and professional.
+I really liked it, especially the sidebar, but writing on it started to feel _precious_. The posts were styled to look upright and professional.
 
 For this new iteration, I wanted something that felt less precious. The new feed of posts on the front page makes me feel like I can fire off posts.
 

@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
 import Entry from "../components/entry.astro";
+import RelatedPosts from "../components/related-posts.astro";
 import Layout from "../layouts/layout.astro";
 import { getPosts } from "../lib/posts";
 
@@ -20,4 +21,11 @@ const { entry } = Astro.props;
 
 <Layout title={entry.data.title}>
   <Entry entry={entry} />
+
+  <RelatedPosts
+    slot="sidebar"
+    entry={entry}
+    class="max-lg:hidden h-screen sticky top-0 flex justify-end items-end pb-[10vh] pr-4"
+    constrainWidth={200}
+  />
 </Layout>

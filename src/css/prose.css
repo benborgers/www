@@ -1,9 +1,13 @@
 @utility prose {
-  @apply font-serif text-lg @sm:text-xl text-gray-800 leading-[1.6];
+  @apply tracking-tight text-lg text-gray-800 leading-[1.6];
+
+  strong {
+    @apply font-medium;
+  }
 
   h2,
   h3 {
-    @apply text-gray-900 font-sans font-bold !mt-14 !mb-6;
+    @apply font-headings font-medium text-gray-950 !mt-12 !mb-6;
 
     + * {
       @apply !mt-0;
@@ -19,21 +23,28 @@
   }
 
   > p {
-    @apply my-4;
+    @apply my-6;
   }
 
-  > :not(p),
-  > p:has(> img),
-  p > img {
+  figure {
     @apply my-8;
   }
 
-  :first-child {
+  p > a:has(img) {
+    @apply block my-8;
+  }
+
+  > :first-child {
     @apply mt-0;
   }
 
-  :last-child {
+  > :last-child {
     @apply mb-0;
+  }
+
+  img,
+  video {
+    @apply mx-auto max-h-[80vh];
   }
 
   ul {
@@ -46,33 +57,40 @@
 
   ul,
   ol {
-    @apply pl-5;
+    @apply pl-9;
+  }
+
+  ul ul {
+    @apply pt-2;
   }
 
   li {
     @apply my-2;
-
-    &::marker {
-      @apply text-gray-400;
-    }
   }
 
   a {
-    @apply text-blue-800 underline decoration-[1.5px];
+    @apply text-brand-blue underline underline-offset-4 decoration-[1.5px];
   }
 
   hr {
-    @apply h-auto mt-16 mb-13 border-none;
+    @apply h-auto my-10 border-none;
 
     &::before {
-      content: "* * *";
-      @apply block text-center text-gray-400;
+      content: "# # #";
+      @apply block text-center w-max mx-auto;
+      background: linear-gradient(
+        to right,
+        var(--color-brand-red) 0%,
+        var(--color-brand-red) 33%,
+        var(--color-brand-blue) 33%,
+        var(--color-brand-blue) 66%,
+        var(--color-brand-yellow) 66%,
+        var(--color-brand-yellow) 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-  }
-
-  img,
-  video {
-    @apply border border-gray-200;
   }
 
   figcaption {
@@ -80,15 +98,15 @@
   }
 
   pre {
-    @apply border border-gray-200 px-3 py-2 text-base leading-[1.5];
+    @apply border border-gray-200 !bg-gray-50 px-3 py-2 text-base leading-[1.5];
   }
 
   code:not(pre code) {
-    @apply bg-white border border-gray-200 text-lg text-red-700 px-1 py-0.5 break-words box-decoration-clone;
+    @apply text-base text-brand-red bg-brand-red-light px-1 py-0.5;
   }
 
   a:has(code) {
-    @apply decoration-red-700;
+    @apply decoration-brand-red;
   }
 
   blockquote {

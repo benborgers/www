@@ -1,10 +1,9 @@
 ---
 title: The stickiest parking permits known to man
 date: 2025-06-12
-starred: true
 ---
 
-Somerville, Massachusetts _(where Tufts University is located)_ has some of the stickiest resident parking permits down to man. They are virtually impossible to remove from a windshield.
+Somerville, Massachusetts (where Tufts University is located) has some of the stickiest resident parking permits down to man. They are virtually impossible to remove from a windshield.
 
 (This is [well](https://www.reddit.com/r/Somerville/comments/f7n58t/replacing_parking_permit_sticker/) [documented](https://www.reddit.com/r/Somerville/comments/15vsted/how_do_you_remove_the_previous_year_parking/) [on](https://www.reddit.com/r/Somerville/comments/umtyq2/advice_on_how_to_remove_somerville_parking_sticker/) [Reddit](https://www.reddit.com/r/Somerville/comments/thyfb0/best_way_to_remove_old_parking_permits_from/).)
 

@@ -2,8 +2,18 @@
 @import "./prose.css";
 
 @theme {
-  --font-sans: "InterDisplay", system-ui, sans-serif;
-  --font-serif: Valkyrie, Georgia, serif;
+  --font-h1: "PP Right Serif Casual", serif;
+  --font-headings: "neue-haas-unica", system-ui, sans-serif;
+  --font-sans: "neue-haas-unica", system-ui, sans-serif;
+
+  --color-brand-blue: hsl(209deg, 95%, 40%);
+  --color-brand-blue-light: hsl(209deg, 95%, 90%);
+
+  --color-brand-red: hsl(3deg, 99%, 45%);
+  --color-brand-red-light: hsl(3deg, 99%, 96%);
+
+  --color-brand-yellow: hsl(45deg, 100%, 50%);
+  --color-brand-yellow-light: hsl(45deg, 100%, 90%);
 
   --color-gray-50: var(--color-stone-50);
   --color-gray-100: var(--color-stone-100);
@@ -16,21 +26,4 @@
   --color-gray-800: var(--color-stone-800);
   --color-gray-900: var(--color-stone-900);
   --color-gray-950: var(--color-stone-950);
-}
-
-mark {
-  @apply bg-transparent box-decoration-clone;
-
-  background-image: linear-gradient(
-    to left,
-    color-mix(in srgb, var(--color-yellow-500) 40%, transparent),
-    color-mix(in srgb, var(--color-yellow-500) 10%, transparent) 0.3em,
-    color-mix(in srgb, var(--color-yellow-500) 20%, transparent)
-      calc(100% - 0.5em),
-    color-mix(in srgb, var(--color-yellow-500) 50%, transparent)
-  );
-
-  border-radius: 0.5em 0.3em;
-  padding: 0.1em 0.2em;
-  margin: -0.1em -0.2em;
 }
