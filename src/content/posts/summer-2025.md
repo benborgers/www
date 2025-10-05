@@ -1,6 +1,6 @@
 ---
 title: "Summer 2025"
-draft: true
+date: 2025-10-05
 ---
 
 > "talk to you next month!"  
