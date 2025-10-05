@@ -12,14 +12,14 @@ In early July, I moved into an apartment in Fenway in Boston. It's a one bedroom
 
 At almost the same time, I started working at [Owner](https://owner.com). It's been a long time coming — I signed my offer back in early October — but I had to graduate from college first.
 
-Owner has been great as well. I've been allowed to take a chunk of my team's purview, a product unto itself, and run with it. The whole reason I joined Owner was for this kind of ownership (no pun intended) while being surrounded by people I could learn from.
+Owner has been great as well. I've been given a whole piece of the product that I can run with. The whole reason I joined Owner was for this kind of ownership, while being surrounded by people I could learn from.
 
-When I first signed my offer, Owner's engineering team was around 15 large. When I joined, it was around 40. More people to learn from, which is wonderful, and my team also has a bit more of the Wild West startup spirit that I enjoy.
+When I first signed my offer, Owner's engineering team was around 15 people. By the time I joined, it was around 40. More people to learn from, which is wonderful, and my team also has a bit more of the Wild West startup spirit that I enjoy.
 
-As is cliche, time is going fast. When people I knew were going back to college in early September, I couldn't believe that it had already been an entire summer's worth of time between graduation and September. Now, it's one month later.
+The cliche is right: time is going fast. In early September, people I know started going back to college, and I couldn't believe that it had already been an entire summer's worth of time between graduation and September. Now, it's one month later than that.
 
-I have nothing novel to say here except that I was still caught off guard by the reality. When your days are similar — not boring, but similar — time blends together.
+It's not unexpected, but I was caught off guard nonetheless. When your days are similar — not boring, but similar — time blends together.
 
-I'm still working at [Buttondown](https://buttondown.com), which is also quite enjoyable, and Owner and Buttondown together fill my time. Maybe I should find some other fun and novel things to do to slow down the time; something in between skydiving and sitting in the Boston Public Library and tinkering with my personal website.
+I'm still working at [Buttondown](https://buttondown.com), which is also quite enjoyable, and Owner and Buttondown together fill my time. Maybe I should find some other fun and novel things to do, in an attempt to slow down time; perhaps something other than sitting in the Boston Public Library and tinkering with my personal website.
 
 Anyway — thanks for reading, and until next time. (I make no promises for when that will be.)
