@@ -1,5 +1,5 @@
 ---
-title: How I would have picked my college class, in retrospect
+title: "How I would have picked my college classes, in retrospect"
 draft: true
 ---
 
@@ -7,4 +7,4 @@ I graduated from Tufts University last month with two majors, Computer Science a
 
 Tufts' majors are small — you could complete the Computer Science major in 3 semesters, if you really wanted to. So what do you do with the other 5 semesters?
 
-Some of that is taken up by the _liberal arts_ requirements, but the small majors encourages many Tufts students to double-major.
+Some of that is taken up by the *liberal arts* requirements, but the small majors encourages many Tufts students to double-major.
