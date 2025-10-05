@@ -8,10 +8,10 @@ draft: true
 
 It turns out that I am bad at regularly writing updates. But since it's fall now (!!) I will write an update for the summer.
 
-The three big things that have happened since I wrote that last update are that I moved, started a job post-grad, and that Trisha has started dental school.
+In early July, I moved into an apartment in Fenway in Boston. It's a one bedroom apartment; my first time living without roommates or housemates. I somewhat miss the feeling of living with other people, but having one's own space is also glorious. Nowhere is this more evident than the kitchen: I get to rule the space all by myself, and for better or for worse, everything is exactly where I left it.
 
-## Moving to Fenway
+At almost the same time, I started working at [Owner](https://owner.com). It's been a long time coming — I signed my offer back in early October — but I had to graduate from college first.
 
-## Working at Owner
+Owner has been great as well. I've been allowed to take a chunk of my team's purview, a product unto itself, and run with it. The whole reason I joined Owner was for this kind of ownership (no pun intended) while being surrounded by people I could learn from.
 
-## Trisha the dentist
+When I first signed my offer, Owner's engineering team was around 15 large. When I joined, it was around 40. More people to learn from, which is wonderful, and my team also has a bit more of the Wild West startup spirit that I enjoy.
