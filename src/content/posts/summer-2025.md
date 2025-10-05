@@ -4,7 +4,7 @@ draft: true
 ---
 
 > "talk to you next month!"  
-> — me, in my [June 2025](https://buttondown.com/benborgers/archive/june-2025/) newsletter
+> — me, in my [June 2025 newsletter](https://buttondown.com/benborgers/archive/june-2025/)
 
 It turns out that I am bad at regularly writing updates. But since it's fall now (!!) I will write an update for the summer:
 
