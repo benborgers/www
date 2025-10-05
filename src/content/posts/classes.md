@@ -5,7 +5,7 @@ draft: true
 
 In retrospect, I would have taken very different classes.
 
-I graduated from Tufts University last month with two majors, Computer Science and Engineering Psychology, and one minor, in German. I also kept a [catalog](https://tufts.ben.page) of all the classes that I took.
+I graduated from Tufts University this May with two majors, Computer Science and Engineering Psychology, and one minor, in German. I also kept a [catalog](https://tufts.ben.page) of all the classes that I took.
 
 Tufts' majors are small — you could complete the Computer Science major in 3 semesters, if you really wanted to. So what do you do with the other 5 semesters?
 
