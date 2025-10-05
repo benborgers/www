@@ -1,5 +1,5 @@
 ---
-title: "How I would have picked my college classes, in retrospect"
+title: "How I would have picked my classes, in retrospect"
 draft: true
 ---
 
