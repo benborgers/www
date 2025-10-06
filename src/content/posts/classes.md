@@ -21,7 +21,7 @@ It's the study of how people interact with technology — mostly physical, since
 
 ---
 
-I did not learn very much in Engineering Psychology. But I did complete the major.
+I did not learn very much in Engineering Psychology. And I did take all the classes for the major.
 
 It was a train of classes which all seemed to overlap and which contained half-baked enthusiasm for (what felt like) an utter lack of substance. Half of the things we covered seemed to me to be common sense, or dumb, and the other half was covered in the first couple chapters of Don Norman's *The Design of Everyday Things*. (Perhaps they were covered more later in the book as well; I did not ever finish the book, so I would not know.)
 
