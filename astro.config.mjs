@@ -1,14 +1,15 @@
 // @ts-check
 import { defineConfig, envField } from "astro/config";
 
+import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
-import tailwindcss from "@tailwindcss/vite";
-
 import vercel from "@astrojs/vercel";
+import keystatic from "@keystatic/astro";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://benborgers.com",
-  integrations: [sitemap()],
+  integrations: [sitemap(), react(), keystatic()],
   adapter: vercel(),
   trailingSlash: "never",
 
