@@ -1,7 +1,6 @@
 ---
 title: JumboCode+
 date: 2023-05-17
-slug: jumbocode+
 ---
 
 _This is an idea for JumboCode (_[_What is JumboCode?_](/jumbocode)_) that is not a particularly good idea, and JumboCode should probably not do it, but I thought it’s interesting nonetheless._
