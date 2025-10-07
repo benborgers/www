@@ -27,7 +27,7 @@ export default config({
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
         date: fields.date({ label: "Date" }),
-        draft: fields.checkbox({ label: "Draft", defaultValue: true }),
+        draft: fields.checkbox({ label: "Draft" }),
         starred: fields.checkbox({ label: "Starred" }),
         unlisted: fields.checkbox({ label: "Unlisted" }),
         body: fields.markdoc({
