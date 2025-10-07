@@ -3,7 +3,7 @@ title: "How I would have picked my classes, in retrospect"
 draft: true
 ---
 
-In retrospect, I would have taken very different classes.
+In retrospect, I would have taken different classes.
 
 I graduated from Tufts University this May with two majors, Computer Science and Engineering Psychology, and one minor, in German. I also kept a [catalog](https://tufts.ben.page) of all the classes that I took.
 
@@ -15,7 +15,7 @@ It was another ladder to climb, another list of checkboxes to check. When I brou
 
 ---
 
-Perhaps it also makes sense to describe what Engineering Psychology is. It's similar to Human Factors Engineering or Ergonomics, if that means anything to you.
+I should also explain what Engineering Psychology is. It's similar to Human Factors Engineering or Ergonomics, if that means anything to you.
 
 It's the study of how people interact with technology — mostly physical, since that's the era the field came out of. How to design airplane cockpits to reduce confusion, factory machines to reduce accidents, and software to reduce frustration.
 
@@ -28,3 +28,9 @@ It was a train of classes which all seemed to overlap and which contained half-b
 I hope that none of my Engineering Psychology classmates are reading this essay. But I truly could not fathom that some people majored exclusively in this stuff. What do you possibly learn over the course of four years?
 
 ---
+
+Anyway, I did not heed Sam Sommers' advice. My brain loves checklists, and loves completing checklists. A second major was a fantastic checklist.
+
+But what I gained in a happy, smooth brain, I lost in opportunity cost. Engineering Psychology just *barely* fit into my 8 semesters at Tufts. It left no space for interesting random Computer Science courses, or humanities courses, or anything else.
+
+Engineering Psychology was interesting, but not *15 courses* interesting. If I was picking again, I'd opt for less checklists, and more random interesting-sounding picks.
