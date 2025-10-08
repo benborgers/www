@@ -1,10 +1,12 @@
 ---
 title: Automatically graphing how busy office hours are
 date: 2025-05-31
+cover_image: /posts/queuecounter/cover_image.png
+draft: false
 starred: true
+unlisted: false
 ---
-
-This past year at Tufts, I was a TA for [CS 40](https://www.cs.tufts.edu/comp/40): _Machine Structure and Assembly Language Programming_.
+This past year at Tufts, I was a TA for [CS 40](https://www.cs.tufts.edu/comp/40): *Machine Structure and Assembly Language Programming*.
 
 CS 40 is a somewhat-infamous class in the Tufts sequence, consisting of eight pair-programming projects that take quite a lot of time. On the bright side, the CS department runs office hours for CS 40 every weekday from 10am until 11pm, plus slightly more limited hours on the weekends.
 
@@ -16,7 +18,7 @@ To answer these questions, I built **queuecounter**, a website that automaticall
 
 ---
 
-Collecting data is actually pretty easy: CS 40 doesn't have an office hours _room_ — partners just sit anywhere on the second floor of the CS building and put themselves onto a virtual queue using a CLI tool called `halligan40`. When it's your turn, a TA will remove you from the queue and come find you.
+Collecting data is actually pretty easy: CS 40 doesn't have an office hours *room* — partners just sit anywhere on the second floor of the CS building and put themselves onto a virtual queue using a CLI tool called `halligan40`. When it's your turn, a TA will remove you from the queue and come find you.
 
 Initially, I wrote a Node.js script on our shared department server that ran `halligan40 check_queue` every two seconds and sent the length of the queue to my remote server.
 
@@ -30,13 +32,13 @@ I graphed the results, and now could construct a graph showing the queue length 
 
 ![](/posts/queuecounter/max-queue-length.png)
 
-Then, I realized that "how long is the queue this hour?" is a slightly different metric than "how many _times_ did pairs join the queue this hour?". The former measures a student's perceived experience waiting; the latter measures the objective number of times that people had questions.
+Then, I realized that "how long is the queue this hour?" is a slightly different metric than "how many *times* did pairs join the queue this hour?". The former measures a student's perceived experience waiting; the latter measures the objective number of times that people had questions.
 
-So I also began recording and graphing total queue joins per hour. I was able to do this without storing any personal information (I don't understand FERPA but this feels related) by hashing the student's name, location on the second floor, and the timestamp when they joined the queue — all as a single unique identifier for _a singular time someone joined the queue_.
+So I also began recording and graphing total queue joins per hour. I was able to do this without storing any personal information (I don't understand FERPA but this feels related) by hashing the student's name, location on the second floor, and the timestamp when they joined the queue — all as a single unique identifier for *a singular time someone joined the queue*.
 
 ![](/posts/queuecounter/total-queue-joins.png)
 
-The above two screenshots, from the day _before_ the most notorious assignment was due, tell a story:
+The above two screenshots, from the day *before* the most notorious assignment was due, tell a story:
 
 > Office hours were unusually busy throughout the daytime (people joined the queue 5-12 times per hour), but the TAs mostly had trouble keeping the queue down in the **evening** (peaking at 8 people in line around 7pm).
 
@@ -47,7 +49,7 @@ I also aggregated the semester's data into a heatmap:
 ![](/posts/queuecounter/heatmap.png)
 
 - It looks like office hours were busiest in the afternoon, around 3-6pm.
-- If you look for it, you _can_ in fact see a dinner break around 6:30-8:30pm before things pick back up.
+- If you look for it, you *can* in fact see a dinner break around 6:30-8:30pm before things pick back up.
 
 ---
 

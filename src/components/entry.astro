@@ -1,28 +1,32 @@
 ---
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import Prose from "./prose.astro";
 import RelatedPosts from "./related-posts.astro";
 
 interface Props {
   entry: CollectionEntry<"posts"> | CollectionEntry<"pages">;
-  preview?: boolean;
+  coverImage?: string;
+  coverImagePosition?: "top" | "bottom";
 }
 
-const { entry } = Astro.props;
+const {
+  entry,
+  coverImage: coverImageProp,
+  coverImagePosition = "top",
+} = Astro.props;
 
 const title = entry.collection === "posts" ? entry.data.title : undefined;
 const date = entry.collection === "posts" ? entry.data.date : undefined;
-const hasCoverImage =
-  (await import(`../cover-images/${entry.slug}.png`).catch(() => null)) !==
-  null;
-const coverImageImport = hasCoverImage
-  ? import(`../cover-images/${entry.slug}.png`)
-  : null;
+const coverImage = coverImageProp
+  ? coverImageProp
+  : entry.collection === "posts"
+    ? entry.data.cover_image
+    : undefined;
 
-const coverImageAtBottom = ["now"].includes(entry.slug);
+const coverImageTop = coverImage && coverImagePosition !== "bottom";
+const coverImageBottom = coverImage && coverImagePosition === "bottom";
 
-const hasFrontmatter = (hasCoverImage && !coverImageAtBottom) || title || date;
+const hasFrontmatter = coverImageTop || title || date;
 
 const { Content } = await entry.render();
 ---
@@ -38,19 +42,15 @@ const { Content } = await entry.render();
 {
   hasFrontmatter && (
     <>
-      {hasCoverImage && (
-        <Image
-          src={coverImageImport!}
-          alt=""
-          class="max-h-48 sm:max-h-54 w-auto mx-auto"
-        />
+      {coverImageTop && (
+        <img src={coverImage} alt="" class="h-48 sm:h-54 w-auto mx-auto" />
       )}
 
       {title && (
         <h1
           class:list={[
             "text-gray-950 text-3xl sm:text-4xl font-h1 font-bold uppercase text-center text-balance",
-            hasCoverImage && "mt-12",
+            coverImageTop && "mt-12",
           ]}
         >
           {title}
@@ -86,12 +86,8 @@ const { Content } = await entry.render();
   }
 
   {
-    coverImageAtBottom && (
-      <Image
-        src={coverImageImport!}
-        alt=""
-        class="mt-18 max-h-48 sm:max-h-54 w-auto mx-auto"
-      />
+    coverImageBottom && (
+      <img src={coverImage} alt="" class="mt-18 h-48 sm:h-54 w-auto mx-auto" />
     )
   }
 </div>

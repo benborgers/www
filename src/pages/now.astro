@@ -7,5 +7,9 @@ const entry = await getEntry("pages", "now")!;
 ---
 
 <Layout title="Now">
-  <Entry entry={entry} />
+  <Entry
+    entry={entry}
+    coverImage="/pages/now-cover-image.png"
+    coverImagePosition="bottom"
+  />
 </Layout>
