@@ -1,8 +1,11 @@
 ---
-title: "How I would have picked my classes, in retrospect"
+title: How I would have picked my classes, in retrospect
 date: 2025-10-06
+cover_image: /posts/classes/cover_image.png
+draft: false
+starred: false
+unlisted: false
 ---
-
 In retrospect, I would have taken different classes.
 
 I graduated from Tufts University this May with two majors, Computer Science and Engineering Psychology, and one minor, in German. I also kept a [catalog](https://tufts.ben.page) of all the classes that I took.
