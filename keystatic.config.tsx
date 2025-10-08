@@ -27,6 +27,11 @@ export default config({
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
         date: fields.date({ label: "Date" }),
+        cover_image: fields.image({
+          label: "Cover image",
+          directory: "public/posts",
+          publicPath: "/posts",
+        }),
         draft: fields.checkbox({ label: "Draft" }),
         starred: fields.checkbox({ label: "Starred" }),
         unlisted: fields.checkbox({ label: "Unlisted" }),
