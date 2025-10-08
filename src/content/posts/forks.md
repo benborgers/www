@@ -1,9 +1,11 @@
 ---
 title: Donating forks to the dining hall
 date: 2024-05-29
+cover_image: /posts/forks/cover_image.png
+draft: false
 starred: true
+unlisted: false
 ---
-
 A year and a half ago, the dining hall would run out of forks every evening. My roommates and I would inevitably have to eat with spoons.
 
 Finally, I decided to do something about it: I bought 180 forks.
@@ -12,9 +14,13 @@ Finally, I decided to do something about it: I bought 180 forks.
 
 But I had to make sure that my altruism would be commemorated. So I bought metal letter stamps on Amazon, and my roommate and I stamped our initials onto the back of every fork: a "B" for Ben, or an "H" for Henry.
 
-|                             |                            |
-| --------------------------- | -------------------------- |
-| ![](/posts/forks/front.jpg) | ![](/posts/forks/back.jpg) |
+{% table %}
+- 
+- 
+---
+- ![](/posts/forks/front.jpg)
+- ![](/posts/forks/back.jpg)
+{% /table %}
 
 Then, I had to quietly enter my forks into circulation.
 
