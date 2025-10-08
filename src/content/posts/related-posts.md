@@ -1,5 +1,5 @@
 ---
-title: Finding related posts on my blog with vector embeddings
+title: Calculating related posts on my blog using vector embeddings
 date: 2025-10-07
 draft: false
 starred: false
