@@ -10,6 +10,10 @@ interface Props {
 }
 
 const { title, ogImage } = Astro.props;
+
+const ogImageUrl = ogImage
+  ? `https://wsrv.nl/?url=${Astro.url.origin}${ogImage}&h=630&w=1200&fit=contain&cbg=white&output=jpg`
+  : null;
 ---
 
 <!doctype html>
@@ -24,11 +28,14 @@ const { title, ogImage } = Astro.props;
     <meta property="og:site_name" content="Ben Borgers" />
 
     {
-      ogImage && (
-        <meta
-          name="og:image"
-          content={`https://wsrv.nl/?url=${Astro.url.origin}${ogImage}&h=630&w=1200&fit=contain&cbg=white&output=jpg`}
-        />
+      ogImageUrl && (
+        <>
+          <meta name="og:image" content={ogImageUrl} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content={ogImageUrl} />
+          <meta name="twitter:site" content="@benborgers" />
+          <meta name="twitter:creator" content="@benborgers" />
+        </>
       )
     }
 
