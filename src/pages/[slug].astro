@@ -19,7 +19,7 @@ export const getStaticPaths = (async () => {
 const { entry } = Astro.props;
 ---
 
-<Layout title={entry.data.title}>
+<Layout title={entry.data.title} ogImage={entry.data.cover_image}>
   <Entry entry={entry} />
 
   <RelatedPosts

@@ -6,9 +6,10 @@ import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
+  ogImage?: string;
 }
 
-const { title } = Astro.props;
+const { title, ogImage } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,6 +22,15 @@ const { title } = Astro.props;
     <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
     <meta property="og:title" content={title} />
     <meta property="og:site_name" content="Ben Borgers" />
+
+    {
+      ogImage && (
+        <meta
+          name="og:image"
+          content={`https://wsrv.nl/?url=${Astro.url.origin}${ogImage}&h=630&w=1200&fit=contain&cbg=white&output=jpg`}
+        />
+      )
+    }
 
     <link rel="stylesheet" href="https://use.typekit.net/clg6cgl.css" />
 

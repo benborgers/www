@@ -17,7 +17,7 @@ const postsByMonth = Object.groupBy(posts, (post) => {
 });
 ---
 
-<Layout title="Ben Borgers’ Blog">
+<Layout title="Ben Borgers’ Blog" ogImage="/pages/index-cover-image.png">
   <div>
     {
       Object.entries(postsByMonth).map(([heading, posts]) => (
