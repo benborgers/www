@@ -8,7 +8,7 @@ import keystatic from "@keystatic/astro";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://benborgers.com",
+  site: "https://ben.page",
   integrations: [sitemap(), react(), keystatic()],
   adapter: vercel(),
   trailingSlash: "never",
