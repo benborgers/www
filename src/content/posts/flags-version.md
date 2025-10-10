@@ -20,4 +20,4 @@ Big problem: everyone who's still on an older version of the app sees your half-
 
 Coming from web development, I really had to internalize the idea that distinct versions of your app may be used *forever*.
 
-Instead, set your feature flag to `true IF version > N`. That way, your half-finished work will stay hidden in older versions of the app for people that are still on the older versions.
+Instead, set your feature flag to `true IF version >= N`. That way, your half-finished work will stay hidden in older versions of the app for people that are still on the older versions.
