@@ -1,5 +1,5 @@
 ---
-title: Borgers’ Law
+title: Borgers’ Laws
 draft: true
 starred: false
 unlisted: false
