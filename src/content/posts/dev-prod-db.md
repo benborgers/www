@@ -8,7 +8,7 @@ unlisted: false
 I've always loved the ability to run a local web app you're developing against production infrastructure.
 
 - At [Buttondown](https://buttondown.com), I can pull down the production `.env` file from Heroku and run the Django server using those variables.
-- At [Notion](https://notion.com/product), we had `notion run --env staging` or `notion run --env dev` (counterintuitively, at Notion, *dev* refers not to *local development* but to the internal instance of Notion that employees use — [dev.notion.so](https//dev.notion.so)).
+- At [Notion](https://notion.com/product), we had `notion run --env staging` or `notion run --env dev` (counterintuitively, at Notion, *dev* refers not to *local development* but to the internal instance of Notion that employees use — [dev.notion.so](https://dev.notion.so)).
 
 Both of these fire up the web app on your local computer, but connect it up to the real live database and other infrastructure.
 
