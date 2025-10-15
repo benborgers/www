@@ -1,5 +1,5 @@
 ---
-title: We put the lying machine into the answer website
+title: We put the lying machine into the correct answer website
 date: 2025-10-14
 draft: true
 starred: false
