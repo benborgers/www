@@ -1,6 +1,7 @@
 ---
 title: We put the lying machine into the correct answer website
 date: 2025-10-14
+cover_image: /posts/lying-machine/cover_image.png
 draft: false
 starred: false
 unlisted: false
