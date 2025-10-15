@@ -10,7 +10,7 @@ The other day, I saw a colleague ask a specific question about the inner working
 
 They had also put their question into Google. And Google had diligently answered — or more specifically, the AI Overview had spat out a confident answer.
 
-The answer, of course, was not correct. How could it be! Google has no idea about the inner workings of my team's software. It actually knew about the *existence* of our app, but the information about how it worked was a complete guess.
+The answer was not correct — how could it be? Google has no idea about the inner workings of my team's software. It actually knew about the *existence* of our app, but the information about how it worked was a complete guess.
 
 What struck me, though, is that we've trained people for decades that search engines are the gateway to answering questions on the internet. And the line between "that's something you can ask Google" and "that's something Google definitely doesn't know" is hard to teach to everyone. That line is more of a feeling.
 
