@@ -5,7 +5,7 @@ draft: true
 starred: false
 unlisted: false
 ---
-The other day, I saw a colleague ask a specific question about my team's custom software tool we build.
+The other day, I saw a colleague ask a specific question about the app that my team builds.
 
 They had put the question into Google. And Google had diligently answered — or more specifically, the AI Overview had spat out a confident answer.
 
