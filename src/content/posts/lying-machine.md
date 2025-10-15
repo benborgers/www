@@ -1,7 +1,7 @@
 ---
 title: We put the lying machine into the correct answer website
 date: 2025-10-14
-draft: true
+draft: false
 starred: false
 unlisted: false
 ---
