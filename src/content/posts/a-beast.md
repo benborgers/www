@@ -1,5 +1,5 @@
 ---
-title: Ben is a beast!
+title: “Ben is a beast!”
 draft: true
 starred: false
 unlisted: true
