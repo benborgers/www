@@ -1,6 +1,6 @@
 ---
 title: My coding agent has ads now
-date: 2025-10-16
+date: 2025-10-15
 draft: false
 starred: false
 unlisted: false
