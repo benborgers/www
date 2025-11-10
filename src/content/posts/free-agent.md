@@ -20,4 +20,4 @@ Sure, everyone is going to have marginal efficiency gains from knowing to use `C
 
 If you mandate (or "strongly recommend") a singular coding agent to your engineers, you won't get the breadth of exploration that will let you spot the *next* great tool. Claude Code is great today, but that doesn't mean that something meaningfully better isn't around the corner.
 
-So instead of picking winners, let interested employees explore new tools. If any of those new tools represent a meaningful improvement, you won't want to miss it for the sake of *unified billing* or *one less rules file*.
+So instead of picking winners, let interested employees explore new tools. If any of those new tools represent a meaningful improvement, you won't want to miss it for the sake of unified billing or one less rules file.
