@@ -27,7 +27,7 @@ const { title, ogImage } = Astro.props;
       ogImage && (
         <>
           <meta
-            name="og:image"
+            property="og:image"
             content={`${Astro.site!.origin}/og?path=${ogImage}`}
           />
           <meta name="twitter:card" content="summary_large_image" />
