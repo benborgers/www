@@ -2,7 +2,7 @@
 title: Coding agents write 90% of my code now
 date: 2025-12-18
 cover_image: /posts/agents-write/cover_image.png
-draft: true
+draft: false
 starred: false
 unlisted: false
 ---
@@ -14,4 +14,4 @@ I think the switch happened at some point in the last 6 months, but I'm not 100%
 
 But today, I find myself writing very little code by hand. Instead, I'm directing the agent to make edits. Most of the time, editing code by hand just feels like a slower way of manipulating text — like foregoing multi-cursor editing, or coding without IntelliSense.
 
-Coding agents can manipulate text much faster than I can. Even though I'm still leading the implementation, it feels like a waste of time *not* to let the coding agent do the typing.
+Coding agents can manipulate text much faster than I can. Even though I'm still leading the implementation, it feels like a waste of time not to let the coding agent do the typing.
