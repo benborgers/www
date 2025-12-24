@@ -63,94 +63,97 @@ const { title, ogImage } = Astro.props;
     class="antialiased bg-white text-pretty selection:bg-brand-yellow-light"
   >
     <div class="lg:grid lg:grid-cols-[1fr_540px_1fr] lg:gap-x-8">
-      <nav
-        class="p-4 pr-0 h-max lg:sticky lg:top-0 max-lg:bg-gray-50 max-lg:border-b max-lg:border-gray-100"
-      >
-        <div
-          class="max-lg:max-w-[540px] max-lg:mx-auto max-lg:grid max-lg:grid-cols-3"
-        >
-          <a
-            href="/"
-            class="block max-w-max text-gray-900 font-semibold tracking-tight bg-brand-blue-light px-1.5 -ml-1.5 max-lg:col-span-3"
-          >
-            Ben Borgers
-          </a>
-          <div class="mt-2 text-gray-900 font-medium tracking-tight">
-            <a
-              href="/"
-              class:list={[
-                "block max-w-max",
-                Astro.url.pathname === "/" &&
-                  "underline underline-offset-[1.5px]",
-              ]}
-            >
-              Home
-            </a>
-            <a
-              href="/blog"
-              class:list={[
-                "block max-w-max",
-                Astro.url.pathname.startsWith("/blog") &&
-                  "underline underline-offset-[1.5px]",
-              ]}
-            >
-              Blog
-            </a>
-            <a
-              href="/now"
-              class:list={[
-                "block max-w-max",
-                Astro.url.pathname === "/now" &&
-                  "underline underline-offset-[1.5px]",
-              ]}
-            >
-              Now
-            </a>
-          </div>
+      {
+        !import.meta.env.CHEETAH && (
+          <nav class="p-4 pr-0 h-max lg:sticky lg:top-0 max-lg:bg-gray-50 max-lg:border-b max-lg:border-gray-100">
+            <div class="max-lg:max-w-[540px] max-lg:mx-auto max-lg:grid max-lg:grid-cols-3">
+              <a
+                href="/"
+                class="block max-w-max text-gray-900 font-semibold tracking-tight bg-brand-blue-light px-1.5 -ml-1.5 max-lg:col-span-3"
+              >
+                Ben Borgers
+              </a>
+              <div class="mt-2 text-gray-900 font-medium tracking-tight">
+                <a
+                  href="/"
+                  class:list={[
+                    "block max-w-max",
+                    Astro.url.pathname === "/" &&
+                      "underline underline-offset-[1.5px]",
+                  ]}
+                >
+                  Home
+                </a>
+                <a
+                  href="/blog"
+                  class:list={[
+                    "block max-w-max",
+                    Astro.url.pathname.startsWith("/blog") &&
+                      "underline underline-offset-[1.5px]",
+                  ]}
+                >
+                  Blog
+                </a>
+                <a
+                  href="/now"
+                  class:list={[
+                    "block max-w-max",
+                    Astro.url.pathname === "/now" &&
+                      "underline underline-offset-[1.5px]",
+                  ]}
+                >
+                  Now
+                </a>
+              </div>
 
-          <div class="mt-3 text-gray-400">
-            <a
-              href="https://twitter.com/benborgers"
-              target="_blank"
-              class="block max-w-max"
-            >
-              Twitter
-            </a>
-            <a
-              href="https://bsky.app/profile/benborgers.com"
-              target="_blank"
-              class="block max-w-max"
-            >
-              Bluesky
-            </a>
-            <a
-              href="https://github.com/benborgers"
-              target="_blank"
-              class="block max-w-max"
-            >
-              GitHub
-            </a>
-          </div>
+              <div class="mt-3 text-gray-400">
+                <a
+                  href="https://twitter.com/benborgers"
+                  target="_blank"
+                  class="block max-w-max"
+                >
+                  Twitter
+                </a>
+                <a
+                  href="https://bsky.app/profile/benborgers.com"
+                  target="_blank"
+                  class="block max-w-max"
+                >
+                  Bluesky
+                </a>
+                <a
+                  href="https://github.com/benborgers"
+                  target="_blank"
+                  class="block max-w-max"
+                >
+                  GitHub
+                </a>
+              </div>
 
-          <div class="mt-3 text-gray-400">
-            <a
-              href="https://buttondown.com/benborgers"
-              target="_blank"
-              class="block max-w-max"
-            >
-              Newsletter
-            </a>
-            <a
-              href="https://photos.ben.page"
-              target="_blank"
-              class="block max-w-max"
-            >
-              Photos
-            </a>
-            <a href="/rss" target="_blank" class="block max-w-max"> RSS </a>
-          </div>
-        </div>
-      </nav>
+              <div class="mt-3 text-gray-400">
+                <a
+                  href="https://buttondown.com/benborgers"
+                  target="_blank"
+                  class="block max-w-max"
+                >
+                  Newsletter
+                </a>
+                <a
+                  href="https://photos.ben.page"
+                  target="_blank"
+                  class="block max-w-max"
+                >
+                  Photos
+                </a>
+                <a href="/rss" target="_blank" class="block max-w-max">
+                  {" "}
+                  RSS{" "}
+                </a>
+              </div>
+            </div>
+          </nav>
+        )
+      }
 
       <main
         class="pt-14 lg:pt-24 pb-48 max-lg:px-4 max-lg:max-w-[540px] max-lg:mx-auto"

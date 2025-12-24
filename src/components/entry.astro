@@ -77,7 +77,7 @@ const { Content } = await entry.render();
   </Prose>
 
   {
-    entry.collection === "posts" && (
+    entry.collection === "posts" && !import.meta.env.CHEETAH && (
       <RelatedPosts
         entry={entry}
         class="lg:hidden mt-10 pt-10 border-t border-gray-100"
