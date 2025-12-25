@@ -91,3 +91,18 @@ const { Content } = await entry.render();
     )
   }
 </div>
+
+{import.meta.env.CHEETAH && (
+  <script>
+    window.addEventListener("message", (event) => {
+      if (event.data.type === "scroll") {
+        const scrollHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        window.scrollTo({
+          top: scrollHeight * event.data.percentage,
+          behavior: event.data.behavior,
+        });
+      }
+    });
+  </script>
+)}
