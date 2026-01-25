@@ -1,6 +1,5 @@
 ---
 title: temp
-date: 2026-01-25
 draft: true
 starred: false
 unlisted: false
