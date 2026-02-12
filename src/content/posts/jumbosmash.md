@@ -13,6 +13,7 @@ JumboSmash is a 10-year tradition, and to contribute to future generations, I th
 - [2020 (gone too soon)](https://www.facebook.com/jumbosmash2020)
 - [2022](https://www.instagram.com/jumbosmash2022)
 - [2023](https://www.instagram.com/jumbosmash2023)
+- [2024](https://github.com/JumboSmash2024/JumboSmash)
 - [2025 (us!)](https://instagram.com/jumbosmash25)
 
 We launched in the evening of May 8th, and shut it down on the morning of graduation, May 18th.
