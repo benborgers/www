@@ -1,12 +1,10 @@
 ---
-title: We built JumboSmash, a dating app for Tufts seniors
-cover_image: /posts/jumbosmash/cover_image.png
+title: "We built JumboSmash, a dating app for Tufts seniors"
 draft: true
 ---
+On May 8th, some friends and I launched *JumboSmash*, a dating (*"dating"*) app for Tufts seniors during the last week before graduation.
 
-On May 8th, some friends and I launched _JumboSmash_, a dating (_"dating"_) app for Tufts seniors during the last week before graduation.
-
-JumboSmash is a 10-year tradition, and to contribute to future generations, I thought I'd write down my thoughts before I _totally_ forget them.
+JumboSmash is a 10-year tradition, and to contribute to future generations, I thought I'd write down my thoughts before I *totally* forget them.
 
 - [2015, 2016](https://github.com/jumbosmash/tradition)
 - [2017](https://blog.cwrichardkim.com/we-spent-a-year-building-a-dating-app-that-only-lasts-one-week-e6e1a10cedb3)
@@ -17,4 +15,6 @@ JumboSmash is a 10-year tradition, and to contribute to future generations, I th
 - [2023](https://www.instagram.com/jumbosmash2023)
 - [2025 (us!)](https://instagram.com/jumbosmash25)
 
-We launched in the evening of May 8th, and shut it down on the morning of graduation, May 18th. 
+We launched in the evening of May 8th, and shut it down on the morning of graduation, May 18th.
+
+![app.png](https://raw.githubusercontent.com/benborgers/www/main/public/posts/jumbosmash/app.png)
