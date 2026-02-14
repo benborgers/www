@@ -9,12 +9,12 @@ The speed of the model is *incredible*. Watching tokens fly by at breakneck spee
 
 It's also the first time I've seriously used the [Codex Mac app](https://openai.com/codex) or their CLI, both of which are on-par with what's expected these days (and the Mac app has a nice way of seeing diffs, both from the current turn and the whole branch diff against `main`).
 
-However, my experience with `gpt-5.3-codex-spark` is that it's *noticeably* dumber. I was initially very impressed with a couple tasks, in which it got the answer correct and very fast. But this graph very quickly felt true:
+However, my experience with `gpt-5.3-codex-spark` is that it's *noticeably* dumber. I was initially very impressed with a couple tasks, where it got the answer correct and very fast. But this graph very quickly felt true:
 
-![SWE-Bench Pro.png](https://raw.githubusercontent.com/benborgers/www/main/public/posts/gpt-5.3-codex-spark/SWE-Bench%20Pro.png)It shows that, even the `extra-high` version of `spark` is on-par with the `low` version of `gpt-5.3-codex`. And I don't really care about benchmarks, but there were investigations that `gpt-5.3-codex` and `opus-4.6` could do (albeit slower) while `gpt-5.3-codex-spark` just found a plausible-but-incorrect answer.
+![SWE-Bench Pro.png](https://raw.githubusercontent.com/benborgers/www/main/public/posts/gpt-5.3-codex-spark/SWE-Bench%20Pro.png)It shows that, even the `extra-high` version of Spark is on-par with the `low` version of the normal GPT-5.3-Codex. And I don't really care about theoretical benchmarks, but there were real investigations that GPT-5.3-Codex and Opus 4.6 could do (albeit slower) while GPT-5.3-Codex-Spark just found a plausible-but-incorrect answer.
 
-The model feels a bit like a hyperactive child. It can go extremely quickly, bash into a bunch of walls, isn't great at listening to instructions, and is wrong a bit more than the slow, adult models.
+The model feels a bit like a hyperactive child. It goes extremely quickly, bashes into a bunch of walls, isn't great at listening to instructions, and is wrong a bit more often than the slow, adult models.
 
 Maybe back when Cursor released [Composer](https://cursor.com/blog/composer) (which they recently [improved](https://cursor.com/blog/composerhttps://cursor.com/blog/composer-1-5)), I would have said that there's a place for fast-but-slightly-dumber models. But I don't think I believe that anymore.
 
-The frontier models (Opus 4.6 and GPT-5.3-Codex) are *so* good, that they cut out significant frustration. And especially in a world where you can [pay through the nose](https://code.claude.com/docs/en/fast-mode) for faster Opus 4.6, it doesn't feel like a worthwhile tradeoff to go down a level in intelligence when you could just wait a bit longer for a response but save time in back-and-forths with a
+The frontier models (Opus 4.6 and GPT-5.3-Codex) are *so* good that they side-step significant frustration. It doesn't feel like a worthwhile tradeoff to go down a level in intelligence when you could just wait a bit longer for a response and save overall time in back-and-forth iterations with a model that doesn't "just get it." 
