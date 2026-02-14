@@ -2,6 +2,7 @@
 title: "An underbaked GPT-Codex-5.3-Spark review"
 date: 2026-02-14
 draft: true
+cover_image: /posts/gpt-5-3-codex-spark/cover_image.png
 ---
 Two days ago, OpenAI released [GPT-5.3-Codex-Spark](https://openai.com/index/introducing-gpt-5-3-codex-spark/). I excitedly subscribed to ChatGPT Pro to try it, and now that I've been using it for two days, I have a fully comprehensive understanding of the model and am ready to pass judgement.
 
