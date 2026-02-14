@@ -43,7 +43,7 @@ const { Content } = await entry.render();
   hasFrontmatter && (
     <>
       {coverImageTop && (
-        <img src={coverImage} alt="" class="h-48 sm:h-54 w-auto mx-auto" />
+        <img src={coverImage} alt="" class="max-h-48 sm:max-h-54 w-auto mx-auto" />
       )}
 
       {title && (
@@ -87,7 +87,7 @@ const { Content } = await entry.render();
 
   {
     coverImageBottom && (
-      <img src={coverImage} alt="" class="mt-18 h-48 sm:h-54 w-auto mx-auto" />
+      <img src={coverImage} alt="" class="mt-18 max-h-48 sm:max-h-54 w-auto mx-auto" />
     )
   }
 </div>
