@@ -8,6 +8,8 @@ People are trying to codify coding agents into best practices
 
 "spend tons of time planning"
 
+"how do I learn Skills!"
+
 stop having opinions
 
 just surf
