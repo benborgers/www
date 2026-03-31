@@ -10,7 +10,7 @@ interface Props {
 
 const { entry, class: className, constrainWidth } = Astro.props;
 
-const relatedPosts = await getRelatedPosts(entry.slug);
+const relatedPosts = await getRelatedPosts(entry.id);
 ---
 
 {
@@ -25,7 +25,7 @@ const relatedPosts = await getRelatedPosts(entry.slug);
         <ul class="mt-1.5 space-y-1.5 list-['–_'] text-gray-500 lg:text-gray-400 marker:text-gray-300 pl-3.5">
           {relatedPosts.map((post) => (
             <li class="leading-tight underline decoration-1 decoration-gray-300">
-              <a href={`/${post.slug}`}>{post.data.title}</a>
+              <a href={`/${post.id}`}>{post.data.title}</a>
             </li>
           ))}
         </ul>

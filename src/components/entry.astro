@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 import Prose from "./prose.astro";
 import RelatedPosts from "./related-posts.astro";
 
@@ -28,7 +28,7 @@ const coverImageBottom = coverImage && coverImagePosition === "bottom";
 
 const hasFrontmatter = coverImageTop || title || date;
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 {

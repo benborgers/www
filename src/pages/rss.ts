@@ -31,7 +31,7 @@ export const GET: APIRoute = async ({ site: _site }) => {
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
-      link: `/${post.slug}`,
+      link: `/${post.id}`,
       content: replaceRelativeWithAbsoluteUrls(md.render(post.body)),
     })),
     trailingSlash: false,

@@ -35,7 +35,7 @@ export const getRelatedPosts = async (
 
     const extractor = await pipeline("feature-extraction", "Xenova/gte-small");
 
-    const postsToEmbed = posts.filter((post) => !(post.slug in embeddings));
+    const postsToEmbed = posts.filter((post) => !(post.id in embeddings));
     console.log(`[related-posts] Need to embed ${postsToEmbed.length} posts`);
 
     if (postsToEmbed.length !== 0) {
@@ -57,7 +57,7 @@ export const getRelatedPosts = async (
       );
 
       for (let i = 0; i < postsToEmbed.length; i++) {
-        embeddings[postsToEmbed[i].slug] = calculatedEmbeddings[i];
+        embeddings[postsToEmbed[i].id] = calculatedEmbeddings[i];
       }
 
       fs.writeFileSync(CACHE_FILE_PATH, JSON.stringify(embeddings, null, 2));
@@ -99,5 +99,5 @@ export const getRelatedPosts = async (
   return sortedSimilarities
     .filter((similarity) => similarity.similarity >= COSINE_SIMILARITY_CUTOFF)
     .slice(0, NUMBER_OF_RELATED_POSTS)
-    .map((similarity) => posts.find((post) => post.slug === similarity.slug)!);
+    .map((similarity) => posts.find((post) => post.id === similarity.slug)!);
 };

@@ -4,12 +4,11 @@ import { defineConfig, envField } from "astro/config";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
-import keystatic from "@keystatic/astro";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://ben.page",
-  integrations: [sitemap(), react(), keystatic()],
+  integrations: [sitemap(), react()],
   adapter: vercel(),
   trailingSlash: "never",
 
