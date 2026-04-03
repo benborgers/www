@@ -1,0 +1,44 @@
+---
+interface Props {
+  src: string;
+  width?: number;
+  height?: number;
+  class?: string;
+}
+
+const { src, width, height, class: className } = Astro.props;
+
+const hasReservedBox = Boolean(width && height);
+---
+
+{
+  hasReservedBox ? (
+    <div
+      class:list={[
+        "mx-auto w-full max-w-[calc(12rem*var(--cover-width)/var(--cover-height))] sm:max-w-[calc(13.5rem*var(--cover-width)/var(--cover-height))]",
+        className,
+      ]}
+      style={{
+        aspectRatio: `${width} / ${height}`,
+        "--cover-width": width,
+        "--cover-height": height,
+      }}
+    >
+      <img
+        src={src}
+        alt=""
+        class="h-full w-full object-contain"
+        width={width}
+        height={height}
+      />
+    </div>
+  ) : (
+    <img
+      src={src}
+      alt=""
+      class:list={["mx-auto max-w-full max-h-48 sm:max-h-54", className]}
+      width={width}
+      height={height}
+    />
+  )
+}

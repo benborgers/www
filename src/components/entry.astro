@@ -3,6 +3,7 @@ import { render, type CollectionEntry } from "astro:content";
 import { imageSize } from "image-size";
 import { readFileSync } from "fs";
 import { join } from "path";
+import CoverImage from "./cover-image.astro";
 import Prose from "./prose.astro";
 import RelatedPosts from "./related-posts.astro";
 
@@ -29,12 +30,20 @@ const coverImage = coverImageProp
 const coverImageTop = coverImage && coverImagePosition !== "bottom";
 const coverImageBottom = coverImage && coverImagePosition === "bottom";
 
-let coverImageDimensions: { width?: number; height?: number } = {};
+let coverImageDimensions: {
+  width?: number;
+  height?: number;
+} = {};
 if (coverImage && !coverImage.startsWith("http")) {
   try {
     const filePath = join(process.cwd(), "public", coverImage);
     const dims = imageSize(readFileSync(filePath));
-    coverImageDimensions = { width: dims.width, height: dims.height };
+    if (dims.width && dims.height) {
+      coverImageDimensions = {
+        width: dims.width,
+        height: dims.height,
+      };
+    }
   } catch {}
 }
 
@@ -55,7 +64,11 @@ const { Content } = await render(entry);
   hasFrontmatter && (
     <>
       {coverImageTop && (
-        <img src={coverImage} alt="" class="max-h-48 sm:max-h-54 w-auto h-auto mx-auto" width={coverImageDimensions.width} height={coverImageDimensions.height} />
+        <CoverImage
+          src={coverImage}
+          width={coverImageDimensions.width}
+          height={coverImageDimensions.height}
+        />
       )}
 
       {title && (
@@ -99,7 +112,12 @@ const { Content } = await render(entry);
 
   {
     coverImageBottom && (
-      <img src={coverImage} alt="" class="mt-18 max-h-48 sm:max-h-54 w-auto h-auto mx-auto" width={coverImageDimensions.width} height={coverImageDimensions.height} />
+        <CoverImage
+          src={coverImage}
+          class="mt-18"
+          width={coverImageDimensions.width}
+          height={coverImageDimensions.height}
+        />
     )
   }
 </div>
