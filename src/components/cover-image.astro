@@ -30,6 +30,7 @@ const hasReservedBox = Boolean(width && height);
         class="h-full w-full object-contain"
         width={width}
         height={height}
+        data-cover-image
       />
     </div>
   ) : (
@@ -39,6 +40,7 @@ const hasReservedBox = Boolean(width && height);
       class:list={["mx-auto max-w-full max-h-48 sm:max-h-54", className]}
       width={width}
       height={height}
+      data-cover-image
     />
   )
 }
