@@ -1,7 +1,7 @@
-- Living in Fenway in Boston, and trying to locate the _tech scene_ in Boston
-- Working at [Owner](https://owner.com), and really enjoying talking to and building for restaurant owners
-- Contributing to [Buttondown](https://buttondown.com), more building features than customer support these days
+- Living in Fenway in Boston
+- Working at [Owner](https://owner.com)
+- Contributing to [Buttondown](https://buttondown.com)
 
-_Last updated **December 25, 2025**_
+_Last updated **April 3, 2026**_
 
 _This is a "now page" — [learn more](https://nownownow.com/about)_
