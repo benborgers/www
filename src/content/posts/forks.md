@@ -14,13 +14,15 @@ Finally, I decided to do something about it: I bought 180 forks.
 
 But I had to make sure that my altruism would be commemorated. So I bought metal letter stamps on Amazon, and my roommate and I stamped our initials onto the back of every fork: a "B" for Ben, or an "H" for Henry.
 
-{% table %}
-- 
-- 
----
-- ![](/posts/forks/front.jpg)
-- ![](/posts/forks/back.jpg)
-{% /table %}
+<table><tr><td>
+
+![](/posts/forks/front.jpg)
+
+</td><td>
+
+![](/posts/forks/back.jpg)
+
+</td></tr></table>
 
 Then, I had to quietly enter my forks into circulation.
 
