@@ -4,7 +4,7 @@ date: 2026-04-05
 draft: true
 cover_image: /posts/microservices/cover_image.png
 ---
-Recently, at work, I've seen the beginnings of a proliferation of microservices. **It seems that LLM-assisted coding naturally flows towards microservices, which the main backend uses for specific tasks.** For example, a microservice that handles image and video generation AI models. 
+Recently, at work, I've seen the beginnings of a proliferation of microservices. **It seems that LLM-assisted coding naturally flows towards small microservices, which the big backend uses for specific tasks.** For example, a microservice that handles image and video generation AI models. 
 
 A microservice has a very well-defined surface area. Everything that flows into the service (requests) and out (responses, webhooks) is controlled. That means that you can let an LLM rip large-scale refactors inside of the service, and as long as the contract with the outside world remains the same, the inside does not matter. The microservice might have its own database, caches, and object storage, but the caller does not care. 
 
