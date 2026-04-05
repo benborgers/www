@@ -28,12 +28,17 @@ export const GET: APIRoute = async ({ site: _site }) => {
     title: "Ben Borgers",
     description: "Ben Borgers’ personal website.",
     site,
-    items: posts.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.date,
-      link: `/${post.id}`,
-      content: replaceRelativeWithAbsoluteUrls(md.render(post.body)),
-    })),
+    items: posts.map((post) => {
+      const coverImageHtml = post.data.cover_image
+        ? `<img src="${post.data.cover_image.startsWith("/") ? `${site.origin}${post.data.cover_image}` : post.data.cover_image}" alt="Cover image" />`
+        : "";
+      return {
+        title: post.data.title,
+        pubDate: post.data.date,
+        link: `/${post.id}`,
+        content: coverImageHtml + replaceRelativeWithAbsoluteUrls(md.render(post.body)),
+      };
+    }),
     trailingSlash: false,
   });
 };
