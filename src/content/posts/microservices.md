@@ -6,7 +6,7 @@ cover_image: /posts/microservices/cover_image.png
 ---
 Recently, at work, I've seen the beginnings of a proliferation of microservices. **It seems that LLM-assisted coding naturally flows towards small microservices, which the big backend uses for specific tasks.** For example, a microservice that handles image and video generation AI models. 
 
-A microservice has a very well-defined surface area. Everything that flows into the service (requests) and out (responses, webhooks) is controlled. That means that you can let an LLM rip large-scale refactors inside of the service, and as long as the contract with the outside world remains the same, the inside does not matter. The microservice might have its own database, caches, and object storage, but the caller does not care. 
+A microservice has a very well-defined surface area. Everything that flows into the service (requests) and out (responses, webhooks) is defined explicitly. That means that you can let an LLM rip large-scale refactors inside of the service, and as long as the contract with the outside world remains the same, the inside does not matter. The microservice might have its own database, caches, and object storage, but the caller does not care. It's a bomb shelter (within which you can detonate your LLM-shaped bomb). 
 
 When coding in a monolith, you have to worry about implicit coupling. The order in which you do things, or the name of a cache key, might be implicitly relied-upon by another part of the monolith. It's a lot easier to cross boundaries and couple parts of the application. Of course, *you* might not do such unmaintainable things, but your coworkers (or yourself following a deadline) might not be so pious. 
 
