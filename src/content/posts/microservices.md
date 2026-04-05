@@ -3,7 +3,7 @@ title: "Does coding with LLMs mean more microservices?"
 date: 2026-04-05
 draft: true
 ---
-Recently, at work, I've seen the beginnings of a proliferation of microservices. **It seems that LLM-assisted coding naturally flows towards microservices that power the main backend.** 
+Recently, at work, I've seen the beginnings of a proliferation of microservices. **It seems that LLM-assisted coding naturally flows towards microservices, which the main backend calls out to.** 
 
 A microservice has a very well-defined surface area. Everything that flows into the service (requests) and out (responses, webhooks) is controlled. That means that you can let an LLM rip large-scale refactors inside of the service, and as long as the contract with the outside world remains the same, the inside does not matter. The microservice might have its own database, caches, and object storage, but the caller does not care. 
 
