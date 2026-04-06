@@ -25,9 +25,9 @@ I wanted to put down some notes on how I built it:
 
 - Claude Code is given a bunch of custom context and instructions saying that the only way to reply is to call a `./send` script, which uses `imsg` to text me back
 
-- The agent also owns a `CONTEXT.md` file, where it can note down anyhing it wants to remember abou me
+- The agent also owns a `CONTEXT.md` file, where it can note down anything it wants to remember about me
 
-- There's a `logbook/` folder, where the agent is instructed to use a script to append short memories about what it does for preserving memory between compactions. The script also appends the link to the full JSON transcript, so the agent can go digging through its past if it needs to
+- There's a `logbook/` folder, where the agent is instructed to use a script to append short memories about what it does so that some memory is preserved between compactions. The script also appends the link to the full JSON transcript, so the agent can go digging through everything that's been said if it needs to
 
 - I use `agent-browser` to give Claude a browser, which it can use both for web browsing and for verifying its work while it codes
 
