@@ -1,7 +1,7 @@
 ---
 title: "Does coding with LLMs mean more microservices?"
 date: 2026-04-05
-draft: true
+draft: false
 cover_image: /posts/microservices/cover_image.png
 ---
 Recently, at work, I've seen the beginnings of a proliferation of microservices. **It seems that LLM-assisted coding naturally flows towards small microservices, which the big backend uses for specific tasks.** For example, a microservice that handles image and video generation AI models. 
