@@ -1,7 +1,7 @@
 ---
 title: "Building a DIY OpenClaw"
 date: 2026-04-06
-draft: true
+draft: false
 cover_image: /posts/claude-mac/cover_image.png
 ---
 Two months ago, I bought a Mac Mini and spent the weekend furiously building a small clone of [OpenClaw](https://openclaw.ai/) so I could text with Claude over iMessage.
