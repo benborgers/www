@@ -35,7 +35,7 @@ I wanted to put down some notes on how I built it:
 
 - Credentials are kept in 1Password, in a vault that's shared with Claude's API key
 
-- I built lots of skills to bundle up information around a task:
+- I built lots of skills to bundle up information around performing various tasks:
 
   - `software-engineering` to note down my preferences for coding projects
   - [`gog`](https://github.com/steipete/gogcli) for Google Calendar/Google Drive
