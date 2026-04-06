@@ -5,7 +5,7 @@ draft: true
 ---
 Two months ago, I bought a Mac Mini and spent the weekend furiously building a small clone of [OpenClaw](https://openclaw.ai/) so I could text with Claude over iMessage.
 
-![claude.png](https://raw.githubusercontent.com/benborgers/www/main/public/posts/claude-mac/claude.png)I've kept refining it and use it every day, for:
+![claude.png](https://raw.githubusercontent.com/benborgers/www/main/public/posts/claude-mac/claude.png)I've kept updating it since, and I use it every day, for:
 
 - Reminders
 - Coding in the background
@@ -28,7 +28,7 @@ I wanted to put down some notes on how I built it:
 
 - There's a `logbook/` folder, where the agent is instructed to use a script to append short memories about what it does for preserving memory between compactions. The script also appends the link to the full JSON transcript, so the agent can go digging through its past if it needs to
 
-- I use [`agent-browser`](https://github.com/vercel-labs/agent-browser) to give Claude a browser, which it can use both for web browsing and for verifying its work while it codes
+- I use `agent-browser` to give Claude a browser, which it can use both for web browsing and for verifying its work while it codes
 
   - I set a persistent `profile`, so login cookies are shared between sessions
 
@@ -37,7 +37,7 @@ I wanted to put down some notes on how I built it:
 - I built lots of skills to bundle up information around a task:
 
   - `software-engineering` to note down my preferences for coding projects
-  - [`gog`](https://github.com/steipete/gogcli) for Google Calendar/Google Drive
+  - `gog` for Google Calendar/Google Drive
   - `scheduler` for recurring tasks and reminders, via a `launchd` task that runs every minute and then delegates to a script inside the skill that determines whether it should push any instructions into Claude Code's tmux session
   - `war-room` for managing my tasks on [War Room](https://war.elk.sh)
   - `slack-saved` for turning Slack bookmarks (which I would never check back on otherwise) into to-do list tasks
