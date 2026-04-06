@@ -18,7 +18,7 @@ The model feels a bit like a hyperactive child. It goes extremely quickly, bashe
 
 The Codex models in general also don't feel as good at UI work to me — the UI they produce often feels amateurish and unconsidered. Opus seems to have a much better sense of design, and better adherence to Figma screenshots. Spark is also not a vision model, which means I can't ask it to iterate against UI using [agent-browser](https://github.com/vercel-labs/agent-browser).
 
-Maybe back when Cursor released [Composer](https://cursor.com/blog/composer) (which they recently [improved](https://cursor.com/blog/composer)), I would have said that there's a place for fast-but-slightly-dumber models. But I don't think I believe that anymore.
+Maybe back when Cursor released [Composer](https://cursor.com/blog/composer) (which they recently [improved](https://cursor.com/blog/composer-1-5)), I would have said that there's a place for fast-but-slightly-dumber models. But I don't think I believe that anymore. 
 
 The frontier models (Opus 4.6 and GPT-5.3-Codex) are *so* good that they side-step significant frustration. It doesn't feel like a worthwhile tradeoff to go down a level in intelligence when you could just wait a bit longer for a response. Plus, a smarter model that can keep up with you probably saves significant time in back-and-forth overall.
 
