@@ -2,6 +2,7 @@
 title: "Building a DIY OpenClaw"
 date: 2026-04-06
 draft: true
+cover_image: /posts/claude-mac/cover_image.png
 ---
 Two months ago, I bought a Mac Mini and spent the weekend furiously building a small clone of [OpenClaw](https://openclaw.ai/) so I could text with Claude over iMessage.
 
@@ -22,7 +23,7 @@ I wanted to put down some notes on how I built it:
 
 - I built a script that runs Claude Code in tmux, and then forwards new iMessages (detected via `imsg`) into the tmux session
 
-- Claude Code has a bunch of custom context and instructions saying that the only way to reply is to call a `./send` script, which uses `imsg` to text me back
+- Claude Code is given a bunch of custom context and instructions saying that the only way to reply is to call a `./send` script, which uses `imsg` to text me back
 
 - The agent also owns a `CONTEXT.md` file, where it can note down anyhing it wants to remember abou me
 
