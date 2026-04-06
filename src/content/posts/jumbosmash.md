@@ -2,9 +2,9 @@
 title: "We built JumboSmash, a dating app for Tufts seniors"
 draft: true
 ---
-On May 8th, some friends and I launched *JumboSmash*, a dating (*"dating"*) app for Tufts seniors during the last week before graduation.
+On May 8, 2025, some friends and I launched *JumboSmash*, a dating (*"dating"*) app for Tufts seniors during the last week before graduation.
 
-JumboSmash is a 10-year tradition, and to contribute to future generations, I thought I'd write down my thoughts before I *totally* forget them.
+JumboSmash is a 10-year tradition, and to contribute to future generations, I thought I'd write down my late thoughts before I *totally* forget them.
 
 - [2015, 2016](https://github.com/jumbosmash/tradition)
 - [2017](https://blog.cwrichardkim.com/we-spent-a-year-building-a-dating-app-that-only-lasts-one-week-e6e1a10cedb3)
@@ -18,4 +18,6 @@ JumboSmash is a 10-year tradition, and to contribute to future generations, I th
 
 We launched in the evening of May 8th, and shut it down on the morning of graduation, May 18th.
 
-![app.png](https://raw.githubusercontent.com/benborgers/www/main/public/posts/jumbosmash/app.png)
+![app.png](https://raw.githubusercontent.com/benborgers/www/main/public/posts/jumbosmash/app.png)Initially, we built an Expo app. But Apple refused to allow it onto the App Store, citing guideline [4.3 Spam](https://developer.apple.com/app-store/review/guidelines/#4.3). 
+
+Because of that, I had Claude Code (this was pretty early in its existence!) convert the app to a Next.js PWA web app that used push notifications. This worked completely fine and didn't require Apple's blessing. 
