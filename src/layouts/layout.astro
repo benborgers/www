@@ -1,6 +1,5 @@
 ---
 import "../css/index.css";
-import "../css/right-serif-casual.css";
 
 import { ClientRouter } from "astro:transitions";
 
@@ -41,7 +40,7 @@ const { title, ogImage } = Astro.props;
       )
     }
 
-    <link rel="stylesheet" href="https://use.typekit.net/clg6cgl.css" />
+    <link rel="stylesheet" href="https://md-ui.ben.page" />
 
     <link
       rel="alternate"
@@ -69,11 +68,11 @@ const { title, ogImage } = Astro.props;
             <div class="max-lg:max-w-[540px] max-lg:mx-auto max-lg:grid max-lg:grid-cols-3">
               <a
                 href="/"
-                class="block max-w-max text-gray-900 font-semibold tracking-tight bg-brand-blue-light px-1.5 -ml-1.5 max-lg:col-span-3"
+                class="block max-w-max text-gray-900 font-semibold bg-brand-blue-light px-1.5 -ml-1.5 max-lg:col-span-3"
               >
                 Ben Borgers
               </a>
-              <div class="mt-2 text-gray-900 font-medium tracking-tight">
+              <div class="mt-3 text-gray-900 font-medium">
                 <a
                   href="/"
                   class:list={[
@@ -106,7 +105,7 @@ const { title, ogImage } = Astro.props;
                 </a>
               </div>
 
-              <div class="mt-3 text-gray-400">
+              <div class="mt-3 text-gray-400 font-medium">
                 <a
                   href="https://twitter.com/benborgers"
                   target="_blank"
@@ -130,7 +129,10 @@ const { title, ogImage } = Astro.props;
                 </a>
               </div>
 
-              <div class="mt-3 text-gray-400">
+              <div class="mt-3 text-gray-400 font-medium">
+                <a href="/rss" target="_blank" class="block max-w-max">
+                  RSS
+                </a>
                 <a
                   href="https://buttondown.com/benborgers"
                   target="_blank"
@@ -144,10 +146,6 @@ const { title, ogImage } = Astro.props;
                   class="block max-w-max"
                 >
                   Photos
-                </a>
-                <a href="/rss" target="_blank" class="block max-w-max">
-                  {" "}
-                  RSS{" "}
                 </a>
               </div>
             </div>

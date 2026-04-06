@@ -1,13 +1,14 @@
 @utility prose {
-  @apply tracking-tight text-lg text-gray-800 leading-[1.6];
+  @apply text-lg text-gray-800 leading-[1.6];
+  font-feature-settings: "ss01";
 
   strong {
-    @apply font-medium;
+    @apply font-bold;
   }
 
   h2,
   h3 {
-    @apply font-headings font-medium text-gray-950 !mt-12 !mb-6;
+    @apply font-semibold text-gray-950 !mt-12 !mb-6;
 
     + * {
       @apply !mt-0;
