@@ -3,7 +3,7 @@ title: "Building a DIY OpenClaw"
 date: 2026-04-06
 draft: true
 ---
-Two months ago, I bought a Mac Mini, and I spent the weekend furiously building a small clone of [OpenClaw](https://openclaw.ai/) so I could text with Claude over iMessage.
+Two months ago, I bought a Mac Mini and spent the weekend furiously building a small clone of [OpenClaw](https://openclaw.ai/) so I could text with Claude over iMessage.
 
 ![claude.png](https://raw.githubusercontent.com/benborgers/www/main/public/posts/claude-mac/claude.png)I've kept refining it and use it every day, for:
 
