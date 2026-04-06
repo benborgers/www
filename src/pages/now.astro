@@ -15,9 +15,11 @@ const entry = await getEntry("pages", "now")!;
 </Layout>
 
 <script>
-  const img = document.querySelector<HTMLImageElement>('img[data-cover-image]');
-  if (img) {
-    const day = new Date().getDate();
-    img.src = `/pages/now/${day}.png`;
-  }
+  document.addEventListener('astro:page-load', () => {
+    const img = document.querySelector<HTMLImageElement>('img[data-cover-image]');
+    if (img) {
+      const day = new Date().getDate();
+      img.src = `/pages/now/${day}.png`;
+    }
+  });
 </script>
