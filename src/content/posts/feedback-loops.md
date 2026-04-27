@@ -1,6 +1,6 @@
 ---
 title: "Give your agent feedback loops"
-date: 2026-04-28
+date: 2026-04-27
 draft: false
 cover_image: /posts/feedback-loops/cover_image.png
 ---
