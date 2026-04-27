@@ -24,4 +24,4 @@ But also, what else should you expect? If a personal trainer told you to strictl
 
 And for exams, it's *ludicrous* that an increasing number of exams seem to be held online. It's a Covid-ism that persisted, which now combines with the era of magical free machines that answer any question in seconds. 
 
-Cheating is *wrong* — I think every student knows that. But when everyone's doing it, the failures are environmental, not individual. 
+Cheating is wrong — I think every student knows that. But when everyone's doing it, the failures are environmental, not individual. 
