@@ -1,7 +1,8 @@
 ---
 title: "Give your agent feedback loops"
-date: 2026-04-27
-draft: true
+date: 2026-04-28
+draft: false
+cover_image: /posts/feedback-loops/cover_image.png
 ---
 Right now, the most incredible thing you can do with coding agents (Claude Code, Codex, Amp, etc) is to give them a feedback loop.
 
