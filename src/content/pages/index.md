@@ -1,15 +1,15 @@
-Hi! I'm **Ben Borgers**. I’m a software engineer living in Boston. I work at [Owner](https://owner.com), and also contribute to [Buttondown](https://buttondown.com).
+Hi! I'm **Ben Borgers**. I live in Boston, and I work at [Owner.com](https://owner.com) as a software engineer and product manager.
 
-I'd love to hear from you — [benborgers@hey.com](mailto:benborgers@hey.com).
+I'd love to hear from you and grab coffee — [benborgers@hey.com](mailto:benborgers@hey.com).
 
 <div class="lg:mt-[200px]"></div>
 
 ## Work Experience
 
-- [Owner](https://owner.com) (2025 – present): Software engineer.
-- [Buttondown](https://buttondown.com) (2021 – present): Contributions to the product and supporting users.
-- [Notion](https://notion.so/product) (summer 2024): Built and shipped a new version of the callout block to the editor and public API.
-- [Locket](https://locket.camera) (2023 – 2024): Shipped usernames, chat, and other features to millions of active users on Android.
+- [Owner](https://owner.com) (2025 – present)
+- [Buttondown](https://buttondown.com) (2021 – present)
+- [Notion](https://notion.so/product) (summer 2024)
+- [Locket](https://locket.camera) (2023 – 2024)
 - [Luma](https://lu.ma) and [Glow](https://glow.app) (summer 2022)
 - [IBM](https://www.ibm.com/guardium) (summer 2019 + 2020)
 

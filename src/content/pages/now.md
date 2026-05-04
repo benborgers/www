@@ -1,7 +1,6 @@
 - Living in Fenway in Boston
-- Working at [Owner](https://owner.com)
-- Contributing to [Buttondown](https://buttondown.com)
+- Working at [Owner](https://owner.com) as a product manger and software engineer for our restaurant websites
 
-_Last updated **April 3, 2026**_
+_Last updated **May 4, 2026**_
 
 _This is a "now page" — [learn more](https://nownownow.com/about)_
