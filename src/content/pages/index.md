@@ -1,4 +1,4 @@
-Hi! I'm **Ben Borgers**. I live in Boston, and I work at [Owner.com](https://owner.com) as a software engineer and product manager.
+Hi! I'm Ben Borgers. I live in Boston, and I work at [Owner.com](https://owner.com) as a software engineer and product manager.
 
 I'd love to hear from you and grab coffee — [benborgers@hey.com](mailto:benborgers@hey.com).
 
