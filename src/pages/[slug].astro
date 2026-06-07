@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import Entry from "../components/entry.astro";
 import RelatedPosts from "../components/related-posts.astro";
 import Layout from "../layouts/layout.astro";
+import PostLayout from "../layouts/post-layout.astro";
 import { getPosts } from "../lib/posts";
 
 export const getStaticPaths = (async () => {
@@ -20,12 +21,14 @@ const { entry } = Astro.props;
 ---
 
 <Layout title={entry.data.title} ogImage={entry.data.cover_image}>
-  <Entry entry={entry} />
+  <PostLayout>
+    <Entry entry={entry} />
 
-  <RelatedPosts
-    slot="sidebar"
-    entry={entry}
-    class="max-lg:hidden h-screen sticky top-0 flex justify-end items-end pb-[10vh] pr-4"
-    constrainWidth={200}
-  />
+    <RelatedPosts
+      slot="sidebar"
+      entry={entry}
+      class="max-lg:hidden h-screen sticky top-0 flex justify-end items-end pb-[10vh] pr-4"
+      constrainWidth={200}
+    />
+  </PostLayout>
 </Layout>

@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import star from "../images/star.png";
 import Layout from "../layouts/layout.astro";
+import PostLayout from "../layouts/post-layout.astro";
 import { getPosts } from "../lib/posts";
 
 const posts = await getPosts({ includeUnlisted: false });
@@ -18,9 +19,10 @@ const postsByMonth = Object.groupBy(posts, (post) => {
 ---
 
 <Layout title="Ben Borgers’ Blog" ogImage="/pages/index-cover-image.png">
-  <div>
-    {
-      Object.entries(postsByMonth).map(([heading, posts]) => (
+  <PostLayout>
+    <div>
+      {
+        Object.entries(postsByMonth).map(([heading, posts]) => (
         <>
           <p class="mt-6 first-of-type:mt-0 text-gray-400 font-medium">
             {heading}
@@ -64,7 +66,8 @@ const postsByMonth = Object.groupBy(posts, (post) => {
             </p>
           ))}
         </>
-      ))
-    }
-  </div>
+        ))
+      }
+    </div>
+  </PostLayout>
 </Layout>

@@ -1,11 +1,5 @@
 ---
-import { getEntry } from "astro:content";
-import Entry from "../components/entry.astro";
 import Layout from "../layouts/layout.astro";
-
-const entry = await getEntry("pages", "index")!;
 ---
 
-<Layout title="Ben Borgers" ogImage="/pages/index-cover-image.png">
-  <Entry entry={entry} coverImage="/pages/index-cover-image.png" />
-</Layout>
+<Layout title="Ben Borgers" />

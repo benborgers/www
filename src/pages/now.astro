@@ -2,16 +2,19 @@
 import { getEntry } from "astro:content";
 import Entry from "../components/entry.astro";
 import Layout from "../layouts/layout.astro";
+import PostLayout from "../layouts/post-layout.astro";
 
 const entry = await getEntry("pages", "now")!;
 ---
 
 <Layout title="Now" ogImage="/pages/now/blank.png">
-  <Entry
-    entry={entry}
-    coverImage="/pages/now/fully-blank.png"
-    coverImagePosition="bottom"
-  />
+  <PostLayout>
+    <Entry
+      entry={entry}
+      coverImage="/pages/now/fully-blank.png"
+      coverImagePosition="bottom"
+    />
+  </PostLayout>
 </Layout>
 
 <script>
