@@ -16,11 +16,11 @@
   }
 
   h2 {
-    @apply text-xl font-bold leading-[1.2];
+    @apply text-xl font-semibold leading-[1.2];
   }
 
   h3 {
-    @apply text-lg font-semibold leading-[1.2];
+    @apply text-lg font-medium leading-[1.2];
   }
 
   > p {
