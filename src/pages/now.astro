@@ -6,21 +6,10 @@ import Layout from "../layouts/layout.astro";
 const entry = await getEntry("pages", "now")!;
 ---
 
-<Layout title="Now" ogImage="/pages/now/blank.png">
+<Layout title="Now" ogImage={entry.data.cover_image}>
   <Entry
     entry={entry}
-    coverImage="/pages/now/fully-blank.png"
+    coverImage={entry.data.cover_image}
     coverImagePosition="bottom"
   />
 </Layout>
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    if (window.location.pathname !== '/now') return;
-    const img = document.querySelector<HTMLImageElement>('img[data-cover-image]');
-    if (img) {
-      const day = new Date().getDate();
-      img.src = `/pages/now/${day}.png`;
-    }
-  });
-</script>

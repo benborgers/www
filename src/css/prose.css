@@ -1,5 +1,5 @@
 @utility prose {
-  @apply text-lg text-gray-800 leading-[1.6];
+  @apply text-base text-gray-800 leading-[1.6];
   font-feature-settings: "ss01";
 
   strong {
@@ -8,7 +8,7 @@
 
   h2,
   h3 {
-    @apply font-semibold text-gray-950 !mt-12 !mb-6;
+    @apply text-gray-950 !mt-12 !mb-4;
 
     + * {
       @apply !mt-0;
@@ -16,11 +16,11 @@
   }
 
   h2 {
-    @apply text-2xl leading-[1.2];
+    @apply text-xl font-bold leading-[1.2];
   }
 
   h3 {
-    @apply text-xl leading-[1.2];
+    @apply text-lg font-semibold leading-[1.2];
   }
 
   > p {
@@ -95,15 +95,15 @@
   }
 
   figcaption {
-    @apply mt-2 italic font-sans text-center text-base text-gray-400;
+    @apply mt-2 italic font-sans text-center text-sm text-gray-400;
   }
 
   pre {
-    @apply border border-gray-200 !bg-gray-50 px-3 py-2 text-base leading-[1.5];
+    @apply border border-gray-200 !bg-gray-50 px-3 py-2 text-sm leading-[1.5];
   }
 
   code:not(pre code) {
-    @apply text-base text-brand-red bg-brand-red-light px-1 py-0.5;
+    @apply text-sm text-brand-red bg-brand-red-light px-1 py-0.5;
   }
 
   a:has(code) {

@@ -9,3 +9,34 @@ const entry = await getEntry("pages", "index")!;
 <Layout title="Ben Borgers" ogImage="/pages/index-cover-image.png">
   <Entry entry={entry} coverImage="/pages/index-cover-image.png" />
 </Layout>
+
+<script>
+  const LOCAL_STORAGE_KEY = "www:magic_interest";
+
+  document.addEventListener("astro:page-load", async () => {
+    if (window.location.pathname !== "/") return;
+    if (!document.querySelector("[data-magic-interest]")) return;
+
+    if (localStorage.getItem(LOCAL_STORAGE_KEY) === null) {
+      const res = await fetch("/api/magic-interest");
+
+      if (!res.ok) {
+        return;
+      }
+
+      localStorage.setItem(LOCAL_STORAGE_KEY, await res.text());
+    }
+
+    const placeholder = document.querySelector("[data-magic-interest]");
+    if (!placeholder) return;
+
+    placeholder.outerHTML = `
+      <h2>Interests</h2>
+      <ul>
+        <li>${localStorage.getItem(LOCAL_STORAGE_KEY)}</li>
+      </ul>
+      <!-- https://github.com/benborgers/www/blob/main/src/pages/api/magic-interest.ts -->
+      <!-- :) -->
+    `;
+  });
+</script>
