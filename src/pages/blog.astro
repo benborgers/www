@@ -4,17 +4,25 @@ import star from "../images/star.png";
 import Layout from "../layouts/layout.astro";
 import { getPosts } from "../lib/posts";
 
-const posts = await getPosts({ includeUnlisted: false });
-
-const postsByMonth = Object.groupBy(posts, (post) => {
-  const date = post.data.date;
-  if (!date) throw new Error("Post has no date");
-  return date.toLocaleString("en-US", {
-    timeZone: "UTC",
-    month: "long",
-    year: "numeric",
-  });
+const posts = await getPosts({
+  includeUnlisted: false,
+  includeDrafts: import.meta.env.DEV,
 });
+
+const postsByMonth = Object.groupBy(
+  // Group drafts together at the top, regardless of date.
+  posts.toSorted((a, b) => Number(b.data.draft) - Number(a.data.draft)),
+  (post) => {
+    if (post.data.draft) return "Drafts";
+    const date = post.data.date;
+    if (!date) throw new Error("Post has no date");
+    return date.toLocaleString("en-US", {
+      timeZone: "UTC",
+      month: "long",
+      year: "numeric",
+    });
+  }
+);
 ---
 
 <Layout title="Ben Borgers’ Blog" ogImage="/pages/index-cover-image.png">
