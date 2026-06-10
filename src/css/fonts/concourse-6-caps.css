@@ -1,0 +1,8 @@
+@font-face {
+font-family: concourse-6-caps;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-6-caps/concourse-6-caps-regular.woff2') format('woff2');
+}

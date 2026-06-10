@@ -1,0 +1,71 @@
+@font-face {
+font-family: triplicate-ot-a;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-ot/triplicate-ot-a-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: triplicate-ot-a;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-ot/triplicate-ot-a-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: triplicate-ot-a;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-ot/triplicate-ot-a-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: triplicate-ot-a;
+font-style: italic;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-ot/triplicate-ot-a-bold-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: triplicate-ot-b;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-ot/triplicate-ot-b-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: triplicate-ot-b;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-ot/triplicate-ot-b-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: triplicate-ot-b;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-ot/triplicate-ot-b-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: triplicate-ot-b;
+font-style: italic;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-ot/triplicate-ot-b-bold-italic.woff2') format('woff2');
+}

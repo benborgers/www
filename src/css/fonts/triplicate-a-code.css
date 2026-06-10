@@ -1,0 +1,35 @@
+@font-face {
+font-family: triplicate-a-code;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-a-code/triplicate-a-code-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: triplicate-a-code;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-a-code/triplicate-a-code-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: triplicate-a-code;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-a-code/triplicate-a-code-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: triplicate-a-code;
+font-style: italic;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-a-code/triplicate-a-code-bold-italic.woff2') format('woff2');
+}

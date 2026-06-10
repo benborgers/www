@@ -1,0 +1,161 @@
+@font-face {
+font-family: advocate-ot-14-cond-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-14-cond-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-15-cond-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-15-cond-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-16-cond-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-16-cond-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-34-narr-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-34-narr-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-35-narr-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-35-narr-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-36-narr-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-36-narr-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-54-wide-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-54-wide-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-55-wide-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-55-wide-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-56-wide-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-56-wide-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-slab-14-cond-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-slab-14-cond-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-slab-15-cond-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-slab-15-cond-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-slab-16-cond-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-slab-16-cond-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-slab-34-narr-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-slab-34-narr-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-slab-35-narr-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-slab-35-narr-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-slab-36-narr-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-slab-36-narr-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-slab-54-wide-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-slab-54-wide-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-slab-55-wide-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-slab-55-wide-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-ot-slab-56-wide-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-ot/advocate-ot-slab-56-wide-bold.woff2') format('woff2');
+}

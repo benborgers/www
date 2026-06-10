@@ -1,0 +1,17 @@
+@font-face {
+font-family: concourse-7;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-7/concourse-7-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-7;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-7/concourse-7-italic.woff2') format('woff2');
+}

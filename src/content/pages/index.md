@@ -1,60 +1,7 @@
-Hi! I'm Ben Borgers. I live in Boston, and I work at [Owner.com](https://owner.com) as a software engineer and product manager.
+I live in Boston and work at [Owner.com](https://owner.com) as a "Product Builder" -- a fancy name for being part software engineer, part product manager. Before that, I was in college, and worked on product and engineering at [Buttondown](https://buttondown.com), [Notion](https://notion.so/product), [Locket](https://locket.camera), [Luma](https://lu.ma), [Glow](https://glow.app), and [IBM](https://www.ibm.com/products/guardium).
 
-I'd love to hear from you and grab coffee — [benborgers@hey.com](mailto:benborgers@hey.com).
+I like making small, specific internet things. Some of them are serious tools, like [opensheet](https://opensheet.elk.sh), which turns public Google Sheets into an API and serves hundreds of millions of requests each month. Some are school-shaped, like [Blocks](/blocks), [Tufts Meal Plan Wrapped](/wrapped), [Kiwi](https://ask.kiwi), and JumboSmash. Some are just internet-shaped, like [TikTok Graveyard](https://tiktokgraveyard.com), [IG Valentine](https://igvalentine.com), and [Locket Yearbook](https://locketyearbook.com/kXYrENR6d1FPjUYYTDRI).
 
-<div class="lg:mt-[200px]"></div>
+I studied computer science and engineering psychology at [Tufts University](https://tufts.edu), with a minor in German. I still have a soft spot for projects that feel like tiny institutions: [Bagel Institute](https://bagel.institute), [War Room](https://war.elk.sh), [emojicdn](https://emojicdn.elk.sh), and [diffeqgrapher.com](https://diffeqgrapher.com) all live somewhere in that neighborhood.
 
-## Work Experience
-
-- [Owner](https://owner.com) (2025 – present)
-- [Buttondown](https://buttondown.com) (2021 – present)
-- [Notion](https://notion.so/product) (summer 2024)
-- [Locket](https://locket.camera) (2023 – 2024)
-- [Luma](https://lu.ma) and [Glow](https://glow.app) (summer 2022)
-- [IBM](https://www.ibm.com/guardium) (summer 2019 + 2020)
-
-## Education
-
-- [Tufts University](https://tufts.edu) (2021 – 2025): B.S. in Computer Science and Engineering Psychology, minor in German.
-
-## Projects
-
-- JumboSmash: Dating app for Tufts seniors.
-- [TikTok Graveyard](https://tiktokgraveyard.com), [IG Valentine](https://igvalentine.com), and [Locket Yearbook](https://locketyearbook.com/kXYrENR6d1FPjUYYTDRI): Viral marketing for [Locket](https://locket.camera).
-- [GovDiff](https://govdiff.com): Government websites before and after Trump.
-- [Speakology](https://speakology.ai): AI speaking partner for language learning.
-- [Govcentives](https://govcentives.com): Whitelabeled search engines for energy providers.
-- [Tufts Meal Plan Wrapped](/wrapped): Spotify Wrapped for Tufts’ meal plans, used by 1,300+ students.
-- [diffeqgrapher.com](https://diffeqgrapher.com): Friendlier differential equations grapher for my dad’s classes.
-- [Kiwi](https://ask.kiwi): Live Q&A platform for university classes; built for University of Michigan research study and used by 2,000+ students.
-- [War Room](https://war.elk.sh): Social to-do list app.
-- [Bagel Institute](https://bagel.institute): Teaching tools for university classes, built for my dad.
-- [opensheet](https://opensheet.elk.sh): Open-source Google Sheets API that receives over 200 million requests/month.
-- [emojicdn](https://emojicdn.elk.sh): CDN for PNG images of emojis that gets millions of requests/month.
-- [Blocks](/blocks): Schedule app for my high school that was used by 2,100 students and teachers (87% of the school).
-
-<script>
-  const currentScript = document.currentScript;
-  const LOCAL_STORAGE_KEY = "www:magic_interest";
-
-  (async () => {
-    if (localStorage.getItem(LOCAL_STORAGE_KEY) === null) {
-      const res = await fetch('/api/magic-interest')
-
-      if (!res.ok) {
-        return;
-      }
-
-      localStorage.setItem(LOCAL_STORAGE_KEY, await res.text())
-    }
-
-    currentScript.outerHTML = `
-        <h2>Interests</h2>
-        <ul>
-          <li>${localStorage.getItem(LOCAL_STORAGE_KEY)}</li>
-        </ul>
-        <!-- https://github.com/benborgers/www/blob/main/src/pages/api/magic-interest.ts -->
-        <!-- :) -->
-      `;
-  })()
-</script>
+I would love to hear from you and grab coffee: [benborgers@hey.com](mailto:benborgers@hey.com).

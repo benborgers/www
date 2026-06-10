@@ -1,0 +1,35 @@
+@font-face {
+font-family: valkyrie-a;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/valkyrie-a/valkyrie-a-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: valkyrie-a;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/valkyrie-a/valkyrie-a-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: valkyrie-a;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/valkyrie-a/valkyrie-a-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: valkyrie-a;
+font-style: italic;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/valkyrie-a/valkyrie-a-bold-italic.woff2') format('woff2');
+}

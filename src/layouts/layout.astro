@@ -2,14 +2,14 @@
 import "../css/index.css";
 
 import { ClientRouter } from "astro:transitions";
-import { Agentation } from "agentation";
 
 interface Props {
   title: string;
   ogImage?: string;
+  background?: string;
 }
 
-const { title, ogImage } = Astro.props;
+const { title, ogImage, background = "white" } = Astro.props;
 ---
 
 <!doctype html>
@@ -60,10 +60,9 @@ const { title, ogImage } = Astro.props;
     <ClientRouter />
   </head>
   <body
-    class="antialiased bg-white text-pretty selection:bg-brand-yellow-light"
+    class="text-pretty"
+    style={`background-color: ${background};`}
   >
     <slot />
-
-    {import.meta.env.DEV && <Agentation client:only="react" />}
   </body>
 </html>

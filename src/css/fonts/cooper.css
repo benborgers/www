@@ -1,0 +1,107 @@
+@font-face {
+font-family: cooper;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-Regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: cooper;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-Italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: cooper;
+font-style: normal;
+font-weight: 500;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-Medium.woff2') format('woff2');
+}
+
+@font-face {
+font-family: cooper;
+font-style: italic;
+font-weight: 500;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-MediumItalic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: cooper;
+font-style: normal;
+font-weight: 600;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: cooper;
+font-style: italic;
+font-weight: 600;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-SemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: cooper;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-Bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: cooper;
+font-style: italic;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: cooper;
+font-style: normal;
+font-weight: 800;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: cooper;
+font-style: italic;
+font-weight: 800;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-ExtraBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: cooper;
+font-style: normal;
+font-weight: 900;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-Black.woff2') format('woff2');
+}
+
+@font-face {
+font-family: cooper;
+font-style: italic;
+font-weight: 900;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/cooper/Cooper-BlackItalic.woff2') format('woff2');
+}

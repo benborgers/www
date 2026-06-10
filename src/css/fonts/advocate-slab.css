@@ -1,0 +1,80 @@
+@font-face {
+font-family: advocate-slab-14-cond-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-slab/advocate-slab-14-cond-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-slab-15-cond-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-slab/advocate-slab-15-cond-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-slab-16-cond-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-slab/advocate-slab-16-cond-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-slab-34-narr-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-slab/advocate-slab-34-narr-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-slab-35-narr-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-slab/advocate-slab-35-narr-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-slab-36-narr-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-slab/advocate-slab-36-narr-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-slab-54-wide-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-slab/advocate-slab-54-wide-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-slab-55-wide-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-slab/advocate-slab-55-wide-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-slab-56-wide-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate-slab/advocate-slab-56-wide-bold.woff2') format('woff2');
+}

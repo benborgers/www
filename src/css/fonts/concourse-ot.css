@@ -1,0 +1,161 @@
+@font-face {
+font-family: concourse-ot-2-thin;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-2-thin.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-2-thin;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-2-thin-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-2-thin-italic;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-2-thin-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-3-book;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-3-book.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-3-book;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-3-book-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-3-book-italic;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-3-book-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-4-medium;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-4-medium.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-4-medium;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-4-medium-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-4-medium-italic;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-4-medium-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-6-semibold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-6-semibold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-6-semibold;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-6-semibold-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-6-semibold-italic;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-6-semibold-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-7-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-7-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-7-bold;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-7-bold-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-7-bold-italic;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-7-bold-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-8-black;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-8-black.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-8-black;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-8-black-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-ot-8-black-italic;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-ot/concourse-ot-8-black-italic.woff2') format('woff2');
+}

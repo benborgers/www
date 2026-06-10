@@ -1,0 +1,17 @@
+@font-face {
+font-family: triplicate-b-poly-caps;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-b-poly-caps/triplicate-b-poly-caps-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: triplicate-b-poly-caps;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/triplicate-b-poly-caps/triplicate-b-poly-caps-bold.woff2') format('woff2');
+}

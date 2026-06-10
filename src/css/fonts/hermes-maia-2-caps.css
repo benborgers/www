@@ -1,0 +1,17 @@
+@font-face {
+font-family: hermes-maia-2-caps;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/hermes-maia-2-caps/hermes-maia-2-caps-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: hermes-maia-2-caps;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/hermes-maia-2-caps/hermes-maia-2-caps-bold.woff2') format('woff2');
+}

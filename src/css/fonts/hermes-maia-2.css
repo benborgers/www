@@ -1,0 +1,35 @@
+@font-face {
+font-family: hermes-maia-2;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/hermes-maia-2/hermes-maia-2-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: hermes-maia-2;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/hermes-maia-2/hermes-maia-2-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: hermes-maia-2;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/hermes-maia-2/hermes-maia-2-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: hermes-maia-2;
+font-style: italic;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/hermes-maia-2/hermes-maia-2-bold-italic.woff2') format('woff2');
+}

@@ -1,5 +1,175 @@
 ---
 import Layout from "../layouts/layout.astro";
+
+import "../css/fonts/cooper.css";
 ---
 
-<Layout title="Ben Borgers" />
+<Layout title="Ben Borgers" background="#fff">
+  <main class="home">
+    <div class="home-grid">
+      <aside class="portrait">
+        <img
+          src="/images/ben-sketch.png"
+          alt="A hand-drawn sketch of Ben Borgers"
+        />
+      </aside>
+
+      <div>
+        <header class="masthead">
+          <div>
+            <h1
+              class="nameplate"
+              style="font-family: 'cooper';"
+            >
+              Ben Borgers
+            </h1>
+          </div>
+        </header>
+
+        <section class="home-copy">
+          <p>
+            I live in Boston and work at
+            <a href="https://owner.com">Owner.com</a> as a
+            <a href="https://www.owner.com/careers/role?=1912d8d8-b37f-4330-91ea-bb428d091322"
+              >&ldquo;Product Builder&rdquo;</a
+            >
+            &mdash; a fancy name for being part software engineer, part product
+            manager. Before that I was in
+            college, and worked on product and engineering at
+            <a href="https://buttondown.com">Buttondown</a>,
+            <a href="https://notion.so/product">Notion</a>,
+            <a href="https://locket.camera">Locket</a>,
+            <a href="https://lu.ma">Luma</a>,
+            <a href="https://glow.app">Glow</a>, and
+            <a href="https://www.ibm.com/products/guardium">IBM</a>.
+          </p>
+
+          <p>
+            I like making small, specific internet things. Some of them are
+            serious tools, like
+            <a href="https://opensheet.elk.sh">opensheet</a>, which turns
+            public Google Sheets into an API and serves hundreds of millions of
+            requests each month. Some are school-shaped, like
+            <a href="/blocks">Blocks</a>,
+            <a href="/wrapped">Tufts Meal Plan Wrapped</a>,
+            <a href="https://ask.kiwi">Kiwi</a>, and JumboSmash. Some are just
+            internet-shaped, like
+            <a href="https://tiktokgraveyard.com">TikTok Graveyard</a>,
+            <a href="https://igvalentine.com">IG Valentine</a>, and
+            <a href="https://locketyearbook.com/kXYrENR6d1FPjUYYTDRI"
+              >Locket Yearbook</a
+            >.
+          </p>
+
+          <p>
+            I studied computer science and engineering psychology at
+            <a href="https://tufts.edu">Tufts University</a>, with a minor in
+            German. I still have a soft spot for projects that feel like tiny
+            institutions: <a href="https://bagel.institute">Bagel Institute</a>,
+            <a href="https://war.elk.sh">War Room</a>,
+            <a href="https://emojicdn.elk.sh">emojicdn</a>, and
+            <a href="https://diffeqgrapher.com">diffeqgrapher.com</a> all live
+            somewhere in that neighborhood.
+          </p>
+
+          <p>
+            I would love to hear from you and grab coffee:
+            <a href="mailto:benborgers@hey.com">benborgers@hey.com</a>.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .home {
+    min-height: 100vh;
+    padding: 3.5rem 1.5rem;
+    color: black;
+  }
+
+  .home-grid {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .portrait {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+  }
+
+  .portrait img {
+    height: 6rem;
+    width: auto;
+    max-width: none;
+    filter: grayscale(1);
+  }
+
+  .masthead {
+    border-top: 1px solid black;
+    padding-top: 0.75rem;
+  }
+
+  .nameplate {
+    margin: 0;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .home-copy {
+    max-width: 620px;
+    margin-top: 2rem;
+    font-size: 16px;
+    line-height: 1.55;
+    color: black;
+  }
+
+  .home-copy p {
+    margin-block: 0 1.45rem;
+  }
+
+  .home-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .home-copy a {
+    color: black;
+    text-decoration-color: black;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  @media (min-width: 640px) {
+    .home-grid {
+      grid-template-columns: 120px minmax(0, 1fr);
+    }
+
+    .portrait img {
+      height: 8rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .home {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .home-grid {
+      grid-template-columns: 160px minmax(0, 1fr);
+      column-gap: 2.5rem;
+    }
+
+    .portrait img {
+      height: 10rem;
+    }
+  }
+</style>

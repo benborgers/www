@@ -1,0 +1,35 @@
+@font-face {
+font-family: concourse-2-tab;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-2-tab/concourse-2-tab-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-2-tab;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-2-tab/concourse-2-tab-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-2-tab;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-2-tab/concourse-2-tab-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: concourse-2-tab;
+font-style: italic;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/concourse-2-tab/concourse-2-tab-bold-italic.woff2') format('woff2');
+}

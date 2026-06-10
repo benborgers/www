@@ -1,0 +1,80 @@
+@font-face {
+font-family: advocate-14-cond-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate/advocate-14-cond-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-15-cond-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate/advocate-15-cond-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-16-cond-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate/advocate-16-cond-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-34-narr-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate/advocate-34-narr-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-35-narr-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate/advocate-35-narr-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-36-narr-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate/advocate-36-narr-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-54-wide-reg;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate/advocate-54-wide-reg.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-55-wide-med;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate/advocate-55-wide-med.woff2') format('woff2');
+}
+
+@font-face {
+font-family: advocate-56-wide-bold;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/advocate/advocate-56-wide-bold.woff2') format('woff2');
+}

@@ -1,0 +1,35 @@
+@font-face {
+font-family: century-supra-b-tab;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/century-supra-b-tab/century-supra-b-tab-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: century-supra-b-tab;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/century-supra-b-tab/century-supra-b-tab-italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: century-supra-b-tab;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/century-supra-b-tab/century-supra-b-tab-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: century-supra-b-tab;
+font-style: italic;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/century-supra-b-tab/century-supra-b-tab-bold-italic.woff2') format('woff2');
+}

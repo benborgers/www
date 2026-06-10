@@ -1,0 +1,17 @@
+@font-face {
+font-family: heliotrope-8;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/heliotrope-8/heliotrope-8-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: heliotrope-8;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/heliotrope-8/heliotrope-8-italic.woff2') format('woff2');
+}

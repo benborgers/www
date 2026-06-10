@@ -1,0 +1,17 @@
+@font-face {
+font-family: valkyrie-b-caps;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/valkyrie-b-caps/valkyrie-b-caps-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: valkyrie-b-caps;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/valkyrie-b-caps/valkyrie-b-caps-bold.woff2') format('woff2');
+}

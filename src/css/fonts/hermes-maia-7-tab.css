@@ -1,0 +1,17 @@
+@font-face {
+font-family: hermes-maia-7-tab;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/hermes-maia-7-tab/hermes-maia-7-tab-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: hermes-maia-7-tab;
+font-style: italic;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/hermes-maia-7-tab/hermes-maia-7-tab-italic.woff2') format('woff2');
+}

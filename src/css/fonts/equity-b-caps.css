@@ -1,0 +1,17 @@
+@font-face {
+font-family: equity-b-caps;
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/equity-b-caps/equity-b-caps-regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: equity-b-caps;
+font-style: normal;
+font-weight: bold;
+font-stretch: normal;
+font-display: swap;
+src: url('/fonts/equity-b-caps/equity-b-caps-bold.woff2') format('woff2');
+}
