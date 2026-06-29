@@ -1,5 +1,5 @@
 @utility prose {
-  @apply text-base text-gray-800 leading-[1.6];
+  @apply text-lg text-gray-800 leading-[1.6];
   font-feature-settings: "ss01";
 
   strong {
@@ -99,11 +99,11 @@
   }
 
   pre {
-    @apply border border-gray-200 !bg-gray-50 px-3 py-2 text-sm leading-[1.5];
+    @apply border border-gray-200 !bg-gray-50 px-3 py-2 text-base leading-[1.5];
   }
 
   code:not(pre code) {
-    @apply text-sm text-brand-red bg-brand-red-light px-1 py-0.5;
+    @apply text-base text-brand-red bg-brand-red-light px-1 py-0.5;
   }
 
   a:has(code) {
