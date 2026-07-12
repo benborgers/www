@@ -65,10 +65,10 @@ const { title, ogImage } = Astro.props;
       {
         !import.meta.env.CHEETAH && (
           <nav class="p-4 pr-0 h-max lg:sticky lg:top-0 max-lg:bg-gray-50 max-lg:border-b max-lg:border-gray-100">
-            <div class="max-lg:max-w-[540px] max-lg:mx-auto max-lg:grid max-lg:grid-cols-2">
+            <div class="max-lg:max-w-[540px] max-lg:mx-auto max-lg:flex max-lg:flex-wrap max-lg:gap-x-6">
               <a
                 href="/"
-                class="block max-w-max text-gray-900 font-semibold bg-brand-blue-light px-1.5 -ml-1.5 max-lg:col-span-2"
+                class="block max-w-max text-gray-900 font-semibold bg-brand-blue-light px-1.5 -ml-1.5 max-lg:w-full"
               >
                 Ben Borgers
               </a>
