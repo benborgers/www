@@ -7,7 +7,7 @@ I'd love to hear from you and grab coffee — [benborgers@hey.com](mailto:benbor
 ## Work Experience
 
 - [Owner](https://owner.com) (2025 – present)
-- [Buttondown](https://buttondown.com) (2021 – present)
+- [Buttondown](https://buttondown.com) (2021 – 2026)
 - [Notion](https://notion.so/product) (summer 2024)
 - [Locket](https://locket.camera) (2023 – 2024)
 - [Luma](https://lu.ma) and [Glow](https://glow.app) (summer 2022)
