@@ -1,5 +1,6 @@
 ---
 title: "just surf"
+date: 2026-03-20
 draft: true
 ---
 people are trying to codify coding agents into best practices
@@ -9,7 +10,7 @@ people are trying to codify coding agents into best practices
 - "prompt loops, not tasks"
 - "learn context management"
 - "use one agent to check the other's work"
-- "spend tons of time planning"
+- "spend tons of time planning" *(update July 23, 2026: no one cares about planning anymore)*
 
 stop having opinions
 
