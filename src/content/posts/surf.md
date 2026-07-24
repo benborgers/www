@@ -6,9 +6,9 @@ draft: true
 people are trying to codify coding agents into best practices
 
 - "opus plan, codex execute"
-- ~~"spend tons of time planning"~~ *(update July 23, 2026: no one cares about planning anymore)*
+- ~~"spend tons of time planning"~~ *(update July 23, 2026: no one cares, agents got better at understanding intent)*
 - "how do I learn skills!"
-- ~~"learn context management"~~ *(update May 6, 2026: who cares, compaction is good now)*
+- ~~"learn context management"~~ *(update May 6, 2026: no one cares, compaction is good now and context windows are abundant)*
 - "use one agent to check the other's work"
 
 stop having opinions
