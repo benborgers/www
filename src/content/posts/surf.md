@@ -1,5 +1,5 @@
 ---
-title: "Just surf"
+title: "just surf"
 draft: true
 ---
 people are trying to codify coding agents into best practices
