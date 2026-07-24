@@ -1,6 +1,6 @@
 ---
 title: "just surf"
-date: 2026-03-20
+date: 2026-07-23
 draft: true
 ---
 people are trying to codify coding agents into best practices
