@@ -10,7 +10,7 @@ people are trying to codify coding agents into best practices
 - "prompt loops, not tasks"
 - "learn context management"
 - "use one agent to check the other's work"
-- "spend tons of time planning" *(update July 23, 2026: no one cares about planning anymore)*
+- ~~"spend tons of time planning"~~ *(update July 23, 2026: no one cares about planning anymore)*
 
 stop having opinions
 
