@@ -1,7 +1,7 @@
 ---
 title: "just surf"
 date: 2026-07-23
-draft: true
+draft: false
 cover_image: /posts/surf/cover_image.jpg
 ---
 people are trying to codify coding agents into best practices
