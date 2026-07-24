@@ -5,8 +5,11 @@ draft: true
 people are trying to codify coding agents into best practices
 
 - "opus plan, codex execute"
-- "spend tons of time planning"
 - "how do I learn skills!"
+- "prompt loops, not tasks"
+- "learn context management"
+- "use one agent to check the other's work"
+- "spend tons of time planning"
 
 stop having opinions
 
