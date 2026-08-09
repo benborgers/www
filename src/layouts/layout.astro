@@ -6,9 +6,10 @@ import { ClientRouter } from "astro:transitions";
 interface Props {
   title: string;
   ogImage?: string;
+  coverImagePosition?: "top" | "bottom";
 }
 
-const { title, ogImage } = Astro.props;
+const { title, ogImage, coverImagePosition = "top" } = Astro.props;
 ---
 
 <!doctype html>
@@ -143,7 +144,10 @@ const { title, ogImage } = Astro.props;
       }
 
       <main
-        class="pt-14 lg:pt-24 pb-48 max-lg:px-4 max-lg:max-w-[540px] max-lg:mx-auto"
+        class:list={[
+          "lg:pt-24 pb-48 max-lg:px-4 max-lg:max-w-[540px] max-lg:mx-auto",
+          coverImagePosition === "bottom" ? "pt-8" : "pt-14",
+        ]}
       >
         <slot />
       </main>

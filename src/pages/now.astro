@@ -4,12 +4,13 @@ import Entry from "../components/entry.astro";
 import Layout from "../layouts/layout.astro";
 
 const entry = await getEntry("pages", "now")!;
+const coverImagePosition = "bottom";
 ---
 
-<Layout title="Now" ogImage={entry.data.cover_image}>
+<Layout title="Now" ogImage={entry.data.cover_image} {coverImagePosition}>
   <Entry
     entry={entry}
     coverImage={entry.data.cover_image}
-    coverImagePosition="bottom"
+    {coverImagePosition}
   />
 </Layout>
