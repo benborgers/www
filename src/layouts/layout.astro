@@ -80,9 +80,9 @@ const { title, ogImage } = Astro.props;
                     href="/"
                     aria-current={Astro.url.pathname === "/" ? "page" : undefined}
                     class:list={[
-                      "block max-w-max no-underline underline-offset-[3px] transition-colors duration-150 hover:text-brand-blue focus-visible:text-brand-blue focus-visible:outline-none lg:underline-offset-[1.5px]",
+                      "block max-w-max",
                       Astro.url.pathname === "/" &&
-                        "!underline decoration-[1.5px] lg:decoration-auto",
+                        "underline underline-offset-[1.5px]",
                     ]}
                   >
                     Home
@@ -91,9 +91,9 @@ const { title, ogImage } = Astro.props;
                     href="/blog"
                     aria-current={Astro.url.pathname.startsWith("/blog") ? "page" : undefined}
                     class:list={[
-                      "block max-w-max no-underline underline-offset-[3px] transition-colors duration-150 hover:text-brand-blue focus-visible:text-brand-blue focus-visible:outline-none lg:underline-offset-[1.5px]",
+                      "block max-w-max",
                       Astro.url.pathname.startsWith("/blog") &&
-                        "!underline decoration-[1.5px] lg:decoration-auto",
+                        "underline underline-offset-[1.5px]",
                     ]}
                   >
                     Blog
@@ -102,9 +102,9 @@ const { title, ogImage } = Astro.props;
                     href="/now"
                     aria-current={Astro.url.pathname === "/now" ? "page" : undefined}
                     class:list={[
-                      "block max-w-max no-underline underline-offset-[3px] transition-colors duration-150 hover:text-brand-blue focus-visible:text-brand-blue focus-visible:outline-none lg:underline-offset-[1.5px]",
+                      "block max-w-max",
                       Astro.url.pathname === "/now" &&
-                        "!underline decoration-[1.5px] lg:decoration-auto",
+                        "underline underline-offset-[1.5px]",
                     ]}
                   >
                     Now
@@ -117,21 +117,21 @@ const { title, ogImage } = Astro.props;
                   <a
                     href="https://twitter.com/benborgers"
                     target="_blank"
-                    class="block max-w-max no-underline transition-colors duration-150 hover:text-gray-700 focus-visible:text-gray-700 focus-visible:outline-none"
+                    class="block max-w-max"
                   >
                     Twitter
                   </a>
                   <a
                     href="/rss"
                     target="_blank"
-                    class="block max-w-max no-underline transition-colors duration-150 hover:text-gray-700 focus-visible:text-gray-700 focus-visible:outline-none"
+                    class="block max-w-max"
                   >
                     RSS
                   </a>
                   <a
                     href="https://photos.ben.page"
                     target="_blank"
-                    class="block max-w-max no-underline transition-colors duration-150 hover:text-gray-700 focus-visible:text-gray-700 focus-visible:outline-none"
+                    class="block max-w-max"
                   >
                     Photos
                   </a>
