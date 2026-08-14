@@ -19,7 +19,7 @@ export const getRelatedPosts = async (
     posts = await getPosts({ includeUnlisted: false });
   }
 
-  if (import.meta.env.DEV) {
+  if (import.meta.env.DEV || process.env.AMP_ORB === "1") {
     return posts.slice(0, NUMBER_OF_RELATED_POSTS);
   }
 

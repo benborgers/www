@@ -2,6 +2,27 @@
 title: "Every student is cheating with AI"
 draft: true
 ---
+
+Last month, a Brown professor [wrote](https://www.insidehighered.com/news/faculty/learning-assessment/2026/07/08/brown-professor-suspects-most-his-class-used-ai-cheat) about discovering that discovering that a majority of his students had used AI to cheat on his take-home exam. He was irate about this “scandal,” despite the university seemingly doing little to respond. 
+
+I attended a well-ranked university until last year. The truth is: **essentially every student is cheating with AI**. Every single one. Nobody _doesn't_ cheat. 
+
+It's not every class, but I'm willing to bet than almost every single student in university right now uses AI to cheat on assignments. 
+
+It comes in the form of coding assignments fully produced by ChatGPT, running problem sets through Claude, and writing foreign-language essays with the help of Gemini. 
+
+Take-home exams are entirely free rein. Basically _every student_ cheats in some form on take-home exams. 
+
+The Brown professor's article doesn't describe any kind of isolated behavior. Every student at a university today knows that this is the truth. 
+
+Why is cheating with AI so common? In my experience, other forms of cheating — say, plagiarism or paying someone to write your essay — were quite uncommon. I think it comes down to a few things:
+
+1. Cheating with AI feels easy and harmless. No one else is involved. And using AI for other parts of life is pretty commonplace.
+2. Everyone's cheating with AI. There is no stigma.
+3. Take-home exams are so laughably cheatable that it feels like the professor _can't_ expect you not to cheat — whether with AI or just by Googling the answers. Students very often feel like a take-home exam is a *wink wink* encouragement from the professor to cheat on the exam and produce a favorable class average.
+
+---
+
 Based on when I was still in college until last year: **Every student is cheating with AI**.
 
 - When I was a computer science TA, it was clear that tons of students were using ChatGPT to do the assignments and coming to office hours only when that failed them.
