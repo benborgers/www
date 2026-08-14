@@ -21,6 +21,129 @@ fi
 echo "Installing locked npm dependencies..."
 npm ci --no-audit --no-fund
 
+echo "Configuring Astro for the orb portal..."
+node <<'NODE'
+import fs from "node:fs";
+
+const configPath = process.env.ASTRO_CONFIG_PATH || "astro.config.mjs";
+const marker = "// Amp orb portal support";
+const portalSource = String.raw`// Amp orb portal support
+const portalUrl = process.env.PUBLIC_URL
+  ? new URL(process.env.PUBLIC_URL)
+  : undefined;
+
+function ampOrbPortalPlugin() {
+  return {
+    name: "amp-orb-portal",
+    enforce: "post",
+    apply: "serve",
+    configureServer(server) {
+      return () => {
+        server.middlewares.stack.unshift({
+          route: "",
+          handle(request, response, next) {
+            if (
+              request.headers["sec-fetch-site"] !== "cross-site" ||
+              request.headers["sec-fetch-mode"] !== "cors"
+            ) {
+              next();
+              return;
+            }
+
+            const origin = request.headers.origin;
+            if (origin === undefined) {
+              delete request.headers["sec-fetch-site"];
+              next();
+              return;
+            }
+            if (!isTrustedPortalOrigin(origin)) {
+              response.writeHead(403, {
+                "cache-control": "no-store",
+                "content-type": "text/plain; charset=utf-8",
+              });
+              response.end("Cross-site Origin is not allowed\n");
+              return;
+            }
+
+            delete request.headers["sec-fetch-site"];
+            next();
+          },
+        });
+      };
+    },
+  };
+}
+
+function isTrustedPortalOrigin(origin) {
+  if (!portalUrl || origin === "null") return false;
+  let url;
+  try {
+    url = new URL(origin);
+  } catch {
+    return false;
+  }
+  if (url.origin !== origin || url.protocol !== "https:") return false;
+  return (
+    url.origin === portalUrl.origin ||
+    url.hostname === "ampcode.com" ||
+    url.hostname.endsWith(".ampcode.com")
+  );
+}`;
+const securitySource = `  security: portalUrl
+    ? {
+        allowedDomains: [
+          { protocol: portalUrl.protocol.slice(0, -1), hostname: portalUrl.hostname },
+        ],
+      }
+    : undefined,`;
+const viteSource = String.raw`  vite: {
+    plugins: [
+      tailwindcss(),
+      ...(portalUrl ? [ampOrbPortalPlugin()] : []),
+    ],
+    server: portalUrl
+      ? {
+          allowedHosts: [portalUrl.hostname, ".e2b.app", ".onamp.dev"],
+          cors: {
+            origin: [portalUrl.origin, /^https:\/\/([a-z0-9-]+\.)*ampcode\.com$/],
+          },
+        }
+      : undefined,
+  },`;
+
+let config = fs.readFileSync(configPath, "utf8");
+if (config.includes(marker)) {
+  for (const expected of [
+    'name: "amp-orb-portal"',
+    "...(portalUrl ? [ampOrbPortalPlugin()] : [])",
+    'allowedHosts: [portalUrl.hostname, ".e2b.app", ".onamp.dev"]',
+  ]) {
+    if (!config.includes(expected)) {
+      throw new Error(`Incomplete orb portal configuration: missing ${expected}`);
+    }
+  }
+  console.log("Astro orb portal configuration is already present.");
+  process.exit(0);
+}
+
+const importAnchor = 'import tailwindcss from "@tailwindcss/vite";';
+const configAnchor = "export default defineConfig({";
+const viteAnchor = `  vite: {
+    plugins: [tailwindcss()],
+  },`;
+for (const anchor of [importAnchor, configAnchor, viteAnchor]) {
+  if (!config.includes(anchor)) {
+    throw new Error(`Could not inject orb portal configuration: missing ${anchor}`);
+  }
+}
+
+config = config
+  .replace(importAnchor, `${importAnchor}\n\n${portalSource}`)
+  .replace(configAnchor, `${configAnchor}\n${securitySource}`)
+  .replace(viteAnchor, viteSource);
+fs.writeFileSync(configPath, config);
+NODE
+
 # This site has no local database or generated runtime configuration. Astro's
 # required OPENAI_API_KEY is supplied directly to the supervised process; no
 # Amp-managed or checked-out .env file is created.
