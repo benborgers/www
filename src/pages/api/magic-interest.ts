@@ -14,6 +14,7 @@ export const GET = async ({ request }: { request: Request }) => {
     : request.headers.get("X-Vercel-IP-Country");
 
   if (city === null || region === null || country === null) {
+    console.log({ city, region, country });
     return new Response("Missing location", { status: 500 });
   }
 
