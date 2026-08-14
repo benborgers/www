@@ -1,6 +1,6 @@
 services:
   web:
-    command: node scripts/amp-portal-server.mjs
+    command: 'OPENAI_API_KEY="${OPENAI_API_KEY:-orb-development-placeholder}" npm run dev -- --host 0.0.0.0 --port "$PORT"'
     portal:
       title: Ben Borgers
       description: Astro development server with Portal-safe origin handling
