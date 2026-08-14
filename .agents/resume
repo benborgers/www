@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Reconcile the declared service after every wake. This is safe to repeat and
+# lets Amp repair a stopped process while preserving its sticky portal URL.
+amp orb services ensure

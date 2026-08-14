@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly node_version="22.12.0"
+
+if ! node -e '
+  const required = process.argv[1].split(".").map(Number);
+  const current = process.versions.node.split(".").map(Number);
+  for (let i = 0; i < required.length; i++) {
+    if ((current[i] ?? 0) !== required[i]) {
+      process.exit((current[i] ?? 0) > required[i] ? 0 : 1);
+    }
+  }
+' "$node_version"; then
+  echo "Installing Node.js ${node_version} (required by Astro 7)..."
+  sudo npm install --global n@10.2.0
+  sudo n "$node_version"
+  hash -r
+fi
+
+echo "Installing locked npm dependencies..."
+npm ci --no-audit --no-fund
+
+# This site has no local database or generated runtime configuration. Astro's
+# required OPENAI_API_KEY is supplied directly to the supervised process; no
+# Amp-managed or checked-out .env file is created.
+mkdir -p .amp
+
+if [[ "${AMP_ORB:-}" == "1" ]]; then
+  echo "Starting declared orb services..."
+  amp orb services ensure
+fi
+
+echo "Orb setup complete."

@@ -1,0 +1,6 @@
+services:
+  web:
+    command: node scripts/amp-portal-server.mjs
+    portal:
+      title: Ben Borgers
+      description: Astro development server with Portal-safe origin handling
