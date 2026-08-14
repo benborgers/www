@@ -22,6 +22,6 @@ On the one hand, that's totally within the university's rights. They broke the r
 
 But also, what else should you expect? If a personal trainer told you to strictly diet, but then kept leaving you alone surrounded by desserts, it'd feel kinda unfair for the trainer to kick you out of the program for indulging.
 
-And for exams, it's *ludicrous* that an increasing number of exams seem to be held online. It's a Covid-ism that persisted, which now combines with the era of magical free machines that answer any question in seconds. 
+And for exams, it's *ludicrous* that an increasing number of exams seem to be held online. It's a Covid-era holdover that has stuck around, and now combines perfectly with an era of magical free-fast-answer-machines.
 
-Cheating is wrong — I think every student knows that. But when everyone's doing it, the failures are environmental, not individual. 
+Cheating is wrong — I think every student knows that. But when everyone's doing it, and the environment almost encourages it, we can't expect students to self-police. The environment needs to change to better coach students in a direction that benefits their learning in the long term.
