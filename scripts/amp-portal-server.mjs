@@ -185,7 +185,7 @@ async function reservePort() {
 
 function validateRequest(request) {
   const host = request.headers.host;
-  if (host !== publicUrl.host && !localHosts.has(host)) {
+  if (!isAllowedIngressHost(host)) {
     return { ok: false, status: 421, message: "Unrecognized portal host" };
   }
 
@@ -202,6 +202,25 @@ function validateRequest(request) {
     return { ok: false, status: 403, message: "Cross-site Origin is not allowed" };
   }
   return { ok: true, corsOrigin: origin, normalizeCrossSiteCors: true };
+}
+
+function isAllowedIngressHost(host) {
+  if (host === publicUrl.host || localHosts.has(host)) return true;
+  if (!host) return false;
+
+  let url;
+  try {
+    url = new URL(`http://${host}`);
+  } catch {
+    return false;
+  }
+  if (url.username || url.password || url.pathname !== "/" || url.search || url.hash) {
+    return false;
+  }
+  return (
+    url.hostname.endsWith(".onamp.dev") ||
+    url.hostname.endsWith(".e2b.app")
+  );
 }
 
 function isTrustedOrigin(origin) {
