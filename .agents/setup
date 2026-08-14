@@ -144,6 +144,8 @@ config = config
 fs.writeFileSync(configPath, config);
 NODE
 
+git update-index --assume-unchanged "${ASTRO_CONFIG_PATH:-astro.config.mjs}"
+
 # This site has no local database or generated runtime configuration. Astro's
 # required OPENAI_API_KEY is supplied directly to the supervised process; no
 # Amp-managed or checked-out .env file is created.

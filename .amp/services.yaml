@@ -1,6 +1,6 @@
 services:
   web:
-    command: 'OPENAI_API_KEY="${OPENAI_API_KEY:-orb-development-placeholder}" npm run dev -- --host 0.0.0.0 --port "$PORT"'
+    command: 'OPENAI_API_KEY="${OPENAI_API_KEY:?OPENAI_API_KEY must be set}" npm run dev -- --host 0.0.0.0 --port "$PORT"'
     portal:
       title: www
       description: Astro development server with Portal-safe origin handling
