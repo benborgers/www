@@ -27,3 +27,76 @@
   --color-gray-900: var(--color-stone-900);
   --color-gray-950: var(--color-stone-950);
 }
+
+.newsletter-dialog[open] {
+  animation: newsletter-in 200ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.newsletter-dialog::backdrop {
+  animation: newsletter-backdrop-in 160ms ease-out both;
+}
+
+.newsletter-dialog.is-closing {
+  animation: newsletter-out 140ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+.newsletter-dialog.is-closing::backdrop {
+  animation: newsletter-backdrop-out 140ms ease-in both;
+}
+
+@keyframes newsletter-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.98);
+  }
+}
+
+@keyframes newsletter-out {
+  to {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.99);
+  }
+}
+
+@keyframes newsletter-backdrop-in {
+  from {
+    background: transparent;
+  }
+}
+
+@keyframes newsletter-backdrop-out {
+  to {
+    background: transparent;
+  }
+}
+
+@media (max-width: 63.999rem) {
+  .newsletter-dialog[open] {
+    animation-name: newsletter-mobile-in;
+  }
+
+  .newsletter-dialog.is-closing {
+    animation-name: newsletter-mobile-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .newsletter-dialog[open],
+  .newsletter-dialog::backdrop {
+    animation-duration: 1ms;
+  }
+}
+
+@keyframes newsletter-mobile-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+}
+
+@keyframes newsletter-mobile-out {
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.995);
+  }
+}

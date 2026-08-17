@@ -52,6 +52,10 @@ const { title, ogImage, coverImagePosition = "top" } = Astro.props;
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
+    <script>
+      import "../scripts/newsletter";
+    </script>
+
     <script
       src="https://owl.benborgers.com/script.js"
       data-site="ZWCPJCUA"
@@ -75,9 +79,9 @@ const { title, ogImage, coverImagePosition = "top" } = Astro.props;
                 Ben Borgers
               </a>
               <div
-                class="mt-2 flex items-center gap-x-[0.9375rem] overflow-x-auto whitespace-nowrap pb-1 lg:mt-3 lg:block lg:overflow-visible lg:pb-0"
+                class="mt-2 lg:mt-3"
               >
-                <div class="flex items-center gap-x-3 text-gray-900 font-medium lg:block">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-gray-900 font-medium lg:block">
                   <a
                     href="/"
                     aria-current={Astro.url.pathname === "/" ? "page" : undefined}
@@ -113,36 +117,105 @@ const { title, ogImage, coverImagePosition = "top" } = Astro.props;
                   </a>
                 </div>
 
-                <div
-                  class="flex items-center gap-x-3 text-gray-400 font-medium lg:mt-3 lg:block"
-                >
-                  <a
-                    href="https://twitter.com/benborgers"
-                    target="_blank"
-                    class="block max-w-max"
-                  >
-                    Twitter
-                  </a>
-                  <a
-                    href="/rss"
-                    target="_blank"
-                    class="block max-w-max"
-                  >
-                    RSS
-                  </a>
-                  <a
-                    href="https://photos.ben.page"
-                    target="_blank"
-                    class="block max-w-max"
-                  >
-                    Photos
-                  </a>
+                <div class="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-gray-400 font-medium lg:mt-3 lg:block">
+                  <div class="flex items-center gap-x-3 lg:block">
+                    <a
+                      href="https://twitter.com/benborgers"
+                      target="_blank"
+                      class="block max-w-max"
+                    >
+                      Twitter
+                    </a>
+                    <a
+                      href="https://photos.ben.page"
+                      target="_blank"
+                      class="block max-w-max"
+                    >
+                      Photos
+                    </a>
+                  </div>
+
+                  <div class="flex items-center gap-x-3 lg:mt-3 lg:block">
+                    <a
+                      href="/rss"
+                      target="_blank"
+                      class="block max-w-max"
+                    >
+                      RSS
+                    </a>
+                    <button
+                      type="button"
+                      class="newsletter-trigger block max-w-max cursor-pointer border-0 bg-transparent p-0 font-[inherit] text-inherit"
+                      aria-haspopup="dialog"
+                      aria-controls="newsletter-dialog"
+                    >
+                      Newsletter
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </nav>
         )
       }
+
+      <dialog
+        id="newsletter-dialog"
+        class="newsletter-dialog fixed inset-x-4 top-auto bottom-4 m-0 w-auto max-w-none overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 p-0 text-gray-900 shadow-lg backdrop:bg-gray-900/10 focus:outline-none lg:inset-[var(--newsletter-top)_auto_auto_var(--newsletter-left)] lg:w-max lg:max-w-[calc(100vw-var(--newsletter-left)-24px)] lg:max-h-[calc(100dvh-var(--newsletter-top)-24px)]"
+        aria-label="Newsletter signup"
+        tabindex="-1"
+      >
+        <div class="grid items-center p-4">
+          <div class="newsletter-form-state">
+            <p class="mr-4 text-balance text-lg leading-tight font-medium text-gray-900 lg:whitespace-nowrap">
+              Get an email when I publish a blog post
+            </p>
+
+            <form
+              action="https://buttondown.com/api/emails/embed-subscribe/benborgers"
+              method="post"
+              target="newsletter-response"
+              class="newsletter-form mt-3"
+            >
+              <div class="flex gap-2">
+                <input
+                  type="email"
+                  name="email"
+                  id="newsletter-email"
+                  autocomplete="email"
+                  aria-label="Email address"
+                  placeholder="Email address"
+                  required
+                  autofocus
+                  class="min-w-0 flex-1 rounded-lg border-2 border-gray-300 bg-white py-2 indent-3 font-sans text-gray-900 placeholder:text-gray-400 focus:border-brand-blue focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  class="cursor-pointer rounded-lg border border-gray-900 bg-gray-900 px-3 py-2 text-sm font-semibold text-white focus:border-brand-blue focus:outline-none disabled:cursor-wait disabled:opacity-65"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div
+            class="newsletter-confirmed hidden text-center"
+            aria-live="polite"
+            hidden
+          >
+            <p class="text-lg leading-tight font-medium text-gray-900">
+              Check your email to confirm your subscription!
+            </p>
+          </div>
+        </div>
+
+        <iframe
+          name="newsletter-response"
+          title="Newsletter subscription response"
+          class="newsletter-response pointer-events-none absolute size-px border-0 opacity-0"
+        ></iframe>
+      </dialog>
 
       <main
         class:list={[
