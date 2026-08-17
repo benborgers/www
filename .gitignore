@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # vercel
 .vercel
+
+# Generated in Amp Orbs
+.amp/portal-proxy.mjs
