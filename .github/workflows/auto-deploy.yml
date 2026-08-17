@@ -2,8 +2,8 @@ name: Automatic daily deploy for scheduled posts
 
 on:
   schedule:
-    # 10am UTC = 5am or 6am Eastern (depending on daylight savings)
-    - cron: "0 10 * * *"
+    # 2pm UTC = 6am or 7am Pacific (depending on daylight savings)
+    - cron: "0 14 * * *"
   workflow_dispatch: # Allow manual trigger
 
 jobs:
