@@ -10,5 +10,39 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check for a post going live today
+        id: scheduled-post
+        run: |
+          today=$(TZ=America/Los_Angeles date +%F)
+
+          if awk -v today="$today" '
+            FNR == 1 {
+              in_frontmatter = ($0 ~ /^---\r?$/)
+              matches_date = 0
+              draft = 0
+            }
+            in_frontmatter && $0 ~ "^date:[[:space:]]*" today "\\r?$" {
+              matches_date = 1
+            }
+            in_frontmatter && $0 ~ /^draft:[[:space:]]*true\r?$/ {
+              draft = 1
+            }
+            in_frontmatter && FNR > 1 && $0 ~ /^---\r?$/ {
+              if (matches_date && !draft) found = 1
+              in_frontmatter = 0
+            }
+            END { exit !found }
+          ' src/content/posts/*.md; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+            echo "Found a post going live on $today."
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "No post is going live on $today."
+          fi
+
       - name: Trigger Vercel Deploy
+        if: steps.scheduled-post.outputs.found == 'true'
         run: curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_d2OHBOiSssWKxDD1WiZT4QJF20Su/sky6Sak4j8"

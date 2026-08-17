@@ -9,9 +9,9 @@ const getTimestamp = (date?: Date) => {
   return date.getTime();
 };
 
-const getCurrentTimeEastern = () => {
+const getCurrentTimePacific = () => {
   const formatter = new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/New_York",
+    timeZone: "America/Los_Angeles",
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
@@ -61,7 +61,7 @@ export const getPosts = async ({
     .filter((post) => {
       if (
         post.data.date &&
-        post.data.date > getCurrentTimeEastern() &&
+        post.data.date > getCurrentTimePacific() &&
         !includeDrafts
       ) {
         return false;
