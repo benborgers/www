@@ -2,7 +2,7 @@
 title: "Without feedback loops, you’re the feedback loop"
 date: 2026-04-27
 draft: false
-cover_image: /posts/feedback-loops/cover_image.png
+cover_image: ./images/feedback-loops/cover.png
 ---
 When coding with agents, if you don't add a feedback loop, *you're* the feedback loop. You become QA, and telling the agent that something still doesn't work is extremely frustrating. 
 

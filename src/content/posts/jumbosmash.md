@@ -1,6 +1,7 @@
 ---
 title: "We built JumboSmash, a dating app for Tufts seniors"
 draft: true
+cover_image: ./images/jumbosmash/cover.png
 ---
 
 On May 8, 2025, some friends and I launched _JumboSmash_, a dating (_"dating"_) app for Tufts seniors during the last week before graduation.

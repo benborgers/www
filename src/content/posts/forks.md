@@ -1,7 +1,7 @@
 ---
 title: Donating forks to the dining hall
 date: 2024-05-29
-cover_image: /posts/forks/cover_image.png
+cover_image: ./images/forks/cover.png
 draft: false
 starred: true
 unlisted: false

@@ -1,9 +1,11 @@
 ---
 import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
 import star from "../images/star.png";
 import Layout from "../layouts/layout.astro";
 import { getPosts } from "../lib/posts";
 
+const home = await getEntry("pages", "index");
 const posts = await getPosts({
   includeUnlisted: false,
   includeDrafts: import.meta.env.DEV,
@@ -25,7 +27,7 @@ const postsByMonth = Object.groupBy(
 );
 ---
 
-<Layout title="Ben Borgers’ Blog" ogImage="/pages/index-cover-image.png">
+<Layout title="Ben Borgers’ Blog" ogImage={home?.data.cover_image}>
   <div>
     {
       Object.entries(postsByMonth).map(([heading, posts]) => (

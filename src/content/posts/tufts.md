@@ -1,7 +1,7 @@
 ---
 title: Goodbye, Tufts
 date: 2025-06-01
-cover_image: /posts/tufts/cover_image.png
+cover_image: ./images/tufts/cover.png
 draft: false
 starred: false
 unlisted: false

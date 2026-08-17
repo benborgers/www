@@ -2,10 +2,11 @@
 import "../css/index.css";
 
 import { ClientRouter } from "astro:transitions";
+import type { ImageMetadata } from "astro";
 
 interface Props {
   title: string;
-  ogImage?: string;
+  ogImage?: ImageMetadata;
   coverImagePosition?: "top" | "bottom";
 }
 
@@ -28,12 +29,12 @@ const { title, ogImage, coverImagePosition = "top" } = Astro.props;
         <>
           <meta
             property="og:image"
-            content={`${Astro.site!.origin}/og?path=${ogImage}`}
+            content={`${Astro.site!.origin}/og?path=${encodeURIComponent(ogImage.src)}`}
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:image"
-            content={`${Astro.site!.origin}/og?path=${ogImage}`}
+            content={`${Astro.site!.origin}/og?path=${encodeURIComponent(ogImage.src)}`}
           />
           <meta name="twitter:site" content="@benborgers" />
           <meta name="twitter:creator" content="@benborgers" />

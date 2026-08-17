@@ -1,7 +1,7 @@
 ---
 title: Make sure your university events are actually interesting
 date: 2025-03-01
-cover_image: /posts/interestingness/cover_image.png
+cover_image: ./images/interestingness/cover.png
 draft: false
 starred: false
 unlisted: false

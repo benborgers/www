@@ -1,5 +1,5 @@
 ---
-cover_image: /pages/now/9.png
+cover_image: ./images/now/cover.png
 ---
 
 - Driving across the country to move to San Francisco

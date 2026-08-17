@@ -1,7 +1,7 @@
 ---
 title: The stickiest parking permits known to man
 date: 2025-06-12
-cover_image: /posts/somerville-stickers/cover_image.png
+cover_image: ./images/somerville-stickers/cover.png
 draft: false
 starred: false
 unlisted: false

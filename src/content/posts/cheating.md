@@ -2,7 +2,7 @@
 title: "Every student is cheating with AI"
 date: 2026-08-17
 draft: false
-cover_image: /posts/cheating/cover_image.png
+cover_image: ./images/cheating/cover.png
 ---
 
 Last month, a Brown professor [wrote](https://www.insidehighered.com/news/faculty/learning-assessment/2026/07/08/brown-professor-suspects-most-his-class-used-ai-cheat) about discovering that a majority of his students had used AI to cheat on his take-home exam. He was irate about this “scandal,” despite the university seemingly doing little to respond. 

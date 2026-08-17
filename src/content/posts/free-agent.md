@@ -1,7 +1,7 @@
 ---
 title: Don’t standardize your company’s coding agents yet
 date: 2025-11-10
-cover_image: /posts/free-agent/cover_image.png
+cover_image: ./images/free-agent/cover.png
 draft: false
 starred: false
 unlisted: false

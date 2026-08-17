@@ -1,7 +1,7 @@
 ---
 title: How I would have picked my classes, in retrospect
 date: 2025-10-06
-cover_image: /posts/classes/cover_image.png
+cover_image: ./images/classes/cover.png
 draft: false
 starred: false
 unlisted: false

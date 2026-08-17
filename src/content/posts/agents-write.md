@@ -1,7 +1,7 @@
 ---
 title: Coding agents write 90% of my code now
 date: 2025-12-18
-cover_image: /posts/agents-write/cover_image.png
+cover_image: ./images/agents-write/cover.png
 draft: false
 starred: false
 unlisted: false

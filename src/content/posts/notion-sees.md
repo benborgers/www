@@ -1,7 +1,7 @@
 ---
 title: How Notion sees itself
 date: 2025-10-09
-cover_image: /posts/notion-sees/cover_image.png
+cover_image: ./images/notion-sees/cover.png
 draft: false
 starred: false
 unlisted: false

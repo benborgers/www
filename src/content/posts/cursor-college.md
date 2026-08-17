@@ -1,7 +1,7 @@
 ---
 title: Should Cursor be taught in college?
 date: 2025-10-08
-cover_image: /posts/cursor-college/cover_image.png
+cover_image: ./images/cursor-college/cover.png
 draft: false
 starred: false
 unlisted: false

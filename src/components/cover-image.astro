@@ -1,46 +1,24 @@
 ---
+import { Image, type ImageMetadata } from "astro:assets";
+
 interface Props {
-  src: string;
-  width?: number;
-  height?: number;
+  src: ImageMetadata;
   class?: string;
 }
 
-const { src, width, height, class: className } = Astro.props;
-
-const hasReservedBox = Boolean(width && height);
+const { src, class: className } = Astro.props;
+const width = Math.min(src.width, Math.round((src.width / src.height) * 216));
 ---
 
-{
-  hasReservedBox ? (
-    <div
-      class:list={[
-        "mx-auto w-full max-w-[calc(12rem*var(--cover-width)/var(--cover-height))] sm:max-w-[calc(13.5rem*var(--cover-width)/var(--cover-height))]",
-        className,
-      ]}
-      style={{
-        aspectRatio: `${width} / ${height}`,
-        "--cover-width": width,
-        "--cover-height": height,
-      }}
-    >
-      <img
-        src={src}
-        alt=""
-        class="h-full w-full object-contain"
-        width={width}
-        height={height}
-        data-cover-image
-      />
-    </div>
-  ) : (
-    <img
-      src={src}
-      alt=""
-      class:list={["mx-auto max-w-full max-h-48 sm:max-h-54", className]}
-      width={width}
-      height={height}
-      data-cover-image
-    />
-  )
-}
+<Image
+  src={src}
+  alt=""
+  layout="constrained"
+  width={width}
+  quality={90}
+  class:list={[
+    "mx-auto h-auto max-h-48 max-w-full object-contain sm:max-h-54",
+    className,
+  ]}
+  data-cover-image
+/>

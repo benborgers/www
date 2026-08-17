@@ -1,51 +1,22 @@
 ---
 import { render, type CollectionEntry } from "astro:content";
-import { imageSize } from "image-size";
-import { readFileSync } from "fs";
-import { join } from "path";
 import CoverImage from "./cover-image.astro";
 import Prose from "./prose.astro";
 import RelatedPosts from "./related-posts.astro";
 
 interface Props {
   entry: CollectionEntry<"posts"> | CollectionEntry<"pages">;
-  coverImage?: string;
   coverImagePosition?: "top" | "bottom";
 }
 
-const {
-  entry,
-  coverImage: coverImageProp,
-  coverImagePosition = "top",
-} = Astro.props;
+const { entry, coverImagePosition = "top" } = Astro.props;
 
 const title = entry.collection === "posts" ? entry.data.title : undefined;
 const date = entry.collection === "posts" ? entry.data.date : undefined;
-const coverImage = coverImageProp
-  ? coverImageProp
-  : entry.collection === "posts"
-    ? entry.data.cover_image
-    : undefined;
+const coverImage = entry.data.cover_image;
 
 const coverImageTop = coverImage && coverImagePosition !== "bottom";
 const coverImageBottom = coverImage && coverImagePosition === "bottom";
-
-let coverImageDimensions: {
-  width?: number;
-  height?: number;
-} = {};
-if (coverImage && !coverImage.startsWith("http")) {
-  try {
-    const filePath = join(process.cwd(), "public", coverImage);
-    const dims = imageSize(readFileSync(filePath));
-    if (dims.width && dims.height) {
-      coverImageDimensions = {
-        width: dims.width,
-        height: dims.height,
-      };
-    }
-  } catch {}
-}
 
 const hasFrontmatter = coverImageTop || title || date;
 
@@ -64,11 +35,7 @@ const { Content } = await render(entry);
   hasFrontmatter && (
     <>
       {coverImageTop && (
-        <CoverImage
-          src={coverImage}
-          width={coverImageDimensions.width}
-          height={coverImageDimensions.height}
-        />
+        <CoverImage src={coverImage} />
       )}
 
       {title && (
@@ -112,12 +79,7 @@ const { Content } = await render(entry);
 
   {
     coverImageBottom && (
-        <CoverImage
-          src={coverImage}
-          class="mt-18"
-          width={coverImageDimensions.width}
-          height={coverImageDimensions.height}
-        />
+      <CoverImage src={coverImage} class="mt-18" />
     )
   }
 </div>

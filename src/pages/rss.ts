@@ -1,5 +1,6 @@
 import rss from "@astrojs/rss";
 import type { APIRoute } from "astro";
+import { getImage } from "astro:assets";
 import MarkdownIt from "markdown-it";
 import { getPosts } from "../lib/posts";
 
@@ -28,17 +29,30 @@ export const GET: APIRoute = async ({ site: _site }) => {
     title: "Ben Borgers",
     description: "Ben Borgers’ personal website.",
     site,
-    items: posts.map((post) => {
-      const coverImageHtml = post.data.cover_image
-        ? `<img src="${post.data.cover_image.startsWith("/") ? `${site.origin}${post.data.cover_image}` : post.data.cover_image}" alt="Cover image" />`
-        : "";
-      return {
-        title: post.data.title,
-        pubDate: post.data.date,
-        link: `/${post.id}`,
-        content: coverImageHtml + replaceRelativeWithAbsoluteUrls(md.render(post.body)),
-      };
-    }),
+    items: await Promise.all(
+      posts.map(async (post) => {
+        const coverImage = post.data.cover_image
+          ? await getImage({
+              src: post.data.cover_image,
+              width: Math.min(post.data.cover_image.width, 1080),
+              format: "jpg",
+              quality: 90,
+              background: "#fff",
+            })
+          : undefined;
+        const coverImageHtml = coverImage
+          ? `<img src="${site.origin}${coverImage.src}" alt="" />`
+          : "";
+        return {
+          title: post.data.title,
+          pubDate: post.data.date,
+          link: `/${post.id}`,
+          content:
+            coverImageHtml +
+            replaceRelativeWithAbsoluteUrls(md.render(post.body)),
+        };
+      })
+    ),
     trailingSlash: false,
   });
 };

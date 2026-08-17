@@ -6,8 +6,8 @@ import Layout from "../layouts/layout.astro";
 const entry = await getEntry("pages", "index")!;
 ---
 
-<Layout title="Ben Borgers" ogImage="/pages/index-cover-image.png">
-  <Entry entry={entry} coverImage="/pages/index-cover-image.png" />
+<Layout title="Ben Borgers" ogImage={entry.data.cover_image}>
+  <Entry entry={entry} />
 </Layout>
 
 <script>
