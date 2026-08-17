@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { src, class: className } = Astro.props;
-const width = Math.min(src.width, Math.round((src.width / src.height) * 216));
+const width = Math.min(src.width, 1080);
 ---
 
 <Image
