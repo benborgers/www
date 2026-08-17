@@ -3,6 +3,7 @@ import { render, type CollectionEntry } from "astro:content";
 import CoverImage from "./cover-image.astro";
 import Prose from "./prose.astro";
 import RelatedPosts from "./related-posts.astro";
+import { isFutureDate } from "../lib/posts";
 
 interface Props {
   entry: CollectionEntry<"posts"> | CollectionEntry<"pages">;
@@ -24,7 +25,8 @@ const { Content } = await render(entry);
 ---
 
 {
-  entry.collection === "posts" && entry.data.draft && (
+  entry.collection === "posts" &&
+    (entry.data.draft || isFutureDate(entry.data.date)) && (
     <p class="mb-10 bg-brand-yellow-light text-brand-red border border-brand-red px-2 py-0.5 font-medium max-w-max mx-auto">
       draft post
     </p>

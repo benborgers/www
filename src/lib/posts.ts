@@ -38,6 +38,9 @@ const getCurrentTimePacific = () => {
   );
 };
 
+export const isFutureDate = (date?: Date) =>
+  Boolean(date && date > getCurrentTimePacific());
+
 export const getPosts = async ({
   includeUnlisted,
   includeDrafts = false,
@@ -59,11 +62,7 @@ export const getPosts = async ({
       return true;
     })
     .filter((post) => {
-      if (
-        post.data.date &&
-        post.data.date > getCurrentTimePacific() &&
-        !includeDrafts
-      ) {
+      if (isFutureDate(post.data.date) && !includeDrafts) {
         return false;
       }
       return true;
