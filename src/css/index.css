@@ -47,14 +47,14 @@
 @keyframes newsletter-in {
   from {
     opacity: 0;
-    transform: translateX(-10px) scale(0.98);
+    transform: translateX(-5px) scale(0.98);
   }
 }
 
 @keyframes newsletter-out {
   to {
     opacity: 0;
-    transform: translateX(-10px) scale(0.99);
+    transform: translateX(-5px) scale(0.99);
   }
 }
 
@@ -90,13 +90,13 @@
 @keyframes newsletter-mobile-in {
   from {
     opacity: 0;
-    transform: translateY(10px) scale(0.99);
+    transform: translateY(5px) scale(0.99);
   }
 }
 
 @keyframes newsletter-mobile-out {
   to {
     opacity: 0;
-    transform: translateY(10px) scale(0.995);
+    transform: translateY(5px) scale(0.995);
   }
 }

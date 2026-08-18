@@ -52,7 +52,7 @@ const setupNewsletterDialog = () => {
     );
     dialog.style.setProperty(
       "--newsletter-left",
-      `${triggerBounds.right + 24}px`
+      `${triggerBounds.right + 12}px`
     );
     previousOverflow = document.documentElement.style.overflow;
     previousBodyOverflow = document.body.style.overflow;

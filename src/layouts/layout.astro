@@ -161,13 +161,13 @@ const { title, ogImage, coverImagePosition = "top" } = Astro.props;
 
       <dialog
         id="newsletter-dialog"
-        class="newsletter-dialog fixed inset-x-4 top-auto bottom-4 m-0 w-auto max-w-none overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 p-0 text-gray-900 shadow-lg backdrop:bg-gray-900/10 focus:outline-none lg:inset-[var(--newsletter-top)_auto_auto_var(--newsletter-left)] lg:w-max lg:max-w-[calc(100vw-var(--newsletter-left)-24px)] lg:max-h-[calc(100dvh-var(--newsletter-top)-24px)]"
+        class="newsletter-dialog fixed inset-x-4 top-4 bottom-auto m-0 w-auto max-w-none overflow-hidden rounded-none border-0 bg-gray-50 p-0 text-gray-900 shadow-lg backdrop:bg-gray-900/10 focus:outline-none lg:inset-[var(--newsletter-top)_auto_auto_var(--newsletter-left)] lg:w-max lg:max-w-[calc(100vw-var(--newsletter-left)-24px)] lg:max-h-[calc(100dvh-var(--newsletter-top)-24px)]"
         aria-label="Newsletter signup"
         tabindex="-1"
       >
         <div class="grid items-center p-4">
           <div class="newsletter-form-state">
-            <p class="mr-4 text-balance text-lg leading-tight font-medium text-gray-900 lg:whitespace-nowrap">
+            <p class="mr-4 text-balance leading-tight font-medium text-gray-900 lg:whitespace-nowrap">
               Get an email when I publish a blog post
             </p>
 
@@ -187,11 +187,11 @@ const { title, ogImage, coverImagePosition = "top" } = Astro.props;
                   placeholder="Email address"
                   required
                   autofocus
-                  class="min-w-0 flex-1 rounded-lg border-2 border-gray-300 bg-white py-2 indent-3 font-sans text-gray-900 placeholder:text-gray-400 focus:border-brand-blue focus:outline-none"
+                  class="min-w-0 flex-1 border-2 border-gray-300 bg-white py-2 indent-3 font-sans text-gray-900 placeholder:text-gray-400 focus:border-brand-blue focus:outline-none"
                 />
                 <button
                   type="submit"
-                  class="cursor-pointer rounded-lg border border-gray-900 bg-gray-900 px-3 py-2 text-sm font-semibold text-white focus:border-brand-blue focus:outline-none disabled:cursor-wait disabled:opacity-65"
+                  class="cursor-pointer border border-gray-900 bg-gray-900 px-3 py-2 text-sm font-semibold text-white focus:border-brand-blue focus:outline-none disabled:cursor-wait disabled:opacity-65"
                 >
                   Subscribe
                 </button>
@@ -204,7 +204,7 @@ const { title, ogImage, coverImagePosition = "top" } = Astro.props;
             aria-live="polite"
             hidden
           >
-            <p class="text-lg leading-tight font-medium text-gray-900">
+            <p class="leading-tight font-medium text-gray-900">
               Check your email to confirm your subscription!
             </p>
           </div>
