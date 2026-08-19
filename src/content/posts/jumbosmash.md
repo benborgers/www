@@ -22,6 +22,8 @@ We launched in the evening of May 8th, and shut it down on the morning of gradua
 
 ![app.png](https://raw.githubusercontent.com/benborgers/www/main/public/posts/jumbosmash/app.png)
 
-Initially, we built an Expo app. But Apple refused to allow it onto the App Store, citing guideline [4.3 Spam](https://developer.apple.com/app-store/review/guidelines/#4.3).
+Initially, we built an Expo app. But Apple refused to allow it onto the App Store, citing guideline [4.3 Spam](https://developer.apple.com/app-store/review/guidelines/#4.3) (which specifically names that the App Store does not need more dating apps).
 
-Because of that, I had Claude Code (this was pretty early in its existence!) convert the app to a Next.js PWA web app that used push notifications. This worked completely fine and didn't require Apple's blessing.
+We tried to argue that this was a very niche and short-lived dating app, but they were unconvinced. We had to pivot. 
+
+I paid $200 for Claude Code (this was pretty early in its existence! I was amazed) and converted the app to a Next.js PWA web app that used web push notifications. This worked completely fine and didn't require Apple's blessing.
