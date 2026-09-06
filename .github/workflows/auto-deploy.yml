@@ -45,4 +45,6 @@ jobs:
 
       - name: Trigger Vercel Deploy
         if: steps.scheduled-post.outputs.found == 'true'
-        run: curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_d2OHBOiSssWKxDD1WiZT4QJF20Su/sky6Sak4j8"
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: curl --fail-with-body -X POST "$VERCEL_DEPLOY_HOOK_URL"
