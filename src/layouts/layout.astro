@@ -75,7 +75,7 @@ const { title, ogImage, coverImagePosition = "top" } = Astro.props;
             <div class="max-lg:max-w-[540px] max-lg:mx-auto">
               <a
                 href="/"
-                class="block max-w-max text-gray-900 font-semibold bg-brand-blue-light px-1.5 -ml-1.5"
+                class="name-highlight block max-w-max text-gray-900 font-semibold"
               >
                 Ben Borgers
               </a>
@@ -233,3 +233,20 @@ const { title, ogImage, coverImagePosition = "top" } = Astro.props;
     </div>
   </body>
 </html>
+
+<style>
+  .name-highlight {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    background-image: linear-gradient(
+      270deg,
+      #facc1566,
+      #facc151a 0.3em,
+      #facc1533 calc(100% - 0.5em),
+      #facc1580
+    );
+    border-radius: 0.5em 0.3em;
+    margin: -0.1em -0.35em;
+    padding: 0.1em 0.35em;
+  }
+</style>
