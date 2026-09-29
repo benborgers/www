@@ -1,5 +1,5 @@
 ---
-cover_image: ./images/now/cover.png
+cover_image: ./images/now/6.png
 ---
 
 - Moved to San Francisco in August
