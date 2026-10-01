@@ -43,7 +43,7 @@ const { Content } = await render(entry);
       {title && (
         <h1
           class:list={[
-            "text-gray-950 text-4xl md:text-5xl font-xl font-extrabold text-center text-balance",
+            "text-gray-950 text-4xl leading-[1.05] font-xl font-extrabold text-center text-balance",
             coverImageTop && "mt-6",
           ]}
         >
@@ -52,7 +52,7 @@ const { Content } = await render(entry);
       )}
 
       {date && (
-        <time class="block mt-4 text-sm font-medium text-gray-500 text-center">
+        <time class="block mt-3 text-sm font-medium text-gray-500 text-center">
           {date.toLocaleString("en-US", {
             timeZone: "UTC",
             month: "long",
