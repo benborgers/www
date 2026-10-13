@@ -25,7 +25,6 @@ I'd love to hear from you and grab coffee — [benborgers@hey.com](mailto:benbor
 
 - JumboSmash: Dating app for Tufts seniors.
 - [TikTok Graveyard](https://tiktokgraveyard.com), [IG Valentine](https://igvalentine.com), and [Locket Yearbook](https://locketyearbook.com/kXYrENR6d1FPjUYYTDRI): Viral marketing for [Locket](https://locket.camera).
-- [GovDiff](https://govdiff.com): Government websites before and after Trump.
 - [Speakology](https://speakology.ai): AI speaking partner for language learning.
 - [Govcentives](https://govcentives.com): Whitelabeled search engines for energy providers.
 - [Tufts Meal Plan Wrapped](/wrapped): Spotify Wrapped for Tufts’ meal plans, used by 1,300+ students.
