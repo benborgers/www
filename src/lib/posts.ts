@@ -1,4 +1,27 @@
 import { getCollection, type CollectionEntry } from "astro:content";
+import { customPosts, type CustomPostInfo } from "./custom-posts";
+
+export type CustomPost = {
+  collection: "custom";
+  id: string;
+  body: string;
+  data: CollectionEntry<"posts">["data"];
+};
+
+export type Post = CollectionEntry<"posts"> | CustomPost;
+
+const toPost = ({ id, ...data }: CustomPostInfo): CustomPost => ({
+  collection: "custom",
+  id,
+  body: "",
+  data: { starred: false, unlisted: false, draft: false, ...data },
+});
+
+export const getCustomPost = (id: string): CustomPost => {
+  const info = customPosts.find((post) => post.id === id);
+  if (!info) throw new Error(`No custom post "${id}" in src/lib/custom-posts.ts`);
+  return toPost(info);
+};
 
 const getTimestamp = (date?: Date) => {
   if (!date) {
@@ -47,8 +70,8 @@ export const getPosts = async ({
 }: {
   includeUnlisted: boolean;
   includeDrafts?: boolean;
-}): Promise<CollectionEntry<"posts">[]> => {
-  return (await getCollection("posts"))
+}): Promise<Post[]> => {
+  return [...(await getCollection("posts")), ...customPosts.map(toPost)]
     .filter((post) => {
       if (post.data.unlisted && !includeUnlisted) {
         return false;

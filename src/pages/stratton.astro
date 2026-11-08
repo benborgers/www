@@ -1,0 +1,404 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import Layout from "../layouts/layout.astro";
+import { getCustomPost } from "../lib/posts";
+import door from "../images/stratton/door.jpg";
+
+const post = getCustomPost("stratton");
+
+const files = import.meta.glob<{ default: ImageMetadata }>(
+  "../images/stratton/*.webp",
+  { eager: true }
+);
+const poles = Object.keys(files)
+  .sort()
+  .map((k) => files[k].default);
+
+const titles = [
+  "Best Roommate Name?",
+  "Correct men’s shorts inseam?",
+  "Favorite Roommate?",
+  "Are you in CS?",
+  "Do you use lip balm regularly?",
+  "Is drinking cow milk weird?",
+  "Sex, Drugs, or Rock & Roll, plus write-ins",
+  "When was your last haircut?",
+  "Do You Still Tell “Ur Mom” Jokes?",
+  "Would you rather",
+  "Describe Tufts students in one word:",
+  "Monaco or Kumar",
+  "Do you actually like turkey?",
+  "Fuck, Marry, Kill: Hodge, Pax, and Kindevan",
+  "Single, Taken, or Other (explain in 1 word)",
+  "We control thermostat",
+  "President of Stratton 114?",
+  "Best Road Salt Color",
+  "Do you have a Valentine?",
+  "Rice Purity Score?",
+  "Curtains in Stratton showers: (the ones they added)",
+  "Go-To Boba Order?",
+  "Is it acceptable to use your laptop while pooping (at home)?",
+  "How much are you paying for rent next year?",
+  "How many times have you ever pooped your pants?",
+  "A scale from “I wanna stay” through “Bittersweet” to “Can’t wait to leave”",
+];
+
+// Small deterministic tilt per sheet so the stack looks hand-placed.
+const tilt = (i: number) => (((i * 37) % 11) - 5) * 0.16;
+
+const doorAlt =
+  "Two of my roommates by the door to room 114, next to the bulletin board with a poll pinned to it: “Are you in CS?”";
+---
+
+<Layout title={post.data.title} custom>
+  <div class="stratton">
+    <div class="layout">
+      <div class="intro">
+        <h1 class="visually-hidden">{post.data.title}</h1>
+        <div class="prose">
+          <p>
+            During my sophomore year at Tufts (2022–2023), my roommates and I had
+            a dorm room in Stratton Hall in a high-traffic area of the building.
+          </p>
+          <p>
+            Each room came with a bulletin board in the hallway. We used it to
+            run regular polls for passersby to vote on.
+          </p>
+        </div>
+        <figure class="photo">
+          <Image
+            src={door}
+            alt={doorAlt}
+            widths={[300, 600]}
+            sizes="300px"
+          />
+        </figure>
+      </div>
+
+      <div class="viewer">
+        <div class="stack">
+          <div
+            class="sheet door-sheet"
+            style={`--tilt: -0.6deg; z-index: ${poles.length + 1}; transform: rotate(var(--tilt))`}
+          >
+            <Image
+              src={door}
+              alt={doorAlt}
+              widths={[480, 720, 1080]}
+              sizes="84vw"
+              draggable="false"
+            />
+          </div>
+          {
+            poles.map((src, i) => (
+              <div
+                class="sheet"
+                style={`--tilt: ${tilt(i)}deg; z-index: ${poles.length - i}; transform: translate(${Math.min(i, 4) * 2}px, ${Math.min(i, 4) * 3}px) rotate(var(--tilt)); visibility: ${i > 4 ? "hidden" : "visible"}`}
+              >
+                <Image
+                  src={src}
+                  alt={`Poll ${i + 1} of ${poles.length}: ${titles[i]}`}
+                  widths={[600, 900, 1200]}
+                  sizes="(max-width: 900px) 84vw, 560px"
+                  quality={90}
+                  loading={i < 3 ? "eager" : "lazy"}
+                  fetchpriority={i === 0 ? "high" : "auto"}
+                  draggable="false"
+                />
+              </div>
+            ))
+          }
+        </div>
+
+        <nav class="controls" aria-label="Polls">
+          <button class="arrow prev" aria-label="Previous poll" disabled>
+            <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" /></svg>
+          </button>
+          <p class="count"><span data-current>1</span> of <span data-total>{poles.length}</span></p>
+          <button class="arrow next" aria-label="Next poll">
+            <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg>
+          </button>
+        </nav>
+
+        <p class="visually-hidden" aria-live="polite" data-status></p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .stratton {
+    position: relative;
+    container-type: inline-size;
+    min-height: 100%;
+    display: grid;
+    overflow-x: clip;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .layout {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 32px;
+    padding: 32px 16px 48px;
+  }
+  .intro {
+    width: 100%;
+    max-width: 540px;
+  }
+  .intro .prose {
+    font-size: 1.0625rem;
+  }
+  .intro .prose > p + p {
+    margin-top: 0;
+  }
+  .intro .prose > p:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  .photo {
+    display: none;
+    width: min(300px, 80%, calc((100svh - 400px) * 0.75));
+    min-width: 200px;
+    margin: 28px 0 0 4px;
+    padding: 6px;
+    background: #fff;
+    box-shadow:
+      0 1px 2px rgb(28 25 23 / 0.15),
+      0 10px 24px rgb(28 25 23 / 0.12);
+    rotate: -1deg;
+  }
+  .photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .viewer {
+    display: grid;
+    justify-items: center;
+    gap: 40px;
+  }
+  .stack {
+    position: relative;
+    width: min(84cqw, 440px);
+    aspect-ratio: 0.745;
+    touch-action: pan-y;
+    user-select: none;
+    cursor: pointer;
+  }
+  @container (min-width: 900px) {
+    .layout {
+      grid-template-columns: minmax(200px, 380px) auto;
+      justify-content: center;
+      align-items: center;
+      column-gap: clamp(32px, 6cqw, 96px);
+      padding: 24px 32px;
+    }
+    .stack {
+      width: min(calc((100svh - 170px) * 0.745), 560px, calc(100cqw - 540px));
+    }
+    .intro .prose > p:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+    .photo {
+      display: block;
+    }
+    .door-sheet {
+      display: none;
+    }
+  }
+
+  .sheet {
+    position: absolute;
+    inset: 0;
+    background: #fbf7ef;
+    filter: drop-shadow(0 1px 1px rgb(28 25 23 / 0.18))
+      drop-shadow(0 8px 14px rgb(28 25 23 / 0.08));
+  }
+  .stack.ready .sheet {
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.3, 1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stack.ready .sheet {
+      transition: none !important;
+    }
+  }
+  .sheet img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: fill;
+    pointer-events: none;
+  }
+  .door-sheet {
+    padding: 8px;
+    background: #fff;
+  }
+  .door-sheet img {
+    object-fit: cover;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .count {
+    min-width: 7ch;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    color: var(--color-gray-500);
+  }
+  .arrow {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-gray-300);
+    background: #fff;
+    color: var(--color-gray-900);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition:
+      background 0.2s,
+      transform 0.15s,
+      opacity 0.2s;
+  }
+  .arrow:hover {
+    background: var(--color-gray-50);
+  }
+  .arrow:active {
+    transform: scale(0.92);
+  }
+  .arrow:disabled {
+    opacity: 0.25;
+    cursor: default;
+  }
+  .arrow svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>(".stratton")!;
+  const stack = root.querySelector<HTMLElement>(".stack")!;
+  const allSheets = [...stack.querySelectorAll<HTMLElement>(".sheet")];
+  const prevBtn = root.querySelector<HTMLButtonElement>(".prev")!;
+  const nextBtn = root.querySelector<HTMLButtonElement>(".next")!;
+  const current = root.querySelector<HTMLElement>("[data-current]")!;
+  const total = root.querySelector<HTMLElement>("[data-total]")!;
+  const status = root.querySelector<HTMLElement>("[data-status]")!;
+  const VISIBLE = 4;
+  const THROW = "transform 0.34s cubic-bezier(0.4, 0.2, 0.7, 0.9)";
+  const LAND = "transform 0.42s cubic-bezier(0.2, 0.9, 0.3, 1)";
+
+  let cur = 0;
+  let sheets: HTMLElement[] = [];
+  let n = 0;
+
+  function place(i: number) {
+    const sheet = sheets[i];
+    const depth = i - cur;
+    if (depth < 0) {
+      const spin = i % 2 ? -9 : 7;
+      sheet.style.transform = `translateY(calc(-1 * var(--throw))) rotate(calc(var(--tilt) + ${spin}deg))`;
+      sheet.style.zIndex = String(n + 1 + i);
+    } else {
+      const d = Math.min(depth, VISIBLE);
+      sheet.style.transform = `translate(${d * 2}px, ${d * 3}px) rotate(var(--tilt))`;
+      sheet.style.zIndex = String(n - i);
+    }
+    sheet.style.visibility = depth > VISIBLE ? "hidden" : "visible";
+  }
+
+  function go(to: number) {
+    const next = Math.max(0, Math.min(n - 1, to));
+    if (next === cur) return;
+    sheets[Math.min(cur, next)].style.transition = next > cur ? THROW : LAND;
+    cur = next;
+    sheets.forEach((_, i) => place(i));
+    updateControls();
+    status.textContent = sheets[cur].querySelector("img")!.alt;
+  }
+
+  function updateControls() {
+    current.textContent = String(cur + 1);
+    total.textContent = String(n);
+    prevBtn.disabled = cur === 0;
+    nextBtn.disabled = cur === n - 1;
+  }
+
+  // The door photo is the first card on narrow screens and sits under the
+  // text on wide ones, so the set of cards depends on the layout.
+  function collect() {
+    const visible = allSheets.filter(
+      (s) => getComputedStyle(s).display !== "none"
+    );
+    if (visible.length === n) return;
+    const showing = sheets[cur];
+    sheets = visible;
+    n = visible.length;
+    cur = cur === 0 ? 0 : Math.max(0, sheets.indexOf(showing));
+    stack.classList.remove("ready");
+    sheets.forEach((_, i) => place(i));
+    updateControls();
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => stack.classList.add("ready"))
+    );
+  }
+
+  function measure() {
+    // Far enough to leave the top of the page, over the site nav on mobile.
+    const distance = stack.getBoundingClientRect().bottom + scrollY;
+    stack.style.setProperty("--throw", `${distance + 80}px`);
+  }
+
+  prevBtn.addEventListener("click", () => go(cur - 1));
+  nextBtn.addEventListener("click", () => go(cur + 1));
+  addEventListener("keydown", (e) => {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === " " && (e.target as Element).closest("a, button")) return;
+    if (e.key === "ArrowRight" || e.key === " ") go(cur + 1);
+    if (e.key === "ArrowLeft") go(cur - 1);
+  });
+
+  let start: { x: number; y: number; id: number } | null = null;
+  stack.addEventListener("pointerdown", (e) => {
+    start = { x: e.clientX, y: e.clientY, id: e.pointerId };
+  });
+  stack.addEventListener("pointerup", (e) => {
+    if (!start || e.pointerId !== start.id) return;
+    const dx = e.clientX - start.x;
+    const dy = e.clientY - start.y;
+    start = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      go(dx < 0 ? cur + 1 : cur - 1);
+    } else if (Math.abs(dx) < 8 && Math.abs(dy) < 8) {
+      go(cur + 1);
+    }
+  });
+  stack.addEventListener("pointercancel", () => (start = null));
+
+  new ResizeObserver(() => {
+    collect();
+    measure();
+  }).observe(root);
+  collect();
+  measure();
+</script>

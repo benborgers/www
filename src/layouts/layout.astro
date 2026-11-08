@@ -8,9 +8,12 @@ interface Props {
   title: string;
   ogImage?: ImageMetadata;
   coverImagePosition?: "top" | "bottom";
+  // Custom posts: keep the nav, but everything beside it is the page's own.
+  // No ClientRouter, so the page's scripts run fresh on every visit.
+  custom?: boolean;
 }
 
-const { title, ogImage, coverImagePosition = "top" } = Astro.props;
+const { title, ogImage, coverImagePosition = "top", custom = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -81,12 +84,18 @@ const { title, ogImage, coverImagePosition = "top" } = Astro.props;
       } catch {}
     </script>
 
-    <ClientRouter />
+    {!custom && <ClientRouter />}
   </head>
   <body
     class="antialiased bg-white text-pretty selection:bg-brand-yellow-light"
   >
-    <div class="lg:grid lg:grid-cols-[1fr_540px_1fr] lg:gap-x-8">
+    <div
+      class:list={[
+        custom
+          ? "grid min-h-svh grid-rows-[auto_1fr] lg:grid-rows-none lg:grid-cols-[max-content_1fr]"
+          : "lg:grid lg:grid-cols-[1fr_540px_1fr] lg:gap-x-8",
+      ]}
+    >
       {
         !import.meta.env.CHEETAH && (
           <nav class="p-4 pb-3 h-max lg:sticky lg:top-0 max-lg:bg-gray-50 max-lg:border-b max-lg:border-gray-100">
@@ -238,16 +247,24 @@ const { title, ogImage, coverImagePosition = "top" } = Astro.props;
 
       <main
         class:list={[
-          "lg:pt-24 pb-48 max-lg:px-4 max-lg:max-w-[540px] max-lg:mx-auto",
-          coverImagePosition === "bottom" ? "pt-8" : "pt-14",
+          custom
+            ? "min-w-0"
+            : [
+                "lg:pt-24 pb-48 max-lg:px-4 max-lg:max-w-[540px] max-lg:mx-auto",
+                coverImagePosition === "bottom" ? "pt-8" : "pt-14",
+              ],
         ]}
       >
         <slot />
       </main>
 
-      <div>
-        <slot name="sidebar" />
-      </div>
+      {
+        !custom && (
+          <div>
+            <slot name="sidebar" />
+          </div>
+        )
+      }
     </div>
   </body>
 </html>

@@ -1,20 +1,19 @@
 import { cos_sim, pipeline } from "@huggingface/transformers";
-import type { CollectionEntry } from "astro:content";
 import fs from "fs";
-import { getPosts } from "./posts";
+import { getPosts, type Post } from "./posts";
 
 const NUMBER_OF_RELATED_POSTS = 3;
 const COSINE_SIMILARITY_CUTOFF = 0.85;
 const CACHE_FILE_PATH = `./node_modules/.astro/related-posts.json`;
 
-let posts: CollectionEntry<"posts">[] = [];
+let posts: Post[] = [];
 
 // key: slug, value: embedding
 let embeddings: Record<string, number[]> = {};
 
 export const getRelatedPosts = async (
   slug: string
-): Promise<CollectionEntry<"posts">[]> => {
+): Promise<Post[]> => {
   if (posts.length === 0) {
     posts = await getPosts({ includeUnlisted: false });
   }

@@ -35,7 +35,8 @@ jobs:
               in_frontmatter = 0
             }
             END { exit !found }
-          ' src/content/posts/*.md; then
+          ' src/content/posts/*.md ||
+            grep -q "date: new Date(\"$today\")" src/lib/custom-posts.ts; then
             echo "found=true" >> "$GITHUB_OUTPUT"
             echo "Found a post going live on $today."
           else

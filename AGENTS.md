@@ -1,1 +1,2 @@
 - Post cover images are generated from the materials in `reference/`: use `reference/cover-images.png` as the style reference image and the prompt template in `reference/cover-images.txt`.
+- Custom HTML posts are a page at `src/pages/<slug>.astro` wrapped in `<Layout custom>`, which keeps the site nav and leaves the rest to the page, plus an entry in `src/lib/custom-posts.ts` that lists the post in `/blog`, RSS, and related posts. Put their images in `src/images/<slug>/`.

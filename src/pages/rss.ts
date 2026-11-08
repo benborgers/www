@@ -43,13 +43,18 @@ export const GET: APIRoute = async ({ site: _site }) => {
         const coverImageHtml = coverImage
           ? `<img src="${site.origin}${coverImage.src}" alt="" />`
           : "";
+        // Feed readers can't run a custom page, so send readers to it.
+        const body =
+          post.collection === "custom"
+            ? `[View this on ben.page →](/${post.id})`
+            : post.body;
         return {
           title: post.data.title,
           pubDate: post.data.date,
           link: `/${post.id}`,
           content:
             coverImageHtml +
-            replaceRelativeWithAbsoluteUrls(md.render(post.body)),
+            replaceRelativeWithAbsoluteUrls(md.render(body ?? "")),
         };
       })
     ),
