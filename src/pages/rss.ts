@@ -31,17 +31,19 @@ export const GET: APIRoute = async ({ site: _site }) => {
     site,
     items: await Promise.all(
       posts.map(async (post) => {
-        const coverImage = post.data.cover_image
-          ? await getImage({
-              src: post.data.cover_image,
-              width: Math.min(post.data.cover_image.width, 1080),
-              format: "jpg",
-              quality: 90,
-              background: "#fff",
-            })
-          : undefined;
-        const coverImageHtml = coverImage
-          ? `<img src="${site.origin}${coverImage.src}" alt="" />`
+        if (post.data.cover_image) {
+          // Keeps building the hashed URLs that emails sent before /covers
+          // existed still link to. Astro only emits the file once `src` is read.
+          await getImage({
+            src: post.data.cover_image,
+            width: Math.min(post.data.cover_image.width, 1080),
+            format: "jpg",
+            quality: 90,
+            background: "#fff",
+          }).then((image) => image.src);
+        }
+        const coverImageHtml = post.data.cover_image
+          ? `<img src="${site.origin}/covers/${post.id}.${post.data.cover_image.format}" alt="" />`
           : "";
         // Feed readers can't run a custom page, so send readers to it.
         const body =

@@ -13,6 +13,11 @@
   ],
   "redirects": [
     {
+      "source": "/_astro/cover.Cr1sNv4I_7w1f6.jpg",
+      "destination": "/covers/amp.png",
+      "permanent": true
+    },
+    {
       "source": "/rss.xml",
       "destination": "/rss",
       "permanent": true
