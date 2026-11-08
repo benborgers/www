@@ -1,0 +1,1 @@
+- Post cover images are generated from the materials in `reference/`: use `reference/cover-images.png` as the style reference image and the prompt template in `reference/cover-images.txt`.
