@@ -151,9 +151,7 @@ git update-index --assume-unchanged "${ASTRO_CONFIG_PATH:-astro.config.mjs}"
 # Amp-managed or checked-out .env file is created.
 mkdir -p .amp
 
-if [[ "${AMP_ORB:-}" == "1" ]]; then
-  echo "Starting declared orb services..."
-  amp orb services ensure
-fi
+# Services start from .agents/resume: portal services need the thread the orb
+# is assigned to, which setup (a reusable snapshot) does not have yet.
 
 echo "Orb setup complete."
