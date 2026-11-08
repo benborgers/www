@@ -2,8 +2,9 @@ name: Automatic daily deploy for scheduled posts
 
 on:
   schedule:
-    # 2pm UTC = 6am or 7am Pacific (depending on daylight savings)
-    - cron: "0 14 * * *"
+    # 10:17 UTC = 2:17am or 3:17am Pacific (depending on daylight savings).
+    # Early and off the hour because GitHub often starts scheduled runs hours late.
+    - cron: "17 10 * * *"
   workflow_dispatch: # Allow manual trigger
 
 jobs:
