@@ -32,8 +32,8 @@ I'd love to hear from you and grab coffee — [benborgers@hey.com](mailto:benbor
 - [Kiwi](https://ask.kiwi): Live Q&A platform for university classes; built for University of Michigan research study and used by 2,000+ students.
 - [War Room](https://war.elk.sh): Social to-do list app.
 - [Bagel Institute](https://bagel.institute): Teaching tools for university classes, built for my dad.
-- [opensheet](https://opensheet.elk.sh): Open-source Google Sheets API that receives over 200 million requests/month.
-- [emojicdn](https://emojicdn.elk.sh): CDN for PNG images of emojis that gets millions of requests/month.
+- [opensheet](https://opensheet.elk.sh): Open source Google Sheets API that gets over 1.5 billion requests/month.
+- [emojicdn](https://emojicdn.elk.sh): CDN for PNG images of emojis.
 - [Blocks](/blocks): Schedule app for my high school that was used by 2,100 students and teachers (87% of the school).
 
 <div data-magic-interest></div>
