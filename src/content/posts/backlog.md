@@ -10,7 +10,7 @@ For bugs of any kind, and simple features that don’t require careful thought, 
 
 Do it, or don’t do it. There is no “next quarter.” If it’s a good idea, you should just do it now. If it’s not, then don’t.
 
-Features and fixes that used to take days or weeks can now be one-shotted by Opus 5.5 in the background and in parallel. Paste the link to the bug report in Slack, ask for a video providing irrefutable proof that it’s been fixed, and come back in an hour. Or sometimes seven hours, but whatever.
+Features and fixes that used to take hours or weeks can now be one-shotted by Opus 5.5 in the background and in parallel. Paste the link to the bug report in Slack, ask for a video providing irrefutable proof that it’s been fixed, and come back in an hour. Or sometimes seven hours, but whatever.
 
 Even if you’re not sure whether an agent can one-shot it, there’s no reason not to point an agent at it.
 
