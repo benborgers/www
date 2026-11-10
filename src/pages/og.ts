@@ -14,7 +14,7 @@ export const GET: APIRoute = async ({ url, site, redirect }) => {
 
   const imageUrl = `https://wsrv.nl/?url=${
     site!.origin
-  }${path}&h=630&w=1200&fit=contain&cbg=white&output=jpg`;
+  }${path}&h=630&w=1200&fit=contain&cbg=white&bg=white&output=jpg`;
 
   const response = await fetch(imageUrl);
 
