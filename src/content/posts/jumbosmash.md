@@ -9,7 +9,7 @@ On May 8, 2025, some friends and I launched _JumboSmash_, a dating (_"dating"_) 
 JumboSmash is a 10-year tradition, and to contribute to future generations, I thought I'd write down my late thoughts before I _totally_ forget them.
 
 - [2015, 2016](https://github.com/jumbosmash/tradition)
-- [2017](https://blog.cwrichardkim.com/we-spent-a-year-building-a-dating-app-that-only-lasts-one-week-e6e1a10cedb3)
+- [2017](https://medium.com/c-w-richard-kim/we-spent-a-year-building-a-dating-app-that-only-lasts-one-week-e6e1a10cedb3)
 - [2018](https://bernsteinbear.com/blog/jumbosmash-a-technical-retrospective/)
 - [2019](https://github.com/mgreenw/JumboSmash)
 - [2020 (gone too soon)](https://www.facebook.com/jumbosmash2020)
