@@ -5,7 +5,7 @@ date: 2026-09-06
 
 There are many reasons to write by hand, instead of using AI. A classic reason is that [writing is thinking](https://www.paulgraham.com/writes.html) — in other words that if you're not writing, you're not clearly thinking. 
 
-But here's another reason: **when you write with AI, you're trying on thoughts and seeing what fits "close enough"**. 
+But here's another reason: **when you write with AI, you're trying on thoughts and seeing what fits "close enough."** 
 
 You give AI a jumble of thoughts, and ask it to polish and put things together. Since [all transformations of text are lossy](https://sophiebits.com/2026/06/25/there-are-no-lossless-transformations-of-natural-language-text), some things change. A tone shift here, an idea inserted there, an emphasis smoothed out. 
 
