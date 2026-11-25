@@ -2,7 +2,8 @@
 @import "./prose.css";
 
 @theme {
-  /* Allo by Josh Puckett (allo-font, imported in layout.astro), at its default roundness of 50. */
+  /* Allo by Josh Puckett (allo-font, imported in layout.astro). The "friendly" build fixes
+     roundness at its default of 50, at about half the file size. */
   --font-sans: "Allo", system-ui, sans-serif;
 
   --color-brand-blue: hsl(209deg, 95%, 40%);
@@ -49,7 +50,7 @@
   /* Allo's x-height as a share of its size, as browsers measure it. Every font,
      like code's monospace, scales so its lowercase letters match Allo's at
      the same font size; Allo itself doesn't change. */
-  font-size-adjust: 0.543;
+  font-size-adjust: 0.542;
 
   /* Triangle, circle, square in the brand red, blue, and yellow: the prose
      divider, and the source of the single shapes (.brand-shape). */
