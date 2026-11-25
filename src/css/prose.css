@@ -39,6 +39,12 @@
     @apply mt-0;
   }
 
+  /* A list's first item margin would collapse through the list and add space
+     above the content. */
+  > :is(ul, ol):first-child > li:first-child {
+    @apply mt-0;
+  }
+
   > :last-child {
     @apply mb-0;
   }
