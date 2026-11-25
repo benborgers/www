@@ -15,4 +15,9 @@ export const customPosts: CustomPostInfo[] = [
     title: "Dorm room polls",
     date: new Date("2026-11-08"),
   },
+  {
+    id: "ai-timeline",
+    title: "What AI models was I using when?",
+    draft: true,
+  },
 ];

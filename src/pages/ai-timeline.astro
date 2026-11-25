@@ -1,0 +1,436 @@
+---
+import Layout from "../layouts/layout.astro";
+import { getCustomPost } from "../lib/posts";
+
+const post = getCustomPost("ai-timeline");
+
+// Months are counted from Sep 2022 (0) through Nov 2026.
+const mi = (s: string) => {
+  const [y, m] = s.split("-").map(Number);
+  return (y - 2022) * 12 + (m - 9);
+};
+const N = mi("2026-11") + 1;
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+// One row per model family. "main" is what I mostly coded with that month,
+// "side" is what I also coded with for real; one-off tests don't count. Each mark is a version arriving, with the tool I used it in.
+type Level = "main" | "side";
+const models: { name: string; segs: [string, string, Level][]; marks: [string, string, string?][] }[] = [
+  {
+    name: "GPT",
+    segs: [
+      ["2022-09", "2022-11", "side"], ["2022-12", "2024-03", "main"], ["2024-04", "2024-12", "side"], ["2025-08", "2025-09", "side"],
+      ["2026-02", "2026-04", "side"], ["2026-05", "2026-05", "main"],
+      ["2026-06", "2026-06", "side"], ["2026-07", "2026-08", "main"], ["2026-09", "2026-11", "side"],
+    ],
+    marks: [
+      ["2022-09", "GPT-3"], ["2022-12", "GPT-3.5"], ["2023-06", "GPT-4", "ChatGPT"],
+      ["2025-08", "GPT-5", "Amp"], ["2026-05", "GPT-5.5", "Codex"], ["2026-07", "Sol"], ["2026-09", "GPT-6"],
+    ],
+  },
+  {
+    // Autocomplete in VS Code. I never knew which model it ran.
+    name: "Copilot",
+    segs: [["2022-09", "2023-10", "main"], ["2024-03", "2024-10", "side"]],
+    marks: [["2023-11", "Turned off"], ["2024-11", "Cancelled"]],
+  },
+  {
+    name: "Claude Sonnet",
+    segs: [["2024-06", "2025-11", "main"]],
+    marks: [["2024-06", "3.5 Sonnet", "Cursor"], ["2025-03", "3.7 Sonnet MAX"], ["2025-05", "Sonnet 4", "Amp"], ["2025-10", "4.5"]],
+  },
+  {
+    name: "Composer",
+    segs: [["2025-10", "2026-04", "side"]],
+    marks: [["2025-10", "Cheetah", "Cursor"], ["2026-03", "Composer 2"]],
+  },
+  {
+    name: "Gemini",
+    segs: [["2025-11", "2025-11", "side"]],
+    marks: [["2025-11", "3 Pro", "Amp"]],
+  },
+  {
+    name: "Claude Opus",
+    segs: [["2025-11", "2025-11", "side"], ["2025-12", "2026-04", "main"], ["2026-05", "2026-07", "side"], ["2026-09", "2026-11", "main"]],
+    marks: [["2025-11", "Opus 4.5", "Amp, Claude Code"], ["2026-02", "4.6"], ["2026-04", "4.7"], ["2026-06", "4.8"], ["2026-09", "Opus 5.5", "Amp"]],
+  },
+  {
+    name: "Claude Fable",
+    segs: [["2026-06", "2026-07", "main"]],
+    marks: [["2026-06", "Fable 5", "Claude Code"]],
+  },
+];
+
+// Places each row's labels: every label hangs right or left of its tick in
+// one of three lanes, without overlapping another label in its lane or
+// crossing a lower label's tick. Labels stay inside their year, so they fit
+// the stacked phone layout. Of the arrangements that work, the one with the
+// lowest lanes and fewest left-hanging labels wins.
+const MONTH_PX = 19;
+const LANES = 3;
+type Box = { lane: number; right: boolean; x: number; x0: number; x1: number };
+const conflicts = (a: Box, b: Box) =>
+  a.lane === b.lane
+    ? a.x0 < b.x1 && b.x0 < a.x1
+    : a.lane < b.lane
+      ? a.x0 < b.x && b.x < a.x1
+      : b.x0 < a.x && a.x < b.x1;
+function place(marks: { m: number; w: number }[]) {
+  const options = (bounded: boolean) =>
+    marks.map(({ m, w }) => {
+      const x = m * MONTH_PX;
+      const start = Math.max(0, m - ((8 + m) % 12));
+      const end = start === 0 ? mi("2023-01") : Math.min(N, start + 12);
+      const limit = end * MONTH_PX + (end === N ? MONTH_PX : 0);
+      const out: Box[] = [];
+      for (let lane = 0; lane < LANES; lane++) {
+        for (const right of [false, true]) {
+          const [x0, x1] = right ? [x - w, x] : [x, x + w];
+          if (bounded && (x0 < start * MONTH_PX || x1 > limit)) continue;
+          out.push({ lane, right, x, x0, x1 });
+        }
+      }
+      return out;
+    });
+  for (const bounded of [true, false]) {
+    const opts = options(bounded);
+    let best: Box[] | null = null;
+    let bestCost = Infinity;
+    const chosen: Box[] = [];
+    const search = (i: number, cost: number) => {
+      if (cost >= bestCost) return;
+      if (i === opts.length) {
+        best = [...chosen];
+        bestCost = cost;
+        return;
+      }
+      for (const o of opts[i]) {
+        if (chosen.some((c) => conflicts(c, o))) continue;
+        chosen.push(o);
+        search(i + 1, cost + o.lane * 10 + (o.right ? 1 : 0));
+        chosen.pop();
+      }
+    };
+    search(0, 0);
+    if (best) return best as Box[];
+  }
+  throw new Error("Could not place timeline labels");
+}
+const rows = models.map((t) => {
+  const marks = t.marks.map(([d, label, tool]) => ({
+    m: mi(d),
+    label,
+    tool,
+    w: (label.length + (tool ? tool.length + 1 : 0)) * 5.8 + 8,
+  }));
+  const boxes = place(marks);
+  const segs = t.segs.map(([s, e, lvl]) => ({ s: mi(s), e: mi(e), lvl }));
+  return {
+    name: t.name,
+    segs,
+    marks: marks.map((k, i) => ({ ...k, lane: boxes[i].lane, right: boxes[i].right })),
+  };
+});
+
+const years = [2022, 2023, 2024, 2025, 2026].map((y) => {
+  const start = Math.max(0, mi(`${y}-01`));
+  const end = Math.min(N - 1, mi(`${y}-12`));
+  const n = end - start + 1;
+  return {
+    y,
+    start,
+    n,
+    letters: Array.from({ length: n }, (_, i) => MONTHS[(8 + start + i) % 12][0]),
+    rows: rows.map((r) => ({
+      segs: r.segs
+        .map((s) => ({ s: Math.max(s.s, start), e: Math.min(s.e, end), lvl: s.lvl }))
+        .filter((s) => s.s <= s.e),
+      marks: r.marks.filter((k) => k.m >= start && k.m <= end),
+    })).map((row) => ({ ...row, empty: row.segs.length === 0 })),
+  };
+});
+
+---
+
+<Layout title={post.data.title} custom maxWidth="1100px">
+  <div class="ait">
+    <header class="head">
+      <h1 class="visually-hidden">{post.data.title}</h1>
+      <div class="prose">
+        <p>
+          Things are moving fast. I find it hard to remember what AI models I
+          was using when for coding, so I mined my laptop and texts to create a
+          timeline.
+        </p>
+      </div>
+    </header>
+
+    <div class="chart">
+      {years.map((yr, yi) => (
+        <section class:list={["yr", yi === 0 && "first"]} style={`--n:${yr.n}`}>
+          <div class="names" aria-hidden="true">
+            {rows.map((r, ri) => <span class:list={[yr.rows[ri].empty && "empty"]}>{r.name}</span>)}
+          </div>
+          <div class="grid">
+            <div class="yr-head">
+              <h2>{yr.y}</h2>
+              <div class="letters" aria-hidden="true">{yr.letters.map((l) => <span>{l}</span>)}</div>
+            </div>
+            {yr.rows.map((row, ri) => (
+              <div class:list={["row", row.empty && "empty"]}>
+                <span class="visually-hidden">{rows[ri].name}</span>
+                {yr.letters.map((_, i) => <i class="gl" style={`--m:${i}`} />)}
+                {row.segs.map((s) => (
+                  <i
+                    class:list={["seg", s.lvl]}
+                    style={`--s:${s.s - yr.start};--w:${s.e - s.s + 1}`}
+                  />
+                ))}
+                {row.marks.map((k) => (
+                  <span
+                    class:list={["mk", k.right && "right"]}
+                    style={`--m:${k.m - yr.start};--lane:${k.lane}`}
+                  >
+                    <span>{k.label}{k.tool && <em> {k.tool}</em>}</span>
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <footer class="foot">
+      <ul class="legend">
+        <li><i class="seg main" />Main model</li>
+        <li><i class="seg side" />On the side</li>
+      </ul>
+    </footer>
+  </div>
+</Layout>
+
+<style>
+  .ait {
+    --ink: #111;
+    --rule: #ececec;
+    --names: 104px;
+    --row: 60px;
+    container-type: inline-size;
+    color: var(--ink);
+    /* Centered in the space below the nav on screens tall enough to fit it. */
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .head {
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--ink);
+  }
+  /* Matches the blog posts' body text (.redesign .prose in index.css). */
+  .head .prose {
+    max-width: 640px;
+    text-wrap: balance;
+    font-size: 1rem;
+    font-weight: 420;
+    line-height: 1.65;
+    color: var(--color-gray-600);
+  }
+  .head .prose > p {
+    margin-block: 0;
+  }
+
+  /* Chart: one block per year, side by side on wide screens and stacked on
+     phones. */
+  .chart {
+    display: flex;
+    margin-top: 28px;
+  }
+  .yr {
+    position: relative;
+    flex: var(--n) 1 0;
+    min-width: 0;
+  }
+  .yr.first {
+    flex-basis: var(--names);
+    padding-left: var(--names);
+  }
+  .yr:not(.first) .names {
+    display: none;
+  }
+  /* The year line sits on top of the first month's gridline. */
+  .yr:not(.first) .grid::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background: var(--ink);
+  }
+  .names {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: var(--names);
+    display: grid;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .names span {
+    height: var(--row);
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .grid {
+    position: relative;
+  }
+  .yr-head {
+    background: #fff;
+    padding: 0 0 6px 6px;
+  }
+  .yr-head h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .letters {
+    display: grid;
+    grid-template-columns: repeat(var(--n), 1fr);
+    margin-left: -6px;
+    font-size: 0.625rem;
+    color: #9a9a9a;
+  }
+  .letters span {
+    padding-left: 3px;
+  }
+  .row {
+    position: relative;
+    height: var(--row);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .seg {
+    display: block;
+    background: var(--ink);
+  }
+  .row .seg {
+    position: absolute;
+    left: calc(var(--s) / var(--n) * 100%);
+    width: calc(var(--w) / var(--n) * 100%);
+  }
+  .seg.main {
+    height: 10px;
+    bottom: 6px;
+  }
+  .seg.side {
+    height: 2px;
+    bottom: 10px;
+  }
+  /* Gridlines and event ticks are 1px elements placed with the same math, so
+     a tick lands exactly on its month's gridline. */
+  .gl,
+  .mk {
+    position: absolute;
+    left: calc(var(--m) / var(--n) * 100%);
+    width: 1px;
+  }
+  .gl {
+    top: 0;
+    bottom: 0;
+    background: var(--rule);
+  }
+  .mk {
+    bottom: 6px;
+    height: calc(24px + var(--lane) * 14px);
+    background: var(--ink);
+    pointer-events: none;
+  }
+  .mk span {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    /* Hides the gridlines behind the label. */
+    padding: 0 4px;
+    background: #fff;
+    font-size: 0.6875rem;
+    line-height: 12px;
+    white-space: nowrap;
+  }
+  .mk em {
+    font-style: normal;
+    color: #8a8a8a;
+  }
+  .mk.right span {
+    left: auto;
+    right: 1px;
+  }
+
+  @container (max-width: 720px) {
+    .ait {
+      --names: 84px;
+    }
+    .chart {
+      flex-direction: column;
+      gap: 28px;
+    }
+    .yr,
+    .yr.first {
+      flex: none;
+      padding-left: var(--names);
+      width: calc(var(--names) + (100% - var(--names)) * var(--n) / 12);
+    }
+    .yr:not(.first) .names {
+      display: grid;
+    }
+    .empty {
+      display: none !important;
+    }
+    .yr:not(.first) .grid::before {
+      display: none;
+    }
+    .names {
+      font-size: 0.8125rem;
+    }
+  }
+
+  .foot {
+    margin-top: 28px;
+    padding-top: 14px;
+    border-top: 2px solid var(--ink);
+    font-size: 0.8125rem;
+  }
+  .legend {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 24px;
+    color: var(--ink);
+  }
+  .legend li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .legend .seg {
+    width: 22px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+</style>
