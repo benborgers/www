@@ -1,7 +1,6 @@
 ---
 title: Giving Out Chick-fil-A on a Schedule App
 date: 2022-02-28
-starred: true
 ---
 
 In November of senior year, I added a Chick-fil-A tab to _Blocks_, the schedule app I [built for my high school](https://benborgers.com/posts/blocks). Here’s how that came to be.

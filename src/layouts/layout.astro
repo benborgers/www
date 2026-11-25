@@ -1,4 +1,5 @@
 ---
+import "allo-font";
 import "../css/index.css";
 
 import { ClientRouter } from "astro:transitions";
@@ -7,13 +8,19 @@ import type { ImageMetadata } from "astro";
 interface Props {
   title: string;
   ogImage?: ImageMetadata;
-  coverImagePosition?: "top" | "bottom";
-  // Custom posts: keep the nav, but everything beside it is the page's own.
-  // No ClientRouter, so the page's scripts run fresh on every visit.
+  // Custom posts: keep the nav, but everything below it is the page's own. No
+  // ClientRouter, so the page's scripts run fresh on every visit.
   custom?: boolean;
+  // Custom posts only: caps the page and its nav at this width, centered, such
+  // as "1100px". Without it they go edge to edge.
+  maxWidth?: string;
 }
 
-const { title, ogImage, coverImagePosition = "top", custom = false } = Astro.props;
+const { title, ogImage, custom = false, maxWidth } = Astro.props;
+
+// Every page except custom posts uses the redesign: 16px text in a
+// single 480px column.
+const redesign = !custom;
 ---
 
 <!doctype html>
@@ -23,7 +30,11 @@ const { title, ogImage, coverImagePosition = "top", custom = false } = Astro.pro
     <meta name="viewport" content="width=device-width" />
 
     <title>{title}</title>
-    <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='0.75' y='0.75' width='14.5' height='14.5' rx='1.6' fill='%23ffbf00'/%3E%3C/svg%3E"
+    />
     <meta property="og:title" content={title} />
     <meta property="og:site_name" content="Ben Borgers" />
 
@@ -44,8 +55,6 @@ const { title, ogImage, coverImagePosition = "top", custom = false } = Astro.pro
         </>
       )
     }
-
-    <link rel="stylesheet" href="https://md-ui.ben.page" />
 
     <link
       rel="alternate"
@@ -87,99 +96,72 @@ const { title, ogImage, coverImagePosition = "top", custom = false } = Astro.pro
     {!custom && <ClientRouter />}
   </head>
   <body
-    class="antialiased bg-white text-pretty selection:bg-brand-yellow-light"
+    class:list={[
+      "antialiased bg-white text-pretty selection:bg-brand-yellow-light",
+      redesign && "redesign",
+    ]}
   >
     <div
       class:list={[
-        custom
-          ? "grid min-h-svh grid-rows-[auto_1fr] lg:grid-rows-none lg:grid-cols-[max-content_1fr]"
-          : "lg:grid lg:grid-cols-[1fr_540px_1fr] lg:gap-x-8",
+        // Custom posts clip sideways overflow at the window edge, not the page's, so
+        // shadows near the edge of a capped page show in full.
+        custom && "grid min-h-svh grid-rows-[auto_1fr] overflow-x-clip",
       ]}
+      style={maxWidth ? `--page-max-width: ${maxWidth}; --column-width: ${maxWidth}` : undefined}
     >
       {
         !import.meta.env.CHEETAH && (
-          <nav class="p-4 pb-3 h-max lg:sticky lg:top-0 max-lg:bg-gray-50 max-lg:border-b max-lg:border-gray-100">
-            <div class="max-lg:max-w-[540px] max-lg:mx-auto">
-              <a
-                href="/"
-                class="name-highlight block max-w-max text-gray-900 font-semibold"
-              >
-                Ben Borgers
-              </a>
-              <div
-                class="mt-2 lg:mt-3"
-              >
-                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-gray-900 font-medium lg:block">
-                  <a
-                    href="/"
-                    aria-current={Astro.url.pathname === "/" ? "page" : undefined}
-                    class:list={[
-                      "block max-w-max",
-                      Astro.url.pathname === "/" &&
-                        "underline decoration-[1.5px] underline-offset-[1.5px]",
-                    ]}
-                  >
-                    Home
-                  </a>
+          <nav class:list={["site-nav page-gutter pb-3", custom ? "pt-5" : "pt-8"]}>
+            <div
+              class:list={[
+                "@container relative",
+                // Other pages match the 480px column; custom posts match their maxWidth.
+                !custom && "max-w-[480px] mx-auto",
+                maxWidth && "max-w-(--page-max-width) mx-auto",
+              ]}
+            >
+              <div class="brand-shape-row">
+                <span aria-hidden="true" class="brand-shape brand-shape-triangle" />
+                <a href="/" class="block max-w-max font-medium text-gray-950">
+                  Ben Borgers
+                </a>
+              </div>
+              <div class="mt-1 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 font-medium">
+                <div class="brand-shape-row text-gray-950">
+                  <span aria-hidden="true" class="brand-shape brand-shape-circle" />
                   <a
                     href="/blog"
                     aria-current={Astro.url.pathname.startsWith("/blog") ? "page" : undefined}
-                    class:list={[
-                      "block max-w-max",
-                      Astro.url.pathname.startsWith("/blog") &&
-                        "underline decoration-[1.5px] underline-offset-[1.5px]",
-                    ]}
                   >
                     Blog
                   </a>
                   <a
                     href="/now"
                     aria-current={Astro.url.pathname === "/now" ? "page" : undefined}
-                    class:list={[
-                      "block max-w-max",
-                      Astro.url.pathname === "/now" &&
-                        "underline decoration-[1.5px] underline-offset-[1.5px]",
-                    ]}
                   >
                     Now
                   </a>
+                  <a href="https://photos.ben.page" target="_blank">Photos</a>
                 </div>
 
-                <div class="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-gray-400 font-medium lg:mt-3 lg:block">
-                  <div class="flex items-center gap-x-3 lg:block">
-                    <a
-                      href="https://twitter.com/benborgers"
-                      target="_blank"
-                      class="block max-w-max"
-                    >
-                      Twitter
-                    </a>
-                    <a
-                      href="https://photos.ben.page"
-                      target="_blank"
-                      class="block max-w-max"
-                    >
-                      Photos
-                    </a>
-                  </div>
-
-                  <div class="flex items-center gap-x-3 lg:mt-3 lg:block">
-                    <a
-                      href="/rss"
-                      target="_blank"
-                      class="block max-w-max"
-                    >
-                      RSS
-                    </a>
-                    <button
-                      type="button"
-                      class="newsletter-trigger block max-w-max cursor-pointer border-0 bg-transparent p-0 font-[inherit] text-inherit"
-                      aria-haspopup="dialog"
-                      aria-controls="newsletter-dialog"
-                    >
-                      Newsletter
-                    </button>
-                  </div>
+                <div class="flex gap-x-3 text-gray-400">
+                  <a href="https://twitter.com/benborgers" target="_blank" aria-label="Twitter">
+                    {/* Begrudgingly "X" once "Twitter" would wrap the nav. */}
+                    <span class="@max-[274px]:hidden">Twitter</span>
+                    <span class="hidden @max-[274px]:inline">X</span>
+                  </a>
+                  <a href="/rss" target="_blank">RSS</a>
+                  {/* Newsletter hidden for now, along with its dialog below.
+                  <button
+                    type="button"
+                    data-signup-trigger
+                    class="cursor-pointer border-0 bg-transparent p-0 font-[inherit] text-inherit"
+                    aria-haspopup="dialog"
+                    aria-controls="newsletter-dialog"
+                  >
+                    Newsletter
+                  </button>
+                  */}
                 </div>
               </div>
             </div>
@@ -187,15 +169,21 @@ const { title, ogImage, coverImagePosition = "top", custom = false } = Astro.pro
         )
       }
 
+      {/* Newsletter signup, hidden for now (see the nav).
       <dialog
         id="newsletter-dialog"
-        class="newsletter-dialog fixed inset-x-4 top-4 bottom-auto m-0 w-auto max-w-none overflow-hidden rounded-none border-0 bg-gray-50 p-0 text-gray-900 shadow-lg backdrop:bg-gray-900/10 focus:outline-none lg:inset-[var(--newsletter-top)_auto_auto_var(--newsletter-left)] lg:w-max lg:max-w-[calc(100vw-var(--newsletter-left)-24px)] lg:max-h-[calc(100dvh-var(--newsletter-top)-24px)]"
+        class:list={[
+          "newsletter-dialog fixed inset-x-4 top-4 bottom-auto m-0 w-auto max-w-none overflow-hidden rounded-[4px] border-0 bg-white p-0 text-base text-gray-950 shadow-[0_1px_2px_rgb(28_25_23/0.08),0_8px_24px_rgb(28_25_23/0.12)] backdrop:bg-gray-900/10 focus:outline-none lg:w-max",
+          // The trigger is at the right end of the top nav, so the dialog opens
+          // below it, right-aligned.
+          "lg:inset-[var(--newsletter-below)_var(--newsletter-right)_auto_auto] lg:max-h-[calc(100dvh-var(--newsletter-below)-24px)]",
+        ]}
         aria-label="Newsletter signup"
         tabindex="-1"
       >
-        <div class="grid items-center p-4">
+        <div class="grid grid-cols-1 items-center p-4">
           <div class="newsletter-form-state">
-            <p class="mr-4 text-balance leading-tight font-medium text-gray-900 lg:whitespace-nowrap">
+            <p class="text-balance font-[520] text-gray-950 lg:whitespace-nowrap">
               Get an email when I publish a blog post
             </p>
 
@@ -215,11 +203,11 @@ const { title, ogImage, coverImagePosition = "top", custom = false } = Astro.pro
                   placeholder="Email address"
                   required
                   autofocus
-                  class="min-w-0 flex-1 border-2 border-gray-300 bg-white py-2 indent-3 font-sans text-gray-900 placeholder:text-gray-400 focus:border-brand-blue focus:outline-none"
+                  class="min-w-0 flex-1 rounded-[4px] border-0 bg-gray-50 px-2.5 py-1.5 font-sans font-[420] text-gray-950 outline-1 -outline-offset-1 outline-gray-200 transition-[outline-color] duration-75 placeholder:text-gray-400 focus:outline-brand-yellow"
                 />
                 <button
                   type="submit"
-                  class="cursor-pointer border border-gray-900 bg-gray-900 px-3 py-2 text-sm font-semibold text-white focus:border-brand-blue focus:outline-none disabled:cursor-wait disabled:opacity-65"
+                  class="cursor-pointer rounded-[4px] border-0 bg-brand-yellow px-2.5 py-1.5 font-medium text-gray-950 transition-[filter] duration-75 hover:brightness-95 focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-gray-950 disabled:cursor-wait disabled:opacity-65"
                 >
                   Subscribe
                 </button>
@@ -228,11 +216,11 @@ const { title, ogImage, coverImagePosition = "top", custom = false } = Astro.pro
           </div>
 
           <div
-            class="newsletter-confirmed hidden text-center"
+            class="newsletter-confirmed hidden"
             aria-live="polite"
             hidden
           >
-            <p class="leading-tight font-medium text-gray-900">
+            <p class="font-[620] text-gray-950">
               Check your email to confirm your subscription!
             </p>
           </div>
@@ -244,44 +232,23 @@ const { title, ogImage, coverImagePosition = "top", custom = false } = Astro.pro
           class="newsletter-response pointer-events-none absolute size-px border-0 opacity-0"
         ></iframe>
       </dialog>
+      */}
 
       <main
         class:list={[
           custom
-            ? "min-w-0"
-            : [
-                "lg:pt-24 pb-48 max-lg:px-4 max-lg:max-w-[540px] max-lg:mx-auto",
-                coverImagePosition === "bottom" ? "pt-8" : "pt-14",
-              ],
+            ? [
+                "min-w-0",
+                maxWidth &&
+                  "page-gutter w-full max-w-[calc(var(--page-max-width)+var(--gutter-left)+1rem)] mx-auto",
+              ]
+            : "page-gutter max-w-[480px] mx-auto pt-16 pb-48 box-content",
         ]}
       >
         <slot />
       </main>
 
-      {
-        !custom && (
-          <div>
-            <slot name="sidebar" />
-          </div>
-        )
-      }
     </div>
   </body>
 </html>
 
-<style>
-  .name-highlight {
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-    background-image: linear-gradient(
-      270deg,
-      #facc1566,
-      #facc151a 0.3em,
-      #facc1533 calc(100% - 0.5em),
-      #facc1580
-    );
-    border-radius: 0.5em 0.3em;
-    margin: -0.1em -0.35em;
-    padding: 0.1em 0.35em;
-  }
-</style>

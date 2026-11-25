@@ -14,7 +14,7 @@ const toPost = ({ id, ...data }: CustomPostInfo): CustomPost => ({
   collection: "custom",
   id,
   body: "",
-  data: { starred: false, unlisted: false, draft: false, ...data },
+  data: { unlisted: false, draft: false, ...data },
 });
 
 export const getCustomPost = (id: string): CustomPost => {

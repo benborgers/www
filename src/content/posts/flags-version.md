@@ -3,7 +3,6 @@ title: Don’t forget to set a minimum app version for your feature flags
 date: 2025-10-10
 cover_image: ./images/flags-version/cover.png
 draft: false
-starred: false
 unlisted: false
 ---
 

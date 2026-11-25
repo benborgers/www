@@ -2,8 +2,10 @@ const setupNewsletterDialog = () => {
   const dialog = document.querySelector<HTMLDialogElement>(
     "#newsletter-dialog"
   );
+  // Not a .newsletter-trigger class: the Fanboy annoyance list (used by
+  // uBlock Origin, Brave, AdGuard, and Safari blockers) hides that selector.
   const trigger = document.querySelector<HTMLButtonElement>(
-    ".newsletter-trigger"
+    "[data-signup-trigger]"
   );
   const form = dialog?.querySelector<HTMLFormElement>(".newsletter-form");
   const frame = dialog?.querySelector<HTMLIFrameElement>(
@@ -47,12 +49,12 @@ const setupNewsletterDialog = () => {
   trigger.addEventListener("click", () => {
     const triggerBounds = trigger.getBoundingClientRect();
     dialog.style.setProperty(
-      "--newsletter-top",
-      `${Math.max(16, triggerBounds.top - 24)}px`
+      "--newsletter-below",
+      `${triggerBounds.bottom + 8}px`
     );
     dialog.style.setProperty(
-      "--newsletter-left",
-      `${triggerBounds.right + 12}px`
+      "--newsletter-right",
+      `${document.documentElement.clientWidth - triggerBounds.right}px`
     );
     previousOverflow = document.documentElement.style.overflow;
     previousBodyOverflow = document.body.style.overflow;

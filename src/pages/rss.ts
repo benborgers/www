@@ -36,7 +36,7 @@ export const GET: APIRoute = async ({ site: _site }) => {
         // Feed readers can't run a custom page, so send readers to it.
         const body =
           post.collection === "custom"
-            ? `[View this on ben.page →](/${post.id})`
+            ? `[Open this post on ben.page →](/${post.id})`
             : post.body;
         return {
           title: post.data.title,

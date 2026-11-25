@@ -2,7 +2,6 @@
 title: Calculating related posts on my blog using vector embeddings
 date: 2025-10-07
 draft: false
-starred: false
 unlisted: false
 ---
 You might notice that, somewhere on this page (depending on the redesign I'm not sure where) there should be a list of "related posts."

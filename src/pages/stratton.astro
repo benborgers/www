@@ -51,7 +51,7 @@ const doorAlt =
   "Two of my roommates by the door to room 114, next to the bulletin board with a poll pinned to it: “Are you in CS?”";
 ---
 
-<Layout title={post.data.title} custom>
+<Layout title={post.data.title} custom maxWidth="1100px">
   <div class="stratton">
     <div class="layout">
       <div class="intro">
@@ -128,38 +128,45 @@ const doorAlt =
 </Layout>
 
 <style>
+  /* The page always fits the window: the layout fills the height left under
+     the nav, and the poll stack takes whatever room the intro and controls
+     leave, keeping its aspect ratio. */
   .stratton {
     position: relative;
-    container-type: inline-size;
-    min-height: 100%;
+    container: stratton / size;
+    height: 100%;
     display: grid;
-    overflow-x: clip;
+    grid-template-rows: minmax(0, 1fr);
     -webkit-tap-highlight-color: transparent;
   }
   .layout {
     display: grid;
-    align-content: center;
-    justify-items: center;
-    gap: 32px;
-    padding: 32px 16px 48px;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 24px;
+    padding: 24px 0 16px;
   }
   .intro {
     width: 100%;
     max-width: 540px;
+    justify-self: center;
   }
+  /* Matches the blog posts' body text (.redesign .prose in index.css). */
   .intro .prose {
-    font-size: 1.0625rem;
+    font-size: 1rem;
+    font-weight: 420;
+    line-height: 1.65;
+    color: var(--color-gray-600);
+  }
+  .intro .prose > p {
+    margin-block: 0;
   }
   .intro .prose > p + p {
-    margin-top: 0;
-  }
-  .intro .prose > p:not(:last-child) {
-    margin-bottom: 1rem;
+    margin-top: 1.25rem;
   }
   .photo {
     display: none;
-    width: min(300px, 80%, calc((100svh - 400px) * 0.75));
-    min-width: 200px;
+    /* Shrinks with the window height so the intro column fits too. */
+    width: min(300px, 80%, calc((100cqh - 360px) * 0.75));
     margin: 28px 0 0 4px;
     padding: 6px;
     background: #fff;
@@ -174,37 +181,74 @@ const doorAlt =
     height: auto;
   }
   .viewer {
-    display: grid;
-    justify-items: center;
-    gap: 40px;
+    container-type: size;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    /* The stack's width: as wide as fits beside the room for the controls
+       (24px gap, 34px tall) and the sheets fanned out behind the top one. */
+    --stack-width: min(100cqw - 12px, var(--stack-max), (100cqh - 74px) * 0.745);
+    --stack-max: 440px;
   }
   .stack {
     position: relative;
-    width: min(84cqw, 440px);
+    width: var(--stack-width);
     aspect-ratio: 0.745;
     touch-action: pan-y;
     user-select: none;
     cursor: pointer;
   }
-  @container (min-width: 900px) {
+  @container stratton (min-width: 900px) {
     .layout {
-      grid-template-columns: minmax(200px, 380px) auto;
-      justify-content: center;
-      align-items: center;
+      grid-template-columns: minmax(200px, 380px) minmax(0, 1fr);
+      grid-template-rows: minmax(0, 1fr);
       column-gap: clamp(32px, 6cqw, 96px);
-      padding: 24px 32px;
+      padding: 24px 0;
     }
-    .stack {
-      width: min(calc((100svh - 170px) * 0.745), 560px, calc(100cqw - 540px));
+    .intro {
+      align-self: center;
     }
-    .intro .prose > p:not(:last-child) {
-      margin-bottom: 1.5rem;
+    /* The intro and the polls sit on the page edges, under the nav's name and links. */
+    .viewer {
+      align-items: end;
+      --stack-max: 560px;
+    }
+    .controls {
+      width: var(--stack-width);
+      justify-content: center;
     }
     .photo {
       display: block;
     }
     .door-sheet {
       display: none;
+    }
+  }
+  /* Short, wide windows leave room beside the stack: three columns, with
+     the roommate photo between the intro and the polls. */
+  @container stratton (min-width: 900px) and (min-aspect-ratio: 7 / 4) {
+    .layout {
+      grid-template-columns: minmax(200px, 380px) minmax(0, 1fr) auto;
+    }
+    .intro {
+      display: contents;
+    }
+    .intro .prose {
+      align-self: center;
+    }
+    /* The photo's top lines up with the top of the poll stack. */
+    .photo {
+      align-self: start;
+      justify-self: center;
+      margin: 0;
+      width: min(300px, (100cqh - 80px) * 0.75);
+    }
+    /* Sized from the height, like the stack, since its column is auto. */
+    .viewer {
+      width: min(560px, (100cqh - 48px - 74px) * 0.745 + 12px);
+      justify-content: start;
     }
   }
 

@@ -3,7 +3,6 @@ title: How Notion sees itself
 date: 2025-10-09
 cover_image: ./images/notion-sees/cover.png
 draft: false
-starred: false
 unlisted: false
 ---
 Last summer, when I was working at [Notion](https://notion.com/product), I felt really viscerally that **Notion sees itself as a tool for making software**.

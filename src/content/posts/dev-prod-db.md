@@ -2,7 +2,6 @@
 title: You should be able to run your dev server against your production database
 date: 2025-10-13
 draft: false
-starred: false
 unlisted: false
 ---
 I've always loved the ability to run a local web app you're developing against production infrastructure.

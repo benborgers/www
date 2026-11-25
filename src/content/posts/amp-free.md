@@ -2,7 +2,6 @@
 title: My coding agent has ads now
 date: 2025-10-15
 draft: false
-starred: false
 unlisted: false
 ---
 One of my favorite coding agents, Amp, released a [free ad-supported version of their product today](https://ampcode.com/news/amp-free).

@@ -1,7 +1,6 @@
 ---
 title: "60 kHz"
 date: 2022-02-27
-starred: true
 ---
 
 There’s a radio station in Colorado that broadcasts the time.

@@ -1,7 +1,5 @@
 ---
-import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
-import star from "../images/star.png";
 import Layout from "../layouts/layout.astro";
 import { getPosts } from "../lib/posts";
 
@@ -28,48 +26,24 @@ const postsByMonth = Object.groupBy(
 ---
 
 <Layout title="Ben Borgers’ Blog" ogImage={home?.data.cover_image}>
-  <div>
+  <div class="post-list">
     {
       Object.entries(postsByMonth).map(([heading, posts]) => (
         <>
-          <p class="mt-6 first-of-type:mt-0 text-gray-400 font-medium">
+          {/* The first heading sits 31px higher, so the first post's title lines up
+              with the title on its own page. */}
+          <p class="mt-6 first-of-type:-mt-[31px] text-gray-400 font-[520]">
             {heading}
           </p>
 
+          {/* A whole-pixel line height, so each row's square lands on whole
+              pixels and doesn't shift against the one on the post's page. */}
           {posts!.map((post) => (
-            <p
-              class:list={[
-                "mt-2 flex gap-x-1.5 items-baseline",
-                post.data.starred && "lg:-ml-6.5",
-              ]}
-            >
-              {post.data.starred && (
-                <Image
-                  src={star}
-                  alt="Starred post"
-                  width={128}
-                  class="w-5 max-lg:hidden"
-                />
-              )}
+            <p class="mt-2 brand-shape-row leading-[20px]">
+              <span aria-hidden="true" class="brand-shape" />
 
-              <span class="text-gray-300 select-none">&mdash;</span>
-
-              <a
-                href={`/${post.id}`}
-                class="text-gray-900 text-xl leading-[1.2]"
-              >
-                {/* Avoids the space after the underline */}
-                {/* prettier-ignore */}
-                <span class="underline decoration-1 decoration-gray-300 underline-offset-[1.5px]">{post.data.title}</span>
-
-                {post.data.starred && (
-                  <Image
-                    src={star}
-                    alt="Starred post"
-                    width={128}
-                    class="w-5 inline-block ml-1 -translate-y-0.5 lg:hidden"
-                  />
-                )}
+              <a href={`/${post.id}`} class="text-gray-900 text-xl">
+                {post.data.title}
               </a>
             </p>
           ))}
@@ -78,3 +52,12 @@ const postsByMonth = Object.groupBy(
     }
   </div>
 </Layout>
+
+<style>
+  /* In these 20px rows the text sits 1px lower against the line's center
+     than in a post's 24px title line, so the square drops 1px to match:
+     it lands on the same pixel as the one on the post's page. */
+  .brand-shape {
+    margin-top: calc((1lh - 12px) / 2);
+  }
+</style>

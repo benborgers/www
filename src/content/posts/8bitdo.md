@@ -2,7 +2,6 @@
 title: How to use an 8BitDo Zero 2 as an Anki remote
 date: 2025-12-13
 draft: false
-starred: false
 unlisted: true
 ---
 

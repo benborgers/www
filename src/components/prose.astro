@@ -9,20 +9,28 @@
 <div class="hidden cursor-zoom-in hover:opacity-75 transition-opacity"></div>
 
 <script>
-  document.querySelectorAll(".prose img").forEach((img) => {
-    const imgElement = img as HTMLImageElement;
+  // Module scripts run once per full page load, so also run after client-side
+  // navigation. Skips images that are already links.
+  const linkImages = () => {
+    document.querySelectorAll(".prose img").forEach((img) => {
+      const imgElement = img as HTMLImageElement;
+      if (imgElement.parentElement?.matches("a")) return;
 
-    const link = document.createElement("a");
-    link.target = "_blank";
-    link.classList.add(
-      "cursor-zoom-in",
-      "hover:opacity-75",
-      "transition-opacity"
-    );
+      const link = document.createElement("a");
+      link.target = "_blank";
+      link.classList.add(
+        "cursor-zoom-in",
+        "hover:opacity-75",
+        "transition-opacity"
+      );
 
-    link.href = imgElement.src;
+      link.href = imgElement.src;
 
-    imgElement.parentNode?.replaceChild(link, imgElement);
-    link.appendChild(imgElement);
-  });
+      imgElement.parentNode?.replaceChild(link, imgElement);
+      link.appendChild(imgElement);
+    });
+  };
+
+  linkImages();
+  document.addEventListener("astro:page-load", linkImages);
 </script>

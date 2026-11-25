@@ -3,7 +3,6 @@ title: We put the lying machine into the correct answer website
 date: 2025-10-14
 cover_image: ./images/lying-machine/cover.png
 draft: false
-starred: false
 unlisted: false
 ---
 The other day, I saw a colleague ask a specific question about the inner workings of the app that my team works on.

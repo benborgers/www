@@ -3,7 +3,6 @@ title: Goodbye, Tufts
 date: 2025-06-01
 cover_image: ./images/tufts/cover.png
 draft: false
-starred: false
 unlisted: false
 ---
 3.5 years ago, I wrote [The Beginning of College Sucks](/o-week). I was one semester into college, and was starting to realize that perhaps the initial loneliness wouldn't be *permanent*.

@@ -1,6 +1,5 @@
 ---
 title: "Borgers’ Laws"
-date: 2026-02-04
 draft: true
 ---
 

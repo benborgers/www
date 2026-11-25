@@ -7,7 +7,9 @@ const entry = await getEntry("pages", "index")!;
 ---
 
 <Layout title="Ben Borgers" ogImage={entry.data.cover_image}>
-  <Entry entry={entry} />
+  <div class="home-intro">
+    <Entry entry={entry} coverImagePosition="hidden" />
+  </div>
 </Layout>
 
 <script>

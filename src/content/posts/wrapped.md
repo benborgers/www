@@ -1,7 +1,6 @@
 ---
 title: Tufts Meal Plan Wrapped
 date: 2024-03-02
-starred: true
 ---
 
 Two weeks ago, [Jerome](https://jero.zone) and I won [Tufts' first hackathon in 5 years](https://www.tuftsdaily.com/article/2024/02/jumbocode-hosts-first-hackathon-at-tufts-in-5-years)! We built Tufts Meal Plan Wrapped, a Spotify Wrapped for your meal plan (that also demonstrates that meal plans are a scam), and got over 500 students to use it.

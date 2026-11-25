@@ -3,7 +3,6 @@ title: Should Cursor be taught in college?
 date: 2025-10-08
 cover_image: ./images/cursor-college/cover.png
 draft: false
-starred: false
 unlisted: false
 ---
 > "I was at a college campus… last semester, and I asked the students in the CS program, 'What do they ask you about agentic coding? What do they teach you about AI code completion?' Nothing, nothing, nothing. Not even a one day class on it."\

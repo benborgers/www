@@ -3,7 +3,6 @@ title: Automatically graphing how busy office hours are
 date: 2025-05-31
 cover_image: ./images/queuecounter/cover.png
 draft: false
-starred: true
 unlisted: false
 ---
 This past year at Tufts, I was a TA for [CS 40](https://www.cs.tufts.edu/comp/40): *Machine Structure and Assembly Language Programming*.

@@ -2,11 +2,9 @@
 cover_image: ./images/index/cover.png
 ---
 
-Hi! I'm Ben Borgers. I live in San Francisco, and I work on product and engineering at [Owner](https://owner.com).
+Hi! I'm Ben Borgers. I live in San Francisco, and I work as a hybrid software engineer/product manager at [Owner](https://owner.com).
 
 I'd love to hear from you and grab coffee — [benborgers@hey.com](mailto:benborgers@hey.com).
-
-<div class="lg:mt-[200px]"></div>
 
 ## Work Experience
 

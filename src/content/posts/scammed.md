@@ -1,7 +1,6 @@
 ---
 title: How I got scammed on Facebook Marketplace
 date: 2023-07-10
-starred: true
 ---
 
 A few weeks ago, I got scammed buying a camera on Facebook Marketplace.

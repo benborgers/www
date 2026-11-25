@@ -2,12 +2,10 @@
 @import "./prose.css";
 
 @theme {
-  --font-sans: "MD UI", system-ui, sans-serif;
-  --font-xl: "MD UI XL", system-ui, sans-serif;
-  --font-xs: "MD UI XS", system-ui, sans-serif;
+  /* Allo by Josh Puckett (allo-font, imported in layout.astro), at its default roundness of 50. */
+  --font-sans: "Allo", system-ui, sans-serif;
 
   --color-brand-blue: hsl(209deg, 95%, 40%);
-  --color-brand-blue-light: hsl(209deg, 95%, 90%);
 
   --color-brand-red: hsl(3deg, 99%, 45%);
   --color-brand-red-light: hsl(3deg, 99%, 96%);
@@ -26,6 +24,240 @@
   --color-gray-800: var(--color-stone-800);
   --color-gray-900: var(--color-stone-900);
   --color-gray-950: var(--color-stone-950);
+}
+
+/* Allo's obliques only come in fixed weights, and for the body's 420 the
+   browser would pick the Medium (500) one. Point 420 italic at the regular. */
+@font-face {
+  font-family: "Allo";
+  src: url("../../node_modules/allo-font/fonts/webfonts/Allo-Oblique.woff2") format("woff2");
+  font-weight: 420;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Same for bold italic at 620: the browser would pick Bold (700), so use SemiBold. */
+@font-face {
+  font-family: "Allo";
+  src: url("../../node_modules/allo-font/fonts/webfonts/Allo-SemiBoldOblique.woff2") format("woff2");
+  font-weight: 620;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Allo's x-height as a share of its size, as browsers measure it. Every font,
+     like code's monospace, scales so its lowercase letters match Allo's at
+     the same font size; Allo itself doesn't change. */
+  font-size-adjust: 0.543;
+
+  /* Triangle, circle, square in the brand red, blue, and yellow: the prose
+     divider, and the source of the single shapes (.brand-shape). */
+  --brand-shapes: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 12'%3E%3Cpath d='M0.75 10.5 6.5 1.25 12.25 10.5Z' fill='%23e40d01' stroke='%23e40d01' stroke-width='1.5' stroke-linejoin='round'/%3E%3Ccircle cx='26' cy='6' r='6' fill='%230569c7'/%3E%3Crect x='39' y='0.25' width='11.5' height='11.5' rx='1.25' fill='%23ffbf00'/%3E%3C/svg%3E");
+}
+
+/* The redesign (every page but custom posts): 16px throughout.
+   Unlayered, so it overrides the sizes the prose utility and Tailwind classes set. */
+.redesign {
+  --column-width: 480px;
+
+  /* Body text at 420, like joshpuckett.me. Titles, headings, the date, and the
+     nav set their own weights. */
+  main {
+    font-weight: 420;
+  }
+
+  .prose hr::before {
+    width: 52px;
+    height: 12px;
+    background: var(--brand-shapes) center / contain no-repeat;
+  }
+
+  .prose {
+    font-feature-settings: normal;
+    /* Lighter body text, near joshpuckett.me's #525252 in our warm gray scale. */
+    color: var(--color-gray-600);
+    line-height: 1.65;
+
+    strong {
+      color: var(--color-gray-800);
+      font-weight: 620;
+    }
+
+    /* Code blocks: a gray-50 panel with 16px of padding, like cover images,
+       with the text at 14px like inline code. */
+    pre {
+      border: none;
+      padding: 1rem;
+
+      &,
+      & * {
+        font-size: 0.875rem;
+      }
+    }
+
+    /* Italic, with just a thin bar on the left. */
+    blockquote {
+      font-style: italic;
+      background: none;
+      border-left: 1px solid var(--color-gray-300);
+      padding: 0 0 0 1rem;
+    }
+
+    /* Inline code: smaller, in brand red, with no background (or the
+       padding that went with it). */
+    code:not(pre code) {
+      font-size: 0.875rem;
+      color: var(--color-brand-red);
+      background: none;
+      padding: 0;
+    }
+
+    /* Solid dots at every level, instead of the old site's dashes (and the
+       browser's hollow circles and squares for nested lists). */
+    ul {
+      list-style-type: disc;
+    }
+
+    /* Nested lists sit as close as consecutive bullets do (the old site added
+       padding above them). */
+    li > :is(ul, ol) {
+      padding-top: 0;
+    }
+
+    /* A little more room between each bullet or number and its text. */
+    :is(ul, ol) {
+      padding-left: 24px;
+    }
+
+    li {
+      padding-left: 6px;
+    }
+
+    li::marker {
+      color: var(--color-brand-blue);
+    }
+
+    > p {
+      margin-block: 1.25rem;
+    }
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+    hr::before {
+      content: "";
+      -webkit-background-clip: border-box;
+      background-clip: border-box;
+    }
+  }
+
+  & * {
+    font-size: 1rem;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+}
+
+/* The site nav, on every page. Custom posts don't use the redesign elsewhere,
+   so the nav brings its 16px size along. */
+.site-nav {
+
+  & * {
+    font-size: 1rem;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+}
+
+/* In the nav and the /blog list, yellow underlines fade in on hover and mark
+   the current page. Only drawn then: a transparent underline at rest still
+   shows when text is selected. */
+:is(.site-nav, .post-list) {
+  & :is(a, button) {
+    text-decoration-color: transparent;
+    transition: text-decoration-color 60ms ease-out;
+  }
+
+  & :is(a, button):hover,
+  & [aria-current="page"] {
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-brand-yellow);
+  }
+}
+
+/* One shape from the brand shapes sprite: a red triangle by the nav's name,
+   a blue circle by its Blog link, and a yellow square by a post's title.
+   Centered on the first line of the text beside it. */
+.brand-shape {
+  flex: none;
+  display: block;
+  width: 12px;
+  height: 12px;
+  /* Half a pixel above the line's center looks centered. Whole-pixel margin
+     plus a half-pixel translate, since Chrome snaps margins to whole pixels. */
+  margin-top: calc((1lh - 12px) / 2 - 1px);
+  translate: 0 0.5px;
+  background: var(--brand-shapes) -39px 0 / 52px 12px no-repeat;
+}
+
+/* The home page has no title, so the square marks where its text starts,
+   hanging in the margin beside the first line like .brand-shape-row. */
+.home-intro .prose > p:first-child {
+  position: relative;
+  /* Nudges the text up to center its first line on the square. */
+  top: -1px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    /* Lands on the same pixel as the first square on /blog (6px, undoing the
+       paragraph's -1px), so it doesn't shift between the two pages. */
+    top: 6px;
+    translate: 0 0.5px;
+    left: -24px;
+    width: 12px;
+    height: 12px;
+    background: var(--brand-shapes) -39px 0 / 52px 12px no-repeat;
+  }
+}
+
+/* The triangle is 1px wider; keep its text in line with the others. */
+.brand-shape-triangle {
+  width: 13px;
+  margin-right: -1px;
+  background-position: 0 0;
+}
+
+.brand-shape-circle {
+  background-position: -20px 0;
+}
+
+/* A shape and the text it marks. The shape hangs in the left margin, so the
+   text stays flush with the column; .page-gutter keeps room for it. */
+.brand-shape-row {
+  display: flex;
+  gap: 12px;
+  margin-left: -24px;
+}
+
+/* Side padding for the nav and the page. The left side widens from 16px to
+   40px when the window is too narrow for a 40px margin beside the column
+   (--column-width, its max width), so the hanging shapes always fit. */
+.page-gutter {
+  --gutter-left: calc(16px + clamp(0px, (var(--column-width, 100vw) + 80px - 100vw) * 1000, 24px));
+  padding-left: var(--gutter-left);
+  padding-right: 16px;
+}
+
+/* The dialog drops down from the nav above it, on desktop from its trigger. */
+.newsletter-dialog {
+  transform-origin: top right;
 }
 
 .newsletter-dialog[open] {
@@ -47,14 +279,14 @@
 @keyframes newsletter-in {
   from {
     opacity: 0;
-    transform: translateX(-5px) scale(0.98);
+    transform: translateY(-5px) scale(0.98);
   }
 }
 
 @keyframes newsletter-out {
   to {
     opacity: 0;
-    transform: translateX(-5px) scale(0.99);
+    transform: translateY(-5px) scale(0.99);
   }
 }
 
@@ -90,13 +322,13 @@
 @keyframes newsletter-mobile-in {
   from {
     opacity: 0;
-    transform: translateY(5px) scale(0.99);
+    transform: translateY(-5px) scale(0.99);
   }
 }
 
 @keyframes newsletter-mobile-out {
   to {
     opacity: 0;
-    transform: translateY(5px) scale(0.995);
+    transform: translateY(-5px) scale(0.995);
   }
 }

@@ -2,12 +2,13 @@
 import { render, type CollectionEntry } from "astro:content";
 import CoverImage from "./cover-image.astro";
 import Prose from "./prose.astro";
-import RelatedPosts from "./related-posts.astro";
 import { isFutureDate } from "../lib/posts";
 
 interface Props {
   entry: CollectionEntry<"posts"> | CollectionEntry<"pages">;
-  coverImagePosition?: "top" | "bottom";
+  // "hidden" keeps the cover image out of the page, such as on the home page,
+  // where it's still the social preview image.
+  coverImagePosition?: "top" | "bottom" | "hidden";
 }
 
 const { entry, coverImagePosition = "top" } = Astro.props;
@@ -16,8 +17,12 @@ const title = entry.collection === "posts" ? entry.data.title : undefined;
 const date = entry.collection === "posts" ? entry.data.date : undefined;
 const coverImage = entry.data.cover_image;
 
-const coverImageTop = coverImage && coverImagePosition !== "bottom";
+const coverImageTop = coverImage && coverImagePosition === "top";
 const coverImageBottom = coverImage && coverImagePosition === "bottom";
+
+const draft =
+  entry.collection === "posts" &&
+  (entry.data.draft || isFutureDate(entry.data.date));
 
 const hasFrontmatter = coverImageTop || title || date;
 
@@ -25,34 +30,20 @@ const { Content } = await render(entry);
 ---
 
 {
-  entry.collection === "posts" &&
-    (entry.data.draft || isFutureDate(entry.data.date)) && (
-    <p class="mb-10 bg-brand-yellow-light text-brand-red border border-brand-red px-2 py-0.5 font-medium max-w-max mx-auto">
-      draft post
-    </p>
-  )
-}
-
-{
   hasFrontmatter && (
     <>
-      {coverImageTop && (
-        <CoverImage src={coverImage} />
-      )}
-
       {title && (
-        <h1
-          class:list={[
-            "text-gray-950 text-4xl leading-[1.05] font-xl font-extrabold text-center text-balance",
-            coverImageTop && "mt-6",
-          ]}
-        >
-          {title}
+        <h1 class="brand-shape-row text-gray-950 font-[620]">
+          <span aria-hidden="true" class="brand-shape" />
+          <span>{title}</span>
         </h1>
       )}
 
+      {/* Where the date goes, above it when there is one. */}
+      {draft && <p class="font-medium text-brand-red">[draft]</p>}
+
       {date && (
-        <time class="block mt-3 text-sm font-medium text-gray-500 text-center">
+        <time class="block font-medium text-gray-400">
           {date.toLocaleString("en-US", {
             timeZone: "UTC",
             month: "long",
@@ -61,27 +52,26 @@ const { Content } = await render(entry);
           })}
         </time>
       )}
+
+      {coverImageTop && (
+        <div class:list={["bg-gray-50 p-4", title && "mt-8"]}>
+          <CoverImage src={coverImage} class="mix-blend-multiply" />
+        </div>
+      )}
     </>
   )
 }
 
-<div class:list={[hasFrontmatter ? "mt-10" : "mt-2"]}>
+<div class:list={[hasFrontmatter && (coverImageTop ? "mt-8" : "mt-6")]}>
   <Prose>
     <Content />
   </Prose>
 
   {
-    entry.collection === "posts" && !import.meta.env.CHEETAH && (
-      <RelatedPosts
-        entry={entry}
-        class="lg:hidden mt-10 pt-10 border-t border-gray-100"
-      />
-    )
-  }
-
-  {
     coverImageBottom && (
-      <CoverImage src={coverImage} class="mt-18" />
+      <div class="mt-8 bg-gray-50 p-4">
+        <CoverImage src={coverImage} class="mix-blend-multiply" />
+      </div>
     )
   }
 </div>

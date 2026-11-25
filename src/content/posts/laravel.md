@@ -1,7 +1,6 @@
 ---
 title: Why I Love Laravel
 date: 2022-07-08
-starred: true
 ---
 
 My favorite way of building web apps is to use [Laravel](https://laravel.com), a PHP framework.

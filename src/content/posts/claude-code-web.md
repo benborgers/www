@@ -2,7 +2,6 @@
 title: I’ve been loving Claude Code on the Web
 date: 2025-10-25
 draft: false
-starred: false
 unlisted: false
 ---
 This week, I've been voraciously using [Claude Code on the web](https://www.anthropic.com/news/claude-code-on-the-web).

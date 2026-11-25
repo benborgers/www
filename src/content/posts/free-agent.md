@@ -3,7 +3,6 @@ title: Don’t standardize your company’s coding agents yet
 date: 2025-11-10
 cover_image: ./images/free-agent/cover.png
 draft: false
-starred: false
 unlisted: false
 ---
 Companies have a natural urge to get things under control, and *standardize*. **Resist that urge for AI coding agents.**

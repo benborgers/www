@@ -7,6 +7,6 @@ const entry = await getEntry("pages", "now")!;
 const coverImagePosition = "bottom";
 ---
 
-<Layout title="Now" ogImage={entry.data.cover_image} {coverImagePosition}>
+<Layout title="Now" ogImage={entry.data.cover_image}>
   <Entry entry={entry} {coverImagePosition} />
 </Layout>
